@@ -1,0 +1,25 @@
+# CLI
+
+## Access
+
+To access the CLI open a new terminal and run the command:
+```bash
+sudo python3 -m FreeTAKServer.views.CLI
+```
+
+## Commands
+
+| Command                    | Purpose                                                        |
+|----------------------------|----------------------------------------------------------------|
+| help                       | List all commands                                              |
+| start_all                  | Begin all services type                                        |
+| start_CoT_service          | Begin CoT service type                                         |
+| start_data_package_service | Begin data package service type                                |
+| stop_all                   | Terminate all services type                                    |
+| stop_CoT_service           | Terminate CoT service type                                     |
+| stop_data_package_service  | Begin data package service type                                |
+| change_connection_info     | Change the address and port of the server you're connecting to |
+| show_users                 | Show connected user information type                           |
+| kill                       | Kill the full server type                                      |
+| show_DP                    | Show all DataPackages on the server                            |
+| remove_DP                  | Remove a DataPackages on the server                            |

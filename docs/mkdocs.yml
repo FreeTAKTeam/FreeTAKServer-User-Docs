@@ -1,0 +1,7 @@
+site_name: FreeTAKServer Documentation
+repo_url: https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs
+sit_author: FreeTAKTeam
+theme:
+  'material'
+plugins:
+  - search
