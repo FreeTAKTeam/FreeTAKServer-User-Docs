@@ -23,3 +23,6 @@ sudo python3 -m FreeTAKServer.views.CLI
 | kill                       | Kill the full server type                                      |
 | show_DP                    | Show all DataPackages on the server                            |
 | remove_DP                  | Remove a DataPackages on the server                            |
+| add_api_user               | add a user and a token for API consumption                     |
+| show_api_users             | show a list of users and their tokens                          |
+| remove_api_user            | show a list of users and their tokens                          |
