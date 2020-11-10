@@ -2,13 +2,13 @@ If you have not installed FreeTAKServer please follow the installation guide fir
 
 ## Parameters
 
-| Flag             | Description                                                              |
-|------------------|--------------------------------------------------------------------------|
-| -AutoStart       | Weather the full server start or just the RestAPI, must be True or False |
-| -CoTIP           | Your Server IP                                                           |
-| -DataPackageIP   | The IP where CoTs are send                                               |
-| -CoTPort         | The port you want clients to connect to                                  |
-| -DataPackagePort | The port you want Data Packages to be sent and received on                |
+| Flag             | Default | Description                                                              |
+|------------------|---------|--------------------------------------------------------------------------|
+| -AutoStart       |         | Weather the full server start or just the RestAPI, must be True or False |
+| -CoTIP           |         | Your Server IP                                                           |
+| -CoTPort         | 8087    | The port you want clients to connect to                                  |
+| -DataPackageIP   | 0.0.0.0 | The IP where data packages are served from                               |
+| -DataPackagePort | 8080    | The port you want Data Packages to be sent and received on               |
 
 ## Run FTS in the Console
 
