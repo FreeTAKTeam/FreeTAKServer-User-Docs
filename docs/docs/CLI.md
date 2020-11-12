@@ -17,7 +17,7 @@ sudo python3 -m FreeTAKServer.views.CLI
 | start_data_package_service | Begin data package service type                                |
 | stop_all                   | Terminate all services type                                    |
 | stop_CoT_service           | Terminate CoT service type                                     |
-| stop_data_package_service  | Begin data package service type                                |
+| stop_data_package_service  | Terminate data package service type                                |
 | change_connection_info     | Change the address and port of the server you're connecting to |
 | show_users                 | Show connected user information type                           |
 | kill                       | Kill the full server type                                      |
@@ -25,4 +25,4 @@ sudo python3 -m FreeTAKServer.views.CLI
 | remove_DP                  | Remove a DataPackages on the server                            |
 | add_api_user               | add a user and a token for API consumption                     |
 | show_api_users             | show a list of users and their tokens                          |
-| remove_api_user            | show a list of users and their tokens                          |
+| remove_api_user            | remove a user and a token for API consumption                          |
