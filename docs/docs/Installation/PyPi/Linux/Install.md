@@ -12,7 +12,7 @@ sudo apt update && sudo apt install python3 && sudo apt install python3-pip
 
 ### Install Python Libraries
 ```bash
-sudo apt install python3-dev python3-setuptools build-essential python3-gevent python3-lxml
+sudo apt install python3-dev python3-setuptools build-essential python3-gevent python3-lxml libcairo2-dev
 ```
 
 ### Install FreeTAKServer
