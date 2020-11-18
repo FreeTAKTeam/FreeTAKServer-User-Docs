@@ -29,7 +29,7 @@ We may go to some more ethical system in the future.
 
 ### Public instance
 We support a [public instance](https://www.reddit.com/r/ATAK/wiki/index/freetakserver) of FTS.
-- download the configuration [here](https://drive.google.com/open?id=1IK1LfPN13EWikHaMyOuDDwIerNGz-Wl)
+- download the configuration [here](https://drive.google.com/file/d/1IK1LfPN13EWikHaMyOuDDwIerNGz-Wli)
 - use the Import manager in ATAK to import the configuration
 
 ### Tell us what you think!
