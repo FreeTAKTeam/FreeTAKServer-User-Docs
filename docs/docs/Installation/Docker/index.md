@@ -8,7 +8,7 @@ When using this docker container we suggested that you use the `--restart unless
 ```bash
 docker volume create fts_data
 
-docker run -d -p 8080:8080/tcp -p 8087:8087/tcp -e FTS_CONNECTION_MESSAGE="Server Connection Message" -e FTS_SAVE_COT_TO_DB="True" -v fts_data:/host/system/folder --name fts --restart unless-stopped freetakteam/freetakserver:1.1.2
+docker run -d -p 8080:8080/tcp -p 8087:8087/tcp -e FTS_CONNECTION_MESSAGE="Server Connection Message" -e FTS_SAVE_COT_TO_DB="True" -v fts_data:/data --name fts --restart unless-stopped freetakteam/freetakserver:1.1.2
 ```
 
 ### Ports
@@ -24,7 +24,21 @@ FTS_ARGS: Arguments to pass on the command line, "-AutoStart True" is passed aut
 ### Storage
 All data in this container is stored in `/data`.  This directory will need to be stored to a volume if you wish to persist data between updates.
 
-
+If you use a storage volume you may need to run `docker inspect fts_data` to find where it saved the data.  It will return something similar to this:
+```
+root@fts:/home/ubuntu# docker inspect fts_data
+[
+    {
+        "CreatedAt": "2020-11-12T03:32:53Z",
+        "Driver": "local",
+        "Labels": {},
+        "Mountpoint": "/var/lib/docker/volumes/fts_data/_data",
+        "Name": "fts_data",
+        "Options": {},
+        "Scope": "local"
+    }
+]
+```
 
 
 ## Additional Architectures
