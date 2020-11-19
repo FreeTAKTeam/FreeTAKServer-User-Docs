@@ -49,6 +49,10 @@ WantedBy=multi-user.target
 
 ```
 
+And reload systemd so it will load new unit file:
+```
+systemd daemon-reload
+```
 
 ### Start the FreeTAKServer.service
 ```
