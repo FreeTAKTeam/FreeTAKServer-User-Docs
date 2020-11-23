@@ -4,9 +4,8 @@
 To use ExCheck, you need to have a server that supports it. FTS supports the plugin since version 1.3
 
 ## Wintak
-in Wintak you can find the plugin as ExCheck under the plugin tab. 
-On the top of the window yoou will see two buttins, a list of active checklists shows up below them.
-
+in Wintak (since version 4.1) you can find the plugin as ExCheck under the plugin tab. 
+On the top of the window you will see two buttons. a list of active checklists shows up below them.
 
 with the buttons You can:
 - create a new Template
