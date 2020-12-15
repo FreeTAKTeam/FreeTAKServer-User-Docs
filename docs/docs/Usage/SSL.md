@@ -8,11 +8,14 @@ TBD
 this method requires understanding of complex console commands, we DO NOT provide support on issues with certs generations.
 We are currently exploring tools like YAOG (see https://github.com/patrickpr/YAOG) to simplify the process.
 
-a. generate the certificate authority
-b. generate the server certificate
-c. generate the client certificate
-d. convert the client certificate into a .p12 format
-e. create a Thruststore in p12 format
+those are the steps
+- a. generate the certificate authority
+- b. generate the server certificate
+- c. generate the client certificate
+- d. convert the client certificate into a .p12 format
+- e. create a Thruststore in p12 format
+
+![Expected File structure](https://github.com/FreeTAKTeam/FreeTakServer/blob/master/docs/FTS%20Certifications%20structure.png)
 
 ### generate the Certificate Authority (CA)
 0. you download and install openSSL
