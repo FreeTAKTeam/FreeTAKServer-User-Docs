@@ -5,7 +5,8 @@ SSL is a  protocol for secure comunication, FTS supports this since version 1.3.
 TBD
 
 ## Generate a SSL connection for your server
-this method requires understanding of complex console commands, we DO NOT provide support on issues with certs generations
+this method requires understanding of complex console commands, we DO NOT provide support on issues with certs generations.
+We are currently exploring tools like YAOG (see https://github.com/patrickpr/YAOG) to simplify the process.
 
 a. generate the certificate authority
 b. generate the server certificate
