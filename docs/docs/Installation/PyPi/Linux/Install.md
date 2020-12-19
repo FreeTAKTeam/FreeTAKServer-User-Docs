@@ -15,6 +15,12 @@ sudo apt update && sudo apt install python3 && sudo apt install python3-pip
 sudo apt install python3-dev python3-setuptools build-essential python3-gevent python3-lxml libcairo2-dev
 ```
 
+### Install 'wheel'
+```bash
+sudo pip3 install wheel
+```
+
+
 ### Install FreeTAKServer
 
 ```bash
