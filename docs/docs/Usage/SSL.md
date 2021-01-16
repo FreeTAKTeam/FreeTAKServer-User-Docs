@@ -2,7 +2,7 @@
 SSL is a  protocol for secure comunication, FTS supports this since version 1.3.
 
 ## Activate your FTS's SSL service
-TBD
+since version 1.5, FTS feature a complete automation of SSL generation and deployment. Please see the user manual.
 
 ## Generate a SSL connection for your server
 this method requires understanding of complex console commands, we DO NOT provide support on issues with certs generations.
