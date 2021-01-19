@@ -3,8 +3,9 @@
 ![FTS Logo](FreeTakServerLogo.png)
 
 FTS is a Python3 implementation of the TAK Server for devices like CivTAK , WinTAK and ITAK, it is cross-platform.
-FreeTAKServer, as of Release 1.3, provides Situational Awareness and other capabilities such as:
-
+FreeTAKServer, as of Release 1.5, provides Situational Awareness and other capabilities such as:
+-  Web administration 
+- Federation Service (Connecting two or more FTS instances)
 -Data Package upload and retrieval
 - Image transfer and storage
 - COT recording in a database
@@ -14,9 +15,6 @@ FreeTAKServer, as of Release 1.3, provides Situational Awareness and other capab
 - API for creation of information such as emergency, Enemy units and so on
 
 The following features are planned:
-
-- Web administration 
-- Federation Service (Connecting two or more FTS instances)
 - Plugin System
 - Data Sync / mission planning
 - Porting to Android
