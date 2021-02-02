@@ -22,9 +22,10 @@ OPTIONAL this should not be necessary using FTS 1.5
 sudo pip3 install wheel pycairo
 ```
 ### delete previous installation
+required. Upgrade will not work.
 ```bash
-sudo pip3 uninstall FreeTAKServer
-sudo pip3 unistall FreeTAKServer-UI
+sudo pip3 uninnstall FreeTAKServer
+sudo pip3 uninstall FreeTAKServer-UI
 ```
 
 Delete the database 
