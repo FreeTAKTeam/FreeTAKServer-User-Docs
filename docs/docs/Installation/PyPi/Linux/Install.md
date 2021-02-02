@@ -24,7 +24,7 @@ sudo pip3 install wheel pycairo
 ### delete previous installation
 required. Upgrade will not work.
 ```bash
-sudo pip3 uninnstall FreeTAKServer
+sudo pip3 uninstall FreeTAKServer
 sudo pip3 uninstall FreeTAKServer-UI
 ```
 
