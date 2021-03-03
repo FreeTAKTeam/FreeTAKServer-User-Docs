@@ -1,22 +1,36 @@
 # FTS Installation with Android
-FTS 1.6 supports Android deployment. The following instructions refers to a pre-beta version, you install it at your own risk
+FTS 1.6 supports Android deployment. The following instructions refers to a pre-beta version (1.6.6), you install it at your own risk
 
-- download the APK [installation package](https://ssna.box.com/s/6375rsnp2eftxnulonz7h0byduqjyd7l) to  your phone
+- download the APK [installation package](https://ssna.box.com/s/qkiltrjvy30l047yg7qisdnlz2ne6zjq) to  your phone
 - start the installation using Android
 - **open the configuration of the APP and allow storage rights: in the app icon, click on the info, scroll down to "permission", and allow storage. Failure to do so will stop the APP to work!!!!**
 - Start the the FTS app
 - set your devices IP in the text box
 - Set the slider to "ON"
 - In the notifications you will see that FTS is running as a service in background
-- Open your network connection and note your IP (e.g. 0.0.0.0)
+- Open your network connection and note your IP (e.g. 192.168.1.25)
 - On a separate phone, open ATAK and create a new connection
 - Set  connection to TCP, to the previosly noted IP and port **15777**
 
-UI setup:
-- install UI
-- in config.py of UI set IP as device IP
+## UI Setup
+since 1.6 you can now run the UI independently from the backend. THis allow you to install your web Ui centrally and to manage several instances of FTS.
+
+- install UI with this command
+```
+sudo python3 -m pip install FreeTAKServer-UI
+```
+- to find where your UI is installed you run
+```pip show FreeTAKServer-UI```
+- in [INSTALLPATH]/config.py  set line 29 IP as device IP. e.g. REMEMBER THAT THIS IP MUST BE VISIBLE TO THE UI MACHINE
+```
+    # this IP will be used to connect with the FTS API
+    IP = '192.168.1.25'
+```
 - start UI server
+```sudo FLASK_APP=/usr/local/lib/python3.8/dist-packages/FreeTAKServer-UI/run.py python3 /usr/local/lib/python3.8/dist-packages/FreeTAKServer-UI/run.py```
+- Open a browser to [UIIP]:5000
 - login with default creds(admin, password)
+- you can now controll your FTS Android Edition from this UI 
 
 this has been tested with Android 9, 10, 11
 
@@ -31,4 +45,4 @@ Troubleshooting:
 
 # Notes
 * Dynamic DP IP changing in UI currently isn't functional
-* Federation as the server isn't functional
+* Federation as the server isn't functional, you can still connect your Android Edition instance as a client to another regular FTS.  
