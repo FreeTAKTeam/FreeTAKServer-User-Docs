@@ -13,7 +13,8 @@ FTS 1.6 supports Android deployment. The following instructions refers to a pre-
 - Set  connection to TCP, to the previosly noted IP and port **15777**
 
 ## UI Setup
-since 1.6 you can now run the UI independently from the backend. THis allow you to install your web Ui centrally and to manage several instances of FTS.
+FTS  Android Edition has a minimal user interface, allowing to start and stop the FTS (including all the services).  For advanced management you will need to install the web UI.
+since 1.6 you can now run the UI independently from the backend. THis allow you to install your web UI centrally and to manage several instances of FTS.
 
 - install UI with this command
 ```
