@@ -30,5 +30,5 @@ Troubleshooting:
 2. ensure once again that storage permissions are enables
 
 # Notes
-Dynamic DP IP changing in UI currently isn't functional
-Federation as the server isn't functional
+* Dynamic DP IP changing in UI currently isn't functional
+* Federation as the server isn't functional
