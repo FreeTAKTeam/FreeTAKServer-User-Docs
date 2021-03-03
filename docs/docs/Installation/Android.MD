@@ -1,5 +1,5 @@
 # FTS Installation with Android
-FTS 1.6 supports Android deployment. The following instructions refers to a pre-beta version (1.6.6), you install it at your own risk
+FTS 1.6 supports Android deployment. The following instructions refers to a pre-beta version (1.6.6), you install it at your own risk. This has been tested with Android 9, 10, 11 and Samsung S7, S8 and S9.
 
 - download the APK [installation package](https://ssna.box.com/s/qkiltrjvy30l047yg7qisdnlz2ne6zjq) to  your phone
 - start the installation using Android
@@ -33,17 +33,17 @@ sudo python3 -m pip install FreeTAKServer-UI
 - login with default creds(admin, password)
 - you can now controll your FTS Android Edition from this UI 
 
-this has been tested with Android 9, 10, 11
 
-changes:
-- runs now as a service
-- UI improved with sliders and spy
-- Icon added
-
-Troubleshooting:
+# Troubleshooting:
 1. ensure you have the following paths /FreeTAKServer/certs/ClientPackages, /FreeTAKServer/logs
 2. ensure once again that storage permissions are enables
 
 # Notes
 * Dynamic DP IP changing in UI currently isn't functional
 * Federation as the server isn't functional, you can still connect your Android Edition instance as a client to another regular FTS.  
+
+# changes:
+- runs now as a service
+- UI improved with sliders and spy
+- Icon added
+- Splashscreen added
