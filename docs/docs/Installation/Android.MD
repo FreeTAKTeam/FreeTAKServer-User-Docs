@@ -28,3 +28,7 @@ changes:
 Troubleshooting:
 1. ensure you have the following paths /FreeTAKServer/certs/ClientPackages, /FreeTAKServer/logs
 2. ensure once again that storage permissions are enables
+
+# Notes
+Dynamic DP IP changing in UI currently isn't functional
+Federation as the server isn't functional
