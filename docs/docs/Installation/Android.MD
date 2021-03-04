@@ -16,9 +16,9 @@ FTS 1.6 supports Android deployment. The following instructions refers to a pre-
 FTS  Android Edition has a minimal user interface, allowing to start and stop the FTS (including all the services).  For advanced management you will need to install the web UI.
 since 1.6 you can now run the UI independently from the backend. THis allow you to install your web UI centrally and to manage several instances of FTS.
 
-- install UI with this command
+- install the UI with this command
 ```
-sudo python3 -m pip install FreeTAKServer-UI
+sudo python3 -m pip install FreeTAKServer-UI=0.1.6.5
 ```
 - to find where your UI is installed you run
 ```pip show FreeTAKServer-UI```
@@ -34,9 +34,14 @@ sudo python3 -m pip install FreeTAKServer-UI
 - you can now controll your FTS Android Edition from this UI 
 
 
-# Troubleshooting:
-1. ensure you have the following paths /FreeTAKServer/certs/ClientPackages, /FreeTAKServer/logs
-2. ensure once again that storage permissions are enables
+# Troubleshooting
+if FTS crashes at the start, please check out the following
+
+1. ensure you have the following paths 
+```/FreeTAKServer/certs/ClientPackages
+/FreeTAKServer/logs
+```
+2. ensure once again that storage permissions are enabled
 
 # Notes
 * Dynamic DP IP changing in UI currently isn't functional
