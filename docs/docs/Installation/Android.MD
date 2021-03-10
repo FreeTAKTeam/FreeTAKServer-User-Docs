@@ -1,7 +1,7 @@
 # FTS Installation with Android
 FTS 1.6 supports Android deployment. The following instructions refers to a pre-beta version (1.6.6), you install it at your own risk. This has been tested with Android 9, 10, 11 and Samsung S7, S8 and S9.
 
-- download the APK [installation package](https://ssna.box.com/s/qkiltrjvy30l047yg7qisdnlz2ne6zjq) to  your phone
+- download the APK installation package from github to  your phone
 - start the installation using Android
 - **open the configuration of the APP and allow storage rights: in the app icon, click on the info, scroll down to "permission", and allow storage. Failure to do so will stop the APP to work!!!!**
 - Start the the FTS app
@@ -37,7 +37,7 @@ sudo python3 -m pip install FreeTAKServer-UI=0.1.6.5
 # Troubleshooting
 if FTS crashes at the start, please check out the following
 
-1. ensure you have the following paths 
+1. ensure you have the following paths on your phone
 ```/FreeTAKServer/certs/ClientPackages
 /FreeTAKServer/logs
 ```
