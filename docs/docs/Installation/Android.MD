@@ -1,5 +1,5 @@
 # FTS Installation with Android
-FTS 1.6 supports Android deployment. The following instructions refers to a pre-beta version (1.6.6), you install it at your own risk. This has been tested with Android 9, 10, 11 and Samsung S7, S8 and S9.
+FTS 1.6 supports Android deployment. The following instructions refers to a initial version (1.6.6), you install it at your own risk. This has been tested with Android 9, 10, 11 and Samsung S7, S8 and S9.
 
 - download the APK installation package from github to  your phone
 - start the installation using Android
