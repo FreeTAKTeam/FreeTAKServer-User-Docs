@@ -1,5 +1,5 @@
+ExCheck
 
-# About
 **ExCheck** is a plugin for ATAK and WinTAK. It allows users to collaborate on the execution and monitoring of tasks based on templates. 
 To use ExCheck, you need to have a server that supports it. FTS supports the plugin since version 1.3. Version 1.5 supports also  ExCheck in the WebUI
 
