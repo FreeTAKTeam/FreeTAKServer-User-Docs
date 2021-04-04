@@ -52,8 +52,7 @@ We support a [public instance](https://www.reddit.com/r/ATAK/wiki/index/freetaks
 
 ### Tell us what you think!
 To discuss with the developer team you may use:
-
-- The subreddit : https://www.reddit.com/r/ATAK/ 
-- The public ATAK Discord Server: https://discordapp.com/invite/XEPyhHA
+- The [subreddit](https://www.reddit.com/r/ATAK/)
+- The [public ATAK Discord Server](https://discordapp.com/invite/XEPyhHA)
 
 
