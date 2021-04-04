@@ -1,4 +1,4 @@
-## REST API - Internal
+# REST API - Internal
 Internal APIs are primarly used by the FTS UI to communicate with the server. See also the [REST API DOC](REST_APIDoc.md)
 In the current release (1.5.12), FTS supports following API :
   * authenticate
@@ -10,25 +10,25 @@ In the current release (1.5.12), FTS supports following API :
   * DataPackageTable
   * MissionTable
   
-### Authorization: API
+## Authorization: API
 to use the API you need to have a REST API key.
 the authorization is placed in the header of the message.
 Authorization: Bearer [YOUR_API_KEY]
 
 > you need to use the string 'Bearer' before your API KEY
 
-### Authorization Websocket
+## Authorization Websocket
 to use websocket events you need to trigger
 the event authenticate after connection and pass
 as the body of the message ```{"Authorization": [YOUR WEBSOCKET KEY]}```
 
-## connect
-### description
+# connect
+## description
 event triggered on initial connection to server<br />
 Event: `connect` (this is a special event as it is called automatically on connection)<br />
 Subscription: `connectUpdate`
 
-### returns
+## returns
 ```json
 {
 "starttime": "", // time at which server was started
@@ -36,29 +36,29 @@ Subscription: `connectUpdate`
 }
 ```
 
-## authenticate
-### description
+# authenticate
+## description
   event used to authenticate new clients in the websocket<br />
   Event: `authenticate` <br />
   Subscription: `authentication`
-### returns
+## returns
   will call the event authentication on client with message body
 ```{'successful': 'True'/'False'}``` dependent on whether or not
 the authentication was accepted.
 
-### parameters
+## parameters
 a JSON body in the following format
 ```json
 {"Authorization": [YOUR WEBSOCKET KEY]}
 ```
-## users
-### description
+# users
+## description
 event used to access list of connected client aswell as data
 relating to each client.<br />
  Event: `users` <br />
  Subscription: `userUpdate`
 
-### returns
+## returns
 a JSON message containing connected clients
 ```json
 {
@@ -68,15 +68,15 @@ a JSON message containing connected clients
   ]
 }
 ```
-### parameters
+## parameters
 None
 
-## systemUser
+# systemUser
 retrieve all system users and their associated information<br />
 Event: `systemUser` <br />
 Subscription: `systemUserUpdate`
  
-### returns
+## returns
 system user information
 ```json
 {
@@ -88,18 +88,18 @@ system user information
 }
 ```
 
-### parameters
+## parameters
 None
 
-## addSystemUser
-### description
+# addSystemUser
+## description
 add one or many system users to the server<br />
 Event: `addSystemUser`
 
-### returns
+## returns
 None
 
-### parameters
+## parameters
 ```json
 {
 	"systemUsers": [
@@ -110,15 +110,15 @@ None
 }
 ```
 
-## removeSystemUser
-### description
+# removeSystemUser
+## description
 remove a system user from the server<br />
 Event: `removeSystemUser`
 
-### returns
+## returns
 None
 
-### parameters
+## parameters
 ```json
 {
   "systemUsers": [
@@ -128,14 +128,14 @@ None
   ]
 }
 ```
-## logs
-### description
+# logs
+## description
 event used to retrieve recent error log entries
 from the server<br />
 Event: `logs` <br />
 Subscription: `logUpdate`
 
-### returns
+## returns
 recent error logs in JSON to the client event `logUpdate` with data in the following format
 ```json
 {
@@ -145,34 +145,33 @@ recent error logs in JSON to the client event `logUpdate` with data in the follo
 }
 ```
 
-### parameters
+## parameters
 the timestamp on the most recent log entry in format `%Y-%m-%d %H:%M:%S,%f`
 
-## events
-### description
+# events
+## description
 event used to retrieve last 5 events<br />
 Event: `events` <br />
 Subscription: `eventsUpdate`
 
-
-### returns
+## returns
 ```json
 {
   "events": ["server event 1", "server event 2", "server event 3", "server event 4", "server event 5"]
 }
 ```
  
-### parameters
+## parameters
 None
 
-## serviceInfo
-### description
+# serviceInfo
+## description
 event used to retrieve information about all services including
 their current status and port<br />
 Event: `serviceInfo` <br />
 Subscription: `serviceInfoUpdate`
 
-### returns
+## returns
 status and port of each service aswell as the server starttime to the client event `serviceInfoUpdate`
 with body data in the following format
 ```json
@@ -206,18 +205,18 @@ with body data in the following format
     "IP": "127.0.0.1"
 }
 ```
-### parameters
+## parameters
 None
 
-## serverHealth
-### description
+# serverHealth
+## description
 event used to retrieve information regarding
 the status of the server hardware including
 cpu, disk and memory usage.<br />
 Event: `serverHealth` <br />
 Subscription: `serverHealthUpdate`
 
-### returns
+## returns
 current hardware usage to the client event `serverHealthUpdate` with body,
 ```json
 {
@@ -227,17 +226,17 @@ current hardware usage to the client event `serverHealthUpdate` with body,
 }
 ```
 
-### parameters
+## parameters
 None
  
-## systemStatus
-### description
+# systemStatus
+## description
 event used to execute test of all currently active
 services and return their respective status.<br />
   Event: `systemStatus` <br />
   Subscription: `systemStatusUpdate`
 
-### returns
+## returns
 current and expected status of all services on the server in JSON format 
 to the event `systemStatusUpdate` on the client with the body of the message 
 in the following format
@@ -273,16 +272,16 @@ in the following format
 }
 ```
 
-### parameters
+## parameters
 None
  
-## changeServiceInfo
-### description
+# changeServiceInfo
+## description
 Event used to change the status of each service running on the server<br />
 Event: `changeServiceInfo` <br />
 Subscription: `systemStatusUpdate`
  
-### returns
+## returns
 ```json
 {
 "services": {
@@ -307,7 +306,7 @@ Subscription: `systemStatusUpdate`
 }
 ```
 
-### parameters
+## parameters
 accepts JSON data containing information regarding the desired status of each service in the following format
 ```json
 {
@@ -338,11 +337,11 @@ accepts JSON data containing information regarding the desired status of each se
 `port`(optional): the port on which the service should be listening eg: `8089` <br />
 not all services need to be in every message only those you would like to change
  
-## systemUsers
+# systemUsers
 Event used to retrieve all system users<br />
   Event: `systemUsers` <br />
   Subscription: `systemUsersUpdate`
-### returns
+## returns
 the metadata of each user
 ```json
 {
@@ -354,17 +353,17 @@ the metadata of each user
 }
 ```
 
-### parameters
+## parameters
 None
 
-## addSystemUsers
+# addSystemUsers
 used to create a new system user on the server<br />
 Event: `addSystemUsers` <br />
 
-### returns
+## returns
 None
 
-### parameters
+## parameters
 ```json
 {
   "systemUsers":[
@@ -396,16 +395,17 @@ None
 ```
 
 * uid: uid of user to remove
-## DataPackageTable
-### description
+* 
+# DataPackageTable
+## description
 Endpoint used to access data regarding DataPackages
 
-#### methods
+### methods
 * POST
 * GET
 * DELETE   
 
-### GET
+## GET
 returns JSON data containing information regarding all DataPackages currently on server
 ```json
 {
@@ -416,12 +416,12 @@ returns JSON data containing information regarding all DataPackages currently on
 }
 ```
 
-### POST
+## POST
 accepts the zipped form of the file in the body of the message and the following arguments in the url
 * filename: the name of the zipped file
 * creatorUid(optional): the uid of the user associated with the DataPackage defaults to ```server``` if none is provided
   
-### DELETE
+## DELETE
 accepts the following JSON data
 ```json
 {
@@ -433,7 +433,7 @@ accepts the following JSON data
 ```
 the hash values are the hashes of DataPackages to be deleted
 
-### PUT
+## PUT
 accepts the following JSON data
 ```json
 {
@@ -447,16 +447,16 @@ accepts the following JSON data
 * Keywords: optional new keywords of DataPackage if not set keywords will not be changed
 * Privacy: optional new privacy of DataPackage if not set privacy will not be changed must be 1(Private) or 0(Public)
 
-## MissionTable
-### description 
+# MissionTable
+## description 
 Endpoint used to access data regarding mission packages
 
-### methods
+## methods
 * GET
 * POST
 * DELETE
 
-### GET
+## GET
 return JSON data containing information about all current Missions
 with the following format
 ```json
@@ -506,22 +506,22 @@ with the following format
     "nodeId": "6ff99444fa124679a3943ee90308a44c9d794c02-e5a5-42b5-b4c8-625203ea1287"
 }
 ```
-### POST
+## POST
 not yet implemented
 
-### DELETE
+## DELETE
 not yet implemented
 
-## ExCheck table
+# ExCheck table
 Endpoint used to access data regarding ExCheck items such as checklists and templates
 
-### POST
+## POST
 creates a template on the server from a supplied xml file accepting the following URL encoded values:
 * clientUid: the uid of the client to be recognized as the creator of the template
 
 body of the message should be the xml of the template
 
-### DELETE
+## DELETE
 accepts the following data
 ```json
 {
@@ -534,7 +534,7 @@ accepts the following data
 ```
 `uid`: the uid of those Checklists and Templates to be deleted
 
-### GET
+## GET
 return JSON data containing the following information about Checklists and Templates present on the server
 ```json
 {
@@ -566,10 +566,10 @@ return JSON data containing the following information about Checklists and Templ
 }
 ```
 
-## FederationTable
+# FederationTable
 endpoint used to access federation objects
 
-### GET
+## GET
 return JSON data containing the following information regarding current checklists and templates present on the server
 ```json
 {
@@ -609,7 +609,7 @@ return JSON data containing the following information regarding current checklis
 }
 ```
 
-### POST
+## POST
 create a new federation configuration
 ```json
 {
@@ -628,7 +628,7 @@ create a new federation configuration
 }
 ```
 
-### DELETE
+## DELETE
 delete an existing federation configuration
 ```json
 {
@@ -641,7 +641,7 @@ delete an existing federation configuration
 }
 ```
 
-### PUT
+## PUT
 modify an existing federation configuration
 ```json
 {
