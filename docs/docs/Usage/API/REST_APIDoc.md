@@ -1,4 +1,4 @@
-# FreeTAKServer REST API Documentation
+#REST API - Public
 the FreeTAKServer REST API is a human readeble approach to the TAK world. The API allows you to easily connect third parties to the TAK family, without the need to understand the complexity of the COT structure or what a TCP connection is.  FTS also supports an [Internal API](REST_API_InternalDoc.md).
 
 ## How FTS manages the information
