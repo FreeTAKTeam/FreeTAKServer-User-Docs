@@ -14,17 +14,17 @@ FreeTAKServer, as of Release 1.5, provides Situational Awareness and other capab
 - SSL Encryption
 - Command Line Interface for start and stop services
 - API for creation of information such as emergency, Enemy units and so on
+- Android Edition
 
 The following features are planned:
 - Plugin System
 - Data Sync / mission planning
-- Porting to Android
 
-see roadmap link below
+Check out our roadmap [@FreeTakServer#25](https://github.com/FreeTAKTeam/FreeTakServer/issues/25) to see what is planned
 
 ## Community 
 This project is currently in *Early Production Stage*.
-Check out our roadmap [@FreeTakServer#25](https://github.com/FreeTAKTeam/FreeTakServer/issues/25) to see what is planned
+
 If you have any issues don't hesitate to [bring it up](https://github.com/Tapawingo/FreeTakServer/issues), as FreeTAKServer is in continuous development.
 
 ### Donate Back
