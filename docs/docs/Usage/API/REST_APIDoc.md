@@ -6,6 +6,7 @@ FTS will send the  information coming trough the API to all the connected client
 
 ## List of supported API
 In the current release (1.7), FTS supports following API:
+
   * help
   * ManageGeoObject/postGeoObject
   * ManageGeoObject/putGeoObject
@@ -70,6 +71,7 @@ retrieve API version and supported endpoints
   
 
 ##### Example  return data (1.7)
+
 ```json
 {"APIVersion": "1.1", 
 "SupportedEndpoints": 
