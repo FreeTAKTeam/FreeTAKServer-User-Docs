@@ -1,4 +1,4 @@
-# Pub Server
+# Connecting ATAK to Pub Server
 the FTS team  supports a public instance of FTS with the last version installed so that you can test it.
 
 ## Configure ATAK for FreeTakServer on the Pub server
