@@ -1,8 +1,8 @@
 # SSL
-SSL is a  protocol for secure comunication, FTS supports this since version 1.3.
+SSL is a  protocol for secure comunication, FTS supports it since version 1.3.
 
 ## Activate your FTS's SSL service
-since version 1.5, FTS feature a complete automation of SSL generation and deployment. Please see the user manual.
+since version 1.5, FTS features a complete automation of SSL generation and deployment. This is easier, so consider using that approach.  Please see the user manual [here](https://github.com/FreeTAKTeam/FreeTakServer/blob/master/docs/FTS%20UI%20Documention.pdf).
 
 ## Generate a SSL connection for your server
 this method requires understanding of complex console commands, we DO NOT provide support on issues with certs generations.
