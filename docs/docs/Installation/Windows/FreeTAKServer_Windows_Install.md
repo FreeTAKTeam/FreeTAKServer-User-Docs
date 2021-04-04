@@ -55,7 +55,7 @@ https://www.python.org/downloads/windows/
 
 Choose the installer option.
 
-[<img src="img/pythoninstall.jpg" width="800"/>](img/pythoninstall.jpg)
+[<img src="img/pythoninstall.jpg" width="800"/>](pythoninstall.jpg)
 
 Check pip, tcl/tk and IDLE and the Python test suite.
 
@@ -63,7 +63,7 @@ Check pip, tcl/tk and IDLE and the Python test suite.
 
 Make sure you add Python to environment variables for easy use.
 
-[<img src="img/advanced.jpg" width="800"/>](img/advanced.jpg)
+[<img src="img/advanced.jpg" width="800"/>](advanced.jpg)
 
 2. 
 
@@ -75,7 +75,7 @@ Now check that python and pip are installed and working correctly. *You should b
 > pip --version
 ```
 
-[<img src="img/chkpypip.jpg" width="800"/>](img/chkpypip.jpg)
+[<img src="img/chkpypip.jpg" width="800"/>](chkpypip.jpg)
 
 3. 
 
