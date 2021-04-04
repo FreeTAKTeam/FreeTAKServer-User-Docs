@@ -55,15 +55,15 @@ https://www.python.org/downloads/windows/
 
 Choose the installer option.
 
-[<img src="img/pythoninstall.jpg" width="800"/>](pythoninstall.jpg)
+[<img src="pythoninstall.jpg" width="800"/>](pythoninstall.jpg)
 
 Check pip, tcl/tk and IDLE and the Python test suite.
 
-[<img src="img/features.jpg" width="800"/>](img/features.jpg)
+[<img src="features.jpg" width="800"/>](features.jpg)
 
 Make sure you add Python to environment variables for easy use.
 
-[<img src="img/advanced.jpg" width="800"/>](advanced.jpg)
+[<img src="advanced.jpg" width="800"/>](advanced.jpg)
 
 2. 
 
@@ -75,7 +75,7 @@ Now check that python and pip are installed and working correctly. *You should b
 > pip --version
 ```
 
-[<img src="img/chkpypip.jpg" width="800"/>](chkpypip.jpg)
+[<img src="chkpypip.jpg" width="800"/>](chkpypip.jpg)
 
 3. 
 
@@ -363,4 +363,4 @@ Now to run at startup: Go to Run (`WINDOWS + R`) and Type `shell:startup`, and p
 
 COT error v1.5.13
 
-[<img src="img/CotError.png" width="800"/>](img/CotError.png)
+[<img src="CotError.png" width="800"/>](CotError.png)
