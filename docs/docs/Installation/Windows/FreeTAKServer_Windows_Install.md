@@ -1,22 +1,8 @@
 # FreeTAKServer Install On Windows Computer
 
-Below is the installation commands and comments for the installation of FreeTAKServer on a windows computer:
-
-## More Info
-FreeTAKServer documentation for end users
-
-| Description                    | Link                                                                         |
-|--------------------|------------------------------------------------------------------------------------------|
-| User Docs:         | https://freetakteam.github.io/FreeTAKServer-User-Docs/                                   |
-| PyPi Install Docs: | https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/PyPi/Linux/Install/   |
-| Server Download:   | https://github.com/FreeTAKTeam/FreeTakServer                                             |
-| Server Releases:   | https://github.com/FreeTAKTeam/FreeTakServer/releases                                    |
+Below is the installation commands and comments for the installation of FreeTAKServer on a windows computer. Please notcie, the FTS team is not supporting Windows as an official OS for FTS.
 
 
-## RPiFTS Series
-GHOST_DA-B6 has created a set of videos on youtube detailing how to install and set up FTS on raspberry pi SBC's.
-
-You can view his RPiFTS video series on his [channel](https://www.youtube.com/channel/UC--WpY--HV7PymMWLgfflZA).
 
 ## release version 1.5.12
 
@@ -364,3 +350,19 @@ Now to run at startup: Go to Run (`WINDOWS + R`) and Type `shell:startup`, and p
 COT error v1.5.13
 
 [<img src="CotError.png" width="800"/>](CotError.png)
+
+## More Info
+FreeTAKServer documentation for end users
+
+| Description                    | Link                                                                         |
+|--------------------|------------------------------------------------------------------------------------------|
+| User Docs:         | https://freetakteam.github.io/FreeTAKServer-User-Docs/                                   |
+| PyPi Install Docs: | https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/PyPi/Linux/Install/   |
+| Server Download:   | https://github.com/FreeTAKTeam/FreeTakServer                                             |
+| Server Releases:   | https://github.com/FreeTAKTeam/FreeTakServer/releases                                    |
+
+
+## RPiFTS Series
+GHOST_DA-B6 has created a set of videos on youtube detailing how to install and set up FTS on raspberry pi SBC's.
+
+You can view his RPiFTS video series on his [channel](https://www.youtube.com/channel/UC--WpY--HV7PymMWLgfflZA).
