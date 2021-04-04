@@ -1,4 +1,4 @@
-## List of supported API
+## REST API - Internal
 Internal APIs are primarly used by the FTS UI to communicate with the server. See also the [REST API DOC](REST_APIDoc.md)
 In the current release (1.5.12), FTS supports following API :
   * authenticate
