@@ -83,7 +83,7 @@ retrieve API version and supported endpoints
 "/getZoneCoT", "/ManageChat", "/RecentCoT", "/APIUser", "/Clients", "/Alive", "/help", "/URL"]}
 ```
 
-  ### manageGeoObject 
+### manageGeoObject 
   A GeoObject is an element place on a map. It has a name, characteristics and an attitude. 
   
   #### putGeoObject
