@@ -80,7 +80,7 @@ you need to change the `DBFilePath` value to something valid, if you are running
 Original Value
 ```python
     # this should be set before startup
-    DBFilePath = str(r'/home/root/FTSDataBase.db')
+    DBFilePath = str(r'/opt/FTSDataBase.db')
 ```
 
 As roots Home Folder
@@ -89,10 +89,34 @@ As roots Home Folder
     DBFilePath = str(r'/root/FTSDataBase.db')
 ```
 
+To switch too a MySQL database
+```python
+    # this should be set before startup
+    DBFilePath = str('user:pass@localhost/dbname')
+```
+
+And then under
+```
+sudo nano /usr/local/lib/python3.7/dist-packages/FreeTAKServer/controllers/configuration/DatabaseConfiguration.py
+```
+
+Change
+```python
+DataBaseType = str('sqlite:///')
+```
+To
+```python
+DataBaseType = str('mysql://')
+```
+
 ### Configure Web UI
 UI configuration can be found under FreeTAKServer-UI/config.py
 ```
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + '/root/FTSDataBase.db'
+```
+To use a MySQL database change the above line as follows
+```python
+SQLALCHEMY_DATABASE_URI = 'mysql://' + 'user:pass@localhost/dbname'
 ```
 
 set the IP to your external IP
