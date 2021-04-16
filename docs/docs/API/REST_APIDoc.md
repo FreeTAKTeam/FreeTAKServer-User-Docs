@@ -86,13 +86,13 @@ retrieve API version and supported endpoints
 ### manageGeoObject 
   A GeoObject is an element place on a map. It has a name, characteristics and an attitude. 
   
-  #### putGeoObject
+#### putGeoObject
   
   * verb: PUT
   * endpoint /ManageGeoObject/postGeoObject
   * returns: UID
   
-  #### Parameters
+#### Parameters
 * GeoObject: It's the information that will determine which type will be placed on the tak maps including his icon. Please see API documentation for a list of valid entries. Since 1.7 you can also use nicknames for the geo objects.
 *  longitude: OPTIONAL the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where *West 77.08* is equal to '-77.08' in the API
 * latitude: OPTIONAL the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)
@@ -109,7 +109,7 @@ retrieve API version and supported endpoints
      - Big Arkansas River Park, Wichita
      - and so on
 
-   ##### Response
+##### Response
    * 200 Success: uid. you have create the geoObject
    * [MISSING PARAMETERNAME]: you have odmitted a parameter that is required
    * server error 500: you have probably missspelled the list of parameters (e.g geoObjects/ supported attitude). the names are case sensitive (!)
@@ -258,12 +258,13 @@ update an existing geoObject cohordinates (can also update other features)
 * endPoint: /ManageGeoObject/putGeoObject
 * returns: UID
 
- #### Parameters
- *  * REQUIRED*  uid: optional input parameter, need to be an Unique Id for this element, if not present will be  server generated, if sent ATAK will try to update an existing geoObject. Use ``putGeoObject`` instead
-* REQUIRED* GeoObject: It's the information that will determine which type will be placed on the tak maps including his icon. Please see API documentation for a list of valid entries.
-*REQUIRED*  longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where *West 77.08* is equal to '-77.08' in the API
-* REQUIRED* latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)
-* REQUIRED* attitude: the kind of expected behavior of the GeoObject (e.g friendly, hostile, unknown). Please see API documentation for a list of valid entries.
+#### Parameters
+
+*  **REQUIRED** uid: optional input parameter, need to be an Unique Id for this element, if not present will be  server generated, if sent ATAK will try to update an existing geoObject. Use ``putGeoObject`` instead
+* *REQUIRED* GeoObject: It's the information that will determine which type will be placed on the tak maps including his icon. Please see API documentation for a list of valid entries.
+*  **REQUIRED**  longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where *West 77.08* is equal to '-77.08' in the API
+*  **REQUIRED** latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)
+*  **REQUIRED**attitude: the kind of expected behavior of the GeoObject (e.g friendly, hostile, unknown). Please see API documentation for a list of valid entries.
 * How: the way in which this geo information has been acquired. Please see API documentation for a list of valid entries.
 * name: a string to ID the GeoObject on a map.
 * bearing: since 1.7, the direction expressed in degrees (1-360)   
@@ -321,7 +322,6 @@ NOTE: these should be provided in the form of url encoded variables
 "sender": "Admin"
 }
 ```
-
 ## ManageEmergency
 ### postEmergency
 create a emergency into the server
@@ -422,11 +422,12 @@ Manage a team member position
 
 ### putPresence
 Updates the location of a team member
-* verb: PUT
-* endPoint: /ManagePresence/putPresence
-* returns: UID
-  #### Parameters
-* uid: server generated Unique Id of this emergency
+ * verb: PUT
+ * endPoint: /ManagePresence/putPresence
+ * returns: UID
+ 
+ #### Parameters
+ * uid: server generated Unique Id of this emergency
   
  
 ## ManageRoute
