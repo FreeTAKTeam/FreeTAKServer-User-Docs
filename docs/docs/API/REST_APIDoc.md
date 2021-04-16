@@ -124,6 +124,7 @@ retrieve API version and supported endpoints
 * returns: UID
  
 #### Parameters
+
 * GeoObject: It's the information that will determine which type will be placed on the tak maps including his icon. Please see API documentation for a list of valid entries. Since 1.7 you can also use nicknames for the geo objects.
 *  longitude: OPTIONAL the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where *West 77.08* is equal to '-77.08' in the API
 * latitude: OPTIONAL the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)
@@ -268,6 +269,7 @@ update an existing geoObject cohordinates (can also update other features)
 * bearing: since 1.7, the direction expressed in degrees (1-360)   
 * distance": since 1.7, the distance in meters from the Lat/long 
 * timeout:the length, expressed in seconds  until the point will stale out. Default is 300 seconds or 5 minutes.
+* 
 ##### Example body
 ```
 {
@@ -282,7 +284,7 @@ update an existing geoObject cohordinates (can also update other features)
  * 200 with UID
 
 #### getGeoObject
-retrieve all geoObjects in a given radius
+retrieve in a array all geoObjects in a given radius. It uses JSON variables, not the json body
 
 * verb: GET
 * endPoint: /ManageGeoObject/getGeoObject
@@ -294,13 +296,16 @@ NOTE: these should be provided in the form of url encoded variables
  * latitude: latitude from which radius is calculated, default(0)
  * attitude: the attitude which will be filtered, default(any). see list of supported attitude above
 
+##### Example Variables
 ``` JSON Variables
   "longitude": -77.02385,
   "latitude": 38.999,
-  "radius"
+  "attitude": "Hostile"
+  "radius":500
  ```
  
   ## ManageChat
+  
   ### SendGeoChatObject
    * verb: POST
    * endPoint: /ManageChat/postChatToAll
