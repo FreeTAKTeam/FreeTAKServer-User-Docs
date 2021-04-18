@@ -219,7 +219,7 @@ retrieve API version and supported endpoints
 * "Ground"
   
 #####  GeoObjects Extensions for EMS
-Extensions since 1.7, not available in 1.5 
+**Extensions since 1.7**
 
 * "Gnd Equip Vehic Civilian", Nickname: Vehicle (OK)
 * "Gnd Equip Vehic Ambulance": "a-.-G-E-V-m" , Nickname: Ambulance (OK)
@@ -240,6 +240,23 @@ Extensions since 1.7, not available in 1.5
 * "Alarm/Security/Law Enforcement/Civil Disturbance or Disorder": "b-l-l-l-cd", Nickname: Disorder
 * "REFUGEES": "b-r-.-O-I-R" Nickname: Refugees
 * "VANDALISM/RAPE/LOOT/RANSACK/PLUNDER/SACK": "b-r-.-O-I-V" Nickname: Riot
+
+**extensions in 1.8**
+* Other incident geo": "a-.-X-i-g", , Nickname: geo incident
+* "Other incident geo avalanche": "a-.-X-i-g-a", Nickname: avalanche
+*   "Other incident geo earthquake": "a-.-X-i-g-e",  Nickname: earthquake
+* "Other incident geo landslide": "a-.-X-i-g-l",  Nickname: landslide
+*  "Other incident geo subsistance": "a-.-X-i-g-s",  Nickname: subsistance
+* "Other incident geo volcano": "a-.-X-i-g-v",  Nickname: volcano
+*  "Other incident geo eruption": "a-.-X-i-g-v-e",  Nickname: eruption
+*  "Other incident met drought": "a-.-X-i-m-d",  Nickname: drought
+*  "Other incident met cyclone": "a-.-X-i-m-c",  Nickname: cyclone
+*  "Other incident met tsunami": "a-.-X-i-m-n",  Nickname: tsunami
+*  "Other incident fire": "a-.-X-i-f",  Nickname: fire
+*  "Other incident medical public health": "a-.-X-i-h",  Nickname: medical incident
+* "Other incident transportation vehicle accident": "a-.-X-i-t-v-a",  Nickname: vehicle accident
+
+
 
 ##### List of supported Attitude
 * "friend"
