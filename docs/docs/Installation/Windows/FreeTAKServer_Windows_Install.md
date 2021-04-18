@@ -1,8 +1,9 @@
 # FreeTAKServer Install On Windows Computer
 
-Below is the installation commands and comments for the installation of FreeTAKServer on a windows computer. Please notcie, the FTS team is not supporting Windows as an official OS for FTS.
+Below is the installation commands and comments for the installation of FreeTAKServer on a windows computer. Please notcie, the FTS team is not supporting Windows as an official OS for FTS. please contact the original authors
 
-
+## FreeTAKServer Manager For Windows 
+[FreeTAKServer Manager]( https://github.com/Cale-Torino/FreeTAKServer_Manager)  has the ability to Start, Stop, Restart, Install and Uninstall the FreeTAKServer & FreeTAKServer-UI.
 
 ## release version 1.5.12
 
