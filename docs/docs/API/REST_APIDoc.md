@@ -320,14 +320,13 @@ NOTE: these should be provided in the form of url encoded variables
   "attitude": "Hostile"
   "radius":500
  ```
- 
-  ## ManageChat
+## ManageChat
   
-  ### SendGeoChatObject
+### SendGeoChatObject
    * verb: POST
    * endPoint: /ManageChat/postChatToAll
    
- #### Parameters
+#### Parameters
 * message: the text of the GeoChat message
 * Sender: the name of the chat's sender, changing this will also change the chat room for the client.
 
