@@ -233,7 +233,7 @@ retrieve API version and supported endpoints
 * "FOOD DISTRIBUTION": "b-r-.-O-O-O", Nickname: Food (OK, only label, need to implement nick) 
 * "Gnd Crowd Control Team": "a-.-G-U-i-l-cct" Nickname: Police (OK)
 * "Gnd Generators ": "a-.-G-U-i-p-gen" Nickname: Generator (empty shape)
-* "Other incident other": "a-.-X-i-o" Nickname: incident (OK, missing nick name?) 
+* "Other incident other": "a-.-X-i-o" Nickname: Incident (OK, missing nick name?) 
 * "Combat search &amp; rescue (CSAR)": "a-.-A-M-F-Q-H", Nickname: SAR (OK)
 * "Medevac": "a-.-G-U-C-V-R-E",, Nickname: Medevac  (OK)
 * "Alarm": "b-l",  Nickname: Alarm
