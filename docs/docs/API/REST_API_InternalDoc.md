@@ -1,6 +1,7 @@
 # REST API - Internal
 Internal APIs are primarly used by the FTS UI to communicate with the server. See also the [REST API DOC](REST_APIDoc.md)
 In the current release (1.5.12), FTS supports following API :
+
   * authenticate
   * users
   * logs
@@ -9,6 +10,7 @@ In the current release (1.5.12), FTS supports following API :
   * systemStatus
   * DataPackageTable
   * MissionTable
+  
   
 ## Authorization: API
 to use the API you need to have a REST API key.
@@ -23,6 +25,7 @@ the event authenticate after connection and pass
 as the body of the message ```{"Authorization": [YOUR WEBSOCKET KEY]}```
 
 # connect
+
 ## description
 event triggered on initial connection to server<br />
 Event: `connect` (this is a special event as it is called automatically on connection)<br />
@@ -217,7 +220,8 @@ Event: `serverHealth` <br />
 Subscription: `serverHealthUpdate`
 
 ## returns
-current hardware usage to the client event `serverHealthUpdate` with body,
+current hardware usage to the client event `serverHealthUpdate` with body
+
 ```json
 {
     "CPU": 56,
