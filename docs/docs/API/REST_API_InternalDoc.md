@@ -24,7 +24,7 @@ to use websocket events you need to trigger
 the event authenticate after connection and pass
 as the body of the message ```{"Authorization": [YOUR WEBSOCKET KEY]}```
 
-# connect
+# Connect
 
 ## description
 event triggered on initial connection to server<br />
@@ -39,11 +39,12 @@ Subscription: `connectUpdate`
 }
 ```
 
-# authenticate
+# Authenticate
 ## description
   event used to authenticate new clients in the websocket<br />
   Event: `authenticate` <br />
   Subscription: `authentication`
+  
 ## returns
   will call the event authentication on client with message body
 ```{'successful': 'True'/'False'}``` dependent on whether or not
@@ -54,7 +55,7 @@ a JSON body in the following format
 ```json
 {"Authorization": [YOUR WEBSOCKET KEY]}
 ```
-# users
+# Users
 ## description
 event used to access list of connected client aswell as data
 relating to each client.<br />
