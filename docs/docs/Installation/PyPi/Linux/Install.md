@@ -53,13 +53,17 @@ pip check FreeTakServer
 ### Configure FreeTAKServer
 
 Depending on the linux distro your config file for FTS will be in a python version dependant location.
+you can use pip to discover the location. Type:
+```
+ python3 -m pip show FreeTAKServer
+```
 
-If you are running python 3.7
+If you are running python 3.7 you would get
 ```
 /usr/local/lib/python3.7/dist-packages/FreeTAKServer/controllers/configuration/MainConfig.py
 ```
 
-If you are running python 3.8
+similarly, If you are running python 3.8
 
 ```
 /usr/local/lib/python3.8/dist-packages/FreeTAKServer/controllers/configuration/MainConfig.py
@@ -74,7 +78,7 @@ sudo nano /usr/local/lib/python3.7/dist-packages/FreeTAKServer/controllers/confi
 To exit nano `ctrl+x` and then enter `y` to save and hit enter.
 
 #### DBFilePath
-OPTIONAL this should not be necessary using FTS 1.5
+OPTIONAL this should not be necessary since FTS 1.5
 you need to change the `DBFilePath` value to something valid, if you are running as root, '/root' is a good choice.
 
 Original Value
@@ -88,8 +92,9 @@ As roots Home Folder
     # this should be set before startup
     DBFilePath = str(r'/root/FTSDataBase.db')
 ```
-
-To switch too a MySQL database
+###  MySQL database
+FTS supports an abstraction layer, so it's easy to use a different database like MySQL.
+To switch to a MySQL database
 ```python
     # this should be set before startup
     DBFilePath = str('user:pass@localhost/dbname')
