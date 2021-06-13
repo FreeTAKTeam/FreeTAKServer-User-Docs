@@ -19,7 +19,8 @@ In the current release (1.7), FTS supports following API:
   * ManageRoute/postRoute
   * ManagePresence/postPresence
   * ManagePresence/putPresence 
-
+  * ManageVideoStream/postVideoStream
+  
 ## General Configuration
 > To quickly test the API, you can use a browser extension like ARC Advanced rest client (Chrome). REST APIs are easy to use, however they require a minimum ammount of knowledge, we DO NOT provide support to explain WHAT an API is. Please refer to an online tutorial such as [this](http://www.steves-internet-guide.com/using-http-apis-for-iot-beginners-guide/). 
 
@@ -443,8 +444,7 @@ Updates the location of a team member
  
  #### Parameters
  * uid: server generated Unique Id of this emergency
-  
- 
+   
 ## ManageRoute
 manage routes on the map
 
@@ -506,5 +506,40 @@ manage routes on the map
   "latitudeDest": 44.69,
   "longitudeDest": -63.57,
   "method": "Flying"
+}
+```
+## ManageVideoStream
+manage creation of videos endpoints in the clients. the videos are visible under 'Video Player'
+
+#### postVideoStream
+ * verb: POST
+ * endpoint: /ManageVideoStream/postVideoStream
+ * returns: uid
+ 
+#### parameters
+*  streamAddress: the IP of the video server
+*  "streamPort": the port the video server respond to
+  "streamPath": the unique path of the video stream
+  "alias": a name for the stream
+  "streamProtocol": the type of protocol used (e.g. rtsp, rtmp, raw)
+  
+##### Example body 
+```
+ {
+  "streamAddress": "64.227.70.77",
+  "streamPort": "1935",
+  "streamPath": "/LiveApp/342508189321134315564775",
+  "alias": "Demo Stream From Drone ",
+  "streamProtocol": "rtmp"
+}
+```
+##### Example body 2
+``` streamPort and streamPort params still required bu will be ignored
+{
+  "streamAddress": "rtsp://64.227.70.77:1935/LiveApp/342508189321134315564775",
+  "alias": "raw Stream From Drone ",
+   "streamPort": "1935",
+  "streamPath": "/LiveApp/342508189321134315564775",
+  "streamProtocol": "raw"
 }
 ```
