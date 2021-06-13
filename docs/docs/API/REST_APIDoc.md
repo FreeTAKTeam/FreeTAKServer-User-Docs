@@ -5,7 +5,7 @@ the FreeTAKServer REST API is a human readeble approach to the TAK world. The AP
 FTS will send the  information coming trough the API to all the connected clients, addtionally it will save it to the persistency, to be query in future. 
 
 ## List of supported API
-In the current release (1.7), FTS supports following API:
+In the current release (1.9), FTS supports following API:
 
   * help
   * ManageGeoObject/postGeoObject
