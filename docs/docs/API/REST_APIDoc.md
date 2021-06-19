@@ -20,6 +20,7 @@ In the current release (1.9), FTS supports following API:
   * ManagePresence/postPresence
   * ManagePresence/putPresence 
   * ManageVideoStream/postVideoStream
+  * Sensor/postDrone
   
 ## General Configuration
 > To quickly test the API, you can use a browser extension like ARC Advanced rest client (Chrome). REST APIs are easy to use, however they require a minimum ammount of knowledge, we DO NOT provide support to explain WHAT an API is. Please refer to an online tutorial such as [this](http://www.steves-internet-guide.com/using-http-apis-for-iot-beginners-guide/). 
@@ -543,3 +544,32 @@ manage creation of videos endpoints in the clients. the videos are visible under
   "streamProtocol": "raw"
 }
 ```
+### Sensor
+manage sensors (name to be changed in MangeSensor)
+
+#### postDrone
+ * verb: POST
+ * endpoint: /Sensor/postDrone
+ * returns: uid
+ 
+#### parameters
+ *  Range: the range of view of the sensor
+* Bearing: the direction in which the sensor is aimed
+* FieldOfView: the field of view of the drone
+* VideoURLUID: the adress of the video stream
+* longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where *West 77.08* is equal to '-77.08' in the API
+* latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)
+
+  
+##### Example body 
+```
+{
+  "name":"Putin air",
+  "Bearing": "90",
+  "longitude": -77.01383,
+  "latitude": 38.883,
+   "FieldOfView":"20",
+  "videoURLUID":"rtsp://64.227.70.49:8554/live/corvovideo",
+  "Range":"500"
+ }
+ ```
