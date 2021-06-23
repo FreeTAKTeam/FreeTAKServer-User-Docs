@@ -570,6 +570,9 @@ manage sensors (name to be changed in MangeSensor)
   "latitude": 38.883,
    "FieldOfView":"20",
   "videoURLUID":"rtsp://64.227.70.49:8554/live/corvovideo",
-  "Range":"500"
+  "Range":"500",
+  "SPILongitude": -77.01393,
+  "SPILatitude": 38.885,
+  "SPIName": "Putin air SPI"
  }
  ```
