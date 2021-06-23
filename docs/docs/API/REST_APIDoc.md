@@ -545,20 +545,27 @@ manage creation of videos endpoints in the clients. the videos are visible under
 }
 ```
 ### Sensor
-manage sensors (name to be changed in MangeSensor)
+since 1.9
+manage sensors (name to be changed in ManageSensor)
 
 #### postDrone
+create a drone object with a field of view, a current aiming point a video stream
  * verb: POST
  * endpoint: /Sensor/postDrone
  * returns: uid
  
 #### parameters
- *  Range: the range of view of the sensor
-* Bearing: the direction in which the sensor is aimed
-* FieldOfView: the field of view of the drone
-* VideoURLUID: the adress of the video stream
+* Name: the name of the drone, will become also the name of the video stream.
+*  Range: the range  of view of the sensor in meters
+* Bearing: the direction in which the sensor is aimed in degrees
+* FieldOfView: the field of view of the drone in degrees
+* VideoURLUID: the address of the video stream. DJI drones only support RTMP protocol. YOu need to have FreeTAHub Video service active to see a stream.
 * longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where *West 77.08* is equal to '-77.08' in the API
 * latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)
+* SPIName: the name of the target the UAS is currently aiming to
+* SPILongitude: longitude of target
+* SPILatitude: latitude of target
+
 
   
 ##### Example body 
@@ -569,8 +576,8 @@ manage sensors (name to be changed in MangeSensor)
   "longitude": -77.01383,
   "latitude": 38.883,
    "FieldOfView":"20",
-  "videoURLUID":"rtsp://64.227.70.49:8554/live/corvovideo",
-  "Range":"500",
+   "Range":"500",
+  "VideoURLUID":"rtmp://64.227.70.49:1935/live/PutinAirVideo",
   "SPILongitude": -77.01393,
   "SPILatitude": 38.885,
   "SPIName": "Putin air SPI"
