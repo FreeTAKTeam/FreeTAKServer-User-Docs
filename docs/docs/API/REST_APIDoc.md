@@ -552,11 +552,11 @@ manage sensors (name to be changed in ManageSensor)
 create a drone object with a field of view, a current aiming point a video stream
  * verb: POST
  * endpoint: /Sensor/postDrone
- * returns: uid
+ * returns: DRONE_UID, SPI_UID
  
 #### parameters
 * timeout: OPTIONAL the length, expressed in seconds  until the point will stale out. Default is 300 seconds or 5 minutes.
-*  uid: OPTIONAL input parameter, needed to update existing SPI,
+
 * Name: the name of the drone, will become also the name of the video stream.
 *  Range: the range  of view of the sensor in meters
 * Bearing: the direction in which the sensor is aimed in degrees
@@ -564,6 +564,7 @@ create a drone object with a field of view, a current aiming point a video strea
 * VideoURLUID: the address of the video stream. DJI drones only support RTMP protocol. YOu need to have FreeTAHub Video service active to see a stream.
 * longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where *West 77.08* is equal to '-77.08' in the API
 * latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)
+* uid: OPTIONAL input parameter, needed to update existing SPI
 * SPIName: the name of the Sensor Point of Interest  the UAS is currently aiming to
 * SPILongitude: longitude of target
 * SPILatitude: latitude of target
