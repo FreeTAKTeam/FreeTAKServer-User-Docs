@@ -555,6 +555,8 @@ create a drone object with a field of view, a current aiming point a video strea
  * returns: uid
  
 #### parameters
+* timeout: OPTIONAL the length, expressed in seconds  until the point will stale out. Default is 300 seconds or 5 minutes.
+*  uid: OPTIONAL input parameter, needed to update existing SPI,
 * Name: the name of the drone, will become also the name of the video stream.
 *  Range: the range  of view of the sensor in meters
 * Bearing: the direction in which the sensor is aimed in degrees
@@ -571,6 +573,7 @@ create a drone object with a field of view, a current aiming point a video strea
 ##### Example body 
 ```
 {
+  "uid": "d76f608a-d4f0-11eb-b375-2cf05d092d98",
   "name":"Putin air",
   "Bearing": "90",
   "longitude": -77.01383,
@@ -583,3 +586,29 @@ create a drone object with a field of view, a current aiming point a video strea
   "SPIName": "Putin air SPI"
  }
  ```
+
+#### postSPI
+create an SPI at a point or update an existing SPI
+ * verb: POST
+ * endpoint: /Sensor/postSPI
+ * returns: uid
+#### parameters
+* timeout: OPTIONAL the length, expressed in seconds  until the point will stale out. Default is 300 seconds or 5 minutes.
+*  uid: OPTIONAL input parameter, needed to update existing SPI,
+* longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where *West 77.08* is equal to '-77.08' in the API
+* latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)
+* droneUid: the uid of the connected drone
+* name: the name of the drone, will become also the name of the video stream.
+
+#### Example Body
+```
+{
+    "uid": "e452b6bf-d4f0-11eb-b818-2cf05d092d98",
+    "timeout": 500,
+    "longitude": 4,
+    "latitude": 8,
+    "droneUid": "d76f608a-d4f0-11eb-b375-2cf05d092d98",
+    "name": "test"
+}
+```
+```
