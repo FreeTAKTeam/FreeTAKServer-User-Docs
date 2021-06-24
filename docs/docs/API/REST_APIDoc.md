@@ -568,6 +568,7 @@ create a drone object with a field of view, a current aiming point a video strea
 * SPILongitude: longitude of target
 * SPILatitude: latitude of target
 
+![image](https://user-images.githubusercontent.com/60719165/123279688-78d53900-d4de-11eb-8180-054452d5539a.png)
 
   
 ##### Example body 
