@@ -534,6 +534,7 @@ manage creation of videos endpoints in the clients. the videos are visible under
   "streamProtocol": "rtmp"
 }
 ```
+
 ##### Example body 2
 ``` streamPort and streamPort params still required bu will be ignored
 {
@@ -544,6 +545,7 @@ manage creation of videos endpoints in the clients. the videos are visible under
   "streamProtocol": "raw"
 }
 ```
+
 ### Sensor
 since 1.9
 manage sensors (name to be changed in ManageSensor)
@@ -564,30 +566,44 @@ create a drone object with a field of view, a current aiming point a video strea
 * VideoURLUID: the address of the video stream. DJI drones only support RTMP protocol. YOu need to have FreeTAHub Video service active to see a stream.
 * longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where *West 77.08* is equal to '-77.08' in the API
 * latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)
-* uid: OPTIONAL input parameter, needed to update existing SPI
-* SPIName: the name of the Sensor Point of Interest  the UAS is currently aiming to
-* SPILongitude: longitude of target
-* SPILatitude: latitude of target
+* uid: OPTIONAL input parameter, needed to update existing drone COT
+* SPIName: the name of the Sensor Point of Interest  the UAS is currently aiming to. currently will NOT work in a update message (when you send the UID) 
+* SPILongitude: longitude of target. currently will NOT work in a update message (when you send the UID)
+* SPILatitude: latitude of target. currently will NOT work in a update message (when you send the UID)
 
 ![image](https://user-images.githubusercontent.com/60719165/123279688-78d53900-d4de-11eb-8180-054452d5539a.png)
 
   
-##### Example body 
+##### Example body creation
 ```
 {
-  "uid": "d76f608a-d4f0-11eb-b375-2cf05d092d98",
   "name":"Putin air",
   "Bearing": "90",
   "longitude": -77.01383,
   "latitude": 38.883,
    "FieldOfView":"20",
    "Range":"500",
-  "VideoURLUID":"rtmp://64.227.70.49:1935/live/PutinAirVideo",
+  "VideoURLUID":"rtmp://64.227.70.48:1935/live/PutinAirVideo",
   "SPILongitude": -77.01393,
   "SPILatitude": 38.885,
   "SPIName": "Putin air SPI"
  }
  ```
+ ##### Example body update
+ ```
+{
+  "uid":"d033fd0c-d5ac-11eb-ab27-4e58de281c19",
+  "name":"Putin air",
+	"timeout": 40000,
+  "Bearing": "0",
+  "longitude": -77.01399,
+  "latitude": 38.889,
+   "FieldOfView":"20",
+   "Range":"500",
+  "VideoURLUID":"rtmp://64.227.70.49:1935/live/PutinAirVideo"
+
+}
+ 
 
 #### postSPI
 create an SPI at a point or update an existing SPI.  If the video source is a UAV, and the UAV is also publishing its own position and sensor point of interest (SPI), those will  be plotted on the map. Being able to see the position of the aircraft and know where on the map the camera is looking in real time, while being able to see the video on the same screen, is a huge boost to SA.
