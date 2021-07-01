@@ -546,6 +546,21 @@ manage creation of videos endpoints in the clients. the videos are visible under
 }
 ```
 
+#### getVideoStream
+retrieve list of stream paths
+ * verb: GET
+ * endpoint: /ManageVideoStream/getVideoStream
+ * returns: json with path
+
+#### example return
+
+```json
+{
+  "video_stream": 
+    ["/LiveApp/342508189321134315564775", "/test/other"]
+}
+```
+
 ### Sensor
 since 1.9
 manage sensors (name to be changed in ManageSensor)
