@@ -3,7 +3,7 @@
 # Introduction
 FreeTAK UAS (FTUAS) is an Android application that can:
 
-* control any DJI drone supported by the current DJI SDK
+* Control any DJI drone supported by the current DJI SDK
 * Stream the position of the drone to all the connected TAK clients
 * Stream the video Feed to all the connected TAK clients
 
@@ -18,9 +18,10 @@ FreeTAK UAS (FTUAS) is an Android application that can:
 
 # Installation
 
-Assuming that you have installed and configured your [FTS](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/PyPi/Linux/Install.html) and the  [video service](https://github.com/FreeTAKTeam/FreeTAKHub/blob/main/README.md), 
-download the APK installation file on your phone / tablet and follow the instructions.
-if the installation is suvcessful you should have a new Icon
+* Assuming that you have installed and configured your [FTS](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/PyPi/Linux/Install.html) 
+* and the  [video service](https://github.com/FreeTAKTeam/FreeTAKHub/blob/main/README.md), 
+* download the [APK installation file](coming soon) on your phone / tablet and follow the instructions.
+* if the installation is suvcessful you should have a new Icon
 
 ![image](https://user-images.githubusercontent.com/60719165/124396013-9d4ec380-dcdd-11eb-8cf9-bf1deaa7adc0.png)
 
