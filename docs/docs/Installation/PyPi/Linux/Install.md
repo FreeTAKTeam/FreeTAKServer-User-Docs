@@ -1,4 +1,4 @@
-This guide will walk you through installing FreeTAKServer 1.5 on a Linux host
+This guide will walk you through installing FreeTAKServer 1.9 on a Linux host
 
 ## Linux Distribution
 
@@ -11,7 +11,7 @@ sudo apt update && sudo apt install python3 && sudo apt install python3-pip
 ```
 
 ### Install Python Libraries
-OPTIONAL this should not be necessary using FTS 1.5
+OPTIONAL this should not be necessary using FTS 1.9
 ```bash
 sudo apt install python3-dev python3-setuptools build-essential python3-gevent python3-lxml libcairo2-dev
 ```
@@ -33,7 +33,9 @@ Delete the database
 sudo  rm /root/FTSDataBase.db
 ```
 and the various logs folders
-
+```bash
+ //usr/local/lib/python3.8/dist-packages/FreeTAKServer
+```
 
 ### Install FreeTAKServer
 Install the FTS  and the Web UI (suggested)
@@ -49,8 +51,14 @@ sudo python3 -m pip install FreeTAKServer
 ```bash
 pip check FreeTakServer 
 ```
+#### Install an old version
+you can install a past version using this command
+```
+sudo python3 -m pip install FreeTAKServer[ui]==[VERSIONNUMBER]
+```
 
 ### Configure FreeTAKServer
+![image](https://user-images.githubusercontent.com/60719165/124500136-9aafa500-dd95-11eb-8aa8-67ffda7076f0.png)
 
 Depending on the linux distro your config file for FTS will be in a python version dependant location.
 you can use pip to discover the location. Type:
