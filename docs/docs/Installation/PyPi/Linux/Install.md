@@ -43,7 +43,7 @@ Install the FTS  and the Web UI (suggested)
 sudo python3 -m pip install FreeTAKServer[ui]
 ```
 
-in altenative Install the FTS only
+in alternative Install the FTS only
 ```bash
 sudo python3 -m pip install FreeTAKServer
 ```
@@ -51,13 +51,45 @@ sudo python3 -m pip install FreeTAKServer
 ```bash
 pip check FreeTakServer 
 ```
+
 #### Install an old version
 you can install a past version using this command
 ```
 sudo python3 -m pip install FreeTAKServer[ui]==[VERSIONNUMBER]
 ```
 
-### Configure FreeTAKServer
+## Configure and Run FTS 1.9 +
+start FTS
+```
+python3 -m FreeTAKServer.controllers.services.FTS 
+```
+the first time a wizard will popup
+```
+would you like to use a yaml config file, 
+ if yes you will be prompted for further configuration options [yes]: yes
+ ```
+ type yes
+``` 
+where would you like to save the yaml config [/opt/FTSConfig.yaml]:
+```
+from now on, hit ENTER if you are happy with the default
+````
+enter ip [10.0.2.15]: 
+10.0.2.15
+````
+this is the FTS_MAIN_IP, must be you EXTERNAL IP
+continue to follow the instructions:
+```
+enter the preferred database path [/opt/FTSDataBase.db]: 
+/opt/FTSDataBase.db
+enter the preferred main_path [/usr/local/lib/python3.8/dist-packages/FreeTAKServer]: 
+/usr/local/lib/python3.8/dist-packages/FreeTAKServer
+enter the preferred log file path [/usr/local/lib/python3.8/dist-packages/FreeTAKServer/Logs]: 
+/usr/local/lib/python3.8/dist-packages/FreeTAKServer/Logs
+```
+at this point a YAML file is created under the location you selected (default is /opt/FTSConfig.yaml). FTS will start all the services.
+
+### Configure FreeTAKServer > 1.9
 ![image](https://user-images.githubusercontent.com/60719165/124500136-9aafa500-dd95-11eb-8aa8-67ffda7076f0.png)
 
 Depending on the linux distro your config file for FTS will be in a python version dependant location.
@@ -101,7 +133,7 @@ As roots Home Folder
     DBFilePath = str(r'/root/FTSDataBase.db')
 ```
 ###  MySQL database
-FTS supports an abstraction layer, so it's easy to use a different database like MySQL.
+FTS supports an abstraction layer, so it's easy to use a different database like MySQL. MYSQL is still experimental support, so use at your own risk.
 To switch to a MySQL database
 ```python
     # this should be set before startup
@@ -149,7 +181,7 @@ the webSocket  key used by the UI to comunicate with FTS. must be the same value
 Let's make sure your FTS server can start and run without errors.
 
 ```bash
-sudo python3 -m FreeTAKServer.controllers.services.FTS -DataPackageIP 0.0.0.0 -AutoStart True
+sudo python3 -m FreeTAKServer.controllers.services.FTS
 ```
 
 If you see FTS start without error you may hit `ctrl+c` twice and move onto running FTS.
