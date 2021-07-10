@@ -21,6 +21,7 @@ In the current release (1.9), FTS supports following API:
   * ManagePresence/putPresence 
   * ManageVideoStream/postVideoStream
   * Sensor/postDrone
+  * Sensor/postSPI
   
 ## General Configuration
 > To quickly test the API, you can use a browser extension like ARC Advanced rest client (Chrome). REST APIs are easy to use, however they require a minimum ammount of knowledge, we DO NOT provide support to explain WHAT an API is. Please refer to an online tutorial such as [this](http://www.steves-internet-guide.com/using-http-apis-for-iot-beginners-guide/). 
@@ -616,9 +617,8 @@ create a drone object with a field of view, a current aiming point a video strea
    "FieldOfView":"20",
    "Range":"500",
   "VideoURLUID":"rtmp://64.227.70.49:1935/live/PutinAirVideo"
-
 }
- 
+  ```
 
 #### postSPI
 create an SPI at a point or update an existing SPI.  If the video source is a UAV, and the UAV is also publishing its own position and sensor point of interest (SPI), those will  be plotted on the map. Being able to see the position of the aircraft and know where on the map the camera is looking in real time, while being able to see the video on the same screen, is a huge boost to SA.
@@ -626,6 +626,7 @@ create an SPI at a point or update an existing SPI.  If the video source is a UA
  * verb: POST
  * endpoint: /Sensor/postSPI
  * returns: uid
+ 
 #### parameters
 * timeout: OPTIONAL the length, expressed in seconds  until the point will stale out. Default is 300 seconds or 5 minutes.
 *  uid: OPTIONAL input parameter, needed to update existing SPI,
@@ -645,4 +646,4 @@ create an SPI at a point or update an existing SPI.  If the video source is a UA
     "name": "test"
 }
 ```
-```
+
