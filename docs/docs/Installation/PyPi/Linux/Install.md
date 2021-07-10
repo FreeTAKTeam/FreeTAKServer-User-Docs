@@ -123,7 +123,8 @@ DataBaseType = str('mysql://')
 ```
 
 ### Configure Web UI
-UI configuration can be found under FreeTAKServer-UI/config.py
+the Web UI is an optional component, however it's required to properly control FTS.
+Its configuration can be found under /[INSTALLATIONPATH]/FreeTAKServer-UI/config.py
 ```
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + '/root/FTSDataBase.db'
 ```
