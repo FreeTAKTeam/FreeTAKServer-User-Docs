@@ -73,10 +73,10 @@ would you like to use a yaml config file,
 where would you like to save the yaml config [/opt/FTSConfig.yaml]:
 ```
 from now on, hit ENTER if you are happy with the default
-```
+````
 enter ip [10.0.2.15]: 
 10.0.2.15
-```
+````
 this is the FTS_MAIN_IP, must be you EXTERNAL IP
 continue to follow the instructions:
 ```
