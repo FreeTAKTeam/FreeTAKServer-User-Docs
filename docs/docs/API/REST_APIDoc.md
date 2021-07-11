@@ -22,6 +22,7 @@ In the current release (1.9), FTS supports following API:
   * ManageVideoStream/postVideoStream
   * Sensor/postDrone
   * Sensor/postSPI
+  * /ManageKML/postKML
   
 ## General Configuration
 > To quickly test the API, you can use a browser extension like ARC Advanced rest client (Chrome). REST APIs are easy to use, however they require a minimum ammount of knowledge, we DO NOT provide support to explain WHAT an API is. Please refer to an online tutorial such as [this](http://www.steves-internet-guide.com/using-http-apis-for-iot-beginners-guide/). 
@@ -647,3 +648,39 @@ create an SPI at a point or update an existing SPI.  If the video source is a UA
 }
 ```
 
+## ManageKML
+![image](https://user-images.githubusercontent.com/60719165/125200108-d5a35400-e23f-11eb-934e-fc04210820c4.png)
+
+allow to post a set of geo information with metadata  
+#### postKML
+ * verb: POST
+ * endpoint: /ManageKML/postKML
+ * returns: "successful" or HTTP error
+
+#### parameters
+* name: the name of the report
+* longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where *West 77.08* is equal to '-77.08' in the API
+* latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)
+* body: an JSON structure of key pairs (name, value)
+
+#### Example Body
+```
+{
+  "name": "Putin  Report",
+  "longitude": -77.01399,
+  "latitude": 38.889,
+  "body" :{
+	  "userCallsign": "Mr Putin",
+	  "dateTime": "2021-07-13",
+	  "type": "Surveillance",
+	  "eventScale": "Capital",
+	  "importance": "Routine",
+	  "status": "FurtherInvestigation",
+	  "Time Observed": "2021-05-13T13:55:05.19Z",
+	  "Duration of Event": "All day",
+	  "Method Of Detection": "General Observation",
+	  "Surveillance Type": "Discreet",
+	  "Assessed Threats":"Threat to Mission",
+	  "Final Remarks": "SNAFU"
+	}
+}
