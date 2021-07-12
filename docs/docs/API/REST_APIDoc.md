@@ -606,6 +606,7 @@ create a drone object with a field of view, a current aiming point a video strea
   "SPIName": "Putin air SPI"
  }
  ```
+ 
  ##### Example body update
  ```
 {
@@ -651,7 +652,8 @@ create an SPI at a point or update an existing SPI.  If the video source is a UA
 ## ManageKML
 ![image](https://user-images.githubusercontent.com/60719165/125200108-d5a35400-e23f-11eb-934e-fc04210820c4.png)
 
-allow to post a set of geo information with metadata  
+allow to post a set of geo information with attached metadata in tabular format
+
 #### postKML
  * verb: POST
  * endpoint: /ManageKML/postKML
@@ -684,3 +686,4 @@ allow to post a set of geo information with metadata
 	  "Final Remarks": "SNAFU"
 	}
 }
+```
