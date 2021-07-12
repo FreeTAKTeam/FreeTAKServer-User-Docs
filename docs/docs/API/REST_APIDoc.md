@@ -600,14 +600,14 @@ create a drone object with a field of view, a current aiming point a video strea
   "latitude": 38.883,
    "FieldOfView":"20",
    "Range":"500",
-  "VideoURLUID":"rtmp://64.227.70.48:1935/live/PutinAirVideo",
+  "VideoURLUID":"rtmp://64.227.50.48:1935/live/PutinAirVideo",
   "SPILongitude": -77.01393,
   "SPILatitude": 38.885,
   "SPIName": "Putin air SPI"
  }
  ```
  
- ##### Example body update
+ ##### Example body: updateexisting drone
  ```
 {
   "uid":"d033fd0c-d5ac-11eb-ab27-4e58de281c19",
@@ -618,7 +618,7 @@ create a drone object with a field of view, a current aiming point a video strea
   "latitude": 38.889,
    "FieldOfView":"20",
    "Range":"500",
-  "VideoURLUID":"rtmp://64.227.70.49:1935/live/PutinAirVideo"
+  "VideoURLUID":"rtmp://64.227.50.49:1935/live/PutinAirVideo"
 }
   ```
 
@@ -650,9 +650,10 @@ create an SPI at a point or update an existing SPI.  If the video source is a UA
 ```
 
 ## ManageKML
+allow to post a set of geo information with attached metadata in tabular format
+
 ![image](https://user-images.githubusercontent.com/60719165/125200108-d5a35400-e23f-11eb-934e-fc04210820c4.png)
 
-allow to post a set of geo information with attached metadata in tabular format
 
 #### postKML
  * verb: POST
