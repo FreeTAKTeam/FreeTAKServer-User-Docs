@@ -48,6 +48,7 @@ in alternative Install the FTS only
 sudo python3 -m pip install FreeTAKServer
 ```
 
+check your install
 ```bash
 pip check FreeTakServer 
 ```
@@ -59,32 +60,43 @@ sudo python3 -m pip install FreeTAKServer[ui]==[VERSIONNUMBER]
 ```
 
 ## Configure and Run FTS 1.9 +
+
 start FTS
 ```
 sudo python3 -m FreeTAKServer.controllers.services.FTS 
 ```
+
 the first time a wizard will popup
 ```
 would you like to use a yaml config file, 
  if yes you will be prompted for further configuration options [yes]: yes
  ```
  type yes
+ 
 ``` 
 where would you like to save the yaml config [/opt/FTSConfig.yaml]:
 ```
+
 from now on, hit ENTER if you are happy with the default
 ````
 enter ip [10.0.2.15]: 
 10.0.2.15
 ````
+
 this is the FTS_MAIN_IP, must be you EXTERNAL IP
 continue to follow the instructions:
+
 ```
-enter the preferred database path [/opt/FTSDataBase.db]: 
+**enter the preferred database path [/opt/FTSDataBase.db]: **
 /opt/FTSDataBase.db
-enter the preferred main_path [/usr/local/lib/python3.8/dist-packages/FreeTAKServer]: 
+```
+
+next one is important, adjust the path to your Python install
+```
+**enter the preferred main_path [/usr/local/lib/python3.8/dist-packages/FreeTAKServer]: **
 /usr/local/lib/python3.8/dist-packages/FreeTAKServer
-enter the preferred log file path [/usr/local/lib/python3.8/dist-packages/FreeTAKServer/Logs]: 
+
+**enter the preferred log file path [/usr/local/lib/python3.8/dist-packages/FreeTAKServer/Logs]: **
 /usr/local/lib/python3.8/dist-packages/FreeTAKServer/Logs
 ```
 at this point a YAML file is created under the location you selected (default is /opt/FTSConfig.yaml). FTS will start all the services.
