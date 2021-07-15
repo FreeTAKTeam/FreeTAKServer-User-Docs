@@ -71,6 +71,7 @@ the first time a wizard will popup
 would you like to use a yaml config file, 
  if yes you will be prompted for further configuration options [yes]: yes
  ```
+ 
  type yes
  
 ``` 
@@ -78,6 +79,7 @@ where would you like to save the yaml config [/opt/FTSConfig.yaml]:
 ```
 
 from now on, hit ENTER if you are happy with the default
+
 ````
 enter ip [10.0.2.15]: 
 10.0.2.15
@@ -92,6 +94,7 @@ continue to follow the instructions:
 ```
 
 next one is important, adjust the path to your Python install
+
 ```
 **enter the preferred main_path [/usr/local/lib/python3.8/dist-packages/FreeTAKServer]: **
 /usr/local/lib/python3.8/dist-packages/FreeTAKServer
