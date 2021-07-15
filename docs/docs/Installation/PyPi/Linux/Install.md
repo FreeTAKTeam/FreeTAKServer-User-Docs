@@ -67,6 +67,7 @@ sudo python3 -m FreeTAKServer.controllers.services.FTS
 ```
 
 the first time a wizard will popup
+
 ```
 would you like to use a yaml config file, 
  if yes you will be prompted for further configuration options [yes]: yes
@@ -96,12 +97,13 @@ continue to follow the instructions:
 next one is important, adjust the path to your Python install
 
 ```
-**enter the preferred main_path [/usr/local/lib/python3.8/dist-packages/FreeTAKServer]: **
+enter the preferred main_path [/usr/local/lib/python3.8/dist-packages/FreeTAKServer]:
 /usr/local/lib/python3.8/dist-packages/FreeTAKServer
 
-**enter the preferred log file path [/usr/local/lib/python3.8/dist-packages/FreeTAKServer/Logs]: **
+enter the preferred log file path [/usr/local/lib/python3.8/dist-packages/FreeTAKServer/Logs]: 
 /usr/local/lib/python3.8/dist-packages/FreeTAKServer/Logs
 ```
+
 at this point a YAML file is created under the location you selected (default is /opt/FTSConfig.yaml). FTS will start all the services.
 
 ### Configure FreeTAKServer > 1.9
@@ -143,6 +145,7 @@ Original Value
 ```
 
 As roots Home Folder
+
 ```python
     # this should be set before startup
     DBFilePath = str(r'/root/FTSDataBase.db')
