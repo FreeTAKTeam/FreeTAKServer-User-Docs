@@ -1,0 +1,1368 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.10">
+    
+    
+      
+        <title>Install - FreeTAKServer Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1fe995fd.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#linux-distribution" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../index.html" title="FreeTAKServer Documentation" class="md-header__button md-logo" aria-label="FreeTAKServer Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FreeTAKServer Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Install
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../index.html" title="FreeTAKServer Documentation" class="md-nav__button md-logo" aria-label="FreeTAKServer Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    FreeTAKServer Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.html" class="md-nav__link">
+        FreeTAKServer
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        API
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="API" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../API/REST_APIDoc.html" class="md-nav__link">
+        REST API - Public
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../API/REST_API_InternalDoc.html" class="md-nav__link">
+        REST API - Internal
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Installation
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Installation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Video%20Guides.html" class="md-nav__link">
+        Video Guides
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installUIOnAndroid.html" class="md-nav__link">
+        FTS-UI Installation with Android
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      <label class="md-nav__link" for="__nav_3_3">
+        Android
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Android" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Android
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Android/Android.html" class="md-nav__link">
+        FTS Installation with Android
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      <label class="md-nav__link" for="__nav_3_4">
+        Docker
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Docker" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Docker
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/index.html" class="md-nav__link">
+        Install
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/CLI.html" class="md-nav__link">
+        CLI
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/Debian.html" class="md-nav__link">
+        Debian
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/Quick%20Start%20Guide.html" class="md-nav__link">
+        Quick Start Guide
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/Raspberry%20Pi.html" class="md-nav__link">
+        Raspberry Pi 4/Raspberry Pi 3
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_6" type="checkbox" id="__nav_3_4_6" >
+      
+      <label class="md-nav__link" for="__nav_3_4_6">
+        Multiple Servers
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Multiple Servers" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Multiple Servers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/Multiple%20Servers/multiple.html" class="md-nav__link">
+        Multiple Servers on Single Host
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_7" type="checkbox" id="__nav_3_4_7" >
+      
+      <label class="md-nav__link" for="__nav_3_4_7">
+        Upgrade
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Upgrade" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          Upgrade
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Docker/Upgrade/Upgrade.html" class="md-nav__link">
+        Upgrading Existing Container
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" checked>
+      
+      <label class="md-nav__link" for="__nav_3_5">
+        PyPi
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="PyPi" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          PyPi
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5_1" type="checkbox" id="__nav_3_5_1" checked>
+      
+      <label class="md-nav__link" for="__nav_3_5_1">
+        Linux
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Linux" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Install
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="Install.html" class="md-nav__link md-nav__link--active">
+        Install
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linux-distribution" class="md-nav__link">
+    Linux Distribution
+  </a>
+  
+    <nav class="md-nav" aria-label="Linux Distribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-python-3" class="md-nav__link">
+    Install Python 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-python-libraries" class="md-nav__link">
+    Install Python Libraries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-wheel-and-pycairo" class="md-nav__link">
+    Install 'wheel' and 'pycairo'
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-previous-installation" class="md-nav__link">
+    delete previous installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-freetakserver" class="md-nav__link">
+    Install FreeTAKServer
+  </a>
+  
+    <nav class="md-nav" aria-label="Install FreeTAKServer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-an-old-version" class="md-nav__link">
+    Install an old version
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-and-run-fts-19" class="md-nav__link">
+    Configure and Run FTS 1.9 +
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure and Run FTS 1.9 +">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mysql-database" class="md-nav__link">
+    MySQL database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-web-ui" class="md-nav__link">
+    Configure Web UI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-fts" class="md-nav__link">
+    Test FTS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Running.html" class="md-nav__link">
+        Running
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Service.html" class="md-nav__link">
+        Service
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+      
+      <label class="md-nav__link" for="__nav_3_6">
+        Troubleshooting
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Troubleshooting" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Troubleshooting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Troubleshooting/troubleshooting.html" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
+      
+      <label class="md-nav__link" for="__nav_3_7">
+        Windows
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Windows" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          Windows
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Windows/FreeTAKServer_Windows_Install.html" class="md-nav__link">
+        FreeTAKServer Install On Windows Computer
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Usage
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Usage" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Usage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Usage/Connecting%20ATAK.html" class="md-nav__link">
+        Connecting ATAK to Pub Server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Usage/Connecting%20WinTAK.html" class="md-nav__link">
+        Connecting WinTAK
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Usage/ExCheck.html" class="md-nav__link">
+        ExCheck
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Usage/VideoManagement.html" class="md-nav__link">
+        Video Management
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Administration
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Administration" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Administration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../administration/CLI.html" class="md-nav__link">
+        CLI
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../administration/SSL.html" class="md-nav__link">
+        SSL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../administration/Wed%20Admin.html" class="md-nav__link">
+        WebUI
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Tools
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tools" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/FreeTAKUAS.html" class="md-nav__link">
+        FreeTAKUAS
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linux-distribution" class="md-nav__link">
+    Linux Distribution
+  </a>
+  
+    <nav class="md-nav" aria-label="Linux Distribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-python-3" class="md-nav__link">
+    Install Python 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-python-libraries" class="md-nav__link">
+    Install Python Libraries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-wheel-and-pycairo" class="md-nav__link">
+    Install 'wheel' and 'pycairo'
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-previous-installation" class="md-nav__link">
+    delete previous installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-freetakserver" class="md-nav__link">
+    Install FreeTAKServer
+  </a>
+  
+    <nav class="md-nav" aria-label="Install FreeTAKServer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-an-old-version" class="md-nav__link">
+    Install an old version
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-and-run-fts-19" class="md-nav__link">
+    Configure and Run FTS 1.9 +
+  </a>
+  
+    <nav class="md-nav" aria-label="Configure and Run FTS 1.9 +">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mysql-database" class="md-nav__link">
+    MySQL database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-web-ui" class="md-nav__link">
+    Configure Web UI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-fts" class="md-nav__link">
+    Test FTS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/edit/main/docs/docs/Installation/PyPi/Linux/Install.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Install</h1>
+                
+                <p>This guide will walk you through installing FreeTAKServer 1.9 on a Linux host</p>
+<h2 id="linux-distribution">Linux Distribution</h2>
+<p>It is suggested to use Ubuntu 20.04 or Debian 10 or Raspberry PI OS.</p>
+<h3 id="install-python-3">Install Python 3</h3>
+<pre><code class="language-bash">sudo apt update &amp;&amp; sudo apt install python3 &amp;&amp; sudo apt install python3-pip
+</code></pre>
+<h3 id="install-python-libraries">Install Python Libraries</h3>
+<p>OPTIONAL this should not be necessary using FTS 1.9</p>
+<pre><code class="language-bash">sudo apt install python3-dev python3-setuptools build-essential python3-gevent python3-lxml libcairo2-dev
+</code></pre>
+<h3 id="install-wheel-and-pycairo">Install 'wheel' and 'pycairo'</h3>
+<p>OPTIONAL this should not be necessary using FTS 1.5</p>
+<pre><code class="language-bash">sudo pip3 install wheel pycairo
+</code></pre>
+<h3 id="delete-previous-installation">delete previous installation</h3>
+<p>required. Upgrade will not work.</p>
+<pre><code class="language-bash">sudo pip3 uninstall FreeTAKServer
+sudo pip3 uninstall FreeTAKServer-UI
+</code></pre>
+<p>Delete the database </p>
+<pre><code class="language-bash">sudo  rm /root/FTSDataBase.db
+</code></pre>
+<p>and the various logs folders</p>
+<pre><code class="language-bash">sudo rm -r /usr/local/lib/python3.8/dist-packages/FreeTAKServer
+</code></pre>
+<h3 id="install-freetakserver">Install FreeTAKServer</h3>
+<p>Install the FTS  and the Web UI (suggested)</p>
+<pre><code class="language-bash">sudo python3 -m pip install FreeTAKServer[ui]
+</code></pre>
+<p>in alternative Install the FTS only</p>
+<pre><code class="language-bash">sudo python3 -m pip install FreeTAKServer
+</code></pre>
+<p>check your install</p>
+<pre><code class="language-bash">pip check FreeTakServer 
+</code></pre>
+<h4 id="install-an-old-version">Install an old version</h4>
+<p>you can install a past version using this command</p>
+<pre><code>sudo python3 -m pip install FreeTAKServer[ui]==[VERSIONNUMBER]
+</code></pre>
+<h2 id="configure-and-run-fts-19">Configure and Run FTS 1.9 +</h2>
+<p>start FTS</p>
+<pre><code>sudo python3 -m FreeTAKServer.controllers.services.FTS 
+</code></pre>
+<p>the first time a wizard will popup</p>
+<pre><code>would you like to use a yaml config file, 
+ if yes you will be prompted for further configuration options [yes]: yes
+ ```
+
+ type yes
+
+</code></pre>
+<p>where would you like to save the yaml config [/opt/FTSConfig.yaml]:</p>
+<pre><code>
+from now on, hit ENTER if you are happy with the default
+
+````
+enter ip [10.0.2.15]: 
+10.0.2.15
+````
+
+this is the FTS_MAIN_IP, must be you EXTERNAL IP
+continue to follow the instructions:
+
+</code></pre>
+<p><strong>enter the preferred database path [/opt/FTSDataBase.db]: </strong>
+/opt/FTSDataBase.db</p>
+<pre><code>
+next one is important, adjust the path to your Python install
+
+</code></pre>
+<p>enter the preferred main_path [/usr/local/lib/python3.8/dist-packages/FreeTAKServer]:
+/usr/local/lib/python3.8/dist-packages/FreeTAKServer</p>
+<p>enter the preferred log file path [/usr/local/lib/python3.8/dist-packages/FreeTAKServer/Logs]: 
+/usr/local/lib/python3.8/dist-packages/FreeTAKServer/Logs</p>
+<pre><code>
+at this point a YAML file is created under the location you selected (default is /opt/FTSConfig.yaml). FTS will start all the services.
+
+### Configure FreeTAKServer &gt; 1.9
+![image](https://user-images.githubusercontent.com/60719165/124500136-9aafa500-dd95-11eb-8aa8-67ffda7076f0.png)
+
+Depending on the linux distro your config file for FTS will be in a python version dependant location.
+you can use pip to discover the location. Type:
+</code></pre>
+<p>python3 -m pip show FreeTAKServer</p>
+<pre><code>
+If you are running python 3.7 you would get
+</code></pre>
+<p>/usr/local/lib/python3.7/dist-packages/FreeTAKServer/controllers/configuration/MainConfig.py</p>
+<pre><code>
+similarly, If you are running python 3.8
+
+</code></pre>
+<p>/usr/local/lib/python3.8/dist-packages/FreeTAKServer/controllers/configuration/MainConfig.py</p>
+<pre><code>
+You can edit the file via nano with the following command
+
+</code></pre>
+<p>sudo nano /usr/local/lib/python3.7/dist-packages/FreeTAKServer/controllers/configuration/MainConfig.py</p>
+<pre><code>
+To exit nano `ctrl+x` and then enter `y` to save and hit enter.
+
+#### DBFilePath
+OPTIONAL this should not be necessary since FTS 1.5
+you need to change the `DBFilePath` value to something valid, if you are running as root, '/root' is a good choice.
+
+Original Value
+```python
+    # this should be set before startup
+    DBFilePath = str(r'/opt/FTSDataBase.db')
+</code></pre>
+<p>As roots Home Folder</p>
+<pre><code class="language-python">    # this should be set before startup
+    DBFilePath = str(r'/root/FTSDataBase.db')
+</code></pre>
+<h3 id="mysql-database">MySQL database</h3>
+<p>FTS supports an abstraction layer, so it's easy to use a different database like MySQL. MYSQL is still experimental support, so use at your own risk.
+To switch to a MySQL database</p>
+<pre><code class="language-python">    # this should be set before startup
+    DBFilePath = str('user:pass@localhost/dbname')
+</code></pre>
+<p>And then under</p>
+<pre><code>sudo nano /usr/local/lib/python3.7/dist-packages/FreeTAKServer/controllers/configuration/DatabaseConfiguration.py
+</code></pre>
+<p>Change</p>
+<pre><code class="language-python">DataBaseType = str('sqlite:///')
+</code></pre>
+<p>To</p>
+<pre><code class="language-python">DataBaseType = str('mysql://')
+</code></pre>
+<h3 id="configure-web-ui">Configure Web UI</h3>
+<p>the Web UI is an optional component, however it's required to properly control FTS.
+Its configuration can be found under /[INSTALLATIONPATH]/FreeTAKServer-UI/config.py</p>
+<pre><code>    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + '/root/FTSDataBase.db'
+</code></pre>
+<p>To use a MySQL database change the above line as follows</p>
+<pre><code class="language-python">SQLALCHEMY_DATABASE_URI = 'mysql://' + 'user:pass@localhost/dbname'
+</code></pre>
+<p>set the IP to your external IP</p>
+<pre><code>   IP = '127.0.0.1'
+</code></pre>
+<p>the port the UI uses to communicate with the backend
+    PORT = '19023'</p>
+<p>the API key used by the UI to comunicate with FTS. generate a new system user and then set it
+<code>app.config['APIKEY'] = 'Bearer [API_TOKEN]'</code>
+the webSocket  key used by the UI to comunicate with FTS. must be the same value specified in the FTS config. 
+ <code>app.config['WEBSOCKETKEY'] = '[Your_Web_socket_Key]'</code></p>
+<h3 id="test-fts">Test FTS</h3>
+<p>Let's make sure your FTS server can start and run without errors.</p>
+<pre><code class="language-bash">sudo python3 -m FreeTAKServer.controllers.services.FTS
+</code></pre>
+<p>If you see FTS start without error you may hit <code>ctrl+c</code> twice and move onto running FTS.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../Docker/Upgrade/Upgrade.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Upgrading Existing Container" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Upgrading Existing Container
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="Running.html" class="md-footer__link md-footer__link--next" aria-label="Next: Running" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Running
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
+      
+    
+  </body>
+</html>

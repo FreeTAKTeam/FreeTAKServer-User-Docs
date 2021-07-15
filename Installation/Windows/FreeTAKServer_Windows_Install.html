@@ -1,0 +1,1468 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.10">
+    
+    
+      
+        <title>FreeTAKServer Install On Windows Computer - FreeTAKServer Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1fe995fd.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#freetakserver-install-on-windows-computer" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="FreeTAKServer Documentation" class="md-header__button md-logo" aria-label="FreeTAKServer Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FreeTAKServer Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FreeTAKServer Install On Windows Computer
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="FreeTAKServer Documentation" class="md-nav__button md-logo" aria-label="FreeTAKServer Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    FreeTAKServer Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        FreeTAKServer
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        API
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="API" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/REST_APIDoc.html" class="md-nav__link">
+        REST API - Public
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/REST_API_InternalDoc.html" class="md-nav__link">
+        REST API - Internal
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Installation
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Installation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Video%20Guides.html" class="md-nav__link">
+        Video Guides
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installUIOnAndroid.html" class="md-nav__link">
+        FTS-UI Installation with Android
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      <label class="md-nav__link" for="__nav_3_3">
+        Android
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Android" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Android
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Android/Android.html" class="md-nav__link">
+        FTS Installation with Android
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      <label class="md-nav__link" for="__nav_3_4">
+        Docker
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Docker" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Docker
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docker/index.html" class="md-nav__link">
+        Install
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docker/CLI.html" class="md-nav__link">
+        CLI
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docker/Debian.html" class="md-nav__link">
+        Debian
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docker/Quick%20Start%20Guide.html" class="md-nav__link">
+        Quick Start Guide
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docker/Raspberry%20Pi.html" class="md-nav__link">
+        Raspberry Pi 4/Raspberry Pi 3
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_6" type="checkbox" id="__nav_3_4_6" >
+      
+      <label class="md-nav__link" for="__nav_3_4_6">
+        Multiple Servers
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Multiple Servers" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Multiple Servers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docker/Multiple%20Servers/multiple.html" class="md-nav__link">
+        Multiple Servers on Single Host
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_7" type="checkbox" id="__nav_3_4_7" >
+      
+      <label class="md-nav__link" for="__nav_3_4_7">
+        Upgrade
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Upgrade" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          Upgrade
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Docker/Upgrade/Upgrade.html" class="md-nav__link">
+        Upgrading Existing Container
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      
+      <label class="md-nav__link" for="__nav_3_5">
+        PyPi
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="PyPi" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          PyPi
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5_1" type="checkbox" id="__nav_3_5_1" >
+      
+      <label class="md-nav__link" for="__nav_3_5_1">
+        Linux
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Linux" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PyPi/Linux/Install.html" class="md-nav__link">
+        Install
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PyPi/Linux/Running.html" class="md-nav__link">
+        Running
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PyPi/Linux/Service.html" class="md-nav__link">
+        Service
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+      
+      <label class="md-nav__link" for="__nav_3_6">
+        Troubleshooting
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Troubleshooting" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Troubleshooting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Troubleshooting/troubleshooting.html" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" checked>
+      
+      <label class="md-nav__link" for="__nav_3_7">
+        Windows
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Windows" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          Windows
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          FreeTAKServer Install On Windows Computer
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="FreeTAKServer_Windows_Install.html" class="md-nav__link md-nav__link--active">
+        FreeTAKServer Install On Windows Computer
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#freetakserver-manager-for-windows" class="md-nav__link">
+    FreeTAKServer Manager For Windows
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#release-version-1512" class="md-nav__link">
+    release version 1.5.12
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-instructions" class="md-nav__link">
+    Install Instructions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo" class="md-nav__link">
+    TODO
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-info" class="md-nav__link">
+    More Info
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rpifts-series" class="md-nav__link">
+    RPiFTS Series
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Usage
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Usage" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Usage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Usage/Connecting%20ATAK.html" class="md-nav__link">
+        Connecting ATAK to Pub Server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Usage/Connecting%20WinTAK.html" class="md-nav__link">
+        Connecting WinTAK
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Usage/ExCheck.html" class="md-nav__link">
+        ExCheck
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Usage/VideoManagement.html" class="md-nav__link">
+        Video Management
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Administration
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Administration" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Administration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration/CLI.html" class="md-nav__link">
+        CLI
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration/SSL.html" class="md-nav__link">
+        SSL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration/Wed%20Admin.html" class="md-nav__link">
+        WebUI
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Tools
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tools" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/FreeTAKUAS.html" class="md-nav__link">
+        FreeTAKUAS
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#freetakserver-manager-for-windows" class="md-nav__link">
+    FreeTAKServer Manager For Windows
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#release-version-1512" class="md-nav__link">
+    release version 1.5.12
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-instructions" class="md-nav__link">
+    Install Instructions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo" class="md-nav__link">
+    TODO
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-info" class="md-nav__link">
+    More Info
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rpifts-series" class="md-nav__link">
+    RPiFTS Series
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/edit/main/docs/docs/Installation/Windows/FreeTAKServer_Windows_Install.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="freetakserver-install-on-windows-computer">FreeTAKServer Install On Windows Computer</h1>
+<p>Below is the installation commands and comments for the installation of FreeTAKServer on a windows computer. Please notcie, the FTS team is not supporting Windows as an official OS for FTS. please contact the original authors</p>
+<h2 id="freetakserver-manager-for-windows">FreeTAKServer Manager For Windows</h2>
+<p><a href="https://github.com/Cale-Torino/FreeTAKServer_Manager">FreeTAKServer Manager</a>  has the ability to Start, Stop, Restart, Install and Uninstall the FreeTAKServer &amp; FreeTAKServer-UI.</p>
+<h2 id="release-version-1512">release version 1.5.12</h2>
+<p>FreeTAKServer provides Situational Awareness and other capabilities such as:</p>
+<ul>
+<li>sci-fi themed Web Administration</li>
+<li>SSL Encryption Management</li>
+<li>Health Monitor</li>
+<li>Dynamically change IP / ports, start, stop FTS services from web UI</li>
+<li>Service management</li>
+<li>Federation Service (Connecting two or more FTS or TAK server instances)</li>
+<li>Data Package upload and retrieval</li>
+<li>Private data package (user to user)</li>
+<li>Image transfer and storage</li>
+<li>COT recording in a database</li>
+<li>Execution of common task list (using the ExCheck plugin for WinTAK; ATAK plugin only available to users with takmaps.com access)</li>
+<li>User Management</li>
+<li>Command Line Interface</li>
+<li>REST API for creation of information such as emergency, Enemy units and so on</li>
+</ul>
+<p>the preferred way to install FTS is by using Pip, that would solve all the required dependencies. the offline release requires additional manual work and has to be used only in the cases where internet connection is not available.</p>
+<hr />
+<h2 id="install-instructions">Install Instructions</h2>
+<ol>
+<li></li>
+</ol>
+<p>Install python from python.org</p>
+<p>Download and run the installer</p>
+<pre><code>https://www.python.org/downloads/windows/
+</code></pre>
+<p>Choose the installer option.</p>
+<p><a href="pythoninstall.jpg"><img src="pythoninstall.jpg" width="800"/></a></p>
+<p>Check pip, tcl/tk and IDLE and the Python test suite.</p>
+<p><a href="features.jpg"><img src="features.jpg" width="800"/></a></p>
+<p>Make sure you add Python to environment variables for easy use.</p>
+<p><a href="advanced.jpg"><img src="advanced.jpg" width="800"/></a></p>
+<ol>
+<li></li>
+</ol>
+<p>Now check that python and pip are installed and working correctly. <em>You should be able to open cmd anywhere and do this check</em>:</p>
+<pre><code>&gt; python -V
+
+&gt; pip --version
+</code></pre>
+<p><a href="chkpypip.jpg"><img src="chkpypip.jpg" width="800"/></a></p>
+<ol>
+<li></li>
+</ol>
+<p>Once you have checked that Python and pip are working install the requirements:</p>
+<pre><code>&gt; pip install flask
+&gt; pip install flask_login
+&gt; pip install flask_migrate
+&gt; pip install flask_wtf
+&gt; pip install flask_sqlalchemy
+&gt; pip install email_validator
+&gt; pip install gunicorn
+
+&gt; pip install coveralls
+&gt; pip install coverage
+&gt; pip install pytest
+&gt; pip install flake8
+&gt; pip install flake8-print
+&gt; pip install pep8-naming
+&gt; pip install selenium
+</code></pre>
+<ol>
+<li></li>
+</ol>
+<p>When all the requirements have been satisfied install the FreeTAKServer</p>
+<pre><code>&gt; python -m pip install FreeTAKServer[ui]
+</code></pre>
+<ol>
+<li></li>
+</ol>
+<p>After the installation has finished open the <code>MainConfig.py</code> file for editing.</p>
+<p>The contents must be changed fo that the Windows paths can communicate with FTS</p>
+<pre><code>MY PATH EXAMPLE
+C:\Software\python\Lib\site-packages\FreeTAKServer\controllers\configuration\MainConfig.py
+</code></pre>
+<p>Edited contents for windows machines:</p>
+<pre><code class="language-python">
+import os
+currentPath = os.path.dirname(os.path.abspath(__file__))
+from pathlib import Path
+
+
+class MainConfig:
+    &quot;&quot;&quot;
+    this is the main configuration file and is the only one which
+    should need to be changed
+    &quot;&quot;&quot;
+    # this is the port to which clients will connect
+    CoTServicePort = int(8087)
+
+    SSLCoTServicePort = int(8089)
+
+    # this needs to be changed for private data packages to work
+    DataPackageServiceDefaultIP = str(&quot;0.0.0.0&quot;)
+
+    # User Connection package IP needs to be set to the IP which is used when creating the connection in your tak device
+    UserConnectionIP = str(&quot;0.0.0.0&quot;)
+
+    #python_version = 'python3.8'
+
+    #userpath = '/usr/local/lib/'
+
+    # api port
+    APIPort = 19023
+
+    # Federation port
+    FederationPort = 9000
+
+    # api IP
+    APIIP = '0.0.0.0'
+
+    # allowed ip's to access CLI commands
+    AllowedCLIIPs = ['127.0.0.1']
+
+    # IP for CLI to access
+    CLIIP = '127.0.0.1'
+
+    # whether or not to save CoT's to the DB
+    SaveCoTToDB = bool(True)
+
+    # this should be set before startup
+    DBFilePath = str(r'C:\\Software\\python\\Lib\\site-packages\\FreeTAKServer\\FTSDataBase.db')
+
+    # the version information of the server (recommended to leave as default)
+    version = 'FreeTAKServer-1.5.12 RC1'
+
+    MainPath = str(Path(fr'C:\\Software\\python\\Lib\\site-packages\\FreeTAKServer'))
+
+    ExCheckMainPath = str(Path(fr'{MainPath}\\ExCheck'))
+
+    ExCheckFilePath = str(Path(fr'{MainPath}\\ExCheck\\template'))
+
+    ExCheckChecklistFilePath = str(Path(fr'{MainPath}\\ExCheck\\checklist'))
+
+    DataPackageFilePath = str(Path(fr'{MainPath}\\FreeTAKServerDataPackageFolder'))
+
+    # format of API message header should be {Authentication: Bearer 'TOKEN'}
+    from uuid import uuid4
+    id = str(uuid4())
+
+    nodeID = f&quot;FreeTAKServer-{id}&quot;
+
+    # set to None if you don't want a message sent
+    ConnectionMessage = f'Welcome to FreeTAKServer {version}. The Parrot is not dead. It’s just resting'
+
+    keyDir = str(Path(fr'{MainPath}\\certs\\pubserver.key'))
+
+    pemDir = str(Path(fr'{MainPath}\\certs\\pubserver.pem')) # or crt
+
+    unencryptedKey = str(Path(fr'{MainPath}\\certs\\pubserver.key.unencrypted'))
+
+    p12Dir = str(Path(fr'{MainPath}\\certs\\pubserver.p12'))
+
+    CA = str(Path(fr'{MainPath}\\certs\\ca.pem'))
+    CAkey = str(Path(fr'{MainPath}\\certs\\ca.key'))
+
+    federationCert = str(Path(fr'{MainPath}\\certs\\pubserver.pem'))
+    federationKey = str(Path(fr'{MainPath}\\certs\\pubserver.key'))
+    federationKeyPassword = str('defaultpass')
+
+    # location to backup client packages
+    clientPackages = str(Path(fr'{MainPath}\\certs\\ClientPackages'))
+
+    password = str('defaultpass')
+
+    websocketkey = &quot;YourWebsocketKey&quot;
+
+</code></pre>
+<ol>
+<li></li>
+</ol>
+<p>When finished configuring <code>MainConfig.py</code> open the <code>config.py</code> file for editing</p>
+<pre><code>MY PATH EXAMPLE
+C:\Software\python\Lib\site-packages\FreeTAKServer-UI\config.py
+</code></pre>
+<p>Edited contents for windows machines:</p>
+<pre><code class="language-python">
+# -*- encoding: utf-8 -*-
+&quot;&quot;&quot;
+License: MIT
+Copyright (c) 2019 - present AppSeed.us
+&quot;&quot;&quot;
+
+import os
+from   os import environ
+
+class Config(object):
+
+    basedir    = os.path.abspath(os.path.dirname(__file__))
+
+    SECRET_KEY = 'key'
+
+    # This will connect to the FTS db
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + 'C:\\Software\\python\\Lib\\site-packages\\FreeTAKServer\\FTSDataBase.db'
+
+    # certificates path
+    certpath = &quot;C:\\Software\\python\\Lib\\site-packages\\FreeTAKServer\\certs\\&quot;
+
+    # crt file path
+    crtfilepath = f&quot;{certpath}pubserver.pem&quot;
+
+    # key file path
+    keyfilepath = f&quot;{certpath}pubserver.key.unencrypted&quot;
+
+    # this IP will be used to connect with the FTS API
+    IP = '127.0.0.1'
+
+    # Port the  UI uses to communicate with the API
+    PORT = '19023'
+
+    # the public IP your server is exposing
+    APPIP = '127.0.0.1'
+
+    # this port will be used to listen
+    APPPort = 5000
+
+    # the webSocket  key used by the UI to communicate with FTS.
+    WEBSOCKETKEY = 'YourWebsocketKey'
+
+    # the API key used by the UI to comunicate with FTS. generate a new system user and then set it
+    APIKEY = 'Bearer token'
+
+    # For 'in memory' database, please use:
+    # SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
+
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+    # THEME SUPPORT
+    #  if set then url_for('static', filename='', theme='')
+    #  will add the theme name to the static URL:
+    #    /static/&lt;DEFAULT_THEME&gt;/filename
+    # DEFAULT_THEME = &quot;themes/dark&quot;
+    DEFAULT_THEME = None
+
+
+class ProductionConfig(Config):
+    DEBUG = False
+
+    # Security
+    SESSION_COOKIE_HTTPONLY = True
+    REMEMBER_COOKIE_HTTPONLY = True
+    REMEMBER_COOKIE_DURATION = 3600
+
+    # PostgreSQL database
+    SQLALCHEMY_DATABASE_URI = 'postgresql://{}:{}@{}:{}/{}'.format(
+        environ.get('APPSEED_DATABASE_USER', 'appseed'),
+        environ.get('APPSEED_DATABASE_PASSWORD', 'appseed'),
+        environ.get('APPSEED_DATABASE_HOST', 'db'),
+        environ.get('APPSEED_DATABASE_PORT', 5432),
+        environ.get('APPSEED_DATABASE_NAME', 'appseed')
+    )
+
+
+class DebugConfig(Config):
+    DEBUG = True
+
+
+config_dict = {
+    'Production': ProductionConfig,
+    'Debug': DebugConfig
+}
+
+
+</code></pre>
+<ol>
+<li></li>
+</ol>
+<p>In order to run the server and the GUI two terminal windows must be opened and the commands below must be run:</p>
+<pre><code>SERVER START COMMAND
+&gt; python -m FreeTAKServer.controllers.services.FTS
+
+UI START COMMAND
+&gt; cd C:\Software\python\Lib\site-packages\FreeTAKServer-UI
+&gt; set FLASK_APP=run.py
+&gt; flask run
+</code></pre>
+<ol>
+<li></li>
+</ol>
+<p>Now your server should be running. <code>User = admin</code>, <code>Password = password</code> and <code>GUI link</code> http://localhost:5000/</p>
+<h2 id="notes">Notes</h2>
+<p>If you would like to setup a Batch file (to run the server on a double click) use the commands below:</p>
+<p>Create a <code>.bat</code> file to run the server on double click and on startup:</p>
+<p><code>StartFreeTAKServer.bat</code></p>
+<pre><code>::START THE SERVER
+ECHO ON
+start cmd /k python -m FreeTAKServer.controllers.services.FTS
+cd C:\Software\python\Lib\site-packages\FreeTAKServer-UI
+set FLASK_APP=run.py
+flask run
+pause 
+</code></pre>
+<p>Now to run at startup: Go to Run (<code>WINDOWS + R</code>) and Type <code>shell:startup</code>, and paste a copy of your <code>StartFreeTAKServer.bat</code> file there.</p>
+<blockquote>
+<p>To check python version <code>python -V</code></p>
+<p>To quickely check your IP <code>ipconfig</code></p>
+</blockquote>
+<h2 id="todo">TODO</h2>
+<ul>
+<li>Create C# app to manage FreeTAKServer on windows with Python3</li>
+</ul>
+<p>##ERRORS</p>
+<p>COT error v1.5.13</p>
+<p><a href="CotError.png"><img src="CotError.png" width="800"/></a></p>
+<h2 id="more-info">More Info</h2>
+<p>FreeTAKServer documentation for end users</p>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>User Docs:</td>
+<td>https://freetakteam.github.io/FreeTAKServer-User-Docs/</td>
+</tr>
+<tr>
+<td>PyPi Install Docs:</td>
+<td>https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/PyPi/Linux/Install/</td>
+</tr>
+<tr>
+<td>Server Download:</td>
+<td>https://github.com/FreeTAKTeam/FreeTakServer</td>
+</tr>
+<tr>
+<td>Server Releases:</td>
+<td>https://github.com/FreeTAKTeam/FreeTakServer/releases</td>
+</tr>
+</tbody>
+</table>
+<h2 id="rpifts-series">RPiFTS Series</h2>
+<p>GHOST_DA-B6 has created a set of videos on youtube detailing how to install and set up FTS on raspberry pi SBC's.</p>
+<p>You can view his RPiFTS video series on his <a href="https://www.youtube.com/channel/UC--WpY--HV7PymMWLgfflZA">channel</a>.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../Troubleshooting/troubleshooting.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Troubleshooting" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Troubleshooting
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../Usage/Connecting%20ATAK.html" class="md-footer__link md-footer__link--next" aria-label="Next: Connecting ATAK to Pub Server" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Connecting ATAK to Pub Server
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ddd52ceb.min.js"></script>
+      
+    
+  </body>
+</html>

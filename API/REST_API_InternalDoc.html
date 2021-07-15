@@ -1,0 +1,1647 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.10">
+    
+    
+      
+        <title>REST API - Internal - FreeTAKServer Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1fe995fd.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rest-api-internal" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="FreeTAKServer Documentation" class="md-header__button md-logo" aria-label="FreeTAKServer Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FreeTAKServer Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              REST API - Internal
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="FreeTAKServer Documentation" class="md-nav__button md-logo" aria-label="FreeTAKServer Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    FreeTAKServer Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        FreeTAKServer
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        API
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="API" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="REST_APIDoc.html" class="md-nav__link">
+        REST API - Public
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          REST API - Internal
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="REST_API_InternalDoc.html" class="md-nav__link md-nav__link--active">
+        REST API - Internal
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#authorization-api" class="md-nav__link">
+    Authorization: API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authorization-websocket" class="md-nav__link">
+    Authorization Websocket
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Installation
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Installation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/Video%20Guides.html" class="md-nav__link">
+        Video Guides
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/installUIOnAndroid.html" class="md-nav__link">
+        FTS-UI Installation with Android
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      <label class="md-nav__link" for="__nav_3_3">
+        Android
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Android" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Android
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/Android/Android.html" class="md-nav__link">
+        FTS Installation with Android
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      <label class="md-nav__link" for="__nav_3_4">
+        Docker
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Docker" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Docker
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/Docker/index.html" class="md-nav__link">
+        Install
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/Docker/CLI.html" class="md-nav__link">
+        CLI
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/Docker/Debian.html" class="md-nav__link">
+        Debian
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/Docker/Quick%20Start%20Guide.html" class="md-nav__link">
+        Quick Start Guide
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/Docker/Raspberry%20Pi.html" class="md-nav__link">
+        Raspberry Pi 4/Raspberry Pi 3
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_6" type="checkbox" id="__nav_3_4_6" >
+      
+      <label class="md-nav__link" for="__nav_3_4_6">
+        Multiple Servers
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Multiple Servers" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Multiple Servers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/Docker/Multiple%20Servers/multiple.html" class="md-nav__link">
+        Multiple Servers on Single Host
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_7" type="checkbox" id="__nav_3_4_7" >
+      
+      <label class="md-nav__link" for="__nav_3_4_7">
+        Upgrade
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Upgrade" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          Upgrade
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/Docker/Upgrade/Upgrade.html" class="md-nav__link">
+        Upgrading Existing Container
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      
+      <label class="md-nav__link" for="__nav_3_5">
+        PyPi
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="PyPi" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          PyPi
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5_1" type="checkbox" id="__nav_3_5_1" >
+      
+      <label class="md-nav__link" for="__nav_3_5_1">
+        Linux
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Linux" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/PyPi/Linux/Install.html" class="md-nav__link">
+        Install
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/PyPi/Linux/Running.html" class="md-nav__link">
+        Running
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/PyPi/Linux/Service.html" class="md-nav__link">
+        Service
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+      
+      <label class="md-nav__link" for="__nav_3_6">
+        Troubleshooting
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Troubleshooting" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Troubleshooting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/Troubleshooting/troubleshooting.html" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
+      
+      <label class="md-nav__link" for="__nav_3_7">
+        Windows
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Windows" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          Windows
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/Windows/FreeTAKServer_Windows_Install.html" class="md-nav__link">
+        FreeTAKServer Install On Windows Computer
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Usage
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Usage" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Usage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Usage/Connecting%20ATAK.html" class="md-nav__link">
+        Connecting ATAK to Pub Server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Usage/Connecting%20WinTAK.html" class="md-nav__link">
+        Connecting WinTAK
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Usage/ExCheck.html" class="md-nav__link">
+        ExCheck
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Usage/VideoManagement.html" class="md-nav__link">
+        Video Management
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Administration
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Administration" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Administration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administration/CLI.html" class="md-nav__link">
+        CLI
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administration/SSL.html" class="md-nav__link">
+        SSL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administration/Wed%20Admin.html" class="md-nav__link">
+        WebUI
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Tools
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tools" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/FreeTAKUAS.html" class="md-nav__link">
+        FreeTAKUAS
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#authorization-api" class="md-nav__link">
+    Authorization: API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authorization-websocket" class="md-nav__link">
+    Authorization Websocket
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/edit/main/docs/docs/API/REST_API_InternalDoc.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="rest-api-internal">REST API - Internal</h1>
+<p>Internal APIs are primarly used by the FTS UI to communicate with the server. See also the <a href="REST_APIDoc.html">REST API DOC</a>
+In the current release (1.5.12), FTS supports following API :</p>
+<ul>
+<li>authenticate</li>
+<li>users</li>
+<li>logs</li>
+<li>serviceInfo</li>
+<li>serverHealth</li>
+<li>systemStatus</li>
+<li>DataPackageTable</li>
+<li>MissionTable</li>
+</ul>
+<h2 id="authorization-api">Authorization: API</h2>
+<p>to use the API you need to have a REST API key.
+the authorization is placed in the header of the message.
+Authorization: Bearer [YOUR_API_KEY]</p>
+<blockquote>
+<p>you need to use the string 'Bearer' before your API KEY</p>
+</blockquote>
+<h2 id="authorization-websocket">Authorization Websocket</h2>
+<p>to use websocket events you need to trigger
+the event authenticate after connection and pass
+as the body of the message <code>{"Authorization": [YOUR WEBSOCKET KEY]}</code></p>
+<h1 id="connect">Connect</h1>
+<h2 id="description">description</h2>
+<p>event triggered on initial connection to server<br />
+Event: <code>connect</code> (this is a special event as it is called automatically on connection)<br />
+Subscription: <code>connectUpdate</code></p>
+<h2 id="returns">returns</h2>
+<pre><code class="language-json">{
+&quot;starttime&quot;: &quot;&quot;, // time at which server was started
+&quot;version&quot;: &quot;&quot; // version of FTS currently running
+}
+</code></pre>
+<h1 id="authenticate">Authenticate</h1>
+<h2 id="description_1">description</h2>
+<p>event used to authenticate new clients in the websocket<br />
+  Event: <code>authenticate</code> <br />
+  Subscription: <code>authentication</code></p>
+<h2 id="returns_1">returns</h2>
+<p>will call the event authentication on client with message body
+<code>{'successful': 'True'/'False'}</code> dependent on whether or not
+the authentication was accepted.</p>
+<h2 id="parameters">parameters</h2>
+<p>a JSON body in the following format</p>
+<pre><code class="language-json">{&quot;Authorization&quot;: [YOUR WEBSOCKET KEY]}
+</code></pre>
+<h1 id="users">Users</h1>
+<h2 id="description_2">description</h2>
+<p>event used to access list of connected client aswell as data
+relating to each client.<br />
+ Event: <code>users</code> <br />
+ Subscription: <code>userUpdate</code></p>
+<h2 id="returns_2">returns</h2>
+<p>a JSON message containing connected clients</p>
+<pre><code class="language-json">{
+  &quot;Users&quot;:[
+    &quot;user:&quot;{&quot;ip&quot;: &quot;24.114.74.13&quot;, &quot;callsign&quot;: &quot;CorvoMobile&quot;, &quot;team&quot;: &quot;Yellow&quot;},
+    &quot;user:&quot;{&quot;ip&quot;: &quot;24.144.79.13&quot;, &quot;callsign&quot;: &quot;Ghost&quot;, &quot;team&quot;: &quot;Blue&quot;}
+  ]
+}
+</code></pre>
+<h2 id="parameters_1">parameters</h2>
+<p>None</p>
+<h1 id="systemuser">systemUser</h1>
+<p>retrieve all system users and their associated information<br />
+Event: <code>systemUser</code> <br />
+Subscription: <code>systemUserUpdate</code></p>
+<h2 id="returns_3">returns</h2>
+<p>system user information</p>
+<pre><code class="language-json">{
+    &quot;systemUsers&quot;: [
+          {&quot;Name&quot;: &quot;Dan&quot;, &quot;Group&quot;: &quot;Yellow&quot;, &quot;Token&quot;: &quot;&quot;, &quot;Password&quot;: &quot;&quot;, &quot;Certs&quot;: &quot;a.zip&quot;, &quot;Uid&quot;: &quot;&quot;},
+          {&quot;Name&quot;: &quot;Joe&quot;, &quot;Group&quot;: &quot;Yellow&quot;, &quot;Token&quot;: &quot;&quot;, &quot;Password&quot;: &quot;&quot;, &quot;Certs&quot;: &quot;b.zip&quot;, &quot;Uid&quot;: &quot;&quot;},
+          {&quot;Name&quot;: &quot;Bill&quot;, &quot;Group&quot;: &quot;Yellow&quot;, &quot;Token&quot;: &quot;&quot;, &quot;Password&quot;: &quot;&quot;, &quot;Certs&quot;: &quot;c.zip&quot;, &quot;Uid&quot;: &quot;&quot;}
+    ]
+}
+</code></pre>
+<h2 id="parameters_2">parameters</h2>
+<p>None</p>
+<h1 id="addsystemuser">addSystemUser</h1>
+<h2 id="description_3">description</h2>
+<p>add one or many system users to the server<br />
+Event: <code>addSystemUser</code></p>
+<h2 id="returns_4">returns</h2>
+<p>None</p>
+<h2 id="parameters_3">parameters</h2>
+<pre><code class="language-json">{
+    &quot;systemUsers&quot;: [
+          {&quot;Name&quot;: &quot;Dan&quot;, &quot;Group&quot;: &quot;Yellow&quot;, &quot;Token&quot;: &quot;&quot;, &quot;Password&quot;: &quot;&quot;, &quot;Certs&quot;: &quot;true&quot;},
+          {&quot;Name&quot;: &quot;Joe&quot;, &quot;Group&quot;: &quot;Blue&quot;, &quot;Token&quot;: &quot;&quot;, &quot;Password&quot;: &quot;&quot;, &quot;Certs&quot;: &quot;true&quot;},
+          {&quot;Name&quot;: &quot;Bill&quot;, &quot;Group&quot;: &quot;Red&quot;, &quot;Token&quot;: &quot;&quot;, &quot;Password&quot;: &quot;&quot;, &quot;Certs&quot;: &quot;true&quot;}
+    ]
+}
+</code></pre>
+<h1 id="removesystemuser">removeSystemUser</h1>
+<h2 id="description_4">description</h2>
+<p>remove a system user from the server<br />
+Event: <code>removeSystemUser</code></p>
+<h2 id="returns_5">returns</h2>
+<p>None</p>
+<h2 id="parameters_4">parameters</h2>
+<pre><code class="language-json">{
+  &quot;systemUsers&quot;: [
+    {&quot;uid&quot;: &quot;[uid of system user to be deleted]&quot;},
+    {&quot;uid&quot;: &quot;[uid of system user to be deleted]&quot;},
+    {&quot;uid&quot;: &quot;[uid of system user to be deleted]&quot;}
+  ]
+}
+</code></pre>
+<h1 id="logs">logs</h1>
+<h2 id="description_5">description</h2>
+<p>event used to retrieve recent error log entries
+from the server<br />
+Event: <code>logs</code> <br />
+Subscription: <code>logUpdate</code></p>
+<h2 id="returns_6">returns</h2>
+<p>recent error logs in JSON to the client event <code>logUpdate</code> with data in the following format</p>
+<pre><code class="language-json">{
+  &quot;log_data&quot;: [
+    {&quot;time&quot;: &quot;2020-12-16 21:15:14,618&quot;, &quot;type&quot;: &quot;ERROR&quot;, &quot;file&quot;:&quot;TCPCoTServiceController.py:31&quot;, &quot;message&quot;: &quot;there has been an exception in Data Package service startup maximum recursion depth exceeded while calling a Python object&quot;}
+  ]
+}
+</code></pre>
+<h2 id="parameters_5">parameters</h2>
+<p>the timestamp on the most recent log entry in format <code>%Y-%m-%d %H:%M:%S,%f</code></p>
+<h1 id="events">events</h1>
+<h2 id="description_6">description</h2>
+<p>event used to retrieve last 5 events<br />
+Event: <code>events</code> <br />
+Subscription: <code>eventsUpdate</code></p>
+<h2 id="returns_7">returns</h2>
+<pre><code class="language-json">{
+  &quot;events&quot;: [&quot;server event 1&quot;, &quot;server event 2&quot;, &quot;server event 3&quot;, &quot;server event 4&quot;, &quot;server event 5&quot;]
+}
+</code></pre>
+<h2 id="parameters_6">parameters</h2>
+<p>None</p>
+<h1 id="serviceinfo">serviceInfo</h1>
+<h2 id="description_7">description</h2>
+<p>event used to retrieve information about all services including
+their current status and port<br />
+Event: <code>serviceInfo</code> <br />
+Subscription: <code>serviceInfoUpdate</code></p>
+<h2 id="returns_8">returns</h2>
+<p>status and port of each service aswell as the server starttime to the client event <code>serviceInfoUpdate</code>
+with body data in the following format</p>
+<pre><code class="language-json">{
+    &quot;services&quot;: {
+        &quot;SSL_CoT_service&quot;: {
+                      &quot;status&quot;: &quot;on&quot;,
+                      &quot;port&quot;: 11111
+                  },
+        &quot;TCP_CoT_service&quot;: {
+                      &quot;status&quot;: &quot;off&quot;,
+                      &quot;port&quot;: 55555
+                  },
+        &quot;SSL_DataPackage_service&quot;: {
+                      &quot;status&quot;: &quot;on&quot;,
+                      &quot;port&quot;: 52345
+                  },
+        &quot;TCP_DataPackage_service&quot;: {
+                      &quot;status&quot;: &quot;on&quot;,
+                      &quot;port&quot;: 55235
+                  },
+        &quot;Federation_server_service&quot;: {
+                      &quot;status&quot;: &quot;on&quot;,
+                      &quot;port&quot;: 55235
+                  },
+        &quot;Rest_API_service&quot;: {
+                      &quot;status&quot;: &quot;on&quot;,
+                      &quot;port&quot;: 55235
+                  }
+    },
+    &quot;IP&quot;: &quot;127.0.0.1&quot;
+}
+</code></pre>
+<h2 id="parameters_7">parameters</h2>
+<p>None</p>
+<h1 id="serverhealth">serverHealth</h1>
+<h2 id="description_8">description</h2>
+<p>event used to retrieve information regarding
+the status of the server hardware including
+cpu, disk and memory usage.<br />
+Event: <code>serverHealth</code> <br />
+Subscription: <code>serverHealthUpdate</code></p>
+<h2 id="returns_9">returns</h2>
+<p>current hardware usage to the client event <code>serverHealthUpdate</code> with body</p>
+<pre><code class="language-json">{
+    &quot;CPU&quot;: 56,
+    &quot;memory&quot;: 39,
+    &quot;disk&quot;: 94
+}
+</code></pre>
+<h2 id="parameters_8">parameters</h2>
+<p>None</p>
+<h1 id="systemstatus">systemStatus</h1>
+<h2 id="description_9">description</h2>
+<p>event used to execute test of all currently active
+services and return their respective status.<br />
+  Event: <code>systemStatus</code> <br />
+  Subscription: <code>systemStatusUpdate</code></p>
+<h2 id="returns_10">returns</h2>
+<p>current and expected status of all services on the server in JSON format 
+to the event <code>systemStatusUpdate</code> on the client with the body of the message 
+in the following format</p>
+<pre><code class="language-json">{
+  &quot;services&quot;: {
+      &quot;SSL_CoT_service&quot;: {
+          &quot;status_expected&quot;: &quot;on&quot;,
+          &quot;status_actual&quot;: &quot;off&quot;
+      },
+      &quot;TCP_CoT_service&quot;: {
+          &quot;status_expected&quot;: &quot;on&quot;,
+          &quot;satus_actual&quot;: &quot;on&quot;
+      },
+      &quot;SSL_DataPackage_service&quot;: {
+          &quot;status_expected&quot;: &quot;on&quot;,
+          &quot;status_actual&quot;: &quot;on&quot;
+      },
+      &quot;TCP_DataPackage_service&quot;: {
+          &quot;status_expected&quot;: &quot;on&quot;,
+          &quot;status_actual&quot;: &quot;on&quot;
+      },
+      &quot;SSL_Federation_service&quot;: {
+          &quot;status_expected&quot;: &quot;off&quot;,
+          &quot;status_actual&quot;: &quot;off&quot;
+      },
+      &quot;TCP_API_service&quot;: {
+          &quot;status_expected&quot;: &quot;on&quot;,
+          &quot;status_actual&quot;: &quot;on&quot;
+      }
+  }
+}
+</code></pre>
+<h2 id="parameters_9">parameters</h2>
+<p>None</p>
+<h1 id="changeserviceinfo">changeServiceInfo</h1>
+<h2 id="description_10">description</h2>
+<p>Event used to change the status of each service running on the server<br />
+Event: <code>changeServiceInfo</code> <br />
+Subscription: <code>systemStatusUpdate</code></p>
+<h2 id="returns_11">returns</h2>
+<pre><code class="language-json">{
+&quot;services&quot;: {
+    &quot;SSL_CoT_service&quot;: {
+                  &quot;status&quot;: &quot;on&quot;,
+                  &quot;port&quot;: 11111
+              },
+    &quot;TCP_CoT_service&quot;: {
+                  &quot;status&quot;: &quot;off&quot;,
+                  &quot;port&quot;: 55555
+              },
+    &quot;SSL_DataPackage_service&quot;: {
+                  &quot;status&quot;: &quot;on&quot;,
+                  &quot;port&quot;: 52345
+              },
+    &quot;TCP_DataPackage_service&quot;: {
+                  &quot;status&quot;: &quot;on&quot;,
+                  &quot;port&quot;: 55235
+              }
+},
+&quot;ip&quot;: &quot;127.0.0.1&quot;
+}
+</code></pre>
+<h2 id="parameters_10">parameters</h2>
+<p>accepts JSON data containing information regarding the desired status of each service in the following format</p>
+<pre><code class="language-json">{
+  &quot;services&quot;: {
+      &quot;SSL_CoT_service&quot;: {
+                    &quot;status&quot;: &quot;on&quot;,
+                    &quot;port&quot;: 11111
+                },
+      &quot;TCP_CoT_service&quot;: {
+                    &quot;status&quot;: &quot;off&quot;,
+                    &quot;port&quot;: 55555
+                },
+      &quot;SSL_DataPackage_service&quot;: {
+                    &quot;status&quot;: &quot;on&quot;,
+                    &quot;port&quot;: 52345
+                },
+      &quot;TCP_DataPackage_service&quot;: {
+                    &quot;status&quot;: &quot;on&quot;,
+                    &quot;port&quot;: 55235
+                }
+  },
+  &quot;ip&quot;: &quot;127.0.0.1&quot;
+}
+</code></pre>
+<p><code>ip</code>: ip on which the server should be listening eg: <code>0.0.0.0</code><br/>
+<code>status</code>: whether the service is to be started or stopped eg: <code>on</code>, <code>off</code> <br />
+<code>port</code>(optional): the port on which the service should be listening eg: <code>8089</code> <br />
+not all services need to be in every message only those you would like to change</p>
+<h1 id="systemusers">systemUsers</h1>
+<p>Event used to retrieve all system users<br />
+  Event: <code>systemUsers</code> <br />
+  Subscription: <code>systemUsersUpdate</code></p>
+<h2 id="returns_12">returns</h2>
+<p>the metadata of each user</p>
+<pre><code class="language-json">{
+  &quot;systemUsers&quot;:[
+    {&quot;Name&quot;: &quot;Dan&quot;, &quot;Group&quot;: &quot;Yellow&quot;, &quot;Token&quot;: &quot;Token1&quot;, &quot;Password&quot;: &quot;psw1&quot;, , &quot;Certs&quot;: &quot;a.zip&quot;},
+    {&quot;Name&quot;: &quot;Joe&quot;, &quot;Group&quot;: &quot;Yellow&quot;, &quot;Token&quot;: &quot;Token1&quot;, &quot;Password&quot;: &quot;psw1&quot;, , &quot;Certs&quot;: &quot;a.zip&quot;},
+    {&quot;Name&quot;: &quot;Bill&quot;, &quot;Group&quot;: &quot;Yellow&quot;, &quot;Token&quot;: &quot;Token1&quot;, &quot;Password&quot;: &quot;psw1&quot;, , &quot;Certs&quot;: &quot;a.zip&quot;}
+  ]
+}
+</code></pre>
+<h2 id="parameters_11">parameters</h2>
+<p>None</p>
+<h1 id="addsystemusers">addSystemUsers</h1>
+<p>used to create a new system user on the server<br />
+Event: <code>addSystemUsers</code> <br /></p>
+<h2 id="returns_13">returns</h2>
+<p>None</p>
+<h2 id="parameters_12">parameters</h2>
+<pre><code class="language-json">{
+  &quot;systemUsers&quot;:[
+    {&quot;Name&quot;:&quot;dan&quot;, &quot;Group&quot;:&quot;Yellow&quot;, &quot;Token&quot;:&quot;token&quot;, &quot;Password&quot;: &quot;psw1&quot;, &quot;Certs&quot;:&quot;true&quot; }
+    ]
+}
+</code></pre>
+<ul>
+<li>Name: name of user</li>
+<li>Group: group of user</li>
+<li>Token: api token of user(optional)</li>
+<li>Password: password for user(optional)</li>
+<li>Certs: whether the user should have certs generated(should be true in ui)</li>
+</ul>
+<h2 id="removesystemusers">removeSystemUsers</h2>
+<p>used to remove a system user and their associated files from the server<br />
+Event: <code>removeSystemUsers</code> <br /></p>
+<h3 id="returns_14">returns</h3>
+<p>None</p>
+<h3 id="parameters_13">parameters</h3>
+<pre><code class="language-json">{ &quot;systemUsers&quot;: 
+  [ 
+    { &quot;uid&quot;: &quot;46b3de87-85f5-400d-a098-536f2e1421ce&quot; } 
+  ] 
+}
+</code></pre>
+<ul>
+<li>uid: uid of user to remove</li>
+<li></li>
+</ul>
+<h1 id="datapackagetable">DataPackageTable</h1>
+<h2 id="description_11">description</h2>
+<p>Endpoint used to access data regarding DataPackages</p>
+<h3 id="methods">methods</h3>
+<ul>
+<li>POST</li>
+<li>GET</li>
+<li>DELETE   </li>
+</ul>
+<h2 id="get">GET</h2>
+<p>returns JSON data containing information regarding all DataPackages currently on server</p>
+<pre><code class="language-json">{
+  &quot;DataPackages&quot;:[
+    {&quot;Keywords&quot;: &quot;88.104.44.76&quot;, &quot;name&quot;: &quot;WWIII Locations&quot;,&quot;privacy&quot;:&quot;public&quot;, &quot;size&quot;:&quot;345KB&quot;, &quot;submitted&quot;:&quot;2020-02-10&quot; },
+    {&quot;Keywords&quot;: &quot;112.144.567.257&quot;, &quot;name&quot;: &quot;WWIII Locations&quot;,&quot;privacy&quot;:&quot;public&quot;, &quot;size&quot;:&quot;345KB&quot;, &quot;submitted&quot;:&quot;2020-02-10&quot; }
+  ]
+}
+</code></pre>
+<h2 id="post">POST</h2>
+<p>accepts the zipped form of the file in the body of the message and the following arguments in the url
+* filename: the name of the zipped file
+* creatorUid(optional): the uid of the user associated with the DataPackage defaults to <code>server</code> if none is provided</p>
+<h2 id="delete">DELETE</h2>
+<p>accepts the following JSON data</p>
+<pre><code class="language-json">{
+  &quot;DataPackages&quot;:[
+    {&quot;hash&quot;: &quot;194728885783f87ws84888943fjew&quot;},
+    {&quot;hash&quot;: &quot;19472mw45783f7ws848758943fjegr&quot;}
+  ]
+}
+</code></pre>
+<p>the hash values are the hashes of DataPackages to be deleted</p>
+<h2 id="put">PUT</h2>
+<p>accepts the following JSON data</p>
+<pre><code class="language-json">{
+  &quot;DataPackages&quot;:[
+    {&quot;PrimaryKey&quot;: &quot;1&quot;, &quot;Name&quot;: &quot;new_name&quot;, &quot;Keywords&quot;: &quot;new keywords&quot;, &quot;Privacy&quot;: &quot;0&quot;}
+  ]
+}
+</code></pre>
+<ul>
+<li>PrimaryKey: primary key of DataPackage to be modified</li>
+<li>Name: optional new name of DataPackage if not set name will not be changed</li>
+<li>Keywords: optional new keywords of DataPackage if not set keywords will not be changed</li>
+<li>Privacy: optional new privacy of DataPackage if not set privacy will not be changed must be 1(Private) or 0(Public)</li>
+</ul>
+<h1 id="missiontable">MissionTable</h1>
+<h2 id="description_12">description</h2>
+<p>Endpoint used to access data regarding mission packages</p>
+<h2 id="methods_1">methods</h2>
+<ul>
+<li>GET</li>
+<li>POST</li>
+<li>DELETE</li>
+</ul>
+<h2 id="get_1">GET</h2>
+<p>return JSON data containing information about all current Missions
+with the following format</p>
+<pre><code class="language-json">{
+    &quot;version&quot;: &quot;3&quot;,
+    &quot;type&quot;: &quot;Mission&quot;,
+    &quot;data&quot;: [{
+            &quot;name&quot;: &quot;save the world&quot;,
+            &quot;description&quot;: &quot;Protect the world from Aliens&quot;,
+            &quot;chatRoom&quot;: &quot;&quot;,
+            &quot;tool&quot;: &quot;public&quot;,
+            &quot;keywords&quot;: [&quot;War&quot;],
+            &quot;creatorUid&quot;: &quot;Anonymous&quot;,
+            &quot;createTime&quot;: &quot;2020-12-09T15:53:42.873Z&quot;,
+            &quot;groups&quot;: [&quot;__ANON__&quot;],
+            &quot;externalData&quot;: [],
+            &quot;uids&quot;: [{
+                    &quot;data&quot;: &quot;32e9089c-6ae0-4c7e-b4cd-cb16d3f46933&quot;,
+                    &quot;timestamp&quot;: &quot;2020-12-09T15:58:10.635Z&quot;,
+                    &quot;creatorUid&quot;: &quot;aa0b0312-b5cd-4c2c-bbbc-9c4c70216261&quot;,
+                    &quot;details&quot;: {
+                        &quot;type&quot;: &quot;a-h-G&quot;,
+                        &quot;callsign&quot;: &quot;R.9.155734&quot;,
+                        &quot;iconsetPath&quot;: &quot;COT_MAPPING_2525B/a-h/a-h-G&quot;
+                    }
+                }
+            ],
+            &quot;contents&quot;: [{
+                    &quot;data&quot;: {
+                        &quot;filename&quot;: &quot;Sout&quot;,
+                        &quot;keywords&quot;: [],
+                        &quot;mimeType&quot;: &quot;application/octet-stream&quot;,
+                        &quot;name&quot;: &quot;SWN Threat&quot;,
+                        &quot;submissionTime&quot;: &quot;2020-12-09T15:55:21.468Z&quot;,
+                        &quot;submitter&quot;: &quot;anonymous&quot;,
+                        &quot;uid&quot;: &quot;3ec22850-d6de-44a5-b79c-3af16695af60&quot;,
+                        &quot;hash&quot;: &quot;8a99e610d223426caaf267f12c3100513bbb62a66d07c5feb624d4cf5b90b69b&quot;,
+                        &quot;size&quot;: 18360
+                    },
+                    &quot;timestamp&quot;: &quot;2020-12-09T15:55:21.559Z&quot;,
+                    &quot;creatorUid&quot;: &quot;Anonymous&quot;
+                }
+            ],
+            &quot;passwordProtected&quot;: false
+        }
+    ],
+    &quot;nodeId&quot;: &quot;6ff99444fa124679a3943ee90308a44c9d794c02-e5a5-42b5-b4c8-625203ea1287&quot;
+}
+</code></pre>
+<h2 id="post_1">POST</h2>
+<p>not yet implemented</p>
+<h2 id="delete_1">DELETE</h2>
+<p>not yet implemented</p>
+<h1 id="excheck-table">ExCheck table</h1>
+<p>Endpoint used to access data regarding ExCheck items such as checklists and templates</p>
+<h2 id="post_2">POST</h2>
+<p>creates a template on the server from a supplied xml file accepting the following URL encoded values:
+* clientUid: the uid of the client to be recognized as the creator of the template</p>
+<p>body of the message should be the xml of the template</p>
+<h2 id="delete_2">DELETE</h2>
+<p>accepts the following data</p>
+<pre><code class="language-json">{
+  &quot;ExCheck&quot;: 
+  {
+    &quot;Templates&quot;: [{&quot;uid&quot;: &quot;TemplateUID1&quot;}, {&quot;uid&quot;: &quot;TemplateUID2&quot;}],
+    &quot;Checklists&quot;: [{&quot;uid&quot;: &quot;ChecklistUID1&quot;}, {&quot;uid&quot;: &quot;ChecklistUID2&quot;}]  
+  }
+}
+</code></pre>
+<p><code>uid</code>: the uid of those Checklists and Templates to be deleted</p>
+<h2 id="get_2">GET</h2>
+<p>return JSON data containing the following information about Checklists and Templates present on the server</p>
+<pre><code class="language-json">{
+  &quot;ExCheck&quot;: {
+    &quot;Templates&quot;: [
+      {
+        &quot;filename&quot;: &quot;cdd39d06-b43e-42f4-839d-32362febe9a1.xml&quot;, (name of file containing template xml)
+        &quot;name&quot;: &quot;test from atak&quot;, (name associated with template)
+        &quot;submissionTime&quot;: &quot;2020-12-22T22:07:31.749284Z&quot;, (time template was submitted to server)
+        &quot;submitter&quot;: &quot;[('NOVA',)]&quot;, (callsign of submitter)
+        &quot;uid&quot;: &quot;cdd39d06-b43e-42f4-839d-32362febe9a1&quot;, (uid of template)
+        &quot;hash&quot;: &quot;bfb97ed985f789b0c97cf3a93a4354e36eadadd0b6d156c4e4a5ad25330a8c45&quot;, (hash of template)
+        &quot;size&quot;: 1735, (size of template in bytes)
+        &quot;description&quot;: &quot;test from atak desc&quot; (description of template)
+      }
+    ],
+    &quot;Checklists&quot;: [
+      {
+        &quot;filename&quot;: &quot;c5322e53-5b95-4def-953d-6be9e42e79fd.xml&quot;, (name of file containing checklist xml)
+        &quot;name&quot;: &quot;test from atak&quot;, (name associated with template)
+        &quot;startTime&quot;: &quot;2020-12-22T22:07:32.841000Z&quot;, (time checklist was created)
+        &quot;submitter&quot;: &quot;NOVA&quot;, (callsign of user to submit checklist)
+        &quot;uid&quot;: &quot;c5322e53-5b95-4def-953d-6be9e42e79fd&quot;, (uid of checklist)
+        &quot;description&quot;: &quot;test from atak desc&quot;, (description of checklist)
+        &quot;template&quot;:&quot;cdd39d06-b43e-42f4-839d-32362febe9a1&quot; (uid of template of which the checklist is an instance)
+      }
+    ]
+  }
+}
+</code></pre>
+<h1 id="federationtable">FederationTable</h1>
+<p>endpoint used to access federation objects</p>
+<h2 id="get_3">GET</h2>
+<p>return JSON data containing the following information regarding current checklists and templates present on the server</p>
+<pre><code class="language-json">{
+&quot;activeFederations&quot;:
+    [
+        {
+            &quot;id&quot;: &quot;111-111-111&quot;,
+            &quot;address&quot;: &quot;127.0.0.1&quot;,
+            &quot;port&quot;: &quot;9000&quot;,
+            &quot;initiator&quot;: &quot;Self&quot;,
+            &quot;readCount&quot;: &quot;0&quot;,
+            &quot;processedCount&quot;: &quot;0&quot;
+        }
+        {
+            &quot;id&quot;: &quot;111-111-112&quot;,
+            &quot;address&quot;: &quot;1.1.1.1&quot;,
+            &quot;port&quot;: &quot;11111&quot;,
+            &quot;initiator&quot;: &quot;Remote&quot;,
+            &quot;readCount&quot;: &quot;0&quot;,
+            &quot;processedCount&quot;: &quot;0&quot;
+        }
+    ],
+&quot;federations&quot;: 
+  [
+    {
+        &quot;name&quot;: &quot;federation 1&quot;,
+        &quot;id&quot;: &quot;111-111-111&quot;,
+        &quot;address&quot;: &quot;127.0.0.1&quot;,
+        &quot;port&quot;: &quot;9000&quot;,
+        &quot;fallBack&quot;: &quot;federation 2&quot;,
+        &quot;status&quot;: &quot;Disabled&quot;,
+        &quot;reconnectInterval&quot;: &quot;32&quot;,
+        &quot;maxRetries&quot;: &quot;15&quot;,
+        &quot;lastError&quot;: &quot;Timeout&quot;
+    }
+  ]
+}
+</code></pre>
+<h2 id="post_3">POST</h2>
+<p>create a new federation configuration</p>
+<pre><code class="language-json">{
+&quot;outgoingFederations&quot;:
+    [
+      {
+        &quot;name&quot;: &quot;federation 1&quot;,
+        &quot;address&quot;: &quot;127.0.0.1&quot;,
+        &quot;port&quot;: &quot;9000&quot;,
+        &quot;fallBack&quot;: &quot;federation 2&quot;,
+        &quot;status&quot;: &quot;Disabled&quot;,
+        &quot;reconnectInterval&quot;: &quot;32&quot;,
+        &quot;maxRetries&quot;: &quot;15&quot;
+      }
+    ]
+}
+</code></pre>
+<h2 id="delete_3">DELETE</h2>
+<p>delete an existing federation configuration</p>
+<pre><code class="language-json">{
+  &quot;federations&quot;: 
+    [
+      {
+        &quot;id&quot;: &quot;111-111-111&quot;
+      }
+    ]
+}
+</code></pre>
+<h2 id="put_1">PUT</h2>
+<p>modify an existing federation configuration</p>
+<pre><code class="language-json">{
+  &quot;federations&quot;: 
+    [
+      {
+        &quot;id&quot;: &quot;111-111-111&quot;,
+        &quot;name&quot;: &quot;new federation 1&quot;,
+        &quot;fallBack&quot;: &quot;new fallback&quot;,
+        &quot;status&quot;: &quot;Enabled&quot;,
+        &quot;reconnectInterval&quot;: &quot;15&quot;,
+        &quot;maxRetries&quot;: &quot;10&quot;
+      } 
+    ]
+}
+</code></pre>
+<ul>
+<li>id: must be id of existing federation configuration</li>
+<li>name(optional): new name of federation configuration</li>
+<li>fallback(optional): name of new fallback</li>
+<li>status(optional): new status of connection</li>
+<li>reconnectInterval(optional): new reconnect interval</li>
+<li>maxRetries(optional): new maximum number of retries</li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="REST_APIDoc.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: REST API - Public" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              REST API - Public
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Installation/Video%20Guides.html" class="md-footer__link md-footer__link--next" aria-label="Next: Video Guides" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Video Guides
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ddd52ceb.min.js"></script>
+      
+    
+  </body>
+</html>

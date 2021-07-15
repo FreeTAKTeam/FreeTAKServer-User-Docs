@@ -1,0 +1,2899 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.1, mkdocs-material-7.1.10">
+    
+    
+      
+        <title>REST API - Public - FreeTAKServer Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1fe995fd.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rest-api-public" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="FreeTAKServer Documentation" class="md-header__button md-logo" aria-label="FreeTAKServer Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FreeTAKServer Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              REST API - Public
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="FreeTAKServer Documentation" class="md-nav__button md-logo" aria-label="FreeTAKServer Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    FreeTAKServer Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        FreeTAKServer
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        API
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="API" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          REST API - Public
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="REST_APIDoc.html" class="md-nav__link md-nav__link--active">
+        REST API - Public
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-fts-manages-the-information" class="md-nav__link">
+    How FTS manages the information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-supported-api" class="md-nav__link">
+    List of supported API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-configuration" class="md-nav__link">
+    General Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="General Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endpoint" class="md-nav__link">
+    endpoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization" class="md-nav__link">
+    Authorization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message" class="md-nav__link">
+    Message
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-details" class="md-nav__link">
+    API Details
+  </a>
+  
+    <nav class="md-nav" aria-label="API Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manageapi" class="md-nav__link">
+    manageAPI
+  </a>
+  
+    <nav class="md-nav" aria-label="manageAPI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gethelp" class="md-nav__link">
+    getHelp
+  </a>
+  
+    <nav class="md-nav" aria-label="getHelp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-return-data-17" class="md-nav__link">
+    Example  return data (1.7)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managegeoobject" class="md-nav__link">
+    manageGeoObject
+  </a>
+  
+    <nav class="md-nav" aria-label="manageGeoObject">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#putgeoobject" class="md-nav__link">
+    putGeoObject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#response" class="md-nav__link">
+    Response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postgeoobject" class="md-nav__link">
+    postGeoObject
+  </a>
+  
+    <nav class="md-nav" aria-label="postGeoObject">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    Parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body" class="md-nav__link">
+    Example body
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-body-alternate" class="md-nav__link">
+    Example body alternate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-example-body-alternate" class="md-nav__link">
+    other Example body alternate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-17-body" class="md-nav__link">
+    Example 1.7 body
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response_1" class="md-nav__link">
+    Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-geoobjects" class="md-nav__link">
+    Basic GeoObjects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geoobjects-extensions-for-ems" class="md-nav__link">
+    GeoObjects Extensions for EMS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-of-supported-attitude" class="md-nav__link">
+    List of supported Attitude
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#putgeoobject_1" class="md-nav__link">
+    putGeoObject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    Parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body_1" class="md-nav__link">
+    Example body
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getgeoobject" class="md-nav__link">
+    getGeoObject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    Parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-variables" class="md-nav__link">
+    Example Variables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managechat" class="md-nav__link">
+    ManageChat
+  </a>
+  
+    <nav class="md-nav" aria-label="ManageChat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sendgeochatobject" class="md-nav__link">
+    SendGeoChatObject
+  </a>
+  
+    <nav class="md-nav" aria-label="SendGeoChatObject">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" class="md-nav__link">
+    Parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body_2" class="md-nav__link">
+    Example body
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manageemergency" class="md-nav__link">
+    ManageEmergency
+  </a>
+  
+    <nav class="md-nav" aria-label="ManageEmergency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postemergency" class="md-nav__link">
+    postEmergency
+  </a>
+  
+    <nav class="md-nav" aria-label="postEmergency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-of-supported-emergency-types" class="md-nav__link">
+    List of supported Emergency Types
+  </a>
+  
+    <nav class="md-nav" aria-label="List of supported Emergency Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body_3" class="md-nav__link">
+    Example body
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getemergency" class="md-nav__link">
+    getEmergency
+  </a>
+  
+    <nav class="md-nav" aria-label="getEmergency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-response" class="md-nav__link">
+    Example  response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleteemergency" class="md-nav__link">
+    deleteEmergency
+  </a>
+  
+    <nav class="md-nav" aria-label="deleteEmergency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" class="md-nav__link">
+    Parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body_4" class="md-nav__link">
+    Example body
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managepresence" class="md-nav__link">
+    ManagePresence
+  </a>
+  
+    <nav class="md-nav" aria-label="ManagePresence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postpresence" class="md-nav__link">
+    postPresence
+  </a>
+  
+    <nav class="md-nav" aria-label="postPresence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_6" class="md-nav__link">
+    Parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body_5" class="md-nav__link">
+    Example body
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#putpresence" class="md-nav__link">
+    putPresence
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manageroute" class="md-nav__link">
+    ManageRoute
+  </a>
+  
+    <nav class="md-nav" aria-label="ManageRoute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postroute" class="md-nav__link">
+    postRoute
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_7" class="md-nav__link">
+    parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body_6" class="md-nav__link">
+    Example body
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-body-2" class="md-nav__link">
+    Example body 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-body-3" class="md-nav__link">
+    Example body 3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managevideostream" class="md-nav__link">
+    ManageVideoStream
+  </a>
+  
+    <nav class="md-nav" aria-label="ManageVideoStream">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postvideostream" class="md-nav__link">
+    postVideoStream
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_8" class="md-nav__link">
+    parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body_7" class="md-nav__link">
+    Example body
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-body-2_1" class="md-nav__link">
+    Example body 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensor" class="md-nav__link">
+    Sensor
+  </a>
+  
+    <nav class="md-nav" aria-label="Sensor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postdrone" class="md-nav__link">
+    postDrone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_9" class="md-nav__link">
+    parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body-creation" class="md-nav__link">
+    Example body creation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="REST_API_InternalDoc.html" class="md-nav__link">
+        REST API - Internal
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        Installation
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Installation" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Installation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/Video%20Guides.html" class="md-nav__link">
+        Video Guides
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/installUIOnAndroid.html" class="md-nav__link">
+        FTS-UI Installation with Android
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      <label class="md-nav__link" for="__nav_3_3">
+        Android
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Android" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Android
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/Android/Android.html" class="md-nav__link">
+        FTS Installation with Android
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      <label class="md-nav__link" for="__nav_3_4">
+        Docker
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Docker" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Docker
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/Docker/index.html" class="md-nav__link">
+        Install
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/Docker/CLI.html" class="md-nav__link">
+        CLI
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/Docker/Debian.html" class="md-nav__link">
+        Debian
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/Docker/Quick%20Start%20Guide.html" class="md-nav__link">
+        Quick Start Guide
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/Docker/Raspberry%20Pi.html" class="md-nav__link">
+        Raspberry Pi 4/Raspberry Pi 3
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_6" type="checkbox" id="__nav_3_4_6" >
+      
+      <label class="md-nav__link" for="__nav_3_4_6">
+        Multiple Servers
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Multiple Servers" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Multiple Servers
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/Docker/Multiple%20Servers/multiple.html" class="md-nav__link">
+        Multiple Servers on Single Host
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4_7" type="checkbox" id="__nav_3_4_7" >
+      
+      <label class="md-nav__link" for="__nav_3_4_7">
+        Upgrade
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Upgrade" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          Upgrade
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/Docker/Upgrade/Upgrade.html" class="md-nav__link">
+        Upgrading Existing Container
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5" type="checkbox" id="__nav_3_5" >
+      
+      <label class="md-nav__link" for="__nav_3_5">
+        PyPi
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="PyPi" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          PyPi
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_5_1" type="checkbox" id="__nav_3_5_1" >
+      
+      <label class="md-nav__link" for="__nav_3_5_1">
+        Linux
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Linux" data-md-level="3">
+        <label class="md-nav__title" for="__nav_3_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/PyPi/Linux/Install.html" class="md-nav__link">
+        Install
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/PyPi/Linux/Running.html" class="md-nav__link">
+        Running
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/PyPi/Linux/Service.html" class="md-nav__link">
+        Service
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_6" type="checkbox" id="__nav_3_6" >
+      
+      <label class="md-nav__link" for="__nav_3_6">
+        Troubleshooting
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Troubleshooting" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_6">
+          <span class="md-nav__icon md-icon"></span>
+          Troubleshooting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/Troubleshooting/troubleshooting.html" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_7" type="checkbox" id="__nav_3_7" >
+      
+      <label class="md-nav__link" for="__nav_3_7">
+        Windows
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Windows" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_7">
+          <span class="md-nav__icon md-icon"></span>
+          Windows
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Installation/Windows/FreeTAKServer_Windows_Install.html" class="md-nav__link">
+        FreeTAKServer Install On Windows Computer
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Usage
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Usage" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Usage
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Usage/Connecting%20ATAK.html" class="md-nav__link">
+        Connecting ATAK to Pub Server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Usage/Connecting%20WinTAK.html" class="md-nav__link">
+        Connecting WinTAK
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Usage/ExCheck.html" class="md-nav__link">
+        ExCheck
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Usage/VideoManagement.html" class="md-nav__link">
+        Video Management
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Administration
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Administration" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Administration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administration/CLI.html" class="md-nav__link">
+        CLI
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administration/SSL.html" class="md-nav__link">
+        SSL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../administration/Wed%20Admin.html" class="md-nav__link">
+        WebUI
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Tools
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tools" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/FreeTAKUAS.html" class="md-nav__link">
+        FreeTAKUAS
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-fts-manages-the-information" class="md-nav__link">
+    How FTS manages the information
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-supported-api" class="md-nav__link">
+    List of supported API
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-configuration" class="md-nav__link">
+    General Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="General Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endpoint" class="md-nav__link">
+    endpoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization" class="md-nav__link">
+    Authorization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message" class="md-nav__link">
+    Message
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-details" class="md-nav__link">
+    API Details
+  </a>
+  
+    <nav class="md-nav" aria-label="API Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manageapi" class="md-nav__link">
+    manageAPI
+  </a>
+  
+    <nav class="md-nav" aria-label="manageAPI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gethelp" class="md-nav__link">
+    getHelp
+  </a>
+  
+    <nav class="md-nav" aria-label="getHelp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-return-data-17" class="md-nav__link">
+    Example  return data (1.7)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managegeoobject" class="md-nav__link">
+    manageGeoObject
+  </a>
+  
+    <nav class="md-nav" aria-label="manageGeoObject">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#putgeoobject" class="md-nav__link">
+    putGeoObject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#response" class="md-nav__link">
+    Response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postgeoobject" class="md-nav__link">
+    postGeoObject
+  </a>
+  
+    <nav class="md-nav" aria-label="postGeoObject">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    Parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body" class="md-nav__link">
+    Example body
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-body-alternate" class="md-nav__link">
+    Example body alternate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-example-body-alternate" class="md-nav__link">
+    other Example body alternate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-17-body" class="md-nav__link">
+    Example 1.7 body
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response_1" class="md-nav__link">
+    Response
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-geoobjects" class="md-nav__link">
+    Basic GeoObjects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geoobjects-extensions-for-ems" class="md-nav__link">
+    GeoObjects Extensions for EMS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-of-supported-attitude" class="md-nav__link">
+    List of supported Attitude
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#putgeoobject_1" class="md-nav__link">
+    putGeoObject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    Parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body_1" class="md-nav__link">
+    Example body
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getgeoobject" class="md-nav__link">
+    getGeoObject
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    Parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-variables" class="md-nav__link">
+    Example Variables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managechat" class="md-nav__link">
+    ManageChat
+  </a>
+  
+    <nav class="md-nav" aria-label="ManageChat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sendgeochatobject" class="md-nav__link">
+    SendGeoChatObject
+  </a>
+  
+    <nav class="md-nav" aria-label="SendGeoChatObject">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" class="md-nav__link">
+    Parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body_2" class="md-nav__link">
+    Example body
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manageemergency" class="md-nav__link">
+    ManageEmergency
+  </a>
+  
+    <nav class="md-nav" aria-label="ManageEmergency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postemergency" class="md-nav__link">
+    postEmergency
+  </a>
+  
+    <nav class="md-nav" aria-label="postEmergency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#list-of-supported-emergency-types" class="md-nav__link">
+    List of supported Emergency Types
+  </a>
+  
+    <nav class="md-nav" aria-label="List of supported Emergency Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body_3" class="md-nav__link">
+    Example body
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getemergency" class="md-nav__link">
+    getEmergency
+  </a>
+  
+    <nav class="md-nav" aria-label="getEmergency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-response" class="md-nav__link">
+    Example  response
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleteemergency" class="md-nav__link">
+    deleteEmergency
+  </a>
+  
+    <nav class="md-nav" aria-label="deleteEmergency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" class="md-nav__link">
+    Parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body_4" class="md-nav__link">
+    Example body
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managepresence" class="md-nav__link">
+    ManagePresence
+  </a>
+  
+    <nav class="md-nav" aria-label="ManagePresence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postpresence" class="md-nav__link">
+    postPresence
+  </a>
+  
+    <nav class="md-nav" aria-label="postPresence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_6" class="md-nav__link">
+    Parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body_5" class="md-nav__link">
+    Example body
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#putpresence" class="md-nav__link">
+    putPresence
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manageroute" class="md-nav__link">
+    ManageRoute
+  </a>
+  
+    <nav class="md-nav" aria-label="ManageRoute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postroute" class="md-nav__link">
+    postRoute
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_7" class="md-nav__link">
+    parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body_6" class="md-nav__link">
+    Example body
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-body-2" class="md-nav__link">
+    Example body 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-body-3" class="md-nav__link">
+    Example body 3
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#managevideostream" class="md-nav__link">
+    ManageVideoStream
+  </a>
+  
+    <nav class="md-nav" aria-label="ManageVideoStream">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postvideostream" class="md-nav__link">
+    postVideoStream
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_8" class="md-nav__link">
+    parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body_7" class="md-nav__link">
+    Example body
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-body-2_1" class="md-nav__link">
+    Example body 2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensor" class="md-nav__link">
+    Sensor
+  </a>
+  
+    <nav class="md-nav" aria-label="Sensor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postdrone" class="md-nav__link">
+    postDrone
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameters_9" class="md-nav__link">
+    parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body-creation" class="md-nav__link">
+    Example body creation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/edit/main/docs/docs/API/REST_APIDoc.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="rest-api-public">REST API - Public</h1>
+<p>the FreeTAKServer REST API is a human readeble approach to the TAK world. The API allows you to easily connect third parties to the TAK family, without the need to understand the complexity of the COT structure or what a TCP connection is.  FTS also supports an <a href="REST_API_InternalDoc.html">Internal API</a>.</p>
+<h2 id="how-fts-manages-the-information">How FTS manages the information</h2>
+<p>FTS will send the  information coming trough the API to all the connected clients, addtionally it will save it to the persistency, to be query in future. </p>
+<h2 id="list-of-supported-api">List of supported API</h2>
+<p>In the current release (1.9), FTS supports following API:</p>
+<ul>
+<li>help</li>
+<li>ManageGeoObject/postGeoObject</li>
+<li>ManageGeoObject/putGeoObject</li>
+<li>ManageGeoObject/getGeoObject</li>
+<li>ManageGeoObject/getGeoObjectByZone</li>
+<li>ManageEmergency/postEmergency</li>
+<li>ManageEmergency/getEmergency</li>
+<li>ManageEmergency/deleteEmergency </li>
+<li>ManageChat/postChatToAll</li>
+<li>ManageRoute/postRoute</li>
+<li>ManagePresence/postPresence</li>
+<li>ManagePresence/putPresence </li>
+<li>ManageVideoStream/postVideoStream</li>
+<li>Sensor/postDrone</li>
+<li>Sensor/postSPI</li>
+<li>/ManageKML/postKML</li>
+</ul>
+<h2 id="general-configuration">General Configuration</h2>
+<blockquote>
+<p>To quickly test the API, you can use a browser extension like ARC Advanced rest client (Chrome). REST APIs are easy to use, however they require a minimum ammount of knowledge, we DO NOT provide support to explain WHAT an API is. Please refer to an online tutorial such as <a href="http://www.steves-internet-guide.com/using-http-apis-for-iot-beginners-guide/">this</a>. </p>
+</blockquote>
+<h3 id="endpoint">endpoint</h3>
+<p>the API uses the following format</p>
+<p>VERB [Protocol]://IP:PORT/APIName/action</p>
+<p>for example</p>
+<pre><code>POST http://104.58.20.216:9999/manageGeoObject/postGeoObject
+</code></pre>
+<h3 id="authorization">Authorization</h3>
+<p>to use the API you need to have a REST API key.
+the authorization is placed in the header of the message.
+Authorization: Bearer [YOUR_API_KEY]</p>
+<blockquote>
+<p>you need to use the string 'Bearer' before YOUR_API_KEY</p>
+</blockquote>
+<p>a valid key is generated from FTS' <a href="https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/CLI.md">CLI</a> or, since 1.4 also from the Web UI, and stored into the DB. 
+to add an API user in the CLI type  </p>
+<pre><code>add_api_user
+</code></pre>
+<p>see CLI help for details.
+To create a REST API key using the Web UI, go to the User section.</p>
+<p>to consume the API you will need to request a key to your FTS admin. </p>
+<p>the following is a non-working example of a key</p>
+<pre><code>{“Authorization”: “Bearer meg@secre7apip@guesmeIfyouCan”}
+</code></pre>
+<h3 id="message">Message</h3>
+<p>In most end points, the message is placed in the body of the request as JSON formatted. See below for detailed examples.
+In the API using the <em>Get</em> verbs it's a variable.</p>
+<h2 id="api-details">API Details</h2>
+<h3 id="manageapi">manageAPI</h3>
+<p>set of commands relative to API management</p>
+<h4 id="gethelp">getHelp</h4>
+<p>retrieve API version and supported endpoints
+  * verb: GET
+  * endpoint: /manageAPI/getHelp
+  * returns: json containing API version and supported endpoints</p>
+<h5 id="example-return-data-17">Example  return data (1.7)</h5>
+<pre><code class="language-json">{&quot;APIVersion&quot;: &quot;1.1&quot;, 
+&quot;SupportedEndpoints&quot;: 
+[&quot;/ManageEmergency/deleteEmergency&quot;, &quot;/ManageGeoObject/postGeoObject&quot;,
+&quot;/ManageEmergency/postEmergency&quot;, &quot;/ManageGeoObject/putGeoObject&quot;, &quot;/ManageGeoObject/getGeoObject&quot;,
+&quot;/ManageEmergency/getEmergency&quot;, &quot;/ManagePresence/postPresence&quot;, &quot;/ManagePresence/putPresence&quot;,
+&quot;/ManageRoute/postRoute&quot;, &quot;/ManageChat/postChatToAll&quot;, &quot;/DataPackageTable&quot;, &quot;/ManageGeoObject&quot;, &quot;/ManageEmergency&quot;,
+&quot;/FederationTable&quot;, &quot;/ManagePresence&quot;, &quot;/MissionTable&quot;, &quot;/ExCheckTable&quot;, &quot;/SendGeoChat&quot;, &quot;/ManageRoute&quot;, &quot;/checkStatus&quot;,
+&quot;/getZoneCoT&quot;, &quot;/ManageChat&quot;, &quot;/RecentCoT&quot;, &quot;/APIUser&quot;, &quot;/Clients&quot;, &quot;/Alive&quot;, &quot;/help&quot;, &quot;/URL&quot;]}
+</code></pre>
+<h3 id="managegeoobject">manageGeoObject</h3>
+<p>A GeoObject is an element place on a map. It has a name, characteristics and an attitude. </p>
+<h4 id="putgeoobject">putGeoObject</h4>
+<ul>
+<li>verb: PUT</li>
+<li>endpoint /ManageGeoObject/postGeoObject</li>
+<li>returns: UID</li>
+</ul>
+<h4 id="parameters">Parameters</h4>
+<ul>
+<li>GeoObject: It's the information that will determine which type will be placed on the tak maps including his icon. Please see API documentation for a list of valid entries. Since 1.7 you can also use nicknames for the geo objects.</li>
+<li>longitude: OPTIONAL the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where <em>West 77.08</em> is equal to '-77.08' in the API</li>
+<li>latitude: OPTIONAL the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)</li>
+<li>How: the way in which this geo information has been acquired. Please see API documentation for a list of valid entries.</li>
+<li>attitude: OPTIONAL the kind of expected behavior of the GeoObject (e.g friendly, hostile, unknown). Please see API documentation for a list of valid entries.</li>
+<li>name: a string to ID the GeoObject on a map.</li>
+<li>bearing: OPTIONALsince 1.7, the direction expressed in degrees (1-360.  default: 0)   </li>
+<li>distance": OPTIONAL since 1.7, the distance in meters from the Lat/long  or address</li>
+<li>timeout: OPTIONAL the length, expressed in seconds  until the point will stale out. Default is 300 seconds or 5 minutes.</li>
+<li>uid: REQUIRED input parameter, need to be an existing Id for this element,</li>
+<li>address: OPTIONAL address of destination if you are not sending lat/long. If sent will try to solve the exact geolocation of the destination. Possible valid examples are  <ul>
+<li>Big Arkansas River Park, Wichita, KS, USA </li>
+<li>Wichita, KS, USA </li>
+<li>Big Arkansas River Park, Wichita</li>
+<li>and so on</li>
+</ul>
+</li>
+</ul>
+<h5 id="response">Response</h5>
+<ul>
+<li>200 Success: uid. you have create the geoObject</li>
+<li>[MISSING PARAMETERNAME]: you have odmitted a parameter that is required</li>
+<li>server error 500: you have probably missspelled the list of parameters (e.g geoObjects/ supported attitude). the names are case sensitive (!)</li>
+<li>server error 400: you have probably an error in the format of your JSON query</li>
+<li>server error 404: you have an error in the end point definition</li>
+</ul>
+<h3 id="postgeoobject">postGeoObject</h3>
+<ul>
+<li>verb: POST</li>
+<li>endPoint: /ManageGeoObject/postGeoObject</li>
+<li>returns: UID</li>
+</ul>
+<h4 id="parameters_1">Parameters</h4>
+<ul>
+<li>GeoObject: It's the information that will determine which type will be placed on the tak maps including his icon. Please see API documentation for a list of valid entries. Since 1.7 you can also use nicknames for the geo objects.</li>
+<li>longitude: OPTIONAL the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where <em>West 77.08</em> is equal to '-77.08' in the API</li>
+<li>latitude: OPTIONAL the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)</li>
+<li>How: the way in which this geo information has been acquired. Please see API documentation for a list of valid entries.</li>
+<li>attitude: OPTIONAL the kind of expected behavior of the GeoObject (e.g friendly, hostile, unknown). Please see API documentation for a list of valid entries.</li>
+<li>name: a string to ID the GeoObject on a map.</li>
+<li>bearing: OPTIONALsince 1.7, the direction expressed in degrees (1-360.  default: 0)   </li>
+<li>distance": OPTIONAL since 1.7, the distance in meters from the Lat/long  or address</li>
+<li>timeout: OPTIONAL the length, expressed in seconds  until the point will stale out. Default is 300 seconds or 5 minutes.</li>
+<li>uid: optional input parameter, need to be an Unique Id for this element, if not present will be  server generated, if sent ATAK will try to update an existing geoObject. Use <code>putGeoObject</code> instead</li>
+<li>address: OPTIONAL address of destination. If sent will try to solve the exact geolocation of the destination. Possible valid examples are  <ul>
+<li>Big Arkansas River Park, Wichita, KS, USA </li>
+<li>Wichita, KS, USA </li>
+<li>Big Arkansas River Park, Wichita</li>
+<li>and so on</li>
+</ul>
+</li>
+</ul>
+<h5 id="example-body">Example body</h5>
+<pre><code class="language-json">{
+&quot;longitude&quot;: -77.0104,
+&quot;latitude&quot;: 38.889,
+&quot;attitude&quot;: &quot;hostile&quot;,
+ &quot;bearing&quot;: 132, 
+ &quot;distance&quot;: 1,
+&quot;geoObject&quot;: &quot;Gnd Combat Infantry Sniper&quot;,
+&quot;how&quot;: &quot;nonCoT&quot;,
+&quot;name&quot;: &quot;Putin&quot;,
+&quot;timeout&quot;: 600  
+}
+</code></pre>
+<h5 id="example-body-alternate">Example body alternate</h5>
+<pre><code class="language-json">{
+&quot;address&quot;: &quot;Washington, DC, USA&quot;,
+&quot;attitude&quot;: &quot;hostile&quot;,
+&quot;geoObject&quot;: &quot;Gnd Combat Infantry Sniper&quot;,
+&quot;how&quot;: &quot;nonCoT&quot;,
+&quot;name&quot;: &quot;Putin&quot;,
+&quot;timeout&quot;: 600  
+}
+</code></pre>
+<h5 id="other-example-body-alternate">other Example body alternate</h5>
+<pre><code class="language-json">{
+&quot;longitude&quot;: -77.0104,
+&quot;latitude&quot;: 38.889,
+&quot;distance&quot;: 500,
+&quot;bearing&quot;: 92,
+&quot;attitude&quot;: &quot;hostile&quot;,
+&quot;geoObject&quot;: &quot;Gnd Combat Infantry Sniper&quot;,
+&quot;how&quot;: &quot;nonCoT&quot;,
+&quot;name&quot;: &quot;Putin&quot;,
+&quot;timeout&quot;: 600  
+}
+</code></pre>
+<h5 id="example-17-body">Example 1.7 body</h5>
+<pre><code class="language-json">{
+&quot;longitude&quot;: -77.0104,
+&quot;latitude&quot;: 38.889,
+&quot;attitude&quot;: &quot;hostile&quot;,
+ &quot;bearing&quot;: 132, 
+ &quot;distance&quot;: 1,
+&quot;geoObject&quot;: &quot;Medevac&quot;,
+&quot;how&quot;: &quot;nonCoT&quot;,
+&quot;name&quot;: &quot;Medevac&quot;,
+&quot;timeout&quot;: 600  
+}
+</code></pre>
+<h5 id="response_1">Response</h5>
+<ul>
+<li>200 Success: uid. you have create the geoObject</li>
+<li>[MISSING PARAMETERNAME]: you have odmitted a parameter that is required</li>
+<li>server error 500: you have probably missspelled the list of parameters (e.g geoObjects/ supported attitude). the names are case sensitive (!)</li>
+<li>server error 400: you have probably an error in the format of your JSON query</li>
+<li>server error 404: you have an error in the end point definition</li>
+</ul>
+<h5 id="basic-geoobjects">Basic GeoObjects</h5>
+<ul>
+<li>"Gnd Combat Infantry Rifleman",  Nickname: "Rifleman"</li>
+<li>"Gnd Combat Infantry grenadier", Nickname: "Grenadier"</li>
+<li>"Gnd Combat Infantry Mortar" , Nickname: "Mortar" </li>
+<li>"Gnd Combat Infantry MachineGunner (LMG)",  Nickname: "LMG" </li>
+<li>"Gnd Combat Infantry Medic" ,  Nickname: "Medic"</li>
+<li>"Gnd Combat Infantry Sniper",  Nickname: "Sniper"</li>
+<li>"Gnd Combat Infantry Recon" ,  Nickname: "Recon"</li>
+<li>"Gnd Combat Infantry anti Tank" ,  Nickname: "anti Tank"</li>
+<li>"Gnd Combat Infantry air defense",  Nickname: "AA"</li>
+<li>"Gnd Combat Infantry Engineer",  Nickname: "Engineer"</li>
+<li>"Ground"</li>
+</ul>
+<h5 id="geoobjects-extensions-for-ems">GeoObjects Extensions for EMS</h5>
+<p><strong>Extensions since 1.7</strong></p>
+<ul>
+<li>"Gnd Equip Vehic Civilian", Nickname: Vehicle (OK)</li>
+<li>"Gnd Equip Vehic Ambulance": "a-.-G-E-V-m" , Nickname: Ambulance (OK)</li>
+<li>"Gnd Structure IM Facilities Emergency Management": "a-.-G-I-i-e" Nickname: Emergency Station (empty shape)</li>
+<li>"Gnd Structure IM Facilities Law Enforcement": "a-.-G-I-i-l",  Nickname: Police Station (empty shape)</li>
+<li>"Gnd Structure petroleum gas oil": "a-.-G-I-R-P", Nickname: gas Station (empty shape)</li>
+<li>"Gnd Structure Utility Electric Power": "a-.-G-I-U-E", Nickname: Power Station (empty shape)</li>
+<li>Gnd Structure Utility Telecommunications": "a-.-G-I-U-T", Nickname: Telco Station (empty shape)</li>
+<li>"Gnd Structure Hospital": "a-.-G-I-X-H", Nickname: Hospital (empty shape)</li>
+<li>"Gnd IM Resources": "a-.-G-U-i" Nickname: Resources (empty shape)</li>
+<li>"FOOD DISTRIBUTION": "b-r-.-O-O-O", Nickname: Food (OK, only label, need to implement nick) </li>
+<li>"Gnd Crowd Control Team": "a-.-G-U-i-l-cct" Nickname: Police (OK)</li>
+<li>"Gnd Generators ": "a-.-G-U-i-p-gen" Nickname: Generator (empty shape)</li>
+<li>"Other incident other": "a-.-X-i-o" Nickname: Incident (OK, missing nick name?) </li>
+<li>"Combat search &amp; rescue (CSAR)": "a-.-A-M-F-Q-H", Nickname: SAR (OK)</li>
+<li>"Medevac": "a-.-G-U-C-V-R-E",, Nickname: Medevac  (OK)</li>
+<li>"Alarm": "b-l",  Nickname: Alarm</li>
+<li>"Alarm/Security/Law Enforcement/Civil Disturbance or Disorder": "b-l-l-l-cd", Nickname: Disorder</li>
+<li>"REFUGEES": "b-r-.-O-I-R" Nickname: Refugees</li>
+<li>"VANDALISM/RAPE/LOOT/RANSACK/PLUNDER/SACK": "b-r-.-O-I-V" Nickname: Riot</li>
+</ul>
+<p><strong>extensions in 1.8</strong></p>
+<ul>
+<li>Other incident geo": "a-.-X-i-g", , Nickname: geo incident</li>
+<li>"Other incident geo avalanche": "a-.-X-i-g-a", Nickname: avalanche</li>
+<li>"Other incident geo earthquake": "a-.-X-i-g-e",  Nickname: earthquake</li>
+<li>"Other incident geo landslide": "a-.-X-i-g-l",  Nickname: landslide</li>
+<li>"Other incident geo subsistance": "a-.-X-i-g-s",  Nickname: subsistance</li>
+<li>"Other incident geo volcano": "a-.-X-i-g-v",  Nickname: volcano</li>
+<li>"Other incident geo eruption": "a-.-X-i-g-v-e",  Nickname: eruption</li>
+<li>"Other incident met drought": "a-.-X-i-m-d",  Nickname: drought</li>
+<li>"Other incident met cyclone": "a-.-X-i-m-c",  Nickname: cyclone</li>
+<li>"Other incident met tsunami": "a-.-X-i-m-n",  Nickname: tsunami</li>
+<li>"Other incident fire": "a-.-X-i-f",  Nickname: fire</li>
+<li>"Other incident medical public health": "a-.-X-i-h",  Nickname: medical incident</li>
+<li>"Other incident transportation vehicle accident": "a-.-X-i-t-v-a",  Nickname: vehicle accident</li>
+</ul>
+<h5 id="list-of-supported-attitude">List of supported Attitude</h5>
+<ul>
+<li>"friend"</li>
+<li>"friendly"</li>
+<li>"hostile"</li>
+<li>"unknown"</li>
+<li>"pending" </li>
+<li>"assumed"</li>
+<li>"neutral" </li>
+<li>"suspect" </li>
+</ul>
+<h4 id="putgeoobject_1">putGeoObject</h4>
+<p>update an existing geoObject cohordinates (can also update other features)</p>
+<ul>
+<li>verb: PUT</li>
+<li>endPoint: /ManageGeoObject/putGeoObject</li>
+<li>returns: UID</li>
+</ul>
+<h4 id="parameters_2">Parameters</h4>
+<ul>
+<li><strong>REQUIRED</strong> uid: optional input parameter, need to be an Unique Id for this element, if not present will be  server generated, if sent ATAK will try to update an existing geoObject. Use <code>putGeoObject</code> instead</li>
+<li><em>REQUIRED</em> GeoObject: It's the information that will determine which type will be placed on the tak maps including his icon. Please see API documentation for a list of valid entries.</li>
+<li><strong>REQUIRED</strong>  longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where <em>West 77.08</em> is equal to '-77.08' in the API</li>
+<li><strong>REQUIRED</strong> latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)</li>
+<li><strong>REQUIRED</strong>attitude: the kind of expected behavior of the GeoObject (e.g friendly, hostile, unknown). Please see API documentation for a list of valid entries.</li>
+<li>How: the way in which this geo information has been acquired. Please see API documentation for a list of valid entries.</li>
+<li>name: a string to ID the GeoObject on a map.</li>
+<li>bearing: since 1.7, the direction expressed in degrees (1-360)   </li>
+<li>distance": since 1.7, the distance in meters from the Lat/long </li>
+<li>timeout:the length, expressed in seconds  until the point will stale out. Default is 300 seconds or 5 minutes.</li>
+<li></li>
+</ul>
+<h5 id="example-body_1">Example body</h5>
+<pre><code>{
+&quot;uid&quot;: &quot;44455566775623&quot;,
+  &quot;longitude&quot;: -66.12614,
+  &quot;latitude&quot;: 43.96552,
+&quot;attitude&quot;: &quot;hostile&quot;,
+&quot;geoObject&quot;: &quot;Sniper&quot;,
+}
+</code></pre>
+<p>#### Response
+ * 200 with UID</p>
+<h4 id="getgeoobject">getGeoObject</h4>
+<p>retrieve in a array all geoObjects in a given radius. It uses JSON variables, not the json body</p>
+<ul>
+<li>verb: GET</li>
+<li>endPoint: /ManageGeoObject/getGeoObject</li>
+</ul>
+<h4 id="parameters_3">Parameters</h4>
+<p>NOTE: these should be provided in the form of url encoded variables
+ * radius: radius in meters where geoObjects, default(100)
+ * longitude: longitude from which radius is calculated, default(0)
+ * latitude: latitude from which radius is calculated, default(0)
+ * attitude: the attitude which will be filtered, default(any). see list of supported attitude above</p>
+<h5 id="example-variables">Example Variables</h5>
+<p><code>JSON Variables
+  "longitude": -77.02385,
+  "latitude": 38.999,
+  "attitude": "Hostile"
+  "radius":500</code></p>
+<h2 id="managechat">ManageChat</h2>
+<h3 id="sendgeochatobject">SendGeoChatObject</h3>
+<ul>
+<li>verb: POST</li>
+<li>endPoint: /ManageChat/postChatToAll</li>
+</ul>
+<h4 id="parameters_4">Parameters</h4>
+<ul>
+<li>message: the text of the GeoChat message</li>
+<li>Sender: the name of the chat's sender, changing this will also change the chat room for the client.</li>
+</ul>
+<h5 id="example-body_2">Example body</h5>
+<pre><code class="language-json">{
+&quot;message&quot;: &quot;sending this over Rest API&quot;,
+&quot;sender&quot;: &quot;Admin&quot;
+}
+</code></pre>
+<h2 id="manageemergency">ManageEmergency</h2>
+<h3 id="postemergency">postEmergency</h3>
+<p>create a emergency into the server</p>
+<ul>
+<li>verb: POST</li>
+<li>endPoint: /ManageEmergency/postEmergency</li>
+</ul>
+<p>#### Parameters
+  * Name: the name of the person that has an emergency.
+  * EmergencyType: the type of emergency to be displayed
+  *  longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where <em>West 77.08</em> is equal to '-77.08' in the API
+  * latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)
+  *  uid: server generated Unique Id of this element
+  * address: OPTIONAL address of emergency</p>
+<h4 id="list-of-supported-emergency-types">List of supported Emergency Types</h4>
+<ul>
+<li>"911 Alert"</li>
+<li>"Ring The Bell"</li>
+<li>"Geo-fence Breached" </li>
+<li>"In Contact" </li>
+</ul>
+<h5 id="example-body_3">Example body</h5>
+<pre><code class="language-json">{
+  &quot;name&quot;: &quot;Corvo&quot;,
+  &quot;emergencyType&quot;: &quot;In Contact&quot;,
+  &quot;longitude&quot;: -77.01395,
+  &quot;latitude&quot;: 38.889
+}
+</code></pre>
+<h3 id="getemergency">getEmergency</h3>
+<p>get a list of current active emergencies </p>
+<ul>
+<li>verb: GET</li>
+<li>endPoint: /ManageEmergency/getEmergency</li>
+</ul>
+<p>no parameter required</p>
+<h5 id="example-response">Example  response</h5>
+<pre><code class="language-json">{
+  &quot;json_list&quot;: [
+    {
+      &quot;PrimaryKey&quot;: 1,
+      &quot;event_id&quot;: &quot;459b5874-1ebf-11eb-9e70-4e58de281c19&quot;
+    }
+  ]
+}
+</code></pre>
+<h3 id="deleteemergency">deleteEmergency</h3>
+<p>delete an active emergency.
+(TODO: delete of emergencies can be only done by the originator of it.)</p>
+<ul>
+<li>verb: DELETE</li>
+<li>endPoint: /ManageEmergency/deleteEmergency</li>
+</ul>
+<h4 id="parameters_5">Parameters</h4>
+<ul>
+<li>uid: server generated Unique Id of this emergency</li>
+<li>status: if the emergency is currently active or not (on/off)</li>
+</ul>
+<h5 id="example-body_4">Example body</h5>
+<pre><code class="language-json">{
+&quot;uid&quot;: &quot;459b5874-1ebf-11eb-9e70-4e58de281c19&quot;,
+  &quot;status&quot;: &quot;off&quot;
+}
+</code></pre>
+<h2 id="managepresence">ManagePresence</h2>
+<p>Manage a team member position</p>
+<h3 id="postpresence">postPresence</h3>
+<ul>
+<li>verb: POST</li>
+<li>endPoint: /ManagePresence/postPresence</li>
+<li>returns: UID</li>
+</ul>
+<h4 id="parameters_6">Parameters</h4>
+<ul>
+<li>longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where <em>West 77.08</em> is equal to '-77.08' in the API</li>
+<li>latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)</li>
+<li>How: the way in which this geo information has been acquired. Please see API documentation for a list of valid entries.</li>
+<li>role: the given role within the team . Please see API documentation for a list of valid entries.</li>
+<li>name: a string to ID the GeoObject on a map.</li>
+<li>team: the color of the team </li>
+<li>uid: optional Unique Id of this element. if present will update an existing element. use the put insted *V. 1.7 only If you send the UID an existing CLI will be updated#</li>
+</ul>
+<h5 id="example-body_5">Example body</h5>
+<pre><code class="language-json">{
+    &quot;uid&quot;: &quot;999b5874-1ebf-11zz-9e70-4e58de281c19&quot;,
+  &quot;how&quot;: &quot;nonCoT&quot;,
+  &quot;name&quot;: &quot;POTUS&quot;,
+  &quot;longitude&quot;: -77.01385,
+  &quot;latitude&quot;: 38.889,
+  &quot;role&quot;: &quot;Team Member&quot;,
+  &quot;team&quot;: &quot;Yellow&quot;
+}
+</code></pre>
+<h3 id="putpresence">putPresence</h3>
+<p>Updates the location of a team member
+ * verb: PUT
+ * endPoint: /ManagePresence/putPresence
+ * returns: UID</p>
+<p>#### Parameters
+ * uid: server generated Unique Id of this emergency</p>
+<h2 id="manageroute">ManageRoute</h2>
+<p>manage routes on the map</p>
+<h4 id="postroute">postRoute</h4>
+<ul>
+<li>verb: POST</li>
+<li>endpoint: /ManageRoute/postRoute</li>
+<li>returns: uid</li>
+</ul>
+<h4 id="parameters_7">parameters</h4>
+<ul>
+<li>timeout: OPTIONAL the length, expressed in seconds  until the point will stale out. Default is 300 seconds or 5 minutes.</li>
+<li>address: OPTIONAL address of destination. If sent will try to solve the exact geolocation of the destination. Possible valid examples are  <ul>
+<li>Big Arkansas River Park, Wichita, KS, USA </li>
+<li>Wichita, KS, USA </li>
+<li>Big Arkansas River Park, Wichita</li>
+<li>and so on</li>
+</ul>
+</li>
+<li>method: OPTIONAL the method we plan to use for the route (Driving, Flying, Walking, Swimming, Watercraft). currently not used and set to Driving in the client</li>
+<li>longitudeDest: OPTIONAL if address is not sent</li>
+<li>latitudeDest: OPTIONAL if address is not sent</li>
+<li>uid: OPTIONAL server generated Unique Id of this element. it will  update the existing element.  </li>
+<li>routeName:OPTIONAL the name of the route</li>
+<li>endName: OPTIONAL the name of the destination (end point on the route)</li>
+<li>startName: OPTIONAL the  name of the start (start point of the route)</li>
+<li>uid: OPTIONALserver generated Unique Id of this element. it will  update an existing route.  </li>
+<li>longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where <em>West 77.08</em> is equal to '-77.08' in the API</li>
+<li>latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)</li>
+</ul>
+<h5 id="example-body_6">Example body</h5>
+<pre><code class="language-json">{
+  &quot;longitude&quot;: -77.02385,
+  &quot;latitude&quot;: 38.999,
+  &quot;routeName&quot;: &quot;trip to Phil&quot;,
+  &quot;startName&quot;: &quot;Washington&quot;,
+  &quot;endName&quot;: &quot;Philadelphia&quot;,
+  &quot;timeout&quot;: 40000,
+  &quot;latitudeDest&quot;: 39.940,
+  &quot;longitudeDest&quot;: -75.01385
+}
+</code></pre>
+<h5 id="example-body-2">Example body 2</h5>
+<pre><code class="language-json">{
+ &quot;longitude&quot;: -77.01385,
+ &quot;latitude&quot;: 38.889,
+&quot;routeName&quot;: &quot;trip to wichita&quot;,
+&quot;timeout&quot;: 40000,
+&quot;address&quot;: &quot;Wichita, KS, USA&quot;
+}
+</code></pre>
+<h5 id="example-body-3">Example body 3</h5>
+<pre><code class="language-json">{
+  &quot;longitude&quot;: -77.02385,
+  &quot;latitude&quot;: 38.999,
+  &quot;routeName&quot;: &quot;trip to halifax&quot;,
+  &quot;latitudeDest&quot;: 44.69,
+  &quot;longitudeDest&quot;: -63.57,
+  &quot;method&quot;: &quot;Flying&quot;
+}
+</code></pre>
+<h2 id="managevideostream">ManageVideoStream</h2>
+<p>manage creation of videos endpoints in the clients. the videos are visible under 'Video Player'</p>
+<h4 id="postvideostream">postVideoStream</h4>
+<ul>
+<li>verb: POST</li>
+<li>endpoint: /ManageVideoStream/postVideoStream</li>
+<li>returns: uid</li>
+</ul>
+<h4 id="parameters_8">parameters</h4>
+<ul>
+<li>streamAddress: the IP of the video server</li>
+<li>"streamPort": the port the video server respond to
+  "streamPath": the unique path of the video stream
+  "alias": a name for the stream
+  "streamProtocol": the type of protocol used (e.g. rtsp, rtmp, raw)</li>
+</ul>
+<h5 id="example-body_7">Example body</h5>
+<pre><code> {
+  &quot;streamAddress&quot;: &quot;64.227.70.77&quot;,
+  &quot;streamPort&quot;: &quot;1935&quot;,
+  &quot;streamPath&quot;: &quot;/LiveApp/342508189321134315564775&quot;,
+  &quot;alias&quot;: &quot;Demo Stream From Drone &quot;,
+  &quot;streamProtocol&quot;: &quot;rtmp&quot;
+}
+</code></pre>
+<h5 id="example-body-2_1">Example body 2</h5>
+<p>``` streamPort and streamPort params still required bu will be ignored
+{
+  "streamAddress": "rtsp://64.227.70.77:1935/LiveApp/342508189321134315564775",
+  "alias": "raw Stream From Drone ",
+   "streamPort": "1935",
+  "streamPath": "/LiveApp/342508189321134315564775",
+  "streamProtocol": "raw"
+}</p>
+<pre><code>
+#### getVideoStream
+retrieve list of stream paths
+ * verb: GET
+ * endpoint: /ManageVideoStream/getVideoStream
+ * returns: json with path
+
+#### example return
+
+```json
+{
+  &quot;video_stream&quot;: 
+    [&quot;/LiveApp/342508189321134315564775&quot;, &quot;/test/other&quot;]
+}
+</code></pre>
+<h3 id="sensor">Sensor</h3>
+<p>since 1.9
+manage sensors (name to be changed in ManageSensor)</p>
+<h4 id="postdrone">postDrone</h4>
+<p>create a drone object with a field of view, a current aiming point a video stream
+ * verb: POST
+ * endpoint: /Sensor/postDrone
+ * returns: DRONE_UID, SPI_UID</p>
+<h4 id="parameters_9">parameters</h4>
+<ul>
+<li>
+<p>timeout: OPTIONAL the length, expressed in seconds  until the point will stale out. Default is 300 seconds or 5 minutes.</p>
+</li>
+<li>
+<p>Name: the name of the drone, will become also the name of the video stream.</p>
+</li>
+<li>Range: the range  of view of the sensor in meters</li>
+<li>Bearing: the direction in which the sensor is aimed in degrees</li>
+<li>FieldOfView: the field of view of the drone in degrees</li>
+<li>VideoURLUID: the address of the video stream. DJI drones only support RTMP protocol. YOu need to have FreeTAHub Video service active to see a stream.</li>
+<li>longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where <em>West 77.08</em> is equal to '-77.08' in the API</li>
+<li>latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)</li>
+<li>uid: OPTIONAL input parameter, needed to update existing drone COT</li>
+<li>SPIName: the name of the Sensor Point of Interest  the UAS is currently aiming to. currently will NOT work in a update message (when you send the UID) </li>
+<li>SPILongitude: longitude of target. currently will NOT work in a update message (when you send the UID)</li>
+<li>SPILatitude: latitude of target. currently will NOT work in a update message (when you send the UID)</li>
+</ul>
+<p><img alt="image" src="https://user-images.githubusercontent.com/60719165/123279688-78d53900-d4de-11eb-8180-054452d5539a.png" /></p>
+<h5 id="example-body-creation">Example body creation</h5>
+<pre><code>{
+  &quot;name&quot;:&quot;Putin air&quot;,
+  &quot;Bearing&quot;: &quot;90&quot;,
+  &quot;longitude&quot;: -77.01383,
+  &quot;latitude&quot;: 38.883,
+   &quot;FieldOfView&quot;:&quot;20&quot;,
+   &quot;Range&quot;:&quot;500&quot;,
+  &quot;VideoURLUID&quot;:&quot;rtmp://64.227.50.48:1935/live/PutinAirVideo&quot;,
+  &quot;SPILongitude&quot;: -77.01393,
+  &quot;SPILatitude&quot;: 38.885,
+  &quot;SPIName&quot;: &quot;Putin air SPI&quot;
+ }
+ ```
+
+ ##### Example body: updateexisting drone
+ ```
+{
+  &quot;uid&quot;:&quot;d033fd0c-d5ac-11eb-ab27-4e58de281c19&quot;,
+  &quot;name&quot;:&quot;Putin air&quot;,
+    &quot;timeout&quot;: 40000,
+  &quot;Bearing&quot;: &quot;0&quot;,
+  &quot;longitude&quot;: -77.01399,
+  &quot;latitude&quot;: 38.889,
+   &quot;FieldOfView&quot;:&quot;20&quot;,
+   &quot;Range&quot;:&quot;500&quot;,
+  &quot;VideoURLUID&quot;:&quot;rtmp://64.227.50.49:1935/live/PutinAirVideo&quot;
+}
+  ```
+
+#### postSPI
+create an SPI at a point or update an existing SPI.  If the video source is a UAV, and the UAV is also publishing its own position and sensor point of interest (SPI), those will  be plotted on the map. Being able to see the position of the aircraft and know where on the map the camera is looking in real time, while being able to see the video on the same screen, is a huge boost to SA.
+
+ * verb: POST
+ * endpoint: /Sensor/postSPI
+ * returns: uid
+
+#### parameters
+* timeout: OPTIONAL the length, expressed in seconds  until the point will stale out. Default is 300 seconds or 5 minutes.
+*  uid: OPTIONAL input parameter, needed to update existing SPI,
+* longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where *West 77.08* is equal to '-77.08' in the API
+* latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)
+* droneUid: the uid of the connected drone
+* name: the name of the drone, will become also the name of the video stream.
+
+#### Example Body
+</code></pre>
+<p>{
+    "uid": "e452b6bf-d4f0-11eb-b818-2cf05d092d98",
+    "timeout": 500,
+    "longitude": 4,
+    "latitude": 8,
+    "droneUid": "d76f608a-d4f0-11eb-b375-2cf05d092d98",
+    "name": "test"
+}</p>
+<pre><code>
+## ManageKML
+allow to post a set of geo information with attached metadata in tabular format
+
+![image](https://user-images.githubusercontent.com/60719165/125200108-d5a35400-e23f-11eb-934e-fc04210820c4.png)
+
+
+#### postKML
+ * verb: POST
+ * endpoint: /ManageKML/postKML
+ * returns: &quot;successful&quot; or HTTP error
+
+#### parameters
+* name: the name of the report
+* longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where *West 77.08* is equal to '-77.08' in the API
+* latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)
+* body: an JSON structure of key pairs (name, value)
+
+#### Example Body
+</code></pre>
+<p>{
+  "name": "Putin  Report",
+  "longitude": -77.01399,
+  "latitude": 38.889,
+  "body" :{
+      "userCallsign": "Mr Putin",
+      "dateTime": "2021-07-13",
+      "type": "Surveillance",
+      "eventScale": "Capital",
+      "importance": "Routine",
+      "status": "FurtherInvestigation",
+      "Time Observed": "2021-05-13T13:55:05.19Z",
+      "Duration of Event": "All day",
+      "Method Of Detection": "General Observation",
+      "Surveillance Type": "Discreet",
+      "Assessed Threats":"Threat to Mission",
+      "Final Remarks": "SNAFU"
+    }
+}
+```</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../index.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: FreeTAKServer" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              FreeTAKServer
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="REST_API_InternalDoc.html" class="md-footer__link md-footer__link--next" aria-label="Next: REST API - Internal" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              REST API - Internal
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.477d984a.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.ddd52ceb.min.js"></script>
+      
+    
+  </body>
+</html>
