@@ -35,11 +35,13 @@ FreeTAK UAS (FTUAS) is an Android application that can:
 * start your drone
 * start your controller
 * connect the phone with FTUAS to the controller
+
 * a popup will ask wich application you want to open
 * select FTUAS and configure the following:
   * FTS IP and Port
   * Video Server IP and port
   * the Drone name
+  * A series of messages will appear, indicating that the SDK is registred (requires an internet connection) and that the drone is ready
   * Now click on UAS [READY]
 
 ## Interface
