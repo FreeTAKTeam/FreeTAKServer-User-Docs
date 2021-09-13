@@ -146,6 +146,7 @@ retrieve API version and supported endpoints
      - and so on
 
 ##### Example body
+
 ```json
 {
 "longitude": -77.0104,
@@ -342,6 +343,7 @@ NOTE: these should be provided in the form of url encoded variables
 }
 ```
 ## ManageEmergency
+
 ### postEmergency
 create a emergency into the server
 
@@ -556,7 +558,7 @@ retrieve list of stream paths
 
 #### example return
 
-```json
+``` json
 {
   "video_stream": 
     ["/LiveApp/342508189321134315564775", "/test/other"]
@@ -592,6 +594,7 @@ create a drone object with a field of view, a current aiming point a video strea
 
   
 ##### Example body creation
+
 ```
 {
   "name":"Putin air",
