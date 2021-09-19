@@ -6,3 +6,12 @@ docker stop fts
 docker rm fts
 docker run -d -p 8080:8080/tcp -p 8087:8087/tcp -e FTS_CONNECTION_MESSAGE="Server Connection Message" -e FTS_SAVE_COT_TO_DB="True" -v fts_data:/data --name fts --restart unless-stopped freetakteam/freetakserver:{New FTS version}
 ```
+
+If using the `docker-compose.yml` file, perform the following:
+
+```bash
+docker-compose pull
+docker-compose down
+docker-compose up
+# alternatively, use docker-compose up -d to run in the background
+```

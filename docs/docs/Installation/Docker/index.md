@@ -8,17 +8,24 @@ When using this docker container we suggested that you use the `--restart unless
 ```bash
 docker volume create fts_data
 
-docker run -d -p 8080:8080/tcp -p 8087:8087/tcp -e FTS_CONNECTION_MESSAGE="Server Connection Message" -e FTS_SAVE_COT_TO_DB="True" -v fts_data:/data --name fts --restart unless-stopped freetakteam/freetakserver:1.1.2
+docker run -d -p 8080:8080/tcp -p 8087:8087/tcp -e FTS_CONNECTION_MESSAGE="Server Connection Message" -e FTS_COT_TO_DB="True" -v fts_data:/data --name fts --restart unless-stopped freetakteam/freetakserver:1.1.2
 ```
+
+Alternatively, you can use the example `docker-compose.yml` [available here](https://github.com/FreeTAKTeam/FreeTAKServer-Docker/blob/main/docker-compose.yml) by copying `docker-compose.yml` into a directory and then doing `docker-compose up` or `docker-compose up -d` to bring the container up, and in the background, respectively. The `docker-compose.yml` uses a bind mount to `./data`.
 
 ### Ports
 The docker image runs the ports on the same defaults as FreeTAKServer.  You can use the `-e` flag to map these ports to different ports or to run multiple FreeTAKServer's concurrently on the same host.
 
-### Environment Variabls
+### Environment Variables
+All environment variables will apply to FTS. However, these are some additional ones specific to this docker image.
 ```
-FTS_CONNECTION_MESSAGE: Accepts a string to send to users when they connect.  Set to "None" to disable.
-FTS_SAVE_COT_TO_DB: Accepts "True" or "False" setting to save CoTs to the DB.
-FTS_ARGS: Arguments to pass on the command line, "-AutoStart True" is passed automatically.  
+APPPORT: Allows hosting FTS UI from a different port, if needed
+APIIP: Allows the FTS UI to specify a different API port, if needed. Will use the `IP` environment variable, if not specified
+APIPORT: Allows the FTS UI to specify a different API port, if needed
+APIPROTOCOL: Allows the FTS UI to specify a different API protocol, if needed
+WEBMAPIP: Allows the FTS UI to specify a different webmap IP, if needed
+WEBMAPPORT: Allows the FTS UI to specify a different webmap port, if needed
+WEBMAPPROTOCOL: Allows the FTS UI to specify a different webmap protocol, if needed
 ```
 
 ### Storage
@@ -40,6 +47,7 @@ root@fts:/home/ubuntu# docker inspect fts_data
 ]
 ```
 
+The `docker-compose.yml` example utilizes a bind mount to `./data` in the same directory.
 
 ## Additional Architectures
 Currently the container is being cross compiled for `linux/amd64`,  `linux/arm64` and `linux/arm/v7`.  If additional processor architectures are needed please open an issue and request a new one.
