@@ -32,6 +32,7 @@ Delete the database
 ```bash
 sudo  rm /root/FTSDataBase.db
 ```
+
 and the various logs folders
 ```bash
 sudo rm -r /usr/local/lib/python3.8/dist-packages/FreeTAKServer
