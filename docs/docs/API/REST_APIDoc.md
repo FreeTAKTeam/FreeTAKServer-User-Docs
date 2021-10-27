@@ -540,7 +540,8 @@ manage creation of videos endpoints in the clients. the videos are visible under
 ```
 
 ##### Example body 2
-``` streamPort and streamPort params still required bu will be ignored
+streamPort and streamPort params still required but will be ignored
+``` 
 {
   "streamAddress": "rtsp://64.227.70.77:1935/LiveApp/342508189321134315564775",
   "alias": "raw Stream From Drone ",
@@ -610,7 +611,8 @@ create a drone object with a field of view, a current aiming point a video strea
  }
  ```
  
- ##### Example body: updateexisting drone
+ ##### Example body: update existing drone
+ 
  ```
 {
   "uid":"d033fd0c-d5ac-11eb-ab27-4e58de281c19",
