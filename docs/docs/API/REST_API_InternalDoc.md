@@ -1,5 +1,8 @@
 # REST API - Internal
 Internal APIs are primarly used by the FTS UI to communicate with the server. See also the [REST API DOC](REST_APIDoc.md) for APIs used in integration
+FTS uses **SocketIO** for the comunication, ensure that you understand SOckectIO concepts:
+- Emits: those are event sent to the client
+- 
 
 In the current release (1.9), FTS supports following Internal API :
 
@@ -23,7 +26,7 @@ Authorization: Bearer [YOUR_API_KEY]
 ## Authorization Websocket
 to use websocket events you need to trigger
 the event authenticate after connection and pass
-as the body of the message ```{"Authorization": [YOUR WEBSOCKET KEY]}```
+as the body of the message ```{"Authenticate": [YOUR WEBSOCKET KEY]}```
 
 # Connect
 
@@ -41,6 +44,7 @@ Subscription: `connectUpdate`
 ```
 
 # Authenticate
+
 ## description
   event used to authenticate new clients in the websocket<br />
   Event: `authenticate` <br />
