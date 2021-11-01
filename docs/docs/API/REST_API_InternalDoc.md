@@ -282,6 +282,7 @@ in the following format
 None
  
 # changeServiceInfo
+
 ## description
 Event used to change the status of each service running on the server<br />
 Event: `changeServiceInfo` <br />
@@ -347,6 +348,7 @@ not all services need to be in every message only those you would like to change
 Event used to retrieve all system users<br />
   Event: `systemUsers` <br />
   Subscription: `systemUsersUpdate`
+  
 ## returns
 the metadata of each user
 ```json
