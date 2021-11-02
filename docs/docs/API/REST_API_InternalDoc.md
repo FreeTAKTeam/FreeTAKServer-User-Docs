@@ -1,8 +1,14 @@
 # REST API - Internal
 Internal APIs are primarly used by the FTS UI to communicate with the server. See also the [REST API DOC](REST_APIDoc.md) for APIs used in integration
+
+there are two types of Internal API:
+- websocket, using socketIO
+- REST
+
+## SocketIO
 FTS uses **SocketIO** for the comunication, ensure that you understand SOckectIO concepts:
-- Emits: those are event sent to the client
-- 
+- Emits: those are events sent from/to the client with requests
+- Listerner: are events that client/server can subscribe to
 
 In the current release (1.9), FTS supports following Internal API :
 
@@ -14,14 +20,6 @@ In the current release (1.9), FTS supports following Internal API :
   * systemStatus
   * DataPackageTable
   * MissionTable
-  
-  
-## Authorization: API
-to use the API you need to have a REST API key.
-the authorization is placed in the header of the message.
-Authorization: Bearer [YOUR_API_KEY]
-
-> you need to use the string 'Bearer' before your API KEY
 
 ## Authorization Websocket
 to use websocket events you need to trigger
@@ -407,7 +405,18 @@ None
 ```
 
 * uid: uid of user to remove
-* 
+
+
+# REST Services
+
+## Authorization: API
+to use the REST API you need to have a REST API key.
+the authorization is placed in the header of the message.
+Authorization: Bearer [YOUR_API_KEY]
+
+> you need to use the string 'Bearer' before your API KEY
+
+
 # DataPackageTable
 ## description
 Endpoint used to access data regarding DataPackages
@@ -524,7 +533,7 @@ not yet implemented
 ## DELETE
 not yet implemented
 
-# ExCheck table
+# ExCheckTable
 Endpoint used to access data regarding ExCheck items such as checklists and templates
 
 ## POST
@@ -553,30 +562,49 @@ return JSON data containing the following information about Checklists and Templ
   "ExCheck": {
     "Templates": [
       {
-        "filename": "cdd39d06-b43e-42f4-839d-32362febe9a1.xml", (name of file containing template xml)
-        "name": "test from atak", (name associated with template)
-        "submissionTime": "2020-12-22T22:07:31.749284Z", (time template was submitted to server)
-        "submitter": "[('NOVA',)]", (callsign of submitter)
-        "uid": "cdd39d06-b43e-42f4-839d-32362febe9a1", (uid of template)
-        "hash": "bfb97ed985f789b0c97cf3a93a4354e36eadadd0b6d156c4e4a5ad25330a8c45", (hash of template)
-        "size": 1735, (size of template in bytes)
-        "description": "test from atak desc" (description of template)
+        "filename": "cdd39d06-b43e-42f4-839d-32362febe9a1.xml", 
+        "name": "test from atak",
+        "submissionTime": "2020-12-22T22:07:31.749284Z", 
+        "submitter": "[('NOVA',)]", 
+        "uid": "cdd39d06-b43e-42f4-839d-32362febe9a1", 
+        "hash": "bfb97ed985f789b0c97cf3a93a4354e36eadadd0b6d156c4e4a5ad25330a8c45", 
+        "size": 1735, 
+        "description": "test from atak desc" 
       }
     ],
     "Checklists": [
       {
-        "filename": "c5322e53-5b95-4def-953d-6be9e42e79fd.xml", (name of file containing checklist xml)
-        "name": "test from atak", (name associated with template)
-        "startTime": "2020-12-22T22:07:32.841000Z", (time checklist was created)
-        "submitter": "NOVA", (callsign of user to submit checklist)
-        "uid": "c5322e53-5b95-4def-953d-6be9e42e79fd", (uid of checklist)
-        "description": "test from atak desc", (description of checklist)
-        "template":"cdd39d06-b43e-42f4-839d-32362febe9a1" (uid of template of which the checklist is an instance)
+        "filename": "c5322e53-5b95-4def-953d-6be9e42e79fd.xml", 
+        "name": "test from atak", 
+        "startTime": "2020-12-22T22:07:32.841000Z", 
+        "submitter": "NOVA", 
+        "uid": "c5322e53-5b95-4def-953d-6be9e42e79fd", 
+        "description": "test from atak desc",
+        "template":"cdd39d06-b43e-42f4-839d-32362febe9a1" 
       }
     ]
   }
 }
 ```
+### Templates
+* "filename":  name of file containing template xml
+* "name":  name associated with template
+*  "submissionTime":  time template was submitted to server
+* "submitter":  callsign of submitter
+* "uid": uid of template
+*  hash": hash of template
+* "size": size of template in bytes
+*  "description":  description of template
+
+### Checklists 
+* "filename":  name of file containing checklist xml
+* "name": name associated with template
+*  "startTime": time checklist was created
+* "submitter": callsign of user to submit checklist
+* "uid": uid of checklist
+* "description": "description of checklist
+*  "template":"uid of template of which the checklist is an instance
+
 
 # FederationTable
 endpoint used to access federation objects
