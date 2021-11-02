@@ -1,14 +1,6 @@
 # REST API - Internal
 Internal APIs are primarly used by the FTS UI to communicate with the server. See also the [REST API DOC](REST_APIDoc.md) for APIs used in integration
-
-there are two types of Internal API:
-- websocket, using socketIO
-- REST
-
-## SocketIO
-FTS uses **SocketIO** for the comunication, ensure that you understand SOckectIO concepts:
-- Emits: those are events sent from/to the client with requests
-- Listerner: are events that client/server can subscribe to
+they may used to create other user interfaces such as CLI.
 
 In the current release (1.9), FTS supports following Internal API :
 
@@ -20,6 +12,19 @@ In the current release (1.9), FTS supports following Internal API :
   * systemStatus
   * DataPackageTable
   * MissionTable
+  * ExCheck
+  * Federation
+
+there are two types of Internal API:
+- websocket, using socketIO
+- REST
+
+## SocketIO
+FTS uses **SocketIO** for the comunication, ensure that you understand SOckectIO concepts:
+- Emits: those are events sent from/to the client with requests
+- Listerner: are events that client/server can subscribe to
+
+
 
 ## Authorization Websocket
 to use websocket events you need to trigger
