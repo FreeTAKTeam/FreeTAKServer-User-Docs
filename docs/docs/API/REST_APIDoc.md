@@ -522,13 +522,13 @@ manage creation of videos endpoints in the clients. the videos are visible under
  * returns: uid
  
 #### parameters
-*  streamAddress: the IP of the video server
-*  "streamPort": the port the video server respond to
-  "streamPath": the unique path of the video stream
-  "alias": a name for the stream
-  "streamProtocol": the type of protocol used (e.g. rtsp, rtmp, raw)
+*  "streamAddress": the IP of the video server
+* "streamPort": the port the video server respond to
+* "streamPath": the unique path of the video stream* "alias": a name for the stream
+* "streamProtocol": the type of protocol used (e.g. rtsp, rtmp, raw)
   
 ##### Example body 
+
 ```
  {
   "streamAddress": "64.227.70.77",
@@ -541,6 +541,7 @@ manage creation of videos endpoints in the clients. the videos are visible under
 
 ##### Example body 2
 streamPort and streamPort params still required but will be ignored
+
 ``` 
 {
   "streamAddress": "rtsp://64.227.70.77:1935/LiveApp/342508189321134315564775",
@@ -552,10 +553,10 @@ streamPort and streamPort params still required but will be ignored
 ```
 
 #### getVideoStream
-retrieve list of stream paths
- * verb: GET
- * endpoint: /ManageVideoStream/getVideoStream
- * returns: json with path
+retrieves list of stream paths
+*  verb: GET
+* endpoint: /ManageVideoStream/getVideoStream
+* returns: json with path
 
 #### example return
 
@@ -572,9 +573,9 @@ manage sensors (name to be changed in ManageSensor)
 
 #### postDrone
 create a drone object with a field of view, a current aiming point a video stream
- * verb: POST
- * endpoint: /Sensor/postDrone
- * returns: DRONE_UID, SPI_UID
+* verb: POST
+* endpoint: /Sensor/postDrone
+* returns: DRONE_UID, SPI_UID
  
 #### parameters
 * timeout: OPTIONAL the length, expressed in seconds  until the point will stale out. Default is 300 seconds or 5 minutes.
