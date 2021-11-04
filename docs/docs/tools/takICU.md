@@ -34,11 +34,11 @@ _While it's possible to run all on the same machine, performances will be severl
 
 Android Phone for spotter: an android phone with TAK ICu installed. Used by the spotter to send the video stream.
 
-Video Service: simple RTSP server 0.7 or better with APi activated. 
+* Video Service: simple RTSP server 0.7 or better with APi activated. 
 the video Service checker uses the API to verify if streams are running there and notify FTS
-FTH server: runs other integrations such as Telegram Connector, Video Service Checker, check-in system, SALUTe report  and Global Emergency Checker
-FTS Cloud Server: hosts the core of FTS
-Android Phone(s) for team member(s): this phone has ATAK installed
+* FTH server: runs other integrations such as Telegram Connector, Video Service Checker, check-in system, SALUTe report  and Global Emergency Checker
+* FTS Cloud Server: hosts the core of FTS
+* Android Phone(s) for team member(s): this phone has ATAK installed
 FTS send a notification with the COT
 ATAK shows the video, connecting to the FTS to visualized the COT and to the video server to get the video feed.
 
