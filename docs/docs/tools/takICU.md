@@ -16,7 +16,7 @@ This page describe the TAK ICU tool only. Please refer to other pages for config
 * Start ICU
 * Tap the preferences 
 * As destination type use "Wonza Server"
-* As Broadcast Alias use your TAK ID (e.g. Corvo)
+* As Broadcast Alias use your TAK ID (e.g. Corvo). It needs to be a single word, if broadcast alias has space it fails.
 * Scroll down to "Wonza Server preferences"
 * Set your RTSP server Ip as Wonza server IP (e.g. 147.182.190.54)
 * Set the server port to 8554
