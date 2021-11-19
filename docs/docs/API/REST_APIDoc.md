@@ -612,9 +612,9 @@ create a drone object with a field of view, a current aiming point a video strea
  }
 ```
  
- ##### Example body: update existing drone
+##### Example body: update existing drone
  
- ```
+```
 {
   "uid":"d033fd0c-d5ac-11eb-ab27-4e58de281c19",
   "name":"Putin air",
@@ -644,6 +644,7 @@ create an SPI at a point or update an existing SPI.  If the video source is a UA
 * name: the name of the drone, will become also the name of the video stream.
 
 #### Example Body
+
 ```
 {
     "uid": "e452b6bf-d4f0-11eb-b818-2cf05d092d98",
