@@ -571,6 +571,8 @@ retrieves list of stream paths
 since 1.9
 manage sensors (name to be changed in ManageSensor)
 
+![image](https://user-images.githubusercontent.com/60719165/123279688-78d53900-d4de-11eb-8180-054452d5539a.png)
+
 #### postDrone
 create a drone object with a field of view, a current aiming point a video stream
 * verb: POST
@@ -592,10 +594,10 @@ create a drone object with a field of view, a current aiming point a video strea
 * SPILongitude: longitude of target. currently will NOT work in a update message (when you send the UID)
 * SPILatitude: latitude of target. currently will NOT work in a update message (when you send the UID)
 
-![image](https://user-images.githubusercontent.com/60719165/123279688-78d53900-d4de-11eb-8180-054452d5539a.png)
+
 
   
-##### Example body creation
+##### Example body: create sensor
 
 ```
 {
@@ -612,13 +614,13 @@ create a drone object with a field of view, a current aiming point a video strea
  }
 ```
 
-##### Example body: update existing drone
+##### Example body creation: update existing sensor
  
 ```
 {
   "uid":"d033fd0c-d5ac-11eb-ab27-4e58de281c19",
   "name":"Putin air",
-	"timeout": 40000,
+ "timeout": 40000,
   "Bearing": "0",
   "longitude": -77.01399,
   "latitude": 38.889,
@@ -629,7 +631,7 @@ create a drone object with a field of view, a current aiming point a video strea
 ```
 
 #### postSPI
-create an SPI at a point or update an existing SPI.  If the video source is a UAV, and the UAV is also publishing its own position and sensor point of interest (SPI), those will  be plotted on the map. Being able to see the position of the aircraft and know where on the map the camera is looking in real time, while being able to see the video on the same screen, is a huge boost to SA.
+creates an SPI at a point or update an existing SPI.  If the video source is a UAV, and the UAV is also publishing its own position and sensor point of interest (SPI), those will  be plotted on the map. Being able to see the position of the aircraft and know where on the map the camera is looking in real time, while being able to see the video on the same screen, is a huge boost to SA.
 
  * verb: POST
  * endpoint: /Sensor/postSPI
@@ -657,7 +659,7 @@ create an SPI at a point or update an existing SPI.  If the video source is a UA
 ```
 
 ## ManageKML
-allow to post a set of geo information with attached metadata in tabular format
+allows to post a set of geo information with attached metadata in tabular format
 
 ![image](https://user-images.githubusercontent.com/60719165/125200108-d5a35400-e23f-11eb-934e-fc04210820c4.png)
 
