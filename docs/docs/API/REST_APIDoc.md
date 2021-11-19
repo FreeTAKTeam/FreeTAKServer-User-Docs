@@ -611,7 +611,7 @@ create a drone object with a field of view, a current aiming point a video strea
   "SPIName": "Putin air SPI"
  }
 ```
- 
+
 ##### Example body: update existing drone
  
 ```
