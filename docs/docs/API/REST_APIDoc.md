@@ -610,7 +610,7 @@ create a drone object with a field of view, a current aiming point a video strea
   "SPILatitude": 38.885,
   "SPIName": "Putin air SPI"
  }
- ```
+```
  
  ##### Example body: update existing drone
  
@@ -626,7 +626,7 @@ create a drone object with a field of view, a current aiming point a video strea
    "Range":"500",
   "VideoURLUID":"rtmp://64.227.50.49:1935/live/PutinAirVideo"
 }
-  ```
+```
 
 #### postSPI
 create an SPI at a point or update an existing SPI.  If the video source is a UAV, and the UAV is also publishing its own position and sensor point of interest (SPI), those will  be plotted on the map. Being able to see the position of the aircraft and know where on the map the camera is looking in real time, while being able to see the video on the same screen, is a huge boost to SA.
