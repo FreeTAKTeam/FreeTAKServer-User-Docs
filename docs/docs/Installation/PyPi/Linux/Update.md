@@ -1,5 +1,5 @@
 # Update FreeTakServer
-if you already installed FTS with pip you can use
+in certain cases, if you already installed FTS with pip you can use
 ```
 pip install FreeTAKServer[UI] --upgrade
 ```
