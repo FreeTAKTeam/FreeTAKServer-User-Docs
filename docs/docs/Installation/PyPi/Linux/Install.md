@@ -2,66 +2,33 @@
 This guide will walk you through installing FreeTAKServer 1.9 on a Linux host.
 you need to prepare for the followin steps, not all of them are required:
 
-- Creates target machines
-- Setup you access to the VM(s) 
+- [Creates target machines](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/Installation/PyPi/Linux/ConfigureMachine.md) 
 - Install FreeTAKServer
 - Configure and Run FreeTAKServer
 - Configure Web UI
-- [Install the web Map](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/FreeTAKHub/WebMap/Installation.md)
+- Install the [web Map](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/FreeTAKHub/WebMap/Installation.md)
 - Install the [Video Service](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/FreeTAKHub/Video/Installation.md)
-- Install NodeRed for FreeTAKHub
-
-## Creates target machines
-in this example we will use Digital ocean.
-1.,. create a DO accoutan
-![image](https://user-images.githubusercontent.com/60719165/142765115-3e2a579e-a3fe-4049-beb9-c070f7966f9c.png)
-
-2. create a 2 new droplets
-![image](https://user-images.githubusercontent.com/60719165/142765256-c03f7653-fc80-40ab-845f-304399154313.png)
-
-4. Select Ubunbt 20.04 LTS
-5. plan basic
-6. reccomended the 15 $ Mo plan (it would work with the 5 $ plan but very slow)
-7. select the region that is the closesest to you
-![image](https://user-images.githubusercontent.com/60719165/142765192-7504fcd9-790b-4c30-b7a8-c30f84488b3d.png)
-
-7. generate a new SSH key and dowload it. It will download 2 files 1 with PEM extension and the second without extension
-8.
-9.  Select project (FTYS)
-10.  press create droplet
-
-## Setup you access to the VM 
-- download winSCP and Putty
-- open Puttygen 
-SSH (Mac/Linux)
-Copy .PEM file to the machine from which you are going to connect.
-Make sure permissions on .PEM file are appropriate (chmod 600 file.pem)
-Connect with ssh command: ssh vcloud@ipaddress –i privkey.pem
-Putty (Windows)
-Download Putty and puttygen from - here
-Use puttygen to convert  file without extesion to .PPK file.
-Start puttygen and select “Load”
-Select your without extesion  file.
-Putty will convert format to .PPK format. enter image description here
-Select “Save Private Key” A passphrase is not required but can be used if additional security is required.
-Open WinSCP and create a new site
-![image](https://user-images.githubusercontent.com/60719165/142771002-3a713b87-768c-48e8-a448-323e28e345a6.png)
-
-![image](https://user-images.githubusercontent.com/60719165/142771008-d272d5df-3e78-4f0c-8be8-a43028414c77.png)
-
-Connect with Putty.
-
-Launch Putty and enter the host IP address. If connecting to the 10.X private address you must first establish an SSL VPN connection.
-Navigate to Connection/SSH/Auth
-Click “Browse” and select the .PPK file you exported from puttygen. enter image description here
- 
+- Install NodeRed for FreeTAKHub (work in progress)
 
 ## Linux Distribution
 
 A part Ubuntu 20.04, you may use  Debian 10 or Raspberry PI OS.
 
+
+## Upgrade your distro
+'''
+sudo apt update && sudo apt upgrade
+'''
+tap Y and Enter
+this will bring Ubuntu to the last pathch level
+type 
+
+'''
+Python3 in the console
+'''
+
 ### OPTIONAL Install Python 3
-this should not be necessary if you follow the instruction until now
+this should not be necessary if you follow the instruction until now, however if the command Python3 fails type:
 
 ```bash
 sudo apt update && sudo apt install python3 && sudo apt install python3-pip
