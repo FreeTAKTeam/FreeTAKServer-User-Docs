@@ -140,13 +140,17 @@ continue to follow the instructions:
 
 
 next one is important, adjust the path to your Python install
+
 ![image](https://user-images.githubusercontent.com/60719165/142766601-30560314-9ac1-4fe2-8e8b-91d0057b1991.png)
 
 
 ```
 enter the preferred main_path [/usr/local/lib/python3.8/dist-packages/FreeTAKServer]:
 /usr/local/lib/python3.8/dist-packages/FreeTAKServer
+```
 
+the log can be located anywhere on your machine
+```
 enter the preferred log file path [/usr/local/lib/python3.8/dist-packages/FreeTAKServer/Logs]: 
 /usr/local/lib/python3.8/dist-packages/FreeTAKServer/Logs
 ```
@@ -154,30 +158,38 @@ enter the preferred log file path [/usr/local/lib/python3.8/dist-packages/FreeTA
 at this point a YAML file is created under the location you selected (default is /opt/FTSConfig.yaml). FTS will start all the services.
 ![image](https://user-images.githubusercontent.com/60719165/142766645-210f09c3-88f5-435a-8a0d-d27bc3d4f1c3.png)
 
-your FTS is now started
-![image](https://user-images.githubusercontent.com/60719165/142766636-16cb4097-73e3-4bce-8442-b6b034687dd0.png)
-
 content of the YAML file
+
 ![image](https://user-images.githubusercontent.com/60719165/142766660-daac490a-3c0c-4089-b3b8-40c5e520c1ff.png)
 
 If you want to modify the YAML file you need to stop FTS and modify the YAML and then restart it.
-CTRL + C (2 times) in the console will stoop FTS. 
+CTRL + C (2 times) in the console will stoop FTS
 
+### SUCCESS!!!
+your FTS is now started
+![image](https://user-images.githubusercontent.com/60719165/142766636-16cb4097-73e3-4bce-8442-b6b034687dd0.png)
 
+. 
 
 
 ### Configure Web UI
 the Web UI is an optional component, however it's required to properly control FTS.
 open a new console Session and type
 
-![image](https://user-images.githubusercontent.com/60719165/142766762-580c8faf-c7ee-4596-a966-b59c72696c20.png)
+
 
 
 ```
 cd /usr/local/lib/python3.8/dist-packages/FreeTAKServer-UI
 ```
+or use WinSCP to navigate
 
+![image](https://user-images.githubusercontent.com/60719165/142766762-580c8faf-c7ee-4596-a966-b59c72696c20.png)
 
+edit the file called 
+```
+config.py
+```
 ![image](https://user-images.githubusercontent.com/60719165/142766782-e003c5b2-f707-4c9f-93ea-a7bef8d896c6.png)
 
 
@@ -195,12 +207,12 @@ WEBMAPIP = YOURIP
 ```
 
 for example only do not use it
+
 ![image](https://user-images.githubusercontent.com/60719165/142767734-4346ff2a-0df8-4fa6-81ea-9a5c5cbc313c.png)
 
 
 the port the UI uses to communicate with the backend
     PORT = '19023'
- 
  
  If you change those values in the UI you must change also the YAML file configurtation
 the API key used by the UI to comunicate with FTS. generate a new system user and then set it
@@ -214,8 +226,7 @@ the webSocket  key used by the UI to comunicate with FTS. must be the same value
  app.config['WEBSOCKETKEY'] = '[Your_Web_socket_Key]'
  ```
  
- 
-OPTIONAL" 
+OPTIONAL 
 ```
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + '/root/FTSDataBase.db'
 ```
@@ -223,13 +234,17 @@ OPTIONAL"
 To use a MySQL database change the above line as follows
 ```python
 SQLALCHEMY_DATABASE_URI = 'mysql://' + 'user:pass@localhost/dbname'
+ ```
  
  ### start the UI
  in the console type navigate to the installation path 
+ 
  ```
  cd /usr/local/lib/python3.8/dist-packages/FreeTAKServer-UI
  ```
+ 
  type 
+ 
  ```
  sudo python3 run.py
  ```
@@ -248,8 +263,10 @@ If you see FTS start without error you may hit `ctrl+c` twice and move onto runn
 
 
 your FTS is now configured
+
 ![image](https://user-images.githubusercontent.com/60719165/142767335-c8283798-877e-4fab-b264-7c70f314b3d0.png)
 
 If you have setup the UI, from the Admin console send a message hello world to the client
+
 ![image](https://user-images.githubusercontent.com/60719165/142767408-8e754ffa-7102-42ac-8254-a5ba35ff6526.png)
 
