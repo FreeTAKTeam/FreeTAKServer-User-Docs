@@ -18,12 +18,26 @@ in this example we will use Digital ocean.
 
 7. generate a new SSH key
 8.  Select project (FTYS)
-9.  press create dfroplet
+9.  press create droplet
 
 ## download winSCP and Putty
 1. open Puttygen 
-2. 
+SSH (Mac/Linux)
+Copy .PEM file to the machine from which you are going to connect.
+Make sure permissions on .PEM file are appropriate (chmod 600 file.pem)
+Connect with ssh command: ssh vcloud@ipaddress –i privkey.pem
+Putty (Windows)
+Download Putty and puttygen from - here
+Use puttygen to convert .PEM file to .PPK file.
+Start puttygen and select “Load”
+Select your .PEM file.
+Putty will convert the .PEM format to .PPK format. enter image description here
+Select “Save Private Key” A passphrase is not required but can be used if additional security is required.
+Connect with Putty.
 
+Launch Putty and enter the host IP address. If connecting to the 10.X private address you must first establish an SSL VPN connection.
+Navigate to Connection/SSH/Auth
+Click “Browse” and select the .PPK file you exported from puttygen. enter image description here
 
 
 ## Linux Distribution
