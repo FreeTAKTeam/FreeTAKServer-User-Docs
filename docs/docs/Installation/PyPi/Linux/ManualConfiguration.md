@@ -41,3 +41,25 @@ As roots Home Folder
 ```python
     # this should be set before startup
     DBFilePath = str(r'/root/FTSDataBase.db')
+```
+###  MySQL database
+FTS supports an abstraction layer, so it's easy to use a different database like MySQL. MYSQL is still experimental support, so use at your own risk.
+To switch to a MySQL database
+```python
+    # this should be set before startup
+    DBFilePath = str('user:pass@localhost/dbname')
+```
+
+And then under
+```
+sudo nano /usr/local/lib/python3.8/dist-packages/FreeTAKServer/controllers/configuration/DatabaseConfiguration.py
+```
+
+Change
+```python
+DataBaseType = str('sqlite:///')
+```
+To
+```python
+DataBaseType = str('mysql://')
+```
