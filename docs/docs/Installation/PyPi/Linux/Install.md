@@ -1,5 +1,31 @@
 This guide will walk you through installing FreeTAKServer 1.9 on a Linux host
 
+
+
+## Creates target machines
+in this example we will use Digital ocean.
+1.,. create a DO accoutan
+![image](https://user-images.githubusercontent.com/60719165/142765115-3e2a579e-a3fe-4049-beb9-c070f7966f9c.png)
+
+2. create a 2 new droplets
+![image](https://user-images.githubusercontent.com/60719165/142765256-c03f7653-fc80-40ab-845f-304399154313.png)
+
+4. Select Ubunbt 20.04 LTS
+5. plan basic
+6. reccomended the 15 $ Mo plan (it would work with the 5 4 plan
+7. add the region that is the closestr to you
+![image](https://user-images.githubusercontent.com/60719165/142765192-7504fcd9-790b-4c30-b7a8-c30f84488b3d.png)
+
+7. generate a new SSH key
+8.  Select project (FTYS)
+9.  press create dfroplet
+
+## download winSCP and Putty
+1. open Puttygen 
+2. 
+
+
+
 ## Linux Distribution
 
 It is suggested to use Ubuntu 20.04 or Debian 10 or Raspberry PI OS.
