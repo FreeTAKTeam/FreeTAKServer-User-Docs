@@ -106,6 +106,7 @@ sudo python3 -m FreeTAKServer.controllers.services.FTS
 ```
 
 the first time a wizard will popup
+
 ![image](https://user-images.githubusercontent.com/60719165/142766476-f1b5bbb9-aba5-4e05-9b53-a15c075d7e96.png)
 
 ```
@@ -168,6 +169,7 @@ CTRL + C (2 times) in the console will stoop FTS.
 ### Configure Web UI
 the Web UI is an optional component, however it's required to properly control FTS.
 open a new console Session and type
+
 ![image](https://user-images.githubusercontent.com/60719165/142766762-580c8faf-c7ee-4596-a966-b59c72696c20.png)
 
 
@@ -179,13 +181,12 @@ cd /usr/local/lib/python3.8/dist-packages/FreeTAKServer-UI
 ![image](https://user-images.githubusercontent.com/60719165/142766782-e003c5b2-f707-4c9f-93ea-a7bef8d896c6.png)
 
 
-```
-
 set the IP value to your external IP
 ```
    IP = '127.0.0.1'
 ```
 for example only do not use it
+
 ![image](https://user-images.githubusercontent.com/60719165/142766838-f5823555-9839-4a5e-81e3-196888215dd3.png)
 
 set the webmap IP
@@ -203,15 +204,22 @@ the port the UI uses to communicate with the backend
  
  If you change those values in the UI you must change also the YAML file configurtation
 the API key used by the UI to comunicate with FTS. generate a new system user and then set it
-```app.config['APIKEY'] = 'Bearer [API_TOKEN]' ```
+
+```
+app.config['APIKEY'] = 'Bearer [API_TOKEN]' 
+```
+
 the webSocket  key used by the UI to comunicate with FTS. must be the same value specified in the FTS config. 
- ```   app.config['WEBSOCKETKEY'] = '[Your_Web_socket_Key]' ```
+ ```   
+ app.config['WEBSOCKETKEY'] = '[Your_Web_socket_Key]'
+ ```
  
  
-OPTIONAL" Its configuration can be found under /[INSTALLATIONPATH]/FreeTAKServer-UI/config.py
+OPTIONAL" 
 ```
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + '/root/FTSDataBase.db'
 ```
+
 To use a MySQL database change the above line as follows
 ```python
 SQLALCHEMY_DATABASE_URI = 'mysql://' + 'user:pass@localhost/dbname'
