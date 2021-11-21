@@ -265,6 +265,15 @@ set the IP value to your external IP
 for example only do not use it
 ![image](https://user-images.githubusercontent.com/60719165/142766838-f5823555-9839-4a5e-81e3-196888215dd3.png)
 
+set the webmap IP
+```
+WEBMAPIP = YOURIP
+```
+
+for example only do not use it
+![image](https://user-images.githubusercontent.com/60719165/142767734-4346ff2a-0df8-4fa6-81ea-9a5c5cbc313c.png)
+
+
 the port the UI uses to communicate with the backend
     PORT = '19023'
  
@@ -285,8 +294,17 @@ To use a MySQL database change the above line as follows
 SQLALCHEMY_DATABASE_URI = 'mysql://' + 'user:pass@localhost/dbname'
  
  ### start the UI
- in the console type
+ in the console type navigate to the installation path 
+ ```
+ cd /usr/local/lib/python3.8/dist-packages/FreeTAKServer-UI
+ ```
+ type 
+ ```
+ sudo python3 run.py
+ ```
  
+ ![image](https://user-images.githubusercontent.com/60719165/142767800-e09ef09c-d6d7-4a11-bcc4-0f4a09597bb1.png)
+
 
 ### Test FTS
 Let's make sure your FTS server can start and run without errors.
