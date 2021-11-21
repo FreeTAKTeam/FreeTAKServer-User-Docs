@@ -51,8 +51,8 @@ We support a [public instance](https://www.reddit.com/r/ATAK/wiki/index/freetaks
 - download the configuration [here](https://drive.google.com/file/d/1IK1LfPN13EWikHaMyOuDDwIerNGz-Wli)
 - use the Import manager in ATAK to import the configuration
 
-### FreeTAKTem YouTube channel
-We have created the [FreeTAKTeam youtube channel](https://www.youtube.com/channel/UCJJOterycd1UuulmQGEV8Iw) where we are posting tutorials, use case and more.  
+### FreeTAKTeam YouTube channel
+We have created the [FreeTAKTeam YouTube channel](https://www.youtube.com/channel/UCJJOterycd1UuulmQGEV8Iw) where we are posting tutorials, use case and more.  
 
 ### Tell us what you think!
 To discuss with the developer team you may use:
