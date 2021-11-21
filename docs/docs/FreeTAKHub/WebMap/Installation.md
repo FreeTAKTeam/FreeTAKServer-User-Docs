@@ -34,8 +34,9 @@ sudo chmod +x FTH-webmap-linux-0.2.5
 ```
 edit the config file webMAP_config.json
 set FTH_FTS_URL to the IP of your FTS 
-  "FTH_FTS_URL": "204.48.30.216",
-
+```
+  "FTH_FTS_URL": "XXX.XX.XX.XXX",
+```
 
 start the 
 ```
