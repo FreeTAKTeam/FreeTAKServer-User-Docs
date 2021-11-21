@@ -1,8 +1,11 @@
+# FreeTAK Server Installation
 This guide will walk you through installing FreeTAKServer 1.9 on a Linux host
 you need to prepare for the followin steps
 - Creates target machines
-- 
-
+- Setup you access to the VM(s) 
+- Install FreeTAKServer
+- Configure and Run FreeTAKServer
+- Configure Web UI
 
 ## Creates target machines
 in this example we will use Digital ocean.
@@ -51,27 +54,24 @@ Click “Browse” and select the .PPK file you exported from puttygen. enter im
 
 ## Linux Distribution
 
-It is suggested to use Ubuntu 20.04 or Debian 10 or Raspberry PI OS.
+A part Ubuntu 20.04, you may use  Debian 10 or Raspberry PI OS.
 
 ### OPTIONAL Install Python 3
+this should not be necessary if you follow the instruction until now
 
 ```bash
 sudo apt update && sudo apt install python3 && sudo apt install python3-pip
 ```
 
 ### Install Pip
+Pip is the package manager for Python
+
 ```
 sudo apt install python3-pip
 ```
 
 ### Install Python Libraries
-OPTIONAL this should not be necessary using FTS 1.9
-```bash
-sudo apt install python3-dev python3-setuptools build-essential python3-gevent python3-lxml libcairo2-dev
-```
 
-### Install 'wheel' and 'pycairo'
-OPTIONAL this should not be necessary using FTS 1.5
 ```bash
 sudo apt install python3-dev python3-setuptools build-essential python3-gevent python3-lxml libcairo2-dev
 sudo pip3 -m install wheel pycairo
@@ -80,7 +80,10 @@ sudo pip3 -m install wheel pycairo
 ![image](https://user-images.githubusercontent.com/60719165/142766382-8a6e5d05-a198-488d-86f2-67cd49cc1ca6.png)
 
 ### delete previous installation
-required if you have a . Upgrade will not work.
+required only if:
+- you have an existing installation
+-  Upgrade fails.
+
 ```bash
 sudo pip3 uninstall FreeTAKServer
 sudo pip3 uninstall FreeTAKServer-UI
@@ -114,13 +117,18 @@ pip check FreeTakServer
 ![image](https://user-images.githubusercontent.com/60719165/142766403-b877a43b-ec9d-48ce-a13c-b216ddcfa295.png)
 
 #### Install an old version
-you can install a past version using this command
+you can install a [past version](https://pypi.org/project/FreeTAKServer/#history) using this command
 ```
 sudo python3 -m pip install FreeTAKServer[ui]==[VERSIONNUMBER]
 ```
 
-## Configure and Run FTS 1.9 +
+for example if you want to install version 1.5
+```
+sudo python3 -m pip install FreeTAKServer[ui]==1.5.10
+```
 
+## Configure and Run FTS (1.9+) 
+this works only for 1.9 or better, for see here for [manual configuration](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/Installation/PyPi/Linux/ManualConfiguration.md) 
 start FTS
 ```
 sudo python3 -m FreeTAKServer.controllers.services.FTS 
@@ -183,75 +191,12 @@ content of the YAML file
 If you want to modify the YAML file you need to stop FTS and modify the YAML and then restart it.
 CTRL + C (2 times) in the console will stoop FTS. 
 
-### Configure FreeTAKServer < 1.9
-![image](https://user-images.githubusercontent.com/60719165/124500136-9aafa500-dd95-11eb-8aa8-67ffda7076f0.png)
 
-Depending on the linux distro your config file for FTS will be in a python version dependant location.
-you can use pip to discover the location. Type:
-```
- python3 -m pip show FreeTAKServer
-```
 
-If you are running python 3.7 you would get
-```
-/usr/local/lib/python3.7/dist-packages/FreeTAKServer/controllers/configuration/MainConfig.py
-```
-
-similarly, If you are running python 3.8
-
-```
-/usr/local/lib/python3.8/dist-packages/FreeTAKServer/controllers/configuration/MainConfig.py
-```
-
-You can edit the file via nano with the following command
-
-```
-sudo nano /usr/local/lib/python3.7/dist-packages/FreeTAKServer/controllers/configuration/MainConfig.py
-```
-
-To exit nano `ctrl+x` and then enter `y` to save and hit enter.
-
-#### DBFilePath
-OPTIONAL this should not be necessary since FTS 1.5
-you need to change the `DBFilePath` value to something valid, if you are running as root, '/root' is a good choice.
-
-Original Value
-```python
-    # this should be set before startup
-    DBFilePath = str(r'/opt/FTSDataBase.db')
-```
-
-As roots Home Folder
-
-```python
-    # this should be set before startup
-    DBFilePath = str(r'/root/FTSDataBase.db')
-```
-###  MySQL database
-FTS supports an abstraction layer, so it's easy to use a different database like MySQL. MYSQL is still experimental support, so use at your own risk.
-To switch to a MySQL database
-```python
-    # this should be set before startup
-    DBFilePath = str('user:pass@localhost/dbname')
-```
-
-And then under
-```
-sudo nano /usr/local/lib/python3.7/dist-packages/FreeTAKServer/controllers/configuration/DatabaseConfiguration.py
-```
-
-Change
-```python
-DataBaseType = str('sqlite:///')
-```
-To
-```python
-DataBaseType = str('mysql://')
-```
 
 ### Configure Web UI
 the Web UI is an optional component, however it's required to properly control FTS.
-open a new Session and type
+open a new console Session and type
 ![image](https://user-images.githubusercontent.com/60719165/142766762-580c8faf-c7ee-4596-a966-b59c72696c20.png)
 
 
@@ -326,6 +271,6 @@ If you see FTS start without error you may hit `ctrl+c` twice and move onto runn
 your FTS is now configured
 ![image](https://user-images.githubusercontent.com/60719165/142767335-c8283798-877e-4fab-b264-7c70f314b3d0.png)
 
-from the Admin console send a message hello world to the client
+If you have setup the UI, from the Admin console send a message hello world to the client
 ![image](https://user-images.githubusercontent.com/60719165/142767408-8e754ffa-7102-42ac-8254-a5ba35ff6526.png)
 
