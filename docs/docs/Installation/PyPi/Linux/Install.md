@@ -1,11 +1,15 @@
 # FreeTAK Server Installation
-This guide will walk you through installing FreeTAKServer 1.9 on a Linux host
-you need to prepare for the followin steps
+This guide will walk you through installing FreeTAKServer 1.9 on a Linux host.
+you need to prepare for the followin steps, not all of them are required:
+
 - Creates target machines
 - Setup you access to the VM(s) 
 - Install FreeTAKServer
 - Configure and Run FreeTAKServer
 - Configure Web UI
+- [Install the web Map](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/FreeTAKHub/WebMap/Installation.md)
+- Install the [Video Service](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/FreeTAKHub/Video/Installation.md)
+- Install NodeRed for FreeTAKHub
 
 ## Creates target machines
 in this example we will use Digital ocean.
