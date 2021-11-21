@@ -30,10 +30,9 @@ This project is currently in *Early Production Stage*.
 If you have any issues don't hesitate to [bring it up](https://github.com/Tapawingo/FreeTakServer/issues), as FreeTAKServer is in continuous development.
 
 ### Donate Back
-the FTS team is working  daily on the development of a open and free solution. We plan to do more that simply replicate the functionalities of the legacy TAK server, our road map includes integration with open source systems like LORA's Meshtastic, porting it to Android, having an open API and much more.
+the FTS team is working  daily on the development of a open and free solution. We plan to do more that simply replicate the functionalities of the legacy TAK server, our road map [@FreeTakServer#25](https://github.com/FreeTAKTeam/FreeTakServer/issues/25) to see what is plannedincludes lot of cool ideas.
 
-We are doing it for free because we believe that donating personal time to a cause it's an endeavour that is worthy per-se,
-however, part-time, we are also spending our own money to:
+We are doing it for free because we believe that donating personal time to a cause it's an endeavour that is worthy per-se, however, part-time, we are also spending our own money to:
 
 - Maintain a Public server and a test server
 - Investing in different technologies for R&D
@@ -52,9 +51,10 @@ We support a [public instance](https://www.reddit.com/r/ATAK/wiki/index/freetaks
 - download the configuration [here](https://drive.google.com/file/d/1IK1LfPN13EWikHaMyOuDDwIerNGz-Wli)
 - use the Import manager in ATAK to import the configuration
 
+### FreeTAKTem YouTube channel
+We have created the [FreeTAKTeam youtube channel](https://www.youtube.com/channel/UCJJOterycd1UuulmQGEV8Iw) where we are posting tutorials, use case and more.  
+
 ### Tell us what you think!
 To discuss with the developer team you may use:
 - The [subreddit](https://www.reddit.com/r/ATAK/)
 - The [public ATAK Discord Server](https://discordapp.com/invite/XEPyhHA)
-
-
