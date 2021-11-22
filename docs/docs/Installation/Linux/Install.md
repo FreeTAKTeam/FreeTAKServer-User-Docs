@@ -179,8 +179,6 @@ the Web UI is an optional component, however it's required to properly control F
 open a new console Session and type
 
 
-
-
 ```
 cd /usr/local/lib/python3.8/dist-packages/FreeTAKServer-UI
 ```
@@ -253,6 +251,14 @@ SQLALCHEMY_DATABASE_URI = 'mysql://' + 'user:pass@localhost/dbname'
  
  ![image](https://user-images.githubusercontent.com/60719165/142767800-e09ef09c-d6d7-4a11-bcc4-0f4a09597bb1.png)
 
+#### wtforms Form error
+NOTE: If you have an error with 'wtforms'
+
+type in the console
+``` 
+pip3 install WTForms==2.3.3 
+```
+and press enter
 
 ### Test FTS
 Let's make sure your FTS server can start and run without errors.
