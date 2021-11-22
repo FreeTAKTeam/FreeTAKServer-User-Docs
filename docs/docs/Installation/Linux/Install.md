@@ -171,7 +171,7 @@ CTRL + C (2 times) in the console will stoop FTS
 your FTS is now started
 ![image](https://user-images.githubusercontent.com/60719165/142766636-16cb4097-73e3-4bce-8442-b6b034687dd0.png)
 
-. 
+After that you have completed the setup you may want to create a [Service](Service.md) so that FTS will run even if you close the console.
 
 
 ### Configure Web UI
