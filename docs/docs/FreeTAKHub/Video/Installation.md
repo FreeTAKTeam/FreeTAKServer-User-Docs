@@ -13,7 +13,7 @@ wget https://github.com/aler9/rtsp-simple-server/releases/download/v0.17.9/rtsp-
 
 Untar the package
 ```
-tar -zxvf rtsp-simple-server_v0.17.9_linux_amd64.tar.g
+tar -zxvf rtsp-simple-server_v0.17.9_linux_amd64.tar.gz
 ```
 
 
