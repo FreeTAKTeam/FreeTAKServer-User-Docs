@@ -112,7 +112,8 @@ the first time a wizard will popup
 ```
 would you like to use a yaml config file, 
  if yes you will be prompted for further configuration options [yes]: yes
- ```
+
+``` 
  
  press enter
  
@@ -124,10 +125,10 @@ from now on, hit ENTER if you are happy with the default
 
 the public IP will be automatically discovered (you can double check in your digital Ocena console for safety)
 
-````
+```
 enter ip [10.0.2.15]: 
 10.0.2.15
-````
+```
 
 this is the FTS_MAIN_IP, must be you EXTERNAL IP
 continue to follow the instructions:
@@ -136,6 +137,7 @@ continue to follow the instructions:
 **enter the preferred database path [/opt/FTSDataBase.db]: **
 /opt/FTSDataBase.db
 ```
+
 ![image](https://user-images.githubusercontent.com/60719165/142766542-18876805-9454-4725-849b-f794036c2848.png)
 
 
@@ -158,7 +160,7 @@ enter the preferred log file path [/usr/local/lib/python3.8/dist-packages/FreeTA
 at this point a YAML file is created under the location you selected (default is /opt/FTSConfig.yaml). FTS will start all the services.
 ![image](https://user-images.githubusercontent.com/60719165/142766645-210f09c3-88f5-435a-8a0d-d27bc3d4f1c3.png)
 
-content of the YAML file
+### content of the YAML file
 
 ![image](https://user-images.githubusercontent.com/60719165/142766660-daac490a-3c0c-4089-b3b8-40c5e520c1ff.png)
 
