@@ -57,7 +57,7 @@ sudo systemctl enable rtsp-simple-server
 ```
  start the service
 ```
-sudo systemctl start rtsp-simple-serve
+sudo systemctl start rtsp-simple-server
 ```
 
 
