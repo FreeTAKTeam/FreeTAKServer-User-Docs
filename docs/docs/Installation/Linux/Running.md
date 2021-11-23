@@ -1,4 +1,4 @@
-If you have not installed FreeTAKServer please follow the installation guide first.
+If you have not installed FreeTAKServer please follow the [installation](Install.md) guide first.
 
 ## Parameters
 
