@@ -33,14 +33,16 @@ make the file an executable
 sudo chmod +x FTH-webmap-linux-0.2.5
 ```
 edit the config file webMAP_config.json
-set FTH_FTS_URL to the IP of your FTS 
-```
-  "FTH_FTS_URL": "XXX.XX.XX.XXX",
-```
+set FTH_FTS_URL to the IP and port of your FTS 
+*   "FTH_FTS_URL": "[YOUR_FTS_IP]" 
+  "FTH_FTS_TCP_Port": [YOUR_FTS_PORT]
 
 start the 
 ```
 ./FTH-webmap-linux-0.2.5
 ```
+
+* navigate to your IP:8000/tak-map 
+* e.g. http://10.0.2.15:8000/tak-map
 
 ![image](https://user-images.githubusercontent.com/60719165/142767854-276d1413-ece2-4487-8499-c7253fb27e8b.png)
