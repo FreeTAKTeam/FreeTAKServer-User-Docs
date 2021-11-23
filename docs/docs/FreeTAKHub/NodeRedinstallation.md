@@ -47,16 +47,17 @@ And now launch Node-RED itself. No sudo is necessary, as port 1880 is high enoug
 ```
 node-red
 ```
-In order to start Node-RED automatically on startup, we’ll need to install a node-red.service file instead of the more traditional init script. This is because Ubuntu 16.04 is the first LTS release that uses systemd for its init system. You can find a summary of this and other Ubuntu 16.04 changes in What’s New in Ubuntu 16.04.
+In order to start Node-RED automatically on startup, we’ll need to install a node-red.service file instead of the more traditional init script. 
 
-Open a blank service file called node-red.service.
+first create a special user and dedicated group
 
-sudo nano /etc/systemd/system/node-red.service
- 
-Copy and paste in the following, then save and close the file.
 ```
-/etc/systemd/system/node-red.service
-[Unit]
+sudo useradd -m nodered -G nodered
+```
+
+now creates the service
+```
+sudo tee /etc/systemd/system/node-red.service >/dev/null << EOF
 Description=Node-RED
 After=syslog.target network.target
 
@@ -70,12 +71,26 @@ SyslogIdentifier=node-red
 StandardOutput=syslog
 
 # non-root user to run as
-WorkingDirectory=/home/sammy/
-User=sammy
-Group=sammy
+WorkingDirectory=/home/nodered/
+User=nodered
+Group=nodered
 
 [Install]
 WantedBy=multi-user.target
+EOF
  ```
  
-A
+Now that our service file is installed , we need to enable it. This will enable it to execute on startup.
+```
+sudo systemctl enable node-red
+```
+
+Let’s manually start the service now to test that it’s still working.
+```
+sudo systemctl start node-red
+ ```
+Point a browser back at the server’s port 1880 and verify that Node-RED is back up. If it is, shut it back down until we secure the install in the next step.
+
+```
+sudo systemctl stop node-red
+```
