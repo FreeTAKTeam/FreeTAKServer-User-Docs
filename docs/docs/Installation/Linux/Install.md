@@ -176,6 +176,8 @@ After that you have completed the setup you may want to create a [Service](Servi
 
 ### Configure Web UI
 the Web UI is an optional component, however it's required to properly control FTS.
+
+
 open a new console Session and type
 
 
@@ -235,6 +237,24 @@ To use a MySQL database change the above line as follows
 ```python
 SQLALCHEMY_DATABASE_URI = 'mysql://' + 'user:pass@localhost/dbname'
  ```
+ 
+ #### Installation on a Separate machine
+Typically the web UI  is installed on the same machine as FTS, however you can install it on a separate machine and even use it to manage several instances.
+If you're installing FTS-UI on a separate server the following commands may help:
+
+```  Bash
+sudo pip install WTForms==2.3.3
+sudo pip install SQLAlchemy==1.3.20
+sudo pip install eventlet
+```
+
+you will need also to set in the config file
+
+```
+IP = [FTS external IP]
+APPIP = [FTS-UI internal IP]
+```
+ 
  
  ### start the UI
  in the console type navigate to the installation path 
