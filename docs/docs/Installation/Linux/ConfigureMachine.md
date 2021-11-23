@@ -1,4 +1,4 @@
-# Configure and Connect to your server
+# Configure and Connect to your cloud server
 In this example we will use the provider Digital Ocean
 
 ## Creates target machines
