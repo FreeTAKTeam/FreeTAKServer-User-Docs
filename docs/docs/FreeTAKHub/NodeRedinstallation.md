@@ -89,8 +89,27 @@ Let’s manually start the service now to test that it’s still working.
 ```
 sudo systemctl start node-red
  ```
-Point a browser back at the server’s port 1880 and verify that Node-RED is back up. If it is, shut it back down until we secure the install in the next step.
+ to shut it back down you can use
 
 ```
 sudo systemctl stop node-red
 ```
+ 
+Point a browser back at the server’s port 1880 and verify that Node-RED is back up. e.g. if your server is installed under the IP 143.198.39.135
+``` browser
+http://143.198.39.135:1880/
+```
+you will see the welcome screen of NodeRed with the tutorial
+Now, to install the flows, click on the hanburger menu and then import
+![image](https://user-images.githubusercontent.com/60719165/143110628-d5e1d2b9-15e8-4b34-b977-abdc99c205f9.png)
+
+download  one of the FreeTAKHub integrations (json files)
+import into your Nodered
+resolve any conflict by importing additional nodes in you palette
+![image](https://user-images.githubusercontent.com/60719165/143121789-3e751ff1-9d07-4089-9668-644962a19986.png)
+
+Success!!!!
+![image](https://user-images.githubusercontent.com/60719165/143122002-35f25669-17c3-4dfa-9655-14b52612bd04.png)
+
+
+
