@@ -1,7 +1,22 @@
-## Prerequisites
-This guide assumes that you are using Ubuntu 20.04. Before you begin, you should have a non-root user account with sudo privileges set up on your system. 
+# Install NodeRed for FreeTAKHub
 
-## Node JS
+to install NodeRed you will need to:
+- Satisfy the requirements
+- create a Non root user
+- Install Node JS
+
+## Prerequisites
+This guide assumes that you are using Ubuntu 20.04 on cloud installation (we use digital Ocean). 
+
+
+##  create a Non root user
+first create a special user and dedicated group
+
+```
+sudo useradd -m nodered -G nodered
+```
+
+## Install Node JS
  you can use the apt package manager. Refresh your local package index first by typing:
 
 ```
@@ -29,7 +44,7 @@ sudo apt install npm
 ```
 This will allow you to install modules and packages to use with Node.js.
 
-## NodeRed
+## Install NodeRed
 Use npm to install node-red and a helper utility called node-red-admin.
 ```
 sudo npm install -g --unsafe-perm node-red node-red-admin
@@ -47,15 +62,10 @@ And now launch Node-RED itself. No sudo is necessary, as port 1880 is high enoug
 ```
 node-red
 ```
-In order to start Node-RED automatically on startup, we’ll need to install a node-red.service file instead of the more traditional init script. 
+## Create the Service
+In order to start Node-RED automatically on startup, we’ll need to install a node-red.service file 
 
-first create a special user and dedicated group
-
-```
-sudo useradd -m nodered -G nodered
-```
-
-now creates the service
+let's creates the service using the Tee command
 ```
 sudo tee /etc/systemd/system/node-red.service >/dev/null << EOF
 Description=Node-RED
@@ -94,22 +104,22 @@ sudo systemctl start node-red
 ```
 sudo systemctl stop node-red
 ```
- 
+## test you installation 
 Point a browser back at the server’s port 1880 and verify that Node-RED is back up. e.g. if your server is installed under the IP 143.198.39.135
 ``` browser
 http://143.198.39.135:1880/
 ```
 you will see the welcome screen of NodeRed with the tutorial
 Now, to install the flows, click on the hanburger menu and then import
+
 ![image](https://user-images.githubusercontent.com/60719165/143110628-d5e1d2b9-15e8-4b34-b977-abdc99c205f9.png)
 
 download  one of the FreeTAKHub integrations (json files)
 import into your Nodered
 resolve any conflict by importing additional nodes in you palette
+
 ![image](https://user-images.githubusercontent.com/60719165/143121789-3e751ff1-9d07-4089-9668-644962a19986.png)
 
 Success!!!!
+
 ![image](https://user-images.githubusercontent.com/60719165/143122002-35f25669-17c3-4dfa-9655-14b52612bd04.png)
-
-
-
