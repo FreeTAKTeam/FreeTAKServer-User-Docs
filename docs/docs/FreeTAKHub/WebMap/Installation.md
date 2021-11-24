@@ -37,9 +37,12 @@ set FTH_FTS_URL to the IP and port of your FTS
 *   "FTH_FTS_URL": "[YOUR_FTS_IP]" 
   "FTH_FTS_TCP_Port": [YOUR_FTS_PORT]
 
-start the 
+in the console type:
+./[package_name] /[PATHTOCONFIGURATIONFILE]/webMAP_config.json
+
+e.g.
 ```
-./FTH-webmap-linux-0.2.5
+./FTH-webmap-linux-0.2.5 /webMAP_config.json
 ```
 
 * navigate to your IP:8000/tak-map 
