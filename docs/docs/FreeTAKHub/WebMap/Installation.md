@@ -9,7 +9,15 @@ get the link of the last release:
 ```
 https://github.com/FreeTAKTeam/FreeTAKHub/releases/download/v0.2.5/FTH-webmap-linux-0.2.5.zip
 ```
-login to your server and in the console type  
+login to your server and go to the opt folder
+
+```
+cd /opt
+```
+
+the console type  
+
+
 
 ```
 wget https://github.com/FreeTAKTeam/FreeTAKHub/releases/download/v0.2.5/FTH-webmap-linux-0.2.5.zip
