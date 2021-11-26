@@ -104,7 +104,7 @@ sudo systemctl start node-red
 ```
 sudo systemctl stop node-red
 ```
-## test you installation 
+## test your installation 
 Point a browser back at the server’s port 1880 and verify that Node-RED is back up. e.g. if your server is installed under the IP 143.198.39.135
 ``` browser
 http://143.198.39.135:1880/
