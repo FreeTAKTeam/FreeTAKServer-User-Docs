@@ -1,6 +1,33 @@
 # Install NodeRed for FreeTAKHub
+there are several ways to install NodeRed.
+- Install Using Script (simple)
+- Install using APT (advanced Users)
 
-to install NodeRed you will need to:
+# Install Using Script (simple)
+
+the following script will do Installing and Upgrading Node-RED to install Node.js, npm and Node-RED onto a Ubuntu Raspberry Pi. The script can also be used to upgrade an existing install when a new release is available.
+
+Running the following command will download and run the script. If you want to review the contents of the script first, you can view it on Github.
+```
+bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
+```
+
+enable service so that statrs automagically
+```
+sudo systemctl enable nodered.service
+```
+Run service
+```
+node-red-start
+```
+navigate to your NodeRed
+```
+http://<IP>:1880
+```
+
+
+# Install using APT (advanced Users)
+to install NodeRed with APT you will need to:
 - Satisfy the requirements
 - create a Non root user
 - Install Node JS
