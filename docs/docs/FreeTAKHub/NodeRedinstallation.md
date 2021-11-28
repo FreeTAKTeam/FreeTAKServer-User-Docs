@@ -51,6 +51,7 @@ sudo apt update
 ```
 
 Then install Node.js:
+
 ```
 sudo apt install nodejs
  ```
@@ -73,6 +74,7 @@ This will allow you to install modules and packages to use with Node.js.
 
 ## Install NodeRed
 Use npm to install node-red and a helper utility called node-red-admin.
+
 ```
 sudo npm install -g --unsafe-perm node-red node-red-admin
 ```
@@ -86,6 +88,7 @@ First, we’ll need to open up a port on our firewall. Node-RED defaults to usin
 sudo ufw allow 1880
 ``` 
 And now launch Node-RED itself. No sudo is necessary, as port 1880 is high enough to not require root privileges.
+
 ```
 node-red
 ```
@@ -115,7 +118,7 @@ Group=nodered
 [Install]
 WantedBy=multi-user.target
 EOF
- ```
+```
  
 Now that our service file is installed , we need to enable it. This will enable it to execute on startup.
 ```
