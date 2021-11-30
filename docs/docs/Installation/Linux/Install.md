@@ -28,7 +28,8 @@ Python3 in the console
 '''
 
 ### OPTIONAL Install Python 3
-this should not be necessary if you follow the instruction until now, however if the command Python3 fails type:
+You need to be running Python 3.8 or newer.
+This should not be necessary if you follow the instruction until now, however if the command Python3 fails type:
 
 ```bash
 sudo apt update && sudo apt install python3 && sudo apt install python3-pip
