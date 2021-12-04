@@ -40,7 +40,8 @@ make the file an executable
 sudo chmod +x FTH-webmap-linux-0.2.5
 ```
 edit the config file webMAP_config.json
-set FTH_FTS_URL to the IP and port of your FTS 
+set FTH_FTS_URL to the IP and port of your FTS
+
 ```
   "FTH_FTS_URL": "[YOUR_FTS_IP]" 
   "FTH_FTS_TCP_Port": [YOUR_FTS_PORT]
@@ -79,7 +80,7 @@ sudo mv webMAP_config.json /usr/local/etc/
 ```
 
 Create the service. copy this complete text and paste into the console:
-
+```
 sudo tee /etc/systemd/system/webMap.service >/dev/null << EOF
 [Unit]
 After=network.target
@@ -88,6 +89,7 @@ ExecStart=/usr/local/bin/FTH-webmap-linux-0.2.5  /usr/local/etc/webMAP_config.js
 [Install]
 WantedBy=multi-user.target
 EOF
+```
 
 Enable the service:
 ```
