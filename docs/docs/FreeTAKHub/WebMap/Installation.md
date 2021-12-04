@@ -18,7 +18,6 @@ cd /opt
 the console type  
 
 
-
 ```
 wget https://github.com/FreeTAKTeam/FreeTAKHub/releases/download/v0.2.5/FTH-webmap-linux-0.2.5.zip
 ```
@@ -65,3 +64,37 @@ e.g. if your configuration file is under opt
 now connect a TAK client to see if that displays
 ![image](https://user-images.githubusercontent.com/60719165/143260791-d909e0d5-38e4-4d78-98fe-2fb488e333bf.png)
 
+## configure to start as a service
+Systemd is the service manager used by Ubuntu, Debian and many other Linux distributions, and allows to launch rtsp-simple-server on boot.
+
+move the executable
+```
+sudo mv FTH-webmap-linux-0.2.5 /usr/local/bin/
+```
+
+and configuration in the system:
+
+```
+sudo mv webMAP_config.json /usr/local/etc/
+```
+
+Create the service. copy this complete text and paste into the console:
+
+sudo tee /etc/systemd/system/webMap.service >/dev/null << EOF
+[Unit]
+After=network.target
+[Service]
+ExecStart=/usr/local/bin/FTH-webmap-linux-0.2.5  /usr/local/etc/webMAP_config.json
+[Install]
+WantedBy=multi-user.target
+EOF
+
+Enable the service:
+```
+sudo systemctl enable webMap.service
+```
+
+start the service
+```
+sudo systemctl start webMap.service
+```
