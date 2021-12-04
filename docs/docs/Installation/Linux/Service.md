@@ -42,7 +42,7 @@ StartLimitIntervalSec=0
 Type=simple
 Restart=always
 RestartSec=1
-ExecStart=/usr/bin/python3 -m FreeTAKServer.controllers.services.FTS -DataPackageIP 0.0.0.0 -AutoStart True
+ExecStart=/usr/bin/python3 -m FreeTAKServer.controllers.services.FTS
 
 [Install]
 WantedBy=multi-user.target
