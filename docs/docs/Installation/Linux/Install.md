@@ -16,16 +16,18 @@ A part Ubuntu 20.04, you may use  Debian 10 or Raspberry PI OS.
 
 
 ## Upgrade your distro
-'''
+
+```
 sudo apt update && sudo apt upgrade
-'''
+```
+
 tap Y and Enter
 this will bring Ubuntu to the last pathch level
 type 
 
-'''
+```
 Python3 in the console
-'''
+```
 
 ### OPTIONAL Install Python 3
 this should not be necessary if you follow the instruction until now, however if the command Python3 fails type:
