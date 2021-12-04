@@ -3,6 +3,7 @@ In this example we will use the provider Digital Ocean
 
 ## Creates target machines
 in this example we will use Digital ocean.
+
 1. create a DO account
 
 ![image](https://user-images.githubusercontent.com/60719165/142765115-3e2a579e-a3fe-4049-beb9-c070f7966f9c.png)
