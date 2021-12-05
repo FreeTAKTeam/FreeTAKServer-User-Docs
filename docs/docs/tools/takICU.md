@@ -4,10 +4,6 @@ The product is maitanined by the TAK product center and can be accessed [here](h
 
 This page describe the TAK ICU tool only. Please refer to other pages for configuaration of the different parts.
 
-
-
-
-
 ## client Installation ANDROID ONLY
 * dowload [TAK ICU](https://drive.google.com/drive/folders/1PmCiWlHvIWXdW7pcudCFg6irghvOn6Ah)
 * install TAK ICU as a regular Android App
@@ -30,7 +26,7 @@ with GPS unavailable your stream cannot be associated to a map
 *  press the broadcast button
 
 ## Integration with FTS
-The FTS integration exists since FTS 1.9.5, it allows to seamless stream videos by simply connecting to the video server.
+The FTS integration, [FreeTAKHub_VideoChecker](https://github.com/FreeTAKTeam/FreeTAKHub_VideoChecker) exists since FTS 1.9.5, it allows to seamless stream videos by simply connecting to the video server.
 
 Normally, when a device is streaming video, connected TAK EUD will be not notified, it's necessary to manually create a new feed in the software.
 
