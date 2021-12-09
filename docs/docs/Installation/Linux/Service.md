@@ -29,10 +29,12 @@ They aren't scripts. Instead, they're basic configuration files. While they can 
 Systemd services exist at /etc/systemd/system. If you look on your system, they're all there. 
 Any .service file that you create in that directory can be run as a service, if you construct it properly. 
 Create a file that you would like with the .service extension. 
-In our case, create a file as /etc/systemd/system/FreeTAKServer.service with the following content:
+In our case, to create a file as /etc/systemd/system/FreeTAKServer.service with the following content:
 (modify the parameters as needed)
+copy and past in the console
 
 ```
+sudo tee /etc/systemd/system/FreeTAKServer.service >/dev/null << EOF
 [Unit]
 Description=FreeTAK Server service
 After=network.target
@@ -46,7 +48,7 @@ ExecStart=/usr/bin/python3 -m FreeTAKServer.controllers.services.FTS
 
 [Install]
 WantedBy=multi-user.target
-
+EOF
 ```
 
 And reload systemd so it will load new unit file:
