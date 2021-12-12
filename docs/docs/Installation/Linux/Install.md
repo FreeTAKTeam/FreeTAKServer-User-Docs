@@ -239,7 +239,21 @@ To use a MySQL database change the above line as follows
 ```python
 SQLALCHEMY_DATABASE_URI = 'mysql://' + 'user:pass@localhost/dbname'
  ```
- 
+ #### Additional configuration
+ additional parameters for the UI are in the __init__.py
+ ```
+FreeTAKServer-UI/app/__init__.py
+```
+
+this include the frequence of the update for the dashboard and the file limit for data packages
+
+```
+   app.config['USERINTERVAL'] = '180000';
+    app.config['SERVERHEALTHINTERVAL'] = '180000';
+    app.config['SYSSTATUSINTERVAL'] = '600000';
+    app.config['DATAPACKAGESIZELIMIT'] = '15360000';
+```
+
  #### Installation on a Separate machine
 Typically the web UI  is installed on the same machine as FTS, however you can install it on a separate machine and even use it to manage several instances.
 If you're installing FTS-UI on a separate server the following commands may help:
