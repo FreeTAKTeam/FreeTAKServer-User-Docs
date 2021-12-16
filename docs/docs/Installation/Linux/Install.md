@@ -169,6 +169,13 @@ at this point a YAML file is created under the location you selected (default is
 If you want to modify the YAML file you need to stop FTS and modify the YAML and then restart it.
 CTRL + C (2 times) in the console will stoop FTS
 
+#### Additional FTS configuration
+FTS sends a welcome message every time a client connects. This can be changed in the file MainConfig.py  
+
+```
+        ConnectionMessage = f'Welcome to FreeTAKServer {version}. The Parrot is not dead. It’s just resting'
+```
+
 ### SUCCESS!!!
 your FTS is now started
 ![image](https://user-images.githubusercontent.com/60719165/142766636-16cb4097-73e3-4bce-8442-b6b034687dd0.png)
