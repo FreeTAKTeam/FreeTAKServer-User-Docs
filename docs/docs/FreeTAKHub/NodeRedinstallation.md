@@ -150,6 +150,10 @@ resolve any conflict by importing additional nodes in you palette
 
 ![image](https://user-images.githubusercontent.com/60719165/143121789-3e751ff1-9d07-4089-9668-644962a19986.png)
 
+For the Web Map flow, add your user token to the _Post COT to FTS_ node
+![image](https://user-images.githubusercontent.com/2799310/146664827-91c820ec-dc55-4e6a-a3ea-99950b0f4d29.png)
+
+
 Success!!!!
 
 ![image](https://user-images.githubusercontent.com/60719165/143122002-35f25669-17c3-4dfa-9655-14b52612bd04.png)
