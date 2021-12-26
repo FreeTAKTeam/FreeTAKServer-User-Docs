@@ -46,3 +46,14 @@ sudo apt-get update
 sudo apt-get install ansible -y
 ```
 the step 'unpaking ansible' will take a while, be patient.
+
+
+# Clone the repository locally
+* install tortoiseSVN (or anything equivalent)
+* clone the repository 
+```
+https://github.com/FreeTAKTeam/FreeTAKHub-Installation
+```
+
+![image](https://user-images.githubusercontent.com/60719165/147416679-013d818e-2ad2-405c-ae9d-cd996fcca478.png)
+
