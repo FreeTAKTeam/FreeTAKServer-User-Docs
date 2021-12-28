@@ -53,25 +53,25 @@ EOF
 
 And reload systemd so it will load new unit file:
 ```
-systemd daemon-reload
+sudo systemctl daemon-reload
 ```
 
 ### Start the FreeTAKServer.service
 ```
-systemctl start FreeTAKServer.service
+sudo systemctl start FreeTAKServer.service
 ```
 
 ### Get the Status of the FreeTAKServer.service
 ```
-systemctl status FreeTAKServer.service
+sudo systemctl status FreeTAKServer.service
 ```
 
 ### Stop the FreeTAKServer.service
 ```
-systemctl stop FreeTAKServer.service
+sudo systemctl stop FreeTAKServer.service
 ```
 
 ### Start the FreeTAKServer.service with the system
 ```
-systemctl enable FreeTAKServer.service
+sudo systemctl enable FreeTAKServer.service
 ```
