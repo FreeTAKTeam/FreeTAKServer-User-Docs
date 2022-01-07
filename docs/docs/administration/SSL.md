@@ -484,7 +484,7 @@ keytool -import -file client.crt -alias client -keystore fts.keystore
 
 You will be prompted to enter in details. Here is an example:
 
-```
+```console
 Enter keystore password:  badpassword
 Owner: EMAILADDRESS=wile@acmecorp.com, CN=Wile E. Coyote, OU=Dev, O=Acme Corporation, L=Los Angeles, ST=CA, C=US
 Issuer: EMAILADDRESS=wile@acmecorp.com, CN=Wile E. Coyote, OU=Dev, O=Acme Corporation, L=Los Angeles, ST=CA, C=US
