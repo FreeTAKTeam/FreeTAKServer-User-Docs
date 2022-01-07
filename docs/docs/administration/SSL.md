@@ -18,7 +18,7 @@ For more details, read the FTS manual [here](https://github.com/FreeTAKTeam/Free
 
 This method requires understanding of complex console commands.
 
-We do not provide support certificate generation or deployment issues.
+We do not provide support for certificate generation or deployment issues.
 
 We are currently exploring tools like [YAOG](https://github.com/patrickpr/YAOG) to simplify the process.
 
