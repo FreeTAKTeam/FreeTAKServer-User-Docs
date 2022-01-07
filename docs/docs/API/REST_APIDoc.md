@@ -1,5 +1,5 @@
 # REST API - Public
-the FreeTAKServer REST API is a human readeble approach to the TAK world. The API allows you to easily connect third parties to the TAK family, without the need to understand the complexity of the COT structure or what a TCP connection is.  FTS also supports an [Internal API](REST_API_InternalDoc.md).
+The FreeTAKServer REST API is a human readeble approach to the TAK world. The API allows you to easily connect third parties to the TAK family, without the need to understand the complexity of the COT structure or what a TCP connection is. FTS also supports an [Internal API](REST_API_InternalDoc.md).
 
 ## How FTS manages the information
 FTS will send the  information coming trough the API to all the connected clients, addtionally it will save it to the persistency, to be query in future. 
@@ -28,33 +28,34 @@ In the current release (1.9), FTS supports following API:
 > To quickly test the API, you can use a browser extension like ARC Advanced rest client (Chrome). REST APIs are easy to use, however they require a minimum ammount of knowledge, we DO NOT provide support to explain WHAT an API is. Please refer to an online tutorial such as [this](http://www.steves-internet-guide.com/using-http-apis-for-iot-beginners-guide/). 
 
 ### endpoint
-the API uses the following format
+The API uses the following format:
 
 VERB [Protocol]://IP:PORT/APIName/action
 
-for example
+For example:
 ```
 POST http://104.58.20.216:9999/manageGeoObject/postGeoObject
 ```
 
 ### Authorization
-to use the API you need to have a REST API key.
-the authorization is placed in the header of the message.
+To use the API you need to have a REST API key.
+The authorization is placed in the header of the message.
 Authorization: Bearer [YOUR_API_KEY]
 
-> you need to use the string 'Bearer' before YOUR_API_KEY
+> You need to use the string 'Bearer' before YOUR_API_KEY
 
-a valid key is generated from FTS' [CLI](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/CLI.md) or, since 1.4 also from the Web UI, and stored into the DB. 
-to add an API user in the CLI type  
+A valid key is generated from FTS' [CLI](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/CLI.md) or, since 1.4 also from the Web UI, and stored into the DB.
+
+To add an API user in the CLI type:
 ```
 add_api_user
 ```
-see CLI help for details.
+See CLI help for details.
 To create a REST API key using the Web UI, go to the User section.
 
-to consume the API you will need to request a key to your FTS admin. 
+To consume the API you will need to request a key to your FTS admin. 
 
-the following is a non-working example of a key
+The following is a non-working example of a key:
 ```
 {“Authorization”: “Bearer meg@secre7apip@guesmeIfyouCan”}
 ```
@@ -65,16 +66,16 @@ In the API using the *Get* verbs it's a variable.
 
 ## API Details
 ### manageAPI
-set of commands relative to API management
+Set of commands relative to API management.
 
 #### getHelp
-retrieve API version and supported endpoints
+Retrieve API version and supported endpoints.
   * verb: GET
   * endpoint: /manageAPI/getHelp
   * returns: json containing API version and supported endpoints
   
 
-##### Example  return data (1.7)
+##### Example: return data (1.7)
 
 ```json
 {"APIVersion": "1.1", 
@@ -88,7 +89,7 @@ retrieve API version and supported endpoints
 ```
 
 ### manageGeoObject 
-  A GeoObject is an element place on a map. It has a name, characteristics and an attitude. 
+A GeoObject is an element place on a map. It has a name, characteristics, and an attitude. 
   
 #### putGeoObject
   
@@ -98,7 +99,7 @@ retrieve API version and supported endpoints
   
 #### Parameters
 * GeoObject: It's the information that will determine which type will be placed on the tak maps including his icon. Please see API documentation for a list of valid entries. Since 1.7 you can also use nicknames for the geo objects.
-*  longitude: OPTIONAL the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where *West 77.08* is equal to '-77.08' in the API
+*  longitude: OPTIONAL the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API
 * latitude: OPTIONAL the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)
 * How: the way in which this geo information has been acquired. Please see API documentation for a list of valid entries.
 * attitude: OPTIONAL the kind of expected behavior of the GeoObject (e.g friendly, hostile, unknown). Please see API documentation for a list of valid entries.
@@ -117,7 +118,7 @@ retrieve API version and supported endpoints
    * 200 Success: uid. you have create the geoObject
    * [MISSING PARAMETERNAME]: you have odmitted a parameter that is required
    * server error 500: you have probably missspelled the list of parameters (e.g geoObjects/ supported attitude). the names are case sensitive (!)
-  *  server error 400: you have probably an error in the format of your JSON query
+   * server error 400: you have probably an error in the format of your JSON query
    * server error 404: you have an error in the end point definition
  
 
@@ -130,7 +131,7 @@ retrieve API version and supported endpoints
 #### Parameters
 
 * GeoObject: It's the information that will determine which type will be placed on the tak maps including his icon. Please see API documentation for a list of valid entries. Since 1.7 you can also use nicknames for the geo objects.
-*  longitude: OPTIONAL the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where *West 77.08* is equal to '-77.08' in the API
+*  longitude: OPTIONAL the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API
 * latitude: OPTIONAL the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)
 * How: the way in which this geo information has been acquired. Please see API documentation for a list of valid entries.
 * attitude: OPTIONAL the kind of expected behavior of the GeoObject (e.g friendly, hostile, unknown). Please see API documentation for a list of valid entries.
@@ -146,7 +147,6 @@ retrieve API version and supported endpoints
      - and so on
 
 ##### Example body
-
 ```json
 {
 "longitude": -77.0104,
@@ -205,7 +205,7 @@ retrieve API version and supported endpoints
 
 ##### Response
 * 200 Success: uid. you have create the geoObject
-* [MISSING PARAMETERNAME]: you have odmitted a parameter that is required
+* [MISSING PARAMETERNAME]: you have omitted a parameter that is required
 * server error 500: you have probably missspelled the list of parameters (e.g geoObjects/ supported attitude). the names are case sensitive (!)
 *  server error 400: you have probably an error in the format of your JSON query
 * server error 404: you have an error in the end point definition
@@ -232,7 +232,7 @@ retrieve API version and supported endpoints
 * "Gnd Structure IM Facilities Law Enforcement": "a-.-G-I-i-l",  Nickname: Police Station (empty shape)
 * "Gnd Structure petroleum gas oil": "a-.-G-I-R-P", Nickname: gas Station (empty shape)
 * "Gnd Structure Utility Electric Power": "a-.-G-I-U-E", Nickname: Power Station (empty shape)
-* Gnd Structure Utility Telecommunications": "a-.-G-I-U-T", Nickname: Telco Station (empty shape)
+* "Gnd Structure Utility Telecommunications": "a-.-G-I-U-T", Nickname: Telco Station (empty shape)
 * "Gnd Structure Hospital": "a-.-G-I-X-H", Nickname: Hospital (empty shape)
 * "Gnd IM Resources": "a-.-G-U-i" Nickname: Resources (empty shape)
 * "FOOD DISTRIBUTION": "b-r-.-O-O-O", Nickname: Food (OK, only label, need to implement nick) 
@@ -252,7 +252,7 @@ retrieve API version and supported endpoints
 * "Other incident geo avalanche": "a-.-X-i-g-a", Nickname: avalanche
 * "Other incident geo earthquake": "a-.-X-i-g-e",  Nickname: earthquake
 * "Other incident geo landslide": "a-.-X-i-g-l",  Nickname: landslide
-*  "Other incident geo subsistance": "a-.-X-i-g-s",  Nickname: subsistance
+* "Other incident geo subsistance": "a-.-X-i-g-s",  Nickname: subsistance
 * "Other incident geo volcano": "a-.-X-i-g-v",  Nickname: volcano
 * "Other incident geo eruption": "a-.-X-i-g-v-e",  Nickname: eruption
 * "Other incident met drought": "a-.-X-i-m-d",  Nickname: drought
@@ -273,7 +273,7 @@ retrieve API version and supported endpoints
 * "suspect" 
 
 #### putGeoObject
-update an existing geoObject cohordinates (can also update other features)
+update an existing geoObject coordinates (can also update other features)
 
 * verb: PUT
 * endPoint: /ManageGeoObject/putGeoObject
@@ -281,9 +281,9 @@ update an existing geoObject cohordinates (can also update other features)
 
 #### Parameters
 
-*  **REQUIRED** uid: optional input parameter, need to be an Unique Id for this element, if not present will be  server generated, if sent ATAK will try to update an existing geoObject. Use ``putGeoObject`` instead
+*  **REQUIRED** uid: optional input parameter, need to be an Unique Id for this element, if not present will be server generated, if sent ATAK will try to update an existing geoObject. Use ``putGeoObject`` instead
 * *REQUIRED* GeoObject: It's the information that will determine which type will be placed on the tak maps including his icon. Please see API documentation for a list of valid entries.
-*  **REQUIRED**  longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where *West 77.08* is equal to '-77.08' in the API
+*  **REQUIRED**  longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API
 *  **REQUIRED** latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)
 *  **REQUIRED**attitude: the kind of expected behavior of the GeoObject (e.g friendly, hostile, unknown). Please see API documentation for a list of valid entries.
 * How: the way in which this geo information has been acquired. Please see API documentation for a list of valid entries.
@@ -353,7 +353,7 @@ create a emergency into the server
  #### Parameters
   * Name: the name of the person that has an emergency.
   * EmergencyType: the type of emergency to be displayed
-  *  longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where *West 77.08* is equal to '-77.08' in the API
+  *  longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API
   * latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)
   *  uid: server generated Unique Id of this element
   * address: OPTIONAL address of emergency
@@ -420,7 +420,7 @@ Manage a team member position
 * returns: UID
 
 #### Parameters
-* longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where *West 77.08* is equal to '-77.08' in the API
+* longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API
 * latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)
 * How: the way in which this geo information has been acquired. Please see API documentation for a list of valid entries.
 * role: the given role within the team . Please see API documentation for a list of valid entries.
@@ -473,7 +473,7 @@ manage routes on the map
  * endName: OPTIONAL the name of the destination (end point on the route)
  * startName: OPTIONAL the  name of the start (start point of the route)
  * uid: OPTIONALserver generated Unique Id of this element. it will  update an existing route.  
-* longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where *West 77.08* is equal to '-77.08' in the API
+* longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API
 * latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)
  
 
@@ -587,7 +587,7 @@ create a drone object with a field of view, a current aiming point a video strea
 * Bearing: the direction in which the sensor is aimed in degrees
 * FieldOfView: the field of view of the drone in degrees
 * VideoURLUID: the address of the video stream. DJI drones only support RTMP protocol. YOu need to have FreeTAHub Video service active to see a stream.
-* longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where *West 77.08* is equal to '-77.08' in the API
+* longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API
 * latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)
 * uid: OPTIONAL input parameter, needed to update existing drone COT
 * SPIName: the name of the Sensor Point of Interest  the UAS is currently aiming to. currently will NOT work in a update message (when you send the UID) 
@@ -640,7 +640,7 @@ creates an SPI at a point or update an existing SPI.  If the video source is a U
 #### parameters
 * timeout: OPTIONAL the length, expressed in seconds  until the point will stale out. Default is 300 seconds or 5 minutes.
 *  uid: OPTIONAL input parameter, needed to update existing SPI,
-* longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where *West 77.08* is equal to '-77.08' in the API
+* longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API
 * latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)
 * droneUid: the uid of the connected drone
 * name: the name of the drone, will become also the name of the video stream.
@@ -671,7 +671,7 @@ allows to post a set of geo information with attached metadata in tabular format
 
 #### parameters
 * name: the name of the report
-* longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal cohordinates, where *West 77.08* is equal to '-77.08' in the API
+* longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998).  remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API
 * latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)
 * body: an JSON structure of key pairs (name, value)
 
