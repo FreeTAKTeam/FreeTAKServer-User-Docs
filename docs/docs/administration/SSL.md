@@ -20,7 +20,7 @@ This method requires understanding of complex console commands.
 
 We do not provide support certificate generation or deployment issues.
 
-We are currently exploring tools like [YAOG](see https://github.com/patrickpr/YAOG) to simplify the process.
+We are currently exploring tools like [YAOG](https://github.com/patrickpr/YAOG) to simplify the process.
 
 Some of the steps below to create a server and client certificate are adopted from:
 
