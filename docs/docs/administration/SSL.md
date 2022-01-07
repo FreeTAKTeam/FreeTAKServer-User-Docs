@@ -1,174 +1,537 @@
 # SSL
-SSL is a  protocol for secure comunication, FTS supports it since version 1.3.
 
-## Activate your FTS's SSL service
-since version 1.5, FTS features a complete automation of SSL generation and deployment. This is easier, so consider using that approach.  Please see the user manual [here](https://github.com/FreeTAKTeam/FreeTakServer/blob/master/docs/FTS%20UI%20Documention.pdf).
+Secure Sockets Layer (SSL) is a protocol for secure comunication. FTS supports SSL since version 1.3.
 
-## Generate a SSL connection for your server
-this method requires understanding of complex console commands, we DO NOT provide support on issues with certs generations.
-We are currently exploring tools like YAOG (see https://github.com/patrickpr/YAOG) to simplify the process.
+# Automated SSL Generation and Deployment
 
-those are the steps
-- a. generate the certificate authority
-- b. generate the server certificate
-- c. generate the client certificate
-- d. convert the client certificate into a .p12 format
-- e. create a Thruststore in p12 format
+Since version 1.5, FTS features automated SSL generation and deployment. 
 
-![Expected File structure](https://github.com/FreeTAKTeam/FreeTakServer/blob/master/docs/FTS%20Certifications%20structure.png)
+The automated generation and deployment is easier, please consider using that approach.  
 
-### generate the Certificate Authority (CA)
-0. you download and install openSSL
-1. Generate the CA key by typing the command
-```openssl genrsa -out ca.key 1024```
+For more details, read the FTS manual [here](https://github.com/FreeTAKTeam/FreeTakServer/blob/master/docs/FTS%20UI%20Documention.pdf).
 
-2. Generate the Certificate Signing Request (CSR) by typing the command: 
-```req -new -key ca.key -out ca.csr```
+# Expected File Structure
 
-This command prompts you for the information to be contained in the certificate. The prompts should be answered as:
+![Expected File structure](FTS%20Certifications%20structure.png)
 
-- Country Name (2 letter code) [AU]:CA
-- State or Province Name (full name) [Some-State]:NS
-- Locality Name (eg, city) []:Yarmouth
-- Organization Name (eg, company) [Internet Widgits Pty Ltd]:FTS TEAM
-- Organizational Unit Name (eg, section) []:Dev
- - Common Name (e.g. server FQDN or YOUR name) []:FTS Server
+# Manual SSL Installation Guide
 
-3. created ca.cfg (skip it)
+This method requires understanding of complex console commands.
 
-4. 
-```x509 -req -extfile ca.cfg -days 1825 -signkey ca.key -in ca.csr -out ca.crt```
+We do not provide support certificate generation or deployment issues.
+
+We are currently exploring tools like [YAOG](see https://github.com/patrickpr/YAOG) to simplify the process.
+
+Some of the steps below to create a server and client certificate are adopted from:
+
+<https://blog.devolutions.net/2020/07/tutorial-how-to-generate-secure-self-signed-server-and-client-certificates-with-openssl/>
+
+## 1. Install OpenSSL on Windows using the `choco` package manager
+
+Go to: 
+
+<https://docs.chocolatey.org/en-us/choco/setup#installing-chocolatey>
+
+and install the `choco` package manager.
+
+
+Next, temporarily append the `choco` executable to the PATH variable. 
+
+After PowerShell is closed, the appended path will resort back to its original state. 
+
+```console
+$env:Path += ";C:\ProgramData\chocolatey\bin"
+```
+
+To permanently add to the PATH variable, refer to: 
+
+<https://www.computerhope.com/issues/ch000549.htm>
+
+Next, install OpenSSL:
+
+```console
+choco install openssl
+```
+
+Do not close PowerShell because you will need it for the next steps.
+
+## 2. Add OpenSSL to the PATH
+
+Most likely, you will be running a 64-bit system.  For a 64-bit system, enter:
+
+```console
+$env:Path += ";C:\Program Files\OpenSSL-Win64\bin"
+```
+
+For a 32-bit system (unlikely), enter:
+
+```console
+$env:Path += ";C:\Program Files\OpenSSL-Win32\bin"
+```
+
+## 3. Set up a directory for OpenSSL outputs
+
+Go to your home directory.
+
+```console
+cd ~
+```
+
+Make an invisible folder called `.certs`.
+
+```console
+mkdir .certs
+```
+
+Go into the `.certs` directory.
+
+```console
+cd .certs
+```
+
+## 4. Generate the Certificate Authority Certificate
+
+Create a private key for the CA certifcate. 
+
+```console
+openssl ecparam -name prime256v1 -genkey -noout -out ca.key
+```
+
+A `ca.key` will be outputted to the directory:
+
+```console
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        11/10/1775   6:00 PM            232 ca.key
+```
+
+Next, create CA certificate from the newly created private key.
+
+```console
+openssl req -new -x509 -sha256 -key ca.key -out ca.crt
+```
+
+You will be prompted to enter in certificate details. Here is an example:
+
+```console
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:US
+State or Province Name (full name) [Some-State]:CA
+Locality Name (eg, city) []:Los Angeles
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:Acme Corporation
+Organizational Unit Name (eg, section) []:Dev
+Common Name (e.g. server FQDN or YOUR name) []:Wile E. Coyote
+Email Address []:wile@acmecorp.com
+```
+
+A `ca.crt` will be outputted to the directory.
+
+```console
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        11/10/1775   6:00 PM            944 ca.crt
+-a----        11/10/1775   6:00 PM            232 ca.key
+```
+
+## 5. Generate the Server Certificate
+
+Generate the server private key.
+
+```console
+openssl ecparam -name prime256v1 -genkey -noout -out server.key
+```
+
+A `server.key` will be outputted to the directory:
+
+```console
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        11/10/1775   6:00 PM            944 ca.crt
+-a----        11/10/1775   6:00 PM            232 ca.key
+-a----        11/10/1775   6:00 PM            232 server.key
+```
+
+Next, generate the server certificate signing request.
+
+```console
+openssl req -new -sha256 -key server.key -out server.csr
+```
+
+You will be prompted to enter in certificate details. Here is an example:
+
+```console
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:US
+State or Province Name (full name) [Some-State]:CA
+Locality Name (eg, city) []:Los Angeles
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:Acme Corporation
+Organizational Unit Name (eg, section) []:Dev
+Common Name (e.g. server FQDN or YOUR name) []:Wile E. Coyote
+Email Address []:wile@acmecorp.com
+
+Please enter the following 'extra' attributes
+to be sent with your certificate request
+A challenge password []:badpassword
+An optional company name []:Acme Corporation
+```
+
+A `server.csr` will be outputted to the directory:
+
+```console
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        11/10/1775   6:00 PM            944 ca.crt
+-a----        11/10/1775   6:00 PM            232 ca.key
+-a----        11/10/1775   6:00 PM            626 server.csr
+-a----        11/10/1775   6:00 PM            232 server.key
+```
+
+Next, generate the server certificate.
+
+```console
+openssl x509 -req -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out server.crt -days 1000 -sha256
+```
+
+Something similar to this will be outputted:
+
+```console
 Signature ok
-```subject=C = CA, ST = NS, L = Yarmouth, O = FTS, OU = Dev, CN = Ghosty```
-
-### Getting Private key
-
-5. created server.cfg
-
-> see https://gist.github.com/fntlnz/cf14feb5a46b2eda428e000157447309
-generating server keys
-
-6. ```genrsa -out server.key 2048 ```
-
-- Country Name (2 letter code) [AU]:CA
-- State or Province Name (full name) [Some-State]:NS
-- Locality Name (eg, city) []:Yarmouth
-- Organization Name (eg, company) [Internet Widgits Pty Ltd]:FTS
-- Organizational Unit Name (eg, section) []:Dev
-- Common Name (e.g. server FQDN or YOUR name) []:192.168.2.75
-
-7. 
-```openssl req -new -key server.key -out server.csr```
-
-8. 
-``` openssl x509 -req -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out server.crt -days 1000 -sha256 ```
-Signature ok
-```subject=C = CA, ST = NS, L = Yarmouth, O = FTS, OU = Dev, CN = 192.168.2.75```
+subject=C = US, ST = CA, L = Los Angeles, O = Acme Corporation, OU = Dev, CN = Wile E. Coyote, emailAddress = wile@acmecorp.com
 Getting CA Private Key
+```
 
-save key decrypted
-9. 
-```openssl rsa -in ssl.key.encrypted -out ssl.key.decrypted ```
+A `server.crt` and `ca.srl` will be outputted to the directory:
 
-> see https://stackoverflow.com/questions/6307886/how-to-create-pfx-file-from-certificate-and-private-key
-generating pfx/p12
+```console
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        11/10/1775   6:00 PM            944 ca.crt
+-a----        11/10/1775   6:00 PM            232 ca.key
+-a----        11/10/1775   6:00 PM             42 ca.srl
+-a----        11/10/1775   6:00 PM            820 server.crt
+-a----        11/10/1775   6:00 PM            626 server.csr
+-a----        11/10/1775   6:00 PM            232 server.key
+```
 
-9. 
-``` openssl pkcs12 -export -out server.p12 -inkey server.key -in server.crt ```
-requires password
+## 6. Generate the Client Certificate
 
-generate client certs
+These are the same steps as above, except for the client.
 
-10. 
-``` openssl genrsa -out testClient.key 2048 ```
+Generate the server private key.
 
-11.
-``` openssl req -new -key testClient.key -out testClient.csr ```
-- Country Name (2 letter code) [AU]:CA
-- State or Province Name (full name) [Some-State]:NS
-- Locality Name (eg, city) []:Yarmouth
-- Organization Name (eg, company) [Internet Widgits Pty Ltd]:FTS
-- Organizational Unit Name (eg, section) []:Dev
-- Common Name (e.g. server FQDN or YOUR name) []:testUser
-- A challenge password []:DoDoD
+```console
+openssl ecparam -name prime256v1 -genkey -noout -out client.key
+```
 
-12. 
-```openssl x509 -req -in testClient.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out testClient.crt -days 1000 -sha256 ```
+A `client.key` will be outputted to the directory:
+
+```console
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        11/10/1775   6:00 PM            944 ca.crt
+-a----        11/10/1775   6:00 PM            232 ca.key
+-a----        11/10/1775   6:00 PM             42 ca.srl
+-a----        11/10/1775   6:00 PM            232 client.key
+-a----        11/10/1775   6:00 PM            820 server.crt
+-a----        11/10/1775   6:00 PM            382 server.csr
+-a----        11/10/1775   6:00 PM            232 server.key
+```
+
+Next, generate the client certificate signing request.
+
+```console
+openssl req -new -sha256 -key client.key -out client.csr
+```
+
+You will be prompted to enter in certificate details. Here is an example:
+
+```console
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:US
+State or Province Name (full name) [Some-State]:CA
+Locality Name (eg, city) []:Los Angeles
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:Acme Corporation
+Organizational Unit Name (eg, section) []:Dev
+Common Name (e.g. server FQDN or YOUR name) []:Wile E. Coyote
+Email Address []:wile@acmecorp.com
+
+Please enter the following 'extra' attributes
+to be sent with your certificate request
+A challenge password []:badpassword
+An optional company name []:Acme Corporation
+```
+
+A `client.csr` will be outputted to the directory:
+
+```console
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        11/10/1775   6:00 PM            944 ca.crt
+-a----        11/10/1775   6:00 PM            232 ca.key
+-a----        11/10/1775   6:00 PM             42 ca.srl
+-a----        11/10/1775   6:00 PM            626 client.csr
+-a----        11/10/1775   6:00 PM            232 client.key
+-a----        11/10/1775   6:00 PM            820 server.crt
+-a----        11/10/1775   6:00 PM            626 server.csr
+-a----        11/10/1775   6:00 PM            232 server.key
+```
+
+Next, generate the client certificate.
+
+```console
+openssl x509 -req -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out client.crt -days 1000 -sha256
+```
+
+Something similar to this will be outputted:
+
+```console
 Signature ok
-subject=C = CA, ST = NS, L = Yarmouth, O = FTS, OU = Dev, CN = testUser
+subject=C = US, ST = CA, L = Los Angeles, O = Acme Corporation, OU = Dev, CN = Wile E. Coyote, emailAddress = wile@acmecorp.com
 Getting CA Private Key
+```
 
-13. 
-```openssl pkcs12 -export -out testClient.p12 -inkey testClient.key -in testClient.crt```
-requires pass
+A `client.crt` will be outputted to the directory:
 
-> see https://help.gamesalad.com/gamesalad-cookbook/publishing/4-android-publishing/4-02-creating-a-keystore/
+```console
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        11/10/1775   6:00 PM            944 ca.crt
+-a----        11/10/1775   6:00 PM            232 ca.key
+-a----        11/10/1775   6:00 PM             42 ca.srl
+-a----        11/10/1775   6:00 PM            816 client.crt
+-a----        11/10/1775   6:00 PM            626 client.csr
+-a----        11/10/1775   6:00 PM            232 client.key
+-a----        11/10/1775   6:00 PM            820 server.crt
+-a----        11/10/1775   6:00 PM            626 server.csr
+-a----        11/10/1775   6:00 PM            232 server.key
+```
+
+## 7. Make sure you have JRE installed
+
+For example, install JRE8 if you do not have it installed:
+
+```console
+choco install jre8
+```
+
+## 8. Add the JRE bin folder to the PATH
+
+Go into the Java folder:
+
+```console
+cd "C:\Program Files\Java\"
+```
+
+Find the JRE folder:
+
+```console
+dir
+```
+
+which will output something like:
+
+```console
+    Directory: C:\Program Files\Java
 
 
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        11/10/1775   6:00 PM                jre1.8.0_311
+```
 
-### generate keystore
-14. 
-``` keytool.exe -genkey -v -keystore fts.keystore -alias fts -keyalg RSA -sigalg SHA1withRSA -keysize 2048 -validity 10000 ```
-Enter keystore password:
-Re-enter new password:
+Go into the JRE folder:
+
+NOTE: **Your JRE may be a different version**
+
+```console
+cd jre1.8.0_311
+```
+
+Go into the `bin` directory:
+
+```console
+cd bin
+```
+
+Output the absolute path of this directory:
+
+```console
+pwd
+```
+
+which will output out something like:
+
+```console
+Path
+----
+C:\Program Files\Java\jre1.8.0_311\bin
+```
+
+Add this directory to the PATH:
+
+```console
+$env:Path += ";C:\Program Files\Java\jre1.8.0_311\bin"
+```
+
+Now go back to your `.certs` folder:
+
+```console
+cd ~\.certs\
+```
+
+## 9. Generate the keystore
+
+Enter this command to generate the keystore:
+
+```console
+keytool -genkey -v -keystore fts.keystore -alias fts -storetype PKCS12 -keyalg RSA -sigalg SHA256withRSA -keysize 2048 -validity 10000
+```
+
+You will be prompted to enter in keystore details. Here is an example:
+
+```console
+Enter keystore password:  badpassword
+Re-enter new password:   badpassword
 What is your first and last name?
-  [Unknown]:  test client
+  [Unknown]:  Wile Coyote
 What is the name of your organizational unit?
   [Unknown]:  Dev
 What is the name of your organization?
-  [Unknown]:  FTS
+  [Unknown]:  Acme Corporation
 What is the name of your City or Locality?
-  [Unknown]:  Yarmouth
+  [Unknown]:  Los Angeles
 What is the name of your State or Province?
-  [Unknown]:  NS
-What is the two-letter country code for this unit?
   [Unknown]:  CA
-Is CN=test client, OU=Dev, O=FTS, L=Yarmouth, ST=NS, C=CA correct?
+What is the two-letter country code for this unit?
+  [Unknown]:  US
+Is CN=test client, OU=Dev, O=Acme Corporation, L=Los Angeles, ST=CA, C=US correct?
   [no]:  yes
+```
 
-Generating 2,048 bit RSA key pair and self-signed certificate (SHA1withRSA) with a validity of 10,000 days
-        for: CN=test client, OU=Dev, O=FTS, L=Yarmouth, ST=NS, C=CA
+Something similar to this will be outputted:
 
-> cert will be generated in the path where the command was run
+```console
+Generating 2,048 bit RSA key pair and self-signed certificate (SHA256withRSA) with a validity of 10,000 days
+        for: CN=Wile Coyote, OU=Dev, O=Acme Corporation, L=Los Angeles, ST=CA, C=CA
+```
 
-### generate truststore
-1. 
-```keytool -import -file [PATH]\server.crt -alias serverCert -keystore testTrustStore.p12 ```
+An `fts.keystore` will be outputted to the directory:
 
-2. 
-```keytool -import -file [PATH]\testClient.crt -alias testClientCert -keystore testTrustStore.p12 ``
+```console
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        11/10/1775   6:00 PM            944 ca.crt
+-a----        11/10/1775   6:00 PM            232 ca.key
+-a----        11/10/1775   6:00 PM             42 ca.srl
+-a----        11/10/1775   6:00 PM            816 client.crt
+-a----        11/10/1775   6:00 PM            626 client.csr
+-a----        11/10/1775   6:00 PM            232 client.key
+-a----        11/10/1775   6:00 PM           4019 fts.keystore
+-a----        11/10/1775   6:00 PM            820 server.crt
+-a----        11/10/1775   6:00 PM            626 server.csr
+-a----        11/10/1775   6:00 PM            232 server.key
+```
 
-## Installing SSL on a client
+## 10. Add `server.crt` and `client.crt` certificates to the keystore
+
+Add the `server.crt` to the keystore:
+
+```console
+keytool -import -file server.crt -alias server -keystore fts.keystore
+```
+
+You will be prompted to enter in details. Here is an example:
+
+```console
+Enter keystore password:  badpassword
+Owner: EMAILADDRESS=wile@acmecorp.com, CN=Wile E. Coyote, OU=Dev, O=Acme Corporation, L=Los Angeles, ST=CA, C=US
+Issuer: EMAILADDRESS=wile@acmecorp.com, CN=Wile E. Coyote, OU=Dev, O=Acme Corporation, L=Los Angeles, ST=CA, C=US
+Serial number: 1667f79b550a2605c2fc04de3da4e3a63f921e99
+Valid from: Fri Jan 07 04:21:32 EST 2022 until: Thu Oct 03 05:21:32 EDT 2024
+Certificate fingerprints:
+         SHA1: 7A:2C:F4:58:6C:3E:CB:C3:C5:FA:F8:2C:74:8E:E2:9B:58:75:B2:D0
+         SHA256: 14:6F:7E:04:C6:25:69:83:55:21:9F:99:17:9C:AE:28:7C:CF:74:20:C5:60:FD:36:2F:57:68:68:30:FE:D8:EB
+Signature algorithm name: SHA256withECDSA
+Subject Public Key Algorithm: 256-bit EC key
+Version: 1
+Trust this certificate? [no]:  yes
+Certificate was added to keystore
+```
+
+Add the `client.crt` to the keystore:
+
+```console
+keytool -import -file client.crt -alias client -keystore fts.keystore
+```
+
+You will be prompted to enter in details. Here is an example:
+
+```
+Enter keystore password:  badpassword
+Owner: EMAILADDRESS=wile@acmecorp.com, CN=Wile E. Coyote, OU=Dev, O=Acme Corporation, L=Los Angeles, ST=CA, C=US
+Issuer: EMAILADDRESS=wile@acmecorp.com, CN=Wile E. Coyote, OU=Dev, O=Acme Corporation, L=Los Angeles, ST=CA, C=US
+Serial number: 1667f79b550a2605c2fc04de3da4e3a63f921e9a
+Valid from: Fri Jan 07 04:24:30 EST 2022 until: Thu Oct 03 05:24:30 EDT 2024
+Certificate fingerprints:
+         SHA1: AA:09:6D:16:13:CD:45:AD:41:45:99:7D:39:C3:55:11:AC:BC:F5:28
+         SHA256: 46:75:A7:59:80:8D:CE:52:78:DD:7D:B9:17:90:BE:A9:6C:9E:33:F3:44:84:1C:21:74:59:54:08:D5:28:AC:92
+Signature algorithm name: SHA256withECDSA
+Subject Public Key Algorithm: 256-bit EC key
+Version: 1
+Trust this certificate? [no]:  yes
+Certificate was added to keystore
+```
+
+## 11. Install SSL on the client
+
 ### ATAK
-- Tap settings
-- Manage server connections
-- open network connections
-- Add a new connection 
-- assign a name and the IP of your server
-- click on advanced options
-- uncheck "use default SSL/TLS certificates"
-- tap "import Truststore"
--  select your truststore file
-- type the password provide to you
-- Tap "Import client certificate"
-- select your client certificate
-- type the password
-- type "OK"
+
+1. Tap settings
+1. Manage server connections
+1. Open network connections
+1. Add a new connection 
+1. Assign a name and the IP of your server
+1. Click on advanced options
+1. Uncheck "use default SSL/TLS certificates"
+1. Tap "import Truststore"
+1. Select your truststore file
+1. type the password provide to you
+1. Tap "Import client certificate"
+1. Select your client certificate
+1. Type the password
+1. Type "OK"
 
 ### WinTAK
-- go to  Settings
--Network preferences
-- Manage Server Connections
-- Add Stream 
-- assign a Description, IP and port of your server
-- select SSL as a protocol
--
-- uncheck "use default SSL/TLS certificates"
-- Click "install Certificate Authority"
--  select your Certificate Authority file
-- type the password provide to you
-- click  "Install client certificate"
-- select your client certificate
-- type the password
-- click "OK"
 
+1. Go to Settings
+1. Network preferences
+1. Manage Server Connections
+1. Add Stream 
+1. Assign a Description, IP and port of your server
+1. Select SSL as a protocol
+1. Uncheck "use default SSL/TLS certificates"
+1. Click "install Certificate Authority"
+1. Select your Certificate Authority file
+1. Type the password provide to you
+1. Click  "Install client certificate"
+1. Select your client certificate
+1. Type the password
+1. Click "OK"
