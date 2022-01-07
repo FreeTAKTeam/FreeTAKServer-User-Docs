@@ -1,7 +1,9 @@
 # CLI
 
 ## Availability
+
 The CLI has been sunset since version 1.5 of FTS, because of the new way to access the server.
+
 It may be reintroduced in the future.
 
 ## Access
