@@ -1,6 +1,6 @@
 # SSL
 
-Secure Sockets Layer (SSL) is a protocol for secure comunication. FTS supports SSL since version 1.3.
+Secure Sockets Layer (SSL) is a protocol for secure communication. FTS supports SSL since version 1.3.
 
 # Automated SSL Generation and Deployment
 
