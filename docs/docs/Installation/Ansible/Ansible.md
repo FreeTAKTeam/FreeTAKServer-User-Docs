@@ -28,9 +28,18 @@ In the Ubuntu console:
 
 ```console
 sudo apt update
-sudo apt install software-properties-common
-sudo add-apt-repository --yes --update ppa:ansible/ansible
-sudo apt install ansible git
+```
+
+```console
+sudo apt -y install software-properties-common
+```
+
+```console
+sudo add-apt-repository --y --update ppa:ansible/ansible
+```
+
+```console
+sudo apt install -y ansible git
 ```
 
 See: <https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-on-ubuntu>
