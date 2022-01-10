@@ -4,7 +4,7 @@ Ansible is an Infrastructure-As-Code tool used for managing and monitoring remot
 
 ## PRE-INSTALLATION STEPS: Windows
 
-Currently FreeTAKServer and and components has been tested successfully on Ubuntu 20.04.
+Currently FreeTAKServer and components have been tested successfully on Ubuntu 20.04.
 
 Other Linux distributions may work, but they have not been tested.
 
@@ -18,7 +18,7 @@ To install on Windows, you will have to:
 
     See also: https://www.sitepoint.com/wsl2/
 
-1. Install the WSL Ubuntu 20.04 distribution.
+2. Install the WSL Ubuntu 20.04 distribution.
 
     See: <https://www.microsoft.com/en-us/p/ubuntu-2004-lts/9n6svws3rx71>
 
