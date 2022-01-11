@@ -76,7 +76,7 @@ If you did the default, the command will be:
 cat ~/.ssh/id_rsa.pub
 ```
 
-## Step 5. Add you public key to your Digital Ocean project
+## Step 5. Add your public key to your Digital Ocean project
 
 See: <https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/to-account/>
 
