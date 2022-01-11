@@ -63,7 +63,7 @@ git clone https://github.com/FreeTAKTeam/FreeTAKHub-Installation.git
 In case you already created the repository previously, pull the latest:
 
 ```console
-cd FreeTAKTeam/FreeTAKHub-Installation
+cd FreeTAKHub-Installation
 ```
 
 ```console
@@ -79,7 +79,7 @@ This playbook installs all FreeTAKServer and components to your machine.
 To execute the default install playbook, go into FreeTAKHub-Installation
 
 ```console
-cd FreeTAKTeam/FreeTAKHub-Installation
+cd FreeTAKHub-Installation
 ```
 execute the script
 ```console
