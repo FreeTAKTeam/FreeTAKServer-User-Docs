@@ -8,23 +8,30 @@ Other Linux distributions may work, but they have not been tested.
 
 The later executions will require admin privileges.
 
-Create an admin user first:
+Create an adminuser first:
 
 ```console
-sudo adduser --disabled-password --gecos "" admin
+sudo adduser adminuser
 ```
 
-Add admin user to sudoers group:
+Add passwordless to adminuser.
+
+First type:
 
 ```console
-sudo usermod -aG sudo admin
+sudo visudo
 ```
 
-Become the admin user:
+Then add at the bottom:
 
 ```console
-sudo su - admin
+adminuser ALL=(ALL) NOPASSWD: ALL
 ```
+
+To save and quit in the `nano` editor:
+
+1. Press `CTRL + O` then `ENTER` to save.
+1. Then press `CTRL + X` to exit.
 
 ## Step 2. Download Terraform and Ansible
 
@@ -56,8 +63,20 @@ sudo apt install -y ansible terraform
 
 ## Step 3. Clone the FreeTAKHub-Installation Git repository
 
+Go to your home directory:
+
+```console
+cd ~
+```
+
 ```console
 git clone https://github.com/FreeTAKTeam/FreeTAKHub-Installation.git
+```
+
+Go into the directory:
+
+```console
+cd FreeTAKTeam/FreeTAKHub-Installation
 ```
 
 ## Step 4. Generate a public/private key pair
