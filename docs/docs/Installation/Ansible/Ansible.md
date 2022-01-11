@@ -2,6 +2,14 @@
 
 Ansible is an Infrastructure-As-Code tool used for managing and monitoring remote FTS related servers.
 
+# FreeTAKHub Installation
+
+FreeTAKHub installation is a set of Ansible/Terraform scripts that allow you to:
+
+- create the target nodes
+- install FTS and all the additional modules
+- configure FTS
+
 # Windows Prerequisites
 
 Currently FreeTAKServer and components have been tested successfully on Ubuntu 20.04.
@@ -52,10 +60,13 @@ See: <https://docs.ansible.com/ansible/latest/installation_guide/intro_installat
 git clone https://github.com/FreeTAKTeam/FreeTAKHub-Installation.git
 ```
 
-In case you already created the repository previosly
+In case you already created the repository previously, pull the latest:
 
 ```console
 cd FreeTAKTeam/FreeTAKHub-Installation
+```
+
+```console
 git pull  https://github.com/FreeTAKTeam/FreeTAKHub-Installation.git
 ```
 
@@ -65,9 +76,14 @@ An example default install playbook is defined in: `install_all.yml`.
 
 This playbook installs all FreeTAKServer and components to your machine.
 
-To execute the default install playbook, from the top directory, enter:
+To execute the default install playbook, go into FreeTAKHub-Installation
 
 ```console
 cd FreeTAKTeam/FreeTAKHub-Installation
+```
+execute the script
+```console
 sudo ansible-playbook install_all.yml
 ```
+
+## Step 4. [check installation](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/Installation/Troubleshooting/InstallationCheck.md)
