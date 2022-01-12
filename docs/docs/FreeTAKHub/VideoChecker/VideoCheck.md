@@ -1,7 +1,7 @@
 # 
 the VideoChecker allows a video stream to be published to all the connected clients. It's used with TAK ICU, but any type of client can be also used.
 
-## Requiremnts
+## Requirements
 - FTS 1.8+
 - Video Service
 - NodeRed
