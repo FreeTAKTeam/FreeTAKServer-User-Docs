@@ -1,14 +1,17 @@
 # TAK ICU
+
 TAK ICU is a Android application allowing to stream video and position to a compatible RTSP server. When TAK device connects to the stream, not only it gets the video feed but also his current position and bearing visualized in the map.
 The product is maitanined by the TAK product center and can be accessed [here](https://drive.google.com/drive/folders/1PmCiWlHvIWXdW7pcudCFg6irghvOn6Ah).
 
 This page describe the TAK ICU tool only. Please refer to other pages for configuaration of the different parts.
 
-## client Installation ANDROID ONLY
+## client Installation (ANDROID ONLY)
+
 * dowload [TAK ICU](https://drive.google.com/drive/folders/1PmCiWlHvIWXdW7pcudCFg6irghvOn6Ah)
 * install TAK ICU as a regular Android App
 
 ## Client configuration
+
 * Start ICU
 * Tap the preferences 
 * As destination type use "Wonza Server"
@@ -19,6 +22,7 @@ This page describe the TAK ICU tool only. Please refer to other pages for config
 * close the preferences
 
 ## Usage
+
 * Ensure that you have a GPS fix
 ![image](https://user-images.githubusercontent.com/60719165/140655585-ebd10d4d-620e-4259-85e2-897770d08fed.png)
 with GPS unavailable your stream cannot be associated to a map
@@ -26,6 +30,7 @@ with GPS unavailable your stream cannot be associated to a map
 *  press the broadcast button
 
 ## Integration with FTS
+
 The FTS integration, [FreeTAKHub_VideoChecker](https://github.com/FreeTAKTeam/FreeTAKHub_VideoChecker) exists since FTS 1.9.5, it allows to seamless stream videos by simply connecting to the video server.
 
 Normally, when a device is streaming video, connected TAK EUD will be not notified, it's necessary to manually create a new feed in the software.
