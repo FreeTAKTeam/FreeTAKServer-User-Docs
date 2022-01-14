@@ -328,6 +328,42 @@ A GeoObject is an element place on a map. It has a name, characteristics, and an
 * "neutral" 
 * "suspect" 
 
+##### List of supported HOW
+the following list contains 
+API term : Translation in the COT 
+
+* "nonCoT": "h-g-i-g-o",
+* "mensurated": "m-i",
+* "human": "h-t",
+* "retyped": "h-t",
+* "machine": "m-",
+* "gps": "m-g",       
+*  "gigo": "h-g-i-g-o",
+*  "mayday": "a-f-G-E-V-9-1-1",
+*  "estimated": "h-e",
+*  "calculated": "h-c",
+*  "transcribed": "h-t",
+*  "pasted": "h-p",
+*  "magnetic": "m-m",
+*  "ins": "m-n",
+*  "simulated": "m-s",
+*  "configured": "m-c",
+*  "radio": "m-r",
+*  "passed": "m-p",
+*  "propagated": "m-p",
+*  "fused": "m-f",
+*  "tracker": "m-a",
+*  "ins+gps": "m-g-n",
+*  "dgps": "m-g-d",
+*  "eplrs": "m-r-e",
+*  "plrs": "m-r-p",
+*  "doppler": "m-r-d",
+*  "vhf": "m-r-v",
+*  "tadil": "m-r-t",
+*  "tadila": "m-r-t-a",
+*  "tadilb": "m-r-t-b",
+*  "tadilj": "m-r-t-j"}
+
 #### putGeoObject
 
 update an existing geoObject coordinates (can also update other features)
