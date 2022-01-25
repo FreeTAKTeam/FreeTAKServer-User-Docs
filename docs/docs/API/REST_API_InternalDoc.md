@@ -16,19 +16,18 @@ In the current release (1.9), FTS supports following Internal API :
   * Federation
 
 there are two types of Internal API:
-- websocket, using socketIO
+- Websocket, using socketIO
 - REST
 
-## SocketIO
+## Websocket, using SocketIO
 FTS uses **SocketIO** for the comunication, ensure that you understand SOckectIO concepts:
-- Emits: those are events sent from/to the client with requests
-- Listerner: are events that client/server can subscribe to
 
+- Emits: those are events sent from/to the client with requests
+- Listener: are events that client/server can subscribe to
 
 
 ## Authorization Websocket
-to use websocket events you need to trigger
-the event authenticate after connection and pass
+to use websocket events you need to trigger the event 'authenticate' after connection and pass
 as the body of the message ```{"Authenticate": [YOUR WEBSOCKET KEY]}```
 
 # Connect
