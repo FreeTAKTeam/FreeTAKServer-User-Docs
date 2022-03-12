@@ -75,3 +75,26 @@ systemctl stop FreeTAKServer.service
 ```
 systemctl enable FreeTAKServer.service
 ```
+
+## UI Service
+similarly the UI service can be created with 
+```
+sudo tee /etc/systemd/system/FreeTAKServerUI.service >/dev/null << EOF
+[Unit]
+Description=FreeTAKServer UI service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+ExecStart=/usr/bin/python3 -/usr/local/lib/python3.8/dist-packages/FreeTAKServer-UI/run.py
+
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+
+
+started 
