@@ -26,8 +26,9 @@ this will bring Ubuntu to the last pathch level
 type 
 
 ```
-Python3 in the console
+Python3 
 ```
+in the console
 
 ### OPTIONAL Install Python 3
 this should not be necessary if you follow the instruction until now, however if the command Python3 fails type:
@@ -40,14 +41,17 @@ sudo apt update && sudo apt install python3 && sudo apt install python3-pip
 Pip is the package manager for Python
 
 ```
-sudo apt install python3-pip
+sudo apt update && apt install python3-pip
 ```
 
 ### Install Python Libraries
 
 ```bash
 sudo apt install python3-dev python3-setuptools build-essential python3-gevent python3-lxml libcairo2-dev
-sudo pip3 -m install wheel pycairo
+```
+
+```
+sudo  pip3 install wheel pycairo
 ```
 
 ![image](https://user-images.githubusercontent.com/60719165/142766382-8a6e5d05-a198-488d-86f2-67cd49cc1ca6.png)
