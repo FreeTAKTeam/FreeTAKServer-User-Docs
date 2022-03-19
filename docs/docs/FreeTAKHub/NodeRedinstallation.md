@@ -1,4 +1,4 @@
-# Install NodeRed for FreeTAKHub
+# FreeTAKHub NodeRed
 there are several ways to install NodeRed.
 - Install Using Script (simple)
 - Install using APT (advanced Users)
