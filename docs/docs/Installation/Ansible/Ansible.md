@@ -1,4 +1,4 @@
-# Install with Ansible
+# Ansible Manual Install
 
 Ansible is an Infrastructure-As-Code tool used for managing and monitoring remote FTS related servers.
 
