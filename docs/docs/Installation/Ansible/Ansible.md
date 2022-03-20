@@ -1,22 +1,20 @@
-# Ansible Manual Install
+# Install FreeTAKHub with Ansible
 
-Ansible is an Infrastructure-As-Code tool used for managing and monitoring remote FTS related servers.
+Ansible is an Infrastructure-As-Code (IAC) tool used for managing and monitoring local or remote FTS servers.
 
-# FreeTAKHub Installation
+This repository includes Ansible roles to:
 
-FreeTAKHub installation is a set of Ansible/Terraform scripts that allow you to:
+- create the target nodes.
+- install FTS and additional modules.
+- configure FTS.
 
-- create the target nodes
-- install FTS and all the additional modules
-- configure FTS
+## Windows Prerequisites
 
-# Windows Prerequisites
+Below is required for Windows machines.
 
-Currently FreeTAKServer and components have been tested successfully on Ubuntu 20.04.
+The machine must be running: Windows 10 Version 2004 or higher (Build 19041 or higher) or Windows 11.
 
-Other Linux distributions may work, but they have not been tested.
-
-To install on Windows, you will have to:
+For Windows installations:
 
 1. Install WSL2.
 
@@ -30,11 +28,75 @@ To install on Windows, you will have to:
 
     See: <https://www.microsoft.com/en-us/p/ubuntu-2004-lts/9n6svws3rx71>
 
-# Install with Ansible
+## Step 1. Clone the `FreeTAKHub-Installation` repository
 
-## Step 1. Install Ansible and package dependencies
+In the console:
 
-In the Ubuntu console:
+```console
+sudo apt update
+```
+
+Make sure you have `git` installed:
+
+```console
+sudo apt install -y git
+```
+
+Go to the home directory:
+
+```console
+cd ~
+```
+
+Clone the `FreeTAKHub-Installation` repository:
+
+```console
+git clone https://github.com/FreeTAKTeam/FreeTAKHub-Installation.git
+```
+
+Go to the top-level directory of the FreeTAKHub-Installation repository:
+
+```console
+cd FreeTAKHub-Installation
+```
+
+If you have previously cloned the repository, update the repository:
+
+```console
+git pull
+```
+
+## Step 2. Install Ansible
+
+### Automated Ansible Installation
+
+At the top-level directory of the `FreeTAKHub-Installation` repository, enter:
+
+```console
+./scripts/init.sh
+```
+
+Optional (But Recommended!): Activate the Python virtual environment:
+
+```console
+activate
+```
+
+To deactivate the Python virtual environment:
+
+```console
+deactivate
+```
+
+To learn more about Python virtual environments and why they are a good idea, see:
+
+<https://realpython.com/python-virtual-environments-a-primer/>
+
+### Manual Ansible Installation
+ 
+The manual installation allows more control.
+
+In the console, enter:
 
 ```console
 sudo apt update
@@ -49,41 +111,25 @@ sudo add-apt-repository --y --update ppa:ansible/ansible
 ```
 
 ```console
-sudo apt install -y ansible git
+sudo apt install -y ansible
 ```
 
 See: <https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-ansible-on-ubuntu>
 
-## Step 2. Clone the FreeTAKHub-Installation Git repository
+## Step 3. Install FreeTAKServer and Components
+
+Go to the top-level directory of the `FreeTAKHub-Installation` repository:
 
 ```console
-git clone https://github.com/FreeTAKTeam/FreeTAKHub-Installation.git
+cd ~/FreeTAKHub-Installation
 ```
 
-In case you already created the repository previously, pull the latest:
+Run the Ansible playbook to install FreeTAKServer and components:
 
-```console
-cd FreeTAKHub-Installation
-```
-
-```console
-git pull  https://github.com/FreeTAKTeam/FreeTAKHub-Installation.git
-```
-
-## Step 3. Install with Ansible
-
-An example default install playbook is defined in: `install_all.yml`.
-
-This playbook installs all FreeTAKServer and components to your machine.
-
-To execute the default install playbook, go into FreeTAKHub-Installation
-
-```console
-cd FreeTAKHub-Installation
-```
-execute the script
 ```console
 sudo ansible-playbook install_all.yml
 ```
 
-## Step 4. [check installation](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/Installation/Troubleshooting/InstallationCheck.md)
+## Step 4. Check Installation
+
+Directions to check installation [here](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/Installation/Troubleshooting/InstallationCheck.md).
