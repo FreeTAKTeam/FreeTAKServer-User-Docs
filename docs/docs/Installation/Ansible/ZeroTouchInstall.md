@@ -1,4 +1,4 @@
-# Zero TOuch Installation
+# Zero Touch Installation
 
 To install, enter into the console:
 
@@ -28,7 +28,7 @@ This repository is a set of Ansible/Terraform scripts that allow you to:
 
 ![image](https://user-images.githubusercontent.com/60719165/159137165-59164055-ce6d-4396-9a9b-f7503d20b3f6.png)
 
-# Zero Touch Deployment Advanced  (Options)
+# Zero Touch  Advanced  (Options)
 
 This installation will give you the ability to select which components you need
 
