@@ -1,8 +1,8 @@
 # DigitalOcean with Terraform
 
-This installation method has been tested with Ubuntu 20.04.
+This installation has only been tested on Ubuntu 20.04.
 
-Other Linux distributions may work, but they have not been tested.
+Other operating systems may work, but are untested.
 
 ## Step 1. Create admin user
 
@@ -61,7 +61,7 @@ sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(l
 sudo apt install -y ansible terraform
 ```
 
-## Step 3. Clone the FreeTAKHub-Installation Git repository
+## Step 3. Clone the `FreeTAKHub-Installation` Git repository
 
 Go to the home directory:
 
