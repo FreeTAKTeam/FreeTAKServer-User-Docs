@@ -63,7 +63,7 @@ sudo apt install -y ansible terraform
 
 ## Step 3. Clone the FreeTAKHub-Installation Git repository
 
-Go to your home directory:
+Go to the home directory:
 
 ```console
 cd ~
@@ -73,7 +73,7 @@ cd ~
 git clone https://github.com/FreeTAKTeam/FreeTAKHub-Installation.git
 ```
 
-Go into the directory:
+Go to the `FreeTAKTeam/FreeTAKHub-Installation` directory:
 
 ```console
 cd FreeTAKTeam/FreeTAKHub-Installation
