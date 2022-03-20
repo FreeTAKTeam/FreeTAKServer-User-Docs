@@ -6,37 +6,35 @@ To install, enter into the console:
 wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/main/scripts/easy_install.sh | sudo bash
 ```
 
-This approach assumes that:
+The optimal configuration to run the script is:
 
-* You have a clean, freshly installed Ubuntu 20.04. Currently FreeTAKServer and FreeTAKHub components have been successfully tested on Ubuntu 20.04. 
-Other Linux distributions or OS may work, but they have not been tested.
- 
-The script will install and configure all FreeTAKHub components.
+* Ubuntu 20.04
+  * Other operating systems may work, but are untested.
+* Intel-based architecture
+  * The map in the web interface may not work with non-Intel-based architecture.
 
-* FTS: hosts the core of FTS
-* FTS Web UI: uses the API service 1935 to interacts with FTS
-* FTH webMap :  this connects to FTS using the TCP COT service and port 8087
-* Video Service: streams video.
-* FTH server: runs other integrations such as the Video Service Checker and SALUTE report. The video Service checker has a strategy to verify if streams are running there and notifies FTS.
-* FTH Voice: install a murmur server based on [Mumble](https://github.com/mumble-voip/mumble) for ow-latency, high quality voice chat software.
+This script will install and configure FreeTAKHub components.
 
-This repository is a set of Ansible/Terraform scripts that allow you to:
+1. FreeTAKServer (FTS): The core server that interfaces with TAK-enabled clients
+1. FreeTAKServer User Interface (FTS-UI): A web-based user interface.
+1. FreeTAKHub Webmap: A mapping component on the web interface.
+1. Video Server:  Handles video streaming.
+1. FreeTAKHub Server: Handles FTS integrations like SALUTE reports & video checking services (checks if videos are running and notifies FTS).
+1. FreeTAKHub Voice Server: Uses [Murmur](https://github.com/mumble-voip/mumble) or Mumble VOIP Server for voice chatting.
 
-- Create the target nodes.
-- Install FTS and all the additional modules.
-- Configure FTS.
+# Zero Touch Deployment Diagram
 
 ![image](https://user-images.githubusercontent.com/60719165/159137165-59164055-ce6d-4396-9a9b-f7503d20b3f6.png)
 
-# Zero Touch  Advanced  (Options)
+# Custom Deployment (Advanced)
 
-This installation will give you the ability to select which components you need
+This script prompts the user to select specific FreeTAKHub components to install:
 
 ```console
 wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/main/scripts/advanced_install.sh | sudo bash
 ```
 
-Shorter URL (under construction)
+Shortened URL for Custom Deployment (under construction)
 
 ```console
 wget -qO rb.gy/ocghax | sudo bash
