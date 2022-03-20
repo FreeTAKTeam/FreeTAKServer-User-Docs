@@ -16,7 +16,7 @@ http://<YOUR_IP_ADDRESS>:5000/
 - click on the WEBMAP button
 - confirm the client is connected in the WEBMAP
 
-#### Check The Video Server
+## Check The Video Server
 
 Open a web browser to:
 
@@ -106,7 +106,7 @@ Confirm the configuration (which is in `json` format):
 }
 ```
 
-### Check the FreeTAKHub Server (or Node-RED Server)
+## Check the FreeTAKHub Server (or Node-RED Server)
 
 Open a web browser to:
 
