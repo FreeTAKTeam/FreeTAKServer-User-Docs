@@ -41,6 +41,7 @@ wget -qO rb.gy/ocghax | sudo bash
 ```
 ## Services
 the current name of the services installed by the Zero Touch :
+
 * fts.service
 * fts-ui.service
 * mumble-server.service
