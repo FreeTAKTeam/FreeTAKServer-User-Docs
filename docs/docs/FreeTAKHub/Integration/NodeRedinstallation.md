@@ -12,7 +12,7 @@ Running the following command will download and run the script. If you want to r
 bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
 ```
 
-enable service so that statrs automagically
+enable service so that starts automagically
 ```
 sudo systemctl enable nodered.service
 ```
@@ -24,7 +24,6 @@ navigate to your NodeRed
 ```
 http://<IP>:1880
 ```
-
 
 # Install using APT (advanced Users)
 to install NodeRed with APT you will need to:
