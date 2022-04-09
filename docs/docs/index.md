@@ -30,7 +30,7 @@ This project is currently in *Early Production Stage*.
 If you have any issues don't hesitate to [bring it up](https://github.com/Tapawingo/FreeTakServer/issues), as FreeTAKServer is in continuous development.
 
 ### Donate Back
-the FTS team is working  daily on the development of a open and free solution. We plan to do more that simply replicate the functionalities of the legacy TAK server, our road map [@FreeTakServer#25](https://github.com/FreeTAKTeam/FreeTakServer/issues/25) to see what is plannedincludes lot of cool ideas.
+the FTS team is working  daily on the development of a open and free solution. We plan to do more that simply replicate the functionalities of the legacy TAK server, our road map [@FreeTakServer#25](https://github.com/FreeTAKTeam/FreeTakServer/issues/25) to see what is planned, includes lot of cool ideas.
 
 We are doing it for free because we believe that donating personal time to a cause it's an endeavour that is worthy per-se, however, part-time, we are also spending our own money to:
 
@@ -39,6 +39,7 @@ We are doing it for free because we believe that donating personal time to a cau
 
 if you feel that FTS is useful to you and you can donate in those challenging times please consider to send you contribution here:
 [DONATE](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=brothercorvo%40gmail.com&item_name=FreeTAKServer+R%26D&currency_code=CAD&source=url)
+![FreeTAKTeamqrcode](https://user-images.githubusercontent.com/60719165/162584843-b7121ff7-40d9-4499-b274-a3ff87c3e587.png)
 
 You can also support the project by buying one of our [T-Shirts](http://tee.pub/lic/elARpZYCmaw)
 
