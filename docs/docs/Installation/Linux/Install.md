@@ -1,4 +1,4 @@
-# FreeTAK Server Installation
+# 1. FreeTAK Server Installation
 This guide will walk you through installing FreeTAKServer 1.9 on a Linux host.
 you need to prepare for the followin steps, not all of them are required:
 
