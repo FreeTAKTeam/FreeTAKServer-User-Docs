@@ -1,4 +1,4 @@
-### Configure FreeTAKServer < 1.9
+### 3. Configure FreeTAKServer < 1.9
 ![image](https://user-images.githubusercontent.com/60719165/124500136-9aafa500-dd95-11eb-8aa8-67ffda7076f0.png)
 
 Depending on the linux distro your config file for FTS will be in a python version dependant location.
