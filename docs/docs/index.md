@@ -24,10 +24,13 @@ The following features are planned for the 2.0 family:
 
 Check out our roadmap [@FreeTakServer#25](https://github.com/FreeTAKTeam/FreeTakServer/issues/25) to see what is planned
 
+## Stup Up and take my money!
+The easy way to install FTS is to use our signature [ZeroTouch Installer](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Ansible/ZeroTouchInstall/)  
+
 ## Community 
 This project is currently in *Early Production Stage*.
 
-If you have any issues don't hesitate to [bring it up](https://github.com/Tapawingo/FreeTakServer/issues), as FreeTAKServer is in continuous development.
+If you have any issues don't hesitate to [bring it up](https://github.com/Tapawingo/FreeTakServer/issues), as FreeTAKServer is in continuous development. To stay upd to date you can subscribe to the [pip RSS](https://pypi.org/rss/project/freetakserver/releases.xml).
 
 ### Donate Back
 the FTS team is working  daily on the development of a open and free solution. We plan to do more that simply replicate the functionalities of the legacy TAK server, our road map [@FreeTakServer#25](https://github.com/FreeTAKTeam/FreeTakServer/issues/25) to see what is planned, includes lot of cool ideas.
