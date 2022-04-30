@@ -420,7 +420,82 @@ Authorization: Bearer [YOUR_API_KEY]
 
 > you need to use the string 'Bearer' before your API KEY
 
+# SystemUsers
+### methods
+* POST
+* GET
+* DELETE   
+* PUT
 
+## GET
+Used to retrieve all system users
+  
+### returns
+the metadata of each user
+```json
+{
+  "systemUsers":[
+    {"Name": "Dan", "Group": "Yellow", "Token": "Token1", "Password": "psw1", , "Certs": "a.zip"},
+    {"Name": "Joe", "Group": "Yellow", "Token": "Token1", "Password": "psw1", , "Certs": "a.zip"},
+    {"Name": "Bill", "Group": "Yellow", "Token": "Token1", "Password": "psw1", , "Certs": "a.zip"}
+  ]
+}
+```
+
+### parameters
+None
+
+## POST
+used to create a new system user on the server
+
+### returns
+None
+
+### body
+```json
+{
+  "systemUsers":[
+    {"Name":"dan", "Group":"Yellow", "Token":"token", "Password": "psw1", "Certs":"true" }
+	]
+}
+```
+
+* Name: name of user
+* Group: group of user
+* Token: api token of user(optional)
+* Password: password for user(optional)
+* Certs: whether the user should have certs generated(should be true in ui)
+
+## DELETE
+used to remove a system user and their associated files from the server
+
+### returns
+None
+
+### body
+```json
+{ "systemUsers": 
+  [ 
+    { "uid": "46b3de87-85f5-400d-a098-536f2e1421ce" } 
+  ] 
+}
+```
+
+* uid: uid of user to remove
+
+## PUT
+update an existing system user
+
+```json
+{"systemUsers": [
+		{"uid": "existing user id", "password": "new user password", "token": "new user token", "group": "new user group"}
+	]
+}
+```
+* uid: uid of the user
+* Group: new user group (optional)
+* Token: new api token of user(optional)
+* Password: new password for user(optional)
 # DataPackageTable
 ## description
 Endpoint used to access data regarding DataPackages
