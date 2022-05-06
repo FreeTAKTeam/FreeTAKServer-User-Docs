@@ -91,46 +91,14 @@ Set of commands relative to API management.
 #### getHelp
 
 Retrieve API version and supported endpoints.
-  * verb: GET
-  * endpoint: /manageAPI/getHelp
-  * returns: json containing API version and supported endpoints
+* verb: GET
+* endpoint: /manageAPI/getHelp
+* returns: json containing API version and supported endpoints
 
-##### getHelp Example: return data (1.7)
+##### getHelp Example: return data (1.9.5)
 
 ```json
-{
-  "APIVersion": "1.1",
-  "SupportedEndpoints": [
-    "/ManageEmergency/deleteEmergency",
-    "/ManageGeoObject/postGeoObject",
-    "/ManageEmergency/postEmergency",
-    "/ManageGeoObject/putGeoObject",
-    "/ManageGeoObject/getGeoObject",
-    "/ManageEmergency/getEmergency",
-    "/ManagePresence/postPresence",
-    "/ManagePresence/putPresence",
-    "/ManageRoute/postRoute",
-    "/ManageChat/postChatToAll",
-    "/DataPackageTable",
-    "/ManageGeoObject",
-    "/ManageEmergency",
-    "/FederationTable",
-    "/ManagePresence",
-    "/MissionTable",
-    "/ExCheckTable",
-    "/SendGeoChat",
-    "/ManageRoute",
-    "/checkStatus",
-    "/getZoneCoT",
-    "/ManageChat",
-    "/RecentCoT",
-    "/APIUser",
-    "/Clients",
-    "/Alive",
-    "/help",
-    "/URL"
-  ]
-}
+{"APIVersion": "1.9.5", "SupportedEndpoints": ["/ManageNotification/getNotification", "/ManageVideoStream/deleteVideoStream", "/ManageVideoStream/postVideoStream", "/ManageVideoStream/getVideoStream", "/ManageSystemUser/putSystemUser", "/ManageEmergency/deleteEmergency", "/ManageGeoObject/postGeoObject", "/ManageEmergency/postEmergency", "/ManageGeoObject/getGeoObject", "/ManageGeoObject/putGeoObject", "/ManageEmergency/getEmergency", "/ManagePresence/postPresence", "/ManagePresence/putPresence", "/ManageRoute/postRoute", "/SystemUser/deleteSystemUser", "/SystemUser/postSystemUser", "/ManageChat/postChatToAll", "/ManageCoT/getZoneCoT", "/ManageKML/postKML", "/manageAPI/getHelp", "/Sensor/postDrone", "/Sensor/postSPI", "/BroadcastDataPackage", "/ManageVideoStream", "/AuthenticateUser", "/DataPackageTable", "/ManageGeoObject", "/ManageEmergency", "/FederationTable", "/ManagePresence", "/MissionTable", "/ExCheckTable", "/SendGeoChat", "/ManageRoute", "/checkStatus", "/GenerateQR", "/ManageChat", "/RecentCoT", "/APIUser", "/Clients", "/Sensor", "/MapVid", "/Alive", "/URL"]}
 ```
 
 ### manageGeoObject 
@@ -139,9 +107,9 @@ A GeoObject is an element place on a map. It has a name, characteristics, and an
   
 #### putGeoObject
   
-  * verb: PUT
-  * endpoint /ManageGeoObject/postGeoObject
-  * returns: UID
+* verb: PUT
+* endpoint /ManageGeoObject/postGeoObject
+* returns: UID
   
 #### Parameters
 
@@ -424,7 +392,8 @@ NOTE: these should be provided in the form of url encoded variables.
   "attitude": "Hostile",
   "radius": 500
 }
- ```
+```
+ 
 ## ManageChat
   
 ### SendGeoChatObject
