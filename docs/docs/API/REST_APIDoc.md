@@ -381,18 +381,23 @@ NOTE: these should be provided in the form of url encoded variables.
  * radius: radius in meters where geoObjects, default(100).
  * longitude: longitude from which radius is calculated, default(0).
  * latitude: latitude from which radius is calculated, default(0).
- * attitude: the attitude which will be filtered, default(any). See list of supported attitudes above.
+ * attitude: (optional) the attitude which will be filtered, default(any). See list of supported attitudes above.
 
 ##### Example Variables
 
 ```json
 {
   "longitude": -77.02385,
-  "latitude": 38.999,
+  "latitude": 38.989,
   "attitude": "Hostile",
   "radius": 500
 }
 ```
+ 
+
+ ``` URL
+ http://[IP]:[PORT]/ManageGeoObject/getGeoObject?longitude=-77.0104&latitude=38.889&radius=5000
+ ```
  
 ## ManageChat
   
