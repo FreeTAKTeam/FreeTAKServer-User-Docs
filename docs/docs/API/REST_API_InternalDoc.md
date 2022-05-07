@@ -420,15 +420,17 @@ Authorization: Bearer [YOUR_API_KEY]
 
 > you need to use the string 'Bearer' before your API KEY
 
-# SystemUsers
-### methods
-* POST
-* DELETE   
-* PUT
+# ManageSystemUser
+### nested resources
+* postSystemUser
+* deleteSystemUser   
+* putSystemUser
 
-## POST
+## postSystemUser
 used to create a new system user on the server
 
+### methods
+```POST```
 ### returns
 `user created`  
 code: `201`
@@ -449,9 +451,11 @@ code: `201`
 * Password: password for user(optional)
 * Certs: whether the user should have certs generated(should be true in ui)
 
-## DELETE
+## deleteSystemUser
 used to remove a system user and their associated files from the server as well as revoking the users certificate
 
+### methods
+```DELETE```
 ### returns
 `user deleted`  
 code: `200`
@@ -467,9 +471,10 @@ code: `200`
 
 * uid: uid of user to remove
 
-## PUT
+## putSystemUser
 update an existing system user
-
+### methods
+```PUT```
 ### returns
 `user updated`  
 code: `200`
