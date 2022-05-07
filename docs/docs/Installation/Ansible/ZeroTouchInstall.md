@@ -55,6 +55,12 @@ use
 ```
 to see if they are installed and active
 
+use
+```
+systemctl status [SERVICENAME].service
+```
+to get the exact location
+
  [how to start / stop / enable  a service?](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Linux/Service/)
 
 
