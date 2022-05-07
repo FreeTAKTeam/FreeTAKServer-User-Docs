@@ -438,9 +438,7 @@ code: `201`
 ### body
 ```json
 {
-  "systemUsers":[
-    {"systemUsers":[{"Name":"dan", "Group":"Yellow", "Token":"token", "Password": "psw1", "Certs":"true", "DeviceType": "mobile" }]}
-	]
+  "systemUsers":[{"Name":"dan", "Group":"Yellow", "Token":"token", "Password": "psw1", "Certs":"true", "DeviceType": "mobile" }]}
 }
 ```
 
