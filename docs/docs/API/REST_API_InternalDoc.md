@@ -423,54 +423,38 @@ Authorization: Bearer [YOUR_API_KEY]
 # SystemUsers
 ### methods
 * POST
-* GET
 * DELETE   
 * PUT
-
-## GET
-Used to retrieve all system users
-  
-### returns
-the metadata of each user
-```json
-{
-  "systemUsers":[
-    {"Name": "Dan", "Group": "Yellow", "Token": "Token1", "Password": "psw1", , "Certs": "a.zip"},
-    {"Name": "Joe", "Group": "Yellow", "Token": "Token1", "Password": "psw1", , "Certs": "a.zip"},
-    {"Name": "Bill", "Group": "Yellow", "Token": "Token1", "Password": "psw1", , "Certs": "a.zip"}
-  ]
-}
-```
-
-### parameters
-None
 
 ## POST
 used to create a new system user on the server
 
 ### returns
-None
+`user created`  
+code: `201`
 
 ### body
 ```json
 {
   "systemUsers":[
-    {"Name":"dan", "Group":"Yellow", "Token":"token", "Password": "psw1", "Certs":"true" }
+    {"systemUsers":[{"Name":"dan", "Group":"Yellow", "Token":"token", "Password": "psw1", "Certs":"true", "DeviceType": "mobile" }]}
 	]
 }
 ```
 
 * Name: name of user
 * Group: group of user
+* DeviceType: the device type [mobile, wintak]
 * Token: api token of user(optional)
 * Password: password for user(optional)
 * Certs: whether the user should have certs generated(should be true in ui)
 
 ## DELETE
-used to remove a system user and their associated files from the server
+used to remove a system user and their associated files from the server as well as revoking the users certificate
 
 ### returns
-None
+`user deleted`  
+code: `200`
 
 ### body
 ```json
@@ -485,6 +469,10 @@ None
 
 ## PUT
 update an existing system user
+
+### returns
+`user updated`  
+code: `200`
 
 ```json
 {"systemUsers": [
