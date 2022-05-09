@@ -56,4 +56,4 @@ bandwidth=
 users=
 registerName=
 ```
-check out the coplete file for more info
+check out the complete file for more info
