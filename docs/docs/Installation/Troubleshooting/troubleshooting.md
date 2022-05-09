@@ -1,4 +1,18 @@
 # Troubleshooting
+
+## My XXX component is not connecting / showing
+for fts check out 
+/opt/FTSConfig.yaml
+
+for the UI check out
+/usr/local/lib/python3.8/dist-packages/FreeTAKServer-UI/config.py
+
+for the webmap check out
+/opt/webMAP_config.json
+
+for the video server check out
+/opt/rtsp-simple-server.yml
+
 ## package not found'
 if, trying to start FTS you get an error 'package not found'
 ```
