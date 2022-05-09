@@ -26,7 +26,12 @@ One of the major selling points of systemd is the ease of writing service files.
 They aren't scripts. Instead, they're basic configuration files. While they can grow to be complex, they are usually very simple.
 
 ### Create The File
-Systemd services exist at /etc/systemd/system. If you look on your system, they're all there. 
+Systemd services exist at 
+```/etc/systemd/system.```
+or
+```
+/usr/lib/systemd/system/
+```
 Any .service file that you create in that directory can be run as a service, if you construct it properly. 
 Create a file that you would like with the .service extension. 
 In our case, to create a file as /etc/systemd/system/FreeTAKServer.service with the following content:
