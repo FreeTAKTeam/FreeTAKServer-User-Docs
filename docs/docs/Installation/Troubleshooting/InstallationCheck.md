@@ -115,3 +115,6 @@ http://<YOUR_IP_ADDRESS>:1880/
 ```
 
 Confirm you see a login prompt.
+
+## Check Voice server
+connect a client to <YOUR_IP_ADDRESS>:64738
