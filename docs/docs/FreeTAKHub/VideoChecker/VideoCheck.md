@@ -7,8 +7,10 @@ The VideoChecker allows a video stream to be published to all the connected clie
 - NodeRed
 
 ## Installation
+
 - Download the flow
-- Import into nodeRed
+- open your node red installation at <YOURIP>:8081
+- Import into nodeRed the VideoChecker flow (you may already have it installed by the [ZeroTouch](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/Installation/Ansible/ZeroTouchInstall.md) )
 - open the config node
 
 ![image](https://user-images.githubusercontent.com/60719165/167701401-87cb0df7-c256-4d2b-b44e-be7b1ed59e93.png)
