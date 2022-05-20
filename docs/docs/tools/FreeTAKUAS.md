@@ -10,7 +10,7 @@ FreeTAK UAS (FTUAS) is an Android application that can:
 
 # Requirements
 
-* FreeTAK UAS app
+* [FreeTAKUAS app](https://github.com/FreeTAKTeam/FreeTAKUAS/releases/tag/1.4.14)
 * DJI compatible drone
 * FTS v 1.9 (or better): the application will NOT support the legacy TAK server.
 * the FTS REST API service must be activated
