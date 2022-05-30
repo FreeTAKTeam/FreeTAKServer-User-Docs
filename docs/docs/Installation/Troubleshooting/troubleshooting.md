@@ -13,6 +13,11 @@ for the webmap check out
 for the video server check out
 /opt/rtsp-simple-server.yml
 
+## using SSL I get frequent disconnects
+This is a problem of the client not sending data. 
+WinTAK: under settings/network preferences set the TCP Connection timeout higher, (e.g. 60 seconds)
+ATAK:  under settings/network preferences/ network connection preferences / TCP conection timeout  (e.g. 40 seconds)
+
 ## package not found'
 if, trying to start FTS you get an error 'package not found'
 ```
