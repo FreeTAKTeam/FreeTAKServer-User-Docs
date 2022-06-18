@@ -1,5 +1,19 @@
 # Troubleshooting
 
+## My Raspberry Pi installation has an issue with the WebMap
+the webmap is a Nodered packaged component, compiled for AMD64, so it will not run in the Pi.
+You need to:
+* install Node Red 
+* import the flow from source
+* configure the flow
+
+## Initial setup doesn't ask to create a YAML file, how to make one manually?
+* Go into the config file located in /usr/local/lib/python3.8/dist-packages/FreeTAKServer/controllers/configuration 
+* modify MainConfig.py.
+* You'll want to change the value for first_start (bottom of the config file) from False to True 
+* restart per the instructions. 
+* You should then get the prompt to create the yml file.
+
 ## My XXX component is not connecting / showing
 for fts check out 
 /opt/FTSConfig.yaml
