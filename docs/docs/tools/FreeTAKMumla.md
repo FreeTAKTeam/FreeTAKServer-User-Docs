@@ -1,6 +1,12 @@
 # FreeTAKMumla Plugin
-A ATAK plugin that creates a button overlay for PPT.
+An ATAK plugin that creates a button overlay for PPT.
 Requires [Mumla](https://play.google.com/store/apps/details?id=se.lublin.mumla) android app to work.
+
+## Requirements
+the FreeTAKMumla Plugin for ATAK requires that:
+1. you have the [murmur server](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/FreeTAKHub/Voice/VoiceServer.md) installed and running
+2. you have [Mumla](https://play.google.com/store/apps/details?id=se.lublin.mumla&gl=US) installed and running
+3. you have a compatible version of ATAK installed. is the maintainer and can create a version tagged for the current ATAK
 
 ## Installation
 * Download and install Mumla
