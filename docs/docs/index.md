@@ -5,7 +5,7 @@
 FTS is a Python3 implementation of the TAK Server for devices like ATAK-CIV , WinTAK and iTAK. It is cross-platform.
 FreeTAKServer, as of Release 1.9, provides Situational Awareness and other capabilities such as:
 
-- Web administration 
+- Web administration
 - Federation Service (Connecting two or more FTS instances)
 - Data Package upload and retrieval
 - Image transfer and storage
@@ -24,10 +24,10 @@ The following features are planned for the 2.0 family:
 
 Check out our roadmap [@FreeTakServer#25](https://github.com/FreeTAKTeam/FreeTakServer/issues/25) to see what is planned.
 
-## Stup Up and take my money!
+## Step Up and take my money!
 The easy way to install FTS is to use our signature [ZeroTouch Installer](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Ansible/ZeroTouchInstall/)  
 
-## Community 
+## Community
 This project is currently in *Early Production Stage*.
 
 If you have any issues, don't hesitate to [bring it up](https://github.com/Tapawingo/FreeTakServer/issues), as FreeTAKServer is in continuous development. To stay up-to-date you can subscribe to the [pip RSS](https://pypi.org/rss/project/freetakserver/releases.xml).
@@ -47,7 +47,7 @@ If you feel that FTS is useful to you and you can donate in those challenging ti
 You can also support the project by buying one of our [T-Shirts](http://tee.pub/lic/elARpZYCmaw)
 
 NOTE:
-We are not a big fans of Paypal, but it is the easiest and most accessible way we have found for enabling some form of funding. 
+We are not a big fans of Paypal, but it is the easiest and most accessible way we have found for enabling some form of funding.
 We hope to implement a more ethical system in the future.
 
 ### Public Instance
