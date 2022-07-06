@@ -1,7 +1,39 @@
+## About webmap
+The webmap provides insights of user presence and COTS shared with everyone. Also in his NodeRed version can create certain types of CoT.
+there are 2 versions of the webmap:
+1.  webMap NodeRed Flow version
+2.  webMap Compiled version 
 
+
+# webMap NodeRed Flow version
+the webmap Flow works with all systems that supports Nodered. Advanced users should use this version.
+
+## Installation 
+get the webmap.json the last release:
+```
+https://github.com/FreeTAKTeam/FreeTAKHub-Webmap/releases
+```
+import the flow into node red
+![image](https://user-images.githubusercontent.com/60719165/177557386-7b928582-fc87-4141-9cf5-713f5ff11b46.png)
+
+
+in the FTS UI edit the file config.py /
+change the lines:
+```
+    # webmap IP
+    WEBMAPIP = "[YOURIP]"
+
+    # webmap port
+    WEBMAPPORT = *1880*
+```
+
+# Compiled version
+The compiled version of the webmap work only with AMD64 CPU. Can installed with the ZeroTOuch installer or manually following the instructions below.
+
+ ## NOTICE
 the webmap is not a background app, so it needs to remain open to receive information and will not persist it.
+So to test ensure that you have connected users and do no switch to other tabs.
 
-so to test ensure that you have connected users and do no switch to other tabs
 
 ## Installation 
 
