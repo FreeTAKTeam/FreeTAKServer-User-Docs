@@ -1,42 +1,43 @@
-# FreeTAKHub NodeRed
-there are several ways to install NodeRed.
+# FreeTAKHub Node-RED
+This document describes how to install and secure Node-RED.
 - Install Using Script (simple)
 - Install using APT (advanced Users)
+- Secure Node-RED
 
 # Install Using Script (simple)
 
-the following script will do Installing and Upgrading Node-RED to install Node.js, npm and Node-RED onto a Ubuntu Raspberry Pi. The script can also be used to upgrade an existing install when a new release is available.
+The following script will do Installing and Upgrading Node-RED to install Node.js, npm and Node-RED onto a Ubuntu Raspberry Pi. The script can also be used to upgrade an existing install when a new release is available.
 
 Running the following command will download and run the script. If you want to review the contents of the script first, you can view it on Github.
 ```
 bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
 ```
 
-enable service so that starts automagically
+Enable service so that starts automagically:
 ```
 sudo systemctl enable nodered.service
 ```
-Run service
+Run the Node-RED service:
 ```
 node-red-start
 ```
-navigate to your NodeRed
+Navigate to your Node-RED:
 ```
 http://<IP>:1880
 ```
 
-# Install using APT (advanced Users)
-to install NodeRed with APT you will need to:
+# Install Using APT (advanced users)
+To install Node-RED with APT you will need to:
 - Satisfy the requirements
-- create a Non root user
+- Create a Non root user
 - Install Node JS
 
 ## Prerequisites
 This guide assumes that you are using Ubuntu 20.04 on cloud installation (we use digital Ocean). 
 
 
-##  create a Non root user
-first create a special user and dedicated group
+##  Create a Non-root user
+First create a special user and dedicated group:
 
 ```
 sudo useradd -m nodered -G nodered
@@ -71,7 +72,7 @@ sudo apt install npm
 ```
 This will allow you to install modules and packages to use with Node.js.
 
-## Install NodeRed
+## Install Node-RED
 Use npm to install node-red and a helper utility called node-red-admin.
 
 ```
@@ -92,9 +93,9 @@ And now launch Node-RED itself. No sudo is necessary, as port 1880 is high enoug
 node-red
 ```
 ## Create the Service
-In order to start Node-RED automatically on startup, we’ll need to install a node-red.service file 
+In order to start Node-RED automatically on startup, we’ll need to install a node-red.service file: 
 
-let's creates the service using the Tee command
+Let's creates the service using the Tee command:
 ```
 sudo tee /etc/systemd/system/node-red.service >/dev/null << EOF
 Description=Node-RED
@@ -128,27 +129,53 @@ Let’s manually start the service now to test that it’s still working.
 ```
 sudo systemctl start node-red
  ```
- to shut it back down you can use
+To shut it back down you can use:
 
 ```
 sudo systemctl stop node-red
 ```
-## test your installation 
+## Test Your Installation 
 Point a browser back at the server’s port 1880 and verify that Node-RED is back up. e.g. if your server is installed under the IP 143.198.39.135
 ``` browser
 http://143.198.39.135:1880/
 ```
-you will see the welcome screen of NodeRed with the tutorial
-Now, to install the flows, click on the hanburger menu and then import
+You will see the welcome screen of Node-RED with the tutorial.
+Now, to install the flows, click on the hamburger menu and then import:
 
 ![image](https://user-images.githubusercontent.com/60719165/143110628-d5e1d2b9-15e8-4b34-b977-abdc99c205f9.png)
 
-download  one of the FreeTAKHub integrations (json files)
-import into your Nodered
-resolve any conflict by importing additional nodes in you palette
+Download one of the FreeTAKHub integrations (json files).
+Import into your Node-RED.
+Resolve any conflicts by importing additional nodes into your palette.
 
 ![image](https://user-images.githubusercontent.com/60719165/143121789-3e751ff1-9d07-4089-9668-644962a19986.png)
 
 Success!!!!
 
 ![image](https://user-images.githubusercontent.com/60719165/143122002-35f25669-17c3-4dfa-9655-14b52612bd04.png)
+
+# Secure Node-RED
+
+By default, Node-RED is installed with no authentication to the user interface (UI), also called the "Editor".  This means that anyone with your IP address can make changes to any of your flows, or even add malicious flows to your Node-RED instance.  Once your Node-RED instance is up-and-running, you should **immediately** secure the editor with a password, at a minimum.
+
+The following will get you started on securing the Node-RED editor with a password.  
+For more details on how to secure Node-RED, see the Node-RED docs here:
+https://nodered.org/docs/user-guide/runtime/securing-node-red
+
+Switch to the Node-RED folder:
+```
+cd ~/.node-red
+```
+
+Edit the settings.js file:
+```
+sudo nano settings.js
+```
+
+Uncomment the adminAuth section and save the file.
+
+You can now login to your Node-RED editor [YOUR-IP-ADDRESS]:1880.  The default user name is admin, and the default password is password.
+This isn't enough.  
+You'll want to create a unique password, which will require creating a password hash.  
+This is detailed in the Node-RED docs here:
+https://nodered.org/docs/user-guide/runtime/securing-node-red#editor--admin-api-security
