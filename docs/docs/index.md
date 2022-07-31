@@ -32,6 +32,14 @@ This project is currently in *Early Production Stage*.
 
 If you have any issues, don't hesitate to [bring it up](https://github.com/Tapawingo/FreeTakServer/issues), as FreeTAKServer is in continuous development. To stay up-to-date you can subscribe to the [pip RSS](https://pypi.org/rss/project/freetakserver/releases.xml).
 
+### FreeTAKTeam YouTube channel
+We have created the [FreeTAKTeam YouTube channel](https://www.youtube.com/channel/UCJJOterycd1UuulmQGEV8Iw) where we are posting tutorials, use case, and more.  
+
+### Tell us what you think!
+To discuss with the developer team you may use:
+- The [FTS Discord Server](https://discord.gg/m8cBzQM2te)
+- The [subreddit](https://www.reddit.com/r/ATAK/)
+
 ### Donate Back
 The FTS team is working  daily on the development of an open and free solution.  We plan to do more than simply replicate the functionalities of the legacy TAK server.  Check out our road map [@FreeTakServer#25](https://github.com/FreeTAKTeam/FreeTakServer/issues/25) to see what is planned.  It includes a lot of cool ideas.
 
@@ -55,10 +63,4 @@ We support a [public instance](https://www.reddit.com/r/ATAK/wiki/index/freetaks
 - download the configuration [here](https://drive.google.com/file/d/1IK1LfPN13EWikHaMyOuDDwIerNGz-Wli)
 - use the Import Manager in ATAK to import the configuration.
 
-### FreeTAKTeam YouTube channel
-We have created the [FreeTAKTeam YouTube channel](https://www.youtube.com/channel/UCJJOterycd1UuulmQGEV8Iw) where we are posting tutorials, use case, and more.  
 
-### Tell us what you think!
-To discuss with the developer team you may use:
-- The [subreddit](https://www.reddit.com/r/ATAK/)
-- The [public ATAK Discord Server](https://discordapp.com/invite/XEPyhHA)
