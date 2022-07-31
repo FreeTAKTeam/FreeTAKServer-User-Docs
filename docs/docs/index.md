@@ -62,5 +62,3 @@ We hope to implement a more ethical system in the future.
 We support a [public instance](https://www.reddit.com/r/ATAK/wiki/index/freetakserver) of FTS.
 - download the configuration [here](https://drive.google.com/file/d/1IK1LfPN13EWikHaMyOuDDwIerNGz-Wli)
 - use the Import Manager in ATAK to import the configuration.
-
-
