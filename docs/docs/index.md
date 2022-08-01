@@ -24,7 +24,7 @@ The following features are planned for the 2.0 family:
 
 Check out our roadmap [@FreeTakServer#25](https://github.com/FreeTAKTeam/FreeTakServer/issues/25) to see what is planned.
 
-## Step Up and take my money!
+## Shut Up and take my money!
 The easy way to install FTS is to use our signature [ZeroTouch Installer](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Ansible/ZeroTouchInstall/)  
 
 ## Community
