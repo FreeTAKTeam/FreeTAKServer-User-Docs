@@ -14,6 +14,13 @@ You need to:
 * restart per the instructions. 
 * You should then get the prompt to create the yml file.
 
+## after XXX months of use the disk is full
+ * FTS writes the output of the service to a log located here:
+```
+/var/log/fts/fts-stdout.log
+```
+ * depending from traffic this can become very large and need to be manually deleted
+
 ## My XXX component is not connecting / showing
 for fts check out 
 /opt/FTSConfig.yaml
