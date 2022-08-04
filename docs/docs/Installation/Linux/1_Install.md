@@ -115,6 +115,8 @@ the first time a wizard will popup
 
 ![image](https://user-images.githubusercontent.com/60719165/142766476-f1b5bbb9-aba5-4e05-9b53-a15c075d7e96.png)
 
+if the wizard does not show up please check your config file (see [troubleshooting](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Troubleshooting/troubleshooting/) )
+
 ```
 would you like to use a yaml config file, 
  if yes you will be prompted for further configuration options [yes]: yes
