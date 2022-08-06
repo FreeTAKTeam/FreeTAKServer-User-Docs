@@ -38,10 +38,13 @@ We have created the [FreeTAKTeam YouTube channel](https://www.youtube.com/channe
 ### Tell us what you think!
 To discuss with the developer team you may use:
 - The [FTS Discord Server](https://discord.gg/m8cBzQM2te)
-- The [subreddit](https://www.reddit.com/r/ATAK/)
+- Our **Discourse** server(https://freetakteam.discourse.group/) 
+
+## Others
+- you may also found us on the TAK [subreddit](https://www.reddit.com/r/ATAK/)
 
 ### Donate Back
-The FTS team is working  daily on the development of an open and free solution.  We plan to do more than simply replicate the functionalities of the legacy TAK server.  Check out our road map [@FreeTakServer#25](https://github.com/FreeTAKTeam/FreeTakServer/issues/25) to see what is planned.  It includes a lot of cool ideas.
+The FreeTAKTeam is working  daily on the development of an open and free solution.  We plan to do more than simply replicate the functionalities of the legacy TAK server.  Check out our road map [@FreeTakServer#25](https://github.com/FreeTAKTeam/FreeTakServer/issues/25) to see what is planned.  It includes a lot of cool ideas.
 
 We are doing it for free, because we believe that donating personal time to a cause is an endeavour that is worthy per-se, however, part-time, we are also spending our own money to:
 
