@@ -37,8 +37,8 @@ We have created the [FreeTAKTeam YouTube channel](https://www.youtube.com/channe
 
 ### Tell us what you think!
 To discuss with the developer team you may use:
-- The [FTS Discord Server](https://discord.gg/m8cBzQM2te)
-- Our **Discourse** server(https://freetakteam.discourse.group/) 
+- The [FTS Discord](https://discord.gg/m8cBzQM2te) Server
+- Our [**Discourse**](https://freetakteam.discourse.group/) server 
 
 ## Others
 - you may also found us on the TAK [subreddit](https://www.reddit.com/r/ATAK/)
