@@ -23,7 +23,7 @@ DNS services (noip.com) and NAT port forwarding.
  3. **VPN** - An RPi server running as a ZeroTier (or other SD-WAN) client will mostly circumvent the need for the complexities listed above and allow any TAK
 client on the ZeroTier network to access the RPi server regardless of internet connection method (broadband, cellular data, etc.)
  4. **Edge** - An RPi server running on an ad hoc or local infrastructure LAN configuration – Can be setup completely off-grid and without reliance on a
-functioning internet, but will suffer significant limitations in range for TAK clients to connect
+functioning internet, but will suffer significant limitations in range for TAK clients to connect.
  5. **Hybrid off-grid** – A DO installed server or RPi with one or more of the TAK clients connected as a “bridge” to an off-grid mesh network such as Meshtastic
 LoRa. This configuration will allow any off-grid Meshtastic clients to have their communications reach all “internet-connected” TAK clients via a
-TAK client who is simultaneously connected to both the internet and mesh sides of the network
+TAK client who is simultaneously connected to both the internet and mesh sides of the network.
