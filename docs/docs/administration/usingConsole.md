@@ -1,6 +1,7 @@
 
 ## hot to edit the Config Files
 the suggested way to edit Configuration files is by using [WinSCP](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Tools/), however if you need to edit files in the console you need to use wim  
+
  * Open a console
  * go to ```cd /usr/local/lib/python3.8/dist-packages/FreeTAKServer-UI/app```
  * type ```ls``` to see the list of files
