@@ -39,7 +39,7 @@ In our case, to create a file as /etc/systemd/system/FreeTAKServer.service with 
 copy and past in the console
 
 ```
-sudo tee /etc/systemd/system/FreeTAKServer.service >/dev/null << EOF
+sudo tee /etc/systemd/system/fts.service >/dev/null << EOF
 [Unit]
 Description=FreeTAK Server service
 After=network.target
@@ -61,30 +61,30 @@ And reload systemd so it will load new unit file:
 sudo systemctl daemon-reload
 ```
 
-### Start the FreeTAKServer.service
+### Start the fts.service
 ```
 sudo systemctl start FreeTAKServer.service
 ```
 
-### Get the Status of the FreeTAKServer.service
+### Get the Status of the FTS.service
 ```
-sudo systemctl status FreeTAKServer.service
-```
-
-### Stop the FreeTAKServer.service
-```
-sudo systemctl stop FreeTAKServer.service
+sudo systemctl status fts.service
 ```
 
-### Start the FreeTAKServer.service with the system
+### Stop the FTS.service
 ```
-sudo systemctl enable FreeTAKServer.service
+sudo systemctl stop fts.service
+```
+
+### Start the FTS.service with the system
+```
+sudo systemctl enable fts.service
 ```
 
 ## UI Service
 similarly the UI service can be created with 
 ```
-sudo tee /etc/systemd/system/FreeTAKServerUI.service >/dev/null << EOF
+sudo tee /etc/systemd/system/fts-ui.service >/dev/null << EOF
 [Unit]
 Description=FreeTAKServer UI service
 After=network.target
@@ -104,4 +104,4 @@ EOF
 
 started 
 
-see also[ZeroTouchInstall Services section](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Ansible/ZeroTouchInstall/)
+see also[ZeroTouchInstall Services section](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Ansible/ZeroTouchInstall/) to see the complete list of the services ccreated by the installer
