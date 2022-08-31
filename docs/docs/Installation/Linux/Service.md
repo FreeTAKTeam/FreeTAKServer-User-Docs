@@ -1,4 +1,4 @@
-Running FreeTAKServer as a service on your linux server can be achieved multiple ways.
+Running FreeTAKServer as a service on your Linux server can be achieved in multiple ways.
 
 ## Cron
 Cron or Crontab is a basic scheduler that ships with most linux distributions.
