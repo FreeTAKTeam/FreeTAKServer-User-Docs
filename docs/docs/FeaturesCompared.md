@@ -12,18 +12,18 @@ O
 ## Function
 | Function         |  FTS 1.9        |  TAKServer | FTS 2.X     | Other        |
 |       :-:        |       :-:       |      :-:    |      :-:   |      :-:     |
-|Web administration|     O (single Page app)          |      O (Reload page)      |      O (multi server)     |      X       |
+|Web administration|     O (single Page app)          |      O (Reload page)      |      O (extnded multi server)     |      X       |
+| WebUI Configuration   |      O      |      O   |     O (Full )   |      X    |
 |Federation Service|     Ø (no Group)|      O (Full)      |      O (Extended)     |      X       |
 | Data Package     |      O      |      O   |     O   |      O    |
 | COT recording in a database    |      O      |      O   |     O   |      O    |
-| KML generation   |      P      |      X   |     O   |      X    |
+| KML generation   |      O      |      X   |     O   |      X    |
 | ExCheck Support    |      O      |      O   |     O   |      X    |
 |SSL Encryption|     O |      O       |      O      |      0       |
 |REST API|     O (full) |      X       |     O (extended)      |      X       |
 |XML COT|     O |      O       |      O      |      O       |
 |ProtoBuff COT|     X |      Ø      |      O      |      X       |
 | WebMAP    |      O      |      O   |     O   |      X    |
-| WebUI    |      O      |      O   |     O (Full Configuration)   |      X    |
 | Video Server    |      O      |      X   |     O   |      X    |
 | Voice Server    |      O      |      X   |     O   |      X    |
 | FTP Server    |      X      |      O   |     O   |      X    |
