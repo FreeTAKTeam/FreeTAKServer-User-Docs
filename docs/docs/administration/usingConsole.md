@@ -1,4 +1,4 @@
-
+# Unix Console 
 ## hot to edit the Config Files
 the suggested way to edit Configuration files is by using [WinSCP](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Tools/), however if you need to edit files in the console you need to use wim  
 
