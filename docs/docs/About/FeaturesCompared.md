@@ -1,13 +1,13 @@
 # FreeTAKServer compared
 
 Legend
-X: None
-Ø : 
-* Partial: the function is only convered in his basics)  
-* Initial: prototype demonstrator
-O 
+* X: Not supported
+* Ø : 50%
+ * Partial: the function is only convered in his basics)  
+ * Initial: prototype demonstrator
+* O:  
 * Full: 100% implementation of the specs 
-* Extended: the functions exceeed the original Specification
+* Extended: > 100% the functions exceeed the original Specification
 
 ## Function
 | Function         |  FTS 1.9        |  TAKServer | FTS 2.X     | Other        |
@@ -16,6 +16,7 @@ O
 | WebUI Configuration   |      O      |      O   |     O (Full )   |      X    |
 |Federation Service|     Ø (no Group)|      O (Full)      |      O (Extended)     |      X       |
 | Data Package     |      O      |      O   |     O   |      O    |
+| Easy Certification    |      O      |      X   |     O   |      X    |
 | COT recording in a database    |      O      |      O   |     O   |      O    |
 | KML generation   |      O      |      X   |     O   |      X    |
 | ExCheck Support    |      O      |      O   |     O   |      X    |
