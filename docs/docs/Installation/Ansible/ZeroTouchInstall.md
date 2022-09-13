@@ -3,6 +3,10 @@
 To install, enter into the console:
 
 ```console
+wget -qO - bit.ly/ftszerotouch | sudo bash
+```
+in alternative use the long form
+```console
 wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/main/scripts/easy_install.sh | sudo bash
 ```
 
@@ -17,10 +21,11 @@ This script will install and configure FreeTAKHub components.
 
 1. FreeTAKServer (FTS): The core server that interfaces with TAK-enabled clients
 1. FreeTAKServer User Interface (FTS-UI): A web-based user interface.
-1. FreeTAKHub Webmap: A mapping component on the web interface.
-1. Video Server:  Handles video streaming.
-1. FreeTAKHub Server: Handles FTS integrations like SALUTE reports & video checking services (checks if videos are running and notifies FTS).
-1. FreeTAKHub Voice Server: Uses [Murmur](https://github.com/mumble-voip/mumble) or Mumble VOIP Server for voice chatting.
+1. Video Server:  based on RTSP SImple Server. Handles video streaming.
+3.  Server:  Handle integration services (see below)
+4. FreeTAKHub Integration Server: Based on Node Red. Handles FTS integrations like SALUTE reports & video checking services (checks if videos are running and notifies FTS).
+5. FreeTAKHub Voice Server: Uses [Murmur](https://github.com/mumble-voip/mumble) or Mumble VOIP Server for voice chatting.
+6. FreeTAKHub Webmap: A mapping component on the web interface.
 
 # Zero Touch Deployment Diagram
 
