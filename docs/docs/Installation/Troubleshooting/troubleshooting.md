@@ -1,11 +1,20 @@
 # Troubleshooting
 
+## My Windows Installation is failing
+While FTS will work with thiis OS, we do not support it
+
+## My Ubuntu 22.04 Installation is failing
+FTS 1.9.9 requires Ubuntu 20.04
+
+## My Installation is failing
+Are you using Python 3.10? 3.8 is required
+
 ## My Raspberry Pi installation has an issue with the WebMap
 the webmap is a Nodered packaged component, compiled for AMD64, so it will not run in the Pi.
 You need to:
-* install Node Red 
-* import the flow from source
-* configure the flow
+ * install Node Red 
+ * import the flow from source
+ * configure the flow
 
 ## Initial setup doesn't ask to create a YAML file, how to make one manually?
 * Go into the config file located in /usr/local/lib/python3.8/dist-packages/FreeTAKServer/controllers/configuration 
