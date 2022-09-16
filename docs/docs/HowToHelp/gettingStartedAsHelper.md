@@ -19,6 +19,7 @@ As a Hobby user you want to install and use the FTS-TAK platform.
 
 ## Professional User / SME
 ### getting Started As Professional User / SME
+* Create a github user
 * Submit issues to GitHub
 
 ## Unix Admin / DevOps
