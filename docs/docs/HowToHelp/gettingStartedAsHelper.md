@@ -48,7 +48,6 @@ with the following plugins:
 ![image](https://user-images.githubusercontent.com/60719165/189349403-3b4d400b-2fe1-4ea1-a0ae-f0b164346bd5.png)
 we use Setting Sync to keep the team setting aligned, ask us for the cohordinates of the settings.
 
-
 ## Modeler / Digital Engineer
 You are an architect or a very experienced developer with deep understanding of Object Oriented thinking, patterns and Models.
 
