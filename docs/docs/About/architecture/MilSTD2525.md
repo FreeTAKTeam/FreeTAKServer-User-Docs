@@ -3,119 +3,146 @@ The original 'NATO symbol'  are expressed as a set of Military Symbols for Land 
 
 ## Event.type
 Defines what the event is about. An event may describe a physical object, a set of raw, unprocessed bits, or a tasking. 
-# Hierarchically organized hint about event type (default is  'a-f-G-I' for "Friendly Ground infrastructure)
-The "type" attribute is a composite of components delimited by the semi-colon character. The first component of this composite attribute is defined below.
-   Future versions of this schema will define other components which we expect   will aid in machine filtering. Despite the exclusion of definitions   for additional components in this version of the schema, users of   this schema should expect and design an optional trailing field  delimited by the semi-colon character. This field can be ignored.
-    •    component1;optional field
-     The first component (component1) is a hierarchically organized hint about type.
-   The intention is that this hierarchy be flexible and extensible and facilitate simple filtering, translation and display.  To  facilitate  filtering, the hierarchy needs to present key  fields in an easily parsed and logical order.  To facilitate  this, this component is a composite of fields separated by the "-" punctuation   character, so a valid type would be: x-x-X-X-x.  Using a punctuation for field separation allows arbitrary expansion of the  type space, 
-e.g., a-fzp-mlk-gm-...
-   Field meanings are type specific.  That is, the third field of an  "atom" type may represent air vs. ground while the same field for a   "reservation" type may represent purpose.
 
-MEANING of 'a' in the first position  
-The "Atoms" portion of the type tree requires some additional explanation past the taxonomy defined below. The "Atoms" portion of  the type tree contains CoT defined fields and part of the MIL-STD-2525    type definition. To distinguish MIL-STD-2525 type strings from CoT defined  fields, the MIL-STD-2525 types must be represented in all upper    case. Differentiation of type namespace with upper/lower case   facilitates extension of CoT types and MIL-STD-2525 types without    name space conflict. An example:
-   a-f-A-B-C-x 
-    • a = Atom
-    • f = attitude or disposition (friendly in this case)
-    • A-B-C  =the SDIC 2525
-    • x = COT specific extension
-   The organization of CoT and MIL-STD-2525 types can be determined   from the taxonomy below, but additional details are provided here.
-   The "Atoms" portion of the "type" tree contains the "Battle  Dimension" and  "Function ID" fields taken from MIL-STD-2525.
+### Hierarchically organized hint about event type 
+The "type" attribute is a composite of components delimited by the semi-colon character (e.g.  'a-f-G-I' for "Friendly Ground infrastructure). The first component of this composite attribute is defined below.
+
+Future versions of this schema will define other components which we expect   will aid in machine filtering. Despite the exclusion of definitions   for additional components in this version of the schema, users of   this schema should expect and design an optional trailing field  delimited by the semi-colon character. This field can be ignored.
+
+component1;optional field
+
+The first component (component1) is a hierarchically organized hint about type.
+The intention is that this hierarchy be flexible and extensible and facilitate simple filtering, translation and display.  
+
+To  facilitate  filtering, the hierarchy needs to present key  fields in an easily parsed and logical order.  To facilitate  this, this component is a composite of fields separated by the "-" punctuation   character, so a valid type would be: 
+
+```
+x-x-X-X-x.  
+```
+
+Using a punctuation for field separation allows arbitrary expansion of the  type space, 
+```
+e.g., a-fzp-mlk-gm-...
+```
+
+Field meanings are type specific.  That is, the third field of an  "atom" type may represent air vs. ground while the same field for a   "reservation" type may represent purpose.
+
+### MEANING of 'a' in the first position  
+The "Atoms" portion of the type tree requires some additional explanation past the taxonomy defined below. The "Atoms" portion of  the type tree contains CoT defined fields and part of the MIL-STD-2525  type definition. To distinguish MIL-STD-2525 type strings from CoT defined  fields, the MIL-STD-2525 types must be represented in all upper case. Differentiation of type namespace with upper/lower case   facilitates extension of CoT types and MIL-STD-2525 types without    name space conflict. An example:
+```
+   a-f-A-B-C-x
+   ```
+ * a = Atom
+ *  f = attitude or disposition (friendly in this case)
+ * A-B-C  =the SDIC 2525
+ *  x = COT specific extension
+ 
+   The organization of CoT and MIL-STD-2525 types can be determined from the taxonomy, but additional details are provided here.
+   The "Atoms" portion of the "type" tree contains the "Battle  Dimension" and  "Function ID" fields taken from MIL-STD-2525 (see below).
    "Battle Dimension" is a single character taken from   MIL-STD-2525 and is located in the position 5. 
-a-.-G-I-M-N-B
-   The typical 2525 representation for "Function ID" is three groups of   two characters separated by a space (e.g. "12 34 56"). The CoT  schema maps this to a "-" delimited list of characters. (e.g. "1-2-3-4-5-6").
-   The concatenation of the "Battle Dimension" and "Function ID" fields    from the MIL-STD-2525 specification represented in the CoT schema   will be as follows:
+```
+a-.- **G** -I-M-N-B
+```
+
+The typical 2525 representation for "Function ID" is three groups of   two characters separated by a space (e.g. "12 34 56"). The CoT  schema maps this to a "-" delimited list of characters. (e.g. "1-2-3-4-5-6").
+   The concatenation of the "Battle Dimension" and "Function ID" fields from the MIL-STD-2525 specification represented in the CoT schema will be as follows:
+ ```
    battle dimension-func id char1-func id char2- ... -func id char6
+ ```
    When an appropriate MIL-STD-2525 type exists, it should be used. If  there is a MIL-STD-2525 representation which is close, but may be   refined, a CoT extension to the 2525 type can be appended.
-   for example: 
+   
+For example: 
 a-h-X-X-X-X-X-i might represent hostile MIL-STD-2525 type X-X-X-X-X  of   Israeli (the 'i') manufacture. Again, the CoT extension uses lower case. 
    Conceptually, this extension defines further branching from the nearest MIL-STD-2525 tree point.
-   If no appropriate 2525 representation exists, a type definition can be added to the CoT tree defined here. The resulting definition    would be represented in all lower case. For example
+   If no appropriate 2525 representation exists, a type definition can be added to the CoT tree defined here. The resulting definition  would be represented in all lower case. For example
    a-h-G-p-i
    might define atoms-hostile-Ground-photon cannon-infrared.
    The taxonomy currently looks like this: Note that the coding of the  sub fields are determined entirely by the preceding fields!) The    current type tree is defined here. 
-       +--- First position, this event describes
+#### First position, this event describes
     •        a - Atoms - this event describes an actual "thing"
-           +--- 2nd CoT affiliation of these atoms
-    •              p - Pending
-    •            u - Unknown
-    •            a - Assumed friend
-    •            f - Friend
-    •            n - Neutral
-    •            s - Suspect
-    •            h - Hostile
-    •            j - Joker
-    •            k - Faker
-    •            o - None specified
-    •            x - Other
-               +--- Battle dimension
-               |    Taken from MIL-STD-2525 "Battle Dimension" (upper case)
-    •       P - Space
-    • A - Air
-    • G - Ground
-    • S - Sea Surface
-    • U - Sea Subsurface
-    • SF - Special Operations Forces
-                   +--- Function (dimension specific!)
-              See MIL-STD-2525B specification for  function fields (must be upper case)    
-               Any number of char before the first “dash”, it express also the hierarchy
+#### 2nd CoT affiliation of these atoms
+ * p - Pending
+ * u - Unknown
+ * a - Assumed friend
+ * f - Friend
+ * n - Neutral
+ * s - Suspect
+ * h - Hostile
+ * j - Joker
+ * k - Faker
+ *  o - None specified
+ * x - Other
+#### Battle dimension
+  Taken from MIL-STD-2525 "Battle Dimension" (upper case)
+ * P - Space
+ * A - Air
+ * G - Ground
+ * S - Sea Surface
+ * U - Sea Subsurface
+ * SF - Special Operations Forces
+
+#### Function (dimension specific!)
+See MIL-STD-2525B specification for  function fields (must be upper case)     Any number of char before the first “dash”, it express also the hierarchy
 (Hundreds of options)
-       +--- The event describes ...
 
-           b - Bits - Events in the "Bit" group (pos 1163++ ) carry meta information about raw data sources.  For example, range-doppler  radar returns or SAR imagery represent classes of information that are "bits".  However, tracks derived from such sources represent objects on the battlespace and this have event type "A-..."
-                  The intention with the "Bit" type is to facilitate the identification of germane information products.
-                  This hierarchy is not intended to replace more detailed domain-specific meta information (such as that contained in NITF image headers or the GMTI data formats), rather it is intended to provide a domain-neutral mechanism for rapid filtering of information products.
+### The event describes ...
+the first positiojn can also bontains a b.
 
-           +--- Dimension     
+b - Bits - Events in the "Bit" group (pos 1163++ ) carry meta information about raw data sources.  For example, range-doppler  radar returns or SAR imagery represent classes of information that are "bits".  However, tracks derived from such sources represent objects on the battlespace and this have event type "A-..."
+The intention with the "Bit" type is to facilitate the identification of germane information products.
+This hierarchy is not intended to replace more detailed domain-specific meta information (such as that contained in NITF image headers or the GMTI data formats), rather it is intended to provide a domain-neutral mechanism for rapid filtering of information products.
+
+#### Dimension     
 second position, Like battle dimension but for 'b' types
-    •            i - Imagery
+#### i - Imagery
     1.                e - Electro-optical
     2.                i - Infra red
     3.                s - SAR
     4.                v - video
     •                ...
-    •            r - Radar
+####   r - Radar
     1.                m - MTI data
     •                ...
-    •            d - Sensor detection events
+#### d - Sensor detection events
     1.                s - Seismic
     2.                d - Doppler
     3.                a - Acoustic
     4.                m - Motion (e.g., IR)
-    •            m - Mapping
+####  m - Mapping
     1.                p - Designated point (rally point, etc.)
     2.                    i - initial points
     3.                    r - rally points
     4.                    ...
 
-       r - Reservation/Restriction/References 
-                  Events in this category are generally "notices" about specific areas.  These events are used for deconfliction and conveyance of significant "area" conditions.  Generally, the "point" entity will describe a conical region that completely encloses the affected area.  The details entity will provide more specific bounds on precisely the region affected.
-    •            u - Unsafe (hostile capability)
-    •            o - Occupied (e.g., SOF forces on ground)
-    •            c - Contaminated (NBC event)
-    •                c - chemical
-    •                    x - agents, direction,
-    •                    y
-    •                    z
-    •            f - Flight restrictions
-
-       t - Tasking (requests/orders)
+####       r - Reservation/Restriction/References 
+ Events in this category are generally "notices" about specific areas.  These events are used for deconfliction and conveyance of significant "area" conditions.  Generally, the "point" entity will describe a conical region that completely encloses the affected area.  The details entity will provide more specific bounds on precisely the region affected.
+ * u - Unsafe (hostile capability)
+ *  o - Occupied (e.g., SOF forces on ground)
+ *  c - Contaminated (NBC event)
+ * c - chemical
+ *  x - agents, direction,
+ * y
+ *  z
+ *   f - Flight restrictions
+####       t - Tasking (requests/orders)
 Events in this category are generalized requests for service.  These may be used to request for data collection, request mesuration of a specific object, order an asset to take action against a specific point.  Generally, the "details" entity will identify the general or specific entity being tasked.
-    •            s - Surveillance
-    •            r - Relocate
-    •            e - Engage
-    •            m - Mensurate
+ *   s - Surveillance
+ *   r - Relocate
+ *    e - Engage
+ *   m - Mensurate
 
-      c - Capability (applied to an area)
-    •            s - Surveillance
-    •            r - Rescue
-    •            f - Fires
-    •            d - Direct fires
-    •             i - Indirect fires
-    •            l - Logistics (supply)
-    •             f - Fuel
+ ####     c - Capability (applied to an area)
+ * s - Surveillance
+ * r - Rescue
+ * f - Fires
+ * d - Direct fires
+ * i - Indirect fires
+ * l - Logistics (supply)
+ * f - Fuel
                ...
-c - Communications
+### c - Communications
+TBD
+
 
 ## mil2525 tructure
 
