@@ -1,5 +1,5 @@
 # About Mil-STD-2525 and COTS
-The original 'NATO symbol'  are expressed as a set of Military Symbols for Land Based Systems. The COT system is only partially overlapping with 2525. on a list of 3000+ COTS , 1000 are directly traceble to mil 2525.
+The original 'NATO symbol'  are expressed as a set of Military Symbols for Land Based Systems (Mil-STD-2525). The COT system is only partially overlapping with 2525. on a list of 3000+ COTS , 1000 are directly traceable to mil 2525.
 
 ## Event.type
 Defines what the event is about. An event may describe a physical object, a set of raw, unprocessed bits, or a tasking. 
@@ -8,8 +8,9 @@ Defines what the event is about. An event may describe a physical object, a set 
 The "type" attribute is a composite of components delimited by the semi-colon character (e.g.  'a-f-G-I' for "Friendly Ground infrastructure). The first component of this composite attribute is defined below.
 
 Future versions of this schema will define other components which we expect   will aid in machine filtering. Despite the exclusion of definitions   for additional components in this version of the schema, users of   this schema should expect and design an optional trailing field  delimited by the semi-colon character. This field can be ignored.
-
+```
 component1;optional field
+```
 
 The first component (component1) is a hierarchically organized hint about type.
 The intention is that this hierarchy be flexible and extensible and facilitate simple filtering, translation and display.  
@@ -34,12 +35,13 @@ The "Atoms" portion of the type tree requires some additional explanation past t
    ```
  * a = Atom
  *  f = attitude or disposition (friendly in this case)
- * A-B-C  =the SDIC 2525
- *  x = COT specific extension
+ * A-B-C  =the symbol identification coding (SIDC) scheme for 2525 – a strings of 15 characters used to transmit symbols.
+ *  x = non capital COT specific extension
  
    The organization of CoT and MIL-STD-2525 types can be determined from the taxonomy, but additional details are provided here.
    The "Atoms" portion of the "type" tree contains the "Battle  Dimension" and  "Function ID" fields taken from MIL-STD-2525 (see below).
    "Battle Dimension" is a single character taken from   MIL-STD-2525 and is located in the position 5. 
+   
 ```
 a-.- **G** -I-M-N-B
 ```
@@ -59,8 +61,10 @@ a-h-X-X-X-X-X-i might represent hostile MIL-STD-2525 type X-X-X-X-X  of   Israel
    might define atoms-hostile-Ground-photon cannon-infrared.
    The taxonomy currently looks like this: Note that the coding of the  sub fields are determined entirely by the preceding fields!) The    current type tree is defined here. 
 #### First position, this event describes
-    •        a - Atoms - this event describes an actual "thing"
+a - Atoms - this event describes an actual "thing"
+
 #### 2nd CoT affiliation of these atoms
+ 
  * p - Pending
  * u - Unknown
  * a - Assumed friend
@@ -72,6 +76,7 @@ a-h-X-X-X-X-X-i might represent hostile MIL-STD-2525 type X-X-X-X-X  of   Israel
  * k - Faker
  *  o - None specified
  * x - Other
+ 
 #### Battle dimension
   Taken from MIL-STD-2525 "Battle Dimension" (upper case)
  * P - Space
@@ -86,39 +91,39 @@ See MIL-STD-2525B specification for  function fields (must be upper case)     An
 (Hundreds of options)
 
 ### The event describes ...
-the first positiojn can also bontains a b.
+the first positiojn can also contains a b.
 
-b - Bits - Events in the "Bit" group (pos 1163++ ) carry meta information about raw data sources.  For example, range-doppler  radar returns or SAR imagery represent classes of information that are "bits".  However, tracks derived from such sources represent objects on the battlespace and this have event type "A-..."
+**b - Bits** - Events in the "Bit" group (pos 1163++ ) carry meta information about raw data sources.  For example, range-doppler  radar returns or SAR imagery represent classes of information that are "bits".  However, tracks derived from such sources represent objects on the battlespace and this have event type "A-..."
 The intention with the "Bit" type is to facilitate the identification of germane information products.
 This hierarchy is not intended to replace more detailed domain-specific meta information (such as that contained in NITF image headers or the GMTI data formats), rather it is intended to provide a domain-neutral mechanism for rapid filtering of information products.
 
 #### Dimension     
 second position, Like battle dimension but for 'b' types
 #### i - Imagery
-    1.                e - Electro-optical
-    2.                i - Infra red
-    3.                s - SAR
-    4.                v - video
-    •                ...
+ *  e - Electro-optical
+ * i - Infra red
+ * s - SAR
+ * v - video
+ * ...
 ####   r - Radar
-    1.                m - MTI data
-    •                ...
+ *   m - MTI data
+ *                 ...
 #### d - Sensor detection events
-    1.                s - Seismic
-    2.                d - Doppler
-    3.                a - Acoustic
-    4.                m - Motion (e.g., IR)
+ *  s - Seismic
+ * d - Doppler
+ * a - Acoustic
+ *  m - Motion (e.g., IR)
 ####  m - Mapping
-    1.                p - Designated point (rally point, etc.)
-    2.                    i - initial points
-    3.                    r - rally points
-    4.                    ...
+ * p - Designated point (rally point, etc.)
+ * i - initial points
+ * r - rally points
+ * ...
 
 ####       r - Reservation/Restriction/References 
  Events in this category are generally "notices" about specific areas.  These events are used for deconfliction and conveyance of significant "area" conditions.  Generally, the "point" entity will describe a conical region that completely encloses the affected area.  The details entity will provide more specific bounds on precisely the region affected.
  * u - Unsafe (hostile capability)
- *  o - Occupied (e.g., SOF forces on ground)
- *  c - Contaminated (NBC event)
+ * o - Occupied (e.g., SOF forces on ground)
+ * c - Contaminated (NBC event)
  * c - chemical
  *  x - agents, direction,
  * y
@@ -126,10 +131,10 @@ second position, Like battle dimension but for 'b' types
  *   f - Flight restrictions
 ####       t - Tasking (requests/orders)
 Events in this category are generalized requests for service.  These may be used to request for data collection, request mesuration of a specific object, order an asset to take action against a specific point.  Generally, the "details" entity will identify the general or specific entity being tasked.
- *   s - Surveillance
- *   r - Relocate
- *    e - Engage
- *   m - Mensurate
+ * s - Surveillance
+ * r - Relocate
+ * e - Engage
+ *  m - Mensurate
 
  ####     c - Capability (applied to an area)
  * s - Surveillance
