@@ -1,5 +1,5 @@
 # COT
-the following table combines Center On Target information found in COTTYpes.XML, aligning it to MIL-STD-2525 CIDC code (when possible)
+The following table combines Center On Target information found in COTTYpes.XML, aligning it to MIL-STD-2525 CIDC code (when possible). To find more information read the [MilSTD2525 documentation](https://freetakteam.github.io/FreeTAKServer-User-Docs/About/architecture/MilSTD2525/)
 
  **COTID** | **Hierarchy** | **Name** | **nickname** | **"ID"** | **CIDC** | **Category1** | **Category2** | **Category3** 
 ---|---|---|---|---|---|---|---|---
