@@ -22,11 +22,11 @@ Legend
 | KML Generation           |     O                    |    O         |     O                      |      X       |
 | ExCheck Support          |     O                    |    O         |     O                      |      X       |
 | SSL Encryption           |     O                    |    O         |     O                      |      O       |
-| REST API                 |     O (Full)             |    O         |     O (Extended)           |      X       |
+| REST API                 |     O (Full)             |    Ø         |     O (Extended)           |      X       |
 | XML COT                  |     O                    |    O         |     O                      |      O       |
 | Protobuf COT             |     X                    |    O         |     O                      |      X       |
 | WebMAP                   |     O                    |    O         |     O                      |      X       |
-| Video Server             |     O                    |    O         |     O                      |      X       |
+| Video Server             |     O                    |    X         |     O                      |      X       |
 | Voice Server             |     O                    |    X         |     O                      |      X       |
 | FTP Server               |     X                    |    O         |     O                      |      X       |
 | ZeroTouch Installer      |     Ø                    |    X         |     O (Multi-Server)       |      X       |
