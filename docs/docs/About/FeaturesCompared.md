@@ -1,13 +1,13 @@
 # FreeTAKServer Compared
 
 Legend
-* X: Not Supported
-* Ø : 50%
-* Partial: Only covers basic / base functions.  
-* Initial: Prototype Demonstrator
-* O:  
-* Full: 100% implementation of the specs 
-* Extended: > 100% the functions exceeed the original Specification
+ * X: Not Supported
+ * Ø : 50%
+ 1. Partial: Only covers basic / base functions.  
+ 2. Initial: Prototype Demonstrator
+ * O:  
+ 1. Full: 100% implementation of the specs 
+ 2. Extended: > 100% the functions exceeed the original Specification
 
 ## Function
 | Function                 |  FTS 1.9                 |  TAKServer   | FTS 2.X                    | Other        |
@@ -17,7 +17,7 @@ Legend
 | Federation Service       | Ø (No Group)             |    O (Full)  |     O (Extended)           |      X       |
 | Data Package             |     O                    |    O         |     O                      |      O       |
 | Data Sync                |     X                    |    O         |     O                      |      X       |
-| Easy Certification       |     O                    |    X         |     O                      |      X       |
+| Easy Certificate         |     O                    |    X         |     O                      |      X       |
 | COT Database Recording   |     O                    |    O         |     O                      |      O       |
 | KML Generation           |     O                    |    O         |     O                      |      X       |
 | ExCheck Support          |     O                    |    O         |     O                      |      X       |
