@@ -1,5 +1,23 @@
 # setup in AWS
 
+Select EC2 as the service from the AWS Console 
+
+Click "Launch Instance"
+
+Enter a name for your instance, like "FreeTAK-AWS-001" 
+
+Under the Application and OS Images menu, select Ubuntu, then from the dropdown select Ubuntu Server 20.04 LTS (HVM) SSD Volume Type
+
+Under instance type, select the instace type appropriate for your deployment size. For testing servers a t2.micro is sufficient.
+
+Under Key Pair, select a key pair in your account. If you do not have one, create one.
+
+Under Network Settings, select a security group that has the necessary ports configured inbound for both SSH and FreeTAK server operations.
+
+Under storage configuration, for testing an 8GiB GP2 volume will be sufficient.
+
+Once complete, select launch instance.
+
 * Once ready to connect to the instance, use powershell / ssh client
 ```
 sudo apt-get update && sudo apt-get upgrade -y 
