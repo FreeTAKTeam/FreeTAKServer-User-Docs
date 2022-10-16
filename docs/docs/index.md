@@ -18,9 +18,11 @@ FreeTAKServer, as of Release 1.9, provides Situational Awareness and other capab
 - WebMap
 - Pushing of information (video streams, certifications, ...) to clients
 
-The following features are planned for the 2.0 family:
-- Microservices
-- Data Sync / Mission Planning
+The following features are in the pipeline  for the 2.0 family:
+
+ - Microservices
+ - Data Sync / Mission Planning
+ - ... more
 
 Check out our roadmap [@FreeTakServer#25](https://github.com/FreeTAKTeam/FreeTakServer/issues/25) to see what is planned.
 
