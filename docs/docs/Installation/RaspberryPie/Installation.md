@@ -1,7 +1,11 @@
 
 this procedure Installs FTS + UI + video Server of a Rasberry Pi
 
-need to start with new install of ubuntu 20.04 server for pi 64 from: 
+## Hardware requirements
+you need a Pi with at least 4 GB RAM
+
+## Procedure
+Need to start with new install of ubuntu 20.04 server for pi 64 from: 
 https://cdimage.ubuntu.com/releases/20.04.4/release/ubuntu-20.04.3-preinstalled-server-arm64+raspi.img.xz
 
 download an imager
@@ -39,21 +43,29 @@ wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation
 ```
 > 1.9.9.5 version of Zero Touch DOES NOT install the compiled webmap. You will need to install the [flow version](https://freetakteam.github.io/FreeTAKServer-User-Docs/FreeTAKHub/WebMap/Installation/)
 
-## After installtion
- * ZeroTouch should configure the system and start all the services for you. In case the configuration need to be changed manually 
+## After installation
+ * ZeroTouch should configure the system and start all the services for you. 
+ * 
+ * In case the configuration need to be changed manually 
  *  Edit the file using [VIM](https://freetakteam.github.io/FreeTAKServer-User-Docs/administration/usingConsole/) 
+ 
  ```/usr/local/lib/python3.8/dist-packages/FreeTAKServer-UI/config.py``` 
- * Use  sudo vim /usr/local/lib/python3.8/dist-packages/FreeTAKServer-UI/config.py
+ * Use  
+ * ```sudo vim /usr/local/lib/python3.8/dist-packages/FreeTAKServer-UI/config.py```
+ * 
  * Or browse to that location with WinSCP and double-click on ‘config.py’
  * Change FTS IP (if necessary) = Your EXTERNAL IP (or ZeroTier IP) address for your RPi
  * Leave APPIP = 0.0.0.0 
  *  Change WEBMAPIP (if necessary) = Your IP (or ZeroTier IP) address for your RPi
- *   Change WEBMAPPORT = 1880 for a NodeRedFlow install and 8000 for a compiled webmap
+ *  Change WEBMAPPORT = 1880 for a NodeRedFlow install and 8000 for a compiled webmap
  * Edit this file: /opt/FTSConfig.yaml
  *  Use command: sudo vim /opt/FTSConfig.yaml
 *  Or browse to that location with WinSCP and double-click on ‘FTSConfig.yaml’
 * Change FTS_DP_ADDRESS, FTS_USER_ADDRESS & FTS_API_ADDRESS = Your IP (or ZeroTier IP) address for your RPi
 * Start the FTS service:
+
 ```sudo systemctl start fts ```
+
 * Start the FTS-UI service
+
 ```sudo systemctl start fts-ui```
