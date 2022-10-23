@@ -168,11 +168,22 @@ cd ~/.node-red
 ```
 
 Edit the settings.js file:
+
 ```
 sudo nano settings.js
 ```
 
-Uncomment the adminAuth section and save the file.
+Uncomment the adminAuth section 
+![image](https://user-images.githubusercontent.com/60719165/197415369-020905e2-1cb2-4ab5-aa5d-cfe3cf3626ef.png)
+
+
+ save the file and Exit.
+
+```
+ CTRL+o
+ ENTER
+ CRTL+X
+```
 
 You can now login to your Node-RED editor [YOUR-IP-ADDRESS]:1880.  The default user name is admin, and the default password is password.
 This isn't enough.  
