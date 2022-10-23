@@ -8,6 +8,9 @@ Enter a name for your instance, like "FreeTAK-AWS-001"
 
 Under the Application and OS Images menu, select Ubuntu, then from the dropdown select Ubuntu Server 20.04 LTS (HVM) SSD Volume Type
 
+![image](https://user-images.githubusercontent.com/9298197/197416511-805196e6-09c5-4b0f-8a99-ab48b6d14328.png)
+
+
 Under instance type, select the instace type appropriate for your deployment size. For testing servers a t2.micro is sufficient.
 
 Under Key Pair, select a key pair in your account. If you do not have one, create one.
@@ -26,6 +29,9 @@ FTU UI -
 RTSP-simple-server - 
 9997 - REST API
 9998 - Metrics Listener
+
+![image](https://user-images.githubusercontent.com/9298197/197416484-c578754d-fc4c-4bfe-98d5-4985a85d3f5a.png)
+
 
 Under storage configuration, for testing an 8GiB GP2 volume will be sufficient.
 
