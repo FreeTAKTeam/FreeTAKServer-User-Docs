@@ -74,4 +74,4 @@ if anything failes check this
 ### FTSConfig.yaml values
 * dp_address: public 
 * user address: public
-* API Address: Public
+* API Address: private
