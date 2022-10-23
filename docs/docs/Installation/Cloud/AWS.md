@@ -30,7 +30,8 @@ RTSP-simple-server -
 9997 - REST API
 9998 - Metrics Listener
 
-![image](https://user-images.githubusercontent.com/9298197/197416484-c578754d-fc4c-4bfe-98d5-4985a85d3f5a.png)
+![image](https://user-images.githubusercontent.com/9298197/197417005-db917902-421d-4609-8786-9e0662cfadb3.png)
+
 
 
 Under storage configuration, for testing an 8GiB GP2 volume will be sufficient.
