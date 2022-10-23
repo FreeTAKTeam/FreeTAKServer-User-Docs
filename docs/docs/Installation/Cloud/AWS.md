@@ -14,6 +14,19 @@ Under Key Pair, select a key pair in your account. If you do not have one, creat
 
 Under Network Settings, select a security group that has the necessary ports configured inbound for both SSH and FreeTAK server operations.
 
+FTS Core Services - 
+8087 - raw TCP client port
+8089 - TLS client port
+19023 - REST API
+
+FTU UI -
+5000 - Web UI
+1880 - Web Map + Others
+
+RTSP-simple-server - 
+9997 - REST API
+9998 - Metrics Listener
+
 Under storage configuration, for testing an 8GiB GP2 volume will be sufficient.
 
 Once complete, select launch instance.
