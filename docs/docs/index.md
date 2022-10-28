@@ -35,7 +35,7 @@ This project is currently in the *Early Production Stage*.
 If you have any issues, don't hesitate to [bring them up](https://github.com/Tapawingo/FreeTakServer/issues). FreeTAKServer is in constant development. Subscribe to the [pip RSS](https://pypi.org/rss/project/freetakserver/releases.xml) to stay updated on all recent changes.
 
 ### FreeTAKTeam YouTube channel
-We have created the [FreeTAKTeam YouTube channel](https://www.youtube.com/channel/UCJJOterycd1UuulmQGEV8Iw) with tutorials, use cases, and more.
+We have created the [FreeTAKTeam YouTube channel is youtube.com/@freetakteam](youtube.com/@freetakteam) with tutorials, use cases, and more.
 
 ### Tell us what you think!
 To discuss with our active developers, you may use:
