@@ -1,8 +1,24 @@
 site_name: FreeTAKServer Documentation
 repo_url: https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs
 edit_uri: edit/main/docs/docs/
-sit_author: FreeTAKTeam
+site_author: FreeTAKTeam
+copyright: Copyright (c)2022 FreeTAKTeam
 theme:
-  'material'
+  name: 'material'
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.indexes
+    - navigation.sections
+    - toc.follow
+
 plugins:
   - search
+  - awesome-pages
+  - mike
+  - section-index
+
+extra:
+  version:
+    provider: mike
