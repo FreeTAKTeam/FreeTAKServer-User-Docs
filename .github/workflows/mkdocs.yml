@@ -12,5 +12,6 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.x
-      - run: pip install mkdocs-material
+      - run: pip install mkdocs-material mkdocs-awesome-pages-plugin \
+                mkdocs-section-index mkdocs-toc-sidebar-plugin mike
       - run: cd docs && mkdocs gh-deploy --force
