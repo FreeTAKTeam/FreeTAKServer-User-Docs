@@ -30,9 +30,7 @@ the preferred way to install FTS is by using Pip, that would solve all the requi
 
 ## Install Instructions
 
-1. 
-
-Install python from python.org
+1. Install python 3.8 from python.org
 
 Download and run the installer
 
@@ -52,9 +50,7 @@ Make sure you add Python to environment variables for easy use.
 
 [<img src="advanced.jpg" width="800"/>](advanced.jpg)
 
-2. 
-
-Now check that python and pip are installed and working correctly. *You should be able to open cmd anywhere and do this check*:
+2.  Now check that python and pip are installed and working correctly. *You should be able to open cmd anywhere and do this check*:
 
 ```
 > python -V
@@ -64,9 +60,7 @@ Now check that python and pip are installed and working correctly. *You should b
 
 [<img src="chkpypip.jpg" width="800"/>](chkpypip.jpg)
 
-3. 
-
-Once you have checked that Python and pip are working install the requirements:
+3. Once you have checked that Python and pip are working install the requirements:
 
 ```
 > pip install flask
@@ -94,9 +88,7 @@ When all the requirements have been satisfied install the FreeTAKServer
 > python -m pip install FreeTAKServer[ui]
 ```
 
-5. 
-
-After the installation has finished open the `MainConfig.py` file for editing.
+5. After the installation has finished open the `MainConfig.py` file for editing.
 
 The contents must be changed fo that the Windows paths can communicate with FTS
 
