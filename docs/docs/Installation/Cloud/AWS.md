@@ -53,7 +53,7 @@ grab $[publicip] from your instance details page
 
 * add the public IP to ethernet adapter by using the following command
 ```
-sudo ip addr add $publicip dev ens33
+sudo ip addr add $publicip dev $ethernetadapter
 ```
 
 * run zero touch installer 
