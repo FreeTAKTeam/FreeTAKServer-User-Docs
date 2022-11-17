@@ -65,8 +65,8 @@ add_api_user
 ```
 
 See CLI help for details.
-To create a REST API key using the Web UI, go to the User section.
-
+To create a REST API key using the Web UI, go to the User section and give an user a token..
+Token: gives an unique combination that this user can leverage for the FTS REST API. NOTICE:  the field token is for any alphanumeric string. the prefix 'bearer' is NOT part of the token. The name “Bearer authenticatio
 To consume the API you will need to request a key to your FTS admin. 
 
 The following is a non-working example of a key:
