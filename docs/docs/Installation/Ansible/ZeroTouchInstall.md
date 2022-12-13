@@ -29,7 +29,8 @@ This script will install and configure FreeTAKHub components.
 
 # Zero Touch Deployment Diagram
 
-![image](https://user-images.githubusercontent.com/60719165/159137165-59164055-ce6d-4396-9a9b-f7503d20b3f6.png)
+![FreeTAK 1 9 9 ZTI deployment](https://user-images.githubusercontent.com/60719165/207360218-a7b7a619-4cb0-4234-b7bb-9f74910019f6.png)
+
 
 # Custom Deployment (Advanced)
 
