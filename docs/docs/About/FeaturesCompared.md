@@ -1,13 +1,15 @@
 # FreeTAKServer Compared
+* cc
 
-Legend
- * X: Not Supported
- * Ø : 50%
- 1. Partial: Only covers basic / base functions.  
- 2. Initial: Prototype Demonstrator
- * O:  
- 1. Full: 100% implementation of the specs 
- 2. Extended: > 100% the functions exceeed the original Specification
+*Legend*
+
+*  X: Not Supported
+*  Ø : 50%
+1. Partial: Only covers basic / base functions.  
+2. Initial: Prototype Demonstrator
+* O:  
+1. Full: 100% implementation of the specs 
+2. Extended: > 100% the functions exceeed the original Specification
 
 ## Function
 | Function                 |  FTS 1.9                 |  TAKServer   | FTS 2.X                    | Other        |
