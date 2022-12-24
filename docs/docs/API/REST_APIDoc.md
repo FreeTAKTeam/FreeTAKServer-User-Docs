@@ -42,7 +42,7 @@ VERB [Protocol]://IP:PORT/APIName/action
 For example:
 
 ```
-POST http://104.58.20.216:9999/manageGeoObject/postGeoObject
+POST http://104.58.20.216:19023/manageGeoObject/postGeoObject
 ```
 
 ### Authorization
