@@ -82,12 +82,13 @@ a JSON message containing connected clients
 ## parameters
 None
 
-# systemUser
+# Manage System users
+## systemUser
 retrieve all system users and their associated information<br />
 Event: `systemUser` <br />
 Subscription: `systemUserUpdate`
  
-## returns
+### returns
 system user information
 ```json
 {
@@ -99,18 +100,18 @@ system user information
 }
 ```
 
-## parameters
+### parameters
 None
 
-# addSystemUser
-## description
+## addSystemUser
+### description
 add one or many system users to the server<br />
 Event: `addSystemUser`
 
-## returns
+### returns
 None
 
-## parameters
+### parameters
 ```json
 {
 	"systemUsers": [
@@ -121,15 +122,15 @@ None
 }
 ```
 
-# removeSystemUser
-## description
+## removeSystemUser
+### description
 remove a system user from the server<br />
 Event: `removeSystemUser`
 
-## returns
+### returns
 None
 
-## parameters
+### parameters
 ```json
 {
   "systemUsers": [
@@ -139,14 +140,14 @@ None
   ]
 }
 ```
-# logs
-## description
+## logs
+### description
 event used to retrieve recent error log entries
 from the server<br />
 Event: `logs` <br />
 Subscription: `logUpdate`
 
-## returns
+### returns
 recent error logs in JSON to the client event `logUpdate` with data in the following format
 ```json
 {
@@ -156,23 +157,23 @@ recent error logs in JSON to the client event `logUpdate` with data in the follo
 }
 ```
 
-## parameters
+### parameters
 the timestamp on the most recent log entry in format `%Y-%m-%d %H:%M:%S,%f`
 
-# events
-## description
+## events
+### description
 event used to retrieve last 5 events<br />
 Event: `events` <br />
 Subscription: `eventsUpdate`
 
-## returns
+### returns
 ```json
 {
   "events": ["server event 1", "server event 2", "server event 3", "server event 4", "server event 5"]
 }
 ```
  
-## parameters
+### parameters
 None
 
 # serviceInfo
