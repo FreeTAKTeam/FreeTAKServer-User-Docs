@@ -1,5 +1,4 @@
 # FreeTAKServer Compared
-* cc
 
 *Legend*
 
