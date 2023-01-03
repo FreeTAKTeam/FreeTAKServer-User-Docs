@@ -15,6 +15,10 @@ with the following plugins:
 
 ![image](https://user-images.githubusercontent.com/60719165/189349403-3b4d400b-2fe1-4ea1-a0ae-f0b164346bd5.png)
 
+
+ Get [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
+![image](https://user-images.githubusercontent.com/60719165/210389806-6f252b06-529b-433c-86e1-6fe8c6e09a2c.png)
+
 we use the **Setting Sync** plugin to keep the team setting aligned, ask us for the coordinates of the settings.
 
 
@@ -34,14 +38,38 @@ venv\Scripts\activate.bat
 # In PowerShell
 venv\Scripts\Activate.ps1
 ```
+
+if you take a look inside the directory of your venv, you’ll see something like this on Windows:
+```
+.
+├── Include
+├── Lib
+│   └── site-packages
+├── pyvenv.cfg
+└── Scripts
+    ├── activate
+    ├── activate.bat
+    ├── Activate.ps1
+    ├── deactivate.bat
+    ├── pip3.10.exe
+    ├── pip3.exe
+    ├── pip.exe
+    ├── python.exe
+    └── pythonw.exe
+```
+
+
 show tools (should be none)
 ```
 pip list
 ```
+output
+![image](https://user-images.githubusercontent.com/60719165/210388514-b3cd99c0-476d-48eb-8efd-c6f3efdc7902.png)
 
- #install dependencies and FreeTAKServer as package
+
+now 
+install dependencies and FreeTAKServer as package
 ```
-pip install —-upgrade pip
 pip install -e .
 ```
 
