@@ -37,18 +37,8 @@ As a developer you have code experience in one or many of the languages we use (
 * try to fix them 
 * submit a Pull request
 * you can also loog in the planned [features](is:issue is:open label:enhancement) and conmtribute 
+to setup your machine use [this tutorial](DevelopmentSetup.md)
 
-#### Get the IDE
-As an integrated Development Environment (IDE) we use VisualStudio Code.
-VIsual Studio Code is integrated with GitHub, in fact you can start editing any file directly in the browser for committing lightweight code changes.
-
-For a more serious collaboration you should install the desktop version:
-https://code.visualstudio.com/Download
-with the following plugins:
-
-![image](https://user-images.githubusercontent.com/60719165/189349403-3b4d400b-2fe1-4ea1-a0ae-f0b164346bd5.png)
-
-we use the **Setting Sync** plugin to keep the team setting aligned, ask us for the coordinates of the settings.
 
 ## Modeler / Digital Engineer
 You are an architect or a very experienced developer with deep understanding of Object Oriented thinking, patterns and Models.
