@@ -1,5 +1,7 @@
 # FreeTAKServer Compared
+Users have spoken: FTS is the best TAK server on github!
 
+<img src="https://user-images.githubusercontent.com/60719165/214121500-4170ffb8-761d-4d01-b9cb-17ec103e8b0c.png" alt="stars" width="600"/>
 *Legend*
 
 *  X: Not Supported
