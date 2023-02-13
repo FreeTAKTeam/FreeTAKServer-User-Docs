@@ -1,4 +1,4 @@
-# setup in AWS
+# AWS
 
 * Select EC2 as the service from the AWS Console 
 * Click "Launch Instance"
