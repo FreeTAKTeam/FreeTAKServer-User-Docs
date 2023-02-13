@@ -63,7 +63,7 @@ sudo systemctl daemon-reload
 
 ### Start the fts.service
 ```
-sudo systemctl start FreeTAKServer.service
+sudo systemctl start fts.service
 ```
 
 ### Get the Status of the FTS.service
