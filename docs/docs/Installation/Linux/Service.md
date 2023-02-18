@@ -25,6 +25,12 @@ Systemd is nearly unavoidable. It has permiated so many aspects of the Linux eco
 One of the major selling points of systemd is the ease of writing service files. 
 They aren't scripts. Instead, they're basic configuration files. While they can grow to be complex, they are usually very simple.
 
+>**Note**
+> You will need create two seperate systemd files, if you're using Web UI
+> - fts.service
+> - fts-ui.service
+
+
 ### Create The File
 Systemd services exist at 
 ```/etc/systemd/system.```
