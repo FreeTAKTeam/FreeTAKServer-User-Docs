@@ -1,3 +1,10 @@
+# SSL Issue: Regenerate Certificate Revocation List
+SSL stop to work after a period of time. Even restarting the server would not help. Documented under https://github.com/FreeTAKTeam/FreeTakServer/issues/368 . The cause is that  Certificate Revocation List (CRL) is expired. 
+A Certificate Revocation List (CRL) is a type of security feature used in public key infrastructure (PKI) systems. It is a list of digital certificates that have been revoked by the certificate authority (CA) before their scheduled expiration date. This list contains information about the certificate serial numbers, the revocation dates, and the reason for revocation.  Since version FTS 1.9 when you delete an user that has a certificate, the certificate will be invalid.. We have now created a script that will fix the issue re-creating the CRL.
+Please follow the steps below:
+ COMING SOON
+
+
 # SSL issue: Change the Number of max file open 
 If you have an issue with SSL probably depends on a limited ammount of socket files you can open on the machine.
 in a console type 
