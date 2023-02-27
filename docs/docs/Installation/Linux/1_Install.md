@@ -87,8 +87,16 @@ in alternative Install the FTS only
 ```bash
 sudo python3 -m pip install FreeTAKServer
 ```
+#### Install a specific version
+To install a special version of a FTS package with Pip, you can use the following command:
 
-check your install
+```python3 -m pip install FreeTAKServer[ui]==version-number```
+For example, if you want to install version Alpha of the requests package, you can run the following command:
+
+```python3 -m pip install FreeTAKServer[ui]==0.2.0.13```
+This will download and install version 0.2.0.13 of FTS, rather than the latest version available on PyPI.
+
+### check your install
 ```bash
 pip check FreeTakServer 
 ```
