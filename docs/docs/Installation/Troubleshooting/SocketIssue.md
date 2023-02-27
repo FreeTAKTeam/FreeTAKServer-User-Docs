@@ -2,8 +2,26 @@
 SSL stop to work after a period of time. Even restarting the server would not help. Documented under https://github.com/FreeTAKTeam/FreeTakServer/issues/368 . The cause is that  Certificate Revocation List (CRL) is expired. 
 A Certificate Revocation List (CRL) is a type of security feature used in public key infrastructure (PKI) systems. It is a list of digital certificates that have been revoked by the certificate authority (CA) before their scheduled expiration date. This list contains information about the certificate serial numbers, the revocation dates, and the reason for revocation.  Since version FTS 1.9 when you delete an user that has a certificate, the certificate will be invalid.. We have now created a script that will fix the issue re-creating the CRL.
 Please follow the steps below:
- COMING SOON
-
+ 1. Begin by installing DigitalPy>=0.3.9.1 (the version where CRL regeneration support was added) with the following command 
+ ```
+pip install DigitalPy>=0.3.9.1
+```
+ 2. Now execute the CRL-Regen utility 
+ ```
+ python3 -m digitalpy.core.security.crl_regen --ca-pem-path /path/to/fts/certs/ca.pem --ca-key-path /path/to/fts/certs/ca.key --crl-path /path/to/fts/certs/FTS_CRL.json
+ ```
+ 3. Now stop fts 
+ ```
+ sudo systemctl stop fts && sudo pkill python
+ ```
+ 4. Finally restart your system for good measure (not required but recommended to ensure CRL updates are applied)
+```
+sudo reboot -n
+```
+* note: the your fts certs directory can generally be found at 
+```
+/usr/local/lib/python[insert your python version]/dist-packages/FreeTAKServer/certs
+```
 
 # SSL issue: Change the Number of max file open 
 If you have an issue with SSL probably depends on a limited ammount of socket files you can open on the machine.
