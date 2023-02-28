@@ -145,10 +145,19 @@ Now, to install the flows, click on the hamburger menu and then import:
 ![image](https://user-images.githubusercontent.com/60719165/143110628-d5e1d2b9-15e8-4b34-b977-abdc99c205f9.png)
 
 Download one of the FreeTAKHub integrations (json files).
-Import into your Node-RED.
-Resolve any conflicts by importing additional nodes into your palette.
+Import into your Node-RED. 
 
-![image](https://user-images.githubusercontent.com/60719165/143121789-3e751ff1-9d07-4089-9668-644962a19986.png)
+Resolve any conflicts by importing additional nodes into your palette. 
+
+You can find "Manage palette" from top right corner, "setting" > "Manage palette"
+
+![Image 089](https://user-images.githubusercontent.com/11376362/219843959-b494a03c-6da9-4714-bece-f521ae1c2f4c.png)
+
+By clicking "Manage palette" a "User setting" page will pop up. 
+
+go to "Palette" > "install" tab and type "node-red-contrib-config" in the search bar
+
+![Image 090](https://user-images.githubusercontent.com/11376362/219844290-b6a5d06d-ce16-4f44-928d-b316e7cc6c5d.png)
 
 Success!!!!
 
