@@ -1,4 +1,4 @@
-# WebUI
+# Administration Manual WebUI
 FTS has a web UI since version 1.5.
 
 Please download the web UI manual [here](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/administration/FTS_UI_Documention.pdf)
@@ -62,19 +62,17 @@ your administrator will need to configure the following files
 - MainConfig.py for FTS
 
   
-
-
 Start FTS
-
+```
 nohup sudo python3 -m FreeTAKServer.controllers.services.FTS
+```
 
-  
 
 
 Start the WebUI
-
+```
 nohup sudo python3 /usr/local/lib/python3.8/dist-packages/FreeTAKServer-UI/run.py
-
+```
 
 # Basics
 
@@ -93,8 +91,6 @@ Click login
 
 The function “Don't have an account?**Create**” could be useful to provide anyone with the link to the UI with the ability to create a System user. For security purposes it’s disabled in the standard configuration and his activation should be avoided
 
-  
-
 
 First login can be done using:
 
@@ -107,8 +103,6 @@ First login can be done using:
 
 
 # 1.0 Navigation
-
-  
 
 
 To the Left of the main screen, there is a menu with 6 sub menus. These are: Home, Mission, User, Connect, Configure and About.
@@ -125,10 +119,6 @@ Each of these is linked to a different screen with specific information to be se
 - **Connect**: send CoTs and system messages
 - **Configure**: Services and federated servers
 - **About**: FTS and web UI version and special thanks
-
-
-
-
 
 ## 1.1 Top Navigation Bar
 
@@ -203,7 +193,6 @@ The webmap is a partial TAK client only. It displays all the connected clients a
 Following functions are also available:
 
 - Zoom in and out
-
 - Measure distances and bearing  
   ![](https://lh6.googleusercontent.com/gyr7Ie3IU3aFwOQlEoL1zjEd1r_AaQcKwU-M8opE7jScosBSSTCsC_21-kpKOtEPTP1a0SfwSeMN_cnMlYTK5XByTlDO8uVMsKqIPh-gAvdaofRDgSC8yYq485L8FAVQMmPxqmIggyTeKhf46c00)
 
@@ -216,13 +205,10 @@ Following functions are also available:
 - Add markers to the map (right click) and send to all the connected clients  
   ![](https://lh4.googleusercontent.com/37YACTY2S3ekWes7axmMXANewaCFz1LPlemCxiDXicYcZ1_qKB8li1Pc8PN0gUGOXmfPKhvhdFUQ90zGzIhOjCb4thP9WKXV6ga-GzXdBT5xsfiCQLJJDwMrIu4FqXDlhmc9Y8JRE0BAWtk6mkmU)  
     
-
-
   - _Attitude: the attitude of the target toward the users, reflected in the color_
   - _Type: Basic infantry types are supported_
   - _Timeout: time before the markers disappears in seconds_
   - _Name: unique name of the marker, if the same name is re-used, it will move an existing marker_
-
 
 - Delete an existing Marker  
   ![](https://lh6.googleusercontent.com/KhEYmzHfYzow75H-IkCAgdIJcYZUrmhoaehvSeGZM3Fya6l4MV7w-9_4AwL1IsvpJ2cqINnuZ6wQG2hAE5JNucaJc17fJe210qA4zX35gTe9IOSlvryPI7O_ZzibBXW7WE2dkzTn-iAHeprMlt8e)
@@ -296,15 +282,14 @@ The federation function allows FTS to connect to another server of the TAK famil
 
 To set up a federated connection with another server you need to upload the certificate authority to the target server.
 
-Under the certs directory there's a file calledpubserver.pemcontaining your serverpublic certificate.
-
-Download this file, rename it to something easy to remember likeFTS204.134.0.60.pem and upload it to the Legacy TAK server you want to federate to.
+Under the certs directory there's a file called pubserver.pem containing your server public certificate.
+Download this file, rename it to something easy to remember like FTS204.134.0.60.pem and upload it to the Legacy TAK server you want to federate to.
 
 
 ### 4.4.2 Federating to a FTS server
 
 - **On the federated server:**activate the Federation service under Configure/system configuration****
-- **On the federated client**: Simply create the connection to the federated server
+- **On the federated client**: Simply create the connection to the federated server as described below
 
 ![](https://lh3.googleusercontent.com/OpSZ9aIur4Z2GlFdxkegui1KWrVlBp1uV_0NHIlj2cjVMge1oa0VkRwDqkMzwmclXZfLAoCCOta_V5wx-dzuiw8U7Jv6LJ2KAZssvyYVvZbOXH1Ke_1u4PUgDrarm0dGKiHQi9v7B37O3KWc16-p)
 
@@ -349,7 +334,6 @@ This panel shows all of the registered users of the UI and allows the user to ad
     - TAK Tracker
 
 in alternative selecting desktop will generate and push a certificate for WinTAK
-
 Once the fields have been filled, simply press submit to add a new user.
 
 ![](https://lh4.googleusercontent.com/De3JRGnmtmSP0W2xoKQInEkSeGyx7AFzNGeamy_PNUSwX0yNh8CpkLmerOXUdkL2ZrbQmeCanBUYRh2uJ8miy-0bhFc46-X4MHwBp5v0UzmZ-QTdxnFJ2lBo6JrgcZEMDEneI7uydAqnMekehJO5)
@@ -368,7 +352,7 @@ When creating a system user, by leaving “certs” on “true”, the user will
 FTS will:
 
 - Create a system User (e.g. Joe)
-- Generate valid Certifications
+- Generate valid Certificates
 - Package the certs into a zip file with the same name of the user (e.g. Joe.zip)
 - Create a private Data Package. This can be seen in the Mission section, with the other Data Packages
 - Send the private DP automatically to a ATAK/Wintak (or compatible client)
@@ -377,7 +361,7 @@ FTS will:
 - Under “manage server connection” a new entry with the nameFreeTAKServer\_\[SERVERIP] will appear.
 - The user needs to activate the connection (in WinTAK he may need to restart the software)
 
-Since ATAK 4.6 the ability to use non secured data packages has been disabled.
+> Since ATAK 4.6 the ability to use non secured data packages has been disabled.
 
 
 ### 5.1.2 Alternate certificates distribution
@@ -398,7 +382,6 @@ Since FTS 1.9 it’s possible to deactivate a certification by**deleting the ass
 ![](https://lh4.googleusercontent.com/0fNPQ3_FxtDLnEjXJhLOU3YIGZkzfFYRASt1hn-cNweW4m_d6Ogy4CIlJ4pvC588xcs7_jk0D7aYoBk_wIS5GGeH1rs-T7OggPIQFEAFlPCRqCTjhhLWDQs42kk3pyEo31RIrRNgk_hW1-5meXQ_)
 
 Future functionality, not currently active.
-
 Allows to create and assign permission to groups. When activated, will filter what an user can receive from FTS.
 
 
