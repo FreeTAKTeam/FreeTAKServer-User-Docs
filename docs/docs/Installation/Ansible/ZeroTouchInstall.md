@@ -1,19 +1,19 @@
 # Zero Touch Installation
 
-To install, enter into the console:
-
+To install, enter into the console on a Ubuntu 22.04 server:
 ```console
-wget -qO - bit.ly/ftszerotouch | sudo bash
+wget -qO - bit.ly/freetakhub2 | sudo bash
 ```
 in alternative use the long form
 ```console
 wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/main/scripts/easy_install.sh | sudo bash
 ```
+If you are still wanting to use the previous "legacy" version, please use the following command (please note this must be done in Ubuntu 20.04)
+'''console
+wget -qO - bit.ly/freetakhub2 | sudo INSTALL_TYPE=legacy bash
+'''
 
-The optimal configuration to run the script is:
-
-* Ubuntu 20.04
-  * Other operating systems may work, but are untested.
+NOTE:
 * Intel-based architecture
   * The map in the web interface may not work with non-Intel-based architecture.
 
