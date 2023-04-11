@@ -24,6 +24,18 @@ You will need to add any start parameters to the crontab file such as `-DataPack
 Systemd is nearly unavoidable. It has permiated so many aspects of the Linux ecosystem that it's necessary for any Linux admin to know at least the basics of how it works. 
 One of the major selling points of systemd is the ease of writing service files. 
 They aren't scripts. Instead, they're basic configuration files. While they can grow to be complex, they are usually very simple.
+### background
+The main directive is ExecStart, which specifies the command that should be run when the service is started. The command is 
+```
+/usr/bin/python3 -m /usr/local/lib/python3.11/dist-packages/FreeTAKServer-UI/run.py. 
+```
+Here's what each part of the command does:
+/usr/bin/python3: This specifies the Python interpreter that should be used to run the code.
+-m: This option tells Python to run a module as a script.
+/usr/local/lib/python3.11/dist-packages/FreeTAKServer-UI/run.py: This is the path to the Python module that should be run as a script.
+So when the service is started, the Python interpreter will run the run.py module located in the /usr/local/lib/python3.8/dist-packages/FreeTAKServer-UI/ directory.
+
+This code above is  running  FreeTAKServer-UI, which is a user interface for  FreeTAKServer. When the Systemd service is started, it will start the FreeTAKServer-UI interface, allowing users to interact with the FreeTAKServer software through a web browser.
 
 >**Note**
 > You will need create two seperate systemd files, if you're using Web UI
@@ -100,7 +112,7 @@ StartLimitIntervalSec=0
 Type=simple
 Restart=always
 RestartSec=1
-ExecStart=/usr/bin/python3 -/usr/local/lib/python3.8/dist-packages/FreeTAKServer-UI/run.py
+ExecStart=/usr/bin/python3 -m /usr/local/lib/python3.11/dist-packages/FreeTAKServer-UI/run.py
 
 [Install]
 WantedBy=multi-user.target
@@ -110,4 +122,4 @@ EOF
 
 started 
 
-see also[ZeroTouchInstall Services section](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Ansible/ZeroTouchInstall/) to see the complete list of the services ccreated by the installer
+see also[ZeroTouchInstall Services section](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Ansible/ZeroTouchInstall/) to see the complete list of the services created by the installer
