@@ -9,9 +9,10 @@ in alternative use the long form
 wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/main/scripts/easy_install.sh | sudo bash
 ```
 If you are still wanting to use the previous "legacy" version, please use the following command (please note this must be done in Ubuntu 20.04)
-'''console
+
+```console
 wget -qO - bit.ly/freetakhub2 | sudo INSTALL_TYPE=legacy bash
-'''
+```
 
 NOTE:
 * Intel-based architecture
