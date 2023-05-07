@@ -5,13 +5,12 @@ The cause is that  Certificate Revocation List (CRL) is expired.
 A Certificate Revocation List (CRL) is a type of security feature used in public key infrastructure (PKI) systems.
 It is a list of digital certificates that have been revoked by the certificate authority (CA) before their scheduled expiration date.
 This list contains information about the certificate serial numbers, the revocation dates, and the reason for revocation.
-Since version FTS 1.9 when you delete an user that has a certificate, the certificate will be invalid.
+Since FTS version 1.9, when you delete a user that has a certificate, the certificate will be revoked.
 We have now created a script that will fix the issue re-creating the CRL.
 
-Please follow the steps below:
+Please follow the steps below. Note that if you are trying to use this with 2.x.y the next step is not necessary:
 
- 1. If you are trying to use this with 2.x the next step is not necessary.
- 2. Install DigitalPy>=0.3.9.1 (the version where CRL regeneration support was added) with the following command:
+ 1. Install DigitalPy>=0.3.9.1 (the version where CRL regeneration support was added) with the following command:
 
 ```
 pip install DigitalPy>=0.3.9.1
