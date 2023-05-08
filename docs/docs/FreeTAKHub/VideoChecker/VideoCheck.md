@@ -15,7 +15,7 @@ The VideoChecker allows a video stream to be published to all the connected clie
 
 ![image](https://user-images.githubusercontent.com/60719165/167701401-87cb0df7-c256-4d2b-b44e-be7b1ed59e93.png)
 
-- Setup the IP of the video server 
+- Setup the EXTERNAL IP of the video server 
  
 ![image](https://user-images.githubusercontent.com/60719165/167701322-46eb1def-cad0-48ed-9d25-872751a38bd0.png)
 
