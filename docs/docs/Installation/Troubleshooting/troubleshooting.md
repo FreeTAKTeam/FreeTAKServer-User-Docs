@@ -4,24 +4,64 @@
 While FTS will work with thiis OS, we do not support it
 
 ## My Ubuntu 22.04 Installation is failing
-FTS 1.9.9 requires Ubuntu 20.04
+FTS 2.0 supports 22.04 older versions require Ubuntu 20.04
 
-## My Installation is failing
-Are you using Python 3.10? 3.8 is required
+## My FTS Installation is failing
+FTS 2.0 has been tested with Python 3.11, should work with others verson (3.10). Older versions require 3.8
 
 ## My Raspberry Pi installation has an issue with the WebMap
-the webmap is a Nodered packaged component, compiled for AMD64, so it will not run in the Pi.
+This has been adressed, so you should have the issue.
+The older webmap was a Nodered packaged component, compiled for AMD64, so it will not run in the Pi.
 You need to:
  * install Node Red 
  * import the flow from source
  * configure the flow
 
 ## Initial setup doesn't ask to create a YAML file, how to make one manually?
-* Go into the config file located in /usr/local/lib/python3.8/dist-packages/FreeTAKServer/controllers/configuration 
-* modify MainConfig.py.
-* You'll want to change the value for first_start (bottom of the config file) from False to True 
-* restart per the instructions. 
-* You should then get the prompt to create the yml file.
+copy this code, adapting to your enviroment
+
+```
+System:
+  FTS_DATABASE_TYPE: SQLite
+  FTS_CONNECTION_MESSAGE: Connected
+  FTS_OPTIMIZE_API: True
+  FTS_MAINLOOP_DELAY: 1
+Addresses:
+  FTS_COT_PORT: 8087
+  FTS_SSLCOT_PORT: 8089
+  FTS_DP_ADDRESS: [YOUREXTERNALIP]
+  FTS_USER_ADDRESS: [YOUREXTERNALIP]
+  FTS_API_PORT: 19023
+  FTS_FED_PORT: 9000
+  FTS_API_ADDRESS: [YOUREXTERNALIP]
+FileSystem:
+  FTS_CONFIG_PATH: /opt/FTSConfig.yaml
+  FTS_DB_PATH: /opt/FreeTAKServer.db
+  FTS_COT_TO_DB: True
+  FTS_MAINPATH: /usr/local/lib/python3.11/dist-packages/FreeTAKServer
+  FTS_CERTS_PATH: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/certs
+  FTS_EXCHECK_PATH: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/ExCheck
+  FTS_EXCHECK_TEMPLATE_PATH: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/ExCheck/template
+  FTS_EXCHECK_CHECKLIST_PATH: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/ExCheck/checklist
+  FTS_DATAPACKAGE_PATH: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/FreeTAKServerDataPackageFolder
+  FTS_LOGFILE_PATH: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/Logs
+Certs:
+  FTS_SERVER_KEYDIR: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/certs/server.key
+  FTS_SERVER_PEMDIR: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/certs/server.pem
+  FTS_TESTCLIENT_PEMDIR: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/certs/Client.pem
+  FTS_TESTCLIENT_KEYDIR: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/certs/Client.key
+  FTS_UNENCRYPTED_KEYDIR: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/certs/server.key.unencrypted
+  FTS_SERVER_P12DIR: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/certs/server.p12
+  FTS_CADIR: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/certs/ca.pem
+  FTS_CAKEYDIR: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/certs/ca.key
+  FTS_FEDERATION_CERTDIR: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/certs/server.pem
+  FTS_FEDERATION_KEYDIR: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/certs/server.key
+  FTS_CRLDIR: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/certs/FTS_CRL.json
+  FTS_FEDERATION_KEYPASS: [YOURPASS]
+  FTS_CLIENT_CERT_PASSWORD: [YOURPASS]
+  FTS_WEBSOCKET_KEY: [YOURPASS]
+```
+
 
 ## after XXX months of use the disk is full
  * FTS writes the output of the service to a log located here:
@@ -32,16 +72,23 @@ You need to:
 
 ## My XXX component is not connecting / showing
 for fts check out 
+```
 /opt/FTSConfig.yaml
+```
 
 for the UI check out
-/usr/local/lib/python3.8/dist-packages/FreeTAKServer-UI/config.py
+```
+/usr/local/lib/python3.11/dist-packages/FreeTAKServer-UI/config.py
+```
 
 for the webmap check out
+```
 /opt/webMAP_config.json
-
+```
 for the video server check out
-/opt/rtsp-simple-server.yml
+```
+/opt/mediamtx.yml
+```
 
 ## using SSL I get frequent disconnects
 This is a problem of the client not sending data. 
