@@ -122,4 +122,4 @@ EOF
 
 started 
 
-see also[ZeroTouchInstall Services section](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Ansible/ZeroTouchInstall/) to see the complete list of the services created by the installer
+see also [ZeroTouchInstall Services section](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Ansible/ZeroTouchInstall/) to see the complete list of the services created by the installer
