@@ -14,6 +14,7 @@ get the webmap.json the last release:
 https://github.com/FreeTAKTeam/FreeTAKHub-Webmap/releases
 ```
 import the flow into node red
+
 ![image](https://user-images.githubusercontent.com/60719165/177557386-7b928582-fc87-4141-9cf5-713f5ff11b46.png)
 
 
@@ -26,6 +27,15 @@ change the lines:
     # webmap port
     WEBMAPPORT = *1880*
 ```
+
+manage palette
+
+![image](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/assets/60719165/2802f254-5eb3-4efe-8d93-6cccd82e0b80)
+
+install/update the required nodes
+
+![image](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/assets/60719165/6ff491e5-949d-4194-8ebf-b69d95fbffd4)
+
 
 # Compiled version
 The compiled version of the webmap work only with AMD64 CPU. Can installed with the ZeroTOuch installer or manually following the instructions below.
