@@ -54,7 +54,7 @@ the current name of the services installed by the Zero Touch :
 * mumble-server.service
 * nodered.service
 * rtsp-simple-server.service
-* webmap.service
+
 
 use 
 ```
