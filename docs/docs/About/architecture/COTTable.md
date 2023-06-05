@@ -2345,7 +2345,8 @@ The following table combines Center On Target information found in COTTYpes.XML,
  t-x-a-s-c | Tasking/App control- Sync (subscribe) | App control- Sync (subscribe) |  | 2340 |  | Tasking |  |  
  t-x-i | Tasking/Tasking Data Retrieval | Tasking Data Retrieval |  | 2341 |  | Tasking |  |  
  t-x-i-l | Tasking/Link Dereference | Link Dereference |  | 2342 |  | Tasking |  |  
- t-x-v-m | Tasking/Medevac | Medevac |  | 2343 |  | Tasking |  |  
+ t-x-m-c | Tasking/Mission | Mission change |  | 23431 |  | Tasking |  |  
+  t-x-v-m | Tasking/Medevac | Medevac |  | 2343 |  | Tasking |  |  
  u-d-c-c | Drawing Shapes/Drawing Shapes – Circle | Drawing Shapes – Circle |  | 2344 |  | Drawing Shapes |  |  
  u-d-c-c | Drawing Shapes/Geo Fence | Geo Fence |  | 2345 |  | Drawing Shapes |  |  
  u-d-f | Drawing Shapes/Drawing Shapes - Free Form | Drawing Shapes - Free Form |  | 2346 |  | Drawing Shapes |  |  
