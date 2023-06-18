@@ -1,6 +1,15 @@
 If you have not installed FreeTAKServer please follow the [installation](Install.md) guide first.
 
-## Parameters
+
+## Run FTS in the Console
+
+```bash
+sudo python3 -m FreeTAKServer.controllers.services.FTS
+```
+If you have FTS running in the terminal how you would like it's time to move on to running FTS as a [service](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Linux/Service/).
+
+## Legacy Parameters
+those parameters were supported in previous version of FTS
 
 | Flag                | Default | Description                                                              |
 |---------------------|---------|--------------------------------------------------------------------------|
@@ -14,10 +23,3 @@ If you have not installed FreeTAKServer please follow the [installation](Install
 | -SSLDataPackageIP   | 0.0.0.0 | The IP where data SSL packages are served from                           |
 | -SSLDataPackagePort | 8443    | The port you want SSL Data Packages to be sent and received on           |
 
-## Run FTS in the Console
-
-```bash
-sudo python3 -m FreeTAKServer.controllers.services.FTS -DataPackageIP 0.0.0.0 -AutoStart True
-```
-
-If you have FTS running in the terminal how you would like it's time to move on to running FTS as a service.
