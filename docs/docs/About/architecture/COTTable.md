@@ -1600,7 +1600,8 @@ The following table combines Center On Target information found in COTTYpes.XML,
  b-g-.-T-X | TACGRP/TSK/CLR | Clear |  | 1595 | G*T*X-----****X | TACGRP |  |  
  b-g-.-T-Y | TACGRP/TSK/BYS | Bypass |  | 1596 | G*T*Y-----****X | TACGRP |  |  
  b-g-.-T-Z | TACGRP/TSK/SZE | Seize |  | 1597 | G*T*Z-----****X | TACGRP |  |  
- b-i | Image | Image |  | 1598 |  | Image |  |  
+ b-i | bits Image | Image |  | 1598 |  | Image |  |  
+ b-i-v | bits Image | video |  | 15981 |  |Video |  |  
  b-l | Alarm | Alarm |  | 1599 |  | Alarm |  |  
  b-l-c | Alarm/CBRNE | CBRNE |  | 1600 |  | Alarm |  |  
  b-l-c-b | Alarm/CBRNE/BioChem | BioChem |  | 1601 |  | Alarm |  |  
