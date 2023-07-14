@@ -1,3 +1,6 @@
+> **Warning**
+> The Docker Installation Method directs users to a Dockerhub Registry whose images haven't been updated in ~2 years and whose source code has been archived: The former Docker image for FreeTAKServer, this repo is now archived. Please use the FTS rpository to get the current Container.
+> 
 
 This will run FreeTAKServer without persistent data storage with all default settings.
 ```bash
