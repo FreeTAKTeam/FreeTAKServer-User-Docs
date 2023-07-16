@@ -13,3 +13,9 @@ The UAS Tool is a plug-in that provides integration of Unmanned Aircraft Systems
    ```rtsp://132.233.124.12:8554/live/corvo``` 
  * Then on the recieving device repeat steps 5a-9a and enter the same information that you did on the UAS EUD. All devices wishing to view the stream should now have identical settings (including same ip, port, video broadcast identifier etc). 
 * Start streaming the broadcast from the UAS EUD. On the recieving EUD back out to the list of uas's and click the play button. Should start streaming the video.
+
+* in the client (e.g. WinTAK, you can use the plugin to see the position of the Drone
+![image](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/assets/60719165/382e7f53-4f90-43d0-b901-9a79c0ef3d6d)
+
+* also without a plugin, if you have the [videoCheck] configured, you will receive a new video feed
+![image](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/assets/60719165/42c4178c-52dc-441c-a395-dcb3c968bdf7)
