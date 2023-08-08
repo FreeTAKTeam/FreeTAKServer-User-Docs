@@ -91,14 +91,19 @@ Set of commands relative to API management.
 #### getHelp
 
 Retrieve API version and supported endpoints.
-* verb: GET
-* endpoint: /manageAPI/getHelp
-* returns: json containing API version and supported endpoints
+ * verb: GET
+ * endpoint: /manageAPI/getHelp
+ * returns: json containing API version and supported endpoints
 
 ##### getHelp Example: return data (1.9.5)
 
 ```json
-{"APIVersion": "1.9.5", "SupportedEndpoints": ["/ManageNotification/getNotification", "/ManageVideoStream/deleteVideoStream", "/ManageVideoStream/postVideoStream", "/ManageVideoStream/getVideoStream", "/ManageSystemUser/putSystemUser", "/ManageEmergency/deleteEmergency", "/ManageGeoObject/postGeoObject", "/ManageEmergency/postEmergency", "/ManageGeoObject/getGeoObject", "/ManageGeoObject/putGeoObject", "/ManageEmergency/getEmergency", "/ManagePresence/postPresence", "/ManagePresence/putPresence", "/ManageRoute/postRoute", "/SystemUser/deleteSystemUser", "/SystemUser/postSystemUser", "/ManageChat/postChatToAll", "/ManageCoT/getZoneCoT", "/ManageKML/postKML", "/manageAPI/getHelp", "/Sensor/postDrone", "/Sensor/postSPI", "/BroadcastDataPackage", "/ManageVideoStream", "/AuthenticateUser", "/DataPackageTable", "/ManageGeoObject", "/ManageEmergency", "/FederationTable", "/ManagePresence", "/MissionTable", "/ExCheckTable", "/SendGeoChat", "/ManageRoute", "/checkStatus", "/GenerateQR", "/ManageChat", "/RecentCoT", "/APIUser", "/Clients", "/Sensor", "/MapVid", "/Alive", "/URL"]}
+{"APIVersion": "1.9.5", "SupportedEndpoints":
+["/ManageNotification/getNotification", "/ManageVideoStream/deleteVideoStream", "/ManageVideoStream/postVideoStream", "/ManageVideoStream/getVideoStream", "/ManageSystemUser/putSystemUser",
+"/ManageEmergency/deleteEmergency",
+"/ManageGeoObject/postGeoObject",
+"/ManageEmergency/postEmergency",
+"/ManageGeoObject/getGeoObject", "/ManageGeoObject/putGeoObject", "/ManageEmergency/getEmergency", "/ManagePresence/postPresence", "/ManagePresence/putPresence", "/ManageRoute/postRoute", "/SystemUser/deleteSystemUser", "/SystemUser/postSystemUser", "/ManageChat/postChatToAll", "/ManageCoT/getZoneCoT", "/ManageKML/postKML", "/manageAPI/getHelp", "/Sensor/postDrone", "/Sensor/postSPI", "/BroadcastDataPackage", "/ManageVideoStream", "/AuthenticateUser", "/DataPackageTable", "/ManageGeoObject", "/ManageEmergency", "/FederationTable", "/ManagePresence", "/MissionTable", "/ExCheckTable", "/SendGeoChat", "/ManageRoute", "/checkStatus", "/GenerateQR", "/ManageChat", "/RecentCoT", "/APIUser", "/Clients", "/Sensor", "/MapVid", "/Alive", "/URL"]}
 ```
 
 ### manageGeoObject 
@@ -394,10 +399,13 @@ NOTE: these should be provided in the form of url encoded variables.
 }
 ```
  
-
- ``` URL
+*Params in the URL*
  http://[IP]:[PORT]/ManageGeoObject/getGeoObject?longitude=-77.0104&latitude=38.889&radius=5000
- ```
+
+### GetRepeatedMessages
+get geo objects  that are regularly resend by the servers
+* verb: GET
+* endPoint: /ManageGeoObject/GetRepeatedMessages
  
 ## ManageChat
   
