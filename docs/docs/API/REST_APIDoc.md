@@ -435,7 +435,7 @@ create a emergency into the server
   * verb: POST
   * endPoint: /ManageEmergency/postEmergency
  
- #### Parameters
+#### Parameters
 
   * name: the name of the person that has an emergency.
   * emergencyType: the type of emergency to be displayed
