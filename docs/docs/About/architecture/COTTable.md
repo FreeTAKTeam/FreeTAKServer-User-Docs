@@ -2046,7 +2046,8 @@ The following table combines Center On Target information found in COTTYpes.XML,
  b-r-.-O-V-M | STBOPS/VIOATY/KILL | Assassination/Murder/Execution |  | 2040 | O*V*M---------- | STBOPS |  |  
  b-r-.-O-V-P | STBOPS/VIOATY/PSNG | Poisoning |  | 2041 | O*V*P---------- | STBOPS |  |  
  b-r-.-O-V-S | STBOPS/VIOATY/SPG | Sniping |  | 2042 | O*V*S---------- | STBOPS |  |  
- b-r-.-O-V-Y | STBOPS/VIOATY/BBY | Booby Trap |  | 2043 | O*V*Y---------- | STBOPS |  |  
+ b-r-.-O-V-Y | STBOPS/VIOATY/BBY | Booby Trap |  | 2043 | O*V*Y---------- | STBOPS |  |
+ b-t-f | none | Geo-Chat |  | 20431 | |  |  |  
  b-w | METOC | Metoc |  | 2044 |  | METOC |  |  
  b-w-A | METOC/AMPHC | Atmospheric |  | 2045 |  | METOC |  |  
  b-w-A-C | METOC/AMPHC/CUDCOV/SYM | Coverage Symbols |  | 2046 |  | METOC |  |  
