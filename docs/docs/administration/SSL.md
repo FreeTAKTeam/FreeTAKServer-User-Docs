@@ -127,8 +127,8 @@ Creating a Certificate Authority (CA) involves generating a self-signed root cer
 
 | Metadata Field          | X.509 Attribute | Description                                                                                                                                                        |
 |-------------------------|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Common Name             | `CN`            | The fully qualified domain name (FQDN) or name of the CA. For root CAs, this field often contains the organization's name.                                         |
-| Organization            | `O`             | The legal name of the organization that is running the CA.                                                                                                         |
+| Common Name             | `CN`            | The fully qualified domain name (FQDN) or name of the CA. For root CAs, this field often contains the organization's name. e.g. https://github.com/FreeTAKTeam                                        |
+| Organization            | `O`             | The legal name of the organization that is running the CA.   e.g. FreeTAKTeam                                                                                                         |
 | Organizational Unit     | `OU`            | The division or department within the organization that is responsible for managing the CA.                                                                         |
 | Locality                | `L`             | The city or locality where the organization is located.                                                                                                             |
 | State                   | `ST`            | The state, province, or region where the organization is located.                                                                                                   |
@@ -142,15 +142,6 @@ Creating a Certificate Authority (CA) involves generating a self-signed root cer
 | Issuer                  | N/A             | Information about the entity that issued the certificate. For a self-signed root CA, the issuer is the CA itself.                                                    |
 | Version                 | N/A             | Indicates the X.509 version used. Most modern certificates use version 3.                                                                                           |
 | Signature Algorithm     | N/A             | The algorithm used to create the certificate's signature. Common algorithms include RSA-SHA256 and ECDSA-SHA256.                                                     |
-
-
-Country Name (2 letter code) [AU]:US
-State or Province Name (full name) [Some-State]:CA
-Locality Name (eg, city) []:Los Angeles
-Organization Name (eg, company) [Internet Widgits Pty Ltd]:Acme Corporation
-Organizational Unit Name (eg, section) []:Dev
-Common Name (e.g. server FQDN or YOUR name) []:Wile E. Coyote
-Email Address []:wile@acmecorp.com
 
 ```
 
