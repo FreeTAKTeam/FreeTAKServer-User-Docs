@@ -110,17 +110,6 @@ Next, create CA certificate from the newly created private key.
 ```console
 openssl req -new -x509 -sha256 -key ca.key -out ca.crt
 ```
-
-You will be prompted to enter in certificate details. Here is an example:
-
-```console
-You are about to be asked to enter information that will be incorporated
-into your certificate request.
-What you are about to enter is what is called a Distinguished Name or a DN.
-There are quite a few fields but you can leave some blank
-For some fields there will be a default value,
-If you enter '.', the field will be left blank.
------
 # Certificate Authority Metadata Fields
 
 Creating a Certificate Authority (CA) involves generating a self-signed root certificate with various metadata fields. Below is a table that describes some of the common metadata fields that can be set in a CA certificate.
@@ -142,6 +131,17 @@ Creating a Certificate Authority (CA) involves generating a self-signed root cer
 | Issuer                  | N/A             | Information about the entity that issued the certificate. For a self-signed root CA, the issuer is the CA itself.                                                    |
 | Version                 | N/A             | Indicates the X.509 version used. Most modern certificates use version 3.                                                                                           |
 | Signature Algorithm     | N/A             | The algorithm used to create the certificate's signature. Common algorithms include RSA-SHA256 and ECDSA-SHA256.                                                     |
+
+You will be prompted to enter in certificate details. Here is an example:
+
+```console
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
 
 ```
 
