@@ -121,6 +121,29 @@ There are quite a few fields but you can leave some blank
 For some fields there will be a default value,
 If you enter '.', the field will be left blank.
 -----
+# Certificate Authority Metadata Fields
+
+Creating a Certificate Authority (CA) involves generating a self-signed root certificate with various metadata fields. Below is a table that describes some of the common metadata fields that can be set in a CA certificate.
+
+| Metadata Field          | X.509 Attribute | Description                                                                                                                                                        |
+|-------------------------|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Common Name             | `CN`            | The fully qualified domain name (FQDN) or name of the CA. For root CAs, this field often contains the organization's name.                                         |
+| Organization            | `O`             | The legal name of the organization that is running the CA.                                                                                                         |
+| Organizational Unit     | `OU`            | The division or department within the organization that is responsible for managing the CA.                                                                         |
+| Locality                | `L`             | The city or locality where the organization is located.                                                                                                             |
+| State                   | `ST`            | The state, province, or region where the organization is located.                                                                                                   |
+| Country                 | `C`             | The two-letter ISO country code for the country where the organization is located.                                                                                  |
+| Email Address           | `emailAddress`  | The email address for contacting the CA administrator.                                                                                                              |
+| Serial Number           | N/A             | A unique identifier for the certificate. It is used to identify the certificate within a CA's database.                                                             |
+| Validity Period         | N/A             | Specifies the time period during which the certificate is valid. It includes a start date (`NotBefore`) and an end date (`NotAfter`).                                |
+| Key Usage               | N/A             | Defines the purposes for which the certificate's public key can be used, such as digital signature, key encipherment, and certificate signing.                      |
+| Extended Key Usage      | N/A             | Specifies additional purposes for which the public key may be used, like server authentication, client authentication, code signing, etc.                            |
+| Subject Alternative Name| `SAN`           | Specifies additional host names or IP addresses that are protected by this certificate. Useful for multi-domain or wildcard certificates.                           |
+| Issuer                  | N/A             | Information about the entity that issued the certificate. For a self-signed root CA, the issuer is the CA itself.                                                    |
+| Version                 | N/A             | Indicates the X.509 version used. Most modern certificates use version 3.                                                                                           |
+| Signature Algorithm     | N/A             | The algorithm used to create the certificate's signature. Common algorithms include RSA-SHA256 and ECDSA-SHA256.                                                     |
+
+
 Country Name (2 letter code) [AU]:US
 State or Province Name (full name) [Some-State]:CA
 Locality Name (eg, city) []:Los Angeles
@@ -128,6 +151,7 @@ Organization Name (eg, company) [Internet Widgits Pty Ltd]:Acme Corporation
 Organizational Unit Name (eg, section) []:Dev
 Common Name (e.g. server FQDN or YOUR name) []:Wile E. Coyote
 Email Address []:wile@acmecorp.com
+
 ```
 
 A `ca.crt` will be outputted to the directory.
