@@ -107,6 +107,18 @@ You may also check for missing libraries and install then using pip
 ## issue connecting in WinTAK
 if you have issues connecting winTAK to FTS, try to deactivate the TAKChat plugin, under the plugin section
 
+## Issues connecting using SSL
+If you have issue connecting to FTS using SSL, even if you have downloaded new certs, you need to manually delete the old files from your device. In WinTAK (tested with 4.9)  you can find certs files under 
+```
+C:\Users\[USERNAME]\AppData\Roaming\WinTAK\SslCerts
+```
+you should have 3 certifications files in the format 
+[IP]_FreeTAKServer-Hash
+198-199-70-185_FreeTAKServer-2-a3_wbu7kirkizulslz1pstvv0xoo5qbcrr4.p12.dat2
+and another 3 in the format
+[UserNAME]Hash
+FreeTAKTeamSupporte4fddab2-6102-4ab6-a9ec-0fee8edf8b10.p12
+
 ## client2client datapackages
 If you have issues sending datapackages directly to clients via FTS, make sure the `-IP` argument you specified can be reached from your device.  
 A quick way to test if it works is to take a picture with Quick Pic in ATAK and send it to another client. Please also note that for that test ATAK clients needs to be on different network (ie one on mobile and one on wifi), because if you run them in same network (wifi, vpn, etc) they will just use same multicast group, bypassing FTS completely.  
