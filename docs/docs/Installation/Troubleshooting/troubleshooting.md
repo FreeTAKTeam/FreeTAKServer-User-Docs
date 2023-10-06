@@ -1,7 +1,7 @@
 # Troubleshooting
 
 ## My Windows Installation is failing
-While FTS will work with thiis OS, we do not support it
+While FTS will work with this OS, we do not support it
 
 ## My Ubuntu 22.04 Installation is failing
 FTS 2.0 supports 22.04 older versions require Ubuntu 20.04
@@ -10,8 +10,7 @@ FTS 2.0 supports 22.04 older versions require Ubuntu 20.04
 FTS 2.0 has been tested with Python 3.11, should work with others verson (3.10). Older versions require 3.8
 
 ## My Raspberry Pi installation has an issue with the WebMap
-This has been adressed, so you should have the issue.
-The older webmap was a Nodered packaged component, compiled for AMD64, so it will not run in the Pi.
+This has been adressed, so you should not have the issue. The older webmap was a Nodered packaged component, compiled for AMD64, so it will not run in the Pi.
 You need to:
  * install Node Red 
  * import the flow from source
@@ -62,7 +61,6 @@ Certs:
   FTS_WEBSOCKET_KEY: [YOURPASS]
 ```
 
-
 ## after XXX months of use the disk is full
  * FTS writes the output of the service to a log located here:
 ```
@@ -90,7 +88,18 @@ for the video server check out
 /opt/mediamtx.yml
 ```
 
-## using SSL I get frequent disconnects
+## SSL connection is working but in an inconsistent way
+This has been observed on ATAK 4.7 + for functions that requires both encrypted TCP and SSL connections. the ExChcek plugin is an example of that. the main symptom on the client is that the connection to the server fails (for specific funtions). This is NOT a FTS issue, it's provoked by ATAK way to store certificates.
+
+### Workaround: 
+"clear the content" using the ATAK function  
+![image](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/assets/60719165/70561476-2252-46eb-8a9e-c7a0717b8d78)
+*create a new user with mobile certs
+* connect to FTS using TCP
+* download new the certs
+* de-activate tcp and activate the new certs
+
+## Using SSL I get frequent disconnects
 This is a problem of the client not sending data. 
 WinTAK: under settings/network preferences set the TCP Connection timeout higher, (e.g. 60 seconds)
 ATAK:  under settings/network preferences/ network connection preferences / TCP conection timeout  (e.g. 40 seconds)
