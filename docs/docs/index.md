@@ -16,10 +16,9 @@ FreeTAKServer (FTS) is a Python3 implementation of the TAK Server for devices li
 - Android Edition
 - WebMap
 - Pushing of information (video streams, certifications, etc.) to clients
+- Component based architecture
 
 The following features are in the pipeline  for the 2.0 family:
-
- - Component based architecture
  - Data Sync / Mission Planning
  - Cloud Management
  - ... Much more!
