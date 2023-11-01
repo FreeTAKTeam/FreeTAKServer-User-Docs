@@ -2,7 +2,7 @@ nav:
     - Ansible
     - Linux
     - RaspberryPie
-    - infrastructurePlanning.md
+    - InfrastructurePlanning.md
     - Tools.md
     - Video Guides.md
     - ...
