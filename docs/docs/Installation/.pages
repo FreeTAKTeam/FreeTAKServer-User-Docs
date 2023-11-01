@@ -3,7 +3,6 @@ nav:
     - Linux
     - RaspberryPie
     - ...
-    - nav:
     - infrastructurePlanning.md
     - Tools.md
     - Video Guides.md
