@@ -8,11 +8,11 @@ in this example we will use Digital ocean.
 
 ![image](https://user-images.githubusercontent.com/60719165/142765115-3e2a579e-a3fe-4049-beb9-c070f7966f9c.png)
 
-2. create a 2 new droplets
+2. create a new droplet
 
 ![image](https://user-images.githubusercontent.com/60719165/142765256-c03f7653-fc80-40ab-845f-304399154313.png)
 
-4. Select Ubunbt 20.04 LTS
+4. Select Ubunbt 22.04 (LTS) x64
 5. Plan basic
 6. recomended the 15 $ Mo plan (it would work with the 5 $ plan but very slow). 
 7. For heavy production (50-100 Concurrent users) you may want to use 8 CPUS and 32 MB RAM
@@ -67,4 +67,4 @@ WinSCP can be used on the top of Putty to make browsing and editing of files mor
 ![image](https://user-images.githubusercontent.com/60719165/142771008-d272d5df-3e78-4f0c-8be8-a43028414c77.png)
 
  ## Next step
- you can now start installing [FTS](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Linux/Install/)
+ you can now start installing FTS using the [ZeroTouch](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Ansible/ZeroTouchInstall/) or the [Manual Installation](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Linux/Install/)
