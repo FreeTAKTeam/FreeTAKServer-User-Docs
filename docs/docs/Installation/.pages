@@ -1,6 +1,6 @@
 nav:
-    - Tools.md
-    - InfrastructurePlanning.md
+    - Tools you need: Tools.md
+    - Infrastructure Planning: InfrastructurePlanning.md
     - Video Guides.md
     - Ansible
     - Linux
