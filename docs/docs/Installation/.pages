@@ -1,8 +1,11 @@
 nav:
+    - Tools.md
+    - InfrastructurePlanning.md
+    - Video Guides.md
     - Ansible
     - Linux
     - RaspberryPie
-    - InfrastructurePlanning.md
-    - Tools.md
-    - Video Guides.md
-    - ...
+    - Cloud
+    - Android
+    - Windows
+    - Troubleshooting
