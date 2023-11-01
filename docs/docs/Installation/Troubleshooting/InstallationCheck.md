@@ -115,6 +115,7 @@ http://<YOUR_IP_ADDRESS>:1880/
 ```
 
 Confirm you see a login prompt.
+see [NodeRed](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/FreeTAKHub/Integration/NodeRedinstallation.md) for more information
 
 ## Check Voice server
 connect a client to <YOUR_IP_ADDRESS>:64738
