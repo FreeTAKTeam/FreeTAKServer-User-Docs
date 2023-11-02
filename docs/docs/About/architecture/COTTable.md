@@ -2355,6 +2355,7 @@ The following table combines Center On Target information found in COTTYpes.XML,
  t-x-m-c-m | Tasking/Mission | Mission METADATA |  | 234314 |  | Tasking |  |
   t-x-m-c-n | Tasking/Mission | Mission new  |  | 234315 |  | Tasking |  |
   t-x-m-c-e | Tasking/Mission | Mission EXTERNAL_DATA |  | 234316 |  | Tasking |  |
+  t-x-m-i | Tasking/Mission | Mission invite |  | 2343161 |  | Tasking |  |
  t-x-v-m | Tasking/Medevac | Medevac |  | 2343 |  | Tasking |  |  
  u-d-c-c | Drawing Shapes/Drawing Shapes – Circle | Drawing Shapes – Circle |  | 2344 |  | Drawing Shapes |  |  
  u-d-c-c | Drawing Shapes/Geo Fence | Geo Fence |  | 2345 |  | Drawing Shapes |  |  
