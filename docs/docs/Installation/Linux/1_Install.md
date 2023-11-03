@@ -1,325 +1,462 @@
-# 1. FreeTAK Server Installation
-This guide will walk you through installing FreeTAKServer 1.9 on a Linux host.
-you need to prepare for the followin steps, not all of them are required:
+# FreeTAK Server Installation
+This guide will walk you through installing FreeTAKServer 2.0
 
-- [Creates target machines](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/Installation/PyPi/Linux/ConfigureMachine.md) 
+## 0. Document Goals
+
+- Prepare host OS
 - Install FreeTAKServer
 - Configure and Run FreeTAKServer
 - Configure Web UI
-- Install [NodeRed](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/FreeTAKHub/NodeRedinstallation.md) for FreeTAKHub 
-- Install the [web Map](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/FreeTAKHub/WebMap/Installation.md)
-- Install the [Video Service](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/FreeTAKHub/Video/Installation.md)
+- **TBD** ~~Install [NodeRed](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/FreeTAKHub/NodeRedinstallation.md) for FreeTAKHub~~
+- **TBD** ~~Install the [Web Map](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/FreeTAKHub/WebMap/Installation.md)~~
+- **TBD** ~~Install the [Video Service](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/FreeTAKHub/Video/Installation.md)~~
 
+---
+## Note: Linux Distributions
 
-## Linux Distribution
+The main supported OS is Ubuntu 20.04. Due to cross-compatibility, Debian 10 and the latest Raspbian also work.
 
-A part Ubuntu 20.04, you may use  Debian 10 or Raspberry PI OS.
+Centos/RHEL/Fedora installation instructions are provided on a best-effort volunteer basis.
 
+---
+## 1. Update OS Packages
 
-## Upgrade your distro
+Update OS Packages before proceeding with the installation
 
-```
+<details>
+<summary>
+Ubuntu
+</summary>
+
+```bash
 sudo apt update && sudo apt upgrade
 ```
+</details>
 
-tap Y and Enter
-this will bring Ubuntu to the last pathch level
-type 
+<details>
+<summary>
+RHEL
+</summary>
 
+```bash
+sudo dnf update
 ```
-Python3 
-```
-in the console
+</details>
 
-### OPTIONAL Install Python 3
-this should not be necessary if you follow the instruction until now, however if the command Python3 fails type:
+---
+## 2. Pre-requisite Software
+
+<details>
+<summary>
+Ubuntu
+</summary>
+
+Install packages from the distro repo
 
 ```bash
 sudo apt update && sudo apt install python3 && sudo apt install python3-pip
-```
-
-### Install Pip
-Pip is the package manager for Python
-
-```
-sudo apt update && apt install python3-pip
-```
-
-### Install Python Libraries
-
-```bash
 sudo apt install python3-dev python3-setuptools build-essential python3-gevent python3-lxml libcairo2-dev
 ```
+</details>
 
+<details>
+<summary>
+RHEL
+</summary>
+
+Install distro repo packages
+
+```bash
+sudo dnf group install "C Development Tools and Libraries" "Development Tools"
+sudo dnf install python3 python3-pip cairo cairo-devel python3-cairo python3-cairo-devel python3-gevent python3-lxml python3-virtualenv
 ```
-sudo  pip3 install wheel pycairo
+
+Create and activate a virtualenv for the next steps
+
+```bash
+virtualenv venv
+source venv/bin/activate
+```
+</details>
+
+
+---
+## 3. Install Python Libraries
+
+<details>
+<summary>
+Ubuntu
+</summary>
+
+```bash
+sudo pip3 install wheel pycairo
 ```
 
-![image](https://user-images.githubusercontent.com/60719165/142766382-8a6e5d05-a198-488d-86f2-67cd49cc1ca6.png)
+Note, use of pip with sudo is not recommended and you will be warned about this!
+</details>
 
-### delete previous installation
-required only if:
-- you have an existing installation
--  Upgrade fails.
+
+<details>
+<summary>
+RHEL
+</summary>
+
+
+```bash
+pip install wheel pycairo
+```
+</details>
+
+---
+## 4. Remove Old Installation
+**YOU MUST DO THIS IF:**
+
+-  Free TAK Server has been installed before
+-  An upgrade fails
+-  A previous installation was not completed
+
+<details>
+<summary>
+Ubuntu
+</summary>
 
 ```bash
 sudo pip3 uninstall FreeTAKServer
 sudo pip3 uninstall FreeTAKServer-UI
 ```
+</details>
 
-Delete the database 
+<details>
+<summary>
+RHEL
+</summary>
+
 ```bash
-sudo  rm /root/FTSDataBase.db
+deactivate
+rm -rf venv/
+pip uninstall FreeTAKServer FreeTAKServer-UI
+```
+</details>
+
+Delete the database and log folders
+
+```bash
+sudo rm /opt/FTSDataBase.db
+sudo rm -r /usr/local/lib/<your-python-version>/<dist or site>-packages/FreeTAKServer
 ```
 
-and the various logs folders
-```bash
-sudo rm -r /usr/local/lib/python3.8/dist-packages/FreeTAKServer
-```
+---
+## 5. Install FreeTAKServer
+Install the FreeTAKServer  and the associated Web UI
 
-### Install FreeTAKServer
-Install the FTS  and the Web UI (suggested)
+<details>
+<summary>
+Ubuntu
+</summary>
+
 ```bash
 sudo python3 -m pip install FreeTAKServer[ui]
 ```
+</details>
 
-in alternative Install the FTS only
+<details>
+<summary>
+RHEL
+</summary>
+
 ```bash
-sudo python3 -m pip install FreeTAKServer
+pip install FreeTAKServer[ui]
 ```
-#### Install a specific version
-To install a special version of a FTS package with Pip, you can use the following command:
+</details>
 
-```python3 -m pip install FreeTAKServer[ui]==version-number```
+
+The FreeTAKServer can be installed without the UI, however this makes the
+server much more difficult to use and is probably not what you want. This can be done using the `FreeTAKServer` pip package only.
+
+### Advanced Installations:
+
+<details>
+<summary>
+Install a specific version
+</summary>
+To install a special version of a FreeTAKServer pip package by appending `==version-number` to the installation command.
+
+```bash
+python3 -m pip install FreeTAKServer[ui]==version-number
+```
+
 For example, if you want to install version Alpha of the requests package, you can run the following command:
 
-```python3 -m pip install FreeTAKServer[ui]==0.2.0.13```
-This will download and install version 0.2.0.13 of FTS, rather than the latest version available on PyPI.
+```bash
+python3 -m pip install FreeTAKServer[ui]==0.2.0.13
+```
 
-### check your install
+Old installations can be installed in the same way, if desired.
+
+This will download and install version 0.2.0.13 of FreeTAKServer. If no version number is specified, then the latest normal release will be installed.
+</details>
+
+---
+## 6. Check Installation
+
+The pip utility allows the user to check the installation and dependency status of a package.
+
+
 ```bash
 pip check FreeTakServer 
 ```
-![image](https://user-images.githubusercontent.com/60719165/142766403-b877a43b-ec9d-48ce-a13c-b216ddcfa295.png)
 
-#### Install an old version
-you can install a [past version](https://pypi.org/project/FreeTAKServer/#history) using this command
-```
-sudo python3 -m pip install FreeTAKServer[ui]==[VERSIONNUMBER]
-```
+You should see `No broken requirements found.` displayed, in which case you can
+proceed. Otherwise there was an issue with the pip installation and you should
+investigate the pip-generated installation logs for more information.
 
-for example if you want to install version 1.5
-```
-sudo python3 -m pip install FreeTAKServer[ui]==1.5.10
-```
+---
+## 7. Configure and Run FreeTAKServer
 
-## Configure and Run FTS (1.9+) 
-this works only for 1.9 or better, for see here for [manual configuration](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/Installation/PyPi/Linux/ManualConfiguration.md) 
-start FTS
-```
+FTS versions older than 1.9 are not configured this way. For versions <1.9 you
+will need to locate older versions of this document in the repo history.
+
+### Start the FreeTAKServer
+
+<details>
+<summary>
+Ubuntu
+</summary>
+
+```bash
 sudo python3 -m FreeTAKServer.controllers.services.FTS 
 ```
+</details>
 
-the first time a wizard will popup
+<details>
+<summary>
+RHEL
+</summary>
 
-![image](https://user-images.githubusercontent.com/60719165/142766476-f1b5bbb9-aba5-4e05-9b53-a15c075d7e96.png)
-
-if the wizard does not show up please check your config file (see [troubleshooting](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Troubleshooting/troubleshooting/) )
-
+```bash
+python -m FreeTAKServer.controllers.services.FTS 
 ```
+</details>
+
+> :memo: **Note:** Warnings about `failed to register component` are OK.
+Your system will run fine with these warnings. Starting with FTS 2.0 some future
+functionality is declared but not fully implemented.
+
+On the first run, a configuration wizard will help set up the config file.
+
+> :memo: **Note:** If the wizard does not appear, see [troubleshooting](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Troubleshooting/troubleshooting/).
+
+### Using the Wizard
+
+The default configuration option is presented in [brackets].
+If the default is acceptable you can simply press enter without entering any text
+to automatically use the default.
+
+An example is provided below, your exact configuration will differ.
+
+```css
 would you like to use a yaml config file, 
- if yes you will be prompted for further configuration options [yes]: yes
-
-``` 
- 
- press enter
- 
-``` 
-where would you like to save the yaml config [/opt/FTSConfig.yaml]:
-```
-
-from now on, hit ENTER if you are happy with the default
-
-the public IP will be automatically discovered (you can double check in your digital Ocena console for safety)
+ if yes you will be prompted for further configuration options [yes]:
+where would you like to save the yaml config [/opt/fts/FTSConfig.yaml]: 
+enter ip [127.0.0.1]: 
+enter the preferred database type (MySQL is highly experimental if you're not sure leave default) [SQLite]: 
+enter the preferred database path [/opt/fts/FTSDataBase.db]: 
+enter the preferred main path [/usr/local/lib/python3.11/site-packages/FreeTAKServer]: 
+enter the preferred log file path [/opt/fts/Logs]: 
 
 ```
-enter ip [10.0.2.15]: 
-10.0.2.15
-```
 
-this is the FTS_MAIN_IP, must be you EXTERNAL IP
-continue to follow the instructions:
+> :memo: **Note:** The IP in this configuration wizard is the FTS_MAIN_IP.
+This must be your EXTERNAL IP.
 
-```
-**enter the preferred database path [/opt/FTSDataBase.db]: **
-/opt/FTSDataBase.db
-```
+MySQL usage is beyond the scope of this guide, if you wish to use MySQL, it is
+assumed you know how to configure database servers already. Some additional
+information for MySQL installations is available in the
+[FTS-UI configuration section](### MySQL Configuration).
 
-![image](https://user-images.githubusercontent.com/60719165/142766542-18876805-9454-4725-849b-f794036c2848.png)
+The database and log filepaths can be anywhere that the server's host user can
+access.
 
+The main path should be the directory where pip installed FreeTAKServer.
+This can be found under your python packages directory. In virtualenv installations,
+it is inside the virtualenv directory.
 
-next one is important, adjust the path to your Python install
+The wizard creates the YAML configuration file under the location you selected,
+the default location is /opt/FTSConfig.yaml
 
-![image](https://user-images.githubusercontent.com/60719165/142766601-30560314-9ac1-4fe2-8e8b-91d0057b1991.png)
+FreeTAKServer will then proceed start all the services.
 
+---
+## 7. FTS Configuration
+### Manual FTSConfig.yaml
 
-```
-enter the preferred main_path [/usr/local/lib/python3.8/dist-packages/FreeTAKServer]:
-/usr/local/lib/python3.8/dist-packages/FreeTAKServer
-```
+> :warning: **Warning:** Before modifying the YAML file, FreeTAKServer
+**must be stopped!**
 
-the log can be located anywhere on your machine
-```
-enter the preferred log file path [/usr/local/lib/python3.8/dist-packages/FreeTAKServer/Logs]: 
-/usr/local/lib/python3.8/dist-packages/FreeTAKServer/Logs
-```
+Use the keyboard  chord `CTRL + C` twice in the console running FTS to stop
+FreeTAKServer.
 
-at this point a YAML file is created under the location you selected (default is /opt/FTSConfig.yaml). FTS will start all the services.
-![image](https://user-images.githubusercontent.com/60719165/142766645-210f09c3-88f5-435a-8a0d-d27bc3d4f1c3.png)
+A separate guide is maintained for  [manual configuration](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/Installation/PyPi/Linux/ManualConfiguration.md) of your FTS install.
 
-### content of the YAML file
-
-![image](https://user-images.githubusercontent.com/60719165/142766660-daac490a-3c0c-4089-b3b8-40c5e520c1ff.png)
-
-If you want to modify the YAML file you need to stop FTS and modify the YAML and then restart it.
-CTRL + C (2 times) in the console will stoop FTS
-
-#### Additional FTS configuration
-FTS sends a welcome message every time a client connects. This can be changed in the file MainConfig.py  
+### MainConfig.py
+FTS sends a welcome message on client connection which is configurable. See the `FreeTAKServer/core/configuration/MainConfig.py` file to change it.
 
 ```
-        ConnectionMessage = f'Welcome to FreeTAKServer {version}. The Parrot is not dead. It’s just resting'
+ConnectionMessage = f'Welcome to FreeTAKServer {version}. The Parrot is not dead. It’s just resting'
 ```
 
-### SUCCESS!!!
-your FTS is now started
-![image](https://user-images.githubusercontent.com/60719165/142766636-16cb4097-73e3-4bce-8442-b6b034687dd0.png)
+---
+## 9. FTS-UI Configuration
 
-After that you have completed the setup you may want to create a [Service](Service.md) so that FTS will run even if you close the console.
+Edit the `config.py` file in the `FreeTAKServer-UI` directory where it was installed by pip
 
+<details>
+<summary>Where is that?</summary>
 
-### Configure Web UI
-the Web UI is an optional component, however it's required to properly control FTS.
+> The FreeTAKServer-UI directory lives at the same level as the FreeTAKServer
+directory that was set in the initial configuration of FTS.
 
+>Usually that means it's inside your python packages directory.
+In virtualenv installations, it is inside the python installation in side the
+virtualenv directory.
+</details>
 
-open a new console Session and type
+### Standard UI Config
 
+Edit the IP value to your external IP, for example:
 
-```
-cd /usr/local/lib/python3.8/dist-packages/FreeTAKServer-UI
-```
-or use WinSCP to navigate
-
-![image](https://user-images.githubusercontent.com/60719165/142766762-580c8faf-c7ee-4596-a966-b59c72696c20.png)
-
-edit the file called 
-```
-config.py
-```
-![image](https://user-images.githubusercontent.com/60719165/142766782-e003c5b2-f707-4c9f-93ea-a7bef8d896c6.png)
-
-
-set the IP value to your external IP
-```
-   IP = '127.0.0.1'
-```
-for example only do not use it
-
-![image](https://user-images.githubusercontent.com/60719165/142766838-f5823555-9839-4a5e-81e3-196888215dd3.png)
-
-set the webmap IP
-```
-WEBMAPIP = YOURIP
+```python
+# this IP will be used to connect with the FTS API
+IP = '192.168.1.100'
 ```
 
-for example only do not use it
-
-![image](https://user-images.githubusercontent.com/60719165/142767734-4346ff2a-0df8-4fa6-81ea-9a5c5cbc313c.png)
+Set the web map IP address, for example:
 
 
-the port the UI uses to communicate with the backend
+```python
+# the public IP your server is exposing
+APPIP = '0.0.0.0'
+# webmap IP
+WEBMAPIP = "192.168.1.100"
+
+```
+
+In a default installation, the port should be `19023`.
+Advanced users may wish to use a different port.
+
+
+```python
+    # Port the  UI uses to communicate with the API
     PORT = '19023'
+```
+
+### Custom Secrets Configuration
  
- If you change those values in the UI you must change also the YAML file configurtation
-the API key used by the UI to comunicate with FTS. generate a new system user and then set it
+The following items can be updated to use your own secrets, however the values
+must be updated in both the `FreeTAKServer-UI/config.py` and the
+`FreeTAKServer/core/configuration/MainConfig.py` files.
 
-```
-app.config['APIKEY'] = 'Bearer [API_TOKEN]' 
-```
+The API key used by the UI to comunicate with FTS.
+Generate a new system user and then set it.
+~~What does this mean? Where is a user generated? What is a system user?~~
 
-the webSocket  key used by the UI to comunicate with FTS. must be the same value specified in the FTS config. 
- ```   
- app.config['WEBSOCKETKEY'] = '[Your_Web_socket_Key]'
- ```
+```python
+app.config['APIKEY'] = 'Bearer [API_TOKEN]'
+app.config['WEBSOCKETKEY'] = '[Your_Web_socket_Key]'
+```
  
-OPTIONAL 
-```
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + '/root/FTSDataBase.db'
-```
+### MySQL Configuration
 
-To use a MySQL database change the above line as follows
+To use a MySQL database, update the URI to point to your database.
+
+Database setup is beyond the scope of this document.
+
 ```python
 SQLALCHEMY_DATABASE_URI = 'mysql://' + 'user:pass@localhost/dbname'
- ```
- #### Additional configuration
- additional parameters for the UI are in the __init__.py
- ```
-FreeTAKServer-UI/app/__init__.py
+```
+ 
+### Miscellaneous Parameters
+
+Some additional parameters can be found in the `__init__.py` file in the
+`FreeTAKServer-UI/app/__init__.py` directory.
+
+
+These configure dashboard update frequency, ~~health pings?~~,
+~~status messages?~~, and the file size limit for data packages.
+
+```python
+app.config['USERINTERVAL'] = '180000';
+app.config['SERVERHEALTHINTERVAL'] = '180000';
+app.config['SYSSTATUSINTERVAL'] = '600000';
+app.config['DATAPACKAGESIZELIMIT'] = '15360000';
 ```
 
-this include the frequence of the update for the dashboard and the file limit for data packages
+### 10. Start UI
 
+In the terminal, navigate to the `FreeTAKServer-UI` directory wherever it was
+installed by the pip utility.
+ 
+Start the UI from the terminal using python:
+
+<details>
+<summary>
+Ubuntu
+</summary>
+
+```bash
+sudo python3 run.py
 ```
-   app.config['USERINTERVAL'] = '180000';
-    app.config['SERVERHEALTHINTERVAL'] = '180000';
-    app.config['SYSSTATUSINTERVAL'] = '600000';
-    app.config['DATAPACKAGESIZELIMIT'] = '15360000';
+ </details>
+ 
+<details>
+<summary>
+RHEL
+</summary>
+ 
+```bash
+python run.py
+```
+</details>
+
+You will see the UI server start up in your terminal, which should look similar
+to that shown below.
+
+```python
+(55501) wsgi starting up on http://0.0.0.0:5000
+(55501) accepted ('192.168.1.100', 49842)
 ```
 
- #### Installation on a Separate machine
+---
+## 11. Next Steps
+
+### Create a service
+
+To run the server without keeping the console open, a service can be created.
+
+*See: [Service](Service.md)*
+
+### Installation on a Separate machine
 Typically the web UI  is installed on the same machine as FTS, however you can install it on a separate machine and even use it to manage several instances.
+
 If you're installing FTS-UI on a separate server the following commands may help:
 
-```  Bash
+```bash
 sudo pip install WTForms==2.3.3
 sudo pip install SQLAlchemy==1.3.20
 sudo pip install eventlet
 ```
 
-you will need also to set in the config file
+The config file will also need to be updated.
 
-```
+```python
 IP = [FTS external IP]
 APPIP = [FTS-UI internal IP]
 ```
- 
- 
- ### start the UI
- in the console type navigate to the installation path 
- 
- ```
- cd /usr/local/lib/python3.8/dist-packages/FreeTAKServer-UI
- ```
- 
- type 
- 
- ```
- sudo python3 run.py
- ```
- 
- ![image](https://user-images.githubusercontent.com/60719165/142767800-e09ef09c-d6d7-4a11-bcc4-0f4a09597bb1.png)
 
-#### wtforms Form error
-NOTE: If you have an error with 'wtforms'
+## 12. Check Installation
 
-type in the console
-``` 
-pip3 install WTForms==2.3.3 
-```
-and press enter
-
-### Test FTS
-Let's make sure your FTS server can start and run without errors.
+After finishing all the steps, make sure your configuration is acceptable and
+server running properly.
 
 ```bash
 sudo python3 -m FreeTAKServer.controllers.services.FTS
@@ -330,9 +467,45 @@ If you see FTS start without error you may hit `ctrl+c` twice and move onto runn
 
 your FTS is now configured
 
-![image](https://user-images.githubusercontent.com/60719165/142767335-c8283798-877e-4fab-b264-7c70f314b3d0.png)
 
 If you have setup the UI, from the Admin console send a message hello world to the client
 
-![image](https://user-images.githubusercontent.com/60719165/142767408-8e754ffa-7102-42ac-8254-a5ba35ff6526.png)
+ 
+## Troubleshooting
 
+### Default Login
+The default credentials for the UI are `admin` and `password`.
+
+You are encouraged to update these quickly.
+
+
+### WTForms Error Troubleshooting
+
+In the event of a wtforms error, install it using pip:
+
+```bash
+pip3 install WTForms==2.3.3 
+```
+
+### Failed to Register Components
+
+Warnings about `failed to register component` are OK.
+Your system will run fine with these warnings. Starting with FTS 2.0 some future
+functionality is declared but not fully implemented.
+
+### UI Can't See Server
+
+Usually this happens when you are using an OS that has a strong default firewall.
+
+Ensure all the ports you have set in your config files are open on the firewall
+for TCP traffic.
+
+<details>
+<summary>
+RHEL
+</summary>
+
+```bash
+firewall-cmd --add-port=19023/tcp
+```
+</details>
