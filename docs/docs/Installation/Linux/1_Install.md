@@ -7,9 +7,9 @@ This guide will walk you through installing FreeTAKServer 2.0
 - Install FreeTAKServer
 - Configure and Run FreeTAKServer
 - Configure Web UI
-- Install [NodeRed](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/FreeTAKHub/NodeRedinstallation.md) for FreeTAKHub 
-- Install the [Web Map](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/FreeTAKHub/WebMap/Installation.md)
-- Install the [Video Service](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/FreeTAKHub/Video/Installation.md)
+- **TBD** ~~Install [NodeRed](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/FreeTAKHub/NodeRedinstallation.md) for FreeTAKHub~~
+- **TBD** ~~Install the [Web Map](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/FreeTAKHub/WebMap/Installation.md)~~
+- **TBD** ~~Install the [Video Service](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/FreeTAKHub/Video/Installation.md)~~
 
 ---
 ## Note: Linux Distributions
@@ -24,7 +24,9 @@ Centos/RHEL/Fedora installation instructions are provided on a best-effort volun
 Update OS Packages before proceeding with the installation
 
 <details>
-<summary>**Ubuntu**</summary>
+<summary>
+**Ubuntu**
+</summary>
 
 ```bash
 sudo apt update && sudo apt upgrade
@@ -32,7 +34,9 @@ sudo apt update && sudo apt upgrade
 </details>
 
 <details>
-<summary>**RHEL**</summary>
+<summary>
+**RHEL**
+</summary>
 
 ```bash
 sudo dnf update
@@ -43,7 +47,9 @@ sudo dnf update
 ## 2. Pre-requisite Software
 
 <details>
-<summary>**Ubuntu**</summary>
+<summary>
+**Ubuntu**
+</summary>
 
 Install packages from the distro repo
 
@@ -54,7 +60,9 @@ sudo apt install python3-dev python3-setuptools build-essential python3-gevent p
 </details>
 
 <details>
-<summary>**RHEL**</summary>
+<summary>
+**RHEL**
+</summary>
 
 Install distro repo packages
 
@@ -76,7 +84,9 @@ source venv/bin/activate
 ## 3. Install Python Libraries
 
 <details>
-<summary>**Ubuntu**</summary>
+<summary>
+**Ubuntu**
+</summary>
 
 ```bash
 sudo pip3 install wheel pycairo
@@ -87,7 +97,9 @@ Note, use of pip with sudo is not recommended and you will be warned about this!
 
 
 <details>
-<summary>**RHEL**</summary>
+<summary>
+**RHEL**
+</summary>
 
 
 ```bash
@@ -104,7 +116,9 @@ pip install wheel pycairo
 -  A previous installation was not completed
 
 <details>
-<summary>**Ubuntu**</summary>
+<summary>
+**Ubuntu**
+</summary>
 
 ```bash
 sudo pip3 uninstall FreeTAKServer
@@ -113,7 +127,9 @@ sudo pip3 uninstall FreeTAKServer-UI
 </details>
 
 <details>
-<summary>**RHEL**</summary>
+<summary>
+**RHEL**
+</summary>
 
 ```bash
 deactivate
@@ -134,7 +150,9 @@ sudo rm -r /usr/local/lib/<your-python-version>/<dist or site>-packages/FreeTAKS
 Install the FreeTAKServer  and the associated Web UI
 
 <details>
-<summary>**Ubuntu**</summary>
+<summary>
+**Ubuntu**
+</summary>
 
 ```bash
 sudo python3 -m pip install FreeTAKServer[ui]
@@ -142,7 +160,9 @@ sudo python3 -m pip install FreeTAKServer[ui]
 </details>
 
 <details>
-<summary>**RHEL**</summary>
+<summary>
+**RHEL**
+</summary>
 
 ```bash
 pip install FreeTAKServer[ui]
@@ -153,9 +173,12 @@ pip install FreeTAKServer[ui]
 The FreeTAKServer can be installed without the UI, however this makes the
 server much more difficult to use and is probably not what you want. This can be done using the `FreeTAKServer` pip package only.
 
-### Advanced Installations: 
+### Advanced Installations:
+
 <details>
-<summary>**Install a specific version**</summary>
+<summary>
+**Install a specific version**
+</summary>
 To install a special version of a FreeTAKServer pip package by appending `==version-number` to the installation command.
 
 ```bash
@@ -196,7 +219,9 @@ will need to locate older versions of this document in the repo history.
 ### Start the FreeTAKServer
 
 <details>
-<summary>**Ubuntu**</summary>
+<summary>
+**Ubuntu**
+</summary>
 
 ```bash
 sudo python3 -m FreeTAKServer.controllers.services.FTS 
@@ -204,7 +229,9 @@ sudo python3 -m FreeTAKServer.controllers.services.FTS
 </details>
 
 <details>
-<summary>**RHEL**</summary>
+<summary>
+**RHEL**
+</summary>
 
 ```bash
 python -m FreeTAKServer.controllers.services.FTS 
@@ -372,7 +399,9 @@ installed by the pip utility.
 Start the UI from the terminal using python:
 
 <details>
-<summary>**Ubuntu**</summary>
+<summary>
+**Ubuntu**
+</summary>
 
 ```bash
 sudo python3 run.py
@@ -380,7 +409,9 @@ sudo python3 run.py
  </details>
  
 <details>
-<summary>**RHEL**</summary>
+<summary>
+**RHEL**
+</summary>
  
 ```bash
 python run.py
@@ -470,7 +501,9 @@ Ensure all the ports you have set in your config files are open on the firewall
 for TCP traffic.
 
 <details>
-<summary>**RHEL**</summary>
+<summary>
+**RHEL**
+</summary>
 
 ```bash
 firewall-cmd --add-port=19023/tcp
