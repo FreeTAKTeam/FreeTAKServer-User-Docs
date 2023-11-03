@@ -108,47 +108,15 @@ Retrieve API version and supported endpoints.
 
 ### manageGeoObject 
 
-A GeoObject is an element place on a map. It has a name, characteristics, and an attitude. 
-  
-#### putGeoObject
-  
-* verb: PUT
-* endpoint /ManageGeoObject/postGeoObject
-* returns: UID
-  
-#### Parameters
+A GeoObject is an element place on a map. It has a name, characteristics, and an attitude.
 
-* GeoObject: It's the information that will determine which type will be placed on the tak maps including his icon. Please see API documentation for a list of valid entries. Since 1.7 you can also use nicknames for the geo objects.
-* longitude: OPTIONAL the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API.
-* latitude: OPTIONAL the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682).
-* how: the way in which this geo information has been acquired. Please see API documentation for a list of valid entries.
-* attitude: OPTIONAL the kind of expected behavior of the GeoObject (e.g friendly, hostile, unknown). Please see API documentation for a list of valid entries.
-* name: a string to ID the GeoObject on a map.
-* bearing: OPTIONAL since 1.7, the direction expressed in degrees (1-360). Default: 0.
-* distance: OPTIONAL since 1.7, the distance in meters from the Lat/long or address.
-* timeout: OPTIONAL the length, expressed in seconds until the point will stale out. Default is 300 seconds or 5 minutes.
-* uid: REQUIRED input parameter, need to be an existing Id for this element.
-* address: OPTIONAL address of destination if you are not sending lat/long. If sent will try to solve the exact geolocation of the destination. Possible valid examples are:
-     - Big Arkansas River Park, Wichita, KS, USA 
-     - Wichita, KS, USA 
-     - Big Arkansas River Park, Wichita
-     - and so on.
-
-##### Response
-
-   * 200 Success: uid. You have created the geoObject.
-   * [MISSING PARAMETERNAME]: you have omitted a required parameter.
-   * server error 500: you have probably misspelled the list of parameters (e.g geoObjects/supported attitude). The names are case sensitive!
-   * server error 400: you have probably an error in the format of your JSON query.
-   * server error 404: you have an error in the end point definition.
-
-### postGeoObject
+#### postGeoObject
 
 * verb: POST
 * endPoint: /ManageGeoObject/postGeoObject
 * returns: UID
  
-#### Parameters
+##### Parameters
 
 * GeoObject: It's the information that will determine which type will be placed on the tak maps including his icon. Please see API documentation for a list of valid entries. Since 1.7 you can also use nicknames for the geo objects.
 * longitude: OPTIONAL the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API.
@@ -166,7 +134,7 @@ A GeoObject is an element place on a map. It has a name, characteristics, and an
      - Big Arkansas River Park, Wichita
      - and so on.
 
-##### Example body
+###### Example body
 
 ```json
 {
@@ -182,7 +150,7 @@ A GeoObject is an element place on a map. It has a name, characteristics, and an
 }
 ```
 
-##### Example body alternate
+###### Example body alternate
 
 ```json
 {
@@ -195,7 +163,7 @@ A GeoObject is an element place on a map. It has a name, characteristics, and an
 }
 ```
 
-##### Other Example body alternate
+###### Other Example body alternate
 
 ```json
 {
@@ -211,7 +179,7 @@ A GeoObject is an element place on a map. It has a name, characteristics, and an
 }
 ```
 
-##### Example 1.7 body
+###### Example 1.7 body
 
 ```json
 {
@@ -227,7 +195,7 @@ A GeoObject is an element place on a map. It has a name, characteristics, and an
 }
 ```
 
-##### Response
+###### Response
 
 * 200 Success: uid. you have created the geoObject.
 * [MISSING PARAMETERNAME]: you have omitted a parameter that is required.
@@ -235,7 +203,7 @@ A GeoObject is an element place on a map. It has a name, characteristics, and an
 * server error 400: you have probably an error in the format of your JSON query.
 * server error 404: you have an error in the end point definition.
  
-##### Basic GeoObjects
+###### Basic GeoObjects
 
 * "Gnd Combat Infantry Rifleman",  Nickname: "Rifleman"
 * "Gnd Combat Infantry grenadier", Nickname: "Grenadier"
@@ -249,7 +217,7 @@ A GeoObject is an element place on a map. It has a name, characteristics, and an
 * "Gnd Combat Infantry Engineer",  Nickname: "Engineer"
 * "Ground"
   
-##### GeoObjects Extensions for EMS
+###### GeoObjects Extensions for EMS
 
 **Extensions since 1.7**
 
@@ -289,7 +257,7 @@ A GeoObject is an element place on a map. It has a name, characteristics, and an
 * "Other incident medical public health": "a-.-X-i-h",  Nickname: medical incident
 * "Other incident transportation vehicle accident": "a-.-X-i-t-v-a",  Nickname: vehicle accident
 
-##### List of supported Attitudes
+###### List of supported Attitudes
 
 * "friend"
 * "friendly"
@@ -300,7 +268,7 @@ A GeoObject is an element place on a map. It has a name, characteristics, and an
 * "neutral" 
 * "suspect" 
 
-##### List of supported HOW
+###### List of supported HOW
 the following list contains 
 API term : Translation in the COT 
 
@@ -344,20 +312,19 @@ update an existing geoObject coordinates (can also update other features)
 * endPoint: /ManageGeoObject/putGeoObject
 * returns: UID
 
-#### Parameters
+##### Parameters
 
-*  **REQUIRED** uid: optional input parameter, need to be an Unique Id for this element, if not present will be server generated, if sent ATAK will try to update an existing geoObject. Use `putGeoObject` instead.
-* **REQUIRED** GeoObject: It's the information that will determine which type will be placed on the tak maps including his icon. Please see API documentation for a list of valid entries.
-*  **REQUIRED**  longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API.
-*  **REQUIRED** latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682).
-*  **REQUIRED** attitude: the kind of expected behavior of the GeoObject (e.g friendly, hostile, unknown). Please see API documentation for a list of valid entries.
+* uid:  **REQUIRED**, input parameter, need to be an Unique Id for this element, if not present will be server generated, if sent ATAK will try to update an existing geoObject. Use `putGeoObject` instead.
+* longitude: **REQUIRED**, the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API.
+* latitude: **REQUIRED**, the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682).
+* attitude: **REQUIRED**, the kind of expected behavior of the GeoObject (e.g friendly, hostile, unknown). Please see API documentation for a list of valid entries.
 * how: the way in which this geo information has been acquired. Please see API documentation for a list of valid entries.
 * name: a string to ID the GeoObject on a map.
 * bearing: since 1.7, the direction expressed in degrees (1-360). 
 * distance: since 1.7, the distance in meters from the Lat/long.
 * timeout: the length, expressed in seconds until the point will stale out. Default is 300 seconds or 5 minutes.
   
-##### Example body
+###### Example body
 
 ```json
 {
@@ -369,7 +336,7 @@ update an existing geoObject coordinates (can also update other features)
 }
 ```
 
-#### Response
+##### Response
 
  * 200 with UID
 
@@ -380,7 +347,7 @@ retrieve in a array all geoObjects in a given radius. It uses JSON variables, no
 * verb: GET
 * endPoint: /ManageGeoObject/getGeoObject
 
-#### Parameters
+##### Parameters
 
 NOTE: these should be provided in the form of url encoded variables.
  * radius: radius in meters where geoObjects, default(100).
@@ -388,7 +355,7 @@ NOTE: these should be provided in the form of url encoded variables.
  * latitude: latitude from which radius is calculated, default(0).
  * attitude: (optional) the attitude which will be filtered, default(any). See list of supported attitudes above.
 
-##### Example Variables
+###### Example Variables
 
 ```json
 {
@@ -402,23 +369,23 @@ NOTE: these should be provided in the form of url encoded variables.
 *Params in the URL*
  http://[IP]:[PORT]/ManageGeoObject/getGeoObject?longitude=-77.0104&latitude=38.889&radius=5000
 
-### GetRepeatedMessages
+#### GetRepeatedMessages
 get geo objects  that are regularly resend by the servers
 * verb: GET
 * endPoint: /ManageGeoObject/GetRepeatedMessages
  
-## ManageChat
+### ManageChat
   
-### SendGeoChatObject
+#### SendGeoChatObject
    * verb: POST
    * endPoint: /ManageChat/postChatToAll
    
-#### Parameters
+##### Parameters
 
 * message: the text of the GeoChat message
 * sender: the name of the chat's sender, changing this will also change the chat room for the client.
 
-##### Example body
+###### Example body
 
 ```json
 {
@@ -426,16 +393,16 @@ get geo objects  that are regularly resend by the servers
   "sender": "Admin"
 }
 ```
-## ManageEmergency
+### ManageEmergency
 
-### postEmergency
+#### postEmergency
 
 create a emergency into the server
 
   * verb: POST
   * endPoint: /ManageEmergency/postEmergency
  
-#### Parameters
+##### Parameters
 
   * name: the name of the person that has an emergency.
   * emergencyType: the type of emergency to be displayed
@@ -444,14 +411,14 @@ create a emergency into the server
   * uid: server generated Unique Id of this element.
   * address: OPTIONAL address of emergency.
 
-#### List of supported Emergency Types
+##### List of supported Emergency Types
 
 * "911 Alert"
 * "Ring The Bell"
 * "Geo-fence Breached" 
 * "In Contact" 
 
-##### Example body
+###### Example body
 
 ```json
 {
@@ -462,7 +429,7 @@ create a emergency into the server
 }
 ```
 
-### getEmergency
+#### getEmergency
 
 get a list of current active emergencies 
 
@@ -483,7 +450,7 @@ no parameter required
   ]
 }
 ```
-### deleteEmergency
+#### deleteEmergency
 
 delete an active emergency.
 (TODO: delete of emergencies can be only done by the originator of it.)
@@ -491,12 +458,12 @@ delete an active emergency.
 * verb: DELETE
 * endPoint: /ManageEmergency/deleteEmergency
 
-#### Parameters
+##### Parameters
 
 * uid: server generated Unique Id of this emergency
 * status: if the emergency is currently active or not (on/off)
 
-##### Example body
+###### Example body
 
 ```json
 {
@@ -505,17 +472,17 @@ delete an active emergency.
 }
 ```
 
-## ManagePresence
+### ManagePresence
 
 Manage a team member position
 
-### postPresence
+#### postPresence
 
 * verb: POST
 * endPoint: /ManagePresence/postPresence
 * returns: UID
 
-#### Parameters
+##### Parameters
 
 * longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API.
 * latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)
@@ -525,7 +492,7 @@ Manage a team member position
 * team: the color of the team 
 * uid: optional Unique Id of this element. if present will update an existing element. use the put insted *V. 1.7 only If you send the UID an existing CLI will be updated#
 
-##### Example body
+###### Example body
 
 ```json
 {
@@ -539,18 +506,18 @@ Manage a team member position
 }
 ```
 
-### putPresence
+#### putPresence
 
 Updates the location of a team member
  * verb: PUT
  * endPoint: /ManagePresence/putPresence
  * returns: UID
  
- #### Parameters
+##### Parameters
 
  * uid: server generated Unique Id of this emergency
    
-## ManageRoute
+### ManageRoute
 
 manage routes on the map
 
@@ -560,7 +527,7 @@ manage routes on the map
  * endpoint: /ManageRoute/postRoute
  * returns: uid
  
-#### parameters
+##### parameters
 
  * timeout: OPTIONAL the length, expressed in seconds until the point will stale out. Default is 300 seconds or 5 minutes.
  * address: OPTIONAL address of destination. If sent will try to solve the exact geolocation of the destination. Possible valid examples are:
@@ -616,7 +583,7 @@ manage routes on the map
   "method": "Flying"
 }
 ```
-## ManageVideoStream
+### ManageVideoStream
 
 Manages creation of videos endpoints in the clients. The videos are visible under 'Video Player'
 
@@ -626,14 +593,14 @@ Manages creation of videos endpoints in the clients. The videos are visible unde
  * endpoint: /ManageVideoStream/postVideoStream
  * returns: uid
  
-#### parameters
+##### parameters
 
 * "streamAddress": the IP of the video server.
 * "streamPort": the port the video server respond to.
 * "streamPath": the unique path of the video stream* "alias": a name for the stream.
 * "streamProtocol": the type of protocol used (e.g. rtsp, rtmp, raw).
   
-##### Example body 
+###### Example body 
 
 ```json
  {
@@ -645,7 +612,7 @@ Manages creation of videos endpoints in the clients. The videos are visible unde
 }
 ```
 
-##### Example body 2
+###### Example body 2
 
 streamPort and streamPort params still required but will be ignored
 
@@ -667,7 +634,7 @@ retrieves list of stream paths
 * endpoint: /ManageVideoStream/getVideoStream
 * returns: json with path
 
-#### example return
+##### example return
 
 ``` json
 {
@@ -693,7 +660,7 @@ create a drone object with a field of view, a current aiming point a video strea
 * endpoint: /Sensor/postDrone
 * returns: DRONE_UID, SPI_UID
  
-#### parameters
+##### parameters
 
 * timeout: OPTIONAL the length, expressed in seconds until the point will stale out. Default is 300 seconds or 5 minutes.
 * name: the name of the drone, will become also the name of the video stream.
@@ -708,7 +675,7 @@ create a drone object with a field of view, a current aiming point a video strea
 * SPILongitude: longitude of target. currently will NOT work in a update message (when you send the UID).
 * SPILatitude: latitude of target. currently will NOT work in a update message (when you send the UID).
 
-##### Example body: create sensor
+###### Example body: create sensor
 
 ```json
 {
@@ -725,7 +692,7 @@ create a drone object with a field of view, a current aiming point a video strea
  }
 ```
 
-##### Example body creation: update existing sensor
+###### Example body creation: update existing sensor
  
 ```json
 {
@@ -749,7 +716,7 @@ Creates an SPI at a point or update an existing SPI. If the video source is a UA
  * endpoint: /Sensor/postSPI
  * returns: uid
  
-#### parameters
+##### parameters
 
 * timeout: OPTIONAL the length, expressed in seconds until the point will stale out. Default is 300 seconds or 5 minutes.
 * uid: OPTIONAL input parameter, needed to update existing SPI,
@@ -758,7 +725,7 @@ Creates an SPI at a point or update an existing SPI. If the video source is a UA
 * droneUid: the uid of the connected drone.
 * name: the name of the drone, will become also the name of the video stream.
 
-#### Example Body
+###### Example Body
 
 ```json
 {
@@ -771,7 +738,7 @@ Creates an SPI at a point or update an existing SPI. If the video source is a UA
 }
 ```
 
-## ManageKML
+### ManageKML
 
 allows to post a set of geo information with attached metadata in tabular format
 
@@ -784,14 +751,14 @@ allows to post a set of geo information with attached metadata in tabular format
  * endpoint: /ManageKML/postKML
  * returns: "successful" or HTTP error
 
-#### parameters
+##### parameters
 
 * name: the name of the report.
 * longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API.
 * latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682).
 * body: a JSON structure of key pairs (name, value).
 
-#### Example Body
+###### Example Body
 
 ```json
 {
