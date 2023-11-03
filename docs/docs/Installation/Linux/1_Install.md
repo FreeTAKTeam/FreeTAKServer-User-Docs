@@ -25,7 +25,7 @@ Update OS Packages before proceeding with the installation
 
 <details>
 <summary>
-**Ubuntu**
+Ubuntu
 </summary>
 
 ```bash
@@ -35,7 +35,7 @@ sudo apt update && sudo apt upgrade
 
 <details>
 <summary>
-**RHEL**
+RHEL
 </summary>
 
 ```bash
@@ -48,7 +48,7 @@ sudo dnf update
 
 <details>
 <summary>
-**Ubuntu**
+Ubuntu
 </summary>
 
 Install packages from the distro repo
@@ -61,7 +61,7 @@ sudo apt install python3-dev python3-setuptools build-essential python3-gevent p
 
 <details>
 <summary>
-**RHEL**
+RHEL
 </summary>
 
 Install distro repo packages
@@ -85,7 +85,7 @@ source venv/bin/activate
 
 <details>
 <summary>
-**Ubuntu**
+Ubuntu
 </summary>
 
 ```bash
@@ -98,7 +98,7 @@ Note, use of pip with sudo is not recommended and you will be warned about this!
 
 <details>
 <summary>
-**RHEL**
+RHEL
 </summary>
 
 
@@ -117,7 +117,7 @@ pip install wheel pycairo
 
 <details>
 <summary>
-**Ubuntu**
+Ubuntu
 </summary>
 
 ```bash
@@ -128,7 +128,7 @@ sudo pip3 uninstall FreeTAKServer-UI
 
 <details>
 <summary>
-**RHEL**
+RHEL
 </summary>
 
 ```bash
@@ -151,7 +151,7 @@ Install the FreeTAKServer  and the associated Web UI
 
 <details>
 <summary>
-**Ubuntu**
+Ubuntu
 </summary>
 
 ```bash
@@ -161,7 +161,7 @@ sudo python3 -m pip install FreeTAKServer[ui]
 
 <details>
 <summary>
-**RHEL**
+RHEL
 </summary>
 
 ```bash
@@ -177,7 +177,7 @@ server much more difficult to use and is probably not what you want. This can be
 
 <details>
 <summary>
-**Install a specific version**
+Install a specific version
 </summary>
 To install a special version of a FreeTAKServer pip package by appending `==version-number` to the installation command.
 
@@ -220,7 +220,7 @@ will need to locate older versions of this document in the repo history.
 
 <details>
 <summary>
-**Ubuntu**
+Ubuntu
 </summary>
 
 ```bash
@@ -230,7 +230,7 @@ sudo python3 -m FreeTAKServer.controllers.services.FTS
 
 <details>
 <summary>
-**RHEL**
+RHEL
 </summary>
 
 ```bash
@@ -400,7 +400,7 @@ Start the UI from the terminal using python:
 
 <details>
 <summary>
-**Ubuntu**
+Ubuntu
 </summary>
 
 ```bash
@@ -410,7 +410,7 @@ sudo python3 run.py
  
 <details>
 <summary>
-**RHEL**
+RHEL
 </summary>
  
 ```bash
@@ -502,7 +502,7 @@ for TCP traffic.
 
 <details>
 <summary>
-**RHEL**
+RHEL
 </summary>
 
 ```bash
