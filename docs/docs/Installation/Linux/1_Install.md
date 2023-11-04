@@ -35,7 +35,7 @@ sudo apt update && sudo apt upgrade
 
 <details>
 <summary>
-RHEL
+Centos/RHEL/Fedora
 </summary>
 
 ```bash
@@ -46,12 +46,14 @@ sudo dnf update
 ---
 ## 2. Pre-requisite Software
 
+
+Install packages from the distro repo
 <details>
 <summary>
 Ubuntu
 </summary>
 
-Install packages from the distro repo
+
 
 ```bash
 sudo apt update && sudo apt install python3 && sudo apt install python3-pip
@@ -61,14 +63,12 @@ sudo apt install python3-dev python3-setuptools build-essential python3-gevent p
 
 <details>
 <summary>
-RHEL
+RHEL/Centos
 </summary>
 
-Install distro repo packages
-
 ```bash
-sudo dnf group install "C Development Tools and Libraries" "Development Tools"
-sudo dnf install python3 python3-pip cairo cairo-devel python3-cairo python3-cairo-devel python3-gevent python3-lxml python3-virtualenv
+sudo dnf group install "Development Tools"
+sudo dnf install python3 pip virtualenv virtualenvwrapper cairo cairo-devel python3-gevent python3-lxml bzip2-devel libffi-devel
 ```
 
 Create and activate a virtualenv for the next steps
@@ -79,6 +79,23 @@ source venv/bin/activate
 ```
 </details>
 
+<details>
+<summary>
+Fedora
+</summary>
+
+```bash
+sudo dnf group install "Development Tools" "C Development Tools and Libraries"
+sudo dnf install python3 python3-pip cairo cairo-devel python3-cairo python3-cairo-devel python3-gevent python3-lxml python3-virtualenv
+```
+
+Create and activate a virtualenv for the next steps
+
+```bash
+virtualenv venv
+source venv/bin/activate
+```
+</details>
 
 ---
 ## 3. Install Python Libraries
@@ -98,7 +115,7 @@ Note, use of pip with sudo is not recommended and you will be warned about this!
 
 <details>
 <summary>
-RHEL
+Centos/RHEL/Fedora
 </summary>
 
 
@@ -124,19 +141,6 @@ Ubuntu
 sudo pip3 uninstall FreeTAKServer
 sudo pip3 uninstall FreeTAKServer-UI
 ```
-</details>
-
-<details>
-<summary>
-RHEL
-</summary>
-
-```bash
-deactivate
-rm -rf venv/
-pip uninstall FreeTAKServer FreeTAKServer-UI
-```
-</details>
 
 Delete the database and log folders
 
@@ -144,6 +148,25 @@ Delete the database and log folders
 sudo rm /opt/FTSDataBase.db
 sudo rm -r /usr/local/lib/<your-python-version>/<dist or site>-packages/FreeTAKServer
 ```
+</details>
+
+<details>
+<summary>
+Centos/RHEL/Fedora
+</summary>
+
+```bash
+deactivate
+rm -rf venv/
+pip uninstall FreeTAKServer FreeTAKServer-UI
+```
+
+Delete the database and log folders
+
+```bash
+sudo rm /opt/FTS/FTSDataBase.db
+```
+</details>
 
 ---
 ## 5. Install FreeTAKServer
@@ -161,7 +184,7 @@ sudo python3 -m pip install FreeTAKServer[ui]
 
 <details>
 <summary>
-RHEL
+Centos/RHEL/Fedora
 </summary>
 
 ```bash
@@ -230,7 +253,7 @@ sudo python3 -m FreeTAKServer.controllers.services.FTS
 
 <details>
 <summary>
-RHEL
+Centos/RHEL/Fedora
 </summary>
 
 ```bash
@@ -410,7 +433,7 @@ sudo python3 run.py
  
 <details>
 <summary>
-RHEL
+Centos/RHEL/Fedora
 </summary>
  
 ```bash
@@ -502,7 +525,7 @@ for TCP traffic.
 
 <details>
 <summary>
-RHEL
+Centos/RHEL/Fedora
 </summary>
 
 ```bash
