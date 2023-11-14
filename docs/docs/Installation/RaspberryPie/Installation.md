@@ -5,16 +5,21 @@ this procedure Installs FTS + UI + video Server of a Rasberry Pi
 you need a Pi with at least 4 GB RAM
 
 ## Procedure
-Need to start with new install of ubuntu 20.04 server for pi 64 from: 
+Need to start with new install of ubuntu 20.04 server for pi 64 FTS 2.x need ubuntu 22.04
+[https://cdimage.ubuntu.com/releases/22.04/release/](https://ubuntu.com/download/raspberry-pi/thank-you?version=22.04.3&architecture=server-arm64+raspi)
+Previous FTS versions works with 20.04
 https://cdimage.ubuntu.com/releases/20.04.4/release/ubuntu-20.04.3-preinstalled-server-arm64+raspi.img.xz
+
 
 download an imager
 ```
 https://www.balena.io/etcher
 ```
 follow the instructions to create a card with the image
+![image](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/assets/60719165/cdfbab6a-783f-4107-9d3c-ea8c1197500a)
 
- * insert the card into the PI
+ * insert the card into the PI 4
+ * the initial setup takes ~5 minutes on a PI 4
  * login with ubuntu / ubuntu
  * . If the RPi is connected to your router, when it boots it will display the IP grabbed from DHCP server. Write it down
  * . OS should prompt you to create a new password
@@ -30,9 +35,9 @@ sudo apt-get update; sudo reboot -n; sudo apt-get upgrade
 ```
 sudo apt install wget
 ```
- * type or copy this string to start the ZeroTouch installer
+ * type or copy this string to start the [ZeroTouch](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Ansible/ZeroTouchInstall/) installer
 ```
-wget -qO - bit.ly/ftszerotouch | sudo bash
+wget -qO - bit.ly/freetakhub2 | sudo bash
 ```
 in alternative use
 
@@ -46,9 +51,9 @@ wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation
  * In case the configuration need to be changed manually 
  *  Edit the file using [VIM](https://freetakteam.github.io/FreeTAKServer-User-Docs/administration/usingConsole/) 
  
- ```/usr/local/lib/python3.8/dist-packages/FreeTAKServer-UI/config.py``` 
+ ```/usr/local/lib/python3.11/dist-packages/FreeTAKServer-UI/config.py``` 
  * Use  
-```sudo vim /usr/local/lib/python3.8/dist-packages/FreeTAKServer-UI/config.py```
+```sudo vim /usr/local/lib/python3.11/dist-packages/FreeTAKServer-UI/config.py```
  
  * Or browse to that location with WinSCP and double-click on ‘config.py’
  * Change FTS IP (if necessary) = Your EXTERNAL IP (or ZeroTier IP) address for your RPi
