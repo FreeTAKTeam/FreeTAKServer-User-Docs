@@ -89,15 +89,21 @@ for the video server check out
 ```
 
 ## SSL connection is working but in an inconsistent way
-This has been observed on ATAK 4.7 + for functions that requires both encrypted TCP and SSL connections. the ExChcek plugin is an example of that. the main symptom on the client is that the connection to the server fails (for specific funtions). This is NOT a FTS issue, it's provoked by ATAK way to store certificates.
+ISSUE: SSL certs are not working
+Cause: the certs are duplicated on your machine
 
-### Workaround: 
+This has been observed on ATAK 4.7 + and WinTAK for functions that requires both encrypted TCP and SSL connections. the ExChcek plugin is an example of that. the main symptom on the client is that the connection to the server fails (for specific funtions). This is NOT a FTS issue, it's provoked by ATAK way to store certificates.
+
+### Workaround ATAK 
 "clear the content" using the ATAK function  
 ![image](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/assets/60719165/70561476-2252-46eb-8a9e-c7a0717b8d78)
-*create a new user with mobile certs
+* create a new user with mobile certs
 * connect to FTS using TCP
 * download new the certs
 * de-activate tcp and activate the new certs
+### Workaround WinTAK 
+* physically delete all the certs with the name (IP) of your sever from the machine in wintak the certs are located in C:\Users\[USERNAME]\AppData\Roaming\WinTAK\SslCerts
+* Proceed as above but use WinTAK certs
 
 ## Using SSL I get frequent disconnects
 This is a problem of the client not sending data. 
