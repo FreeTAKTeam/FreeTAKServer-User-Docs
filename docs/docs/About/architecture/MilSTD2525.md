@@ -60,10 +60,10 @@ a-h-X-X-X-X-X-i might represent hostile MIL-STD-2525 type X-X-X-X-X  of   Israel
    a-h-G-p-i
    might define atoms-hostile-Ground-photon cannon-infrared.
    The taxonomy currently looks like this: Note that the coding of the  sub fields are determined entirely by the preceding fields!) The    current type tree is defined here. 
-#### First position, this event describes
+#### First position, this event describes a - Atoms
 a - Atoms - this event describes an actual "thing"
 
-#### 2nd CoT affiliation of these atoms
+##### 2nd CoT affiliation of these atoms
  
  * p - Pending
  * u - Unknown
@@ -77,7 +77,7 @@ a - Atoms - this event describes an actual "thing"
  *  o - None specified
  * x - Other
  
-#### Battle dimension
+##### Battle dimension
   Taken from MIL-STD-2525 "Battle Dimension" (upper case)
  * P - Space
  * A - Air
@@ -86,11 +86,11 @@ a - Atoms - this event describes an actual "thing"
  * U - Sea Subsurface
  * SF - Special Operations Forces
 
-#### Function (dimension specific!)
+##### Function (dimension specific!)
 See MIL-STD-2525B specification for  function fields (must be upper case)     Any number of char before the first “dash”, it express also the hierarchy
 (Hundreds of options)
 
-### The event describes ...
+### The event describes b - Bits ...
 the first positiojn can also contains a b.
 
 **b - Bits** - Events in the "Bit" group (pos 1163++ ) carry meta information about raw data sources.  For example, range-doppler  radar returns or SAR imagery represent classes of information that are "bits".  However, tracks derived from such sources represent objects on the battlespace and this have event type "A-..."
@@ -98,45 +98,50 @@ The intention with the "Bit" type is to facilitate the identification of germane
 This hierarchy is not intended to replace more detailed domain-specific meta information (such as that contained in NITF image headers or the GMTI data formats), rather it is intended to provide a domain-neutral mechanism for rapid filtering of information products.
 
 #### Dimension     
-second position, Like battle dimension but for 'b' types
-#### i - Imagery
+second position, like battle dimension but for 'b' types
+##### i - Imagery
  *  e - Electro-optical
  * i - Infra red
  * s - SAR
  * v - video
  * ...
-####   r - Radar
+#####   r - Radar
  *   m - MTI data
  *                 ...
-#### d - Sensor detection events
- *  s - Seismic
+##### d - Sensor detection events
+ * s - Seismic
  * d - Doppler
  * a - Acoustic
  *  m - Motion (e.g., IR)
-####  m - Mapping
+ *  ...
+#####  m - Mapping
  * p - Designated point (rally point, etc.)
  * i - initial points
  * r - rally points
  * ...
 
-####       r - Reservation/Restriction/References 
+### The event describes r - Reservation/Restriction/References 
  Events in this category are generally "notices" about specific areas.  These events are used for deconfliction and conveyance of significant "area" conditions.  Generally, the "point" entity will describe a conical region that completely encloses the affected area.  The details entity will provide more specific bounds on precisely the region affected.
  * u - Unsafe (hostile capability)
  * o - Occupied (e.g., SOF forces on ground)
  * c - Contaminated (NBC event)
  * c - chemical
- *  x - agents, direction,
+ * x - agents, direction,
  * y
- *  z
- *   f - Flight restrictions
-####       t - Tasking (requests/orders)
+ * z
+ * f - Flight restrictions
+### The event describes     t - Tasking (requests/orders)
 Events in this category are generalized requests for service.  These may be used to request for data collection, request mesuration of a specific object, order an asset to take action against a specific point.  Generally, the "details" entity will identify the general or specific entity being tasked.
  * s - Surveillance
  * r - Relocate
  * e - Engage
- *  m - Mensurate
-
- ####     c - Capability (applied to an area)
+ * m - Mensurate
+ * x - experimental, new tasking
+ ### The event describes u - drawing (applied to an area)
+  * d - drawing
+  * r - range
+  * ...
+ ### The event describes c - Capability (applied to an area)
  * s - Surveillance
  * r - Rescue
  * f - Fires
@@ -148,6 +153,10 @@ Events in this category are generalized requests for service.  These may be used
 ### c - Communications
 TBD
 
+ ### The event describes y - reply to a task
+  * c - task completed
+  * s - task status
+  * a - aknowledge 
 
 ## mil2525 tructure
 
