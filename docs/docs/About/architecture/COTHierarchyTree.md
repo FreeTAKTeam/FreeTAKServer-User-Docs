@@ -1,11 +1,19 @@
+# Work in progress COT Hierarchy Tree
+
 <details>
-<summary># COT Hierarchy Tree</summary>
-1. a
+<summary> COT Hierarchy Tree</summary>
+    
+### Heading   
+<details>
+  <summary>1. a   </summary>  
     1. .*
-        1. 9
+        1. 9        
             1. 1
+            
                 1. 1
-    2. A
+   </details>
+    <details>
+   <summary> 2. A<summary>
         1. C
             1. F
                 1. q
@@ -1182,7 +1190,9 @@
                 4. v
                     1. a
                     2. h
-2. b
+ </details>
+ <details>
+  <summary>2. b</summary>
     1. d
         1. a
             1. c
@@ -1617,9 +1627,13 @@
             22. X
             23. Y
             24. Z
-    3. i
+            </details>
+ <details>
+  <summary>   3. i </details>
         1. v
-    4. l
+</details>
+ <details>
+  <summary>    4. l   </summary>
         1. c
             1. b
                 1. b
@@ -2167,6 +2181,8 @@
         2. O
         3. S
     8. x.*
+ </details>
+       <details>
 3. c
     1. c
     2. f
@@ -2176,6 +2192,7 @@
         1. f
     4. r
     5. s
+</details>details>
 4. r
     1. c
         1. x
@@ -2340,6 +2357,7 @@
                         7. t
                 12. v
                     1. a
+</details>details>
 5. t
     1. a
         1. c
@@ -2398,6 +2416,7 @@
                 5. e
         4. v
             1. m
+</details>details>
 6. u
     1. d
         1. c
@@ -2438,4 +2457,5 @@
         4. m
         5. p
         6. r
+</ details>
 </ details>
