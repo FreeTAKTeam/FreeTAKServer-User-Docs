@@ -100,7 +100,7 @@ This hierarchy is not intended to replace more detailed domain-specific meta inf
 #### Dimension     
 second position, like battle dimension but for 'b' types
 ##### i - Imagery
- *  e - Electro-optical
+ * e - Electro-optical
  * i - Infra red
  * s - SAR
  * v - video
@@ -122,6 +122,7 @@ second position, like battle dimension but for 'b' types
 
 ### The event describes r - Reservation/Restriction/References 
  Events in this category are generally "notices" about specific areas.  These events are used for deconfliction and conveyance of significant "area" conditions.  Generally, the "point" entity will describe a conical region that completely encloses the affected area.  The details entity will provide more specific bounds on precisely the region affected.
+ 
  * u - Unsafe (hostile capability)
  * o - Occupied (e.g., SOF forces on ground)
  * c - Contaminated (NBC event)
@@ -130,6 +131,7 @@ second position, like battle dimension but for 'b' types
  * y
  * z
  * f - Flight restrictions
+
 ### The event describes     t - Tasking (requests/orders)
 Events in this category are generalized requests for service.  These may be used to request for data collection, request mesuration of a specific object, order an asset to take action against a specific point.  Generally, the "details" entity will identify the general or specific entity being tasked.
  * s - Surveillance
@@ -151,12 +153,12 @@ Events in this category are generalized requests for service.  These may be used
  * f - Fuel
                ...
 ### c - Communications
-TBD
+ * TBD
 
- ### The event describes y - reply to a task
-  * c - task completed
-  * s - task status
-  * a - aknowledge 
+### The event describes y - reply to a task
+ * c - task completed
+ * s - task status
+ * a - aknowledge 
 
 ## mil2525 tructure
 
