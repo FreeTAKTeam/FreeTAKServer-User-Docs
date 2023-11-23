@@ -1,4 +1,6 @@
 # About Mil-STD-2525 and COTS
+The Center on Target (CoT) is a data exchange format primarily used in military and emergency response applications such as the TAK eco sytem. It's designed to facilitate real-time sharing of geospatial information among various systems and users. 
+The CoT protocol enables efficient communication of location, status, and other relevant situational data, enhancing operational awareness and coordination. MIL-STD-2525 is a military standard that specifies symbols for use on maps, charts, and other graphical displays in military command, control, communications, computers, and intelligence (C4I) system.
 The original 'NATO symbol'  are expressed as a set of Military Symbols for Land Based Systems (Mil-STD-2525). The COT system is only partially overlapping with 2525. on a list of 3000+ COTS , 1000 are directly traceable to mil 2525.
 
 ## Event.type
@@ -29,29 +31,30 @@ e.g., a-fzp-mlk-gm-...
 Field meanings are type specific.  That is, the third field of an  "atom" type may represent air vs. ground while the same field for a   "reservation" type may represent purpose.
 
 ### MEANING of 'a' in the first position  
-The "Atoms" portion of the type tree requires some additional explanation past the taxonomy defined below. The "Atoms" portion of  the type tree contains CoT defined fields and part of the MIL-STD-2525  type definition. To distinguish MIL-STD-2525 type strings from CoT defined  fields, the MIL-STD-2525 types must be represented in all upper case. Differentiation of type namespace with upper/lower case   facilitates extension of CoT types and MIL-STD-2525 types without    name space conflict. An example:
+The "Atoms" portion of the type tree requires some additional explanation past the taxonomy defined below. The "Atoms" portion of  the type tree contains CoT defined fields and part of the MIL-STD-2525  type definition. To distinguish MIL-STD-2525 type strings from CoT defined  fields, the MIL-STD-2525 types must be represented in all upper case. Differentiation of type namespace with upper/lower case   facilitates extension of CoT types and MIL-STD-2525 types without name space conflict. An example:
 ```
    a-f-A-B-C-x
-   ```
+```
+
  * a = Atom
- *  f = attitude or disposition (friendly in this case)
+ * f = attitude or disposition (friendly in this case)
  * A-B-C  =the symbol identification coding (SIDC) scheme for 2525 – a strings of 15 characters used to transmit symbols.
- *  x = non capital COT specific extension
+ * x = non capital COT specific extension
  
    The organization of CoT and MIL-STD-2525 types can be determined from the taxonomy, but additional details are provided here.
    The "Atoms" portion of the "type" tree contains the "Battle  Dimension" and  "Function ID" fields taken from MIL-STD-2525 (see below).
    "Battle Dimension" is a single character taken from   MIL-STD-2525 and is located in the position 5. 
-   
 ```
 a-.- **G** -I-M-N-B
 ```
 
 The typical 2525 representation for "Function ID" is three groups of   two characters separated by a space (e.g. "12 34 56"). The CoT  schema maps this to a "-" delimited list of characters. (e.g. "1-2-3-4-5-6").
    The concatenation of the "Battle Dimension" and "Function ID" fields from the MIL-STD-2525 specification represented in the CoT schema will be as follows:
+   
  ```
    battle dimension-func id char1-func id char2- ... -func id char6
  ```
-   When an appropriate MIL-STD-2525 type exists, it should be used. If  there is a MIL-STD-2525 representation which is close, but may be   refined, a CoT extension to the 2525 type can be appended.
+   When an appropriate MIL-STD-2525 type exists, it should be used. If  there is a MIL-STD-2525 representation which is close, but may be refined, a CoT extension to the 2525 type can be appended.
    
 For example: 
 a-h-X-X-X-X-X-i might represent hostile MIL-STD-2525 type X-X-X-X-X  of   Israeli (the 'i') manufacture. Again, the CoT extension uses lower case. 
