@@ -2350,11 +2350,12 @@ The following table combines Center On Target information found in COTTYpes.XML,
  t-x-m-c | Tasking/Mission | Mission add CONTENT |  | 23431 |  | Tasking |  |  
  t-x-m-c-l | Tasking/Mission | Mission LOG |  | 234310 |  | Tasking |  |  
  t-x-m-c-k | Tasking/Mission | Mission keyword |  | 234311 |  | Tasking |  |  
- t-x-m-c-k-u | Tasking/Mission | Mission UID_KEYWORD |  | 234312 |  | Tasking |  |
+ t-x-m-c-k-u | Tasking/Mission | Mission UID KEYWORD |  | 234312 |  | Tasking |  |
  t-x-m-c-k-c | Tasking/Mission | Mission RESOURCE_KEYWORD |  | 234313 |  | Tasking |  |
  t-x-m-c-m | Tasking/Mission | Mission METADATA |  | 234314 |  | Tasking |  |
   t-x-m-c-n | Tasking/Mission | Mission new  |  | 234315 |  | Tasking |  |
   t-x-m-c-e | Tasking/Mission | Mission EXTERNAL_DATA |  | 234316 |  | Tasking |  |
+  t-x-m-c-e | Tasking/Mission | Mission Layer         |  | 2343161 |  | Tasking |  |
   t-x-m-i | Tasking/Mission | Mission invite |  | 2343161 |  | Tasking |  |
  t-x-v-m | Tasking/Medevac | Medevac |  | 2343 |  | Tasking |  |  
  u-d-c-c | Drawing Shapes/Drawing Shapes – Circle | Drawing Shapes – Circle |  | 2344 |  | Drawing Shapes |  |  
