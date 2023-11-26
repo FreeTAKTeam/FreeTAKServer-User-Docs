@@ -112,7 +112,7 @@ This is a problem of the client not sending data.
 WinTAK: under settings/network preferences set the TCP Connection timeout higher, (e.g. 60 seconds)
 ATAK:  under settings/network preferences/ network connection preferences / TCP conection timeout  (e.g. 40 seconds)
 
-## package not found'
+## package not found
 if, trying to start FTS you get an error 'package not found'
 ```
 'package not found'
@@ -130,11 +130,12 @@ If you have issue connecting to FTS using SSL, even if you have downloaded new c
 C:\Users\[USERNAME]\AppData\Roaming\WinTAK\SslCerts
 ```
 you should have 3 certifications files in the format 
-[IP]_FreeTAKServer-Hash
-198-199-70-185_FreeTAKServer-2-a3_wbu7kirkizulslz1pstvv0xoo5qbcrr4.p12.dat2
+ * [IP]_FreeTAKServer-Hash
+ * 198-199-70-185_FreeTAKServer-2-a3_wbu7kirkizulslz1pstvv0xoo5qbcrr4.p12.dat2
+
 and another 3 in the format
-[UserNAME]Hash
-FreeTAKTeamSupporte4fddab2-6102-4ab6-a9ec-0fee8edf8b10.p12
+ * [UserNAME]Hash
+ * FreeTAKTeamSupporte4fddab2-6102-4ab6-a9ec-0fee8edf8b10.p12
 
 ## client2client datapackages
 If you have issues sending datapackages directly to clients via FTS, make sure the `-IP` argument you specified can be reached from your device.  
