@@ -102,7 +102,9 @@ This has been observed on ATAK 4.7 + and WinTAK for functions that requires both
  * download new the certs
  * de-activate tcp and activate the new certs
 ### Workaround WinTAK 
- * physically delete all the certs with the name (IP) of your sever from the machine in wintak the certs are located in C:\Users\[USERNAME]\AppData\Roaming\WinTAK\SslCerts
+ 
+ * physically delete all the certs with the name (IP) of your sever from the machine in wintak the certs are located in
+   ```C:\Users\[USERNAME]\AppData\Roaming\WinTAK\SslCerts``` 
  * Proceed as above but use WinTAK certs
 
 ## Using SSL I get frequent disconnects
