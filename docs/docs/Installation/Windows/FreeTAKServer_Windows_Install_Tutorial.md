@@ -1,362 +1,372 @@
 # FreeTAKServer Install On Windows Computer
 
-Below is the installation commands and comments for the installation of FreeTAKServer on a windows computer:
+Below is the installation commands and comments for the installation of FreeTAKServer on a Windows computer:
 
 -----------
 
 ## Install Instructions (Tested on Server Version 1.7.5. and UI v1.5.10)
 
-1. 
+1. Install python from python.org
 
-Install python from python.org
+   [Download and run the installer](https://www.python.org/downloads/windows/).
+ 
+   Choose the installer option.
+ 
+   [<img src="pythoninstall.png" width="800"/>](pythoninstall.png)
 
-Download and run the installer.
+   Check pip, tcl/tk and IDLE and the Python test suite.
 
-```
-https://www.python.org/downloads/windows/
-```
+   [<img src="features.jpg" width="800"/>](features.jpg)
 
-Choose the installer option.
+   Make sure you add Python to environment variables for easy use.
 
-[<img src="pythoninstall.jpg" width="800"/>](pythoninstall.jpg)
+   [<img src="advanced.jpg" width="800"/>](advanced.jpg)
 
-Check pip, tcl/tk and IDLE and the Python test suite.
+2. Verify python environment 
 
-[<img src="features.jpg" width="800"/>](features.jpg)
+   Check that python and pip are installed and working correctly. *You should be able to open cmd anywhere and do this check*:
 
-Make sure you add Python to environment variables for easy use.
+   ```shell
+   python -V
 
-[<img src="advanced.jpg" width="800"/>](advanced.jpg)
+   pip --version
+   ```
 
-2. 
+   [<img src="chkpypip.jpg" width="800"/>](chkpypip.jpg)
 
-Now check that python and pip are installed and working correctly. *You should be able to open cmd anywhere and do this check*:
+3. Install Python packages
 
-```
-> python -V
+   Having checked that Python and pip are working install the requirements:
 
-> pip --version
-```
+   1. Perform install one by one via pip.
 
-[<img src="chkpypip.jpg" width="800"/>](chkpypip.jpg)
+      ```shell
+      pip install flask
+      pip install flask_login
+      pip install flask_migrate
+      pip install flask_wtf
+      pip install flask_sqlalchemy
+      pip install email_validator
+      pip install waitress
 
-3. 
+      pip install coveralls
+      pip install coverage
+      pip install pytest
+      pip install flake8
+      pip install flake8-print
+      pip install pep8-naming
+      pip install selenium
+      ```
 
-Once you have checked that Python and pip are working install the requirements:
+   2. (alternate) Perform install from a file.
 
-3.1. 
-Run install one by one.
-```
-> pip install flask
-> pip install flask_login
-> pip install flask_migrate
-> pip install flask_wtf
-> pip install flask_sqlalchemy
-> pip install email_validator
-> pip install gunicorn
+      From a file Paste these requirements into a .txt file `requirements.txt` for example:
+      ```text
+      flask
+      flask_login
+      flask_migrate
+      flask_wtf
+      flask_sqlalchemy
+      email_validator
+      waitress
+      coveralls
+      coverage
+      pytest
+      flake8
+      flake8-print
+      pep8-naming
+      selenium
+      ```
 
-> pip install coveralls
-> pip install coverage
-> pip install pytest
-> pip install flake8
-> pip install flake8-print
-> pip install pep8-naming
-> pip install selenium
-```
+      Now change into the directory (`cd`) containing said `requirements.txt` file and run the command below:
 
-3.2. 
-Run install from a file.
+      ```shell
+      pip install -r requirements.txt
+      ```
+      
+   3. (alternate) Install packages via conda/mamba.
+      I recommend `micromamba` as it does not require Python to
+      be installed a priori.
+      * [micromamba install](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html)
 
-From a file Paste these requirements into a .txt file `requirements.txt` for example:
-```
-flask
-flask_login
-flask_migrate
-flask_wtf
-flask_sqlalchemy
-email_validator
-gunicorn
-coveralls
-coverage
-pytest
-flake8
-flake8-print
-pep8-naming
-selenium
-```
+      Create an environment.
+      ```shell
+      mamba create --name tak
+      mamba activate tak
+      ```
+      
+      Install the packages into the environment.      
+      ```shell
+      mamba install lxml pathlib tabulate setuptools
+      mamba install flask flask-login flask-migrate flask-wtf
+      mamba install sqlalchemy flask-sqlalchemy 
+      mamba install flake8 flake8-print 
+      mamba install email-validator
+      mamba install pytest coveralls coverage
+      mamba install pep8-naming selenium
+      mamba install waitress
+      ```     
+      
+   4. Install FreeTAKServer
+      When all the requirements have been satisfied install the FreeTAKServer and FreeTAKServerUI.
+      ```shell
+      pip install FreeTAKServer
+      pip install FreeTAKServer-UI
+      ```
+      
+      * https://pypi.org/project/FreeTAKServer/
+      * https://pypi.org/project/FreeTAKServer-UI/
 
-now CD into the directory which containes said `requirements.txt` file and run the command below:
+4. Configure the FTS
 
-```
-pip install -r requirements.txt
-```
+   After the installation has finished open the `MainConfig.py` file for editing.
 
-4. 
+   The contents must be changed fo that the Windows paths can communicate with FTS.
 
-When all the requirements have been satisfied install the FreeTAKServer.
+   ```text
+   MY PATH EXAMPLE
+   C:\Software\python\Lib\site-packages\FreeTAKServer\controllers\configuration\MainConfig.py
+   ```
 
-```
-> python -m pip install FreeTAKServer[ui]
-```
+   Edited contents for Windows machines:
 
-5. 
+   ```python
+   import os
 
-After the installation has finished open the `MainConfig.py` file for editing.
-
-The contents must be changed fo that the Windows paths can communicate with FTS.
-
-```
-MY PATH EXAMPLE
-C:\Software\python\Lib\site-packages\FreeTAKServer\controllers\configuration\MainConfig.py
-```
-
-Edited contents for windows machines:
-
-```python
-
-import os
-
-currentPath = os.path.dirname(os.path.abspath(__file__))
-from pathlib import Path
+   currentPath = os.path.dirname(os.path.abspath(__file__))
+   from pathlib import Path
 
 
-class MainConfig:
-    """
-    this is the main configuration file and is the only one which
-    should need to be changed
-    """
-    # this is the port to which clients will connect
-    CoTServicePort = int(os.environ.get('FTS_COT_PORT', 8087))
+   class MainConfig:
+     """
+     this is the main configuration file and is the only one which
+     should need to be changed
+     """
+     # this is the port to which clients will connect
+     CoTServicePort = int(os.environ.get('FTS_COT_PORT', 8087))
 
-    SSLCoTServicePort = int(os.environ.get('FTS_SSLCOT_PORT', 8089))
+     SSLCoTServicePort = int(os.environ.get('FTS_SSLCOT_PORT', 8089))
 
-    # this needs to be changed for private data packages to work
-    DataPackageServiceDefaultIP = str(os.environ.get('FTS_DP_ADDRESS', "0.0.0.0"))
+     # this needs to be changed for private data packages to work
+     DataPackageServiceDefaultIP = str(os.environ.get('FTS_DP_ADDRESS', "0.0.0.0"))
 
-    # User Connection package IP needs to be set to the IP which is used when creating the connection in your tak device
-    UserConnectionIP = str(os.environ.get('FTS_USER_ADDRESS', "0.0.0.0"))
+     # User Connection package IP needs to be set to the IP which is used when creating the connection in your tak device
+     UserConnectionIP = str(os.environ.get('FTS_USER_ADDRESS', "0.0.0.0"))
 
-    #Path to the site-packages dir in your python installation
-    python_install_path = 'C:\\Software\\python\\Lib\\site-packages'
+     #Path to the site-packages dir in your python installation
+     python_install_path = 'C:\\Software\\python\\Lib\\site-packages'
 
-    # api port
-    APIPort = os.environ.get('FTS_API_PORT', 19023)
+     # api port
+     APIPort = os.environ.get('FTS_API_PORT', 19023)
 
-    # Federation port
-    FederationPort = os.environ.get('FTS_FED_PORT', 9000)
+     # Federation port
+     FederationPort = os.environ.get('FTS_FED_PORT', 9000)
 
-    # api IP
-    APIIP = os.environ.get('FTS_API_ADDRESS', '0.0.0.0')
+     # api IP
+     APIIP = os.environ.get('FTS_API_ADDRESS', '0.0.0.0')
 
-    # allowed ip's to access CLI commands
-    AllowedCLIIPs = ['127.0.0.1']
+     # allowed ip's to access CLI commands
+     AllowedCLIIPs = ['127.0.0.1']
 
-    # IP for CLI to access
-    CLIIP = '127.0.0.1'
+     # IP for CLI to access
+     CLIIP = '127.0.0.1'
 
-    # whether or not to save CoT's to the DB
-    SaveCoTToDB = bool(os.environ.get('FTS_COT_TO_DB', True))
+     # whether to save CoT's to the DB
+     SaveCoTToDB = bool(os.environ.get('FTS_COT_TO_DB', True))
 
-    # this should be set before startup
+     # this should be set before startup
 
-    DBFilePath = str(os.environ.get('FTS_DATA_PATH', fr'{python_install_path}\\FreeTAKServer\\') + "FTSDataBase.db")
+     DBFilePath = str(os.environ.get('FTS_DATA_PATH', fr'{python_install_path}\\FreeTAKServer\\') + "FTSDataBase.db")
 
-    # the version information of the server (recommended to leave as default)
-    version = 'FreeTAKServer-1.7.5 Public'
+     # the version information of the server (recommended to leave as default)
+     version = 'FreeTAKServer-1.7.5 Public'
 
-    MainPath = str(os.environ.get('FTS_DATA_PATH',
-        Path(fr'{python_install_path}\\FreeTAKServer')))
+     MainPath = str(os.environ.get('FTS_DATA_PATH',
+                    Path(fr'{python_install_path}\\FreeTAKServer')))
 
-    ExCheckMainPath = str(Path(fr'{MainPath}\\ExCheck'))
+     ExCheckMainPath = str(Path(fr'{MainPath}\\ExCheck'))
 
-    ExCheckFilePath = str(Path(fr'{MainPath}\\ExCheck\\template'))
+     ExCheckFilePath = str(Path(fr'{MainPath}\\ExCheck\\template'))
 
-    ExCheckChecklistFilePath = str(Path(fr'{MainPath}\\ExCheck\\checklist'))
+     ExCheckChecklistFilePath = str(Path(fr'{MainPath}\\ExCheck\\checklist'))
 
-    DataPackageFilePath = str(Path(fr'{MainPath}\\FreeTAKServerDataPackageFolder'))
+     DataPackageFilePath = str(Path(fr'{MainPath} \\FreeTAKServerDataPackageFolder'))
 
-    # format of API message header should be {Authentication: Bearer 'TOKEN'}
-    from uuid import uuid4
-    id = str(uuid4())
+     # format of API message header should be {Authentication: Bearer 'TOKEN'}
+     from uuid import uuid4
+     id = str(uuid4())
 
-    nodeID = os.environ.get('FTS_NODE_ID', f"FreeTAKServer-{id}")
+     nodeID = os.environ.get('FTS_NODE_ID', f"FreeTAKServer-{id}")
 
-    # set to None if you don't want a message sent
-    ConnectionMessage = f'Welcome to FreeTAKServer {version}. The Parrot is not dead. It’s just resting'
+     # set to None if you don't want a message sent
+     ConnectionMessage = f'Welcome to FreeTAKServer {version}. The Parrot is not dead. It’s just resting'
 
-    certsPath = os.environ.get('FTS_CERTS_PATH', fr'{MainPath}/certs')
+     certsPath = os.environ.get('FTS_CERTS_PATH', fr'{MainPath}/certs')
 
-    keyDir = str(Path(fr'{certsPath}\\pubserver.key'))
+     keyDir = str(Path(fr'{certsPath}\\pubserver.key'))
 
-    pemDir = str(Path(fr'{certsPath}\\pubserver.pem'))  # or crt
+     pemDir = str(Path(fr'{certsPath}\\pubserver.pem'))  # or crt
 
-    unencryptedKey = str(Path(fr'{certsPath}\\pubserver.key.unencrypted'))
+     unencryptedKey = str(Path(fr'{certsPath}\\pubserver.key.unencrypted'))
 
-    p12Dir = str(Path(fr'{certsPath}\\pubserver.p12'))
+     p12Dir = str(Path(fr'{certsPath}\\pubserver.p12'))
 
-    CA = str(Path(fr'{certsPath}\\ca.pem'))
-    CAkey = str(Path(fr'{certsPath}\\ca.key'))
+     CA = str(Path(fr'{certsPath}\\ca.pem'))
+     CAkey = str(Path(fr'{certsPath}\\ca.key'))
 
-    federationCert = str(Path(fr'{certsPath}\\pubserver.pem'))
-    federationKey = str(Path(fr'{certsPath}\\pubserver.key'))
-    federationKeyPassword = str(os.environ.get('FTS_FED_PASSWORD','defaultpass'))
+     federationCert = str(Path(fr'{certsPath}\\pubserver.pem'))
+     federationKey = str(Path(fr'{certsPath}\\pubserver.key'))
+     federationKeyPassword = str(os.environ.get('FTS_FED_PASSWORD','defaultpass'))
     
-    # location to backup client packages
-    clientPackages = str(Path(fr'{MainPath}\\certs\\ClientPackages'))
+     # location to backup client packages
+     clientPackages = str(Path(fr'{MainPath}\\certs\\ClientPackages'))
 
-    password = str(os.environ.get('FTS_PASSWORD', 'defaultpass'))
+     password = str(os.environ.get('FTS_PASSWORD', 'defaultpass'))
 
-    websocketkey = os.environ.get('FTS_WEBSOCKET_KEY', "YourWebsocketKey")
+     websocketkey = os.environ.get('FTS_WEBSOCKET_KEY', "YourWebsocketKey")
+   ```
 
+   When finished configuring `MainConfig.py` open the `config.py` file for editing.
+   ```text
+   MY PATH EXAMPLE
+   C:\Software\python\Lib\site-packages\FreeTAKServer-UI\config.py
+   ```
 
-```
+   Edited contents for Windows machines:
 
-6. 
+   ```python
+   # -*- encoding: utf-8 -*-
+   """
+   License: MIT
+   Copyright (c) 2019 - present AppSeed.us
+   """
 
-When finished configuring `MainConfig.py` open the `config.py` file for editing
+   import os
+   from   os import environ
 
-```
-MY PATH EXAMPLE
-C:\Software\python\Lib\site-packages\FreeTAKServer-UI\config.py
-```
+   class Config(object):
 
-Edited contents for windows machines:
+     basedir    = os.path.abspath(os.path.dirname(__file__))
 
-```python
+     SECRET_KEY = 'key'
 
-# -*- encoding: utf-8 -*-
-"""
-License: MIT
-Copyright (c) 2019 - present AppSeed.us
-"""
+     # This will connect to the FTS db
+     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + 'C:\\Software\\python\\Lib\\site-packages\\FreeTAKServer\\FTSDataBase.db'
 
-import os
-from   os import environ
+     # certificates path
+     certpath = "C:\\Software\\python\\Lib\\site-packages\\FreeTAKServer\\certs\\"
 
-class Config(object):
+     # crt file path
+     crtfilepath = f"{certpath}pubserver.pem"
 
-    basedir    = os.path.abspath(os.path.dirname(__file__))
+     # key file path
+     keyfilepath = f"{certpath}pubserver.key.unencrypted"
 
-    SECRET_KEY = 'key'
+     # this IP will be used to connect with the FTS API
+     IP = '127.0.0.1'
 
-    # This will connect to the FTS db
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + 'C:\\Software\\python\\Lib\\site-packages\\FreeTAKServer\\FTSDataBase.db'
+     # Port the  UI uses to communicate with the API
+     PORT = '19023'
 
-    # certificates path
-    certpath = "C:\\Software\\python\\Lib\\site-packages\\FreeTAKServer\\certs\\"
+     # the public IP your server is exposing
+     APPIP = '127.0.0.1'
 
-    # crt file path
-    crtfilepath = f"{certpath}pubserver.pem"
+     # this port will be used to listen
+     APPPort = 5000
 
-    # key file path
-    keyfilepath = f"{certpath}pubserver.key.unencrypted"
+     # the webSocket  key used by the UI to communicate with FTS.
+     WEBSOCKETKEY = 'YourWebsocketKey'
 
-    # this IP will be used to connect with the FTS API
-    IP = '127.0.0.1'
+     # the API key used by the UI to comunicate with FTS. generate a new system user and then set it
+     APIKEY = 'Bearer token'
 
-    # Port the  UI uses to communicate with the API
-    PORT = '19023'
-
-    # the public IP your server is exposing
-    APPIP = '127.0.0.1'
-
-    # this port will be used to listen
-    APPPort = 5000
-
-    # the webSocket  key used by the UI to communicate with FTS.
-    WEBSOCKETKEY = 'YourWebsocketKey'
-
-    # the API key used by the UI to comunicate with FTS. generate a new system user and then set it
-    APIKEY = 'Bearer token'
-
-    # For 'in memory' database, please use:
-    # SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
+     # For 'in memory' database, please use:
+     # SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
             
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
+     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-    # THEME SUPPORT
-    #  if set then url_for('static', filename='', theme='')
-    #  will add the theme name to the static URL:
-    #    /static/<DEFAULT_THEME>/filename
-    # DEFAULT_THEME = "themes/dark"
-    DEFAULT_THEME = None
+     # THEME SUPPORT
+     #  if set then url_for('static', filename='', theme='')
+     #  will add the theme name to the static URL:
+     #    /static/<DEFAULT_THEME>/filename
+     # DEFAULT_THEME = "themes/dark"
+     DEFAULT_THEME = None
 
 
-class ProductionConfig(Config):
-    DEBUG = False
+   class ProductionConfig(Config):
+     DEBUG = False
 
-    # Security
-    SESSION_COOKIE_HTTPONLY = True
-    REMEMBER_COOKIE_HTTPONLY = True
-    REMEMBER_COOKIE_DURATION = 3600
+     # Security
+     SESSION_COOKIE_HTTPONLY = True
+     REMEMBER_COOKIE_HTTPONLY = True
+     REMEMBER_COOKIE_DURATION = 3600
 
-    # PostgreSQL database
-    SQLALCHEMY_DATABASE_URI = 'postgresql://{}:{}@{}:{}/{}'.format(
+     # PostgreSQL database
+     SQLALCHEMY_DATABASE_URI = 'postgresql://{}:{}@{}:{}/{}'.format(
         environ.get('APPSEED_DATABASE_USER', 'appseed'),
         environ.get('APPSEED_DATABASE_PASSWORD', 'appseed'),
         environ.get('APPSEED_DATABASE_HOST', 'db'),
         environ.get('APPSEED_DATABASE_PORT', 5432),
         environ.get('APPSEED_DATABASE_NAME', 'appseed')
-    )
+     )
 
 
-class DebugConfig(Config):
-    DEBUG = True
+   class DebugConfig(Config):
+     DEBUG = True
 
 
-config_dict = {
-    'Production': ProductionConfig,
-    'Debug': DebugConfig
-}
+   config_dict = {
+     'Production': ProductionConfig,
+     'Debug': DebugConfig
+   }
 
+   ```
 
-```
+5. Start the Server
 
-7. 
+   In order to run the server and the GUI two terminal windows must be opened and the commands below must be run:
+   
+   SERVER START COMMAND
+   ```shell
+   python -m FreeTAKServer.controllers.services.FTS
+   ```
+   UI START COMMAND
+   ```shell
+   cd C:\Software\python\Lib\site-packages\FreeTAKServer-UI
+   set FLASK_APP=run.py
+   flask run
+   ```
 
-In order to run the server and the GUI two terminal windows must be opened and the commands below must be run:
+6. Connect to the Server
 
-```
-SERVER START COMMAND
-> python -m FreeTAKServer.controllers.services.FTS
+   Now your server should be running. `User = admin`, `Password = password` and `GUI link` http://localhost:5000/
 
-UI START COMMAND
-> cd C:\Software\python\Lib\site-packages\FreeTAKServer-UI
-> set FLASK_APP=run.py
-> flask run
-```
+   [<img src="FTS_windows.gif" width="1000"/>](FTS_windows.gif)
 
-8. 
+7. Uninstall FTS
 
-Now your server should be running. `User = admin`, `Password = password` and `GUI link` http://localhost:5000/
+   To uninstall do:
+   ```shell
+   pip uninstall FreeTAKServer
+   pip uninstall FreeTAKServer-UI
+   ```
 
-[<img src="FTS_windows.gif" width="1000"/>](FTS_windows.gif)
+   Then in the `C:\Software\python\Lib\site-packages\FreeTAKServer\` delete the `FTSDataBase.db` file.
 
-9. 
-
-To uninstall do:
-
-```
-
-> pip uninstall FreeTAKServer
-> pip uninstall FreeTAKServer-UI
-
-```
-
-Then in the `C:\Software\python\Lib\site-packages\FreeTAKServer\` delete the `FTSDataBase.db` file.
-
-In the `C:\Software\python\Lib\site-packages\` path delete the `FreeTAKServer` & `FreeTAKServer-UI` folders.
+   In the `C:\Software\python\Lib\site-packages\` path delete the `FreeTAKServer` & `FreeTAKServer-UI` folders.
 
 
 ## Notes
 
-If you would like to setup a Batch file (to run the server on a double click) use the commands below:
+### Start FTS During System Start
+
+If you would like to set up a Batch file (to run the server on a double click) use the commands below:
 
 Create a `.bat` file to run the server on double click and on startup:
 
 `StartFreeTAKServer.bat`
 
-```
+```bat
 ::START THE SERVER
 ECHO ON
 start cmd /k python -m FreeTAKServer.controllers.services.FTS
@@ -366,8 +376,28 @@ set FLASK_APP=run.py
 flask run
 pause
 ```
-Now to run at startup: Go to Run (`WINDOWS + R`) and Type `shell:startup`, and paste a copy of your `StartFreeTAKServer.bat` file there.
+To run this script at startup: Go to Run (`WINDOWS + R`) and Type `shell:startup`, and paste a copy of your `StartFreeTAKServer.bat` file there.
 
-> To check python version `python -V`
+### Helper tasks
 
-> To quickely check your IP `ipconfig`
+To check python version `python -V`
+
+To quickly check your IP `ipconfig`
+
+### Platform Concerns
+
+#### `gunicorn` not available on Windows
+
+[`gunicorn`](https://gunicorn.org/)
+is not supported on Windows and is replaced by 
+[`waitress`](https://github.com/Pylons/waitress).
+
+Replace standard `gunicorn` command with `waitress-serve`.
+For example: 
+```shell
+gunicorn --listen=*:8000 myapp.wsgi:application
+```
+...becomes...
+```shell
+waitress-serve --listen=*:8000 myapp.wsgi:application
+```
