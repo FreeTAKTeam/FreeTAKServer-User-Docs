@@ -24,7 +24,7 @@ Below is the installation commands and comments for the installation of FreeTAKS
 
 2. Verify python environment 
 
-   Now check that python and pip are installed and working correctly. *You should be able to open cmd anywhere and do this check*:
+   Check that python and pip are installed and working correctly. *You should be able to open cmd anywhere and do this check*:
 
    ```shell
    python -V
@@ -47,7 +47,7 @@ Below is the installation commands and comments for the installation of FreeTAKS
       pip install flask_wtf
       pip install flask_sqlalchemy
       pip install email_validator
-      pip install gunicorn
+      pip install waitress
 
       pip install coveralls
       pip install coverage
@@ -68,7 +68,7 @@ Below is the installation commands and comments for the installation of FreeTAKS
       flask_wtf
       flask_sqlalchemy
       email_validator
-      gunicorn
+      waitress
       coveralls
       coverage
       pytest
@@ -104,8 +104,8 @@ Below is the installation commands and comments for the installation of FreeTAKS
       mamba install email-validator
       mamba install pytest coveralls coverage
       mamba install pep8-naming selenium
-      pip install gunicorn
-      ```      
+      mamba install waitress
+      ```     
       
    4. Install FreeTAKServer
       When all the requirements have been satisfied install the FreeTAKServer and FreeTAKServerUI.
@@ -131,7 +131,6 @@ Below is the installation commands and comments for the installation of FreeTAKS
    Edited contents for Windows machines:
 
    ```python
-
    import os
 
    currentPath = os.path.dirname(os.path.abspath(__file__))
@@ -384,3 +383,21 @@ To run this script at startup: Go to Run (`WINDOWS + R`) and Type `shell:startup
 To check python version `python -V`
 
 To quickly check your IP `ipconfig`
+
+### Platform Concerns
+
+#### `gunicorn` not available on Windows
+
+[`gunicorn`](https://gunicorn.org/)
+is not supported on Windows and is replaced by 
+[`waitress`](https://github.com/Pylons/waitress).
+
+Replace standard `gunicorn` command with `waitress-serve`.
+For example: 
+```shell
+gunicorn --listen=*:8000 myapp.wsgi:application
+```
+...becomes...
+```shell
+waitress-serve --listen=*:8000 myapp.wsgi:application
+```
