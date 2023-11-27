@@ -1,6 +1,6 @@
 # FreeTAKServer Install On Windows Computer
 
-Below is the installation commands and comments for the installation of FreeTAKServer on a windows computer:
+Below is the installation commands and comments for the installation of FreeTAKServer on a Windows computer:
 
 -----------
 
@@ -12,7 +12,7 @@ Below is the installation commands and comments for the installation of FreeTAKS
  
    Choose the installer option.
  
-   [<img src="pythoninstall.jpg" width="800"/>](pythoninstall.jpg)
+   [<img src="pythoninstall.png" width="800"/>](pythoninstall.png)
 
    Check pip, tcl/tk and IDLE and the Python test suite.
 
