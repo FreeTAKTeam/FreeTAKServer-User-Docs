@@ -359,6 +359,8 @@ Below is the installation commands and comments for the installation of FreeTAKS
 
 ## Notes
 
+### Start FTS During System Start
+
 If you would like to set up a Batch file (to run the server on a double click) use the commands below:
 
 Create a `.bat` file to run the server on double click and on startup:
@@ -375,8 +377,10 @@ set FLASK_APP=run.py
 flask run
 pause
 ```
-Now to run at startup: Go to Run (`WINDOWS + R`) and Type `shell:startup`, and paste a copy of your `StartFreeTAKServer.bat` file there.
+To run this script at startup: Go to Run (`WINDOWS + R`) and Type `shell:startup`, and paste a copy of your `StartFreeTAKServer.bat` file there.
 
-> To check python version `python -V`
+### Helper tasks
 
-> To quickly check your IP `ipconfig`
+To check python version `python -V`
+
+To quickly check your IP `ipconfig`
