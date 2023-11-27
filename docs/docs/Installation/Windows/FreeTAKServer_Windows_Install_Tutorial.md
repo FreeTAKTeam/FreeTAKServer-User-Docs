@@ -36,7 +36,7 @@ Below is the installation commands and comments for the installation of FreeTAKS
 
 3. Install Python packages
 
-   Once you have checked that Python and pip are working install the requirements:
+   Having checked that Python and pip are working install the requirements:
 
    1. Perform install one by one via pip.
 
@@ -83,8 +83,11 @@ Below is the installation commands and comments for the installation of FreeTAKS
       ```shell
       pip install -r requirements.txt
       ```
-
+      
    3. (alternate) Install packages via conda/mamba.
+      I recommend `micromamba` as it does not require Python to
+      be installed a priori.
+      * [micromamba install](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html)
 
       Create an environment.
       ```shell
@@ -102,13 +105,17 @@ Below is the installation commands and comments for the installation of FreeTAKS
       mamba install pytest coveralls coverage
       mamba install pep8-naming selenium
       pip install gunicorn
-      ```
-
+      ```      
+      
    4. Install FreeTAKServer
-      When all the requirements have been satisfied install the FreeTAKServer.
+      When all the requirements have been satisfied install the FreeTAKServer and FreeTAKServerUI.
       ```shell
-      pip install FreeTAKServer[ui]
+      pip install FreeTAKServer
+      pip install FreeTAKServer-UI
       ```
+      
+      * https://pypi.org/project/FreeTAKServer/
+      * https://pypi.org/project/FreeTAKServer-UI/
 
 4. Configure the FTS
 
