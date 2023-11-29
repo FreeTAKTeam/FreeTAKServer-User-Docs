@@ -5,9 +5,9 @@ Please download the web UI manual [here](https://github.com/FreeTAKTeam/FreeTAKS
 
 FreeTAK Server User Manual![](https://lh5.googleusercontent.com/ij08rxlH5r5aoXwPkDa4M2uwY3ogIZ16LG2R05Ayam3KQ2WXnd_zU4ZFS-hkDCPhkxgrgbJJ1p60b0rV79fUmCisbk5RIU0l6eNSt6AmAeNYPmYUZWyKnvtoSIyaqvH3gxIojRAh5XQ-oSeOOuxG)
 
-FTS V. 1.9.9
+FTS V. 2.1
 
-Jul 2022
+Nov 2023
 
 Release
 
@@ -41,8 +41,6 @@ WebUI is a completely separate application connecting to the FTS backend.
 It uses an API to seamless query server functions. Depending on his deployment, may or may not be seen from remote machines.
 
 ![](https://lh3.googleusercontent.com/3D8u89BbQ_yYMWHqkcqGDzKaH7dlzNa-0a1xNznvOXQZer3VbhgWw2LC_rMHAck48J0XlFIr5z_x10Ie50hzwkhJ8PjGo124_SdWmzYZrnwN6XdJTtH97cqHbLf91lA6KSl6eb2BD0ZndjIc54EU)
-
-
 
 
 ## Installation and configuration
