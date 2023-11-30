@@ -1,5 +1,5 @@
 
-this procedure Installs FTS + UI + video Server of a Rasberry Pi
+this procedure Installs FTS + UI + video Server of a Raspberry Pi
 
 ## Hardware requirements
 you need a Pi with at least 4 GB RAM
