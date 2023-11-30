@@ -182,6 +182,6 @@ Adjust FTS_CERTS_PATH to point to the newly created dir
 Create new directory for the FreeTakServerLogs
 Adjust FTS_LOGFILE_PATH to point to the newly created dir
 
-# you'r Done!
+# you're Done!
 Hit F5 to run debug
 
