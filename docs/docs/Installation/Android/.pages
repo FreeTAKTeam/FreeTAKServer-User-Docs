@@ -1,3 +1,5 @@
+title: Android
+
 nav:
-    - installUIOnAndroid.md
-    - Android.md
+    - Install UI on Android: installUIOnAndroid.md
+    - Android: Android.md
