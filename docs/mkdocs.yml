@@ -27,7 +27,8 @@ plugins:
   # This plugin won't do anything if your mkdocs.yml defines a nav or pages entry.
   - awesome-pages
   # https://github.com/jimporter/mike/
-  # - mike
+  - mike:
+      version_selector: true
   # https://github.com/oprypin/mkdocs-section-index/
   - section-index
   # https://pypi.org/project/mkdocs-jupyter/
@@ -41,3 +42,4 @@ plugins:
 extra:
   version:
     provider: mike
+    default: latest
