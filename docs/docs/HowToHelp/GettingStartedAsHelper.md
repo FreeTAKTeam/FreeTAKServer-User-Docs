@@ -40,7 +40,8 @@ A good way to start helping is to pick a task.
     * look in the planned [features](https://github.com/FreeTAKTeam/FreeTakServer/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
 * Fork the [appropriate repository](https://github.com/orgs/FreeTAKTeam/repositories)
 * Try to perform the task 
-    * to set up your machine use [this tutorial](2.DevelopmentSetup.md)
+    * to set up your machine for "VisualStudio Code" and "Pip" use [this tutorial](DevSetupPipVScode.md)
+    * to set up your machine for "PyCharm" and "Mamba" use [this tutorial](DevSetupMambaPyCharm.md)
 * Make a GutHub pull request (PR)
     * work with an FTS committer to get the PR accepted 
 
@@ -50,7 +51,7 @@ While selecting or working on a task you can get guidance at the
 
 ### writing documentation
 
-[Improve the documentation](3.WriteDocumentation.md)
+[Improve the documentation](WriteDocumentation.md)
 
 
 ## Modeler / Digital Engineer

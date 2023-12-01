@@ -7,7 +7,7 @@ theme:
   # https://squidfunk.github.io/mkdocs-material/
   # https://github.com/squidfunk/mkdocs-material/README.md
   name: 'material'
-  favicon: 'assets/FreeTAKserverIcon.ico'
+  favicon: 'assets/FTS_Circle.png'
   logo: 'assets/FTSLOGOv2.png'
   features:
     - navigation.instant

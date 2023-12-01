@@ -9,11 +9,11 @@ Here are the packages it uses:
 These packages are available for `conda`.
 
 ```shell
-mamba env create -y -f docs/docs/HowToHelp/fts-doc-environment.yml
+mamba env create -y -f docs/docs/HowToHelp/fts-doc-env.yml
 ```
 This environment includes the packages needed to construct the document products.
 ```yaml
-{!HowToHelp/fts-doc-environment.yml!}
+{!HowToHelp/fts-doc-env.yml!}
 ```
 
 ## Preview Document
@@ -39,11 +39,11 @@ This implies that `mkdocs.yml` should not contain a `nav:` element.
 ### Markdown Includes
 
 This file contains a typical example.
-The `fts-doc-environment.yml` file mentioned above is itself included using this facility.
+The `fts-doc-env.yml` file mentioned above is itself included using this facility.
 
 i.e.  
 \```yml  
-{\!HowToHelp/fts-doc-environment.yml\!}  
+{\!HowToHelp/fts-doc-env.yml\!}  
 \```
 
 ### Mike (multi-version support)

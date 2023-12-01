@@ -1,7 +1,6 @@
 # Install
 
 The official Docker image for FreeTAKServer.
-As October 2023 the docker image is not maintained by the core team. If you are technically skilled you can try to build it.
 
 ## Usage
 When using this docker container we suggested that you use the `--restart unless-stopped` flag as shown in the examples.  This will enure that the service automatically starts with the host and will restart if it encounters an error and crashes.  The port mappings in the examples are required to make the service accessable to hosts.  All environment variables are optional.  All data is stored in a single directory for ease of persistent data between container versions.

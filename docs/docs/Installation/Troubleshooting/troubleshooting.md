@@ -17,7 +17,7 @@ You need to:
  * configure the flow
 
 ## Initial setup doesn't ask to create a YAML file, how to make one manually?
-copy this code, adapting to your enviroment
+copy this code, adapting to your environment
 
 ```
 System:
