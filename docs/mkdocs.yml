@@ -19,6 +19,9 @@ theme:
 
 markdown_extensions:
   - pymdownx.superfences
+  # https://github.com/cmacmackin/markdown-include
+  - markdown_include.include:
+       base_path: docs
 
 plugins:
   # https://squidfunk.github.io/mkdocs-material/plugins/search/#configuration
