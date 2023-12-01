@@ -7,8 +7,8 @@ theme:
   # https://squidfunk.github.io/mkdocs-material/
   # https://github.com/squidfunk/mkdocs-material/README.md
   name: 'material'
-  favicon: 'resources/FreeTAKserverIcon.ico'
-  logo: 'FTSLOGOv2.png'
+  favicon: 'assets/FreeTAKserverIcon.ico'
+  logo: 'assets/FTSLOGOv2.png'
   features:
     - navigation.instant
     - navigation.tabs
@@ -27,7 +27,7 @@ plugins:
   # This plugin won't do anything if your mkdocs.yml defines a nav or pages entry.
   - awesome-pages
   # https://github.com/jimporter/mike/
-  - mike
+  # - mike
   # https://github.com/oprypin/mkdocs-section-index/
   - section-index
   # https://pypi.org/project/mkdocs-jupyter/
