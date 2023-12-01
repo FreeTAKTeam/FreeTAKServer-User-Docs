@@ -33,3 +33,4 @@ sudo python3 -m FreeTAKServer.views.CLI
 | add_api_user               | add a user and a token for API consumption                     |
 | show_api_users             | show a list of users and their tokens                          |
 | remove_api_user            | remove a user and a token for API consumption                  |
+

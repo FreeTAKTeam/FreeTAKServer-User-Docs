@@ -131,7 +131,7 @@ The user button allow to log out or to edit the current user Profile
 
 ![](https://lh4.googleusercontent.com/bzylxN7cnDQazMccEp_zNJsKJpdiS1ZY_sC93ve-3y1hadcsVUtHtOuwiEEad8GdBLltEr3rX2LZ2dQwvfShos7aBefXE-59Jldgc5RTY-2CUQ4z7uzGqXleDs3xA60ffgJXNii1uvP0ihmFlQzt)
 
-Use this screen to change the current login user password, token and group
+Use this screen to change the current login user password, token and group.
 
 
 # 2.0 Home
@@ -385,7 +385,9 @@ Allows to create and assign permission to groups. When activated, will filter wh
 
 # 6.0 Connect
 
-A menu that can be used to create Center Of Target (CoTs) using a “Human API” and send system messages to FTS users.This is a User interface to some of the FTS Public UI (see<https://freetakteam.github.io/FreeTAKServer-User-Docs/API/REST_APIDoc.html>for complete description of the API)
+A menu that can be used to create Center Of Target (CoTs) using a “Human API” and send system messages to FTS users.
+This is a User interface to some of the FTS Public UI 
+(see <https://freetakteam.github.io/FreeTAKServer-User-Docs/API/REST_API_Doc.html> for complete description of the API)
 
 
 ## 6.1 Send CoT

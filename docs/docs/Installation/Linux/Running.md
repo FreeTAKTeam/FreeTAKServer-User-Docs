@@ -1,4 +1,4 @@
-If you have not installed FreeTAKServer please follow the [installation](Install.md) guide first.
+If you have not installed FreeTAKServer please follow the [installation](1.Installation.md) guide first.
 
 
 ## Run FTS in the Console

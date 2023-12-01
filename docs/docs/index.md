@@ -38,7 +38,7 @@ FreeTAKServer is in constant development. Subscribe to the [pip RSS](https://pyp
 We are FreeTAKTeam, a group of individuals passionate about democratizing Situational Awareness through the power of technology. Read our [manifesto](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/About/Manifesto.md).
 
 ### FreeTAKTeam YouTube channel
-We have created the [FreeTAKTeam YouTube channel is youtube.com/@freetakteam](youtube.com/@freetakteam) with tutorials, use cases, and more.
+We have created the [FreeTAKTeam YouTube channel is @freetakteam](https://www.youtube.com/@freetakteam) with tutorials, use cases, and more.
 
 ### Tell us what you think!
 To discuss with our active developers, you may use:

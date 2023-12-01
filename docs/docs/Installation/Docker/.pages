@@ -1,0 +1,10 @@
+collapse_single_pages: true
+
+nav:
+    - index.md
+    - Quick_Start_Guide.md
+    - Raspberry_Pi.md
+    - CLI.md
+    - Debian.md
+    - Multiple_Servers
+    - Upgrade

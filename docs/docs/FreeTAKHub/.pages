@@ -1,0 +1,9 @@
+collapse_single_page: true
+
+nav:
+    - Integration
+    - Video
+    - VideoChecker
+    - Voice
+    - WebMap
+

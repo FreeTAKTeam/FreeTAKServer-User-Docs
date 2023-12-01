@@ -1,0 +1,4 @@
+nav:
+    - index.md
+    - AWS.md
+    - DigitalOcean_with_Terraform.md

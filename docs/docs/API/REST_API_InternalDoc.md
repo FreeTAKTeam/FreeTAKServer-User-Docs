@@ -1,6 +1,7 @@
 # REST API - Internal
-Internal APIs are primarly used by the FTS UI to communicate with the server. See also the [REST API DOC](REST_APIDoc.md) for APIs used in integration
-they may used to create other user interfaces such as CLI.
+Internal APIs are primarly used by the FTS UI to communicate with the server. 
+See also the [REST API DOC](REST_API_Doc.md) for APIs used in integration
+they may be used to create other user interfaces such as CLI.
 
 In the current release (1.9), FTS supports following Internal API :
 
@@ -20,7 +21,7 @@ there are two types of Internal API:
 - REST
 
 ## Websocket, using SocketIO
-FTS uses **SocketIO** for the comunication, ensure that you understand SOckectIO concepts:
+FTS uses **SocketIO** for the communication, ensure that you understand SocketIO concepts:
 
 - Emits: those are events sent from/to the client with requests
 - Listener: are events that client/server can subscribe to
@@ -40,10 +41,12 @@ Subscription: `connectUpdate`
 ## returns
 ```json
 {
-"starttime": "", // time at which server was started
-"version": "" // version of FTS currently running
+"starttime": "", 
+"version": "" 
 }
 ```
+- "starttime": the time at which server was started
+- "version":   the version of FTS currently running
 
 # Authenticate
 
@@ -54,13 +57,12 @@ Subscription: `connectUpdate`
   
 ## returns
   will call the event authentication on client with message body
-```{'successful': 'True'/'False'}``` dependent on whether or not
-the authentication was accepted.
+```{'successful': 'True'/'False'}``` depending on whether the authentication was accepted.
 
 ## parameters
 a JSON body in the following format
 ```json
-{"Authorization": [YOUR WEBSOCKET KEY]}
+{"Authorization": ["YOUR WEBSOCKET KEY"]}
 ```
 # Users
 ## description
@@ -74,8 +76,8 @@ a JSON message containing connected clients
 ```json
 {
   "Users":[
-    "user:"{"ip": "24.114.74.13", "callsign": "CorvoMobile", "team": "Yellow"},
-    "user:"{"ip": "24.144.79.13", "callsign": "Ghost", "team": "Blue"}
+    "user:", {"ip": "24.114.74.13", "callsign": "CorvoMobile", "team": "Yellow"},
+    "user:", {"ip": "24.144.79.13", "callsign": "Ghost", "team": "Blue"}
   ]
 }
 ```
@@ -361,9 +363,9 @@ the metadata of each user
 ```json
 {
   "systemUsers":[
-    {"Name": "Dan", "Group": "Yellow", "Token": "Token1", "Password": "psw1", , "Certs": "a.zip"},
-    {"Name": "Joe", "Group": "Yellow", "Token": "Token1", "Password": "psw1", , "Certs": "a.zip"},
-    {"Name": "Bill", "Group": "Yellow", "Token": "Token1", "Password": "psw1", , "Certs": "a.zip"}
+    {"Name": "Dan", "Group": "Yellow", "Token": "Token1", "Password": "psw1", "Certs": "a.zip"},
+    {"Name": "Joe", "Group": "Yellow", "Token": "Token1", "Password": "psw1", "Certs": "a.zip"},
+    {"Name": "Bill", "Group": "Yellow", "Token": "Token1", "Password": "psw1", "Certs": "a.zip"}
   ]
 }
 ```
@@ -439,7 +441,9 @@ code: `201`
 ### body
 ```json
 {
-  "systemUsers":[{"Name":"dan", "Group":"Yellow", "Token":"token", "Password": "psw1", "Certs":"true", "DeviceType": "mobile" }]}
+  "systemUsers":[
+    {"Name":"dan", "Group":"Yellow", "Token":"token", "Password": "psw1", "Certs":"true", "DeviceType": "mobile" }
+  ]
 }
 ```
 
@@ -693,7 +697,7 @@ return JSON data containing the following information regarding current checklis
             "initiator": "Self",
             "readCount": "0",
             "processedCount": "0"
-        }
+        },
         {
             "id": "111-111-112",
             "address": "1.1.1.1",

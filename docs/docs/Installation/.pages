@@ -1,7 +1,7 @@
 nav:
     - Tools you need: Tools.md
     - Infrastructure Planning: InfrastructurePlanning.md
-    - Video Guides.md
+    - Video_Guides.md
     - Ansible
     - Linux
     - RaspberryPie
