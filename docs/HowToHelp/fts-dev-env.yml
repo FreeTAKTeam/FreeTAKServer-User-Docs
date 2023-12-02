@@ -2,36 +2,34 @@ name: fts-dev
 channels:
 - conda-forge
 dependencies:
-- coverage>=4.0.3
-- coveralls
-- email-validator
-- flake8
-- flake8-print
-- flask
-- flask-login
-- flask-migrate
-- flask-wtf
-- flask-testing==0.8.0
-- lxml
+- coverage>=7.3.2
+- coveralls>=1.8.0
+- email-validator>=2.1.0.post1
+- flake8>=6.1.0
+- flake8-print>=5.0.0
+- flask>=3.0.0
+- flask-login>=0.6.3
+- flask-migrate>=4.0.5
+- flask-wtf>=1.2.1
+- flask-testing>=0.8.0
+- lxml>=4.9.3
 - nose>=1.3.7
-- pluggy>=0.3.1
-- pathlib
-- pep8-naming
-- platformdirs
-- pycairo
+- pluggy>=1.3.0
+- pathlib>=1.0.1
+- pep8-naming>=0.13.3
+- platformdirs>=4.0.0
+- pycairo>=1.25.1
 - python=3.11
-- selenium
-- setuptools
-- sqlalchemy
-- tabulate
-- tox==3.20.1
-- vim
-- waitress
-- pytest>=7.0.0
-- pytest-pep8>=1.0.0
-- pytest-cov>=4.0.0
-- pip
+- selenium>=4.15.2
+- setuptools>=68.2.2
+- tabulate>=0.9.0
+- tox>=4.11.4
+- vim>=9.0.2059
+- waitress>=2.1.2
+- pytest>=7.4.3
+- pytest-pep8>=1.0.6
+- pytest-cov>=4.1.0
+- pip>=23.3.1
 - pip:
-    - pytak
-    - flask_testing
-    - randomize>=0.13
+    - pytak>=6.2.0
+    - randomize>=0.14
