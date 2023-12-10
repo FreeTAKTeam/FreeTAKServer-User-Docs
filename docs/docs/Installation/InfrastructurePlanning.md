@@ -5,16 +5,15 @@ TAK Infrastructure thoughts: Give some thought to how you are going to deploy FT
  1. **Cloud** - A Digital Ocean (DO) or other virtually hosted server will allow quickest deployment and is scalable to as many users as you wish
  2. **LAN** - An RPi server located on your home/office LAN may require additional complexities for non-LAN TAK clients to access your server, e.g. dynamic
 DNS services (noip.com) and NAT port forwarding.
-**VPN** - An RPi server running as a ZeroTier (or other SD-WAN) client will mostly circumvent the need for the complexities listed above and allow any TAK
+3. **VPN** - An RPi server running as a ZeroTier (or other SD-WAN) client will mostly circumvent the need for the complexities listed above and allow any TAK
 client on the ZeroTier network to access the RPi server regardless of internet connection method (broadband, cellular data, etc.)
-**Edge** - An RPi server running on an ad hoc or local infrastructure LAN configuration – Can be setup completely off-grid and without reliance on a
+4. **Edge** - An RPi server running on an ad hoc or local infrastructure LAN configuration – Can be setup completely off-grid and without reliance on a
 functioning internet, but will suffer significant limitations in range for TAK clients to connect.
-**Hybrid off-grid** – A DO installed server or RPi with one or more of the TAK clients connected as a “bridge” to an off-grid mesh network such as Meshtastic
+5. **Hybrid off-grid** – A DO installed server or RPi with one or more of the TAK clients connected as a “bridge” to an off-grid mesh network such as Meshtastic
 LoRa. This configuration will allow any off-grid Meshtastic clients to have their communications reach all “internet-connected” TAK clients via a
 TAK client who is simultaneously connected to both the internet and mesh sides of the network.
 
 ## Network 101
-**Network 101**
 FreeTAKServer is a server application designed for use for Tactical Assault Kit (TAK) clients. Like many server applications, FreeTAKServer requires a **public IP **address in order to be accessible from outside the local network.
 
 A public IP address is a globally unique IP address that is assigned to a device by an internet service provider (ISP). Devices on the internet use public IP addresses to communicate with each other, and public IP addresses are necessary for devices to be accessible from outside the local network.
@@ -32,3 +31,17 @@ In the case of a 19.X.X.X address, it would typically be assigned to a device on
 Using private IP addresses like 19.X.X.X can help improve network security by keeping internal devices hidden from external networks, while still allowing them to communicate with each other within the private network.
 
 When you connect to the internet, your device is assigned a public IP address that can be seen by other devices on the internet. This public IP address is used to route traffic between your device and other devices on the internet. However, devices on the internet cannot directly access or see the private IP addresses used on your local network, such as a 19.X.X.X address.
+
+## Ports
+![image](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/assets/60719165/2293abf0-b5af-42e4-a7e2-4df208df3eaf)
+
+a complete FTS installation includes several components that need to have access to the 'internet'. they will typically share the same IP but have different ports that need to be open on the firewall. 
+ * 5000: Required for the Web UI
+ * 8080: Required for HTTP
+ * 8443: Required for HTTPS 
+ * 8087: required for TCP COTS
+ * 8089: required for SSL COTS
+ * 9000: Required for Federation
+ * 9997: required for the Video Server (MediaMTX)
+ * 64738: required for the Voice Server (Murmur)
+ * 1880: required for the Integration server (NodeRed)
