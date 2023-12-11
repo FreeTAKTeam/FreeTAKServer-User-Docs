@@ -12,7 +12,7 @@ in this example we will use Digital ocean.
 
 ![image](https://user-images.githubusercontent.com/60719165/142765256-c03f7653-fc80-40ab-845f-304399154313.png)
 
-4. Select Ubunbt 22.04 (LTS) x64
+4. Select Ubuntu 22.04 (LTS) x64
 5. Plan basic
 6. recomended the 15 $ Mo plan (it would work with the 5 $ plan but very slow). 
 7. For heavy production (50-100 Concurrent users) you may want to use 8 CPUS and 32 MB RAM
