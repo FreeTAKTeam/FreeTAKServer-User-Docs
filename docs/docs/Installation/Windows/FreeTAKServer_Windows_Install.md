@@ -32,9 +32,11 @@ the preferred way to install FTS is by using Pip, that would solve all the requi
 
 ## Install Instructions
 
-1. Install python 3.8 from python.org
+1. Install python 3.11 from python.org
 
    [Download and run the installer](https://www.python.org/downloads/windows/).
+   The current version is 3.12, but it makes use of Cython 3.x 
+   which is incompatible with several of the libraries used by FTS. 
  
    Choose the installer option.
  
@@ -276,7 +278,7 @@ the preferred way to install FTS is by using Pip, that would solve all the requi
      # the webSocket  key used by the UI to communicate with FTS.
      WEBSOCKETKEY = 'YourWebsocketKey'
 
-     # the API key used by the UI to comunicate with FTS. generate a new system user and then set it
+     # the API key used by the UI to communicate with FTS. generate a new system user and then set it
      APIKEY = 'Bearer token'
 
      # For 'in memory' database, please use:

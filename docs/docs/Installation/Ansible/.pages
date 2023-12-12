@@ -1,0 +1,5 @@
+title: Ansible
+
+nav:
+    - Zero Touch: ZeroTouchInstall.md
+    - Ansible: Ansible.md

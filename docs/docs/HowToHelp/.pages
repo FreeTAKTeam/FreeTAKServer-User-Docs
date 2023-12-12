@@ -1,0 +1,8 @@
+title: How to Help
+
+nav:
+    - Getting Started: GettingStartedAsHelper.md
+    - Developer:
+       - Set Up with VS Code and PIP: DevSetupPipVScode.md
+       - Set Up with PyCharm and Mamba: DevSetupMambaPyCharm.md
+    - Write Documentation: WriteDocumentation.md

@@ -8,11 +8,11 @@ Since version 1.5, FTS features automated SSL generation and deployment.
 
 The automated generation and deployment is easier, please consider using that approach.  
 
-For more details, read the FTS manual [here](https://github.com/FreeTAKTeam/FreeTakServer/blob/master/docs/FTS%20UI%20Documention.pdf).
+For more details, read the FTS manual [here](https://github.com/FreeTAKTeam/FreeTakServer/blob/master/docs/FTS_UI_Documention.pdf).
 
 # Expected File Structure
 
-![Expected File structure](FTS%20Certifications%20structure.png)
+![Expected File structure](FTS_Certifications_structure.png)
 
 # Manual SSL Installation Guide
 

@@ -110,217 +110,29 @@ Below is the installation commands and comments for the installation of FreeTAKS
    4. Install FreeTAKServer
       When all the requirements have been satisfied install the FreeTAKServer and FreeTAKServerUI.
       ```shell
-      pip install FreeTAKServer
-      pip install FreeTAKServer-UI
+      pip install FreeTAKServer[ui]==0.2.1a1
       ```
       
       * https://pypi.org/project/FreeTAKServer/
       * https://pypi.org/project/FreeTAKServer-UI/
 
-4. Configure the FTS
-
-   After the installation has finished open the `MainConfig.py` file for editing.
-
-   The contents must be changed fo that the Windows paths can communicate with FTS.
-
-   ```text
-   MY PATH EXAMPLE
-   C:\Software\python\Lib\site-packages\FreeTAKServer\controllers\configuration\MainConfig.py
-   ```
-
-   Edited contents for Windows machines:
-
-   ```python
-   import os
-
-   currentPath = os.path.dirname(os.path.abspath(__file__))
-   from pathlib import Path
-
-
-   class MainConfig:
-     """
-     this is the main configuration file and is the only one which
-     should need to be changed
-     """
-     # this is the port to which clients will connect
-     CoTServicePort = int(os.environ.get('FTS_COT_PORT', 8087))
-
-     SSLCoTServicePort = int(os.environ.get('FTS_SSLCOT_PORT', 8089))
-
-     # this needs to be changed for private data packages to work
-     DataPackageServiceDefaultIP = str(os.environ.get('FTS_DP_ADDRESS', "0.0.0.0"))
-
-     # User Connection package IP needs to be set to the IP which is used when creating the connection in your tak device
-     UserConnectionIP = str(os.environ.get('FTS_USER_ADDRESS', "0.0.0.0"))
-
-     #Path to the site-packages dir in your python installation
-     python_install_path = 'C:\\Software\\python\\Lib\\site-packages'
-
-     # api port
-     APIPort = os.environ.get('FTS_API_PORT', 19023)
-
-     # Federation port
-     FederationPort = os.environ.get('FTS_FED_PORT', 9000)
-
-     # api IP
-     APIIP = os.environ.get('FTS_API_ADDRESS', '0.0.0.0')
-
-     # allowed ip's to access CLI commands
-     AllowedCLIIPs = ['127.0.0.1']
-
-     # IP for CLI to access
-     CLIIP = '127.0.0.1'
-
-     # whether to save CoT's to the DB
-     SaveCoTToDB = bool(os.environ.get('FTS_COT_TO_DB', True))
-
-     # this should be set before startup
-
-     DBFilePath = str(os.environ.get('FTS_DATA_PATH', fr'{python_install_path}\\FreeTAKServer\\') + "FTSDataBase.db")
-
-     # the version information of the server (recommended to leave as default)
-     version = 'FreeTAKServer-1.7.5 Public'
-
-     MainPath = str(os.environ.get('FTS_DATA_PATH',
-                    Path(fr'{python_install_path}\\FreeTAKServer')))
-
-     ExCheckMainPath = str(Path(fr'{MainPath}\\ExCheck'))
-
-     ExCheckFilePath = str(Path(fr'{MainPath}\\ExCheck\\template'))
-
-     ExCheckChecklistFilePath = str(Path(fr'{MainPath}\\ExCheck\\checklist'))
-
-     DataPackageFilePath = str(Path(fr'{MainPath} \\FreeTAKServerDataPackageFolder'))
-
-     # format of API message header should be {Authentication: Bearer 'TOKEN'}
-     from uuid import uuid4
-     id = str(uuid4())
-
-     nodeID = os.environ.get('FTS_NODE_ID', f"FreeTAKServer-{id}")
-
-     # set to None if you don't want a message sent
-     ConnectionMessage = f'Welcome to FreeTAKServer {version}. The Parrot is not dead. It’s just resting'
-
-     certsPath = os.environ.get('FTS_CERTS_PATH', fr'{MainPath}/certs')
-
-     keyDir = str(Path(fr'{certsPath}\\pubserver.key'))
-
-     pemDir = str(Path(fr'{certsPath}\\pubserver.pem'))  # or crt
-
-     unencryptedKey = str(Path(fr'{certsPath}\\pubserver.key.unencrypted'))
-
-     p12Dir = str(Path(fr'{certsPath}\\pubserver.p12'))
-
-     CA = str(Path(fr'{certsPath}\\ca.pem'))
-     CAkey = str(Path(fr'{certsPath}\\ca.key'))
-
-     federationCert = str(Path(fr'{certsPath}\\pubserver.pem'))
-     federationKey = str(Path(fr'{certsPath}\\pubserver.key'))
-     federationKeyPassword = str(os.environ.get('FTS_FED_PASSWORD','defaultpass'))
-    
-     # location to backup client packages
-     clientPackages = str(Path(fr'{MainPath}\\certs\\ClientPackages'))
-
-     password = str(os.environ.get('FTS_PASSWORD', 'defaultpass'))
-
-     websocketkey = os.environ.get('FTS_WEBSOCKET_KEY', "YourWebsocketKey")
-   ```
-
-   When finished configuring `MainConfig.py` open the `config.py` file for editing.
-   ```text
-   MY PATH EXAMPLE
-   C:\Software\python\Lib\site-packages\FreeTAKServer-UI\config.py
-   ```
-
-   Edited contents for Windows machines:
-
-   ```python
-   # -*- encoding: utf-8 -*-
-   """
-   License: MIT
-   Copyright (c) 2019 - present AppSeed.us
-   """
-
-   import os
-   from   os import environ
-
-   class Config(object):
-
-     basedir    = os.path.abspath(os.path.dirname(__file__))
-
-     SECRET_KEY = 'key'
-
-     # This will connect to the FTS db
-     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + 'C:\\Software\\python\\Lib\\site-packages\\FreeTAKServer\\FTSDataBase.db'
-
-     # certificates path
-     certpath = "C:\\Software\\python\\Lib\\site-packages\\FreeTAKServer\\certs\\"
-
-     # crt file path
-     crtfilepath = f"{certpath}pubserver.pem"
-
-     # key file path
-     keyfilepath = f"{certpath}pubserver.key.unencrypted"
-
-     # this IP will be used to connect with the FTS API
-     IP = '127.0.0.1'
-
-     # Port the  UI uses to communicate with the API
-     PORT = '19023'
-
-     # the public IP your server is exposing
-     APPIP = '127.0.0.1'
-
-     # this port will be used to listen
-     APPPort = 5000
-
-     # the webSocket  key used by the UI to communicate with FTS.
-     WEBSOCKETKEY = 'YourWebsocketKey'
-
-     # the API key used by the UI to comunicate with FTS. generate a new system user and then set it
-     APIKEY = 'Bearer token'
-
-     # For 'in memory' database, please use:
-     # SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
-            
-     SQLALCHEMY_TRACK_MODIFICATIONS = False
-
-     # THEME SUPPORT
-     #  if set then url_for('static', filename='', theme='')
-     #  will add the theme name to the static URL:
-     #    /static/<DEFAULT_THEME>/filename
-     # DEFAULT_THEME = "themes/dark"
-     DEFAULT_THEME = None
-
-
-   class ProductionConfig(Config):
-     DEBUG = False
-
-     # Security
-     SESSION_COOKIE_HTTPONLY = True
-     REMEMBER_COOKIE_HTTPONLY = True
-     REMEMBER_COOKIE_DURATION = 3600
-
-     # PostgreSQL database
-     SQLALCHEMY_DATABASE_URI = 'postgresql://{}:{}@{}:{}/{}'.format(
-        environ.get('APPSEED_DATABASE_USER', 'appseed'),
-        environ.get('APPSEED_DATABASE_PASSWORD', 'appseed'),
-        environ.get('APPSEED_DATABASE_HOST', 'db'),
-        environ.get('APPSEED_DATABASE_PORT', 5432),
-        environ.get('APPSEED_DATABASE_NAME', 'appseed')
-     )
-
-
-   class DebugConfig(Config):
-     DEBUG = True
-
-
-   config_dict = {
-     'Production': ProductionConfig,
-     'Debug': DebugConfig
-   }
-
-   ```
+4. Configure the `FreeTakServer[UI]`
+
+   After the installation has finished the services need to be configured.
+ 
+   Configure the `FreeTakServer` by editing the `<site-packages>\FreeTAKServer\core\configuration\MainConfig.py` file.
+ 
+   Path examples:
+   * native Windows install: `C:\Software\python\Lib\site-packages\FreeTAKServer\core\configuration\MainConfig.py`
+   * conda env named `tak`: `C:\Users\user\micromamba\envs\tak\Lib\site-packages\FreeTAKServer\core\configuration\MainConfig.py`
+
+   Configure the `FreeTAKServer-UI` by editing the `<site-packages>\FreeTAKServer-UI\config.py` file.
+ 
+   Path examples:
+   * native Windows install: `C:\Software\python\Lib\site-packages\FreeTAKServer-UI\config.py`
+   * conda env named `tak`: `C:\Users\user\micromamba\envs\tak\Lib\site-packages\FreeTAKServer-UI\config.py`
+
+   FreeTakServer
 
 5. Start the Server
 
@@ -376,7 +188,8 @@ set FLASK_APP=run.py
 flask run
 pause
 ```
-To run this script at startup: Go to Run (`WINDOWS + R`) and Type `shell:startup`, and paste a copy of your `StartFreeTAKServer.bat` file there.
+To run this script at startup: Go to Run (`WINDOWS + R`) and Type `shell:startup`, 
+and paste a copy of your `StartFreeTAKServer.bat` file there.
 
 ### Helper tasks
 

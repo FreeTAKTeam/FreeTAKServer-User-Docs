@@ -1,0 +1,6 @@
+title: Troubleshooting
+
+nav:
+    - FAQ: troubleshooting.md
+    - InstallationCheck.md
+    - SocketIssue.md

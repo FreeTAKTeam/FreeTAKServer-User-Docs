@@ -1,4 +1,4 @@
-#CLI Access
+# CLI Access
 ## Accessing the CLI
 With the docker container isolating the running instance you also need to use docker to access the cli.
 ```bash
