@@ -2,7 +2,7 @@ title: Linux
 
 nav:
     - Installation: 1.Installation.md
-    - Manual Configuration: 3.ManualConfiguration.md
+    - Manual Configuration: ManualConfiguration.md
     - Running from Terminal: Running.md
     - Running as a Service: Service.md
     - Upgrading: Update.md
