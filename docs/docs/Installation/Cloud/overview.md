@@ -27,7 +27,7 @@ in this example we will use Digital ocean.
 11.  Press "create droplet"
 
 ### Setup you access to the VM 
-- download winSCP and Putty
+- download [winSCP and Putty](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Tools/)
 - open Puttygen 
 
 #### Web
