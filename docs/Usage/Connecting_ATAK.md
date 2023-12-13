@@ -14,7 +14,7 @@ The easiest way  is to open this article in your Android phone, so that all the 
 * Secondary  https://files.civtak.org/ (use CivTAK Community OwnCloud Repo) 
 
 #### Download configurations
-* [Configuration `fts-official-pub.zip`](fts-official-pub.zip) 
+* [Configuration `fts-official-pub.zip`](../assets/fts-official-pub.zip) 
 This configuration includes `fts-offical-pub.pref`:
 ```xml
 <?xml version='1.0' standalone='yes'?>

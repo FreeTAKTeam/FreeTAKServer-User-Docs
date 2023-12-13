@@ -1,4 +1,5 @@
 nav:
     - FAQ.md
-    - FeaturesCompared.md
-    - Manifesto.md
+    - Feature Comparison: FeaturesCompared.md
+    - Free TAK Manifesto: Manifesto.md
+    - Public Server: PubServer.md
