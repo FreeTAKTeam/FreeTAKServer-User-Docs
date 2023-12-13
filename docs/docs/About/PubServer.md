@@ -1,5 +1,9 @@
 ## Connecting to FTS Public Server 
 
+[![DigitalOcean Referral Badge](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg)](https://www.digitalocean.com/?refcode=f107fe7b7131&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
+
+We support a public instance of FTS hosted by DigitalOcean.
+
 The Public server (PUB) is an instance of FTS made available for you to test and play with. We are not going to spy on you, but keep in mind that information will be shared with all the connected users. For production consider to install your own instance.
 
 ### FTS Public Instance Server Rules
