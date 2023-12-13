@@ -64,7 +64,8 @@ You can also support the project by buying one of our [T-Shirts](http://tee.pub/
 NOTE: We are not big fans of Paypal, but it is the easiest and most accessible way we have found for enabling some form of funding. We hope to implement a more ethical system in the future.
 
 ### Public Instance
-We support a [public instance](https://www.reddit.com/r/ATAK/wiki/index/freetakserver) of FTS.
+[![DigitalOcean Referral Badge](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg)](https://www.digitalocean.com/?refcode=f107fe7b7131&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
+We support a [public instance]() of FTS.
 
-- download the configuration [here](https://drive.google.com/file/d/1IK1LfPN13EWikHaMyOuDDwIerNGz-Wli)
+- download the configuration [here](docs/docs/assets/fts-official-pub.zip)
 - use the Import Manager in ATAK to import the configuration.
