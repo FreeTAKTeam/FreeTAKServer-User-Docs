@@ -3,7 +3,7 @@
 <img src="assets/FTSLOGOv2.png" width="200" height="200" alt="FTS Logo">
 
 FreeTAKServer (FTS) is a Python3 implementation of the TAK Server
-for devices like [ATAK-CIV](https://play.google.com/store/apps/details?id=com.atakmap.app.civ), [WinTAK](https://www.civtak.org/2020/09/23/wintak-is-publicly-available/), and [iTAK](https://apps.apple.com/us/app/itak/id1561656396).
+for devices like [ATAK-CIV](https://play.google.com/store/apps/details?id=com.atakmap.app.civ), [`WinTAK`](https://www.civtak.org/2020/09/23/wintak-is-publicly-available/), and [iTAK](https://apps.apple.com/us/app/itak/id1561656396).
 FTS is a cross-platform project that,
 as of release 1.9,
 provides Situational Awareness and other capabilities such as:
@@ -13,7 +13,7 @@ provides Situational Awareness and other capabilities such as:
 - Data Package upload and retrieval
 - Image transfer and storage
 - COT recording in a database
-- Execution of common task lists (using the ExCheck plugin for WinTAK; ATAK plugin only available to users with tak.gov access)
+- Execution of common task lists (using the `ExCheck` plugin for `WinTAK`; `ATAK` plugin only available to users with tak.gov access)
 - SSL Encryption
 - Command Line Interface for start and stop services
 - REST API for the creation of information such as emergency, Enemy units, and so on
@@ -55,7 +55,10 @@ To discuss with our active developers, you may use:
  - Are you a fellow Redditor? Join us on the [TAK subreddit](https://www.reddit.com/r/ATAK/)!
 
 ### Donate Back
-The FreeTAKTeam is working daily developing an open solution. We plan to do more than just replicating the functionalities of the legacy TAK server. Check out our road map [@FreeTakServer#25](https://github.com/FreeTAKTeam/FreeTakServer/issues/25) to see what is currently in the works. It includes a lot of cool ideas.
+The FreeTAKTeam is working daily developing an open solution.
+We plan to do more than just replicating the functionalities of the legacy TAK server.
+Check out our road map [@FreeTakServer#25](https://github.com/FreeTAKTeam/FreeTakServer/issues/25) to see what is currently in the works.
+It includes a lot of cool ideas.
 
 We are doing it for free because
 we believe that donating personal time to a cause is an endeavor that is worthy per se.
@@ -71,7 +74,9 @@ please consider sending a contribution: [DONATE](https://www.paypal.com/cgi-bin/
 
 You can also support the project by buying one of our [T-Shirts](http://tee.pub/lic/elARpZYCmaw)
 
-NOTE: We are not big fans of Paypal, but it is the easiest and most accessible way we have found for enabling some form of funding. We hope to implement a more ethical system in the future.
+NOTE: We are not big fans of `Paypal`,
+but it is the easiest and most accessible way we have found for enabling some form of funding.
+We hope to implement a more ethical system in the future.
 
 ### Public Instance
 
@@ -80,5 +85,5 @@ NOTE: We are not big fans of Paypal, but it is the easiest and most accessible w
 We support a public instance of FTS hosted by DigitalOcean.
 
 - download the configuration [here](assets/fts-official-pub.zip)
-- use the Import Manager in ATAK to import the configuration.
+- use the Import Manager in `ATAK` to import the configuration.
 - for a full tutorial see the [article](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/About/PubServer.md)
