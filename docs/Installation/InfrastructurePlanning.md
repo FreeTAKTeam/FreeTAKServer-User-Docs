@@ -15,7 +15,6 @@ LoRa. This configuration will allow any off-grid Meshtastic clients to have thei
 TAK client who is simultaneously connected to both the internet and mesh sides of the network.
 
 ## Network 101
-**Network 101**
 FreeTAKServer is a server application designed for use for Tactical Assault Kit (TAK) clients. Like many server applications, FreeTAKServer requires a **public IP **address in order to be accessible from outside the local network.
 
 A public IP address is a globally unique IP address that is assigned to a device by an internet service provider (ISP). Devices on the internet use public IP addresses to communicate with each other, and public IP addresses are necessary for devices to be accessible from outside the local network.
@@ -38,4 +37,18 @@ In the case of a 192.168.X.X address, it would typically be assigned to a device
 
 Using private IP addresses like 192.168.X.X may help improve network security by keeping internal devices hidden from external networks, while still allowing them to communicate with each other within the private network.
 
-When you connect to the internet, your device is assigned a public IP address that can be seen by other devices on the internet. This public IP address is used to route traffic between your device and other devices on the internet. However, devices on the internet cannot directly access or see the private IP addresses used on your local network, such as a 192.168.X.X address.
+When you connect to the internet, your device is assigned a public IP address that can be seen by other devices on the internet. This public IP address is used to route traffic between your device and other devices on the internet. However, devices on the internet cannot directly access or see the private IP addresses used on your local network, such as a 19.X.X.X address.
+
+## Ports
+![image](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/assets/60719165/2293abf0-b5af-42e4-a7e2-4df208df3eaf)
+
+a complete FTS installation includes several components that need to have access to the 'internet'. they will typically share the same IP but have different ports that need to be open on the firewall. 
+ * 5000: Required for the Web UI
+ * 8080: Required for HTTP
+ * 8443: Required for HTTPS 
+ * 8087: required for TCP COTS
+ * 8089: required for SSL COTS
+ * 9000: Required for Federation
+ * 9997: required for the Video Server (MediaMTX)
+ * 64738: required for the Voice Server (Murmur)
+ * 1880: required for the Integration server (NodeRed)

@@ -23,24 +23,15 @@ markdown_extensions:
        base_path: docs
 
 plugins:
-  # https://squidfunk.github.io/mkdocs-material/plugins/search/#configuration
   - search
-  # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin/
-  # This plugin won't do anything if your mkdocs.yml defines a nav or pages entry.
   - awesome-pages
-  # https://github.com/jimporter/mike/
   - mike:
       version_selector: true
-  # https://github.com/oprypin/mkdocs-section-index/
   - section-index
-  # https://pypi.org/project/mkdocs-jupyter/
-  # - mkdocs-jupyter
-  # https://github.com/zhaoterryy/mkdocs-pdf-export-plugin
   - pdf-export:
       verbose: true
       media_type: print
       enabled_if_env: ENABLE_PDF_EXPORT
-  # https://github.com/cmacmackin/markdown-include
   - markdown-include
 
 extra:

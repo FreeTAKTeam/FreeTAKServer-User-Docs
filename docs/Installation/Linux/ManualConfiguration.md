@@ -1,7 +1,7 @@
 # Manual Configuration
 
 ### Configure FreeTAKServer < 1.9
-![image](https://user-images.githubusercontent.com/60719165/124500136-9aafa500-dd95-11eb-8aa8-67ffda7076f0.png)
+![image](../images/configure_fts.png)
 
 Depending on the linux distro your config file for FTS will be in a python version dependant location.
 you can use pip to discover the location. Type:
@@ -34,22 +34,22 @@ you need to change the `DBFilePath` value to something valid, if you are running
 
 Original Value
 ```python
-    # this should be set before startup
-    DBFilePath = str(r'/opt/FTSDataBase.db')
+# this should be set before startup
+DBFilePath = str(r'/opt/FTSDataBase.db')
 ```
 
 As roots Home Folder
 
 ```python
-    # this should be set before startup
-    DBFilePath = str(r'/root/FTSDataBase.db')
+# this should be set before startup
+DBFilePath = str(r'/root/FTSDataBase.db')
 ```
 ###  MySQL database
 FTS supports an abstraction layer, so it's easy to use a different database like MySQL. MYSQL is still experimental support, so use at your own risk.
 To switch to a MySQL database
 ```python
-    # this should be set before startup
-    DBFilePath = str('user:pass@localhost/dbname')
+# this should be set before startup
+DBFilePath = str('user:pass@localhost/dbname')
 ```
 
 And then under

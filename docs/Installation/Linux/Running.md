@@ -1,4 +1,4 @@
-If you have not installed FreeTAKServer please follow the [installation](1.Installation.md) guide first.
+If you have not installed FreeTAKServer please follow the [installation](Installation.md) guide first.
 
 
 ## Run FTS in the Console
@@ -6,7 +6,8 @@ If you have not installed FreeTAKServer please follow the [installation](1.Insta
 ```bash
 sudo python3 -m FreeTAKServer.controllers.services.FTS
 ```
-If you have FTS running in the terminal how you would like it's time to move on to running FTS as a [service](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Linux/Service/).
+If you have FTS running in the terminal how you like;
+it is time to move on to running FTS as a [service](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Linux/Service/).
 
 ## Legacy Parameters
 those parameters were supported in previous version of FTS
