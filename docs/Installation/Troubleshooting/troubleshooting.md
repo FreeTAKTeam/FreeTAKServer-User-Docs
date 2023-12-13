@@ -144,7 +144,7 @@ C:\Users\[USERNAME]\AppData\Roaming\WinTAK\SslCerts
 ```
 you should have 3 certifications files of the form:
 
- * [IP]_FreeTAKServer-Hash
+ * \[IP]_FreeTAKServer-Hash
  * 198-199-70-185_FreeTAKServer-2-a3_wbu7kirkizulslz1pstvv0xoo5qbcrr4.p12.dat2
 
 and another 3 of the form:
