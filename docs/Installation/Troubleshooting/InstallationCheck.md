@@ -4,8 +4,8 @@
 
 Open a web browser to:
 
-```
-http://<YOUR_IP_ADDRESS>:5000/
+```text
+http://[YOUR_IP_ADDRESS]:5000/
 ```
 default  <http://127.0.0.1:5000/>
 
@@ -21,8 +21,8 @@ default  <http://127.0.0.1:5000/>
 
 Open a web browser to:
 
-```
-http://<YOUR_IP_ADDRESS>:9997/v1/config/get
+```text
+http://[YOUR_IP_ADDRESS]:9997/v1/config/get
 ```
 default  <http://127.0.0.1:9997/v1/config/get/>
 
@@ -39,7 +39,7 @@ Confirm the configuration (which is in `json` format):
   "writeTimeout": "10s",
   "readBufferCount": 512,
   "api": true,
-  "apiAddress": "<YOUR_IP_ADDRESS>:9997",
+  "apiAddress": "[YOUR_IP_ADDRESS]:9997",
   "metrics": false,
   "metricsAddress": "127.0.0.1:9998",
   "pprof": false,
@@ -111,8 +111,8 @@ Confirm the configuration (which is in `json` format):
 ## Check the FreeTAKHub Server (or Node-RED Server)
 
 Open a web browser to:
-```
-http://<YOUR_IP_ADDRESS>:1880/
+```text
+http://[YOUR_IP_ADDRESS]:1880/
 ```
 default  <http://127.0.0.1:1880/>
 
@@ -123,4 +123,4 @@ default  <http://127.0.0.1:1880/>
 see [NodeRed](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/FreeTAKHub/Integration/NodeRedinstallation.md) for more information
 
 ## Check Voice server
-connect a client to <YOUR_IP_ADDRESS>:64738
+connect a client to `[YOUR_IP_ADDRESS]:64738`

@@ -10,29 +10,25 @@ We have now created a script that will fix the issue re-creating the CRL.
 
 Please follow the steps below. Note that if you are trying to use this with 2.x.y the next step is not necessary:
 
- 1. Install DigitalPy>=0.3.9.1 (the version where CRL regeneration support was added) with the following command:
-
-```
-pip install DigitalPy>=0.3.9.1
-```
-
- 2. Now execute the CRL-Regen utility. The location of the certs would under /path/to/fts/certs/ca.pem typically would be /opt/fts/certs:
-
-```
- python3 -m digitalpy.core.security.crl_regen --ca-pem-path /opt/fts/certs/ca.pem --ca-key-path /opt/fts/certs/ca.key --crl-path /opt/fts/certs/FTS_CRL.json
-```
-
- 3. Now stop FTS:
-
-```
- sudo systemctl stop fts && sudo pkill python
-```
- 4. Finally restart your system for good measure (not required but recommended to ensure CRL updates are applied)
-```
+1. Install DigitalPy>=0.3.9.1 (the version where CRL regeneration support was added) with the following command:
+    ```shell
+    pip install DigitalPy>=0.3.9.1
+    ```
+2. Now execute the CRL-Regen utility. The location of the certs would under /path/to/fts/certs/ca.pem typically would be /opt/fts/certs:
+    ```shell
+     python3 -m digitalpy.core.security.crl_regen --ca-pem-path /opt/fts/certs/ca.pem --ca-key-path /opt/fts/certs/ca.key --crl-path /opt/fts/certs/FTS_CRL.json
+    ```
+3. Now stop FTS:
+    ```shell
+     sudo systemctl stop fts && sudo pkill python
+    ```
+4. Finally, restart your system for good measure (not required but recommended to ensure CRL updates are applied)
+```shell
 sudo reboot -n
 ```
-* note: the your FTS certs directory can generally be found at
-```
+
+* note: the FTS certs directory can generally be found at
+```shell
 /usr/local/lib/python{{ python_version }}/dist-packages/FreeTAKServer/certs
 ```
 
@@ -40,24 +36,24 @@ sudo reboot -n
 If you have an issue with SSL probably depends on a limited amount of socket files you can open on the machine.
 in a console type
 
-```
+```bash
 ulimit -n
 ```
 If you get 1024 or less you will need to increase the allowed file descriptors for the user.
 
 The procedure on Ubuntu 20.04 and 22.04 is this:
 
-```
+```bash
 sudo sed -i 's/DefaultLimitNOFILE=1024/DefaultLimitNOFILE=1048576 /g' /etc/systemd/system.conf
 ```
 
 
-```
+```bash
 grep NOFILE /etc/systemd/system.conf DefaultLimitNOFILE=1048576
 ```
 or
 open the file with an editor
-```
+```bash
 vi /etc/systemd/system.conf
 ```
 
@@ -66,57 +62,60 @@ Uncomment DefaultLimitNOFILE and set your limit there, e.
 
 Restart with:
 
-```
+```bash
 shutdown -r 0
 ```
 Then, check the user file descriptor limit again:
 
-```
+```bash
 ulimit -n
 ```
 
 Before:
 
+```bash
+ulimit -n
+ulimit -Sn
+ulimit -Hn
 ```
-$ ulimit -n
+```text
 1024
-
-$ ulimit -Sn
 1024
-
-$ ulimit -Hn
 1024
 ```
 
 After:
 
+```bash
+ulimit -n
+ulimit -Sn
+ulimit -Hn
 ```
-$ ulimit -n
+```text
 1048576
-
-$ ulimit -Sn
 1048576
-
-$ ulimit -Hn
 1048576
 ```
-The limits can be controlled by systemd and this is what we do here — instruct systemd to set it to 100k.
+
+The limits can be controlled by systemd and this is what we do here 
+— instruct systemd to set it to 100k.
 Note that this setting will apply to all users
 
 by increasing the soft limit for no file here
-/etc/security/limits.conf
+`/etc/security/limits.conf`
 
-you should be able to increase this time, try 20000 and in theory the time should multiply 20x
-so you should be able to run for about 40 hours uninterrupted
-the file may also be under the path /etc/limits.conf
+you should be able to increase this time, 
+try 20000 and in theory the time should multiply 20x.
+so, you should be able to run for about 40 hours uninterrupted
+the file may also be under the path `/etc/limits.conf`
 also add this line:
 
-```
+```text
 fs.file-max = 65536
 ```
-to this file: /etc/sysctl.conf
+to this file: `/etc/sysctl.conf`
 then restart and check file limits with this
 
-```
+```bash
 ulimit -Sn
 ```

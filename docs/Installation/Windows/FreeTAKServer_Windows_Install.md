@@ -5,7 +5,8 @@ Please notice, the FTS team is not supporting Windows as an official OS for FTS.
 Please contact the original authors.
 
 ## FreeTAKServer Manager For Windows 
-[FreeTAKServer Manager]( https://github.com/Cale-Torino/FreeTAKServer_Manager)  has the ability to Start, Stop, Restart, Install and Uninstall the FreeTAKServer & FreeTAKServer-UI.
+[FreeTAKServer Manager]( https://github.com/Cale-Torino/FreeTAKServer_Manager) has the ability to
+Start, Stop, Restart, Install, and Uninstall the FreeTAKServer & FreeTAKServer-UI.
 
 ## release version 1.5.12
 
@@ -40,15 +41,15 @@ the preferred way to install FTS is by using Pip, that would solve all the requi
  
    Choose the installer option.
  
-   [<img src="pythoninstall.png" width="800"/>](pythoninstall.png)
+   ![](pythoninstall.png)
 
    Check pip, tcl/tk and IDLE and the Python test suite.
 
-   [<img src="features.jpg" width="800"/>](features.jpg)
+   ![](features.jpg)
 
    Make sure you add Python to environment variables for easy use.
 
-   [<img src="advanced.jpg" width="800"/>](advanced.jpg)
+   ![](advanced.jpg)
 
 2. Verify python environment 
 
@@ -59,7 +60,7 @@ the preferred way to install FTS is by using Pip, that would solve all the requi
    python -V
    pip --version
    ```
-   [<img src="chkpypip.jpg" width="800"/>](chkpypip.jpg)
+   ![](chkpypip.jpg)
 
 3. Install Python packages
 
@@ -369,7 +370,7 @@ and paste a copy of your `StartFreeTAKServer.bat` file there.
 
 COT error v1.5.13
 
-[<img src="CotError.png" width="800"/>](CotError.png)
+![](CotError.png)
 
 ## More Info
 

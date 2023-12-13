@@ -1,0 +1,6 @@
+[Unit]
+After=network.target
+[Service]
+ExecStart=/usr/local/bin/FTH-webmap-linux-0.2.5  /usr/local/etc/webMAP_config.json
+[Install]
+WantedBy=multi-user.target

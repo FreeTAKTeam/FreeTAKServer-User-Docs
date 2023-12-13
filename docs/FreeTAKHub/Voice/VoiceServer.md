@@ -4,19 +4,19 @@ the FTH Voice server is based on Mumble
 to install it manually:
 * open a console terminal
 * Do some cleaning
-```
+```bash
 sudo apt-get update
 sudo apt-get upgrade
 ```
-* If will be asked to confirm installing any packages. Type Y and press Enter.
+* If asked to confirm installing any packages; then, type `Y` and press Enter.
 
 * Now Install Mumble Server.
-```
+```bash
 sudo apt-get install mumble-server
 ```
 
-as soon it' started you may want to configure it
-```
+as soon it is started you may want to configure it
+```bash
 sudo dpkg-reconfigure mumble-server
 ```
 
@@ -31,21 +31,23 @@ you will accept the default value of Yes because we want Mumble-Server to run wh
 Even if this will be a dedicated Mumble-Server, Now select Yes since this will ensure the lowest possible latency.
 
 ### Mumble SuperUser Password
-SuperUser is the highest-level administrative account for the server. You’ll need to log in to Mumble with this user when you want to manage the server.
+SuperUser is the highest-level administrative account for the server. 
+You will need to log in to Mumble with this user when you want to manage the server.
 
 ![image](https://user-images.githubusercontent.com/60719165/159131862-e9dc9b27-9974-4fd4-8db9-0c97cad064db.png)
 
-Type a password, press Tab to select Ok, and press Enter.
+Type a password, press `Tab` to select `Ok`, and press Enter.
 
 ## Init configuration
-you will need to edit some configuration file. 
-with WinSCP navigate to 
-```
+you will need to edit some configuration files.
+
+Using `WinSCP` navigate to 
+```text
 /etc/mumble-server.ini
 ```
 
-In general you want to setp the following:
-```
+In general, you want to set the following values:
+```text
 ; Port to bind TCP and UDP sockets to you can leave the standard.
 port=64738
 ; Password to join server.
@@ -56,4 +58,4 @@ bandwidth=
 users=
 registerName=
 ```
-check out the complete file for more info
+examine the complete file for more info.

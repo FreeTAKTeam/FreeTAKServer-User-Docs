@@ -357,7 +357,10 @@ must be updated in both the `FreeTAKServer-UI/config.py` and the
 
 The API key used by the UI to communicate with FTS.
 Generate a new system user and then set it.
-~~What does this mean? Where is a user generated? What is a system user?~~
+
+[//]: # (What does this mean?)
+[//]: # (Where is a user generated?)
+[//]: # (What is a system user?)
 
 ```python
 app.config['APIKEY'] = 'Bearer [API_TOKEN]'

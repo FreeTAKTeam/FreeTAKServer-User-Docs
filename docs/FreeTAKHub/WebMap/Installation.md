@@ -1,6 +1,9 @@
 ## About webmap
-The webmap provides insights of user presence and COTS shared with everyone. Also in his NodeRed version can create certain types of CoT.
-there are 2 versions of the webmap:
+The webmap provides insights of user presence and COTS shared with everyone.
+Also in his NodeRed version can create certain types of CoT.
+
+There are 2 versions of the webmap:
+
 1.  webMap NodeRed Flow version
 2.  webMap Compiled version 
 
@@ -10,22 +13,22 @@ the webmap Flow works with all systems that supports Nodered. Advanced users sho
 
 ## Installation 
 get the webmap.json the last release:
-```
-https://github.com/FreeTAKTeam/FreeTAKHub-Webmap/releases
-```
+
+<https://github.com/FreeTAKTeam/FreeTAKHub-Webmap/releases>
+
 import the flow into node red
 
 ![image](https://user-images.githubusercontent.com/60719165/177557386-7b928582-fc87-4141-9cf5-713f5ff11b46.png)
 
 
-in the FTS UI edit the file config.py /
-change the lines:
-```
-    # webmap IP
-    WEBMAPIP = "[YOURIP]"
+in the FTS UI edit the file `config.py`
+changing the lines:
+```text
+# webmap IP
+WEBMAPIP = "[YOURIP]"
 
-    # webmap port
-    WEBMAPPORT = *1880*
+# webmap port
+WEBMAPPORT = *1880*
 ```
 
 manage palette
@@ -38,29 +41,31 @@ install/update the required nodes
 
 
 # Compiled version
-The compiled version of the webmap work only with AMD64 CPU. Can installed with the ZeroTOuch installer or manually following the instructions below.
+The compiled version of the webmap work only with AMD64 CPU.
+Can be installed with the `ZeroTouch` installer
+or manually following the instructions below.
 
  ## NOTICE
-the webmap is not a background app, so it needs to remain open to receive information and will not persist it.
-So to test ensure that you have connected users and do no switch to other tabs.
+the webmap is not a background app;
+so, it needs to remain open to receive information and will not persist it;
+so, to test ensure that you have connected users and do not switch to other tabs.
 
 
 ## Installation 
 
 get the link of the last release:
-```
-https://github.com/FreeTAKTeam/FreeTAKHub/releases/download/v0.2.5/FTH-webmap-linux-0.2.5.zip
-```
+
+<https://github.com/FreeTAKTeam/FreeTAKHub/releases/download/v0.2.5/FTH-webmap-linux-0.2.5.zip>
+
 login to your server and go to the opt folder
 
-```
+```bash
 cd /opt
 ```
 
 the console type  
 
-
-```
+```bash
 wget https://github.com/FreeTAKTeam/FreeTAKHub/releases/download/v0.2.5/FTH-webmap-linux-0.2.5.zip
 ```
 to download the zip file
@@ -68,34 +73,34 @@ to download the zip file
 ![image](https://user-images.githubusercontent.com/60719165/142767625-c871e45a-8d0f-49ab-95ff-ddb2f99bfe8d.png)
 
 install Unzip
-```
+```bash
 sudo apt install unzip
 ```
 
 unzip the package
-```
+```bash
 unzip FTH-webmap-linux-0.2.5.zip
 ```
 
 make the file an executable
-```
+```bash
 sudo chmod +x FTH-webmap-linux-0.2.5
 ```
 edit the config file webMAP_config.json
 set FTH_FTS_URL to the IP and port of your FTS
 
-```
+```text
   "FTH_FTS_URL": "[YOUR_FTS_IP]" 
   "FTH_FTS_TCP_Port": [YOUR_FTS_PORT]
 ```
 
 in the console type:
-```
-./[package_name] /[PATHTOCONFIGURATIONFILE]/webMAP_config.json
+```bash
+./[package_name]/[PATHTOCONFIGURATIONFILE]/webMAP_config.json
 ```
 
 e.g. if your configuration file is under opt
-```
+```bash
 ./FTH-webmap-linux-0.2.5 /opt/webMAP_config.json
 ```
 
@@ -111,34 +116,28 @@ now connect a TAK client to see if that displays
 Systemd is the service manager used by Ubuntu, Debian and many other Linux distributions, and allows to launch rtsp-simple-server on boot.
 
 move the executable
-```
+```bash
 sudo mv FTH-webmap-linux-0.2.5 /usr/local/bin/
 ```
 
 and configuration in the system:
 
-```
+```bash
 sudo mv webMAP_config.json /usr/local/etc/
 ```
 
-Create the service. copy this complete text and paste into the console:
-```
-sudo tee /etc/systemd/system/webMap.service >/dev/null << EOF
-[Unit]
-After=network.target
-[Service]
-ExecStart=/usr/local/bin/FTH-webmap-linux-0.2.5  /usr/local/etc/webMAP_config.json
-[Install]
-WantedBy=multi-user.target
-EOF
+Create the service. 
+Copy this complete text and paste into `/etc/systemd/system/webmap.service`:
+```ini
+{!FreeTAKHub/WebMap/webmap.service!}
 ```
 
 Enable the service:
-```
+```bash
 sudo systemctl enable webMap.service
 ```
 
 start the service
-```
+```bash
 sudo systemctl start webMap.service
 ```

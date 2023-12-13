@@ -24,7 +24,7 @@ For Windows installations:
 
     See also: <https://www.sitepoint.com/wsl2/>
 
-1. Install the WSL Ubuntu 20.04 distribution.
+1. Install the WSL Ubuntu 22.04 distribution.
 
     See: <https://www.microsoft.com/en-us/p/ubuntu-2004-lts/9n6svws3rx71>
 
