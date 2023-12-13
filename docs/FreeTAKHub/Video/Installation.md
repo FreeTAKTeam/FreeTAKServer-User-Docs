@@ -56,9 +56,9 @@ sudo systemctl enable mediamtx.service
 ```
 
 ## Test your video Installation
-in a browser type this address
+in a browser resolve and use this address
 
-<http://[YOURSERVERIP]:9997/v1/config/get>
+<http://<YOURSERVERIP>:9997/v1/config/get>
 
 if you see your configuration the server is up and running
 

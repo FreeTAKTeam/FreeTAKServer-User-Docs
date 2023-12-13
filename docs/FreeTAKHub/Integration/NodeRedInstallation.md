@@ -26,7 +26,7 @@ node-red-start
 ```
 Navigate to your Node-RED:
 
-<http://[IP]:1880>
+<http://localhost:1880>
 
 # Install Using APT (advanced users)
 To install Node-RED with APT you will need to:
@@ -125,7 +125,8 @@ To shut it back down you can use:
 sudo systemctl stop node-red
 ```
 ## Test Your Installation 
-Point a browser back at the server’s port 1880 and verify that Node-RED is back up. e.g. if your server is installed under the IP 143.198.39.135
+Point a browser back at the server’s port 1880 and verify that Node-RED is back up.
+e.g. if your server is installed under the IP 143.198.39.135
 
 <http://143.198.39.135:1880/>
 
@@ -155,7 +156,11 @@ Success!!!!
 
 # Secure Node-RED
 
-By default, Node-RED is installed with no authentication to the user interface (UI), also called the "Editor".  This means that anyone with your IP address can make changes to any of your flows, or even add malicious flows to your Node-RED instance.  Once your Node-RED instance is up-and-running, you should **immediately** secure the editor with a password, at a minimum.
+By default, Node-RED is installed with no authentication to the user interface (UI), also called the "Editor".
+This means that anyone with your IP address can make changes to any of your flows,
+or even add malicious flows to your Node-RED instance.
+Once your Node-RED instance is up-and-running,
+you should **immediately** secure the editor with a password, at a minimum.
 
 The following will get you started on securing the Node-RED editor with a password.  
 For more details on how to secure Node-RED, see the Node-RED docs here:
@@ -184,7 +189,8 @@ Uncomment the adminAuth section
  CRTL+X
 ```
 
-You can now login to your Node-RED editor [YOUR-IP-ADDRESS]:1880.  The default user name is admin, and the default password is password.
+You can now log in to your Node-RED editor `[YOUR-IP-ADDRESS]:1880`.
+The default username is `admin`, and the default password is `password`.
 This isn't enough.  
 You'll want to create a unique password, which will require creating a password hash.  
 This is detailed in the Node-RED docs here:
