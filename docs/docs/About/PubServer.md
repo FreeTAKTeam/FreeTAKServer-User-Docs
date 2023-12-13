@@ -16,7 +16,7 @@ Download required files
 The easiest way is to open this article in your Android phone, so that all the files will be already available there.
 
 * Download and Install ATAK  from the [TAK Product Center](https://www.tak.gov/) or [Mirror](https://7n7.us/civtak)
-* Download the Server Configuration File - [FTS Server Configuration File](https://drive.google.com/open?id=1IK1LfPN13EWikHaMyOuDDwIerNGz-Wli)
+* Download the Server Configuration File - [FTS Server Configuration File](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/assets/fts-official-pub.zip)
 * Download the Basic Mapsources - [Basic Mapsources](https://drive.google.com/file/d/1u6xADO_kYolguf9-rXGZHtRgu-Cx_il4/view?usp=sharing)
 * Optional: Download Additional Maps - [Additional TAK Mapsources](https://drive.google.com/file/d/1Ltdp2U7ItEu6b380u9BYswVHLSD9F-vn/view?usp=sharing)
 
