@@ -19,7 +19,6 @@ theme:
 
 markdown_extensions:
   - pymdownx.superfences
-  # https://github.com/cmacmackin/markdown-include
   - markdown_include.include:
        base_path: docs
 
@@ -41,6 +40,8 @@ plugins:
       verbose: true
       media_type: print
       enabled_if_env: ENABLE_PDF_EXPORT
+  # https://github.com/cmacmackin/markdown-include
+  - markdown-include
 
 extra:
   version:

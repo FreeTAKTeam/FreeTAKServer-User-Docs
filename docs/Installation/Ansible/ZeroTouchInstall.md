@@ -1,6 +1,6 @@
 # Zero Touch Installation
 the ZeroTouch (ZT or ZTI) installation is the simplest way to install FTS. 
-Has been tested on the [cloud](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Cloud/0_ConfigureMachine/) and on the [Raspberry Pi](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/RaspberryPie/Installation/).
+Has been tested on the [cloud](../Cloud/overview.md) and on the [Raspberry Pi](../RaspberryPie/Installation.md).
 However, only on Digital Ocean cloud you will have the perfect experience, where all is installed and configured. 
 
 ## Instructions
@@ -75,7 +75,7 @@ This script will install and configure FreeTAKHub components.
 
 
 
-![FreeTAK 1 9 9 ZTI deployment](https://user-images.githubusercontent.com/60719165/207360218-a7b7a619-4cb0-4234-b7bb-9f74910019f6.png)
+![FreeTAK 1 9 9 ZTI deployment](../images/zero-touch-deploy.png)
 
 
 # Custom Deployment (Advanced)
@@ -94,9 +94,9 @@ wget -qO rb.gy/ocghax | sudo bash
 
 # Verify your installation
 at the end of the ZT you will see a report that will provide credentials and a play recap
-![image](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/assets/60719165/47afb1a2-76db-44d0-becb-b66708f80289)
+![image](../images/zero-touch-summary.png)
 you may now proceed to 
-[Installation Check](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/Installation/Troubleshooting/InstallationCheck.md)
+[Installation Check](../Troubleshooting/InstallationCheck.md)
 
 ## Services
 the current name of the services installed by the Zero Touch :
@@ -119,6 +119,6 @@ systemctl status [SERVICENAME].service
 ```
 to get the exact location
 
-[how to start / stop / enable  a service?](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Linux/Service/)
+[how to start / stop / enable  a service?](../Linux/Service.md)
 
 

@@ -7,9 +7,10 @@ Open a web browser to:
 ```
 http://<YOUR_IP_ADDRESS>:5000/
 ```
+default  <http://127.0.0.1:5000/>
 
 - login with your credentials
-- by default is admin/password (you should immediately change the standard password) 
+  - by default is user: `admin`, password: `password` (you should promptly change the default password) 
 - check whether services are OK (blue)
 ![image](https://user-images.githubusercontent.com/60719165/148986287-0c83aa3f-e909-4b38-bc81-d66cddb08f89.png)
 - connect a client to the server
@@ -23,6 +24,7 @@ Open a web browser to:
 ```
 http://<YOUR_IP_ADDRESS>:9997/v1/config/get
 ```
+default  <http://127.0.0.1:9997/v1/config/get/>
 
 Confirm the configuration (which is in `json` format):
 
@@ -109,12 +111,15 @@ Confirm the configuration (which is in `json` format):
 ## Check the FreeTAKHub Server (or Node-RED Server)
 
 Open a web browser to:
-
 ```
 http://<YOUR_IP_ADDRESS>:1880/
 ```
+default  <http://127.0.0.1:1880/>
 
-Confirm you see a login prompt.
+- login with your credentials
+  - by default is user: `admin`, password: `password` (you should promptly change the default password) 
+  - these are the same credentials used previously
+
 see [NodeRed](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/FreeTAKHub/Integration/NodeRedinstallation.md) for more information
 
 ## Check Voice server
