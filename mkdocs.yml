@@ -32,7 +32,6 @@ plugins:
       verbose: true
       media_type: print
       enabled_if_env: ENABLE_PDF_EXPORT
-  - markdown-include
 
 extra:
   version:
