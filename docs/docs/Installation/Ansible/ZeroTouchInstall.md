@@ -77,18 +77,22 @@ the current name of the services installed by the Zero Touch :
 * nodered.service
 * rtsp-simple-server.service
 
-
 use 
 ```
  systemctl list-units --type=service
 ```
 to see if they are installed and active
 
-use
+to get the exact location/status use
 ```
 systemctl status [SERVICENAME].service
 ```
-to get the exact location
+
+
+this command will output the status of all the services
+```
+sudo systemctl status fts.service fts-ui.service mumble-server.service nodered.service rtsp-simple-server.service
+```
 
  [how to start / stop / enable  a service?](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Linux/Service/)
 
