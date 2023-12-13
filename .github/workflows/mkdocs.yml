@@ -13,5 +13,6 @@ jobs:
         with:
           python-version: 3.x
       - run: pip install mkdocs-material mkdocs-awesome-pages-plugin \
-                mkdocs-section-index mkdocs-toc-sidebar-plugin mike
+                mkdocs-section-index mkdocs-toc-sidebar-plugin mike \
+                markdown-include mkdocs-pdf-export-plugin
       - run: cd docs && mkdocs gh-deploy --force
