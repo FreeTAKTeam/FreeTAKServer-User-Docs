@@ -1,9 +1,11 @@
 # FreeTAKServer Compared
 Users have spoken: FTS is the best TAK server on github!
 
+## Star History
 
-<img src="https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/assets/60719165/4557f24b-cf13-4475-9adc-73c4d37e1834" alt="stars" width="600"/>
-<img src="https://user-images.githubusercontent.com/60719165/214121500-4170ffb8-761d-4d01-b9cb-17ec103e8b0c.png" alt="stars" width="200"/>
+[![Star History Chart](https://api.star-history.com/svg?repos=FreeTAKTeam/FreeTakServer,TAK-Product-Center/Server,tkuester/taky&type=Date)](https://star-history.com/#FreeTAKTeam/FreeTakServer&TAK-Product-Center/Server&tkuester/taky&Date)
+
+
 
 *Legend*
 
@@ -49,6 +51,9 @@ Users have spoken: FTS is the best TAK server on github!
 | Android Edition     |      Ø              |      X        |     O (Extended) |      X       |
 | Cloud Support       |      O              |      X        |     O (Extended) |      X       |
 | Recommended OS      |      Ubuntu 20.04   |      CentOS   |     Ubuntu 22.04 |      ???     |
-| Language            |      Python 3.8     |      Java     |     Python 3.10  |      ???     |
+| Language            |      Python 3.8     |      Java     |     Python 3.11  |      ???     |
 
 
+ ## Past stars hystory
+ <img src="https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/assets/60719165/4557f24b-cf13-4475-9adc-73c4d37e1834" alt="stars" width="200"/>
+<img src="https://user-images.githubusercontent.com/60719165/214121500-4170ffb8-761d-4d01-b9cb-17ec103e8b0c.png" alt="stars" width="200"/>
