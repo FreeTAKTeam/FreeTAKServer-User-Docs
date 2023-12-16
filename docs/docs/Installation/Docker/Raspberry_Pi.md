@@ -1,3 +1,13 @@
+# Warning! Old Documentation Ahead!
+
+The documentation below is for the **OLD** FTS container implementation and is not correct.
+
+If you are following these instructions, you will probably not get the result you want.
+
+New documentation is in the works, and will be released ASAP.
+
+---
+
 # Raspberry Pi 4/Raspberry Pi 3
 It is recommended to use a Raspberry Pi 4 with 4GB or 8GB of ram.
 

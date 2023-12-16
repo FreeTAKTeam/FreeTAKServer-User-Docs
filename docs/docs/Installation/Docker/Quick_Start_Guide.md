@@ -1,3 +1,12 @@
+# Warning! Old Documentation Ahead!
+
+The documentation below is for the **OLD** FTS container implementation and is not correct.
+
+If you are following these instructions, you will probably not get the result you want.
+
+New documentation is in the works, and will be released ASAP.
+
+---
 
 This will run FreeTAKServer without persistent data storage with all default settings.
 ```bash
