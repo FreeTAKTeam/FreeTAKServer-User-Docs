@@ -1,7 +1,7 @@
 # Administration Manual WebUI
 FTS has a web UI since version 1.5.
 
-Please download the web UI manual [here](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/administration/FTS_UI_Documention.pdf)
+Please download the web UI manual [here](../administration/FTS_UI_Documention.pdf)
 
 FreeTAK Server User Manual![](https://lh5.googleusercontent.com/ij08rxlH5r5aoXwPkDa4M2uwY3ogIZ16LG2R05Ayam3KQ2WXnd_zU4ZFS-hkDCPhkxgrgbJJ1p60b0rV79fUmCisbk5RIU0l6eNSt6AmAeNYPmYUZWyKnvtoSIyaqvH3gxIojRAh5XQ-oSeOOuxG)
 

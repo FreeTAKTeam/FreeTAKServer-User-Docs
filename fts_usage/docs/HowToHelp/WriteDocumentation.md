@@ -9,7 +9,7 @@ Here are the packages it uses:
 These packages are available for `conda`.
 
 ```shell
-mamba env create -y -f docs/HowToHelp/fts-doc-env.yml
+mamba env create -y -f fts_usage/docs/HowToHelp/fts-doc-env.yml
 ```
 This environment includes the packages needed to construct the document products.
 ```yaml
@@ -48,6 +48,6 @@ i.e.
 
 ### Mike (multi-version support)
 
-The `docs/versions.json` is used to define the versions.
+The `fts_user/docs/versions.json` is used to define the versions.
 
 TODO: Explain how this is to be used.

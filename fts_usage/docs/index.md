@@ -36,12 +36,13 @@ The easiest way to install FTS is to use our signature [ZeroTouch Installer](htt
 This project is currently in the *Early Production Stage*.
 
 If you have any issues, don't hesitate to [bring them up](https://github.com/Tapawingo/FreeTakServer/issues).
-Ensure that you have read the documentation and our [FAQ](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/About/FAQ.md).
+Ensure that you have read the documentation and our [FAQ](About/FAQ.md).
 FreeTAKServer is in constant development.
 Subscribe to the [pip RSS](https://pypi.org/rss/project/freetakserver/releases.xml) to stay updated on all recent changes.
 
 ### FreeTAKTeam
-We are FreeTAKTeam, a group of individuals passionate about democratizing Situational Awareness through the power of technology. Read our [manifesto](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/About/Manifesto.md).
+We are FreeTAKTeam, a group of individuals passionate about democratizing Situational Awareness through the power of technology.
+Read our [manifesto](About/Manifesto.md).
 
 ### FreeTAKTeam YouTube channel
 We have created the [FreeTAKTeam YouTube channel is @freetakteam](https://www.youtube.com/@freetakteam) with tutorials, use cases, and more.
@@ -86,4 +87,4 @@ We support a public instance of FTS hosted by DigitalOcean.
 
 - download the configuration [here](assets/fts-official-pub.zip)
 - use the Import Manager in `ATAK` to import the configuration.
-- for a full tutorial see the [article](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/About/PubServer.md)
+- for a full tutorial see the [article](About/PubServer.md)

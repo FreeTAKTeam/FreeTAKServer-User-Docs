@@ -132,4 +132,4 @@ sudo ansible-playbook install_all.yml
 
 ## Step 4. Check Installation
 
-Directions to check installation [here](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/Installation/Troubleshooting/InstallationCheck.md).
+Directions to check installation [here](../Troubleshooting/InstallationCheck.md).
