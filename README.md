@@ -50,8 +50,8 @@ The documentation uses the `markdown-include` plugin which constructs a PDF file
 The official documentation for `markdown-include` is located in the [project repo](https://github.com/cmacmackin/markdown-include).
 
 This reduces errors when text is to be injected into the document.
-For example, if there is a configuration file for which explanation is provided.
-```
-{!filename!lines=1  3 8-10  2}
+For example, here is an excerpt from the LICENSE file.
+```text
+{!LICENSE!lines=1  3 8-10  2}
 ```
 
