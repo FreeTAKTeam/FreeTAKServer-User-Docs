@@ -1,5 +1,6 @@
 # FreeTAKHub Node-RED
 This document describes how to install and secure Node-RED.
+
 - Install Using Script (simple)
 - Install using APT (advanced Users)
 - Secure Node-RED
@@ -30,8 +31,9 @@ Navigate to your Node-RED:
 
 # Install Using APT (advanced users)
 To install Node-RED with APT you will need to:
+
 - Satisfy the requirements
-- Create a Non root user
+- Create a Non-root user
 - Install Node JS
 
 ## Prerequisites
@@ -177,21 +179,30 @@ Edit the settings.js file:
 sudo nano settings.js
 ```
 
-Uncomment the adminAuth section 
-![image](https://user-images.githubusercontent.com/60719165/197415369-020905e2-1cb2-4ab5-aa5d-cfe3cf3626ef.png)
-
-
- save the file and Exit.
+Uncomment the adminAuth section to password protect Node-RED editor and admin API.
+See <https://nodered.org/docs/security.html> for details.
+```yaml
+adminAuth: {
+    type: "credentials", 
+    users: [{
+        username: "admin",
+        password: ".....",
+        permissions: "*"
+    }]
+}
+```
+save the file and Exit.
 
 ```text
- CTRL+o
- ENTER
- CRTL+X
+CTRL+o
+ENTER
+CRTL+X
 ```
 
 You can now log in to your Node-RED editor `[YOUR-IP-ADDRESS]:1880`.
 The default username is `admin`, and the default password is `password`.
 This isn't enough.  
-You'll want to create a unique password, which will require creating a password hash.  
+You'll want to create a unique password, which will require creating a password hash.
+
 This is detailed in the Node-RED docs here:
 <https://nodered.org/docs/user-guide/runtime/securing-node-red#editor--admin-api-security>
