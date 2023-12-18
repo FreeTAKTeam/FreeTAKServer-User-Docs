@@ -9,7 +9,7 @@ Here are the packages it uses:
 These packages are available for `conda`.
 
 ```shell
-mamba env create -y -f fts_usage/docs/HowToHelp/fts-doc-env.yml
+mamba env create -y -f docs/docs/HowToHelp/fts-doc-env.yml
 ```
 This environment includes the packages needed to construct the document products.
 ```yaml
