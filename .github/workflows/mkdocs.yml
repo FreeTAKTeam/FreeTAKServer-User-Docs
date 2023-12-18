@@ -15,4 +15,4 @@ jobs:
       - run: pip install mkdocs-material mkdocs-awesome-pages-plugin \
                 mkdocs-section-index mkdocs-toc-sidebar-plugin mike \
                 markdown-include mkdocs-pdf-export-plugin
-      - run: cd doccs && mkdocs gh-deploy --force
+      - run: cd docs && mkdocs gh-deploy --force
