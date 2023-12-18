@@ -1,3 +1,13 @@
+# Warning! Old Documentation Ahead!
+
+The documentation below is for the **OLD** FTS container implementation and is not correct.
+
+If you are following these instructions, you will probably not get the result you want.
+
+New documentation is in the works, and will be released ASAP.
+
+---
+
 # Upgrading Existing Container
 To upgrade the container to a new version you simply stop the container running the version you wish to upgrade from, and start a container running the version you want to upgrade to.  To have data transfered between versions you need to have used a volume during the initial set up.
 
