@@ -21,4 +21,5 @@ they are services that collect, organize, and disseminate information.
 The bottom line is that FTS is "smarter" than other TAK servers.
 
 # How can I install FTS?
-For information on how to set up FTS, please see [Installation Guides](../Installation).
+For information on how to set up FTS,
+please see one of the [Installation Guides](../Installation/Tools.md).
