@@ -22,7 +22,7 @@ FreeTAK UAS (FTUAS) is an Android application that can:
 * Assuming that you have installed and configured your [FTS](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/PyPi/Linux/Install.html) 
 * and the  [video service](https://github.com/FreeTAKTeam/FreeTAKHub/blob/main/README.md), 
 * download the [APK installation file](https://github.com/niccellular/FreeTAKUAS/releases) on your phone / tablet and follow the instructions.
-* if the installation is suvcessful you should have a new Icon
+* if the installation is successful you should have a new Icon
 
 ![image](https://user-images.githubusercontent.com/60719165/124396013-9d4ec380-dcdd-11eb-8cf9-bf1deaa7adc0.png)
 
@@ -36,12 +36,12 @@ FreeTAK UAS (FTUAS) is an Android application that can:
 * start your controller
 * connect the phone with FTUAS to the controller
 
-* a popup will ask wich application you want to open
+* a popup will ask which application you want to open
 * select FTUAS and configure the following:
   * FTS IP and Port
   * Video Server IP and port
   * the Drone name
-  * A series of messages will appear, indicating that the SDK is registred (requires an internet connection) and that the drone is ready
+  * A series of messages will appear, indicating that the SDK is registered (requires an internet connection) and that the drone is ready
   * Now click on UAS [READY]
 
 ## Interface
@@ -49,10 +49,10 @@ FreeTAK UAS (FTUAS) is an Android application that can:
 the FTUAS interface is typical of DJI the following is special:
 
 * As soon you switch to it  the drone will start streaming the camera
-* As soon you switch to it the drone will share his position with the FTS server, that will foward to all the connected clients
-* the "Red Dot" in the middle can be tappped to create a geoObject of type "Unknow" call target and send to all the connected clients 
+* As soon you switch to it the drone will share his position with the FTS server, that will forward to all the connected clients
+* the "Red Dot" in the middle can be tapped to create a geoObject of type "Unknown" call target and send to all the connected clients 
 * the vertical aim of the "Red Dot" can be changed by moving the gimbal
-* in some model, it's also possible to aim the gimbal independent from the position of the drone by dragging the position on screen
+* in some model, it's also possible to aim the gimbal independently of the position of the drone by dragging the position on screen
 * In the current version, the aim is not perfect so expect some delta
 
 ## ATAK Interface

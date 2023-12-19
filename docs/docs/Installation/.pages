@@ -3,12 +3,12 @@ title: Installation
 nav:
     - Tools you need: Tools.md
     - Infrastructure Planning: InfrastructurePlanning.md
-    - Video_Guides.md
-    - Ansible
-    - Linux
-    - RaspberryPie
-    - Cloud
-    - Android
-    - Docker
-    - Windows
-    - Troubleshooting
+    - Video Guides: Video_Guides.md
+    - Zero Touch Install: Ansible
+    - Linux: Linux
+    - RaspberryPi : RaspberryPi
+    - Cloud Provider: Cloud
+    - Android: Android
+    - Container: Docker
+    - Windows: Windows
+    - Troubleshooting: Troubleshooting

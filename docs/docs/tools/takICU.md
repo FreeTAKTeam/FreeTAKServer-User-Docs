@@ -1,6 +1,10 @@
 # TAK ICU
 
-TAK ICU is an Android Team Awareness Kit (ATAK) support plugin that allows a user to stream video and position to a compatible RTSP server. An operator running TAK ICU sends video and telemetry to the RTSP server, and the observer(s) can view the video and telemetry on any compatible end-user device (EUD) that is connected to the server.  Telemetry transmitted includes the senders position location information (PLI), field-of-view (FOV), focal point distance, and compass heading. 
+TAK ICU is an Android Team Awareness Kit (ATAK) support plugin that allows a user to stream video and position to a compatible RTSP server.
+An operator running TAK ICU sends video and telemetry to the RTSP server,
+and the observer(s) can view the video and telemetry on any compatible end-user device (EUD) that is connected to the server.
+Telemetry transmitted includes the senders position location information (PLI),
+field-of-view (FOV), focal point distance, and compass heading. 
  
 The product is a bundled support app, and is maintained by the [TAK Product Center](https://tak.gov/products/atak-civ).
 
@@ -35,9 +39,11 @@ This page describes the TAK ICU tool only.
 
 ## Integration with FTS
 
-The FTS integration, [FreeTAKHub_VideoChecker](https://github.com/FreeTAKTeam/FreeTAKHub_VideoChecker) exists since FTS 1.9.5.  It allows for seamless streaming of videos by simply connecting to the video server.
+The FTS integration, [FreeTAKHub_VideoChecker](https://github.com/FreeTAKTeam/FreeTAKHub_VideoChecker) exists since FTS 1.9.5.
+It allows for seamless streaming of videos by simply connecting to the video server.
 
-Normally, when a device is streaming video, connected TAK EUD will be not notified, it's necessary to manually create a new feed in the software.
+Normally, when a device is streaming video, connected TAK EUD will be not notified,
+it's necessary to manually create a new feed in the software.
 
 ![image](https://user-images.githubusercontent.com/60719165/139940405-8e841a98-58e3-431a-8bb6-fce8462b3ef7.png)
 
