@@ -36,6 +36,25 @@ See Documentation Patterns below.
 
 ### Verify Processing
 
+The following description is only partially correct.
+
+#### GitHub Pages
+
+GitHub provides the ability to publish generated documentation.
+FTS makes use of this capability.
+
+You should generate the documentation with your changes to make sure nothing was inadvertently broken.
+The following shows you an example of how to set up `gh-pages` for your project repository.
+
+![](images/github-pages.png)
+
+The important thing here is to select `[GitHub Actions]`.
+
+This will cause a `pages-build-deployment` action to be generated.
+Execution of this workflow will cause the contents of
+the `gh-pages` branch to be published to your project pages.
+
+
 #### GitHub Action
 
 The documentation is built via GitHub actions.
