@@ -1,115 +1,115 @@
 # **COT Domain Model**
-The Cursor-On-Target (CoT) Event data model defines a Domain model as a system of abstractions that describes selected aspects of a sphere of knowledge for the TAK  domain)
-It's represented as a platform-independent model (PIM) that is independent of the specific technological platform used to implement it.
-the Domain model  can be translated into a XML data schema for exchanging time sensitive position of moving objects, or "what", "when", and "where" (WWW) information, between systems.
+The Cursor-On-Target (CoT) Event data model defines a Domain model as a system of abstractions that describes selected aspects of a sphere of knowledge for the TAK  domain.
+It is represented as a platform-independent model (PIM) that is independent of the specific technological platform used to implement it.
+The Domain model can be translated into an XML data schema for exchanging time sensitive position of moving objects, or "what", "when", and "where" (WWW) information, between systems.
 ![FTS COT domain Model](https://user-images.githubusercontent.com/60719165/193834333-ea041722-e3ea-46f9-9eb6-7417c19807ea.png)
 
-# **COT Domain Model**
-The Cursor-On-Target (CoT) Event data model defines a Domain model as a system of abstractions that describes selected aspects of a sphere of knowledge for the TAK  domain)
-It's represented as a platform-independent model (PIM) that is independent of the specific technological platform used to implement it.
-the Domain model  can be translated into an XML data schema for exchanging time sensitive position of moving objects, or "what", "when", and "where" (WWW) information, between systems.
-![FTS COT domain Model](https://user-images.githubusercontent.com/60719165/193834333-ea041722-e3ea-46f9-9eb6-7417c19807ea.png)
 
-1. # **COT Domain Model**
+##  \_\_serverdestination 
 
+The destination of a certain message.
+Indicates how to communicate back to the sender.
 
-1. ## ** \_\_serverdestination**
+### \_\_serverdestination attributes
 
-the destination of a certain message. indicates how to communicate back to the sender.
+| **Name**      | **Documentation**                                                                                 |
+|:--------------|---------------------------------------------------------------------------------------------------|
+| destinations  | string composed by IP:port:protocol:machineID.<br>e.g. 192.168.0.103:4242:tcp:ANDROID-R52JB0CDC4E |
 
-1. **### \_\_serverdestination attributes**
+## \_flow-tags\_
 
-| **Name**     | **Documentation**                                                                                |
-| ------------ | ------------------------------------------------------------------------------------------------ |
-| destinations | string composed by IP:port: protocol:machineID._e.g. 192.168.0.103:4242:tcp:ANDROID-R52JB0CDC4E_ |
+This is a Cursor On Target detail class that holds "fingerprints" of the system that have processed a particular CoT event.
+This information aids in the routine of CoT messages along a particular processing chain.
+Each system that touches a particular CoT event is expected to add its own attribute to this entity.
+The attribute name should reflect the particular system name,
+and the value should be the time stamp when the information was sent out from that system.
+Some illustrative \_flow-tags_ attributes are adocs, fbcb2, and tadilj, but the attribute list is not a closed set.
 
-2. ## ** \_flow-tags\_**
+### \_flow-tags\_ attributes
 
-This is a Cursor On Target detail class that holds "fingerprints" of the system that have processed a particular CoT event. This information aids in the routine of CoT messages along a particular processing chain. Each system that touches a particular CoT event is expected to add its own attribute to this entity. The attribute name should reflect the particular system name, and the value should be the time stamp when the information was sent out from that system. Some illustrative \_flow-tags\_ attributes are adocs, fbcb2, and tadilj, but the attribute list is not a closed set.
+| **Name**   | **Documentation**  |
+|:-----------|:-------------------|
+| version    |                    |
+| adocs      |                    |
+| fbcb2      |                    |
+| tadilj     |                    |
 
-1. ### ** \_flow-tags\_ attributes**
-
-| **Name** | **Documentation** |
-| -------- | ----------------- |
-| version  |                   |
-| adocs    |                   |
-| fbcb2    |                   |
-| tadilj   |                   |
-
-3. ## ** \_medevac\_**
+## \_medevac\_
 
 the medevac class is used to describe a case of someone in need to be evacuated
 
-1. ### ** \_medevac\_ attributes**
+### \_medevac\_ attributes
 
-| **Name**            | **Documentation** |
-| ------------------- | ----------------- |
-| litter              |                   |
-| freq                |                   |
-| terrain_none        |                   |
-| zone_prot_selection |                   |
-| Title               |                   |
-| Priority            |                   |
-| medline_remarks     |                   |
-| Security            |                   |
-| routine             |                   |
-| equipment_none      |                   |
-| hlz_marking         |                   |
-| casevac             |                   |
-| urgent              |                   |
+| **Name**             | **Documentation**  |
+|:---------------------|:-------------------|
+| litter               |                    |
+| freq                 |                    |
+| terrain_none         |                    |
+| zone_prot_selection  |                    |
+| Title                |                    |
+| Priority             |                    |
+| medline_remarks      |                    |
+| Security             |                    |
+| routine              |                    |
+| equipment_none       |                    |
+| hlz_marking          |                    |
+| casevac              |                    |
+| urgent               |                    |
 
-4. ## ** \_radio**
-
-  
+## \_radio  
 
 
-1. ### ** \_radio attributes**
+### \_radio attributes
 
-| **Name** | **Documentation** |
-| -------- | ----------------- |
-| rssi     |                   |
-| gps      |                   |
+| **Name**  | **Documentation**  |
+|:----------|:-------------------|
+| rssi      |                    |
+| gps       |                    |
 
-5. ## ** Attitude**
-
-  
+## Attitude 
 
 
-1. ### ** Attitude attributes**
+### Attitude attributes
 
-| **Name** | **Documentation** |
-| -------- | ----------------- |
-| roll     |                   |
-| pitch    |                   |
-| yaw      |                   |
+| **Name**  | **Documentation**  |
+|:----------|:-------------------|
+| roll      |                    |
+| pitch     |                    |
+| yaw       |                    |
 
-6. ## ** chat**
+## chat
 
-Class that holds information regarding chat. When communicating with a group, the**\_\_chat** attributes specify the unique ID of the chat group, and the common name as to be read by the user. The recipient, upon receipt, will see that these fields do not match their information, and create the appropriate group. Members will be populated from the attributes of the **chatgrp** element.
+Class that holds information regarding chat.
+When communicating with a group,
+the **\_\_chat** attributes specify the unique ID of the chat group,
+and the common name as to be read by the user.
+The recipient, upon receipt, will see that these fields do not match their information,
+and create the appropriate group.
+Members will be populated from the attributes of the **chatgrp** element.
 
-1. ### ** chat attributes**
+ ### chat attributes
 
-| **Name**       | **Documentation**                      |
-| -------------- | -------------------------------------- |
-| senderCallsign | the call sign of the sender            |
-| chatroom       | TBD: the callsign of the receiver?     |
-| groupOwner     | TBD,                                   |
-| id             | TBD: the unique ID of the sender?      |
-| parent         | the group where thise chat is attached |
+| **Name**        | **Documentation**                       |
+|:----------------|:----------------------------------------|
+| senderCallsign  | the call sign of the sender             |
+| chatroom        | TBD: the callsign of the receiver?      |
+| groupOwner      | TBD,                                    |
+| id              | TBD: the unique ID of the sender?       |
+| parent          | the group where this chat is attached   |
 
-7. ## ** chatgrp**
+## chatgrp
 
 Class hosting IDs regarding the from and to
 
-1. ### ** chatgrp attributes**
+### chatgrp attributes
 
-| **Name** | **Documentation**            |
-| -------- | ---------------------------- |
-| uid0     | the machine ID of the sender |
-| uid1     | another ID                   |
-| id       | third ID                     |
+| **Name**  | **Documentation**             |
+|:----------|:------------------------------|
+| uid0      | the machine ID of the sender  |
+| uid1      | another ID                    |
+| id        | third ID                      |
 
-8. ## ** checklist**
+## ** checklist**
 
   
 

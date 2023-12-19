@@ -1,4 +1,4 @@
-name: Build and Publish Docs
+name: Build and Publish User Docs
 on:
   push:
     branches:

@@ -1,19 +1,21 @@
 # Zero Touch Installation
-the ZeroTouch (ZT or ZTI) installation is the simplest way to install FTS. 
+The ZeroTouch (ZT or ZTI) installation is the simplest way to install FTS. 
 Has been tested on the [cloud](../Cloud/AWS.md) and
 on the [RasberryPi](../RaspberryPi/Installation.md);
-however, only on Digital Ocean cloud you will have the perfect experience, where all is installed and configured. 
+however, only on Digital Ocean cloud you will have the perfect experience,
+where all is installed and configured. 
 
 ## Instructions
-To install, enter into the console on a Ubuntu 22.04 server:
+To install, enter into the console on an Ubuntu 22.04 server:
 ```console
 wget -qO - bit.ly/freetakhub2 | sudo bash
 ```
-in alternative use the long form
+alternatively, use the long form
 ```console
 wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/main/scripts/easy_install.sh | sudo bash
 ```
-If you are still wanting to use the previous "legacy" version, please use the following command (please note this must be done in Ubuntu 20.04)
+If you are still wanting to use the previous "legacy" version,
+please use the following command (please note this must be done in Ubuntu 22.04)
 
 ```console
 wget -qO - bit.ly/freetakhub2 | sudo INSTALL_TYPE=legacy bash

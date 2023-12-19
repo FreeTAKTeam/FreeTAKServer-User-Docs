@@ -1,6 +1,6 @@
 # DigitalOcean with Terraform
 
-This installation has only been tested on Ubuntu 20.04.
+This installation has only been tested on Ubuntu 22.04.
 
 Other operating systems may work, but are untested.
 
@@ -8,13 +8,13 @@ Other operating systems may work, but are untested.
 
 The later executions will require admin privileges.
 
-Create an adminuser first:
+Create an `adminuser` first:
 
 ```console
 sudo adduser adminuser
 ```
 
-Add passwordless to adminuser.
+Add `passwordless` to `adminuser`.
 
 First type:
 
@@ -31,7 +31,7 @@ adminuser ALL=(ALL) NOPASSWD: ALL
 To save and quit in the `nano` editor:
 
 1. Press `CTRL + O` then `ENTER` to save.
-1. Then press `CTRL + X` to exit.
+2. Then press `CTRL + X` to exit.
 
 ## Step 2. Download Terraform and Ansible
 

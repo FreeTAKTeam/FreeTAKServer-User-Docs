@@ -3,12 +3,12 @@
 * Select EC2 as the service from the AWS Console 
 * Click "Launch Instance"
 * Enter a name for your instance, e.g., "FreeTAK-AWS-001".
-* Under the Application and OS Images menu, select Ubuntu, then from the dropdown select Ubuntu Server 20.04 LTS (HVM) SSD Volume Type
+* Under the Application and OS Images menu, select Ubuntu, then from the dropdown select Ubuntu Server 22.04 LTS (HVM) SSD Volume Type
 
 ![image](https://user-images.githubusercontent.com/9298197/197416511-805196e6-09c5-4b0f-8a99-ab48b6d14328.png)
 
 
-* Under instance type, select the instace type appropriate for your deployment size. For testing servers a t2.micro is sufficient.
+* Under instance type, select the instance type appropriate for your deployment size. For testing servers a t2.micro is sufficient.
 * Under Key Pair, select a key pair in your account. If you do not have one, create one.
 * Under Network Settings, select a security group that has the necessary ports configured inbound for both SSH and FreeTAK server operations.
 
@@ -22,8 +22,8 @@
 * 1880 - Webmap (WEBMAPPORT)
 
 ## RTSP-simple-server -AKA video Server 
-9997 - REST API
-9998 - Metrics Listener
+* 9997 - REST API
+* 9998 - Metrics Listener
 
 ![image](https://user-images.githubusercontent.com/9298197/197417005-db917902-421d-4609-8786-9e0662cfadb3.png)
 
@@ -32,32 +32,32 @@
 * Under storage configuration, for testing an 8GiB GP2 volume will be sufficient.
 * Once complete, select launch instance.
 * Once ready to connect to the instance, use powershell / ssh client
-```
+```bash
 sudo apt-get update && sudo apt-get upgrade -y 
 ```
 * now
 
-```
+```bash
 sudo reboot
 ```
 
 * reconnect via ssh 
-```
+```bash
 ip a 
 ```
 
 * confirm ethernet adapter name (i.e. ens33)
-```
+```text
 grab $[publicip] from your instance details page 
 ```
 
 * add the Public IP to ethernet adapter by using the following command
-```
+```bash
 sudo ip addr add $publicip dev $ethernetadapter
 ```
 
 * run zero touch installer 
-```
+```bash
 wget -qO - bit.ly/ftszerotouch | sudo bash
 ```
 

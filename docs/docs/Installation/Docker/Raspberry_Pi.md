@@ -12,7 +12,7 @@ New documentation is in the works, and will be released ASAP.
 It is recommended to use a Raspberry Pi 4 with 4GB or 8GB of ram.
 
 This guide assumes that you have a clean install of Raspberry Pi OS or Raspbian.
-You may also use the 64 bit Ubuntu 20.04 server prepared for the Raspberry Pi 4.
+You may also use the 64 bit Ubuntu 22.04 server prepared for the Raspberry Pi 4.
 
 #### Install Docker
 ```bash

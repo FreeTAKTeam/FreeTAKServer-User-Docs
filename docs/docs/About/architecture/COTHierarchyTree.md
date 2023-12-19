@@ -3,13 +3,13 @@
 <details>
 <summary> COT Hierarchy Tree</summary>
     
-### Heading   
+### Heading  
+
 <details>
   <summary>1. a   </summary>  
     1. .*
         1. 9        
-            1. 1
-            
+            1. 1            
                 1. 1
    </details>
     <details>
@@ -2192,7 +2192,7 @@
         1. f
     4. r
     5. s
-</details>details>
+</details><details>
 4. r
     1. c
         1. x
@@ -2357,7 +2357,7 @@
                         7. t
                 12. v
                     1. a
-</details>details>
+</details><details>
 5. t
     1. a
         1. c
@@ -2416,7 +2416,7 @@
                 5. e
         4. v
             1. m
-</details>details>
+</details><details>
 6. u
     1. d
         1. c
@@ -2457,5 +2457,5 @@
         4. m
         5. p
         6. r
-</ details>
-</ details>
+</details>
+</details>

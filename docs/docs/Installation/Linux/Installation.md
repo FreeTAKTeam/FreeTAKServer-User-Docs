@@ -14,7 +14,8 @@ This guide will walk you through installing FreeTAKServer 2.0
 ---
 ## Note: Linux Distributions
 
-The main supported OS is Ubuntu 20.04. Due to cross-compatibility, Debian 10 and the latest Raspbian also work.
+The main supported OS is Ubuntu 22.04.
+Due to cross-compatibility, Debian 10 and the latest Raspbian also work.
 
 Centos/RHEL/Fedora installation instructions are provided on a best-effort volunteer basis.
 

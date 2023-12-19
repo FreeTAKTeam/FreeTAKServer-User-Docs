@@ -6,7 +6,7 @@ this procedure Installs FTS + UI + video Server of a Raspberry Pi
 you need a Pi with at least 4 GB RAM
 
 ## Procedure
-Need to start with new install of ubuntu 20.04 server for pi 64 FTS 2.x need ubuntu 22.04
+Need to start with new install of ubuntu 22.04 server for pi 64 FTS 2.x need ubuntu 22.04
 [https://cdimage.ubuntu.com/releases/22.04/release/](https://ubuntu.com/download/raspberry-pi/thank-you?version=22.04.3&architecture=server-arm64+raspi)
 Previous FTS versions works with 20.04
 https://cdimage.ubuntu.com/releases/20.04.4/release/ubuntu-20.04.3-preinstalled-server-arm64+raspi.img.xz
