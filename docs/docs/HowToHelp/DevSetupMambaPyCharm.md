@@ -37,7 +37,7 @@ Detailed installation instructions can be found [here](https://mamba.readthedocs
 With `micromamba` installed we can set up a virtual environment:
 
 ```shell
-mamba env create -y -f docs/docs/HowToHelp/fts-dev-env.yml
+mamba env create -y -f fts_user/docs/HowToHelp/fts-dev-env.yml
 ```
 
 This environment definition is not seminal.

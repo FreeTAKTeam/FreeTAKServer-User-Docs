@@ -7,10 +7,13 @@ While FTS will work with this OS, we do not support it
 FTS 2.0 supports 22.04 older versions require Ubuntu 20.04
 
 ## My FTS Installation is failing
-FTS 2.0 has been tested with Python 3.11, should work with others verson (3.10). Older versions require 3.8
+FTS 2.0 has been tested with Python 3.11, 
+should work with others version (3.10). 
+Older versions require 3.8
 
 ## My Raspberry Pi installation has an issue with the WebMap
-This has been adressed, so you should not have the issue. The older webmap was a Nodered packaged component, compiled for AMD64, so it will not run in the Pi.
+This has been addressed, so you should not have the issue. 
+The older webmap was a Nodered packaged component, compiled for AMD64, so it will not run in the Pi.
 You need to:
  * install Node Red 
  * import the flow from source
@@ -66,7 +69,7 @@ Certs:
 ```
 /var/log/fts/fts-stdout.log
 ```
- * depending from traffic this can become very large and need to be manually deleted
+ * depending on inbound traffic, this can become very large and subsequently, need to be manually deleted
 
 ## My XXX component is not connecting / showing
 for fts check out 
@@ -92,25 +95,32 @@ for the video server check out
 ISSUE: SSL certs are not working
 Cause: the certs are duplicated on your machine
 
-This has been observed on ATAK 4.7 + and WinTAK for functions that requires both encrypted TCP and SSL connections. the ExChcek plugin is an example of that. the main symptom on the client is that the connection to the server fails (for specific funtions). This is NOT a FTS issue, it's provoked by ATAK way to store certificates.
+This has been observed on `ATAK` 4.7 + and `WinTAK` for functions that requires both encrypted TCP and SSL connections.
+The `ExCheck` plugin is an example of that. 
+the main symptom on the client is that the connection to the server fails (for specific functions).
+This is NOT a FTS issue, it's provoked by the way `ATAK` stores certificates.
 
-### Workaround ATAK 
- * clear the content" using the ATAK function  
+### Workaround `ATAK` 
+ * clear the content using the `ATAK` function  
 ![image](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/assets/60719165/70561476-2252-46eb-8a9e-c7a0717b8d78)
  * create a new user with mobile certs
  * connect to FTS using TCP
  * download new the certs
  * de-activate tcp and activate the new certs
-### Workaround WinTAK 
+### Workaround `WinTAK` 
  
- * physically delete all the certs with the name (IP) of your sever from the machine in wintak the certs are located in
+ * physically delete all the certs with the name (IP) of your sever from the machine in `WinTAK` the certs are located in
    ```C:\Users\[USERNAME]\AppData\Roaming\WinTAK\SslCerts``` 
- * Proceed as above but use WinTAK certs
+ * Proceed as above but use `WinTAK` certs
 
 ## Using SSL I get frequent disconnects
 This is a problem of the client not sending data. 
-WinTAK: under settings/network preferences set the TCP Connection timeout higher, (e.g. 60 seconds)
-ATAK:  under settings/network preferences/ network connection preferences / TCP conection timeout  (e.g. 40 seconds)
+
+`WinTAK`
+: under settings/network preferences set the TCP Connection timeout higher, (e.g. 60 seconds)
+
+`ATAK`
+: under settings/network preferences/ network connection preferences / TCP connection timeout  (e.g. 40 seconds)
 
 ## package not found
 if, trying to start FTS you get an error 'package not found'
@@ -121,29 +131,36 @@ navigate to the physical location where the controllers are installed and start 
 
 You may also check for missing libraries and install then using pip
 
-## issue connecting in WinTAK
-if you have issues connecting winTAK to FTS, try to deactivate the TAKChat plugin, under the plugin section
+## issue connecting in `WinTAK`
+if you have issues connecting `WinTAK` to FTS, 
+try to deactivate the TAKChat plugin, under the plugin section
 
 ## Issues connecting using SSL
-If you have issue connecting to FTS using SSL, even if you have downloaded new certs, you need to manually delete the old files from your device. In WinTAK (tested with 4.9)  you can find certs files under 
+If you have issue connecting to FTS using SSL, 
+even if you have downloaded new certs, you need to manually delete the old files from your device. 
+In `WinTAK` (tested with 4.9)  you can find certs files under 
 ```
 C:\Users\[USERNAME]\AppData\Roaming\WinTAK\SslCerts
 ```
-you should have 3 certifications files in the format 
- * [IP]_FreeTAKServer-Hash
+you should have 3 certifications files of the form:
+
+ * \[IP]_FreeTAKServer-Hash
  * 198-199-70-185_FreeTAKServer-2-a3_wbu7kirkizulslz1pstvv0xoo5qbcrr4.p12.dat2
 
-and another 3 in the format
+and another 3 of the form:
+
  * [UserNAME]Hash
  * FreeTAKTeamSupporte4fddab2-6102-4ab6-a9ec-0fee8edf8b10.p12
 
-## client2client datapackages
-If you have issues sending datapackages directly to clients via FTS, make sure the `-IP` argument you specified can be reached from your device.  
-A quick way to test if it works is to take a picture with Quick Pic in ATAK and send it to another client. Please also note that for that test ATAK clients needs to be on different network (ie one on mobile and one on wifi), because if you run them in same network (wifi, vpn, etc) they will just use same multicast group, bypassing FTS completely.  
-When you post package to specific contact in ATAK, following happens:  
+## `client2client` datapackages
+If you have issues sending datapackages directly to clients via FTS, 
+make sure the `-IP` argument you specified can be reached from your device.
+A quick way to test if it works is to take a picture with Quick Pic in `ATAK` and send it to another client.
+Please also note that for that test `ATAK` clients needs to be on different network (ie one on mobile and one on wifi), because if you run them in same network (WiFi, VPN, etc.) they will just use same multicast group, bypassing FTS completely.  
+When you post package to specific contact in `ATAK`, following happens:  
 
   1) Datapackage is uploaded to server, recorded in database and stored in FTS directory  
-  2) Client receives payload with URL pointing to datapackage so ATAK can download it   
+  2) Client receives payload with URL pointing to datapackage so `ATAK` can download it   
 
-Assuming you want to run open-to-everyone FTS instance, and you have server hosted somewhere, you need to specify _public_ IP address in `-IP` argument. And just in case, `-IP` also accepts domain names.   
+Assuming you want to run open-to-everyone FTS instance, and you have server hosted somewhere, you need to specify _public_ IP address in `-IP` argument. And just in case, `-IP` also accepts domain names.
 If you run it at home and port forward on router doesn't work, check if you receive actual IP address and not being NATed and ports 8080 and 8087 are not filtered - you can ask your ISP about that.

@@ -7,9 +7,9 @@ This guide will walk you through installing FreeTAKServer 2.0
 - Install FreeTAKServer
 - Configure and Run FreeTAKServer
 - Configure Web UI
-- **TBD** ~~Install [NodeRed](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/FreeTAKHub/NodeRedinstallation.md) for FreeTAKHub~~
-- **TBD** ~~Install the [Web Map](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/FreeTAKHub/WebMap/Installation.md)~~
-- **TBD** ~~Install the [Video Service](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/FreeTAKHub/Video/Installation.md)~~
+- **TBD** ~~Install [NodeRed](../../FreeTAKHub/Integration/NodeRedInstallation.md) for FreeTAKHub~~
+- **TBD** ~~Install the [Web Map](../../FreeTAKHub/WebMap/Installation.md)~~
+- **TBD** ~~Install the [Video Service](../../FreeTAKHub/Video/Installation.md)~~
 
 ---
 ## Note: Linux Distributions
@@ -277,7 +277,7 @@ to automatically use the default.
 
 An example is provided below, your exact configuration will differ.
 
-```css
+```text
 would you like to use a yaml config file, 
  if yes you will be prompted for further configuration options [yes]:
 where would you like to save the yaml config [/opt/fts/FTSConfig.yaml]: 
@@ -319,7 +319,8 @@ FreeTAKServer will then proceed start all the services.
 Use the keyboard  chord `CTRL + C` twice in the console running FTS to stop
 FreeTAKServer.
 
-A separate guide is maintained for  [manual configuration](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/Installation/PyPi/Linux/ManualConfiguration.md) of your FTS install.
+A separate guide is maintained for
+[manual configuration](../../Installation/Linux/ManualConfiguration.md) of your FTS install.
 
 ### MainConfig.py
 FTS sends a welcome message on client connection which is configurable. See the `FreeTAKServer/core/configuration/MainConfig.py` file to change it.
@@ -369,8 +370,8 @@ Advanced users may wish to use a different port.
 
 
 ```python
-    # Port the  UI uses to communicate with the API
-    PORT = '19023'
+# Port the  UI uses to communicate with the API
+PORT = '19023'
 ```
 
 ### Custom Secrets Configuration
@@ -381,7 +382,10 @@ must be updated in both the `FreeTAKServer-UI/config.py` and the
 
 The API key used by the UI to comunicate with FTS.
 Generate a new system user and then set it.
-~~What does this mean? Where is a user generated? What is a system user?~~
+
+[//]: # (What does this mean?)
+[//]: # (Where is a user generated?)
+[//]: # (What is a system user?)
 
 ```python
 app.config['APIKEY'] = 'Bearer [API_TOKEN]'
@@ -491,7 +495,7 @@ If you see FTS start without error you may hit `ctrl+c` twice and move onto runn
 your FTS is now configured
 
 
-If you have setup the UI, from the Admin console send a message hello world to the client
+If you have set up the UI, from the Admin console send a message hello world to the client
 
  
 ## Troubleshooting

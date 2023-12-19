@@ -56,7 +56,9 @@ Authorization: Bearer [YOUR_API_KEY]
 
 > You need to use the string 'Bearer' before YOUR_API_KEY
 
-A valid key is generated from FTS' [CLI](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/CLI.md) or, since 1.4 also from the Web UI, and stored into the DB.
+A valid key is generated from FTS' [CLI](../administration/CLI.md) or,
+since 1.4 also from the Web UI,
+and stored into the DB.
 
 To add an API user in the CLI type:
 
@@ -65,8 +67,11 @@ add_api_user
 ```
 
 See CLI help for details.
-To create a REST API key using the Web UI, go to the User section and give an user a token..
-Token: gives an unique combination that this user can leverage for the FTS REST API. NOTICE:  the field token is for any alphanumeric string. the prefix 'bearer' is NOT part of the token. The name “Bearer authenticatio
+To create a REST API key using the Web UI, go to the User section and give a user a token..
+Token: gives a unique combination that this user can leverage for the FTS REST API.
+NOTICE:  the field token is for any alphanumeric string.
+the prefix 'bearer' is NOT part of the token.
+The name "Bearer 'authentication'".
 To consume the API you will need to request a key to your FTS admin. 
 
 The following is a non-working example of a key:

@@ -67,7 +67,7 @@ wget -qO rb.gy/ocghax | sudo bash
 # Verify your installation
 at the end of the ZT you will see a report that will provide credentials and a play recap
 ![image](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/assets/60719165/47afb1a2-76db-44d0-becb-b66708f80289)
-you may now proceed to  [Installation Check]{(https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/Installation/Troubleshooting/InstallationCheck.md)
+you may now proceed to  [Installation Check](../Troubleshooting/InstallationCheck.md)
 ## Services
 the current name of the services installed by the Zero Touch :
 

@@ -1,6 +1,6 @@
 site_name: FreeTAKServer Documentation
 repo_url: https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs
-edit_uri: edit/main/docs/docs/
+edit_uri: edit/main/docs/
 site_author: FreeTAKTeam
 copyright: Copyright (c)2022 FreeTAKTeam
 theme:
@@ -8,7 +8,7 @@ theme:
   # https://github.com/squidfunk/mkdocs-material/README.md
   name: 'material'
   favicon: 'assets/FTS_Circle.png'
-  logo: 'assets/FTSLOGOv2.png'
+  logo: 'assets/FTS_Circle.png'
   features:
     - navigation.instant
     - navigation.tabs
@@ -19,24 +19,15 @@ theme:
 
 markdown_extensions:
   - pymdownx.superfences
-  # https://github.com/cmacmackin/markdown-include
   - markdown_include.include:
        base_path: docs
 
 plugins:
-  # https://squidfunk.github.io/mkdocs-material/plugins/search/#configuration
   - search
-  # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin/
-  # This plugin won't do anything if your mkdocs.yml defines a nav or pages entry.
   - awesome-pages
-  # https://github.com/jimporter/mike/
   - mike:
       version_selector: true
-  # https://github.com/oprypin/mkdocs-section-index/
   - section-index
-  # https://pypi.org/project/mkdocs-jupyter/
-  # - mkdocs-jupyter
-  # https://github.com/zhaoterryy/mkdocs-pdf-export-plugin
   - pdf-export:
       verbose: true
       media_type: print

@@ -24,7 +24,7 @@ For Windows installations:
 
     See also: <https://www.sitepoint.com/wsl2/>
 
-1. Install the WSL Ubuntu 20.04 distribution.
+1. Install the WSL Ubuntu 22.04 distribution.
 
     See: <https://www.microsoft.com/en-us/p/ubuntu-2004-lts/9n6svws3rx71>
 
@@ -132,4 +132,4 @@ sudo ansible-playbook install_all.yml
 
 ## Step 4. Check Installation
 
-Directions to check installation [here](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/Installation/Troubleshooting/InstallationCheck.md).
+Directions to check installation [here](../Troubleshooting/InstallationCheck.md).

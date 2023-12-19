@@ -3,8 +3,8 @@ title: Container (Docker)
 collapse_single_pages: true
 
 nav:
+    - Quick Start Guide: Quick_Start.md
     - Overview: overview.md
-    - Quick Start Guide: Quick_Start_Guide.md
     - Raspberry Pi: Raspberry_Pi.md
     - Command Line Interface: CLI.md
     - Debian Linux: Debian.md

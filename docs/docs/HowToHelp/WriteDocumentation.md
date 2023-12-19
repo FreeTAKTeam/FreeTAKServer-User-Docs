@@ -48,6 +48,6 @@ i.e.
 
 ### Mike (multi-version support)
 
-The `docs/docs/versions.json` is used to define the versions.
+The `fts_user/docs/versions.json` is used to define the versions.
 
 TODO: Explain how this is to be used.

@@ -1,18 +1,18 @@
 # Video Server
 MediaMTX is a RTSP / RTPM capable software to stream in real time from / to TAK devices.
-It's used with the [FreeTAK UAS](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/tools/FreeTAKUAS.md) and [TAK ICU](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/blob/main/docs/docs/tools/takICU.md)
+It is used with the [FreeTAK UAS](../../tools/FreeTAKUAS.md) and [TAK ICU](../../tools/takICU.md)
 
 ## Installation
-Get the linux_amd64 installation package link  from the [release page](https://github.com/aler9/mediamtx/releases)
+Get the linux_amd64 installation package link from the [release page](https://github.com/aler9/mediamtx/releases)
 ![image](https://user-images.githubusercontent.com/60719165/142771721-3479eda5-5a0c-49a3-ba34-f0970bd4882d.png)
 
 Download the MediaMTX release:
-```
+```bash
 wget https://github.com/aler9/mediamtx/releases/download/v0.22.2/mediamtx_v0.22.2_linux_amd64.tar.gz
 ```
 
 Un-tar the package:
-```
+```bash
 tar -zxvf mediamtx_v0.22.2_linux_amd64.tar.gz
 ```
 
@@ -31,40 +31,34 @@ To start the video server as a system daemon, we will create a systemd unit file
 
 Move the executable:
 
-```
+```bash
 sudo mv mediamtx /usr/local/bin/
 ```
 Move the configuration file:
-```
+```bash
 sudo mv mediamtx.yml /usr/local/etc/
 ```
 
-Create the Unit File. Copy this complete text and paste into the console:
-```
-sudo tee /etc/systemd/system/mediamtx.service >/dev/null << EOF
-[Unit]
-After=network.target
-[Service]
-ExecStart=/usr/local/bin/mediamtx /usr/local/etc/mediamtx.yml
-[Install]
-WantedBy=multi-user.target
-EOF
+Create the Unit File. 
+Copy this complete text to `/etc/systemd/system/mediamtx.service`:
+```ini
+{!FreeTAKHub/Video/mediamtx.service!}
 ```
 
 Start the service:
-```
+```bash
 sudo systemctl start mediamtx.service
 ```
 
 Enable  the service:
-```
+```bash
 sudo systemctl enable mediamtx.service
 ```
 
 ## Test your video Installation
-in a browser type this address
-```
-http://[YOURSERVERIP]:9997/v1/config/get
-```
+in a browser resolve and use this address
+
+<http://<YOURSERVERIP>:9997/v1/config/get>
+
 if you see your configuration the server is up and running
 

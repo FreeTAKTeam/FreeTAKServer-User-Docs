@@ -12,15 +12,15 @@ Below is the installation commands and comments for the installation of FreeTAKS
  
    Choose the installer option.
  
-   [<img src="pythoninstall.png" width="800"/>](pythoninstall.png)
+   ![](pythoninstall.png)
 
    Check pip, tcl/tk and IDLE and the Python test suite.
 
-   [<img src="features.jpg" width="800"/>](features.jpg)
+   ![](features.jpg)
 
    Make sure you add Python to environment variables for easy use.
 
-   [<img src="advanced.jpg" width="800"/>](advanced.jpg)
+   ![](advanced.jpg)
 
 2. Verify python environment 
 
@@ -32,7 +32,7 @@ Below is the installation commands and comments for the installation of FreeTAKS
    pip --version
    ```
 
-   [<img src="chkpypip.jpg" width="800"/>](chkpypip.jpg)
+   ![](chkpypip.jpg)
 
 3. Install Python packages
 
@@ -151,9 +151,9 @@ Below is the installation commands and comments for the installation of FreeTAKS
 
 6. Connect to the Server
 
-   Now your server should be running. `User = admin`, `Password = password` and `GUI link` http://localhost:5000/
+   Now your server should be running. `User = admin`, `Password = password` and `GUI link` <http://localhost:5000/>
 
-   [<img src="FTS_windows.gif" width="1000"/>](FTS_windows.gif)
+   ![](FTS_windows.gif)
 
 7. Uninstall FTS
 
