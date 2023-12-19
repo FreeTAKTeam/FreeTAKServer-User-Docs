@@ -41,7 +41,7 @@ See Documentation Patterns below.
 The documentation is built via GitHub actions.
 Here is the `.github/workflows/main.yml` action:
 ```yaml
-{!../../../.github/workflows/main.yml!}
+{!../../.github/workflows/main.yml!}
 ```
 name
 : The name of the workflow
