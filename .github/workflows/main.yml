@@ -1,4 +1,4 @@
-name: Build and Publish Docs
+name: Build and Publish Docs from Main
 on:
   push:
     branches:
