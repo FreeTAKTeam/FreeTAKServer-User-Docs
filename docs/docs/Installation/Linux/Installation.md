@@ -268,7 +268,7 @@ functionality is declared but not fully implemented.
 
 On the first run, a configuration wizard will help set up the config file.
 
-> :memo: **Note:** If the wizard does not appear, see [troubleshooting](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Troubleshooting/troubleshooting/).
+> :memo: **Note:** If the wizard does not appear, see [troubleshooting](../../Installation/Troubleshooting/troubleshooting.md).
 
 ### Using the Wizard
 

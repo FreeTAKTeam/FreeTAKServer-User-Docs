@@ -36,7 +36,7 @@ sudo apt-get update; sudo reboot -n; sudo apt-get upgrade
 ```
 sudo apt install wget
 ```
- * type or copy this string to start the [ZeroTouch](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Ansible/ZeroTouchInstall/) installer
+ * type or copy this string to start the [ZeroTouch](../../Installation/Ansible/ZeroTouchInstall.md) installer
 ```
 wget -qO - bit.ly/freetakhub2 | sudo bash
 ```
@@ -45,16 +45,21 @@ in alternative use
 ```
 wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/main/scripts/easy_install.sh | bash
 ```
-> 1.9.9.5 version of Zero Touch DOES NOT install the compiled webmap. You will need to install the [flow version](https://freetakteam.github.io/FreeTAKServer-User-Docs/FreeTAKHub/WebMap/Installation/)
+> 1.9.9.5 version of Zero Touch DOES NOT install the compiled webmap.
+> You will need to install the [flow version](../../FreeTAKHub/WebMap/Installation.md)
 
 ## After installation
  * ZeroTouch should configure the system and start all the services for you. 
  * In case the configuration need to be changed manually 
- *  Edit the file using [VIM](https://freetakteam.github.io/FreeTAKServer-User-Docs/administration/usingConsole/) 
+ * Edit the file using [VIM](../../administration/usingConsole.md) 
  
- ```/usr/local/lib/python3.11/dist-packages/FreeTAKServer-UI/config.py``` 
+ ```
+ /usr/local/lib/python3.11/dist-packages/FreeTAKServer-UI/config.py
+ ``` 
  * Use  
-```sudo vim /usr/local/lib/python3.11/dist-packages/FreeTAKServer-UI/config.py```
+```
+sudo vim /usr/local/lib/python3.11/dist-packages/FreeTAKServer-UI/config.py
+```
  
  * Or browse to that location with WinSCP and double-click on ‘config.py’
  * Change FTS IP (if necessary) = Your EXTERNAL IP (or ZeroTier IP) address for your RPi

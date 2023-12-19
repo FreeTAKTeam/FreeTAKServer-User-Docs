@@ -376,12 +376,12 @@ COT error v1.5.13
 
 FreeTAKServer documentation for end users
 
-| Description        | Link                                                                                   |
-|--------------------|----------------------------------------------------------------------------------------|
-| User Docs:         | https://freetakteam.github.io/FreeTAKServer-User-Docs/                                 |
-| PyPi Install Docs: | https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/PyPi/Linux/Install/ |
-| Server Download:   | https://github.com/FreeTAKTeam/FreeTakServer                                           |
-| Server Releases:   | https://github.com/FreeTAKTeam/FreeTakServer/releases                                  |
+| Description        | Link                                                                                     |
+|--------------------|------------------------------------------------------------------------------------------|
+| User Docs:         | <https://freetakteam.github.io/FreeTAKServer-User-Docs/>                                 |
+| PyPi Install Docs: | <https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/PyPi/Linux/Install/> |
+| Server Download:   | <https://github.com/FreeTAKTeam/FreeTakServer>                                           |
+| Server Releases:   | <https://github.com/FreeTAKTeam/FreeTakServer/releases>                                  |
 
 
 ## RPiFTS Series

@@ -27,7 +27,7 @@ in this example we will use Digital ocean.
 11.  Press "create droplet"
 
 ### Setup you access to the VM 
-- download [winSCP and Putty](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Tools/)
+- download [winSCP and Putty](../../Installation/Tools.md)
 - open Puttygen 
 
 #### Web
@@ -67,4 +67,5 @@ WinSCP can be used on the top of Putty to make browsing and editing of files mor
 ![image](https://user-images.githubusercontent.com/60719165/142771008-d272d5df-3e78-4f0c-8be8-a43028414c77.png)
 
  ## Next step
- you can now start installing FTS using the [ZeroTouch](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Ansible/ZeroTouchInstall/) or the [Manual Installation](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Linux/Install/)
+ you can now start installing FTS using the [ZeroTouch](../../Installation/Ansible/ZeroTouchInstall.md)
+ or the [Manual Installation](../../Installation/Linux/Installation.md)
