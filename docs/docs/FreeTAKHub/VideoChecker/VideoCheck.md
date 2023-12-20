@@ -1,5 +1,6 @@
 # 
-The VideoChecker allows a video stream to be published to all the connected clients. It's used with TAK ICU, but any type of client can be also used.
+The VideoChecker allows a video stream to be published to all the connected clients.
+It's used with TAK ICU, but any type of client can be also used.
 
 ## Requirements
 - FTS 1.8+
@@ -8,7 +9,7 @@ The VideoChecker allows a video stream to be published to all the connected clie
 
 ## Installation
 
-- Download the `video checker`  `NodeRed` flow from [github](https://github.com/FreeTAKTeam/FreeTAKHub_VideoChecker/releases)
+- Download the `video checker`  `NodeRed` flow from [GitHub](https://github.com/FreeTAKTeam/FreeTAKHub_VideoChecker/releases)
 - open your node red installation at `<YOURIP>:1880`
 - Import into NodeRed the VideoChecker flow (you may already have it installed by the [ZeroTouch](../../Installation/Ansible/ZeroTouchInstall.md) )
  ![image](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/assets/60719165/9f4427c9-015f-4246-9808-4acf99f858c7)

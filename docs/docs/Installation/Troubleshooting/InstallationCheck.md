@@ -4,9 +4,7 @@
 
 Open a web browser to:
 
-```text
-http://[YOUR_IP_ADDRESS]:5000/
-```
+`http://[YOUR_IP_ADDRESS]:5000/`
 default  <http://127.0.0.1:5000/>
 
 - login with your credentials
@@ -21,9 +19,7 @@ default  <http://127.0.0.1:5000/>
 
 Open a web browser to:
 
-```text
-http://[YOUR_IP_ADDRESS]:9997/v1/config/get
-```
+`http://[YOUR_IP_ADDRESS]:9997/v1/config/get`
 default  <http://127.0.0.1:9997/v1/config/get/>
 
 Confirm the configuration (which is in `json` format):
@@ -110,10 +106,9 @@ Confirm the configuration (which is in `json` format):
 
 ## Check the FreeTAKHub Server (or Node-RED Server)
 
-Open a web browser to:
-```text
-http://[YOUR_IP_ADDRESS]:1880/
-```
+Open a web browser to: 
+
+`http://[YOUR_IP_ADDRESS]:1880/`
 default  <http://127.0.0.1:1880/>
 
 - login with your credentials

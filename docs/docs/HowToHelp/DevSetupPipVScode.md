@@ -16,7 +16,8 @@ with the following plugins:
 
 ![image](https://user-images.githubusercontent.com/60719165/189349403-3b4d400b-2fe1-4ea1-a0ae-f0b164346bd5.png)
 
-we use the **Setting Sync** plugin to keep the team setting aligned, ask us for the coordinates of the settings.
+we use the **Setting Sync** plugin to keep the team setting aligned,
+ask us for the coordinates of the settings.
 
 ## Install visual-cpp-build-tools
  Get [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
@@ -110,7 +111,7 @@ open VS Code Explorer to the location of the FreeTAKServer project
 * Look for "Python: Select Interpreter".
 * Select the one in your `venv/scripts/python.exe`
 * Go to "Run and Debug"
-* Select “Create launch.json” file
+* Select "Create launch.json" file
 * copy this configuration  over the created file and configure `[YOURPATH]` with your actual path 
 ```json
 {
@@ -138,7 +139,7 @@ open VS Code Explorer to the location of the FreeTAKServer project
 
 ### FTS YAML File
 In the  folder containing FreeTakServer repo create a file:
- FTSConfig.yaml
+ `FTSConfig.yaml`
  
  
 

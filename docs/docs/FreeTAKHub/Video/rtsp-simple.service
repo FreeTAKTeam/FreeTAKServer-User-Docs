@@ -1,0 +1,10 @@
+[Unit]
+Description=rtsp-simple-server
+After=network-online.target
+Wants=netowrk-online.target
+
+[Service]
+ExecStart=/usr/local/bin/rtsp-simple-server /usr/local/etc/rtsp-simple-server.yml
+
+[Install]
+WantedBy=multi-user.target

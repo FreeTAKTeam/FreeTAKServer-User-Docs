@@ -26,7 +26,8 @@ NOTE:
   * The map in the web interface may not work with non-Intel-based architecture.
 
 ### how ZT works
-The command `wget -qO - bit.ly/freetakhub2 | sudo bash` is a combination of several commands and options used together to perform a specific task.
+The command `wget -qO - bit.ly/freetakhub2 | sudo bash`
+is a combination of several commands and options used together to perform a specific task.
 Here's a breakdown of what each part of the command does:
 
 wget
@@ -59,7 +60,7 @@ This script will install and configure FreeTAKHub components.
 
 1. FreeTAKServer (FTS): The core server that interfaces with TAK-enabled clients
 2. FreeTAKServer User Interface (FTS-UI): A web-based user interface.
-3. Video Server:  based on RTSP SImple Server. Handles video streaming.
+3. Video Server:  based on RTSP Simple Server. Handles video streaming.
 4.  Server:  Handle integration services (see below)
 5. FreeTAKHub Integration Server: Based on Node Red. Handles FTS integrations like SALUTE reports & video checking services (checks if videos are running and notifies FTS).
 6. FreeTAKHub Voice Server: Uses [Murmur](https://github.com/mumble-voip/mumble) or Mumble VOIP Server for voice chatting.

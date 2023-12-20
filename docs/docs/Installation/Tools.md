@@ -17,9 +17,9 @@ You can also start Putty from a WinSCP
 
 1. Download WinSCP
     - [https://winscp.net/eng/download.php](https://winscp.net/eng/download.php)
-2. To setup: Click New Site; select SCP for File protocol; enter RPi’s IP address for Host name; click Advanced button, select ‘Shell’ under
-environment and change Shell setting from Default to Sudo su - (this will allow your changes to have Root privileges)
-3. Click OK and then Save (if desired)
+2. To set up: Click New Site; select SCP for File protocol; enter RPi’s IP address for Host name; click Advanced button, select ‘Shell’ under
+environment and change Shell setting from Default to ```sudo su -``` (this will allow your changes to have Root privileges)
+3. Click `OK` and then `Save` (if desired)
 
 ### ZeroTier
 A software-defined wide area networking infrastructure that 

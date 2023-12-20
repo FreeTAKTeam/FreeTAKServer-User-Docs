@@ -33,7 +33,11 @@ docker run -d -p 8080:8080/tcp -p 8087:8087/tcp \
   freetakteam/freetakserver:1.1.2
 ```
 
-It is also possible to use an absolute path with a blind mount on the host instead of a proper volume.  For more information about volumes [https://docs.docker.com/storage/volumes/](https://docs.docker.com/storage/volumes/)
+It is also possible to use an absolute path with a blind mount on the host instead of a proper volume.
+For more information about volumes [https://docs.docker.com/storage/volumes/](https://docs.docker.com/storage/volumes/)
 
-Alternatively, you can use the example `docker-compose.yml` [available here](https://github.com/FreeTAKTeam/FreeTAKServer-Docker/blob/main/docker-compose.yml) by copying `docker-compose.yml` into a directory and then doing `docker-compose up` or `docker-compose up -d` to bring the container up, and in the background, respectively.
+Alternatively, you can use the example `docker-compose.yml` [available here](https://github.com/FreeTAKTeam/FreeTAKServer-Docker/blob/main/docker-compose.yml)
+by copying `docker-compose.yml` into a directory and
+then doing `docker-compose up` or `docker-compose up -d` to bring the container up,
+and in the background, respectively.
 The `docker-compose.yml` uses a bind mount to `./data`.

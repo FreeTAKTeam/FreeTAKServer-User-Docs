@@ -8,7 +8,7 @@
 ![image](https://user-images.githubusercontent.com/9298197/197416511-805196e6-09c5-4b0f-8a99-ab48b6d14328.png)
 
 
-* Under instance type, select the instance type appropriate for your deployment size. For testing servers a t2.micro is sufficient.
+* Under instance type, select the instance type appropriate for your deployment size. For testing servers a `t2.micro` is sufficient.
 * Under Key Pair, select a key pair in your account. If you do not have one, create one.
 * Under Network Settings, select a security group that has the necessary ports configured inbound for both SSH and FreeTAK server operations.
 

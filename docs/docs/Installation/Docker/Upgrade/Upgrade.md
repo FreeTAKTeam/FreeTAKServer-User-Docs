@@ -9,7 +9,10 @@ New documentation is in the works, and will be released ASAP.
 ---
 
 # Upgrading Existing Container
-To upgrade the container to a new version you simply stop the container running the version you wish to upgrade from, and start a container running the version you want to upgrade to.  To have data transfered between versions you need to have used a volume during the initial set up.
+To upgrade the container to a new version you simply
+stop the container running the version you wish to upgrade from,
+and start a container running the version you want to upgrade to.
+To have data transferred between versions you need to have used a volume during the initial set up.
 
 ```bash
 docker stop fts

@@ -6,7 +6,7 @@ this procedure Installs FTS + UI + video Server of a Raspberry Pi
 you need a Pi with at least 4 GB RAM
 
 ## Procedure
-Need to start with new install of ubuntu 22.04 server for pi 64 FTS 2.x need ubuntu 22.04
+Need to start with new installation of ubuntu 22.04 server for pi 64 FTS 2.x need ubuntu 22.04
 [https://cdimage.ubuntu.com/releases/22.04/release/](https://ubuntu.com/download/raspberry-pi/thank-you?version=22.04.3&architecture=server-arm64+raspi)
 Previous FTS versions works with 20.04
 https://cdimage.ubuntu.com/releases/20.04.4/release/ubuntu-20.04.3-preinstalled-server-arm64+raspi.img.xz
@@ -21,14 +21,16 @@ follow the instructions to create a card with the image
  * insert the card into the PI 4
  * the initial setup takes ~5 minutes on a PI 4
  * login with ubuntu / ubuntu
- * . If the RPi is connected to your router, when it boots it will display the IP grabbed from DHCP server. Write it down
- * . OS should prompt you to create a new password
- * . If desired, update OS – Run: 
+   * If the RPi is connected to your router,
+     when it boots it will display the IP grabbed from DHCP server.
+     Write it down
+   * OS should prompt you to create a new password
+   * If desired, update OS – Run: 
 ```
 sudo apt-get update; sudo reboot -n; sudo apt-get upgrade
 ```
- * In some cases you need to run: sudo apt full-upgrade or sudo apt-get dist-upgrade
- *   reboot be needed a couple times to get the OS completely updated
+ * In some cases you need to run: ```sudo apt full-upgrade``` or ```sudo apt-get dist-upgrade```
+ * reboot may be needed a couple of times to get the OS completely updated
 ```sudo reboot -n might```
 
  * install wget

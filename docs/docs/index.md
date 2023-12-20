@@ -3,7 +3,10 @@
 <img src="assets/FTSLOGOv2.png" width="200" height="200" alt="FTS Logo">
 
 FreeTAKServer (FTS) is a Python3 implementation of the TAK Server
-for devices like [ATAK-CIV](https://play.google.com/store/apps/details?id=com.atakmap.app.civ), [`WinTAK`](https://www.civtak.org/2020/09/23/wintak-is-publicly-available/), and [iTAK](https://apps.apple.com/us/app/itak/id1561656396).
+for devices like
+[`ATAK-CIV`](https://play.google.com/store/apps/details?id=com.atakmap.app.civ),
+[`WinTAK`](https://www.civtak.org/2020/09/23/wintak-is-publicly-available/),
+and [`iTAK`](https://apps.apple.com/us/app/itak/id1561656396).
 FTS is a cross-platform project that,
 as of release 1.9,
 provides Situational Awareness and other capabilities such as:

@@ -55,10 +55,10 @@ the FTUAS interface is typical of DJI the following is special:
 * in some model, it's also possible to aim the gimbal independently of the position of the drone by dragging the position on screen
 * In the current version, the aim is not perfect so expect some delta
 
-## ATAK Interface
+## `ATAK` Interface
 ### Map
 ![image](https://user-images.githubusercontent.com/60719165/124395620-77c0ba80-dcdb-11eb-88dd-f3eac3468962.png)
-In ATAK the drone shows:
+In `ATAK` the drone shows:
 
 * a white zone (field of view)
 * a Sensor Point of Interest (SPI)
@@ -70,7 +70,7 @@ to visualize the video tap the drone's icon and then the video icon
 
 ### Video Player
 ![image](https://user-images.githubusercontent.com/60719165/124395672-be161980-dcdb-11eb-9aea-162bd605080e.png)
-In alternative open the ATAK video player and search for the name of your drone
+In alternative open the `ATAK` video player and search for the name of your drone
 
 NOTICE: in the current version, every time a new video endpoint will be created, this must be manually deleted. 
 

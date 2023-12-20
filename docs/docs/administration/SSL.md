@@ -1,6 +1,7 @@
 # SSL
 
-Secure Sockets Layer (SSL) is a protocol for secure communication. FTS supports SSL since version 1.3.
+Secure Sockets Layer (SSL) is a protocol for secure communication.
+FTS supports SSL since version 1.3.
 
 # Automated SSL Generation and Deployment
 
@@ -91,7 +92,7 @@ cd .certs
 
 ## 4. Generate the Certificate Authority Certificate
 
-Create a private key for the CA certifcate. 
+Create a private key for the CA certificate. 
 
 ```console
 openssl ecparam -name prime256v1 -genkey -noout -out ca.key
@@ -112,25 +113,27 @@ openssl req -new -x509 -sha256 -key ca.key -out ca.crt
 ```
 # Certificate Authority Metadata Fields
 
-Creating a Certificate Authority (CA) involves generating a self-signed root certificate with various metadata fields. Below is a table that describes some of the common metadata fields that can be set in a CA certificate.
+Creating a Certificate Authority (CA) involves generating a self-signed root certificate
+with various metadata fields.
+Below is a table that describes some of the common metadata fields that can be set in a CA certificate.
 
-| Metadata Field          | X.509 Attribute | Description                                                                                                                                                        |
-|-------------------------|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Common Name             | `CN`            | The fully qualified domain name (FQDN) or name of the CA. For root CAs, this field often contains the organization's name. e.g. https://github.com/FreeTAKTeam                                        |
-| Organization            | `O`             | The legal name of the organization that is running the CA.   e.g. FreeTAKTeam                                                                                                         |
-| Organizational Unit     | `OU`            | The division or department within the organization that is responsible for managing the CA.                                                                         |
-| Locality                | `L`             | The city or locality where the organization is located.                                                                                                             |
-| State                   | `ST`            | The state, province, or region where the organization is located.                                                                                                   |
-| Country                 | `C`             | The two-letter ISO country code for the country where the organization is located.                                                                                  |
-| Email Address           | `emailAddress`  | The email address for contacting the CA administrator.                                                                                                              |
-| Serial Number           | N/A             | A unique identifier for the certificate. It is used to identify the certificate within a CA's database.                                                             |
-| Validity Period         | N/A             | Specifies the time period during which the certificate is valid. It includes a start date (`NotBefore`) and an end date (`NotAfter`).                                |
-| Key Usage               | N/A             | Defines the purposes for which the certificate's public key can be used, such as digital signature, key encipherment, and certificate signing.                      |
-| Extended Key Usage      | N/A             | Specifies additional purposes for which the public key may be used, like server authentication, client authentication, code signing, etc.                            |
-| Subject Alternative Name| `SAN`           | Specifies additional host names or IP addresses that are protected by this certificate. Useful for multi-domain or wildcard certificates.                           |
-| Issuer                  | N/A             | Information about the entity that issued the certificate. For a self-signed root CA, the issuer is the CA itself.                                                    |
-| Version                 | N/A             | Indicates the X.509 version used. Most modern certificates use version 3.                                                                                           |
-| Signature Algorithm     | N/A             | The algorithm used to create the certificate's signature. Common algorithms include RSA-SHA256 and ECDSA-SHA256.                                                     |
+| Metadata Field           | X.509 Attribute  | Description                                                                                                                                                         |
+|:-------------------------|:-----------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Common Name              | `CN`             | The fully qualified domain name (FQDN) or name of the CA. For root CAs, this field often contains the organization's name. e.g. https://github.com/FreeTAKTeam      |
+| Organization             | `O`              | The legal name of the organization that is running the CA.   e.g. FreeTAKTeam                                                                                       |
+| Organizational Unit      | `OU`             | The division or department within the organization that is responsible for managing the CA.                                                                         |
+| Locality                 | `L`              | The city or locality where the organization is located.                                                                                                             |
+| State                    | `ST`             | The state, province, or region where the organization is located.                                                                                                   |
+| Country                  | `C`              | The two-letter ISO country code for the country where the organization is located.                                                                                  |
+| Email Address            | `emailAddress`   | The email address for contacting the CA administrator.                                                                                                              |
+| Serial Number            | N/A              | A unique identifier for the certificate. It is used to identify the certificate within a CA's database.                                                             |
+| Validity Period          | N/A              | Specifies the time period during which the certificate is valid. It includes a start date (`NotBefore`) and an end date (`NotAfter`).                               |
+| Key Usage                | N/A              | Defines the purposes for which the certificate's public key can be used, such as digital signature, key encipherment, and certificate signing.                      |
+| Extended Key Usage       | N/A              | Specifies additional purposes for which the public key may be used, like server authentication, client authentication, code signing, etc.                           |
+| Subject Alternative Name | `SAN`            | Specifies additional host names or IP addresses that are protected by this certificate. Useful for multi-domain or wildcard certificates.                           |
+| Issuer                   | N/A              | Information about the entity that issued the certificate. For a self-signed root CA, the issuer is the CA itself.                                                   |
+| Version                  | N/A              | Indicates the X.509 version used. Most modern certificates use version 3.                                                                                           |
+| Signature Algorithm      | N/A              | The algorithm used to create the certificate's signature. Common algorithms include RSA-SHA256 and ECDSA-SHA256.                                                    |
 
 You will be prompted to enter in certificate details. Here is an example:
 
@@ -517,36 +520,36 @@ Certificate was added to keystore
 
 ## 11. Install SSL on the client
 
-### ATAK
+### `ATAK`
 
 1. Tap settings
-1. Manage server connections
-1. Open network connections
-1. Add a new connection 
-1. Assign a name and the IP of your server
-1. Click on advanced options
-1. Uncheck "use default SSL/TLS certificates"
-1. Tap "import Truststore"
-1. Select your truststore file
-1. type the password provide to you
-1. Tap "Import client certificate"
-1. Select your client certificate
-1. Type the password
-1. Type "OK"
+2. Manage server connections
+3. Open network connections
+4. Add a new connection 
+5. Assign a name and the IP of your server
+6. Click on advanced options
+7. Uncheck "use default SSL/TLS certificates"
+8. Tap "import Truststore"
+9. Select your truststore file
+10. type the password provide to you
+11. Tap "Import client certificate"
+12. Select your client certificate
+13. Type the password
+14. Type "OK"
 
-### WinTAK
+### `WinTAK`
 
 1. Go to Settings
-1. Network preferences
-1. Manage Server Connections
-1. Add Stream 
-1. Assign a Description, IP and port of your server
-1. Select SSL as a protocol
-1. Uncheck "use default SSL/TLS certificates"
-1. Click "install Certificate Authority"
-1. Select your Certificate Authority file
-1. Type the password provide to you
-1. Click  "Install client certificate"
-1. Select your client certificate
-1. Type the password
-1. Click "OK"
+2. Network preferences
+3. Manage Server Connections
+4. Add Stream 
+5. Assign a Description, IP and port of your server
+6. Select SSL as a protocol
+7. Uncheck "use default SSL/TLS certificates"
+8. Click "install Certificate Authority"
+9. Select your Certificate Authority file
+10. Type the password provide to you
+11. Click  "Install client certificate"
+12. Select your client certificate
+13. Type the password
+14. Click "OK"

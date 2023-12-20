@@ -27,7 +27,10 @@ Edit the YAML file
 ![image](https://user-images.githubusercontent.com/60719165/142767998-72a03e49-9055-4d4e-ac90-e8e00c51ffa9.png)
 
 ### Configure to start as a service
-To start the video server as a system daemon, we will create a systemd unit file. The systemd framework is the service manager used by Ubuntu, Debian and many other Linux distributions. By creating a unit file to manage the daemon, systemd will ensure the service is started with the OS and stays healthy.
+To start the video server as a system daemon, we will create a systemd unit file.
+The systemd framework is the service manager used by Ubuntu, Debian and many other Linux distributions.
+By creating a unit file to manage the daemon,
+systemd will ensure the service is started with the OS and stays healthy.
 
 Move the executable:
 
@@ -58,7 +61,7 @@ sudo systemctl enable mediamtx.service
 ## Test your video Installation
 in a browser resolve and use this address
 
-<http://<YOURSERVERIP>:9997/v1/config/get>
+`<http://<YOURSERVERIP>:9997/v1/config/get>`
 
 if you see your configuration the server is up and running
 

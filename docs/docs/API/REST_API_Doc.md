@@ -1,10 +1,14 @@
 # REST API - Public
 
-The FreeTAKServer REST API is a human readeble approach to the TAK world. The API allows you to easily connect third parties to the TAK family, without the need to understand the complexity of the COT structure or what a TCP connection is. FTS also supports an [Internal API](REST_API_InternalDoc.md).
+The FreeTAKServer REST API is a human-readable approach to the TAK world.
+The API allows you to easily connect third parties to the TAK family,
+without the need to understand the complexity of the COT structure or what a TCP connection is.
+FTS also supports an [Internal API](REST_API_InternalDoc.md).
 
 ## How FTS manages the information
 
-FTS will send the  information coming trough the API to all the connected clients, addtionally it will save it to the persistency, to be query in future. 
+FTS will send the  information coming through the API to all the connected clients,
+additionally it will save it to the persistency, to be queried in the future. 
 
 ## List of supported API
 
@@ -29,7 +33,10 @@ In the current release (1.9), FTS supports following API:
   
 ## General Configuration
 
-> To quickly test the API, you can use a browser extension like ARC Advanced rest client (Chrome). REST APIs are easy to use, however they require a minimum ammount of knowledge, we DO NOT provide support to explain WHAT an API is. Please refer to an online tutorial such as [this](http://www.steves-internet-guide.com/using-http-apis-for-iot-beginners-guide/). 
+> To quickly test the API, you can use a browser extension like ARC Advanced rest client (Chrome).
+> REST APIs are easy to use, however they require a minimum amount of knowledge,
+> we DO NOT provide support to explain WHAT an API is.
+> Please refer to an online tutorial such as [this](http://www.steves-internet-guide.com/using-http-apis-for-iot-beginners-guide/). 
 
 ### Endpoint
 
@@ -67,8 +74,11 @@ add_api_user
 ```
 
 See CLI help for details.
-To create a REST API key using the Web UI, go to the User section and give a user a token..
-Token: gives a unique combination that this user can leverage for the FTS REST API.
+To create a REST API key using the Web UI, go to the User section and give a user token.
+
+Token
+: gives a unique combination that this user can leverage for the FTS REST API.
+
 NOTICE:  the field token is for any alphanumeric string.
 the prefix 'bearer' is NOT part of the token.
 The name "Bearer 'authentication'".
@@ -84,7 +94,8 @@ The following is a non-working example of a key:
 
 ### Message
 
-In most end points, the message is placed in the body of the request as JSON formatted. See below for detailed examples.
+In most end points, the message is placed in the body of the request as JSON formatted.
+See below for detailed examples.
 In the API using the *Get* verbs it's a variable.
 
 ## API Details
@@ -124,15 +135,15 @@ A GeoObject is an element place on a map. It has a name, characteristics, and an
 ##### Parameters
 
 * GeoObject: It's the information that will determine which type will be placed on the tak maps including his icon. Please see API documentation for a list of valid entries. Since 1.7 you can also use nicknames for the geo objects.
-* longitude: OPTIONAL the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API.
-* latitude: OPTIONAL the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682).
+* longitude: OPTIONAL the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g. -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API.
+* latitude: OPTIONAL the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g. 43.855682).
 * how: the way in which this geo information has been acquired. Please see API documentation for a list of valid entries.
-* attitude: OPTIONAL the kind of expected behavior of the GeoObject (e.g friendly, hostile, unknown). Please see API documentation for a list of valid entries.
+* attitude: OPTIONAL the kind of expected behavior of the GeoObject (e.g. friendly, hostile, unknown). Please see API documentation for a list of valid entries.
 * name: a string to ID the GeoObject on a map.
 * bearing: OPTIONAL since 1.7, the direction expressed in degrees (1-360). Default: 0.
 * distance: OPTIONAL since 1.7, the distance in meters from the Lat/long or address.
 * timeout: OPTIONAL the length, expressed in seconds until the point will stale out. Default is 300 seconds or 5 minutes.
-* uid: optional input parameter, need to be an Unique Id for this element, if not present will be  server generated, if sent ATAK will try to update an existing geoObject. Use `putGeoObject` instead
+* uid: optional input parameter, need to be a Unique Id for this element, if not present will be  server generated, if sent `ATAK` will try to update an existing geoObject. Use `putGeoObject` instead
 * address: OPTIONAL address of destination. If sent will try to solve the exact geolocation of the destination. Possible valid examples are:
      - Big Arkansas River Park, Wichita, KS, USA 
      - Wichita, KS, USA 
@@ -204,7 +215,7 @@ A GeoObject is an element place on a map. It has a name, characteristics, and an
 
 * 200 Success: uid. you have created the geoObject.
 * [MISSING PARAMETERNAME]: you have omitted a parameter that is required.
-* server error 500: you have probably misspelled the list of parameters (e.g geoObjects/supported attitude). The names are case sensitive!
+* server error 500: you have probably misspelled the list of parameters (e.g. geoObjects/supported attitude). The names are case-sensitive!
 * server error 400: you have probably an error in the format of your JSON query.
 * server error 404: you have an error in the end point definition.
  
@@ -319,15 +330,32 @@ update an existing geoObject coordinates (can also update other features)
 
 ##### Parameters
 
-* uid:  **REQUIRED**, input parameter, need to be an Unique Id for this element, if not present will be server generated, if sent ATAK will try to update an existing geoObject. Use `putGeoObject` instead.
-* longitude: **REQUIRED**, the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API.
-* latitude: **REQUIRED**, the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682).
-* attitude: **REQUIRED**, the kind of expected behavior of the GeoObject (e.g friendly, hostile, unknown). Please see API documentation for a list of valid entries.
-* how: the way in which this geo information has been acquired. Please see API documentation for a list of valid entries.
-* name: a string to ID the GeoObject on a map.
-* bearing: since 1.7, the direction expressed in degrees (1-360). 
-* distance: since 1.7, the distance in meters from the Lat/long.
-* timeout: the length, expressed in seconds until the point will stale out. Default is 300 seconds or 5 minutes.
+uid
+:  **REQUIRED**, input parameter, need to be a Unique Id for this element, if not present will be server generated, if sent `ATAK` will try to update an existing geoObject. Use `putGeoObject` instead.
+
+longitude
+: **REQUIRED**, the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g. -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API.
+
+latitude
+: **REQUIRED**, the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g. 43.855682).
+
+attitude
+: **REQUIRED**, the kind of expected behavior of the GeoObject (e.g. friendly, hostile, unknown). Please see API documentation for a list of valid entries.
+
+how
+: the way in which this geo information has been acquired. Please see API documentation for a list of valid entries.
+
+name
+: a string to ID the GeoObject on a map.
+
+bearing
+: since 1.7, the direction expressed in degrees (1-360). 
+
+distance
+: since 1.7, the distance in meters from the Lat/long.
+
+timeout
+: the length, expressed in seconds until the point will stale out. Default is 300 seconds or 5 minutes.
   
 ###### Example body
 
@@ -337,28 +365,39 @@ update an existing geoObject coordinates (can also update other features)
   "longitude": -66.12614,
   "latitude": 43.96552,
   "attitude": "hostile",
-  "geoObject": "Sniper",
+  "geoObject": "Sniper"
 }
 ```
 
 ##### Response
 
- * 200 with UID
+* 200 with UID
 
 #### getGeoObject
 
 retrieve in a array all geoObjects in a given radius. It uses JSON variables, not the json body
 
-* verb: GET
-* endPoint: /ManageGeoObject/getGeoObject
+verb
+: GET
+
+endPoint
+: /ManageGeoObject/getGeoObject
 
 ##### Parameters
 
 NOTE: these should be provided in the form of url encoded variables.
- * radius: radius in meters where geoObjects, default(100).
- * longitude: longitude from which radius is calculated, default(0).
- * latitude: latitude from which radius is calculated, default(0).
- * attitude: (optional) the attitude which will be filtered, default(any). See list of supported attitudes above.
+
+radius
+: radius in meters where geoObjects, default(100).
+
+longitude
+: longitude from which radius is calculated, default(0).
+
+latitude
+: latitude from which radius is calculated, default(0).
+
+attitude
+: (optional) the attitude which will be filtered, default(any). See list of supported attitudes above.
 
 ###### Example Variables
 
@@ -372,23 +411,35 @@ NOTE: these should be provided in the form of url encoded variables.
 ```
  
 *Params in the URL*
- http://[IP]:[PORT]/ManageGeoObject/getGeoObject?longitude=-77.0104&latitude=38.889&radius=5000
+`http://[IP]:[PORT]/ManageGeoObject/getGeoObject?longitude=-77.0104&latitude=38.889&radius=5000`
 
 #### GetRepeatedMessages
 get geo objects  that are regularly resend by the servers
-* verb: GET
-* endPoint: /ManageGeoObject/GetRepeatedMessages
+
+verb
+: GET
+
+endPoint
+: /ManageGeoObject/GetRepeatedMessages
  
 ### ManageChat
   
 #### SendGeoChatObject
-   * verb: POST
-   * endPoint: /ManageChat/postChatToAll
+
+verb
+: POST
+
+endPoint
+: /ManageChat/postChatToAll
    
 ##### Parameters
 
-* message: the text of the GeoChat message
-* sender: the name of the chat's sender, changing this will also change the chat room for the client.
+
+message
+: the text of the GeoChat message
+
+sender
+: the name of the chat's sender, changing this will also change the chat room for the client.
 
 ###### Example body
 
@@ -402,17 +453,20 @@ get geo objects  that are regularly resend by the servers
 
 #### postEmergency
 
-create a emergency into the server
+create an emergency into the server
 
-  * verb: POST
-  * endPoint: /ManageEmergency/postEmergency
+verb
+: POST
+
+endPoint
+: /ManageEmergency/postEmergency
  
 ##### Parameters
 
   * name: the name of the person that has an emergency.
   * emergencyType: the type of emergency to be displayed
-  * longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API.
-  * latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)
+  * longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g. -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API.
+  * latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g. 43.855682)
   * uid: server generated Unique Id of this element.
   * address: OPTIONAL address of emergency.
 
@@ -438,8 +492,11 @@ create a emergency into the server
 
 get a list of current active emergencies 
 
-* verb: GET
-* endPoint: /ManageEmergency/getEmergency
+verb
+: GET
+
+endPoint
+: /ManageEmergency/getEmergency
 
 no parameter required
 
@@ -460,13 +517,19 @@ no parameter required
 delete an active emergency.
 (TODO: delete of emergencies can be only done by the originator of it.)
 
-* verb: DELETE
-* endPoint: /ManageEmergency/deleteEmergency
+verb
+: DELETE
+
+endPoint
+: /ManageEmergency/deleteEmergency
 
 ##### Parameters
 
-* uid: server generated Unique Id of this emergency
-* status: if the emergency is currently active or not (on/off)
+uid
+: server generated Unique Id of this emergency
+
+status
+: if the emergency is currently active or not (on/off)
 
 ###### Example body
 
@@ -483,19 +546,37 @@ Manage a team member position
 
 #### postPresence
 
-* verb: POST
-* endPoint: /ManagePresence/postPresence
-* returns: UID
+verb
+: POST
+
+endPoint
+: /ManagePresence/postPresence
+
+returns
+: UID
 
 ##### Parameters
 
-* longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API.
-* latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682)
-* how: the way in which this geo information has been acquired. Please see API documentation for a list of valid entries.
-* role: the given role within the team . Please see API documentation for a list of valid entries.
-* name: a string to ID the GeoObject on a map.
-* team: the color of the team 
-* uid: optional Unique Id of this element. if present will update an existing element. use the put insted *V. 1.7 only If you send the UID an existing CLI will be updated#
+longitude
+: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g. -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API.
+
+latitude
+: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g. 43.855682)
+
+how
+: the way in which this geo information has been acquired. Please see API documentation for a list of valid entries.
+
+role
+: the given role within the team . Please see API documentation for a list of valid entries.
+
+name
+: a string to ID the GeoObject on a map.
+
+team
+: the color of the team 
+
+uid
+: optional Unique Id of this element. if present will update an existing element. use the PUT instead *V. 1.7 only If you send the UID an existing CLI will be updated#
 
 ###### Example body
 
@@ -514,13 +595,20 @@ Manage a team member position
 #### putPresence
 
 Updates the location of a team member
- * verb: PUT
- * endPoint: /ManagePresence/putPresence
- * returns: UID
+
+verb
+: PUT
+
+endPoint
+: /ManagePresence/putPresence
+
+returns
+: UID
  
 ##### Parameters
 
- * uid: server generated Unique Id of this emergency
+uid
+: server generated Unique Id of this emergency
    
 ### ManageRoute
 
@@ -528,28 +616,57 @@ manage routes on the map
 
 #### postRoute
 
- * verb: POST
- * endpoint: /ManageRoute/postRoute
- * returns: uid
+verb
+: POST
+
+endpoint
+: /ManageRoute/postRoute
+
+returns
+: uid
  
 ##### parameters
 
- * timeout: OPTIONAL the length, expressed in seconds until the point will stale out. Default is 300 seconds or 5 minutes.
- * address: OPTIONAL address of destination. If sent will try to solve the exact geolocation of the destination. Possible valid examples are:
+timeout
+: OPTIONAL the length, expressed in seconds until the point will stale out. Default is 300 seconds or 5 minutes.
+
+address
+: OPTIONAL address of destination. If sent will try to solve the exact geolocation of the destination. Possible valid examples are:
+
      - Big Arkansas River Park, Wichita, KS, USA 
      - Wichita, KS, USA 
      - Big Arkansas River Park, Wichita
      - and so on.
- * method: OPTIONAL the method we plan to use for the route (Driving, Flying, Walking, Swimming, Watercraft). currently not used and set to Driving in the client.
- * longitudeDest: OPTIONAL if address is not sent.
- * latitudeDest: OPTIONAL if address is not sent.
- * uid: OPTIONAL server generated Unique Id of this element. it will  update the existing element.  
- * routeName:OPTIONAL the name of the route.
- * endName: OPTIONAL the name of the destination (end point on the route).
- * startName: OPTIONAL the  name of the start (start point of the route).
- * uid: OPTIONALserver generated Unique Id of this element. it will  update an existing route.  
-* longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API.
-* latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682).
+
+method
+: OPTIONAL the method we plan to use for the route (Driving, Flying, Walking, Swimming, Watercraft). currently not used and set to Driving in the client.
+
+longitudeDest
+: OPTIONAL if address is not sent.
+
+latitudeDest
+: OPTIONAL if address is not sent.
+
+uid
+: OPTIONAL server generated Unique Id of this element. it will  update the existing element.  
+
+routeName
+: OPTIONAL the name of the route.
+
+endName
+: OPTIONAL the name of the destination (end point on the route).
+
+startName
+: OPTIONAL the  name of the start (start point of the route).
+
+uid
+: OPTIONAL server generated Unique Id of this element. it will  update an existing route.  
+
+longitude
+: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g. -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API.
+
+latitude
+: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g. 43.855682).
  
 
 ##### Example body
@@ -594,16 +711,28 @@ Manages creation of videos endpoints in the clients. The videos are visible unde
 
 #### postVideoStream
 
- * verb: POST
- * endpoint: /ManageVideoStream/postVideoStream
- * returns: uid
+verb
+: POST
+
+endpoint
+: /ManageVideoStream/postVideoStream
+
+returns
+: uid
  
 ##### parameters
 
-* "streamAddress": the IP of the video server.
-* "streamPort": the port the video server respond to.
-* "streamPath": the unique path of the video stream* "alias": a name for the stream.
-* "streamProtocol": the type of protocol used (e.g. rtsp, rtmp, raw).
+streamAddress
+: the IP of the video server.
+
+streamPort
+: the port the video server respond to.
+
+streamPath
+: the unique path of the video stream* "alias": a name for the stream.
+
+streamProtocol
+: the type of protocol used (e.g. rtsp, rtmp, raw).
   
 ###### Example body 
 
@@ -635,9 +764,14 @@ streamPort and streamPort params still required but will be ignored
 
 retrieves list of stream paths
 
-* verb: GET
-* endpoint: /ManageVideoStream/getVideoStream
-* returns: json with path
+verb
+: GET
+
+endpoint
+: /ManageVideoStream/getVideoStream
+
+returns
+: json with path
 
 ##### example return
 
@@ -661,24 +795,52 @@ manage sensors (name to be changed in ManageSensor)
 
 create a drone object with a field of view, a current aiming point a video stream
 
-* verb: POST
-* endpoint: /Sensor/postDrone
-* returns: DRONE_UID, SPI_UID
+verb
+: POST
+
+endpoint
+: /Sensor/postDrone
+
+returns
+: DRONE_UID, SPI_UID
  
 ##### parameters
 
-* timeout: OPTIONAL the length, expressed in seconds until the point will stale out. Default is 300 seconds or 5 minutes.
-* name: the name of the drone, will become also the name of the video stream.
-* Range: the range of view of the sensor in meters.
-* Bearing: the direction in which the sensor is aimed in degrees.
-* FieldOfView: the field of view of the drone in degrees.
-* VideoURLUID: the address of the video stream. DJI drones only support RTMP protocol. You need to have FreeTAKHub Video service active to see a stream.
-* longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API.
-* latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682).
-* uid: OPTIONAL input parameter, needed to update existing drone COT.
-* SPIName: the name of the Sensor Point of Interest  the UAS is currently aiming to. currently will NOT work in a update message (when you send the UID).
-* SPILongitude: longitude of target. currently will NOT work in a update message (when you send the UID).
-* SPILatitude: latitude of target. currently will NOT work in a update message (when you send the UID).
+timeout
+: OPTIONAL the length, expressed in seconds until the point will stale out. Default is 300 seconds or 5 minutes.
+
+name
+: the name of the drone, will become also the name of the video stream.
+
+Range
+: the range of view of the sensor in meters.
+
+Bearing
+: the direction in which the sensor is aimed in degrees.
+
+FieldOfView
+: the field of view of the drone in degrees.
+
+VideoURLUID
+: the address of the video stream. DJI drones only support RTMP protocol. You need to have FreeTAKHub Video service active to see a stream.
+
+longitude
+: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g. -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API.
+
+latitude
+: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g. 43.855682).
+
+uid
+: OPTIONAL input parameter, needed to update existing drone COT.
+
+SPIName
+: the name of the Sensor Point of Interest  the UAS is currently aiming to. currently will NOT work in an update message (when you send the UID).
+
+SPILongitude
+: longitude of target. currently will NOT work in an update message (when you send the UID).
+
+SPILatitude
+: latitude of target. currently will NOT work in an update message (when you send the UID).
 
 ###### Example body: create sensor
 
@@ -715,7 +877,10 @@ create a drone object with a field of view, a current aiming point a video strea
 
 #### postSPI
 
-Creates an SPI at a point or update an existing SPI. If the video source is a UAV, and the UAV is also publishing its own position and sensor point of interest (SPI), those will  be plotted on the map. Being able to see the position of the aircraft and know where on the map the camera is looking in real time, while being able to see the video on the same screen, is a huge boost to SA.
+Creates an SPI at a point or update an existing SPI.
+If the video source is a UAV, and the UAV is also publishing its own position
+and sensor point of interest (SPI), those will be plotted on the map.
+Being able to see the position of the aircraft and know where on the map the camera is looking in real time, while being able to see the video on the same screen, is a huge boost to SA.
 
  * verb: POST
  * endpoint: /Sensor/postSPI
@@ -723,12 +888,23 @@ Creates an SPI at a point or update an existing SPI. If the video source is a UA
  
 ##### parameters
 
-* timeout: OPTIONAL the length, expressed in seconds until the point will stale out. Default is 300 seconds or 5 minutes.
-* uid: OPTIONAL input parameter, needed to update existing SPI,
-* longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API.
-* latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682).
-* droneUid: the uid of the connected drone.
-* name: the name of the drone, will become also the name of the video stream.
+timeout
+: OPTIONAL the length, expressed in seconds until the point will stale out. Default is 300 seconds or 5 minutes.
+
+uid
+: OPTIONAL input parameter, needed to update existing SPI,
+
+longitude
+: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g. -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API.
+
+latitude
+: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g. 43.855682).
+
+droneUid
+: the uid of the connected drone.
+
+name
+: the name of the drone, will become also the name of the video stream.
 
 ###### Example Body
 
@@ -758,10 +934,17 @@ allows to post a set of geo information with attached metadata in tabular format
 
 ##### parameters
 
-* name: the name of the report.
-* longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API.
-* latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g 43.855682).
-* body: a JSON structure of key pairs (name, value).
+name
+: the name of the report.
+
+longitude
+: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g. -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where *West 77.08* is equal to '-77.08' in the API.
+
+latitude
+: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g. 43.855682).
+
+body
+: a JSON structure of key pairs (name, value).
 
 ###### Example Body
 

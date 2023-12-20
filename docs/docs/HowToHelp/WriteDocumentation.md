@@ -50,9 +50,6 @@ The following shows you an example of how to set up `gh-pages` for your project 
 
 The important thing here is to select `[GitHub Actions]`.
 
-This will cause a `pages-build-deployment` action to be generated.
-Execution of this workflow will cause the contents of
-the `gh-pages` branch to be published to your project pages.
 
 
 #### GitHub Action
@@ -119,7 +116,8 @@ Some of the more important features of those plugins are presented here.
 ### Awesome Pages
 
 Each document directory should contain a `.pages`.
-These `.pages` distribute the `nav:` element across the document rather than collecting them in the `mkdocs.yml` file.
+These `.pages` distribute the `nav:` element across the document
+rather than collecting them in the `mkdocs.yml` file.
 This implies that `mkdocs.yml` should not contain a `nav:` element.
 
 ### Markdown Includes
