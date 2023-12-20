@@ -137,7 +137,7 @@ only in the cases where internet connection is not available.
    Edited contents for Windows machines:
 
    ```python
-   {!Installation/Windows/MainConfig.py!}   
+{!Installation/Windows/MainConfig.py!}   
    ```
 
    When finished configuring `MainConfig.py` open the `config.py` file for editing.
