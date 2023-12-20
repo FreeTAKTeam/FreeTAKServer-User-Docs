@@ -9,7 +9,7 @@ It is written in Markdown and mkdirs.
 
 You will need a `github` account.
 
-Fork https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs into your own account.
+Fork <https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs> into your own account.
 Clone your forked repository onto your development environment.
 
 It will probably be useful to have two remotes,
@@ -21,7 +21,7 @@ and one (origin) for your forked repository.
 FTS provides a Discord server where we can provide a consistent experience,
 free from kindergarten dramas and with a lot of sense of humor
 (keep in mind our tagline – "The parrot's not dead! It’s just resting").
-You can join the FTS Discord Server here: https://discord.gg/m8cBzQM2te.
+You can join the FTS Discord Server here: <https://discord.gg/m8cBzQM2te>.
 While Discord is cool for live interaction, it can be very inconsistent.
 The forum is organized thematically, where it’s easier to stay on topic.
 This will include a knowledge library of problems and solutions.

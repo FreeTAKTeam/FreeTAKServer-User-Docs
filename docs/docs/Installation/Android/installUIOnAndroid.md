@@ -1,5 +1,7 @@
 # FTS-UI Installation with Android
-FTS-UI is installed with python's pip. One way to get pip on Android is with Pydroid3, available here: https://play.google.com/store/apps/details?id=ru.iiec.pydroid3
+FTS-UI is installed with python's pip.
+One way to get pip on Android is with Pydroid3,
+available here: <https://play.google.com/store/apps/details?id=ru.iiec.pydroid3>.
 
 If you've installed Pydroid3 open the App and navigate to the terminal:
 - In the upper right corner of Pydroid3, touch the 3 horizontal bars.
@@ -67,7 +69,7 @@ AFTER:
 FLASK_APP=/data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/lib/python3.8/site-packages/FreeTAKServer-UI/run.py nohup python3 /data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/lib/python3.8/site-packages/FreeTAKServer-UI/run.py
 ```
 
-Now open your web browser and navigate to `http://127.0.0.1:5000` and login with the default creds (admin/password)
+Now open your web browser and navigate to <http://127.0.0.1:5000> and login with the default creds (admin/password)
 
 # Troubleshooting
 Error: `ImportError: cannot import name '_ColumnEntity' from 'sqlalchemy.orm.query'`

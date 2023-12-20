@@ -13,9 +13,8 @@ https://cdimage.ubuntu.com/releases/20.04.4/release/ubuntu-20.04.3-preinstalled-
 
 
 download an imager
-```
-https://www.balena.io/etcher
-```
+<https://www.balena.io/etcher>
+
 follow the instructions to create a card with the image
 ![image](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/assets/60719165/cdfbab6a-783f-4107-9d3c-ea8c1197500a)
 

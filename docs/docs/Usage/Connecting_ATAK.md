@@ -10,8 +10,8 @@ In order to use ATAK with a FTS server you need to:
 The easiest way  is to open this article in your Android phone, so that all the files will be already available there.
 
 #### Download and install ATAK 4.10 (updated Nov 2023)
-* Play store https://play.google.com/store/apps/details?id=com.atakmap.app.civ 
-* Secondary  https://files.civtak.org/ (use CivTAK Community OwnCloud Repo) 
+* Play store <https://play.google.com/store/apps/details?id=com.atakmap.app.civ> 
+* Secondary  <https://files.civtak.org/> (use CivTAK Community OwnCloud Repo) 
 
 #### Download configurations
 * [Configuration `fts-official-pub.zip`](../assets/fts-official-pub.zip) 

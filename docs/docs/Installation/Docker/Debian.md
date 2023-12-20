@@ -16,7 +16,7 @@ sudo apt-get install curl
 curl https://releases.rancher.com/install-docker/19.03.sh | sh
 ```
 Or follow the docker installation guide.
-https://docs.docker.com/engine/install/debian/
+<https://docs.docker.com/engine/install/debian/>
 
 ## Run the Container
 ```bash
