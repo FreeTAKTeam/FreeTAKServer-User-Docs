@@ -19,7 +19,7 @@ FreeTAK UAS (FTUAS) is an Android application that can:
 
 # Installation
 
-* Assuming that you have installed and configured your [FTS](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/PyPi/Linux/Install.html) 
+* Assuming that you have installed and configured your [FTS](../Installation/Linux/Installation.md) 
 * and the  [video service](https://github.com/FreeTAKTeam/FreeTAKHub/blob/main/README.md), 
 * download the [APK installation file](https://github.com/niccellular/FreeTAKUAS/releases) on your phone / tablet and follow the instructions.
 * if the installation is successful you should have a new Icon

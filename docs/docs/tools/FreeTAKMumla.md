@@ -10,7 +10,7 @@ the FreeTAKMumla Plugin for ATAK requires that:
 
 ## Installation
 * Download and install Mumla
-* Connect to your [murmur](https://freetakteam.github.io/FreeTAKServer-User-Docs/FreeTAKHub/Voice/VoiceServer) server
+* Connect to your [murmur](../FreeTAKHub/Voice/VoiceServer) server
 * set the microphone to work with Push-to-Talk
 * Dowload  the [Mumla plugin](https://github.com/FreeTAKTeam/FreeTAKMumla_Plugin/releases) on your local windows machine
 * start Wintak and use the ATAK Manager to create a new device configuration
