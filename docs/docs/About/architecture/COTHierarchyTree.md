@@ -1,3 +1,7 @@
+---
+status: new
+---
+
 # Work in progress COT Hierarchy Tree
 
 <details>

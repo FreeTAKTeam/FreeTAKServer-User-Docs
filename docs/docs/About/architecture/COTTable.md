@@ -1,3 +1,7 @@
+---
+status: deprecated
+---
+
 # Center On Target (COT)
 
 The following table combines Center On Target information found in COTTYpes.XML,
