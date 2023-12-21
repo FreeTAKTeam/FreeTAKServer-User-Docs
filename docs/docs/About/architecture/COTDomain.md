@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # **COT Domain Model**
 The Cursor-On-Target (CoT) Event data model defines a Domain model as a system of abstractions that describes selected aspects of a sphere of knowledge for the TAK  domain.
 It is represented as a platform-independent model (PIM) that is independent of the specific technological platform used to implement it.

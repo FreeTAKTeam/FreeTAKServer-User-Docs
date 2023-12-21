@@ -135,3 +135,9 @@ i.e.
 The `fts_user/docs/versions.json` is used to define the versions.
 
 TODO: Explain how this is to be used.
+
+
+## Writing Good Markdown
+
+* https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
+* https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md

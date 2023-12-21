@@ -37,3 +37,9 @@ extra:
   version:
     provider: mike
     default: latest
+  status:
+    new: Recently Added
+    ood: Out of Date
+    deprecated: Not to be Trusted
+    todo: Work in Progress
+
