@@ -68,6 +68,8 @@ on push branches main
 jobs deploy steps run
 : Install dependencies and build the target
 
+If the GitHub Page does not show up after a few minutes,
+go to the settings of your repository and ensure that the publishing source branch for your GitHub Page is set to `gh-pages`.
 
 ### Make a Pull Request (PR)
 
