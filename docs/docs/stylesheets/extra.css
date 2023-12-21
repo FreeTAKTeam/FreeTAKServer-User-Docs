@@ -27,3 +27,12 @@
   mask-image: var(--md-status--current);
   -webkit-mask-image: var(--md-status--current);
 }
+
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: red;
+}
+
+/* Dark mode */
+[data-md-color-scheme="current"] {
+  --md-default-bg-color: blue;
+}
