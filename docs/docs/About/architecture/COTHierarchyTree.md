@@ -1,5 +1,6 @@
 ---
 status: new
+icon: material/emoticon-happy
 ---
 
 # Work in progress COT Hierarchy Tree

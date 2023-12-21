@@ -1,5 +1,6 @@
 ---
 status: deprecated
+icon: material/emoticon-happy
 ---
 
 # Center On Target (COT)
