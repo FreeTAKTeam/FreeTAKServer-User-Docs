@@ -1,8 +1,9 @@
-name: Build and Publish User Docs from `mkdocs`
+name: Build and Publish User Docs
 on:
   push:
     branches:
       - main
+      - mkdocs
 permissions:
   contents: write
 jobs:
