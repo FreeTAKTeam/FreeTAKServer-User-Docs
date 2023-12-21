@@ -18,6 +18,7 @@ jobs:
           python-version: 3.x
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
       - uses: actions/cache@v3
+        # https://github.com/actions/cache
         with:
           key: mkdocs-material-${{ env.cache_id }}
           path: .cache
@@ -28,4 +29,4 @@ jobs:
           mkdocs-section-index mkdocs-toc-sidebar-plugin mike 
           markdown-include mkdocs-pdf-export-plugin
       # https://www.mkdocs.org/user-guide/cli/#mkdocs-gh-deploy
-      - run: cd docs && mkdocs gh-deploy --force --verbose
+      - run: cd docs && mkdocs gh-deploy --force

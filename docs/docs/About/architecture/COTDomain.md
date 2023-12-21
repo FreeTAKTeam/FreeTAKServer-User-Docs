@@ -7,13 +7,20 @@ hide:
 ---
 
 # **COT Domain Model**
-The Cursor-On-Target (CoT) Event data model defines a Domain model as a system of abstractions that describes selected aspects of a sphere of knowledge for the TAK  domain.
-It is represented as a platform-independent model (PIM) that is independent of the specific technological platform used to implement it.
-The Domain model can be translated into an XML data schema for exchanging time sensitive position of moving objects, or "what", "when", and "where" (WWW) information, between systems.
+xyz
+The Cursor-On-Target (CoT) Event data model defines a Domain model
+as a system of abstractions that describes selected aspects
+of a sphere of knowledge for the TAK domain.
+It is represented as a platform-independent model (PIM)
+that is independent of the specific technological platform used to implement it.
+The Domain model can be translated into an XML data schema
+for exchanging time sensitive position of moving objects,
+or "what", "when", and "where" (WWW) information, between systems.
+
 ![FTS COT domain Model](https://user-images.githubusercontent.com/60719165/193834333-ea041722-e3ea-46f9-9eb6-7417c19807ea.png)
 
 
-##  \_\_serverdestination 
+## \_\_serverdestination 
 
 The destination of a certain message.
 Indicates how to communicate back to the sender.
