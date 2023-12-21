@@ -35,225 +35,140 @@ only in the cases where internet connection is not available.
 
 ## Install Instructions
 
-1. Install python 3.11 from python.org
+### Install python 3.11 from python.org
 
-   [Download and run the installer](https://www.python.org/downloads/windows/).
-   The current version is 3.12, but it makes use of Cython 3.x 
-   which is incompatible with several of the libraries used by FTS. 
- 
-   Choose the installer option.
- 
-   ![](pythoninstall.png)
+[Download and run the installer](https://www.python.org/downloads/windows/).
+The current version is 3.12, but it makes use of Cython 3.x 
+which is incompatible with several of the libraries used by FTS. 
 
-   Check pip, tcl/tk and IDLE and the Python test suite.
+Choose the installer option.
 
-   ![](features.jpg)
+![](pythoninstall.png)
 
-   Make sure you add Python to environment variables for easy use.
+Check pip, tcl/tk and IDLE and the Python test suite.
 
-   ![](advanced.jpg)
+![](features.jpg)
 
-2. Verify python environment 
+Make sure you add Python to environment variables for easy use.
 
-   Check that python and pip are installed and working correctly.
-   *You should be able to open cmd anywhere and do this check*:
+![](advanced.jpg)
 
-   ```shell
-   python -V
-   pip --version
-   ```
-   ![](chkpypip.jpg)
+### Verify python environment 
 
-3. Install Python packages
+Check that python and pip are installed and working correctly.
+*You should be able to open cmd anywhere and do this check*:
+
+```shell
+python -V
+pip --version
+```
+![](chkpypip.jpg)
+
+### Install Python packages
 
    Having checked that Python and pip are working install the requirements:
 
-   1. Perform install one by one via pip.
+1. Perform install one by one via pip.
 
-      ```shell
-      pip install flask
-      pip install flask_login
-      pip install flask_migrate
-      pip install flask_wtf
-      pip install flask_sqlalchemy
-      pip install email_validator
-      pip install waitress
+   ```shell
+   pip install flask
+   pip install flask_login
+   pip install flask_migrate
+   pip install flask_wtf
+   pip install flask_sqlalchemy
+   pip install email_validator
+   pip install waitress
 
-      pip install coveralls
-      pip install coverage
-      pip install pytest
-      pip install flake8
-      pip install flake8-print
-      pip install pep8-naming
-      pip install selenium
-      ```
+   pip install coveralls
+   pip install coverage
+   pip install pytest
+   pip install flake8
+   pip install flake8-print
+   pip install pep8-naming
+   pip install selenium
+   ```
 
-   2. (alternate) Perform install from a file.
+2. (alternate) Perform install from a file.
 
-      From a file Paste these requirements into a .txt file `requirements.txt` for example:
-      ```text
-      flask
-      flask_login
-      flask_migrate
-      flask_wtf
-      flask_sqlalchemy
-      email_validator
-      waitress
-      coveralls
-      coverage
-      pytest
-      flake8
-      flake8-print
-      pep8-naming
-      selenium
-      ```
+   From a file Paste these requirements into a .txt file `requirements.txt` for example:
+   ```text
+   flask
+   flask_login
+   flask_migrate
+   flask_wtf
+   flask_sqlalchemy
+   email_validator
+   waitress
+   coveralls
+   coverage
+   pytest
+   flake8
+   flake8-print
+   pep8-naming
+   selenium
+   ```
 
-      Now change into the directory (`cd`) containing said `requirements.txt` file and run the command:
-      ```shell
-      pip install -r requirements.txt
-      ```
+   Now change into the directory (`cd`) containing said `requirements.txt` file and run the command:
+   ```shell
+   pip install -r requirements.txt
+   ```
             
-   3. Install FreeTAKServer
-      When all the requirements have been satisfied install the FreeTAKServer and FreeTAKServerUI.
-      ```shell
-      pip install FreeTAKServer
-      pip install FreeTAKServer-UI
-      ```
+3. Install FreeTAKServer
+   When all the requirements have been satisfied install the FreeTAKServer and FreeTAKServerUI.
+   ```shell
+   pip install FreeTAKServer
+   pip install FreeTAKServer-UI
+   ```
       
-      * https://pypi.org/project/FreeTAKServer/
-      * https://pypi.org/project/FreeTAKServer-UI/
+   * https://pypi.org/project/FreeTAKServer/
+   * https://pypi.org/project/FreeTAKServer-UI/
 
-4. Configure the FTS
+### Configure the FTS
 
-   After the installation has finished open the `MainConfig.py` file for editing.
+After the installation has finished the server and UI may need some configuration.
 
-   The contents must be changed fo that the Windows paths can communicate with FTS.
-
-   ```text
-   MY PATH EXAMPLE
-   C:\Software\python\Lib\site-packages\FreeTAKServer\controllers\configuration\MainConfig.py
-   ```
-
-   Edited contents for Windows machines:
-
-   ```python
-   {!Installation/Windows/MainConfig.py!}   
-   ```
-
-   When finished configuring `MainConfig.py` open the `config.py` file for editing.
-   ```text
-   MY PATH EXAMPLE
-   C:\Software\python\Lib\site-packages\FreeTAKServer-UI\config.py
-   ```
-
-   Edited contents for Windows machines:
-
-   ```python
-   # -*- encoding: utf-8 -*-
-   """
-   License: MIT
-   Copyright (c) 2019 - present AppSeed.us
-   """
-
-   import os
-   from   os import environ
-
-   class Config(object):
-
-     basedir    = os.path.abspath(os.path.dirname(__file__))
-
-     SECRET_KEY = 'key'
-
-     # This will connect to the FTS db
-     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + 'C:\\Software\\python\\Lib\\site-packages\\FreeTAKServer\\FTSDataBase.db'
-
-     # certificates path
-     certpath = "C:\\Software\\python\\Lib\\site-packages\\FreeTAKServer\\certs\\"
-
-     # crt file path
-     crtfilepath = f"{certpath}pubserver.pem"
-
-     # key file path
-     keyfilepath = f"{certpath}pubserver.key.unencrypted"
-
-     # this IP will be used to connect with the FTS API
-     IP = '127.0.0.1'
-
-     # Port the  UI uses to communicate with the API
-     PORT = '19023'
-
-     # the public IP your server is exposing
-     APPIP = '127.0.0.1'
-
-     # this port will be used to listen
-     APPPort = 5000
-
-     # the webSocket  key used by the UI to communicate with FTS.
-     WEBSOCKETKEY = 'YourWebsocketKey'
-
-     # the API key used by the UI to communicate with FTS. generate a new system user and then set it
-     APIKEY = 'Bearer token'
-
-     # For 'in memory' database, please use:
-     # SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
-            
-     SQLALCHEMY_TRACK_MODIFICATIONS = False
-
-     # THEME SUPPORT
-     #  if set then url_for('static', filename='', theme='')
-     #  will add the theme name to the static URL:
-     #    /static/<DEFAULT_THEME>/filename
-     # DEFAULT_THEME = "themes/dark"
-     DEFAULT_THEME = None
+The FTS server is configured with `MainConfig.py`.
 
 
-   class ProductionConfig(Config):
-     DEBUG = False
+```text
+MY PATH EXAMPLE
+C:\Software\python\Lib\site-packages\FreeTAKServer\controllers\configuration\MainConfig.py
+```
 
-     # Security
-     SESSION_COOKIE_HTTPONLY = True
-     REMEMBER_COOKIE_HTTPONLY = True
-     REMEMBER_COOKIE_DURATION = 3600
+```python
+{!Installation/Windows/MainConfig.py!}   
+```
 
-     # PostgreSQL database
-     SQLALCHEMY_DATABASE_URI = 'postgresql://{}:{}@{}:{}/{}'.format(
-        environ.get('APPSEED_DATABASE_USER', 'appseed'),
-        environ.get('APPSEED_DATABASE_PASSWORD', 'appseed'),
-        environ.get('APPSEED_DATABASE_HOST', 'db'),
-        environ.get('APPSEED_DATABASE_PORT', 5432),
-        environ.get('APPSEED_DATABASE_NAME', 'appseed')
-     )
+The FTS server UI is configured with `config.py`.
 
+```text
+MY PATH EXAMPLE
+C:\Software\python\Lib\site-packages\FreeTAKServer-UI\config.py
+```
 
-   class DebugConfig(Config):
-     DEBUG = True
+```python
+{!Installation/Windows/config.py!}   
+```
 
+### Start the Server
 
-   config_dict = {
-     'Production': ProductionConfig,
-     'Debug': DebugConfig
-   }
+In order to run the server and the GUI two terminal windows must be opened and the commands below must be run:
 
-   ```
+SERVER START COMMAND
+```shell
+python -m FreeTAKServer.controllers.services.FTS
+```
 
-5. Start the Server
+UI START COMMAND
+```shell
+cd C:\Software\python\Lib\site-packages\FreeTAKServer-UI
+set FLASK_APP=run.py
+flask run
+```
 
-   In order to run the server and the GUI two terminal windows must be opened and the commands below must be run:
-   
-   SERVER START COMMAND
-   ```shell
-   python -m FreeTAKServer.controllers.services.FTS
-   ```
-   UI START COMMAND
-   ```shell
-   cd C:\Software\python\Lib\site-packages\FreeTAKServer-UI
-   set FLASK_APP=run.py
-   flask run
-   ```
+### Connect to the Server
 
-6. Connect to the Server
-
-   Now your server should be running. `User = admin`, `Password = password` and `GUI link` http://localhost:5000/
+Now your server should be running. `User = admin`, `Password = password` and `GUI link` http://localhost:5000/
 
 ## Notes
 
@@ -298,6 +213,6 @@ FreeTAKServer documentation for end users
 
 ## RPiFTS Series
 
-GHOST_DA-B6 has created a set of videos on `youtube` detailing how to install and set up FTS on raspberry pi SBC's.
+GHOST_DA-B6 has created a set of videos on `youtube` detailing how to install and set up FTS on raspberry pi `SBC's`.
 
 You can view his RPiFTS video series on his [channel](https://www.youtube.com/channel/UC--WpY--HV7PymMWLgfflZA).
