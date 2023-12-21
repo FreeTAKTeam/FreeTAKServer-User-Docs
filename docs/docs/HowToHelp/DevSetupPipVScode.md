@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # Setup a development environment for FTS
 ## introduction
 this tutorial assumes that you are working under windows (tested under 11)

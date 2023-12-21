@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # FreeTAK Server Installation
 This guide will walk you through installing FreeTAKServer 2.0
 

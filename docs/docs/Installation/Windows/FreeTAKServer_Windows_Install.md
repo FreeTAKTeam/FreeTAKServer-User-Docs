@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # FreeTAKServer Install On Windows Computer
 
 Below is the installation commands and comments for the installation of FreeTAKServer on a Windows computer. 

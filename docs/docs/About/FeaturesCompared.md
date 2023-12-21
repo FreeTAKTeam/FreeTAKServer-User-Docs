@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # FreeTAKServer Compared
 Users have spoken: FTS is the best TAK server on github!
 

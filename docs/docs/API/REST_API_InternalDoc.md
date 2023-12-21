@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # REST API - Internal
 Internal APIs are primarily used by the FTS UI to communicate with the server. 
 See also the [REST API DOC](REST_API_Doc.md) for APIs used in integration

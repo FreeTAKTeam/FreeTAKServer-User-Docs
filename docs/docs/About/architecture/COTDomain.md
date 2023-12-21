@@ -1,13 +1,9 @@
 ---
-status: ood
-icon: material/emoticon-happy
-hide:
-  - navigation
-  - toc
+status: todo
 ---
 
 # **COT Domain Model**
-xyz
+
 The Cursor-On-Target (CoT) Event data model defines a Domain model
 as a system of abstractions that describes selected aspects
 of a sphere of knowledge for the TAK domain.

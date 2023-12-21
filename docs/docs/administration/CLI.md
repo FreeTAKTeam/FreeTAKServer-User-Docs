@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # CLI
 
 ## Availability

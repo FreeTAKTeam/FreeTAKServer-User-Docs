@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # AWS
 
 * Select EC2 as the service from the AWS Console 

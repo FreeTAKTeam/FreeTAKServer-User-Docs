@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # SSL
 
 Secure Sockets Layer (SSL) is a protocol for secure communication.

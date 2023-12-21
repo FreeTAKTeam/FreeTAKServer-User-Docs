@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 ExCheck
 
 **ExCheck** is a plugin for `ATAK` and `WinTAK`.

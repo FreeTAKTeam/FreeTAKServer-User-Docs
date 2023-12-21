@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # Connecting `ATAK` to Pub Server
 The FTS team supports a public instance of FTS with the last version installed so that you can test it.
 

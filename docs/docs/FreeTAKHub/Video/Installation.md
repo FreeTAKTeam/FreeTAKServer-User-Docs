@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # Video Server
 MediaMTX is a RTSP / RTPM capable software to stream in real time from / to TAK devices.
 It is used with the [FreeTAK UAS](../../tools/FreeTAKUAS.md) and [TAK ICU](../../tools/takICU.md)

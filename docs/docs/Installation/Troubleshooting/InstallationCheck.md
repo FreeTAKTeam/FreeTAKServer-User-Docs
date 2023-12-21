@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # Checking Your Installation
 
 ## Check FreeTAKServer, FreeTAKServer-UI, and WebMap

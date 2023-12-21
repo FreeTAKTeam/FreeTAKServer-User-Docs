@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # Manifesto for FreeTAKTeam
 
 We are FreeTAKTeam, a group of individuals passionate about democratizing Situational Awareness through the power of technology. 

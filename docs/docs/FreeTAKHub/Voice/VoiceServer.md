@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # FreeTAKHub Voice installation
 
 the FTH Voice server is based on Mumble

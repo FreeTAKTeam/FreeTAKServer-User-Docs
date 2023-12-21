@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 ## FTS Infrastructure
 ![image](https://user-images.githubusercontent.com/60719165/183449678-e2c153e3-0eea-4cd9-bc69-63b4adb10491.png)
 

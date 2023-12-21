@@ -1,3 +1,7 @@
+---
+status: current
+---
+
 # Zero Touch Installation
 The ZeroTouch (ZT or ZTI) installation is the simplest way to install FTS. 
 Has been tested on the [cloud](../Cloud/AWS.md) and

@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # Raspberry Pi
 
 this procedure Installs FTS + UI + video Server of a Raspberry Pi

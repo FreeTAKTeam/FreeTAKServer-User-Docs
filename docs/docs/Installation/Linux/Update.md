@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # Update
 in **certain cases**, if you already installed FTS with pip you can use
 ```shell

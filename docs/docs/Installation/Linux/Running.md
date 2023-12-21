@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 If you have not installed FreeTAKServer please follow the [installation](Installation.md) guide first.
 
 

@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # SSL Issue: Regenerate Certificate Revocation List
 Currently, there is a known issue of a socket leak, causing SSL to stop working after a period of time.
 Even restarting the server OS would not help,

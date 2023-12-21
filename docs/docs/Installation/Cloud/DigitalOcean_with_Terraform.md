@@ -1,3 +1,7 @@
+---
+status: current
+---
+
 # DigitalOcean with Terraform
 
 This installation has only been tested on Ubuntu 22.04.

@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # Frequently Asked Questions (FAQ) about FreeTAKServer (FTS)
 
 ## What is FTS?

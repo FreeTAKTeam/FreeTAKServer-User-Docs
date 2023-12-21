@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # Write Documentation
 
 This project houses the FreeTakServer (FTS) documentation.

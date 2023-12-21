@@ -1,3 +1,7 @@
+---
+status: todo
+---
+
 # About Mil-STD-2525 and COTS
 The Center on Target (CoT) is a data exchange format primarily used in military and emergency response applications such as the TAK ecosystem.
 It's designed to facilitate real-time sharing of geospatial information among various systems and users. 

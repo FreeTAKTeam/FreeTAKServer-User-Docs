@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # Troubleshooting
 
 ## My Windows Installation is failing

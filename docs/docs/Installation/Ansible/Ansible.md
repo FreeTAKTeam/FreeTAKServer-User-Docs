@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # Install FreeTAKHub with Ansible
 
 Ansible is an Infrastructure-As-Code (IAC) tool used for managing and monitoring local or remote FTS servers.

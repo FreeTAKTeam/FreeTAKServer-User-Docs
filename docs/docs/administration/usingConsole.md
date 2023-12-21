@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # Unix Console 
 ## hot to edit the Config Files
 the suggested way to edit Configuration files is by using [WinSCP](../Installation/Tools.md),

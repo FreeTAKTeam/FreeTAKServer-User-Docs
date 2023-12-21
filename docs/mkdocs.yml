@@ -37,13 +37,18 @@ plugins:
       media_type: print
       enabled_if_env: ENABLE_PDF_EXPORT
 
+extra_css:
+  - stylesheets/extra.css
+
 extra:
   version:
     provider: mike
     default: latest
   status:
     new: Recently Added
+    deprecated: Slated to be Removed
     ood: Out of Date
-    deprecated: Not to be Trusted
+    warning: Warning! Badly Out of Date
     todo: Work in Progress
+    current: The Page is Up to Date
 

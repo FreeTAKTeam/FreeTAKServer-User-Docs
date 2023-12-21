@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # How to help
 Depending on your skill-set and passion you can participate in the project in different ways.
 Jump to the proper Section to get the instructions,

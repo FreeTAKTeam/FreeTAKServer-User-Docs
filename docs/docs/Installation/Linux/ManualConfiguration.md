@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # Manual Configuration
 
 ### Configure FreeTAKServer < 1.9

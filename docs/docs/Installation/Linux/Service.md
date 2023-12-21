@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 Running FreeTAKServer as a service on your Linux server can be achieved in multiple ways.
 
 ## Cron

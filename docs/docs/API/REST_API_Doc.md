@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # REST API - Public
 
 The FreeTAKServer REST API is a human-readable approach to the TAK world.

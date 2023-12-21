@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # TAK ICU
 
 TAK ICU is an Android Team Awareness Kit (`ATAK`) support plugin that allows a user to stream video and position to a compatible RTSP server.

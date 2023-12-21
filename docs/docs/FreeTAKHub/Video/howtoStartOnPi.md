@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # How to autostart the video server on the Pi
 
 Hardware: Raspberry Pi 4b- 8g  
