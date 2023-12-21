@@ -10,12 +10,16 @@ theme:
   favicon: 'assets/FTS_Circle.png'
   logo: 'assets/FTS_Circle.png'
   features:
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation
     - navigation.instant
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.indexes
     - navigation.sections
+    - navigation.expand
+    - navigation.path
     - toc.follow
+    - toc.integrate
 
 markdown_extensions:
   - pymdownx.superfences

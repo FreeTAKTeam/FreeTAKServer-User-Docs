@@ -1,6 +1,9 @@
 ---
 status: ood
 icon: material/emoticon-happy
+hide:
+  - navigation
+  - toc
 ---
 
 # **COT Domain Model**
