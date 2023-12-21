@@ -160,15 +160,16 @@ python -m FreeTAKServer.controllers.services.FTS
 ```
 
 UI START COMMAND
-```shell
-cd C:\Software\python\Lib\site-packages\FreeTAKServer-UI
+```powershell
+cd C:\\Software\\python\\Lib\\site-packages\\FreeTAKServer-UI
 set FLASK_APP=run.py
 flask run
 ```
 
 ### Connect to the Server
 
-Now your server should be running. `User = admin`, `Password = password` and `GUI link` http://localhost:5000/
+Now your server should be running.
+`User = admin`, `Password = password` and `GUI link` http://localhost:5000/
 
 ## Notes
 
@@ -182,13 +183,7 @@ Create a `.bat` file to run the server on double click and on startup:
 `StartFreeTAKServer.bat`
 
 ```bat
-::START THE SERVER
-ECHO ON
-start cmd /k python -m FreeTAKServer.controllers.services.FTS
-cd C:\Software\python\Lib\site-packages\FreeTAKServer-UI
-set FLASK_APP=run.py
-flask run
-pause
+{!Installation/Windows/StartFreeTAKServer.bat!} 
 ```
 To run this script at startup: Go to Run (`WINDOWS + R`) and Type `shell:startup`, 
 and paste a copy of your `StartFreeTAKServer.bat` file there.
