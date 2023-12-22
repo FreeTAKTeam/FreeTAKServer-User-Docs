@@ -35,7 +35,7 @@ While they can grow to be complex, they are usually very simple.
 ### background
 The main directive is ExecStart, which specifies the command that should be run when the service is started. The command is 
 ```bash
-/usr/bin/python3 -m /usr/local/lib/python3.11/dist-packages/FreeTAKServer-UI/run.py. 
+/usr/bin/python3 /usr/local/lib/python3.11/dist-packages/FreeTAKServer-UI/run.py. 
 ```
 Here's what each part of the command does:
 
