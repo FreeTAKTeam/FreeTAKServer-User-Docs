@@ -1,5 +1,11 @@
+---
+status: ood
+---
+
 # SSL Issue: Regenerate Certificate Revocation List
-Currently, there is a known issue of a socket leak, causing SSL to stop working after a period of time. Even restarting the server OS would not help, documented under: https://github.com/FreeTAKTeam/FreeTakServer/issues/368
+Currently, there is a known issue of a socket leak, causing SSL to stop working after a period of time.
+Even restarting the server OS would not help,
+documented under: <https://github.com/FreeTAKTeam/FreeTakServer/issues/368>
 
 The cause is that  Certificate Revocation List (CRL) is expired.
 A Certificate Revocation List (CRL) is a type of security feature used in public key infrastructure (PKI) systems.

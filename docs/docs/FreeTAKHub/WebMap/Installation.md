@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 ## About webmap
 The webmap provides insights of user presence and COTS shared with everyone.
 Also in his NodeRed version can create certain types of CoT.
@@ -90,8 +94,8 @@ edit the config file webMAP_config.json
 set FTH_FTS_URL to the IP and port of your FTS
 
 ```text
-  "FTH_FTS_URL": "[YOUR_FTS_IP]" 
-  "FTH_FTS_TCP_Port": [YOUR_FTS_PORT]
+"FTH_FTS_URL": "[YOUR_FTS_IP]" 
+"FTH_FTS_TCP_Port": [YOUR_FTS_PORT]
 ```
 
 in the console type:
@@ -113,7 +117,8 @@ now connect a TAK client to see if that displays
 ![image](https://user-images.githubusercontent.com/60719165/143260791-d909e0d5-38e4-4d78-98fe-2fb488e333bf.png)
 
 ## configure to start as a service
-Systemd is the service manager used by Ubuntu, Debian and many other Linux distributions, and allows to launch rtsp-simple-server on boot.
+Systemd is the service manager used by Ubuntu, Debian and many other Linux distributions,
+and allows to launch `rtsp-simple-server` on boot.
 
 move the executable
 ```bash

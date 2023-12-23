@@ -1,3 +1,4 @@
 nav:
-    - REST_API_Doc.md
-    - REST_API_InternalDoc.md
+    - REST API:
+        - External API: REST_API_Doc.md
+        - Internal API: REST_API_InternalDoc.md

@@ -1,5 +1,9 @@
+---
+status: ood
+---
+
 # REST API - Internal
-Internal APIs are primarly used by the FTS UI to communicate with the server. 
+Internal APIs are primarily used by the FTS UI to communicate with the server. 
 See also the [REST API DOC](REST_API_Doc.md) for APIs used in integration
 they may be used to create other user interfaces such as CLI.
 
@@ -41,8 +45,8 @@ Subscription: `connectUpdate`
 ## returns
 ```json
 {
-"starttime": "", 
-"version": "" 
+    "starttime": "", 
+    "version": "" 
 }
 ```
 - "starttime": the time at which server was started
@@ -51,13 +55,20 @@ Subscription: `connectUpdate`
 # Authenticate
 
 ## description
-  event used to authenticate new clients in the websocket<br />
-  Event: `authenticate` <br />
-  Subscription: `authentication`
+event used to authenticate new clients in the websocket
+
+Event
+: `authenticate`
+
+Subscription
+: `authentication`
   
 ## returns
-  will call the event authentication on client with message body
-```{'successful': 'True'/'False'}``` depending on whether the authentication was accepted.
+will call the event authentication on client with message body
+```json
+{ "successful": "True" }
+``` 
+depending on whether the authentication was accepted.
 
 ## parameters
 a JSON body in the following format
@@ -66,10 +77,11 @@ a JSON body in the following format
 ```
 # Users
 ## description
-event used to access list of connected client aswell as data
-relating to each client.<br />
- Event: `users` <br />
- Subscription: `userUpdate`
+event used to access list of connected client as well as data
+relating to each client.
+
+Event: `users`  
+Subscription: `userUpdate`  
 
 ## returns
 a JSON message containing connected clients
@@ -86,9 +98,10 @@ None
 
 # Manage System users
 ## systemUser
-retrieve all system users and their associated information<br />
-Event: `systemUser` <br />
-Subscription: `systemUserUpdate`
+retrieve all system users and their associated information
+
+Event: `systemUser`  
+Subscription: `systemUserUpdate`  
  
 ### returns
 system user information
@@ -107,7 +120,8 @@ None
 
 ## addSystemUser
 ### description
-add one or many system users to the server<br />
+add one or many system users to the server
+
 Event: `addSystemUser`
 
 ### returns
@@ -126,7 +140,8 @@ None
 
 ## removeSystemUser
 ### description
-remove a system user from the server<br />
+remove a system user from the server
+
 Event: `removeSystemUser`
 
 ### returns
@@ -145,8 +160,10 @@ None
 ## logs
 ### description
 event used to retrieve recent error log entries
-from the server<br />
-Event: `logs` <br />
+from the server
+
+Event: `logs`
+
 Subscription: `logUpdate`
 
 ### returns
@@ -164,8 +181,9 @@ the timestamp on the most recent log entry in format `%Y-%m-%d %H:%M:%S,%f`
 
 ## events
 ### description
-event used to retrieve last 5 events<br />
-Event: `events` <br />
+event used to retrieve last 5 events
+
+Event: `events`  
 Subscription: `eventsUpdate`
 
 ### returns
@@ -181,12 +199,13 @@ None
 # serviceInfo
 ## description
 event used to retrieve information about all services including
-their current status and port<br />
-Event: `serviceInfo` <br />
+their current status and port
+
+Event: `serviceInfo`  
 Subscription: `serviceInfoUpdate`
 
 ## returns
-status and port of each service aswell as the server starttime to the client event `serviceInfoUpdate`
+status and port of each service as well as the server start time to the client event `serviceInfoUpdate`
 with body data in the following format
 ```json
 {
@@ -226,8 +245,9 @@ None
 ## description
 event used to retrieve information regarding
 the status of the server hardware including
-cpu, disk and memory usage.<br />
-Event: `serverHealth` <br />
+cpu, disk and memory usage.
+
+Event: `serverHealth`  
 Subscription: `serverHealthUpdate`
 
 ## returns
@@ -247,8 +267,9 @@ None
 # systemStatus
 ## description
 event used to execute test of all currently active
-services and return their respective status.<br />
-  Event: `systemStatus` <br />
+services and return their respective status.
+
+  Event: `systemStatus`  
   Subscription: `systemStatusUpdate`
 
 ## returns
@@ -293,8 +314,8 @@ None
 # changeServiceInfo
 
 ## description
-Event used to change the status of each service running on the server<br />
-Event: `changeServiceInfo` <br />
+Event used to change the status of each service running on the server  
+Event: `changeServiceInfo`  
 Subscription: `systemStatusUpdate`
  
 ## returns
@@ -354,8 +375,8 @@ accepts JSON data containing information regarding the desired status of each se
 not all services need to be in every message only those you would like to change
  
 # systemUsers
-Event used to retrieve all system users<br />
-  Event: `systemUsers` <br />
+Event used to retrieve all system users  
+  Event: `systemUsers`  
   Subscription: `systemUsersUpdate`
   
 ## returns
@@ -374,8 +395,8 @@ the metadata of each user
 None
 
 # addSystemUsers
-used to create a new system user on the server<br />
-Event: `addSystemUsers` <br />
+used to create a new system user on the server  
+Event: `addSystemUsers`  
 
 ## returns
 None
@@ -396,8 +417,8 @@ None
 * Certs: whether the user should have certs generated(should be true in ui)
 
 ## removeSystemUsers
-used to remove a system user and their associated files from the server<br />
-Event: `removeSystemUsers` <br />
+used to remove a system user and their associated files from the server  
+Event: `removeSystemUsers`  
 
 ### returns
 None
@@ -449,7 +470,7 @@ code: `201`
 
 * Name: name of user
 * Group: group of user
-* DeviceType: the device type [mobile, wintak]
+* DeviceType: the device type [mobile, `WinTAK`]
 * Token: api token of user(optional)
 * Password: password for user(optional)
 * Certs: whether the user should have certs generated(should be true in ui)

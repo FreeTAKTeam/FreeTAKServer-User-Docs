@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # FreeTAK Server Installation
 This guide will walk you through installing FreeTAKServer 2.0
 
@@ -14,7 +18,8 @@ This guide will walk you through installing FreeTAKServer 2.0
 ---
 ## Note: Linux Distributions
 
-The main supported OS is Ubuntu 20.04. Due to cross-compatibility, Debian 10 and the latest Raspbian also work.
+The main supported OS is Ubuntu 22.04.
+Due to cross-compatibility, Debian 10 and the latest Raspbian also work.
 
 Centos/RHEL/Fedora installation instructions are provided on a best-effort volunteer basis.
 
@@ -229,9 +234,9 @@ The pip utility allows the user to check the installation and dependency status 
 pip check FreeTakServer 
 ```
 
-You should see `No broken requirements found.` displayed, in which case you can
-proceed. Otherwise there was an issue with the pip installation and you should
-investigate the pip-generated installation logs for more information.
+You should see `No broken requirements found.` displayed, in which case you can proceed.
+Otherwise, there was an issue with the pip installation,
+and you should investigate the pip-generated installation logs for more information.
 
 ---
 ## 7. Configure and Run FreeTAKServer
@@ -267,7 +272,8 @@ functionality is declared but not fully implemented.
 
 On the first run, a configuration wizard will help set up the config file.
 
-> :memo: **Note:** If the wizard does not appear, see [troubleshooting](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Troubleshooting/troubleshooting/).
+> :memo: **Note:** If the wizard does not appear,
+> see [troubleshooting](../../Installation/Troubleshooting/troubleshooting.md).
 
 ### Using the Wizard
 
@@ -292,26 +298,26 @@ enter the preferred log file path [/opt/fts/Logs]:
 > :memo: **Note:** The IP in this configuration wizard is the FTS_MAIN_IP.
 This must be your EXTERNAL IP.
 
-MySQL usage is beyond the scope of this guide, if you wish to use MySQL, it is
-assumed you know how to configure database servers already. Some additional
-information for MySQL installations is available in the
-[FTS-UI configuration section](### MySQL Configuration).
+`MySQL` usage is beyond the scope of this guide, if you wish to use MySQL,
+it is assumed you know how to configure database servers already.
+Some additional information for `MySQL` installations is available
+in the [FTS-UI configuration section](#mysql-configuration).
 
-The database and log filepaths can be anywhere that the server's host user can
-access.
+The database and log filepaths can be anywhere that the server's host user can access.
 
 The main path should be the directory where pip installed FreeTAKServer.
-This can be found under your python packages directory. In virtualenv installations,
+This can be found under your python packages directory.
+In virtualenv installations,
 it is inside the virtualenv directory.
 
 The wizard creates the YAML configuration file under the location you selected,
-the default location is /opt/FTSConfig.yaml
+the default location is `/opt/FTSConfig.yaml`.
 
 FreeTAKServer will then proceed start all the services.
 
 ---
 ## 7. FTS Configuration
-### Manual FTSConfig.yaml
+### Manual `FTSConfig.yaml`
 
 > :warning: **Warning:** Before modifying the YAML file, FreeTAKServer
 **must be stopped!**
@@ -323,7 +329,8 @@ A separate guide is maintained for
 [manual configuration](../../Installation/Linux/ManualConfiguration.md) of your FTS install.
 
 ### MainConfig.py
-FTS sends a welcome message on client connection which is configurable. See the `FreeTAKServer/core/configuration/MainConfig.py` file to change it.
+FTS sends a welcome message on client connection which is configurable.
+See the `FreeTAKServer/core/configuration/MainConfig.py` file to change it.
 
 ```
 ConnectionMessage = f'Welcome to FreeTAKServer {version}. The Parrot is not dead. It’s just resting'
@@ -404,8 +411,8 @@ SQLALCHEMY_DATABASE_URI = 'mysql://' + 'user:pass@localhost/dbname'
  
 ### Miscellaneous Parameters
 
-Some additional parameters can be found in the `__init__.py` file in the
-`FreeTAKServer-UI/app/__init__.py` directory.
+Some additional parameters can be found in the `__init__.py` file
+in the `FreeTAKServer-UI/app/__init__.py` directory.
 
 
 These configure dashboard update frequency, ~~health pings?~~,
@@ -463,7 +470,8 @@ To run the server without keeping the console open, a service can be created.
 *See: [Service](Service.md)*
 
 ### Installation on a Separate machine
-Typically the web UI  is installed on the same machine as FTS, however you can install it on a separate machine and even use it to manage several instances.
+Typically, the web UI  is installed on the same machine as FTS;
+however, you can install it on a separate machine and even use it to manage several instances.
 
 If you're installing FTS-UI on a separate server the following commands may help:
 

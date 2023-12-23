@@ -1,7 +1,11 @@
+---
+status: ood
+---
+
 # Video Management
 Since version 1.9 FTS supports a complete video management function.
 you can:
-* Upload to FTS a video end point using the client (ATAK only)
+* Upload to FTS a video end point using the client (`ATAK` only)
 * Download an existing video endpoint from FTS
  
 Additionally, 

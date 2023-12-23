@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # FreeTAKHub Node-RED
 This document describes how to install and secure Node-RED.
 
@@ -37,7 +41,7 @@ To install Node-RED with APT you will need to:
 - Install Node JS
 
 ## Prerequisites
-This guide assumes that you are using Ubuntu 20.04 on cloud installation (we use digital Ocean). 
+This guide assumes that you are using Ubuntu 22.04 on cloud installation (we use digital Ocean). 
 
 
 ##  Create a Non-root user

@@ -1,8 +1,8 @@
 title: Tools you need
 
 nav:
-    - FreeTAKMumla.md
-    - FreeTAKUAS.md
-    - takICU.md
-    - UASTool.md
-    - Manuals
+    - FreeTAK Mumble VoIP (Mumla): FreeTAKMumla.md
+    - FreeTAK Unmanned Arial (UAS): FreeTAKUAS.md
+    - FreeTAK ICU: takICU.md
+    - FreeTAK UAS Tool: UASTool.md
+    - Manuals: Manuals

@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # FreeTAKHub Voice installation
 
 the FTH Voice server is based on Mumble
@@ -28,7 +32,8 @@ you will accept the default value of Yes because we want Mumble-Server to run wh
 
 ![image](https://user-images.githubusercontent.com/60719165/159131856-e7510b41-bfdd-43ba-ad5a-efe89fbd3d4d.png)
 
-Even if this will be a dedicated Mumble-Server, Now select Yes since this will ensure the lowest possible latency.
+Even if this will be a dedicated Mumble-Server,
+now select `Yes` since this will ensure the lowest possible latency.
 
 ### Mumble SuperUser Password
 SuperUser is the highest-level administrative account for the server. 

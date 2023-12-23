@@ -8,5 +8,5 @@ nav:
     - Raspberry Pi: Raspberry_Pi.md
     - Command Line Interface: CLI.md
     - Debian Linux: Debian.md
-    - Multiple_Servers
-    - Upgrade
+    - Multiple Servers: Multiple_Servers
+    - Upgrading Container: Upgrade

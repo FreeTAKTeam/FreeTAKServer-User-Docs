@@ -1,3 +1,7 @@
+---
+status: ood
+---
+
 # Manual Configuration
 
 ### Configure FreeTAKServer < 1.9
@@ -30,7 +34,8 @@ To exit nano `ctrl+x` and then enter `y` to save and hit enter.
 
 #### DBFilePath
 OPTIONAL this should not be necessary since FTS 1.5
-you need to change the `DBFilePath` value to something valid, if you are running as root, '/root' is a good choice.
+you need to change the `DBFilePath` value to something valid,
+if you are running as root, `/root` is a good choice.
 
 Original Value
 ```python
@@ -45,7 +50,8 @@ As roots Home Folder
 DBFilePath = str(r'/root/FTSDataBase.db')
 ```
 ###  MySQL database
-FTS supports an abstraction layer, so it's easy to use a different database like MySQL. MYSQL is still experimental support, so use at your own risk.
+FTS supports an abstraction layer, so it's easy to use a different database like MySQL.
+MYSQL is still experimental support, so use at your own risk.
 To switch to a MySQL database
 ```python
 # this should be set before startup

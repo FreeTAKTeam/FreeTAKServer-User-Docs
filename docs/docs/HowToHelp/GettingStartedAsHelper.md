@@ -1,6 +1,11 @@
+---
+status: ood
+---
+
 # How to help
 Depending on your skill-set and passion you can participate in the project in different ways.
-Jump to the proper Section to get the instructions, this page is structured so that the basic instructions applies to more advanced roles.
+Jump to the proper Section to get the instructions,
+this page is structured so that the basic instructions applies to more advanced roles.
 
 * Hobby User
 * Professional User / SME
@@ -12,7 +17,7 @@ Jump to the proper Section to get the instructions, this page is structured so t
 As a Hobby user you want to install and use the FTS-TAK platform.
 ### getting started as a Hobby User
 * Connect to our Public server to familiarize your self
-* Read the user manual  in github, if you find inconsistencies submit a change request
+* Read the user manual in GitHub, if you find inconsistencies submit a change request
 * Install FTS on your environment
 * give us a Star in GitHub
 * Donate to the project
@@ -23,7 +28,8 @@ As a Hobby user you want to install and use the FTS-TAK platform.
 * Submit issues to GitHub
 
 ## Unix Admin / DevOps
-You are familiar with installing and configuring complex applications using the console, you understand network configuration
+You are familiar with installing and configuring complex applications using the console,
+you understand network configuration
 
 ### getting started as an Admin / DevOps
 * Help Other users on our Discord and Discourse with installation and configuration issues
@@ -55,7 +61,8 @@ While selecting or working on a task you can get guidance at the
 
 
 ## Modeler / Digital Engineer
-You are an architect or a very experienced developer with deep understanding of Object-Oriented thinking, patterns and Models.
+You are an architect or a very experienced developer with
+deep understanding of Object-Oriented thinking, patterns and Models.
 
 #### get the digital environment
 we use Sparx Enterprise Architect as modeling tool.

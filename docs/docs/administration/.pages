@@ -1,5 +1,5 @@
 nav:
-    - CLI.md
-    - SSL.md
-    - usingConsole.md
-    - Web_Admin.md
+    - Command Line Interface (CLI): CLI.md
+    - Secure Socket Layer (SSL): SSL.md
+    - Using the Console: usingConsole.md
+    - Web Administration: Web_Admin.md

@@ -1,20 +1,17 @@
-# Warning! Old Documentation Ahead!
-
-The documentation below is for the **OLD** FTS container implementation and is not correct.
-
-If you are following these instructions, you will probably not get the result you want.
-
-New documentation is in the works, and will be released ASAP.
-
 ---
+status: warning
+---
+
 
 # Install
 
 The official Docker image for FreeTAKServer.
 
 ## Usage
-When using this docker container we suggested that you use the `--restart unless-stopped` flag as shown in the examples. 
-This will ensure that the service automatically starts with the host and will restart if it encounters an error and crashes.
+When using this docker container we suggest
+that you use the `--restart unless-stopped` flag as shown in the examples. 
+This will ensure that the service automatically starts with the host
+and will restart if it encounters an error and crashes.
 The port mappings in the examples are required to make the service accessible to hosts.
 All environment variables are optional.
 All data is stored in a single directory for ease of persistent data between container versions.
@@ -23,7 +20,8 @@ All data is stored in a single directory for ease of persistent data between con
 
 ### Ports
 The docker image runs the ports on the same defaults as FreeTAKServer.
-You can use the `-e` flag to map these ports to different ports or to run multiple FreeTAKServer's concurrently on the same host.
+You can use the `-e` flag to map these ports to different ports
+or to run multiple FreeTAKServer's concurrently on the same host.
 
 ### Environment Variables
 All environment variables will apply to FTS.
@@ -40,10 +38,10 @@ However, these are some additional ones specific to this docker image.
 | WEBMAPIP                | Allows the FTS UI to specify a different webmap IP                                        |
 | WEBMAPPORT              | Allows the FTS UI to specify a different webmap port                                      |
 | WEBMAPPROTOCOL          | Allows the FTS UI to specify a different webmap protocol                                  |
-```
 
 ### Storage
-All data in this container is stored in `/data`.  This directory will need to be stored to a volume if you wish to persist data between updates.
+All data in this container is stored in `/data`.
+This directory will need to be stored to a volume if you wish to persist data between updates.
 
 If you use a storage volume you may need to inspect the docker volume to find where it saved the data.  
 ```bash

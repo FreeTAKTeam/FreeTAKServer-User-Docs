@@ -10,12 +10,16 @@ theme:
   favicon: 'assets/FTS_Circle.png'
   logo: 'assets/FTS_Circle.png'
   features:
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation
     - navigation.instant
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.indexes
     - navigation.sections
+#    - navigation.expand
+    - navigation.path
     - toc.follow
+    - toc.integrate
 
 markdown_extensions:
   - pymdownx.superfences
@@ -33,7 +37,18 @@ plugins:
       media_type: print
       enabled_if_env: ENABLE_PDF_EXPORT
 
+extra_css:
+  - stylesheets/extra.css
+
 extra:
   version:
     provider: mike
     default: latest
+  status:
+    new: Recently Added
+    deprecated: Slated to be Removed
+    ood: Out of Date
+    warning: Warning! Badly Out of Date
+    todo: Work in Progress
+    current: The Page is Up to Date
+

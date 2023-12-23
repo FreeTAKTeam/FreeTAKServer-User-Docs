@@ -3,7 +3,10 @@
 <img src="assets/FTSLOGOv2.png" width="200" height="200" alt="FTS Logo">
 
 FreeTAKServer (FTS) is a Python3 implementation of the TAK Server
-for devices like [ATAK-CIV](https://play.google.com/store/apps/details?id=com.atakmap.app.civ), [`WinTAK`](https://www.civtak.org/2020/09/23/wintak-is-publicly-available/), and [iTAK](https://apps.apple.com/us/app/itak/id1561656396).
+for devices like
+[`ATAK-CIV`](https://play.google.com/store/apps/details?id=com.atakmap.app.civ),
+[`WinTAK`](https://www.civtak.org/2020/09/23/wintak-is-publicly-available/),
+and [`iTAK`](https://apps.apple.com/us/app/itak/id1561656396).
 FTS is a cross-platform project that,
 as of release 1.9,
 provides Situational Awareness and other capabilities such as:
@@ -30,7 +33,7 @@ The following features are in the pipeline  for the 2.0 family:
 Check out our roadmap [@FreeTakServer#25](https://github.com/FreeTAKTeam/FreeTakServer/issues/25) to see everything we have planned.
 
 ## Shut Up and take my money!
-The easiest way to install FTS is to use our signature [ZeroTouch Installer](https://freetakteam.github.io/FreeTAKServer-User-Docs/Installation/Ansible/ZeroTouchInstall/).  
+The easiest way to install FTS is to use our signature [ZeroTouch Installer](Installation/Ansible/ZeroTouchInstall.md).  
 
 ## Community
 This project is currently in the *Early Production Stage*.
@@ -88,3 +91,14 @@ We support a public instance of FTS hosted by DigitalOcean.
 - download the configuration [here](assets/fts-official-pub.zip)
 - use the Import Manager in `ATAK` to import the configuration.
 - for a full tutorial see the [article](About/PubServer.md)
+
+# Warning! Old Documentation Ahead!
+
+Much of the documentation is for the **OLD** FTS implementation and is not correct.
+If you are following those instructions,
+you will probably not get the result you want.
+
+New documentation is in the works, and will be released ASAP.
+
+The pages are in the process of being marked to indicate their maturity.
+

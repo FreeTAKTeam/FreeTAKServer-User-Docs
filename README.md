@@ -1,7 +1,7 @@
 # FreeTAKServer-User-Docs
 FreeTAKServer documentation for end users
 
-https://freetakteam.github.io/FreeTAKServer-User-Docs/
+<https://freetakteam.github.io/FreeTAKServer-User-Docs/>
 
 ## Notes for documentation updates
 
