@@ -8,7 +8,7 @@ for devices like
 [`WinTAK`](https://www.civtak.org/2020/09/23/wintak-is-publicly-available/),
 and [`iTAK`](https://apps.apple.com/us/app/itak/id1561656396).
 FTS is a cross-platform project that,
-as of release 1.9,
+as of release 2.1,
 provides Situational Awareness and other capabilities such as:
 
 - Web administration
@@ -16,6 +16,7 @@ provides Situational Awareness and other capabilities such as:
 - Data Package upload and retrieval
 - Image transfer and storage
 - COT recording in a database
+-  Data Sync / Mission Planning
 - Execution of common task lists (using the `ExCheck` plugin for `WinTAK`; `ATAK` plugin only available to users with tak.gov access)
 - SSL Encryption
 - Command Line Interface for start and stop services
@@ -25,12 +26,12 @@ provides Situational Awareness and other capabilities such as:
 - Pushing of information (video streams, certifications, etc.) to clients
 - Component based architecture
 
-The following features are in the pipeline  for the 2.0 family:
- - Data Sync / Mission Planning
+The following features are in the pipeline  for the 2.x family:
+
  - Cloud Management
  - ... Much more!
 
-Check out our roadmap [@FreeTakServer#25](https://github.com/FreeTAKTeam/FreeTakServer/issues/25) to see everything we have planned.
+Check out our [roadmap](https://github.com/FreeTAKTeam/FreeTakServer/milestones?direction=asc&sort=due_date&state=open) to see everything we have planned.
 
 ## Shut Up and take my money!
 The easiest way to install FTS is to use our signature [ZeroTouch Installer](Installation/Ansible/ZeroTouchInstall.md).  
@@ -61,7 +62,7 @@ To discuss with our active developers, you may use:
 ### Donate Back
 The FreeTAKTeam is working daily developing an open solution.
 We plan to do more than just replicating the functionalities of the legacy TAK server.
-Check out our road map [@FreeTakServer#25](https://github.com/FreeTAKTeam/FreeTakServer/issues/25) to see what is currently in the works.
+Check out our road map [roadmap](https://github.com/FreeTAKTeam/FreeTakServer/milestones?direction=asc&sort=due_date&state=open) to see what is currently in the works.
 It includes a lot of cool ideas.
 
 We are doing it for free because
@@ -94,11 +95,9 @@ We support a public instance of FTS hosted by DigitalOcean.
 
 # Warning! Old Documentation Ahead!
 
-Much of the documentation is for the **OLD** FTS implementation and is not correct.
+Much of the documentation is for the **OLD** FTS (pre 2.X) implementation and maybe not correct.
 If you are following those instructions,
 you will probably not get the result you want.
-
 New documentation is in the works, and will be released ASAP.
-
-The pages are in the process of being marked to indicate their maturity.
+The pages are now being marked to indicate their maturity.
 
