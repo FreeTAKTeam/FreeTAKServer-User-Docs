@@ -1,5 +1,5 @@
 ---
-status: ood
+status: current
 ---
 
 # FreeTAKMumla Plugin
