@@ -147,3 +147,21 @@ TODO: Explain how this is to be used.
 
 * https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
 * https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md
+
+### Ventilated Prose
+
+Prefer ventilated prose in composition.
+
+* https://writetheasciidocs.netlify.app/ventilated-prose
+* https://vanemden.wordpress.com/2009/01/01/ventilated-prose/
+* https://mattwidmann.net/notes/using-markdown-effectively/
+
+Ventilated prose dates back to the 1930s,
+when Buckminster Fuller first coined the term.
+
+The main benefit in using ventilated prose is
+that it works well with tools like `git`.
+`git` defaults to using `diff` which compares lines of text.
+(This `git` default is seldom changed.)
+This implies that ideas should be confined to lines of text,
+which is precisely what ventilated code.
