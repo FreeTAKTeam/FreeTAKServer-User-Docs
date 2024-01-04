@@ -34,7 +34,7 @@ Confirm the configuration (which is in `json` format):
   "logDestinations": [
     "stdout"
   ],
-  "logFile": "rtsp-simple-server.log",
+  "logFile": "mediamtx-server.log",
   "readTimeout": "10s",
   "writeTimeout": "10s",
   "readBufferCount": 512,

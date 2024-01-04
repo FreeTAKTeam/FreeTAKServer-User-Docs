@@ -7,21 +7,21 @@ status: ood
 ## Helpful Tools
 
 ### PuTTy
-Allows you to remotely connect and manage your RPi. 
-Helpful for being able to copy/paste from this document into the RPi Terminal CLI. 
+Allows you to remotely connect and manage your RaspPi. 
+Helpful for being able to copy/paste from this document into the RaspPi Terminal CLI. 
 
 1. Download PuTTY
     - [https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
-2. To set up: Under Host Name, enter your RPi IP address and select SSH for the Connection type
+2. To set up: Under Host Name, enter your RaspPi IP address and select SSH for the Connection type
 
 ### WinSCP
 A GUI-type file manager. 
-Helpful for basic file management and understanding the RPi’s file structure. 
+Helpful for basic file management and understanding the RaspPi’s file structure. 
 You can also start Putty from a WinSCP
 
 1. Download WinSCP
     - [https://winscp.net/eng/download.php](https://winscp.net/eng/download.php)
-2. To set up: Click New Site; select SCP for File protocol; enter RPi’s IP address for Host name; click Advanced button, select ‘Shell’ under
+2. To set up: Click New Site; select SCP for File protocol; enter RaspPi’s IP address for Host name; click Advanced button, select ‘Shell’ under
 environment and change Shell setting from Default to ```sudo su -``` (this will allow your changes to have Root privileges)
 3. Click `OK` and then `Save` (if desired)
 

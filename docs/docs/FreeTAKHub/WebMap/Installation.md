@@ -118,7 +118,7 @@ now connect a TAK client to see if that displays
 
 ## configure to start as a service
 Systemd is the service manager used by Ubuntu, Debian and many other Linux distributions,
-and allows to launch `rtsp-simple-server` on boot.
+and allows to launch `mediamtx` on boot.
 
 move the executable
 ```bash

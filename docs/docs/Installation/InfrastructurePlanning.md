@@ -8,13 +8,13 @@ status: ood
 TAK Infrastructure thoughts: Give some thought to how you are going to deploy FTS server.
 
 1. **Cloud** - A Digital Ocean (DO) or other virtually hosted server will allow the quickest deployment and is scalable to as many users as you wish
-2. **LAN** - An RPi server located on your home/office LAN may require additional complexities for non-LAN TAK clients to access your server, e.g. dynamic
+2. **LAN** - An RaspPi server located on your home/office LAN may require additional complexities for non-LAN TAK clients to access your server, e.g. dynamic
 DNS services (<https://noip.com>) and NAT port forwarding.
-3. **VPN** - An RPi server running as a ZeroTier (or other SD-WAN) client will mostly circumvent the need for the complexities listed above and allow any TAK
-client on the ZeroTier network to access the RPi server regardless of internet connection method (broadband, cellular data, etc.)
-4. **Edge** - An RPi server running on an ad hoc or local infrastructure LAN configuration – Can be setup completely off-grid and without reliance on a
+3. **VPN** - An RaspPi server running as a ZeroTier (or other SD-WAN) client will mostly circumvent the need for the complexities listed above and allow any TAK
+client on the ZeroTier network to access the RaspPi server regardless of internet connection method (broadband, cellular data, etc.)
+4. **Edge** - An RaspPi server running on an ad hoc or local infrastructure LAN configuration – Can be setup completely off-grid and without reliance on a
 functioning internet, but will suffer significant limitations in range for TAK clients to connect.
-5. **Hybrid off-grid** – A DO installed server or RPi with one or more of the TAK clients connected as a "bridge" to an off-grid mesh network such as Meshtastic
+5. **Hybrid off-grid** – A DO installed server or RaspPi with one or more of the TAK clients connected as a "bridge" to an off-grid mesh network such as Meshtastic
 LoRa. This configuration will allow any off-grid Meshtastic clients to have their communications reach all "internet-connected" TAK clients via a
 TAK client who is simultaneously connected to both the internet and mesh sides of the network.
 
@@ -64,17 +64,36 @@ However, devices on the internet cannot directly access or see the private IP ad
 such as a 19.X.X.X address.
 
 ## Ports
-![image](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/assets/60719165/2293abf0-b5af-42e4-a7e2-4df208df3eaf)
+![image](images/zero-touch-deply-default.png)
 
 A complete FTS installation includes several components that need to have access to the 'internet'.
 They will typically share the same IP but have different ports that need to be open on the firewall.
 
+### FTS Web UI (fts-ui.service)
  * 5000: Required for the Web UI
+
+### FTS (fts.service)
+
+#### DigitalPy Service
  * 8080: Required for HTTP
  * 8443: Required for HTTPS 
+
+#### Cursor On Target Service
  * 8087: required for TCP COTS
  * 8089: required for SSL COTS
+
+#### Federation Service
  * 9000: Required for Federation
+
+#### API Service
+ * 19023: REST / websocket API for FTS
+
+### Video Server [MediaMTX](https://github.com/bluenviron/mediamtx) (mediamtx.service)
  * 9997: required for the Video Server (MediaMTX)
- * 64738: required for the Voice Server (Murmur)
+
+### Voice Server [Mumble](https://wiki.mumble.info/wiki/Running_Murmur) (mumble.service)
+ * 64738: required for the Voice Server (Mumble)
+
+### Integration Server [NodeRed](https://nodered.org/) (nodered.service)
  * 1880: required for the Integration server (NodeRed)
+ * 8000: WebUI communication with the Integration server

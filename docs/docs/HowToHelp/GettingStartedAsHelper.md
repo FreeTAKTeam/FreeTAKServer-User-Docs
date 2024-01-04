@@ -24,7 +24,7 @@ As a Hobby user you want to install and use the FTS-TAK platform.
 
 ## Professional User / SME
 ### getting started as Professional User / SME
-* Create a github user
+* Create a GitHub user
 * Submit issues to GitHub
 
 ## Unix Admin / DevOps
@@ -65,4 +65,4 @@ You are an architect or a very experienced developer with
 deep understanding of Object-Oriented thinking, patterns and Models.
 
 #### get the digital environment
-we use Sparx Enterprise Architect as modeling tool.
+we use Sparx &trade; Enterprise Architect as modeling tool.

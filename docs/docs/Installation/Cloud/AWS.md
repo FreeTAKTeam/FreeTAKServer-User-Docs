@@ -25,7 +25,7 @@ status: ood
 * 5000 - Web UI (APPPort)
 * 1880 - Webmap (WEBMAPPORT)
 
-## RTSP-simple-server -AKA video Server 
+## [MediaMTX](https://github.com/bluenviron/mediamtx) - Video Server 
 * 9997 - REST API
 * 9998 - Metrics Listener
 

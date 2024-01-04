@@ -1,6 +1,6 @@
 title: Troubleshooting
 
 nav:
-    - FAQ: troubleshooting.md
+    - FAQ: troubleshooting_faq.md
     - Installation Check: InstallationCheck.md
     - Socket SSL Issue: SocketIssue.md
