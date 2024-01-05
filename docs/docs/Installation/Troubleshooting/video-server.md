@@ -23,10 +23,10 @@ This may only be a problem for `WinTAK` and not `ATAK`.
 
 The release to use is <https://github.com/bluenviron/mediamtx/releases/tag/v0.18.5>.
 The reason why we use the 0.18 version is
-because the ability to stream videos with `winTAK` was lost in latter versions.
+because the ability to stream videos with `WinTAK` was lost in latter versions.
 
 Different versions exist depending on the type of RaspPi you are using.
-Instructions below are for RPi 4, which has an ARM64 v8 processor.
+Instructions below are for RaspPi 4, which has an ARM64 v8 processor.
 
 ```bash
 wget https://github.com/bluenviron/mediamtx/releases/download/v0.18.5/rtsp-simple-server_v0.18.5_linux_arm64v8.tar.gz
@@ -56,6 +56,7 @@ rtspsAddress: :8322
 ```
 * Enable the HTTP API
 * Set the listener's address to the RaspPi's IP address (or ZeroTier)
+Here are the relevant properties after updates (in context).
 ```yaml
 # Enable the HTTP API.
 api: yes
@@ -90,10 +91,16 @@ sudo systemctl start mediamtx.service
 
 This presumes the prior installation of [`NodeRed`](integration-server.md).
 
-configure integration
+The integration server is configured with the `video-checker` via a `JSON` file.
+`NodeRed` provides <https://github.com/FreeTAKTeam/FreeTAKHub_VideoChecker>.
+
+<https://github.com/FreeTAKTeam/FreeTAKHub_VideoChecker/tree/2.0>
+
+* <https://github.com/FreeTAKTeam/FreeTAKHub_VideoChecker/blob/2.0/FreeTAKHub%20VideoChecker.json>
+* <https://github.com/FreeTAKTeam/FreeTAKHub_VideoChecker/blob/main/freetakhub_videochecker.json>
 
 ## Connect a Client (ICU and/or drone) to Video Server
 
-* Receive the COT notification in TAK client (`WinTAK` / `ATAK`)
-* Use notification to start video (`WinTAK` / `ATAK`)
+* Receive the COT notification in TAK client (`WinTAK` and `ATAK`)
+* Use notification to start video (`WinTAK` and `ATAK`)
 
