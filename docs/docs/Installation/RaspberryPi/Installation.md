@@ -19,7 +19,7 @@ You will need an imager.
 
 * [Raspberry Pi Imager](https://www.raspberrypi.com/software/) (you may also use [BalenaEtcher Imager](https://www.balena.io/etcher)
 
-Follow the instructions to create a SD card with the appropriate image.
+Follow the instructions to prepare an SD card with the appropriate image.
 
 <img src="rpi-imager.png" width="200" />
 
