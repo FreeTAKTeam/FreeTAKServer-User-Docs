@@ -70,6 +70,8 @@ Here is representative fragment from an output.
        valid_lft forever preferred_lft forever
 ```
 The IP address in this case is `10.2.118.237`.
+This is the same address you may have captured earlier during initial boot.
+
 Multiple `reboot` may be required to get the OS fully updated.
 ```bash
 sudo reboot 
