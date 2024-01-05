@@ -21,12 +21,12 @@ You will need an imager.
 
 Follow the instructions to prepare an SD card with the appropriate image.
 
-<img src="rpi-imager.png" width="200" />
+![](rpi-imager.png)
 
 The `rpi-imager` provides a means for setting an `ssh` authorized key and default `username` and `password`. 
 
-<img src="rpi-imager-ssh-settings.png" width="200" />
-<img src="rpi-imager-general-settings.png" width="200" />
+![](rpi-imager-ssh-settings.png)
+![](rpi-imager-general-settings.png)
 
 ### Setup Hardware
 
