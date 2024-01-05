@@ -19,12 +19,10 @@ with [Ubuntu 20.04](https://cdimage.ubuntu.com/releases/20.04.4/release/ubuntu-2
 
 You will need an imager.
 
-* [BalenaEtcher Imager](https://www.balena.io/etcher)
-* [Raspberry Pi Imager](https://www.raspberrypi.com/software/) preferred
+* [Raspberry Pi Imager](https://www.raspberrypi.com/software/) (preferred you can also use [BalenaEtcher Imager](https://www.balena.io/etcher)
 
-follow the instructions to create a sd card with the image.
+Follow the instructions to create a sd card with the image.
 
-<img src="belena-etcher-flashing.png" width="200" />
 <img src="rpi-imager.png" width="200" />
 
 The `rpi-imager` provides a means for setting an `ssh` authorized key and default `username` and `password`
@@ -45,40 +43,59 @@ The `rpi-imager` provides a means for setting an `ssh` authorized key and defaul
    * (optional) OS may prompt you to create a new password
    * (optional) update OS: 
 ```bash
-sudo apt-get update
-sudo apt-get upgrade
+sudo apt update -y 
+sudo apt upgrade -y 
 ```
 
 
 In some cases you need to run: ```sudo apt full-upgrade``` or ```sudo apt-get dist-upgrade```.
 
-Reboot may be needed a couple of times to get the OS completely updated.
+It is generally easier to communicate with your server via `ssh`.
+You will need the IP address (you should write the address down for later reference).
+```bash
+sudo apt install -y net-tools
+```
+```bash
+ip addr
+```
+Here is representative fragment from an output.
+```text
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether d8:3a:dd:5f:27:24 brd ff:ff:ff:ff:ff:ff
+    inet 10.2.118.237/24 metric 100 brd 10.2.118.255 scope global dynamic eth0
+       valid_lft 53818sec preferred_lft 53818sec
+    inet6 fe80::da3a:ddff:fe5f:2724/64 scope link
+       valid_lft forever preferred_lft forever
+```
+The IP address in this case is `10.2.118.237`.
+Multiple `reboot` may be required to get the OS fully updated.
 ```bash
 sudo reboot 
+```
+
+From here on it should be possible to connect via `ssh`.
+Here is an example with the IP address obtained previously and `fts` user.
+```bash
+ssh fts@10.2.118.237
 ```
 
 ### Update Prerequisites
 
 Verify the following packages are installed.
 ```bash
-sudo apt install wget curl
-sudo apt install net-tools
-```
-If you have installed `sshd` it should now be possible to connect remotely via `ssh`.
-You will need the IP address.
-```bash
-ip addr
-```
+sudo apt install -y wget curl
+````
 
+Connect 
 FTS 2.1 runs on Python 3.11.
 ```bash
-sudo apt install python3.11-dev
-sudo apt install python3-pip
+sudo apt install -y python3.11-dev
+sudo apt install -y python3-pip
 python3 -m pip install psutil
 ```
 
-### Run the ZTI
-Run one of the following (equivalent) commands to start the [ZeroTouch](../../Installation/Ansible/ZeroTouchInstall.md) installer
+### Run the Zero Touch Installer (ZTI)
+Run one of the following (equivalent) commands to start the [ZeroTouch](../../Installation/Ansible/ZeroTouchInstall.md) installer.
 ```bash
 wget -qO - bit.ly/freetakhub2 | sudo bash
 ```
@@ -90,11 +107,8 @@ wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation
 
 `ZeroTouch` should configure the system and start all the services for you. 
 However, there are many corner cases which `ZeroTouch` may miss.
-Many (if not all) of the choices made by `ZeroTouch` are written but it to stdout.
-I recommend that you check that the properties set in the `fts` and `fts-ui` configuration files be verified.
-
-note
-: it is unlikely that your default user will have authority to edit these files, i.e. use `sudo` as needed.
+Many (if not all) of the choices made by `ZeroTouch` are written to stdout.
+I recommend that you validate the properties set in the `fts` and `fts-ui` configuration files.
 
 [Verify and/or Edit the `fts-ui` configuration file](../../administration/usingConsole.md)  
 ```
@@ -152,4 +166,6 @@ sudo systemctl start fts
 sudo systemctl start fts-ui
 ```
 
+Your `FTS` should now be running.
+See [troubleshooting](../Troubleshooting/troubleshooting_faq.md) for more information.
 
