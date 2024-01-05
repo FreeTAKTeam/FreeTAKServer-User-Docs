@@ -56,7 +56,8 @@ rtspsAddress: :8322
 ```
 * Enable the HTTP API
 * Set the listener's address to the RaspPi's IP address (or ZeroTier)
-Here are the relevant properties after updates (in context).
+
+Here is an example with the relevant properties after updates (in context).
 ```yaml
 # Enable the HTTP API.
 api: yes
