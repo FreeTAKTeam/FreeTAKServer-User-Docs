@@ -88,7 +88,7 @@ ssh fts@10.2.118.237
 Verify the following packages are installed.
 ```bash
 sudo apt install -y wget curl
-````
+```
 
 Connect 
 FTS 2.1 runs on Python 3.11.
