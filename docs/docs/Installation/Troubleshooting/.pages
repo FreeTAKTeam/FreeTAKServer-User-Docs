@@ -4,3 +4,10 @@ nav:
     - FAQ: troubleshooting_faq.md
     - Installation Check: InstallationCheck.md
     - Socket SSL Issue: SocketIssue.md
+    - FTS Servers:
+      - FTS Main Server (FTS) : fts-core-server.md
+      - FTS Helper (FTH) : fts-helper-server.md
+      - FTS UI (FTU) : fts-ui-server.md
+    - 3rd Party Servers:
+      - Video Server (FTS) : video-server.md
+      - Voice Server (FTH) : voip-server.md
