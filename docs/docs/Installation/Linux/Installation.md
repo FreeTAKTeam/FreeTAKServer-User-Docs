@@ -273,7 +273,7 @@ functionality is declared but not fully implemented.
 On the first run, a configuration wizard will help set up the config file.
 
 > :memo: **Note:** If the wizard does not appear,
-> see [troubleshooting](../../Installation/Troubleshooting/troubleshooting_faq).
+> see [troubleshooting](../Troubleshooting/troubleshooting_faq).
 
 ### Using the Wizard
 
@@ -455,7 +455,7 @@ python run.py
 You will see the UI server start up in your terminal, which should look similar
 to that shown below.
 
-```python
+```text
 (55501) wsgi starting up on http://0.0.0.0:5000
 (55501) accepted ('192.168.1.100', 49842)
 ```
@@ -484,8 +484,8 @@ sudo pip install eventlet
 The config file will also need to be updated.
 
 ```python
-IP = [FTS external IP]
-APPIP = [FTS-UI internal IP]
+IP = '[FTS external IP]'
+APPIP = '[FTS-UI internal IP]'
 ```
 
 ## 12. Check Installation

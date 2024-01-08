@@ -9,8 +9,8 @@ The `WebUI` is typically under the control of `systemd` as `fts-ui.service`.
 ![image](../images/zero-touch-deply-default.png)
 
 
-The `FTS-UI` conmmunicates with 
-the [FTS](fts-core-server) and 
+The `FTS-UI` communicates with 
+the [FTS](fts-core-server.md) and 
 the [FTH](fts-helper-server.md).
 
 ## Inbound Connection (in port 5000)
