@@ -27,7 +27,7 @@ FreeTAKServer, as of Release 1.9, provides Situational Awareness and other capab
 - Private data package (user to user)
 - Image transfer and storage
 - COT recording in a database
-- Execution of common task list (using the ExCheck plugin for `WinTAK`; `ATAK` plugin only available to users with <https://takmaps.com> access)
+- Execution of common task list (using the `ExCheck` plugin for `WinTAK`; `ATAK` plugin only available to users with <https://takmaps.com> access)
 - SSL Encryption
 - User Management
 - REST API for creation of information such as emergency, Enemy units and so on
@@ -268,14 +268,14 @@ You can change this size in the UI configuration `[UIInstallation]/UI/app/__init
 ![](https://lh3.googleusercontent.com/04gIddsk_djteM76jBQUht3DbW3rBqCyq9pdDdrBvVBix2y525OUS61fM_wJp63UvmpKykwsVTdPq-PMKxI1TjsX_ql4EGidVVlimajIypiBhfNjeYIR5srzvpgtG-lxGkhKsEJX3HC70I4gS8kQ)
 
 For future development,currently non-functional.
-Will allow users to share data packages, CoTs and ExCheck lists with others, organized in "missions".
+Will allow users to share data packages, CoTs and `ExCheck` lists with others, organized in "missions".
 Still under development as of this version of FTS (V 1.9).
 
 
-## 4.3 ExCheck
+## 4.3 `ExCheck`
 
-ExCheck allows users to collaborate on the execution and monitoring of tasks based on templates.
-To use ExCheck, you need to have a server that supports it.
+`ExCheck` allows users to collaborate on the execution and monitoring of tasks based on templates.
+To use `ExCheck`, you need to have a server that supports it.
 FTS supports the plugin since version 1.3.
 See this article for an example of how to use it:  
 <https://www.reddit.com/r/ATAK/comments/jzltvt/use_freetakserver_and_excheck_plugin_to/>
@@ -318,13 +318,19 @@ and upload it to the Legacy TAK server you want to federate to.
 Here one can see the status of federated servers the current instance connects to,
 as well as deleting, editing and adding news ones.
 
-- **Add**: Pressing the "Add" button will open an extension of the window. In the correct slots, fill out the pertinent information (Name, IP Address, and Port). Additionally, you can add a fallback (backup) server, by enabling or disabling the option. In the current version (1.5 this is not yet active) Press submit once finished.  
+- **Add**: Pressing the "Add" button will open an extension of the window.
+  In the correct slots, fill out the pertinent information (Name, IP Address, and Port).
+  Additionally, you can add a fallback (backup) server, by enabling or disabling the option. In the current version (1.5 this is not yet active) Press submit once finished.  
     
-  **In the event the status remains disabled it is likely there was an error in the creation of your federation, the associated error message can be found in the farthest right most column of your federation** (you may need to scroll to the right to see it).
+  **In the event the status remains disabled it is likely there was an error in the creation of your federation,
+  the associated error message can be found in the farthest right most column of your federation**
+  (you may need to scroll to the right to see it).
 
 ![](https://lh4.googleusercontent.com/FvjUytbqpAGGaVmquJAKW1-OwEmCYqXXwTRpwoyUm_sxDb8MJDoiC18OKN3qDkmJROWOx22GlA-ZxS1yIoiUYl6xeUW6p47dJyMRWM53QgV2F_9MKHMZQ5duISQgQrFBWPxHZ3ZitAlLiHm47JSc)
 
-- **Editing:** When selecting the desired server, a new button labeled "editing" will appear next to "delete" (bottom right of panel). Pressing this will enter the information of the selected server in the otherwise blank fields. Information can now be edited to desired values.
+- **Editing:** When selecting the desired server, a new button labeled "editing" will appear next to "delete" (bottom right of panel).
+  Pressing this will enter the information of the selected server in the otherwise blank fields.
+  Information can now be edited to desired values.
 - **Delete:** This can be done by selecting the undesired federation and then clicking on "delete" (bottom right)
 
 
@@ -335,17 +341,22 @@ Allows the user to add or delete System Users and edit user group permissions.
 
 ## 5.1 System users
 
-This panel shows all of the registered users of the UI and allows the user to add and delete users. A System User, other than an anonymous one is associated with a group, a Token for API, a password that can be used to login into the ui and finally certificates allowing to securely connect to FTS
+This panel shows all the registered users of the UI and allows the user to add and delete users.
+A System User, other than an anonymous one is associated with a group, a Token for API,
+a password that can be used to log in into the ui and finally certificates allowing to securely connect to FTS
 
 ![](https://lh3.googleusercontent.com/8Kc5YIl0k_F72yhnFNtS5WNa9j-z_sWqWGewUKoR6yRhNKqN1MqsqGDS8qcgZwrJpgoR-q4JXq8r6iZm7Whjdwmrd5R_4hxQLmDqb_FLhYTS9ihEKHIB3cPqmQwiJYq2gSrMEEJePbTebxeMO9VP)
 
-- **Add:** This can be done by clicking on the "add" button (bottom right of panel). An extension will appear, with empty fields for the new user’s name, group, token and password.
+- **Add:** This can be done by clicking on the "add" button (bottom right of panel).
+  An extension will appear, with empty fields for the new user’s name, group, token and password.
 
   - **Name**: name of the created user. For the certs deployment to work must be the same as a connected user (see below)
 
   - **Group**: group of individuals this user belong to (team a, team b, team c)
 
-  - **Token**: gives a unique combination that this user can leverage for the FTS REST API. NOTICE: the field token is for any alphanumeric string. the prefix 'bearer' is NOT part of the token. The name "_Bearer authentication_" can be understood as "give access to the bearer of this token."
+  - **Token**: gives a unique combination that this user can leverage for the FTS REST API.
+    NOTICE: the field token is for any alphanumeric string. the prefix 'bearer' is NOT part of the token.
+    The name "_Bearer authentication_" can be understood as "give access to the bearer of this token."
 
   - **Password**: unique password that can be used for interact with the FTS
 
