@@ -9,11 +9,11 @@ status: ood
 
 The video server is a third party application.
 
-The video server is [Media MTX](https://github.com/bluenviron/mediamtx).
+The video server is [Media MTX](https://github.com/bluenviron/mediamtx) (previously known as `rtsp-simple-server`.
 
 ## Known Issues
 
-The specific version verified is <https://github.com/bluenviron/mediamtx/releases/tag/v0.18.5>.
+The specific version verified for use with `FTS` is <https://github.com/bluenviron/mediamtx/releases/tag/v0.18.5>.
 The application was rebranded in <https://github.com/bluenviron/mediamtx/releases/tag/v0.22.0>.
 The reason why we use the 0.18 version is <https://github.com/bluenviron/mediamtx/issues/1790>.
 This may only be a problem for `WinTAK` and not `ATAK`.

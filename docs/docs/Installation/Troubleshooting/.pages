@@ -6,8 +6,9 @@ nav:
     - Socket SSL Issue: SocketIssue.md
     - FTS Servers:
       - FTS Main Server (FTS) : fts-core-server.md
-      - FTS Helper (FTH) : fts-helper-server.md
-      - FTS UI (FTU) : fts-ui-server.md
+      - FTS UI : fts-ui-server.md
+      - Web Map : fts-webmap-server.md
     - 3rd Party Servers:
-      - Video Server (FTS) : video-server.md
-      - Voice Server (FTH) : voip-server.md
+      - Video Server: video-server.md
+      - Voice Server: voip-server.md
+      - FTS Helper (FTH) : fts-helper-server.md
