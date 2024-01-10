@@ -11,4 +11,4 @@ nav:
     - 3rd Party Servers:
       - Video Server: video-server.md
       - Voice Server: voip-server.md
-      - FTS Helper (FTH) : fts-helper-server.md
+      - FTS Hub (FTH) : fts-hub-server.md
