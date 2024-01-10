@@ -34,3 +34,4 @@ The integration server is [NodeRed]()
 10. You should now get green “connected” indicators under one or all these nodes: FTS Server, TAK Map, tak-map & event
 11. Confirm that the flow is working by logging back into the FTS Web UI: `<IP address>:5000` and click on the WebMap tab.
     Now you should see the world map displayed
+
