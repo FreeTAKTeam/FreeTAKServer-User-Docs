@@ -65,6 +65,6 @@ class Config(object):
 `ZTI` sets the `IP` and `WEBMAPIP` to your externally known IP address.
 If you are not on a public network this will need to be adjusted.
 
-`WEBMAPIP` is 1880 for a `NodeRedFlow` install
+`WEBMAPPORT` is 1880 for a `NodeRedFlow` install
 and `8000` for a compiled `webmap`.
 

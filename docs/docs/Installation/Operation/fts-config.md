@@ -8,7 +8,7 @@ However, there are many corner cases which `ZeroTouch` may miss.
 ```text
 /usr/local/lib/python3.11/dist-packages/FreeTAKServer-UI/config.py
 ```
-`WEBMAPIP` is 1880 for a `NodeRedFlow` install and `8000` for a compiled `webmap`.
+`WEBMAPPORT` is 1880 for a `NodeRedFlow` install and `8000` for a compiled `webmap`.
 
 For specific instructions on validating the configuration,
 see [these notes](../Troubleshooting/fts-ui-server.md).
