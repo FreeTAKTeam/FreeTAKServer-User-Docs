@@ -630,7 +630,7 @@ not yet implemented
 not yet implemented
 
 # ExCheckTable
-Endpoint used to access data regarding ExCheck items such as checklists and templates
+Endpoint used to access data regarding `ExCheck` items such as checklists and templates
 
 ## POST
 creates a template on the server from a supplied xml file accepting the following URL encoded values:

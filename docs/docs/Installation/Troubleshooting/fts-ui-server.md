@@ -8,6 +8,22 @@ The `WebUI` is typically under the control of `systemd` as `fts-ui.service`.
 
 ![image](../images/zero-touch-deply-default.png)
 
+
+The `FTS-UI` communicates with 
+the [FTS](fts-core-server.md) and 
+the [FTH](fts-hub-server).
+
+## Inbound Connection (in port 5000)
+
+(port 5000)
+
+## API Service Connection (websocket port 19023)
+
+
+## Integration Connection (websocket port 8000)
+
+
+
 ## Zero Touch Installer (`ZTI`)
 
 `ZeroTouch` makes assumptions configuring the system. 

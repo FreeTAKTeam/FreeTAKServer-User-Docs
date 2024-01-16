@@ -273,7 +273,7 @@ functionality is declared but not fully implemented.
 On the first run, a configuration wizard will help set up the config file.
 
 > :memo: **Note:** If the wizard does not appear,
-> see [troubleshooting](../../Installation/Troubleshooting/troubleshooting_faq).
+> see [troubleshooting](../Troubleshooting/troubleshooting_faq.md).
 
 ### Using the Wizard
 
