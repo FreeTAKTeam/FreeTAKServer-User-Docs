@@ -113,7 +113,8 @@ wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation
 However, there are many corner cases which `ZeroTouch` may miss.
 Many (if not all) of the choices made by `ZeroTouch` are written to stdout.
 I recommend that you validate the properties in that output.
+I recommend that you stop the fts services prior to reconfiguration.
 
-* [Configuration](../Operation/fts-config.md)
 * [Service Management](../Operation/fts-config.md)
+* [Configuration](../Operation/fts-config.md)
 
