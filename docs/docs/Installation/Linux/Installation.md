@@ -34,7 +34,7 @@ Ubuntu
 </summary>
 
 ```bash
-sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt upgrade -y
 ```
 </details>
 
@@ -61,8 +61,8 @@ Ubuntu
 
 
 ```bash
-sudo apt update && sudo apt install python3 && sudo apt install python3-pip
-sudo apt install python3-dev python3-setuptools build-essential python3-gevent python3-lxml libcairo2-dev
+sudo apt update && sudo apt install -y python3 && sudo apt install -y python3-pip
+sudo apt install -y python3-dev python3-setuptools build-essential python3-gevent python3-lxml libcairo2-dev
 ```
 </details>
 
@@ -387,7 +387,7 @@ The following items can be updated to use your own secrets, however the values
 must be updated in both the `FreeTAKServer-UI/config.py` and the
 `FreeTAKServer/core/configuration/MainConfig.py` files.
 
-The API key used by the UI to comunicate with FTS.
+The API key used by the UI to communicate with FTS.
 Generate a new system user and then set it.
 
 [//]: # (What does this mean?)
@@ -455,7 +455,7 @@ python run.py
 You will see the UI server start up in your terminal, which should look similar
 to that shown below.
 
-```python
+```text
 (55501) wsgi starting up on http://0.0.0.0:5000
 (55501) accepted ('192.168.1.100', 49842)
 ```
@@ -484,8 +484,8 @@ sudo pip install eventlet
 The config file will also need to be updated.
 
 ```python
-IP = [FTS external IP]
-APPIP = [FTS-UI internal IP]
+IP = '[FTS external IP]'
+APPIP = '[FTS-UI internal IP]'
 ```
 
 ## 12. Check Installation

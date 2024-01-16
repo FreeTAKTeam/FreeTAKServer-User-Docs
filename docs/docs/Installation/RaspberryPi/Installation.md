@@ -107,52 +107,13 @@ wget -qO - bit.ly/freetakhub2 | sudo bash
 wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/main/scripts/easy_install.sh | bash
 ```
 
-## After installation
+## Operation
 
-`ZeroTouch` will configure the system and start all the services for you. 
+`ZeroTouch` will have configured the system and started the services for you. 
 However, there are many corner cases which `ZeroTouch` may miss.
 Many (if not all) of the choices made by `ZeroTouch` are written to stdout.
 I recommend that you validate the properties in that output.
 
-### [Verify and/or Edit the `fts-ui` configuration file](../../administration/usingConsole.md)  
-```text
-/usr/local/lib/python3.11/dist-packages/FreeTAKServer-UI/config.py
-```
-`WEBMAPIP` is 1880 for a `NodeRedFlow` install and `8000` for a compiled `webmap`.
+* [Configuration](../Operation/fts-config.md)
+* [Service Management](../Operation/fts-config.md)
 
-For specific instructions on validating the configuration,
-see [these notes](../Troubleshooting/fts-ui-server.md).
-
-### [Verify and/or Edit the `fts` configuration file](../../administration/usingConsole.md) 
-```text
-/opt/FTSConfig.yaml
-```
-
-For specific instructions on validating the configuration,
-see [these notes](../Troubleshooting/fts-server.md).
-
-## Mange the FTS services:
-
-If the `ZTI` had run it will have attempted to start the `fts` services.
-As you make changes to their configurations you will need to restart them.
-```bash
-sudo systemctl stop fts-ui
-sudo systemctl stop fts
-
-sudo systemctl start fts
-sudo systemctl start fts-ui
-```
-
-Your `FTS` should now be running.
-
-See [troubleshooting](../Troubleshooting/troubleshooting_faq.md) for more information.
-
-There are other services which `ZTI` will start.
-They are also managed by `systemd`.
-
-```bash
-sudo systemctl status nodered.service
-sudo systemctl status mediamtx.service
-sudo systemctl status webmap.service
-sudo systemctl status murmur.service
-```
