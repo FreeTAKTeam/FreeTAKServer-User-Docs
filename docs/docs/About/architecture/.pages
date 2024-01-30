@@ -1,6 +1,6 @@
 nav:
     - Cursor On Target:
-        - COT Domain: COTDomain.md
-        - COT Class Hierarchy: COTHierarchyTree.md
-        - COT Table: COTTable.md
-    - Common Warfighting Symbology 2525: MilSTD2525.md
+        - CoT Domain: cot_domain.md
+        - CoT Class Hierarchy: cot_hierarchy.md
+        - CoT Table: cot_table.md
+    - Common Warfighting Symbology 2525: mil_std_2525.md

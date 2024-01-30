@@ -26,7 +26,7 @@ FreeTAKServer, as of Release 1.9, provides Situational Awareness and other capab
 - Data Package upload and retrieval
 - Private data package (user to user)
 - Image transfer and storage
-- COT recording in a database
+- CoT recording in a database
 - Execution of common task list (using the `ExCheck` plugin for `WinTAK`; `ATAK` plugin only available to users with <https://takmaps.com> access)
 - SSL Encryption
 - User Management
@@ -196,7 +196,7 @@ part of the FreeTAKHub concept (see<https://github.com/FreeTAKTeam/FreeTAKHub> f
 ![](https://lh6.googleusercontent.com/Zjv0YMGv5Jg-S4qDHQkPm0ZiJuOjAAGJuZqSs1pRqwgTrLzaXInNp6ooqIlJOHfqCJO50DeaeW4yjXhPjzZjYx1XU5vuGZf3fUaOJTKkXdjaGw6p2vNhdETg2GwB8y9AmUSgSJWWlai4cZVp5-PW)
 
 The webmap is a partial TAK client only.
-It displays all the connected clients and the COT sent from the moment in which it connects.
+It displays all the connected clients and the CoT sent from the moment in which it connects.
 Clicking on another tab closes the webmap, no memory of past events is kept.
 
 
@@ -224,7 +224,7 @@ Following functions are also available:
 
 - Delete an existing Marker  
   ![](https://lh6.googleusercontent.com/KhEYmzHfYzow75H-IkCAgdIJcYZUrmhoaehvSeGZM3Fya6l4MV7w-9_4AwL1IsvpJ2cqINnuZ6wQG2hAE5JNucaJc17fJe210qA4zX35gTe9IOSlvryPI7O_ZzibBXW7WE2dkzTn-iAHeprMlt8e)
-- Search COT by name  
+- Search CoT by name  
   ![](https://lh4.googleusercontent.com/sYR-yciATcpnkoflgmKxg-M80wgTQOyr4-bUInTU48Ml5xYAx4VavoIVqAZimEmh6CGhyi2iELraPqnFvyRZMJ705z2dqUixKjnG3YeerW20OCqvCS3UH5MlSBN9ln7pUIBuK3eUO8NNJ21FQY0i)
 - Search geolocation  
   ![](https://lh5.googleusercontent.com/wnkwf61BbfoHw74DMnjEymWyVfHEOawm9nFS8KMPHOSpUarIEkN7g45lClK4gixsfIUoaqLnp2b_YVKFxyeBhzMi-bd_T5wu6-PDh2XjmbyleCIraLdvxzVW_k_tzw_XrwCkixxEHbZ3xJgZAbhL)
@@ -234,7 +234,7 @@ Following functions are also available:
   
 
 
-- Filter COTs by type (each COT type is placed in a layer)
+- Filter CoT's by type (each CoT type is placed in a layer)
 
 ![](https://lh3.googleusercontent.com/cC2GJQ7lLKOLp-aqpuWeeglG3KN5U5Wyrh4TbguXO5-_KeHP-O_bntfrSjzeXvO84yAayek9gdvY95ef8no179kqO97p0MtA9-HCUzgviFahBBj9N7J2VJHNLCSuyfTmJluUz5eMUsOzRqMLkCrj)
 
@@ -294,7 +294,7 @@ The uploaded template must be valid in an XML format.
 ## 4.4 Federation
 
 The federation function allows FTS to connect to another server
-of the TAK family and exchange information such as COT and chats.
+of the TAK family and exchange information such as CoT and chats.
 The current implementation (1.9) does not allow sending Data packages and Missions yet.
 
 
@@ -443,7 +443,7 @@ fill out the fields with the desired values.
 
 - **Name:** geoObject name that will display on map
 - **Longitude/Latitude:** Determines where the object will appear
-- **Attitude:** Sets the colour and external shape (and thus faction) of the geoObject based on MilSTD 2525D
+- **Attitude:** Sets the colour and external shape (and thus faction) of the geoObject based on MIL-STD-2525D
 - **GeoObject:** Changes the shape and type of the object (ex: sniper, grenadier)
 - **Timeout:** The length of time the object appears, measured in seconds
 
@@ -497,8 +497,8 @@ sudo python3 -m FreeTAKServer.controllers.services.FTS -DataPackageIP 204.48.30.
 
 FTS supports following services:
 
-- **TCP COT**: used when a client connects with regular TCP
-- **SSL COT**: used when a client connects with an encrypted channel
+- **TCP CoT**: used when a client connects with regular TCP
+- **SSL CoT**: used when a client connects with an encrypted channel
 - **HTTP DP**: Data package function over HTTP
 - **SSL DP**: Data package function over an encrypted channel
 - **API:** the Public REST API. Allows to send data over REST for integration with other systems. If deactivated some function of the WebUI will not work

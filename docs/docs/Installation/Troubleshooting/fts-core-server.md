@@ -19,7 +19,7 @@ The core consists of the following logical elements (with the indicated default 
   * Clear instance (port 8080)
 * Federation Service
   * Clear instance (port 9000)
-* COT Service
+* CoT Service
   * SSL instance (port 8089)
   * Clear instance (port 8087)
 
@@ -32,6 +32,6 @@ The core consists of the following logical elements (with the indicated default 
 ## Federation Service
 
 
-## COT Service
+## CoT Service
 
 

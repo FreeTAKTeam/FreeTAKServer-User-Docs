@@ -30,13 +30,13 @@ Users have spoken: FTS is the best TAK server on github!
 |       Data Package        |             O             |       O       |              O              |       O       |
 |         Data Sync         |             X             |       O       |              O              |       X       |
 |     Easy Certificate      |             O             |       X       |              O              |       X       |
-|  COT Database Recording   |             O             |       O       |              O              |       O       |
+|  CoT Database Recording   |             O             |       O       |              O              |       O       |
 |      KML Generation       |             O             |       O       |              O              |       X       |
 |      ExCheck Support      |             O             |       O       |              O              |       X       |
 |      SSL Encryption       |             O             |       O       |              O              |       O       |
 |         REST API          |         O (Full)          |       Ø       |        O (Extended)         |       X       |
-|          XML COT          |             O             |       O       |              O              |       O       |
-|       Protobuf COT        |             X             |       O       |              O              |       X       |
+|          XML CoT          |             O             |       O       |              O              |       O       |
+|       Protobuf CoT        |             X             |       O       |              O              |       X       |
 |          WebMAP           |             O             |       O       |              O              |       X       |
 |       Video Server        |             O             |       X       |              O              |       X       |
 |       Voice Server        |             O             |       X       |              O              |       X       |

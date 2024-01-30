@@ -3,7 +3,7 @@ status: ood
 ---
 
 ## About webmap
-The webmap provides insights of user presence and COTS shared with everyone.
+The webmap provides insights of user presence and CoT's shared with everyone.
 Also in his NodeRed version can create certain types of CoT.
 
 There are 2 versions of the webmap:

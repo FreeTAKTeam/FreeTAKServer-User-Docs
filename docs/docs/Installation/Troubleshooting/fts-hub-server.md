@@ -29,7 +29,7 @@ The integration server is [NodeRed]()
       3. Click back in search field and search for “node-red-contrib-config” and click install
 7. In Node Red WebMap flow tab:
 8. Select the FTH Global Config node and update the FTH_FTS_URL and FTH_FTS_VIDEO_URL fields with your IP (or ZeroTier) address 
-   * Select the Post COT to FTS node and update the “bearer authentication” Token field with ‘<Your_Bearer_Token>’
+   * Select the Post CoT to FTS node and update the “bearer authentication” Token field with ‘<Your_Bearer_Token>’
 9. Click DEPLOY in upper right corner of Node Red to save settings
 10. You should now get green “connected” indicators under one or all these nodes: FTS Server, TAK Map, tak-map & event
 11. Confirm that the flow is working by logging back into the FTS Web UI: `<IP address>:5000` and click on the WebMap tab.

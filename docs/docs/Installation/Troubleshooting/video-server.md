@@ -102,6 +102,6 @@ The integration server is configured with the `video-checker` via a `JSON` file.
 
 ## Connect a Client (ICU and/or drone) to Video Server
 
-* Receive the COT notification in TAK client (`WinTAK` and `ATAK`)
+* Receive the CoT notification in TAK client (`WinTAK` and `ATAK`)
 * Use notification to start video (`WinTAK` and `ATAK`)
 

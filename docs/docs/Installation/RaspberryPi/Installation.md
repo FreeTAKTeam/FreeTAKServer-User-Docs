@@ -48,6 +48,8 @@ Write down the IP address, we will need it later.
 sudo apt update -y 
 sudo apt upgrade -y
 ```
+You may be prompted during the upgrade.
+Generally, accepting the defaults is appropriate.
 
 In some cases you need to run: 
 ```sudo apt full-upgrade``` or ```sudo apt-get dist-upgrade```.
