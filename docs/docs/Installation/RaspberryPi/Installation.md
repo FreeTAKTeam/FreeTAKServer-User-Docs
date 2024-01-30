@@ -17,7 +17,7 @@ FTS 2.1 expects [Ubuntu 22.04 (64 bit)](https://ubuntu.com/download/raspberry-pi
 
 You will need an imager.
 
-* [Raspberry Pi Imager](https://www.raspberrypi.com/software/) (you may also use [BalenaEtcher Imager](https://www.balena.io/etcher)
+* [Raspberry Pi Imager](https://www.raspberrypi.com/software/) (you may also use [BalenaEtcher Imager](https://www.balena.io/etcher))
 
 Follow the instructions to prepare an SD card with the appropriate image.
 
@@ -90,21 +90,44 @@ Verify the following packages are installed.
 sudo apt install -y wget curl
 ```
 
-Connect 
-FTS 2.1 runs on Python 3.11.
-```bash
-sudo apt install -y python3.11-dev
-sudo apt install -y python3-pip
-python3 -m pip install psutil
-```
-
 ### Run the Zero Touch Installer (ZTI)
+The `ZTI` can be run in different environments,
+make sure you are running it correctly or you will need to update configuration files later.
+
+#### [default] Cloud Server
+In this mode, `ZTI` guesses your IP address using
+`curl ifconfig.me/ip`.
+If this does not give the appropriate IP address you will need to provide it.
 Run one of the following (equivalent) commands to start the [ZeroTouch](../../Installation/Ansible/ZeroTouchInstall.md) installer.
 ```bash
 wget -qO - bit.ly/freetakhub2 | sudo bash
 ```
+Alternate, full path.
 ```bash
 wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/main/scripts/easy_install.sh | bash
+```
+
+#### Custom IP Address
+By default, the `ZTI` guesses your IP address.
+There are several ways to discover a candidate IP address, here are two (and a capture).
+```bash
+ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
+curl ifconfig.me/ip
+export MY_IP=$(ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
+````
+With an appropriate IP address in hand you can run the `ZTI`.
+```bash
+wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --ip-addr ${MY_IP}
+```
+Alternate, full path.
+```bash
+wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/main/scripts/easy_install.sh | sudo bash -s -- --ip-addr ${MY_IP}
+```
+
+#### `ZTI` Usage
+
+```bash
+wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --help
 ```
 
 ## Operation
