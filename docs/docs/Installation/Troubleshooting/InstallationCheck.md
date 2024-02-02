@@ -12,7 +12,10 @@ Open a web browser to:
 default  <http://127.0.0.1:5000/>
 
 - login with your credentials
-  - by default is user: `admin`, password: `password` (you should promptly change the default password) 
+  - by default is user: `admin`, password: `password`
+  - you should promptly change the login credentials
+    - [change profile password](../../administration/Web_Admin.md) , or
+    - [create a new user and delete `admin`](../../administration/Web_Admin.md)
 - check whether services are OK (blue)
 ![image](https://user-images.githubusercontent.com/60719165/148986287-0c83aa3f-e909-4b38-bc81-d66cddb08f89.png)
 - connect a client to the server

@@ -366,7 +366,7 @@ a password that can be used to log in into the ui and finally certificates allow
 
     - `ATAK`
     - `iTAK`
-    - TAK Tracker
+    - `TAK Tracker`
 
 in alternative selecting desktop will generate and push a certificate for `WinTAK`
 Once the fields have been filled, simply press submit to add a new user.

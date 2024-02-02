@@ -111,6 +111,7 @@ Set of commands relative to API management.
 #### getHelp
 
 Retrieve API version and supported endpoints.
+
  * verb: GET
  * endpoint: /manageAPI/getHelp
  * returns: json containing API version and supported endpoints

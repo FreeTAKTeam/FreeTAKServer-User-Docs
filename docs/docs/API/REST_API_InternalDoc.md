@@ -509,15 +509,18 @@ code: `200`
 	]
 }
 ```
+
 * uid: uid of the user
 * Group: new user group (optional)
 * Token: new api token of user(optional)
 * Password: new password for user(optional)
+
 # DataPackageTable
 ## description
 Endpoint used to access data regarding DataPackages
 
 ### methods
+
 * POST
 * GET
 * DELETE   
@@ -535,6 +538,7 @@ returns JSON data containing information regarding all DataPackages currently on
 
 ## POST
 accepts the zipped form of the file in the body of the message and the following arguments in the url
+
 * filename: the name of the zipped file
 * creatorUid(optional): the uid of the user associated with the DataPackage defaults to ```server``` if none is provided
   
@@ -559,6 +563,7 @@ accepts the following JSON data
   ]
 }
 ```
+
 * PrimaryKey: primary key of DataPackage to be modified
 * Name: optional new name of DataPackage if not set name will not be changed
 * Keywords: optional new keywords of DataPackage if not set keywords will not be changed
@@ -569,6 +574,7 @@ accepts the following JSON data
 Endpoint used to access data regarding mission packages
 
 ## methods
+
 * GET
 * POST
 * DELETE
@@ -634,6 +640,7 @@ Endpoint used to access data regarding `ExCheck` items such as checklists and te
 
 ## POST
 creates a template on the server from a supplied xml file accepting the following URL encoded values:
+
 * clientUid: the uid of the client to be recognized as the creator of the template
 
 body of the message should be the xml of the template
@@ -649,6 +656,7 @@ accepts the following data
   }
 }
 ```
+
 `uid`: the uid of those Checklists and Templates to be deleted
 
 ## GET
@@ -683,6 +691,7 @@ return JSON data containing the following information about Checklists and Templ
 }
 ```
 ### Templates
+
 * "filename":  name of file containing template xml
 * "name":  name associated with template
 *  "submissionTime":  time template was submitted to server
@@ -693,6 +702,7 @@ return JSON data containing the following information about Checklists and Templ
 *  "description":  description of template
 
 ### Checklists 
+
 * "filename":  name of file containing checklist xml
 * "name": name associated with template
 *  "startTime": time checklist was created
