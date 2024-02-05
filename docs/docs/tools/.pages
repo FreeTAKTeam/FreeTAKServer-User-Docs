@@ -3,6 +3,8 @@ title: Tools you need
 nav:
     - FreeTAK Mumble VoIP (Mumla): FreeTAKMumla.md
     - FreeTAK Unmanned Arial (UAS): FreeTAKUAS.md
-    - FreeTAK ICU: takICU.md
+    - Video Server Tools:
+        - Video Sources: rtsp.md
+        - ATAK ICU: takICU.md
     - FreeTAK UAS Tool: UASTool.md
     - Manuals: Manuals
