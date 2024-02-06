@@ -15,7 +15,7 @@ provides Situational Awareness and other capabilities such as:
 - Federation Service (Connecting two or more FTS instances)
 - Data Package upload and retrieval
 - Image transfer and storage
-- COT recording in a database
+- CoT recording in a database
 -  Data Sync / Mission Planning
 - Execution of common task lists (using the `ExCheck` plugin for `WinTAK`; `ATAK` plugin only available to users with tak.gov access)
 - SSL Encryption

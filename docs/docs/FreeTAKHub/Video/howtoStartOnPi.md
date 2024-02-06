@@ -6,14 +6,14 @@ status: ood
 
 Hardware: Raspberry Pi 4b- 8g  
 OS: Ubuntu Server 22.04 lts  
-Program: rtsp-simple-server
+Program: mediamtx
 
 When trying to accomplish Auto start on system startup/reboot, 
 
 Solution:
-For the `rtsp-simple.service` file, you will need to add and edit the following:
+For the `mediamtx.service` file, you will need to add and edit the following:
 ```ini
-{!FreeTAKHub/Video/rtsp-simple.service!}
+{!FreeTAKHub/Video/mediamtx.service!}
 ```
 
 To build the auto start file, the Solution:
@@ -28,7 +28,7 @@ crontab -e
 
 at the end of the file add the 3 @ lines
 ```
-@reboot sudo systemctl enable rtsp-simple-server &
-@reboot sudo systemctl stop rtsp-simple-server &
-@reboot nohup sudo rtsp-simple-server &
+@reboot sudo systemctl enable mediamtx.service &
+@reboot sudo systemctl stop mediamtx.service &
+@reboot nohup sudo mediamtx.service &
 ```

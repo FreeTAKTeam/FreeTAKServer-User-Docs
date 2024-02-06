@@ -7,6 +7,7 @@ theme:
   # https://squidfunk.github.io/mkdocs-material/
   # https://github.com/squidfunk/mkdocs-material/README.md
   name: 'material'
+  custom_dir:  'overrides'
   favicon: 'assets/FTS_Circle.png'
   logo: 'assets/FTS_Circle.png'
   features:

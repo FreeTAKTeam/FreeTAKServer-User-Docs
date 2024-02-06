@@ -8,7 +8,9 @@ status: ood
 
 We support a public instance of FTS hosted by DigitalOcean.
 
-The Public server (PUB) is an instance of FTS made available for you to test and play with. We are not going to spy on you, but keep in mind that information will be shared with all the connected users. For production consider to install your own instance.
+The Public server (PUB) is an instance of FTS made available for you to test and play with.
+We are not going to spy on you, but keep in mind that information will be shared with all the connected users.
+For production consider to install your own instance.
 
 ### FTS Public Instance Server Rules
 

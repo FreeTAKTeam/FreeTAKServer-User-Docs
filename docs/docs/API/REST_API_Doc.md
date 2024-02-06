@@ -6,7 +6,7 @@ status: ood
 
 The FreeTAKServer REST API is a human-readable approach to the TAK world.
 The API allows you to easily connect third parties to the TAK family,
-without the need to understand the complexity of the COT structure or what a TCP connection is.
+without the need to understand the complexity of the CoT structure or what a TCP connection is.
 FTS also supports an [Internal API](REST_API_InternalDoc.md).
 
 ## How FTS manages the information
@@ -111,6 +111,7 @@ Set of commands relative to API management.
 #### getHelp
 
 Retrieve API version and supported endpoints.
+
  * verb: GET
  * endpoint: /manageAPI/getHelp
  * returns: json containing API version and supported endpoints
@@ -290,7 +291,7 @@ A GeoObject is an element place on a map. It has a name, characteristics, and an
 
 ###### List of supported HOW
 the following list contains 
-API term : Translation in the COT 
+API term : Translation in the CoT 
 
 * "nonCoT": "h-g-i-g-o",
 * "mensurated": "m-i",
@@ -835,7 +836,7 @@ latitude
 : the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g. 43.855682).
 
 uid
-: OPTIONAL input parameter, needed to update existing drone COT.
+: OPTIONAL input parameter, needed to update existing drone CoT.
 
 SPIName
 : the name of the Sensor Point of Interest  the UAS is currently aiming to. currently will NOT work in an update message (when you send the UID).

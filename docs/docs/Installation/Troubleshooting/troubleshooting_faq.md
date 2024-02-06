@@ -101,7 +101,7 @@ Cause: the certs are duplicated on your machine
 
 This has been observed on `ATAK` 4.7 + and `WinTAK` for functions that requires both encrypted TCP and SSL connections.
 The `ExCheck` plugin is an example of that. 
-the main symptom on the client is that the connection to the server fails (for specific functions).
+The main symptom on the client is that the connection to the server fails (for specific functions).
 This is NOT a FTS issue, it's provoked by the way `ATAK` stores certificates.
 
 ### Workaround `ATAK` 

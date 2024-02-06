@@ -2,7 +2,7 @@
 status: todo
 ---
 
-# **COT Domain Model**
+# **CoT Domain Model**
 
 The Cursor-On-Target (CoT) Event data model defines a Domain model
 as a system of abstractions that describes selected aspects
@@ -13,7 +13,7 @@ The Domain model can be translated into an XML data schema
 for exchanging time sensitive position of moving objects,
 or "what", "when", and "where" (WWW) information, between systems.
 
-![FTS COT domain Model](https://user-images.githubusercontent.com/60719165/193834333-ea041722-e3ea-46f9-9eb6-7417c19807ea.png)
+![FTS CoT domain Model](https://user-images.githubusercontent.com/60719165/193834333-ea041722-e3ea-46f9-9eb6-7417c19807ea.png)
 
 
 ## \_\_serverdestination 
@@ -741,7 +741,8 @@ some type of location?
 
 This is a Cursor On TargetClass for a generic remarks (aka "FreeText").
 
-Provides a place to annotate CoT with free text information. e.g. comments from other users about the current COT. Used also for the geoChat.
+Provides a place to annotate CoT with free text information. e.g. comments from other users about the current CoT.
+Used also for the geoChat.
 
 **the xml body of this class is used to transport the chat message**
 

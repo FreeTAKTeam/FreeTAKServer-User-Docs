@@ -9,6 +9,11 @@ on the [RasberryPi](../RaspberryPi/Installation.md);
 however, only on Digital Ocean cloud you will have the perfect experience,
 where all is installed and configured. 
 
+If you accept all the defaults,
+when completed your RaspPi will be configured similar to the following:
+
+![image](../images/zero-touch-deply-default.png)
+
 ## Instructions
 To install, enter into the console on an Ubuntu 22.04 server:
 ```console
@@ -70,10 +75,7 @@ This script will install and configure FreeTAKHub components.
 6. FreeTAKHub Voice Server: Uses [Murmur](https://github.com/mumble-voip/mumble) or Mumble VOIP Server for voice chatting.
 7. FreeTAKHub Webmap: A mapping component on the web interface.
 
-
-
-![FreeTAK 1 9 9 ZTI deployment](https://user-images.githubusercontent.com/60719165/207360218-a7b7a619-4cb0-4234-b7bb-9f74910019f6.png)
-
+![FreeTAK 2.1 ZTI deployment](../images/zero-touch-deply-default.png)
 
 # Custom Deployment (Advanced)
 
@@ -90,7 +92,6 @@ wget -qO rb.gy/ocghax | sudo bash
 ```
 # Verify your installation
 at the end of the ZT you will see a report that will provide credentials and a play recap
-![image](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/assets/60719165/47afb1a2-76db-44d0-becb-b66708f80289)
 you may now proceed to  [Installation Check](../Troubleshooting/InstallationCheck.md)
 ## Services
 the current name of the services installed by the Zero Touch :
@@ -99,7 +100,7 @@ the current name of the services installed by the Zero Touch :
 * fts-ui.service
 * mumble-server.service
 * nodered.service
-* rtsp-simple-server.service
+* mediamtx.service (was rtsp-simple-server.service)
 
 use 
 ```
@@ -115,7 +116,7 @@ systemctl status [SERVICENAME].service
 
 this command will output the status of all the services
 ```
-sudo systemctl status fts.service fts-ui.service mumble-server.service nodered.service rtsp-simple-server.service
+sudo systemctl status fts.service fts-ui.service mumble-server.service nodered.service mediamtx.service
 ```
 
  [how to start / stop / enable  a service?](../Linux/Service.md)

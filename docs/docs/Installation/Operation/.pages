@@ -1,0 +1,5 @@
+title: FTS Configuration
+
+nav:
+    - Configuration: fts-config.md
+    - Service Management: fts-service-mgmt.md

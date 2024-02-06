@@ -2,19 +2,20 @@
 status: current
 ---
 
-ExCheck
-
-**ExCheck** is a plugin for `ATAK` and `WinTAK`.
+# ExCheck
+`ExCheck` is a plugin for `ATAK` and `WinTAK`.
 It allows users to collaborate on the execution and monitoring of tasks based on templates. 
-To use ExCheck, you need to have a server that supports it.
-FTS supports the plugin since version 1.3. Version 1.5 supports also  ExCheck in the WebUI
+To use `ExCheck`, you need to have a server that supports it.
+FTS supports the plugin since version 1.3.
+Version 1.5 supports also `ExCheck` in the WebUI.
 
 ## `WinTAK`
-in `WinTAK` (since version 4.1) you can find the plugin as ExCheck under the plugin tab. 
+in `WinTAK` (since version 4.1) you can find the plugin as `ExCheck` under the plugin tab. 
 On the top of the window you will see two buttons.
 A list of active checklists shows up below them.
 
 with the buttons You can:
+
 - create a new Template
 - create a new template based on an existing one
 - Join active checklist
@@ -22,9 +23,9 @@ with the buttons You can:
 
 ### create a new Template
 
-You need to define a name , a description and at least a task, to be able to save the template. 
+You need to define: a name, a description, and at least a task, to be able to save the template. 
+Standard columns can be modified or deleted, 
 
-standard columns can be modified or deleted, 
 - No: sequence of the task
 - Description: name of the task
 - Req. : this step is required to complete the checklist (???)
@@ -36,6 +37,7 @@ standard columns can be modified or deleted,
 - Due relative DTG:  the timing of the competition of the task required field
 
 after that you have created a task you can right-click the hamburger menu (the 3 lines) to the left to:
+
 - Delete the task
 - add some background color
 - Toggle linebreak: allows to create a block of tasks

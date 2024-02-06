@@ -17,15 +17,15 @@ status: ood
 * Under Network Settings, select a security group that has the necessary ports configured inbound for both SSH and FreeTAK server operations.
 
 ## FTS Ports (FTSConfig.yaml) 
-* 8087 - TCP COT (FTS_COT_PORT)
-* 8089 - SSL COT (FTS_SSLCOT_PORT)
+* 8087 - TCP CoT (FTS_COT_PORT)
+* 8089 - SSL CoT (FTS_SSLCOT_PORT)
 * 19023 - API (FTS_API_PORT)
 
 ## FTS UI Ports (config.py)
 * 5000 - Web UI (APPPort)
 * 1880 - Webmap (WEBMAPPORT)
 
-## RTSP-simple-server -AKA video Server 
+## [MediaMTX](https://github.com/bluenviron/mediamtx) - Video Server 
 * 9997 - REST API
 * 9998 - Metrics Listener
 

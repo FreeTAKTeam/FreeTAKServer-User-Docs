@@ -2,10 +2,10 @@
 status: todo
 ---
 
-# Work in progress COT Hierarchy Tree
+# Work in progress CoT Hierarchy Tree
 
 <details>
-<summary> COT Hierarchy Tree</summary>
+<summary> CoT Hierarchy Tree</summary>
     
 ### Heading  
 

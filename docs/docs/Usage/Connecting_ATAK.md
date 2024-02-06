@@ -38,6 +38,7 @@ This configuration includes `fts-offical-pub.pref`:
 #### Download maps (optional)
 There are places where you may acquire `ATAK` maps.
 Representative place are: 
+
 * [ATAK-Maps](https://github.com/joshuafuller/ATAK-Maps)
 * [reddit `ATAK` MapSources](https://www.reddit.com/r/ATAK/wiki/index/#wiki_loading_mapsources_.2F_base_maps_to_tak)
 * [CivTAK Files](https://www.civtak.org/files/)

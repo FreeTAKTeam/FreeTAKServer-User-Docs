@@ -1,6 +1,14 @@
 title: Troubleshooting
 
 nav:
-    - FAQ: troubleshooting.md
+    - FAQ: troubleshooting_faq.md
     - Installation Check: InstallationCheck.md
     - Socket SSL Issue: SocketIssue.md
+    - FTS Servers:
+      - FTS Main Server (FTS) : fts-core-server.md
+      - FTS UI : fts-ui-server.md
+      - Web Map : fts-webmap-server.md
+    - 3rd Party Servers:
+      - Video Server: video-server.md
+      - Voice Server: voip-server.md
+      - FTS Hub (FTH) : fts-hub-server.md

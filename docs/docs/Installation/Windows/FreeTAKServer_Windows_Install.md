@@ -25,14 +25,14 @@ FreeTAKServer provides Situational Awareness and other capabilities such as:
 - Data Package upload and retrieval
 - Private data package (user to user)
 - Image transfer and storage
-- COT recording in a database
-- Execution of common task list (using the ExCheck plugin for `WinTAK`; `ATAK` plugin only available to users with `takmaps.com` access)
+- CoT recording in a database
+- Execution of common task list (using the `ExCheck` plugin for `WinTAK`; `ATAK` plugin only available to users with `takmaps.com` access)
 - User Management
 - Command Line Interface
 - REST API for creation of information such as emergency, Enemy units and so on
 
-the preferred way to install FTS is by using Pip, that would solve all the required dependencies.
-the offline release requires additional manual work and has to be used
+The preferred way to install FTS is by using Pip, that would solve all the required dependencies.
+The offline release requires additional manual work and has to be used
 only in the cases where internet connection is not available.
 
 -----------
@@ -194,7 +194,7 @@ and paste a copy of your `StartFreeTAKServer.bat` file there.
 
 ## ERRORS
 
-COT error v1.5.13
+CoT error v1.5.13
 
 ![](CotError.png)
 

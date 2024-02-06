@@ -74,7 +74,8 @@ certpath = "/sdcard/FreeTAKServer/certs/"
 FLASK_APP=/data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/lib/python3.8/site-packages/FreeTAKServer-UI/run.py nohup python3 /data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/lib/python3.8/site-packages/FreeTAKServer-UI/run.py
 ```
 
-Now open your web browser and navigate to <http://127.0.0.1:5000> and login with the default creds `(admin/password)`.
+Now open your web browser and navigate to <http://127.0.0.1:5000>
+and login with the default creds `(admin/password)`.
 
 # Troubleshooting
 
@@ -85,7 +86,7 @@ Error: `Protocol not found`
 Solution: You didn't update `WKS.py` correctly
 
 # Notes
-* All testing was performed with a RPi4 8GB running LineageOS 18.1 32bit and Pydroid3
+* All testing was performed with a RaspPi4 8GB running LineageOS 18.1 32bit and Pydroid3
 * These instructions assume you are running FTS and FTS-UI on the same device
 * We downgrade SQLAlchemy because versions 1.4+ were not compatible with SQLAlchemy-utils
-* You need root access to update the tcp/udp protocol numbers (if you are using a RPi4 and LineageOS it is trivial to enable)
+* You need root access to update the tcp/udp protocol numbers (if you are using a RaspPi4 and LineageOS it is trivial to enable)
