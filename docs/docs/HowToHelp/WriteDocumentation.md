@@ -165,3 +165,13 @@ that it works well with tools like `git`.
 (This `git` default is seldom changed.)
 This implies that ideas should be confined to lines of text,
 which is precisely what ventilated code.
+
+### Apply Style Judiciously
+
+It may be that a captured image is too large.
+It may be tempting to resize the image.
+However, if a reader wants to see the detail in the image this will lose that detail.
+Instead, apply a style to the image to make it smaller.
+```text
+  ![](rpi-imager-ssh-settings.png){: style="height:200px;width:150px" }
+```

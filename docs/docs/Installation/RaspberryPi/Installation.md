@@ -25,8 +25,8 @@ Follow the instructions to prepare an SD card with the appropriate image.
 
 The `rpi-imager` provides a means for setting an `ssh` authorized key and default `username` and `password`. 
 
-![](rpi-imager-ssh-settings.png)
-![](rpi-imager-general-settings.png)
+![](rpi-imager-ssh-settings.png){: style="height:200px;width:150px" }
+![](rpi-imager-general-settings.png){: style="height:200px;width:150px" }
 
 ### Setup Hardware
 
@@ -106,7 +106,13 @@ wget -qO - bit.ly/freetakhub2 | sudo bash
 ```
 Alternate, full path.
 ```bash
-wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/main/scripts/easy_install.sh | bash
+wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/main/scripts/easy_install.sh | sudo bash
+```
+
+#### `ZTI` Usage
+
+```bash
+wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --help
 ```
 
 #### Custom IP Address
@@ -116,7 +122,7 @@ There are several ways to discover a candidate IP address, here are two (and a c
 ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
 curl ifconfig.me/ip
 export MY_IP=$(ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
-````
+```
 With an appropriate IP address in hand you can run the `ZTI`.
 ```bash
 wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --ip-addr ${MY_IP}
@@ -124,12 +130,6 @@ wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --ip-addr ${MY_IP}
 Alternate, full path.
 ```bash
 wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/main/scripts/easy_install.sh | sudo bash -s -- --ip-addr ${MY_IP}
-```
-
-#### `ZTI` Usage
-
-```bash
-wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --help
 ```
 
 ## Operation
