@@ -90,7 +90,7 @@ sudo systemctl start mediamtx.service
 
 ## Integrate Media Server with Integration Server
 
-This presumes the prior installation of [`NodeRed`](fts-hub-server).
+This presumes the prior installation of [`NodeRed`](fts-hub-server.md).
 
 The integration server is configured with the `video-checker` via a `JSON` file.
 `NodeRed` provides <https://github.com/FreeTAKTeam/FreeTAKHub_VideoChecker>.
