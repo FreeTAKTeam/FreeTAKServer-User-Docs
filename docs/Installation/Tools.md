@@ -6,6 +6,14 @@ status: ood
 
 ## Helpful Tools
 
+### OpenSSH
+
+OpenSSH is available on many platforms:
+
+* [Windows 11](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=gui)
+* Ubuntu `sudo apt install openssh-client`
+
+
 ### PuTTy
 Allows you to remotely connect and manage your RaspPi. 
 Helpful for being able to copy/paste from this document into the RaspPi Terminal CLI. 
