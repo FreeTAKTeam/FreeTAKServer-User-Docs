@@ -1,8 +1,8 @@
 title: Installation
 
 nav:
-    - Tools you need: Tools.md
     - Infrastructure Planning: InfrastructurePlanning.md
-    - Video Guides: Video_Guides.md
-    - Installation Mechanisms: mechanism
     - Target Platforms: platform
+    - Installation Mechanisms: mechanism
+    - Tools you need: Tools.md
+    - Video Guides: Video_Guides.md

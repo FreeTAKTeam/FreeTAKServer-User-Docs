@@ -1,8 +1,8 @@
 title: Target Platforms
 
 nav:
-    - Android: Android
     - Cloud: Cloud
     - Linux Generic: Linux
     - Raspberry Pi: RaspberryPi
     - Windows: Windows
+    - Android: Android
