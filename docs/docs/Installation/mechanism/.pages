@@ -1,0 +1,6 @@
+title: Installation Mechanism
+
+nav:
+    - Ansible Zero Touch Install: Ansible
+    - Container (Docker): Docker
+    - Manual: Manual

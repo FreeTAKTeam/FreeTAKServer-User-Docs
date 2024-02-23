@@ -34,7 +34,7 @@ The following features are in the pipeline  for the 2.x family:
 Check out our [roadmap](https://github.com/FreeTAKTeam/FreeTakServer/milestones?direction=asc&sort=due_date&state=open) to see everything we have planned.
 
 ## Shut Up and take my money!
-The easiest way to install FTS is to use our signature [ZeroTouch Installer](Installation/Ansible/ZeroTouchInstall.md).  
+The easiest way to install FTS is to use our signature [ZeroTouch Installer](Installation/mechanism/Ansible/ZeroTouchInstall.md).  
 
 ## Community
 This project is currently in the *Early Production Stage*.

@@ -13,7 +13,7 @@ sudo systemctl start fts-ui
 
 Your `FTS` should now be running.
 
-See [troubleshooting](../Troubleshooting/troubleshooting_faq.md) for more information.
+See [troubleshooting](../../Troubleshooting/troubleshooting_faq.md) for more information.
 
 There are other services which `ZTI` will start.
 They are also managed by `systemd`.

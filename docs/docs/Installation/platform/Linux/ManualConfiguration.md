@@ -5,7 +5,7 @@ status: ood
 # Manual Configuration
 
 ### Configure FreeTAKServer < 1.9
-![image](../images/configure_fts.png)
+![image](../../images/configure_fts.png)
 
 Depending on the linux distro your config file for FTS will be in a python version dependant location.
 you can use pip to discover the location. Type:

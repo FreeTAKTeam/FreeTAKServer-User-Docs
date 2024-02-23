@@ -4,7 +4,7 @@ status: ood
 
 # Free TAK Server : core
 
-![image](../images/zero-touch-deply-default.png)
+![image](../Installation/images/zero-touch-deply-default.png)
 
 ## Zero Touch Installer 
 
@@ -23,7 +23,7 @@ ip addr
 
 Validate the properties set in the `fts-ui` configuration file.
 
-[Verify and/or Edit the `fts` configuration file](../../administration/usingConsole.md)  
+[Verify and/or Edit the `fts` configuration file](../administration/usingConsole.md)  
 ```
 /opt/FTSConfig.yaml
 ```

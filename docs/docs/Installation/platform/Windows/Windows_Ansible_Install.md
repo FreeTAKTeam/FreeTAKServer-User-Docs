@@ -16,7 +16,8 @@ This repository includes Ansible roles to:
 
 Below is required for Windows machines.
 
-The machine must be running: Windows 10 Version 2004 or higher (Build 19041 or higher) or Windows 11.
+The machine must be running:
+Windows 10 Version 2004 or higher (Build 19041 or higher) or Windows 11.
 
 For Windows installations:
 
@@ -136,4 +137,4 @@ sudo ansible-playbook install_all.yml
 
 ## Step 4. Check Installation
 
-Directions to check installation [here](../Troubleshooting/InstallationCheck.md).
+Directions to check installation [here](../../../Troubleshooting/InstallationCheck.md).

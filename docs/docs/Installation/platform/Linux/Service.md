@@ -115,5 +115,5 @@ similarly the UI service can be created with `/etc/systemd/system/fts-ui.service
 
 started 
 
-see also [ZeroTouchInstall Services section](../../Installation/Ansible/ZeroTouchInstall.md)
+see also [ZeroTouchInstall Services section](../../mechanism/Ansible/ZeroTouchInstall.md)
 to see the complete list of the services created by the installer

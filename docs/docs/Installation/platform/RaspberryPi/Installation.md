@@ -23,10 +23,15 @@ Follow the instructions to prepare an SD card with the appropriate image.
 
 ![](rpi-imager.png)
 
-The `rpi-imager` provides a means for setting an `ssh` authorized key and default `username` and `password`. 
+The `rpi-imager` provides a means for setting an `ssh` authorized key
+and default `username` and `password`. 
 
 ![](rpi-imager-ssh-settings.png){: style="height:200px;width:150px" }
 ![](rpi-imager-general-settings.png){: style="height:200px;width:150px" }
+
+I construct an ssh key-pair specifically for working with compute nodes.
+Construction of such key-pairs is done with [ssh keygen](https://www.ssh.com/academy/ssh/keygen).
+Presume that the key-pair thus generated is `~/.ssh/fts_rsa` and `~/.ssh/fts_rsa.pub`.
 
 ### Setup Hardware
 
@@ -60,7 +65,7 @@ You will need the IP address (you should write the address down for later refere
 sudo apt install -y net-tools
 ```
 ```bash
-ip addr
+ip addr show
 ```
 Here is representative fragment from an output.
 ```text
@@ -84,6 +89,13 @@ Here is an example with the IP address obtained previously and `fts` user.
 ```bash
 ssh fts@10.2.118.237
 ```
+I generally update the `~/.ssh/config` file with this information:
+```config 
+Host fts-rp1
+    HostName 10.2.118.237
+    User fts
+    IdentityFile ~/.ssh/fts_rsa
+```
 
 ### Update Prerequisites
 
@@ -93,34 +105,29 @@ sudo apt install -y wget curl
 ```
 
 ### Run the Zero Touch Installer (ZTI)
-The `ZTI` can be run in different environments,
-make sure you are running it correctly or you will need to update configuration files later.
 
-#### [default] Cloud Server
-In this mode, `ZTI` guesses your IP address using
-`curl ifconfig.me/ip`.
-If this does not give the appropriate IP address you will need to provide it.
-Run one of the following (equivalent) commands to start the [ZeroTouch](../../Installation/Ansible/ZeroTouchInstall.md) installer.
-```bash
-wget -qO - bit.ly/freetakhub2 | sudo bash
-```
-Alternate, full path.
-```bash
-wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/main/scripts/easy_install.sh | sudo bash
-```
+The [complete ZTI instructions are here](../../mechanism/Ansible/ZeroTouchInstall.md).
 
-#### `ZTI` Usage
-
-```bash
-wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --help
-```
 
 #### Custom IP Address
 By default, the `ZTI` guesses your IP address.
-There are several ways to discover a candidate IP address, here are two (and a capture).
+When installing on the RaspberryPi it is unlikely that this is what you want.
+There are several ways to discover a candidate IP address, here are some.
+
+Wired, ethernet, RJ45, LAN
 ```bash
 ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
+```
+WiFi, LAN
+```bash
+ip -4 addr show wlan0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
+```
+On the public internet.
+```bash
 curl ifconfig.me/ip
+```
+Here is an example capturing the wired LAN address:
+```bash
 export MY_IP=$(ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
 ```
 With an appropriate IP address in hand you can run the `ZTI`.
@@ -140,6 +147,15 @@ Many (if not all) of the choices made by `ZeroTouch` are written to stdout.
 I recommend that you validate the properties in that output.
 I recommend that you stop the fts services prior to reconfiguration.
 
-* [Service Management](../Operation/fts-config.md)
-* [Configuration](../Operation/fts-config.md)
+* [Service Management](../../../administration/Operation/fts-config.md)
+* [Configuration](../../../administration/Operation/fts-config.md)
+
+
+## RPiFTS Series
+
+GHOST_DA-B6 has created a set of videos on `youtube` detailing how to install
+and set up FTS on raspberry pi `SBC's`.
+
+You can view his RPiFTS video series on
+his [channel](https://www.youtube.com/channel/UC--WpY--HV7PymMWLgfflZA).
 

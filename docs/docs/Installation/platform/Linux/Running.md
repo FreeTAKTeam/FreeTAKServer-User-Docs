@@ -11,7 +11,7 @@ If you have not installed FreeTAKServer please follow the [installation](Install
 sudo python3 -m FreeTAKServer.controllers.services.FTS
 ```
 If you have FTS running in the terminal how you like;
-it is time to move on to running FTS as a [service](../../Installation/Linux/Service.md).
+it is time to move on to running FTS as a [service](Service.md).
 
 ## Legacy Parameters
 those parameters were supported in previous version of FTS

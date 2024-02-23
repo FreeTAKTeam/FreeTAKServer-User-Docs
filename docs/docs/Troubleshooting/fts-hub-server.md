@@ -5,7 +5,7 @@ status: ood
 # Integration Server
 
 
-![image](../images/zero-touch-deply-default.png)
+![image](../Installation/images/zero-touch-deply-default.png)
 
 The integration server is [NodeRed]()
 

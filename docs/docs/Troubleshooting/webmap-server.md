@@ -4,11 +4,11 @@ status: current
 
 # WebMap Installation
 
-![image](../images/zero-touch-deply-default.png)
+![image](../Installation/images/zero-touch-deply-default.png)
 
 Some versions of the `Zero Touch Installer` do not install the compiled `webmap`.
 
-In those cases you will need to install the [flow version](../../FreeTAKHub/WebMap/Installation.md).
+In those cases you will need to install the [flow version](../FreeTAKHub/WebMap/Installation.md).
 
 The WebMap is similar in function to `WebTAK`.
 

@@ -5,7 +5,7 @@ status: ood
 # Video Server (third party application)
 
 
-![image](../images/zero-touch-deply-default.png)
+![image](../Installation/images/zero-touch-deply-default.png)
 
 The video server is a third party application.
 

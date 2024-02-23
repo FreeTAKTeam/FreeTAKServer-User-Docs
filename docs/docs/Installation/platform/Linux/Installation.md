@@ -11,9 +11,9 @@ This guide will walk you through installing FreeTAKServer 2.1
 - Install FreeTAKServer
 - Configure and Run FreeTAKServer
 - Configure Web UI
-- **TBD** ~~Install [NodeRed](../../FreeTAKHub/Integration/NodeRedInstallation.md) for FreeTAKHub~~
-- **TBD** ~~Install the [Web Map](../../FreeTAKHub/WebMap/Installation.md)~~
-- **TBD** ~~Install the [Video Service](../../FreeTAKHub/Video/Installation.md)~~
+- **TBD** ~~Install [NodeRed](../../../FreeTAKHub/Integration/NodeRedInstallation.md) for FreeTAKHub~~
+- **TBD** ~~Install the [Web Map](../../../FreeTAKHub/WebMap/Installation.md)~~
+- **TBD** ~~Install the [Video Service](../../../FreeTAKHub/Video/Installation.md)~~
 
 ---
 ## Note: Linux Distributions
@@ -273,7 +273,7 @@ functionality is declared but not fully implemented.
 On the first run, a configuration wizard will help set up the config file.
 
 > :memo: **Note:** If the wizard does not appear,
-> see [troubleshooting](../Troubleshooting/troubleshooting_faq.md).
+> see [troubleshooting](../../../Troubleshooting/troubleshooting_faq.md).
 
 ### Using the Wizard
 
@@ -326,7 +326,7 @@ Use the keyboard  chord `CTRL + C` twice in the console running FTS to stop
 FreeTAKServer.
 
 A separate guide is maintained for
-[manual configuration](../../Installation/Linux/ManualConfiguration.md) of your FTS install.
+[manual configuration](ManualConfiguration.md) of your FTS install.
 
 ### MainConfig.py
 FTS sends a welcome message on client connection which is configurable.

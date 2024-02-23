@@ -66,58 +66,91 @@ Check that python and pip are installed and working correctly.
 python -V
 pip --version
 ```
-![](chkpypip.jpg)
+It should look something like this.
+```powershell
+E:\>python -V
+Python 3.11.0
+
+E:\>pip --version
+pip 24.0 from c:\software\python\lib\site-package\pip (python 3.11)
+
+E:\>
+```
 
 ### Install Python packages
 
    Having checked that Python and pip are working install the requirements:
 
-1. Perform install one by one via pip.
+#### `pip`: Perform install one by one
 
-   ```shell
-   pip install flask
-   pip install flask_login
-   pip install flask_migrate
-   pip install flask_wtf
-   pip install flask_sqlalchemy
-   pip install email_validator
-   pip install waitress
+```shell
+pip install flask
+pip install flask_login
+pip install flask_migrate
+pip install flask_wtf
+pip install flask_sqlalchemy
+pip install email_validator
+pip install waitress
 
-   pip install coveralls
-   pip install coverage
-   pip install pytest
-   pip install flake8
-   pip install flake8-print
-   pip install pep8-naming
-   pip install selenium
-   ```
+pip install coveralls
+pip install coverage
+pip install pytest
+pip install flake8
+pip install flake8-print
+pip install pep8-naming
+pip install selenium
+```
 
-2. (alternate) Perform install from a file.
+#### `pip`: (alternate) Perform install from a file
 
-   From a file Paste these requirements into a .txt file `requirements.txt` for example:
-   ```text
-   flask
-   flask_login
-   flask_migrate
-   flask_wtf
-   flask_sqlalchemy
-   email_validator
-   waitress
-   coveralls
-   coverage
-   pytest
-   flake8
-   flake8-print
-   pep8-naming
-   selenium
-   ```
+From a file Paste these requirements into a .txt file `requirements.txt` for example:
+```text
+flask
+flask_login
+flask_migrate
+flask_wtf
+flask_sqlalchemy
+email_validator
+waitress
+coveralls
+coverage
+pytest
+flake8
+flake8-print
+pep8-naming
+selenium
+```
 
-   Now change into the directory (`cd`) containing said `requirements.txt` file and run the command:
-   ```shell
-   pip install -r requirements.txt
-   ```
+Change into the directory (`cd`) containing said `requirements.txt` file and run the command:
+```shell
+pip install -r requirements.txt
+```
+
+
+#### `conda/mamba` (alternate) Perform install from a file
+
+I recommend `micromamba` as it does not require that Python be installed a priori.
+* [micromamba install](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html)
+
+Create an environment.
+```shell
+mamba create --name tak
+mamba activate tak
+```
+
+Install the packages into that environment.      
+```shell
+mamba install lxml pathlib tabulate setuptools
+mamba install flask flask-login flask-migrate flask-wtf
+mamba install sqlalchemy flask-sqlalchemy 
+mamba install flake8 flake8-print 
+mamba install email-validator
+mamba install pytest coveralls coverage
+mamba install pep8-naming selenium
+mamba install waitress
+```     
             
-3. Install FreeTAKServer
+#### Install FreeTAKServer
    When all the requirements have been satisfied install the FreeTAKServer and FreeTAKServerUI.
    ```shell
    pip install FreeTAKServer
@@ -133,6 +166,19 @@ After the installation has finished the server and UI may need some configuratio
 
 The FTS server is configured with `MainConfig.py`.
 
+After the installation has finished the services need to be configured.
+ 
+Configure the `FreeTakServer` by editing the `<site-packages>\FreeTAKServer\core\configuration\MainConfig.py` file.
+
+Path examples:
+* native Windows install: `C:\Software\python\Lib\site-packages\FreeTAKServer\core\configuration\MainConfig.py`
+* conda env named `tak`: `C:\Users\user\micromamba\envs\tak\Lib\site-packages\FreeTAKServer\core\configuration\MainConfig.py`
+
+Configure the `FreeTAKServer-UI` by editing the `<site-packages>\FreeTAKServer-UI\config.py` file.
+
+Path examples:
+* native Windows install: `C:\Software\python\Lib\site-packages\FreeTAKServer-UI\config.py`
+* conda env named `tak`: `C:\Users\user\micromamba\envs\tak\Lib\site-packages\FreeTAKServer-UI\config.py`
 
 ```text
 MY PATH EXAMPLE
@@ -140,7 +186,7 @@ C:\Software\python\Lib\site-packages\FreeTAKServer\controllers\configuration\Mai
 ```
 
 ```python
-{!Installation/Windows/MainConfig.py!}   
+{!Installation/platform/Windows/MainConfig.py!}   
 ```
 
 The FTS server UI is configured with `config.py`.
@@ -151,12 +197,13 @@ C:\Software\python\Lib\site-packages\FreeTAKServer-UI\config.py
 ```
 
 ```python
-{!Installation/Windows/config.py!}   
+{!Installation/platform/Windows/config.py!}   
 ```
 
 ### Start the Server
 
-In order to run the server and the GUI two terminal windows must be opened and the commands below must be run:
+In order to run the server and the GUI two terminal windows must be opened
+and the commands below must be run:
 
 SERVER START COMMAND
 ```shell
@@ -174,6 +221,21 @@ flask run
 
 Now your server should be running.
 `User = admin`, `Password = password` and `GUI link` http://localhost:5000/
+
+![](FTS_windows.gif)
+
+#### Uninstall FTS
+
+To uninstall do:
+```shell
+pip uninstall FreeTAKServer
+pip uninstall FreeTAKServer-UI
+```
+
+Then in the `C:\Software\python\Lib\site-packages\FreeTAKServer\` delete the `FTSDataBase.db` file.
+
+In the `C:\Software\python\Lib\site-packages\` path delete the `FreeTAKServer` & `FreeTAKServer-UI` folders.
+
 
 ## Notes
 
@@ -209,9 +271,26 @@ FreeTAKServer documentation for end users
 | Server Download:   | <https://github.com/FreeTAKTeam/FreeTakServer>                                           |
 | Server Releases:   | <https://github.com/FreeTAKTeam/FreeTakServer/releases>                                  |
 
+### Helper tasks
 
-## RPiFTS Series
+To check python version `python -V`
 
-GHOST_DA-B6 has created a set of videos on `youtube` detailing how to install and set up FTS on raspberry pi `SBC's`.
+To quickly check your IP `ipconfig`
 
-You can view his RPiFTS video series on his [channel](https://www.youtube.com/channel/UC--WpY--HV7PymMWLgfflZA).
+### Platform Concerns
+
+#### `gunicorn` not available on Windows
+
+[`gunicorn`](https://gunicorn.org/)
+is not supported on Windows and is replaced by 
+[`waitress`](https://github.com/Pylons/waitress).
+
+Replace standard `gunicorn` command with `waitress-serve`.
+For example: 
+```shell
+gunicorn --listen=*:8000 myapp.wsgi:application
+```
+...becomes...
+```shell
+waitress-serve --listen=*:8000 myapp.wsgi:application
+```

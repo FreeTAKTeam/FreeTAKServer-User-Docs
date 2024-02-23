@@ -6,7 +6,7 @@ status: ood
 
 The `WebUI` is typically under the control of `systemd` as `fts-ui.service`.
 
-![image](../images/zero-touch-deply-default.png)
+![image](../Installation/images/zero-touch-deply-default.png)
 
 
 The `FTS-UI` communicates with 
@@ -41,7 +41,7 @@ ip addr
 
 Validate the properties set in the `fts-ui` configuration file.
 
-[Verify and/or Edit the `fts-ui` configuration file](../../administration/usingConsole.md)  
+[Verify and/or Edit the `fts-ui` configuration file](../administration/usingConsole.md)  
 ```
 /usr/local/lib/python3.11/dist-packages/FreeTAKServer-UI/config.py
 ```

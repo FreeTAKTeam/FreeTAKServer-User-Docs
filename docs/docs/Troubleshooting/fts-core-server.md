@@ -5,7 +5,7 @@ status: ood
 # Free TAK Server : core
 
 
-![image](../images/zero-touch-deply-default.png)
+![image](../Installation/images/zero-touch-deply-default.png)
 
 Some of these services have a secure and a clear instance.
 
