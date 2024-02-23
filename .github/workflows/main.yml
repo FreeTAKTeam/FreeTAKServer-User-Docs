@@ -13,11 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: 3.x
 #      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
-#      - uses: actions/cache@v3
+#      - uses: actions/cache@v4
 #        # https://github.com/actions/cache
 #        with:
 #          key: mkdocs-material-${{ env.cache_id }}
@@ -29,4 +29,4 @@ jobs:
           mkdocs-section-index mkdocs-toc-sidebar-plugin mike 
           markdown-include mkdocs-pdf-export-plugin
       # https://www.mkdocs.org/user-guide/cli/#mkdocs-gh-deploy
-      - run: cd docs && mkdocs gh-deploy --force
+      - run: mkdocs gh-deploy --force
