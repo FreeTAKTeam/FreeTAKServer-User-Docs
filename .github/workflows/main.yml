@@ -29,4 +29,4 @@ jobs:
           mkdocs-section-index mkdocs-toc-sidebar-plugin mike 
           markdown-include mkdocs-pdf-export-plugin
       # https://www.mkdocs.org/user-guide/cli/#mkdocs-gh-deploy
-      - run: mkdocs gh-deploy --force
+      - run: cd docs && mkdocs gh-deploy --force
