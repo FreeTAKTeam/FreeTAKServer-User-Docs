@@ -56,7 +56,7 @@ For example, here is an excerpt from the LICENSE file.
 ```
 
 
-### `attr-list`
+### `attr_list`
 The documentation uses the `attr_list` extension which
 adds a syntax to define attributes on the various HTML elements in markdown’s output. 
 The official documentation for `attr_list` is located in the [project repo](https://python-markdown.github.io/extensions/attr_list/).

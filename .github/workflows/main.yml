@@ -27,6 +27,6 @@ jobs:
       - run: >-
           pip install mkdocs-material mkdocs-awesome-pages-plugin 
           mkdocs-section-index mkdocs-toc-sidebar-plugin mike 
-          markdown-include mkdocs-pdf-export-plugin attr_list
+          markdown-include mkdocs-pdf-export-plugin
       # https://www.mkdocs.org/user-guide/cli/#mkdocs-gh-deploy
       - run: cd docs && mkdocs gh-deploy --force
