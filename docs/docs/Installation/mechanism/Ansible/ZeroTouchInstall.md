@@ -31,7 +31,7 @@ Note: The following list and diagram are not exhaustive.
 1. FreeTAKServer (FTS): The core server that interfaces with TAK-enabled clients
 2. FreeTAKServer User Interface (FTS-UI): A web-based user interface.
 3. Video Server:  based on RTSP Simple Server. Handles video streaming.
-4.  Server:  Handle integration services (see below)
+4. Server:  Handle integration services (see below)
 5. FreeTAKHub Integration Server: Based on Node Red. Handles FTS integrations like SALUTE reports & video checking services (checks if videos are running and notifies FTS).
 6. FreeTAKHub Voice Server: Uses [Murmur](https://github.com/mumble-voip/mumble) or Mumble VOIP Server for voice chatting.
 7. FreeTAKHub Webmap: A mapping component on the web interface.
@@ -44,7 +44,7 @@ This command will output the status of these services
 sudo systemctl status fts.service fts-ui.service mumble-server.service nodered.service mediamtx.service
 ```
 
- [how to start / stop / enable  a service?](../../Linux/Service.md)
+ [how to start / stop / enable  a service?](../../platform/Linux/Service.md)
 
 
 ## Platform Specific Instructions
@@ -109,32 +109,47 @@ wget
 : This option tells wget to operate in quiet mode, which suppresses the usual output.
 
 O -
-: as the capital letter 'o'. The -O - option tells wget to redirect the downloaded content to standard output (stdout) instead of saving it to a file. The - character is used here to denote stdout.
+: as the capital letter 'o'.
+The -O - option tells wget to redirect the downloaded content to standard output (stdout)
+instead of saving it to a file. The - character is used here to denote stdout.
 
 bit.ly/freetakhub2
-: This is a shortened URL using the bit.ly service. It redirects to a longer URL from which wget will download content.
+: This is a shortened URL using the bit.ly service.
+It redirects to a longer URL from which wget will download content.
 
 |
-: This is a pipe. It takes the output of the command on its left (wget in this case) and uses it as the input for the command on its right.
+: This is a pipe.
+It takes the output of the command on its left (wget in this case)
+and uses it as the input for the command on its right.
 
 
 sudo
-: This command is used to execute the following command (bash) with superuser (root) privileges. It's required for commands that need higher permissions to run, typically for installing software or modifying system files.
+: This command is used to execute the following command (bash) with superuser (root) privileges.
+It's required for commands that need higher permissions to run,
+typically for installing software or modifying system files.
 
 bash
-: This is the command to invoke the Bash shell. When used without a filename, bash will read and execute commands from its standard input (which, in this case, is the output of wget).
+: This is the command to invoke the Bash shell. When used without a filename,
+bash will read and execute commands from its standard input (which, in this case, is the output of wget).
 
 -s
-: If this option is present, or if no arguments remain after option processing, then commands are read from the standard input. This option allows the positional parameters to be set when invoking an interactive shell or when reading input through a pipe.
+: If this option is present, or if no arguments remain after option processing,
+then commands are read from the standard input.
+This option allows the positional parameters to be set when invoking an interactive shell
+or when reading input through a pipe.
 
 --
-: End of options. Anything further on the command line is an argument, not an option.
+: End of options.
+Anything further on the command line is an argument, not an option.
 
 --ip-addr ${MY_IP}
 : Provide an argument to configure FTS with a specific, `MY_IP`, IP address.
 
 
-Putting it all together, `wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --ip-addr ${MY_IP}` downloads the content from the URL shortened as `bit.ly/freetakhub2`, then immediately executes that content as a bash script with superuser privileges. Providing an argument to configure FTS with a specific IP address.
+Putting it all together, `wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --ip-addr ${MY_IP}`
+downloads the content from the URL shortened as `bit.ly/freetakhub2`,
+then immediately executes that content as a bash script with superuser privileges.
+Providing an argument to configure FTS with a specific IP address.
 
 
 ## `ZTI` Legacy Argument

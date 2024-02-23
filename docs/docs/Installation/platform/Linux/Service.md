@@ -79,7 +79,7 @@ to create a file as `/etc/systemd/system/FreeTAKServer.service` with the followi
 (modify the parameters as needed)
 
 ```ini
-{!Installation/Linux/fts.service!}
+{!Installation/platform/Linux/fts.service!}
 ```
 
 And reload systemd, so it will load new unit file:
@@ -110,7 +110,7 @@ sudo systemctl enable fts.service
 ## UI Service
 similarly the UI service can be created with `/etc/systemd/system/fts-ui.service`
 ```ini
-{!Installation/Linux/fts-ui.service!}
+{!Installation/platform/Linux/fts-ui.service!}
 ```
 
 started 

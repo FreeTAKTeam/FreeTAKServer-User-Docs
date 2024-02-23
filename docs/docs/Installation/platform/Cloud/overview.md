@@ -70,4 +70,4 @@ WinSCP can be used on the top of Putty to make browsing and editing of files mor
 
  ## Next step
  you can now start installing FTS using the [ZeroTouch](../../mechanism/Ansible/ZeroTouchInstall.md)
- or the [Manual Installation](../../Installation/Linux/Installation.md)
+ or the [Manual Installation](../Linux/Installation.md)

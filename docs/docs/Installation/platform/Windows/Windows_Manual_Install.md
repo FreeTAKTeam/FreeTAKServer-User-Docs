@@ -249,7 +249,7 @@ Create a `.bat` file to run the server on double click and on startup:
 `StartFreeTAKServer.bat`
 
 ```bat
-{!Installation/Windows/StartFreeTAKServer.bat!} 
+{!Installation/platform/Windows/StartFreeTAKServer.bat!} 
 ```
 To run this script at startup: Go to Run (`WINDOWS + R`) and Type `shell:startup`, 
 and paste a copy of your `StartFreeTAKServer.bat` file there.

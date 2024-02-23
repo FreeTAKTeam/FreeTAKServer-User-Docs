@@ -16,7 +16,7 @@ The port mappings in the examples are required to make the service accessible to
 All environment variables are optional.
 All data is stored in a single directory for ease of persistent data between container versions.
 
-{!Installation/Docker/Quick_Start.md!}
+{!Installation/mechanism/Docker/Quick_Start.md!}
 
 ### Ports
 The docker image runs the ports on the same defaults as FreeTAKServer.

@@ -4,9 +4,9 @@ status: todo
 
 # Center On Target (CoT)
 
-The following table combines Center On Target information found in COTTYpes.XML,
+The following table combines Center On Target information found in COTTypes.XML,
 aligning it to MIL-STD-2525 CIDC code (when possible).
-To find more information read the [MIL-STD-D-D-D-2525 documentation](MilSTD2525.md)
+To find more information read the [MIL-STD-D-D-D-2525 documentation](mil_std_2525.md)
 
 | **COTID**           | **Hierarchy**                                                                                                                                                                        | **Name**                                                                                                                                                         | **nickname**     | **"ID"** | **CIDC**                 | **Category1**                        | **Category2**                       | **Category3**                                  |
 |:--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------|:---------|:-------------------------|:-------------------------------------|:------------------------------------|:-----------------------------------------------|

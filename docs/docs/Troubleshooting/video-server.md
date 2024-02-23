@@ -78,7 +78,7 @@ rtspsAddress: :8322
 * https://github.com/FreeTAKTeam/FreeTAKHub-Installation/blob/main/roles/videoserver/templates/rtsp-simple-server.service.j2
 
 ```text
-{!Installation/Troubleshooting/mediamtx.service!}
+{!Troubleshooting/mediamtx.service!}
 ```
 
 Put the `mediamtx.service` file in `/etc/systemd/system/mediamtx.service`.

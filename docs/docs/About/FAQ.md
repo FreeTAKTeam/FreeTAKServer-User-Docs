@@ -19,7 +19,7 @@ and integration with other non-TAK systems (e.g., video, audio, Telegram) using 
 ## There are other servers for TAK. Why should I use FTS?
 FTS is not only powerful–it's also more user-friendly when [compared](FeaturesCompared.md) to other systems.
 Also, FTS is a community-driven Open Source project at its core.
-Under the covers, FTS is based on a [domain model](architecture/CoTDomain.md),
+Under the covers, FTS is based on a [domain model](architecture/cot_domain.md),
 so it is the only TAK server that can provide analysis and interpretation
 of the information it collects–not just receive requests from clients
 and provides the requested data or perform the requested actions.
