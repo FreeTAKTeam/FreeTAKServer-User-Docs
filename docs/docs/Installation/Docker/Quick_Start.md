@@ -68,4 +68,5 @@ From this point, please follow the Linux installation guide for information rega
 ## Persistent Data
 
 All persistent data is stored to /data and may be volume mounted.
-The host volume needs to be owned by user and group 1000.
+The `freetak` user is created by our Dockerfile, and is uid & gid `999`. There is no runtime configuration of user or group id.
+The host volume needs to be owned by user and group 999.
