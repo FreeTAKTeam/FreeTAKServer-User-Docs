@@ -14,6 +14,7 @@ The CoT system is only partially overlapping with 2525.
 On a list of 3000+ CoT's , 1000 are directly traceable to MIL-STD-2525.
 
 The MIL_STD-2525 has had several versions:
+
 * [MIL-STD-2525D](https://www.jcs.mil/Portals/36/Documents/Doctrine/Other_Pubs/ms_2525d.pdf) 2014
 * [MIL-STD-2525C](https://www.jcs.mil/Portals/36/Documents/Doctrine/Other_Pubs/ms_2525c.pdf) 2008
 * [MIL-STD-2525B](http://www.mapsymbs.com/ms2525b_ch1_full.pdf) 2005
@@ -332,7 +333,7 @@ Test code [here:](https://www.spatialillusions.com/milsymbol/example.html#angula
 
 ## Example CoT
 
-Equipment manufacture	Building is part of Gnd/Structure/Factory
+Equipment Manufacture	Building is part of Gnd/Structure/Factory
 
 | **Atom** | ** ** | **Affiliation** | ** ** | ** Ground ** | ** ** | ** Infrastructure ** | ** **  | ** Equipment **  |	
 |:---------|:------|:----------------|:------|:-------------|:------|:---------------------|:-------|:-----------------|

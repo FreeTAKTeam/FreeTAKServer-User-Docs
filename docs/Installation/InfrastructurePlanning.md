@@ -129,16 +129,19 @@ They will typically share the same IP but have different ports that need to be o
 
 ### FTS Web UI (fts-ui.service)
 Listening Port:
+
 * 5000: Required for the browser based Web UI
 
 ### FTS (fts.service)
 
 #### DigitalPy Services
 Listening Port:
+
 * 8080: Required for HTTP
 * 8443: Required for HTTPS
 
 Processes:
+
 * DigitalPy Routing Worker Service [N instances]
 * Service Manager
 * Subject Service
@@ -146,6 +149,7 @@ Processes:
 
 #### Cursor On Target Service
 Listening Port:
+
 * 8087: required for TCP COTS
 * 8089: required for SSL COTS
 
@@ -155,28 +159,34 @@ Processes:
 
 #### Federation Service
 Listening Port:
+
 * 9000: Required for Federation
 
 Processes:
+
 * Federation Client Service
 * Federation Server Service
 * FTS Core Service
 
 #### API Service
 Listening Port:
+
 * 19023: REST / websocket API for FTS
 
 Processes:
+
 * HTTP TAK Service
 * HTTPS TAK Service
 * Rest API Service
 
 ### Integration Server [NodeRed](https://nodered.org/) (nodered.service)
 Listening Port:
+
 * 1880: required for the Integration server (NodeRed)
 * 8000: WebUI communication with the Integration server
 
 Processes:
+
 * Video Sender
 * Other Misc Node Red Projects
 
@@ -184,14 +194,17 @@ Processes:
 
 #### Video Server [MediaMTX](https://github.com/bluenviron/mediamtx) (mediamtx.service)
 Listening Port:
+
 * 9997: required for the Video Server (MediaMTX)
 
 #### Voice Server [Mumble](https://wiki.mumble.info/wiki/Running_Murmur) (mumble.service)
 Listening Port:
+
 * 64738: required for the Voice Server (Mumble)
 
 #### Web Map (webmap.service)
 Processes:
+
 * WebMap
 
 
