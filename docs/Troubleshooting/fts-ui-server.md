@@ -41,9 +41,10 @@ ip addr
 
 Validate the properties set in the `fts-ui` configuration file.
 
-[Verify and/or Edit the `fts-ui` configuration file](../administration/usingConsole.md)  
+[Verify and/or Edit the `fts-ui` configuration file](../administration/usingConsole.md) 
+Use of a python virtual environment (here the ZTI location) is recommended.
 ```
-/usr/local/lib/python3.11/dist-packages/FreeTAKServer-UI/config.py
+/root/fts.venv/lib/python3.11/site-packages/FreeTAKServer-UI/config.py
 ```
 Here is a sample fragment of that file.
 ```python

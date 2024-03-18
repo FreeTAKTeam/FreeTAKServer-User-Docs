@@ -69,6 +69,9 @@ wget -qO - bit.ly/ftszerotouch | sudo bash
 If anything fails, check IP values in the following files:
 
 ### config.py
+
+ZTI installs this file in /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer-UI/config.py
+
 * APPIP: Internal IP 
 * IP: Public IP
 * WEBMAPIP: Public IP

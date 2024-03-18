@@ -13,7 +13,8 @@ There are 2 versions of the webmap:
 
 
 # webMap NodeRed Flow version
-the webmap Flow works with all systems that supports Nodered. Advanced users should use this version.
+the webmap Flow works with all systems that supports Nodered.
+Advanced users should use this version.
 
 ## Installation 
 get the webmap.json the last release:

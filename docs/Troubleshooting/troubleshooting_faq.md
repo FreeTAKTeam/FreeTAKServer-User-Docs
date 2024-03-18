@@ -83,6 +83,8 @@ for fts check out
 
 for the UI check out
 ```
+/root/fts.venv/lib/python3.11/site-packages/FreeTAKServer-UI/config.py
+or
 /usr/local/lib/python3.11/dist-packages/FreeTAKServer-UI/config.py
 ```
 

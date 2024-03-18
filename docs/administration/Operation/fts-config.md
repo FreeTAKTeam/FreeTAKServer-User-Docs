@@ -6,6 +6,8 @@ However, there are many corner cases which `ZeroTouch` may miss.
 
 ### [Verify and/or Edit the `fts-ui` configuration file](../usingConsole.md)  
 ```text
+/root/fts.venv/lib/python3.11/site-packages/FreeTAKServer-UI/config.py
+or
 /usr/local/lib/python3.11/dist-packages/FreeTAKServer-UI/config.py
 ```
 `WEBMAPPORT` is 1880 for a `NodeRedFlow` install and `8000` for a compiled `webmap`.
