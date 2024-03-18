@@ -172,12 +172,14 @@ Configure the `FreeTakServer` by editing the `<site-packages>\FreeTAKServer\core
 
 Path examples:
 * native Windows install: `C:\Software\python\Lib\site-packages\FreeTAKServer\core\configuration\MainConfig.py`
+* ZTI python virtual environment: `/root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/core/configuration/MainConfig.py`
 * conda env named `tak`: `C:\Users\user\micromamba\envs\tak\Lib\site-packages\FreeTAKServer\core\configuration\MainConfig.py`
 
 Configure the `FreeTAKServer-UI` by editing the `<site-packages>\FreeTAKServer-UI\config.py` file.
 
 Path examples:
 * native Windows install: `C:\Software\python\Lib\site-packages\FreeTAKServer-UI\config.py`
+* ZTI python virtual environment: `/root/fts.venv/lib/python3.11/site-packages/FreeTAKServer-UI/config.py`
 * conda env named `tak`: `C:\Users\user\micromamba\envs\tak\Lib\site-packages\FreeTAKServer-UI\config.py`
 
 ```text
