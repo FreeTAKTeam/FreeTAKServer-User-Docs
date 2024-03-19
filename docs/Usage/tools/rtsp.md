@@ -22,9 +22,9 @@ ip
 feed
 : any (ascii) text, e.g. `foo`, `test`.
 
-## [TAK ICU : ATAK Plugin](./takICU.md)
+## [TAK ICU : ATAK Plugin](takICU.md)
 
-This `RTSP` video generator has [its own page](./takICU.md).
+This `RTSP` video generator has [its own page](takICU.md).
 
 ## [FFMPEG](https://ffmpeg.org/ffmpeg.html)
 
@@ -68,18 +68,18 @@ it is necessary to manually create a new feed in the RTSP application.
 
 The video stream is sent to all the connected TAK Devices
 
-![image](./images/atak_video_notification.png)
+![image](images/atak_video_notification.png)
 
 Now you can retrieve it in your video list
 
-![image](./images/atak_video_listing.png)
+![image](images/atak_video_listing.png)
 
 In the video you can open the feed and visualize it.
-![image](./images/atak_video_stream_play.png)
+![image](images/atak_video_stream_play.png)
 
 Touching the globe, will jump to the location of the stream,
 to see its context
 
-![image](./images/atak_video_locate.png)
+![image](images/atak_video_locate.png)
 
 

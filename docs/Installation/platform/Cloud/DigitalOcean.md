@@ -2,7 +2,7 @@
 status: current
 ---
 
-# DigitalOcean with Terraform
+# DigitalOcean
 
 This installation has only been tested on Ubuntu 22.04.
 
@@ -37,7 +37,7 @@ To save and quit in the `nano` editor:
 1. Press `CTRL + O` then `ENTER` to save.
 2. Then press `CTRL + X` to exit.
 
-## Step 2. Download Terraform and Ansible
+## Step 2. Download Ansible
 
 In the Ubuntu console:
 
@@ -62,7 +62,7 @@ sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(l
 ```
 
 ```console
-sudo apt install -y ansible terraform
+sudo apt install -y ansible
 ```
 
 ## Step 3. Clone the `FreeTAKHub-Installation` Git repository
@@ -108,18 +108,6 @@ See: <https://docs.digitalocean.com/products/droplets/how-to/add-ssh-keys/to-acc
 See: <https://docs.digitalocean.com/reference/api/create-personal-access-token/>
 
 ## Step 7. Execute
-
-In the top-level directory of the project, initialize Terraform:
-
-```console
-terraform init
-```
-
-Then apply:
-
-```console
-terraform apply
-```
 
 You will then be prompted for your DigitalOcean Token and private key path:
 

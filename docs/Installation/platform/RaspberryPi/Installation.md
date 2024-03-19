@@ -104,11 +104,6 @@ Verify the following packages are installed.
 sudo apt install -y wget curl
 ```
 
-### Run the Zero Touch Installer (ZTI)
-
-The [complete ZTI instructions are here](../../mechanism/Ansible/ZeroTouchInstall.md).
-
-
 #### Custom IP Address
 By default, the `ZTI` guesses your IP address.
 When installing on the RaspberryPi it is unlikely that this is what you want.
@@ -130,6 +125,9 @@ Here is an example capturing the wired LAN address:
 ```bash
 export MY_IP=$(ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
 ```
+
+## Run the Zero Touch Installer (ZTI)
+
 With an appropriate IP address in hand you can run the `ZTI`.
 ```bash
 wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --ip-addr ${MY_IP}
@@ -138,6 +136,7 @@ Alternate, full path.
 ```bash
 wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/main/scripts/easy_install.sh | sudo bash -s -- --ip-addr ${MY_IP}
 ```
+The [complete ZTI instructions are here](../../mechanism/Ansible/ZeroTouchInstall.md).
 
 ## Operation
 
@@ -157,5 +156,5 @@ GHOST_DA-B6 has created a set of videos on `youtube` detailing how to install
 and set up FTS on raspberry pi `SBC's`.
 
 You can view his RPiFTS video series on
-his [channel](https://www.youtube.com/channel/UC--WpY--HV7PymMWLgfflZA).
+[his channel](https://www.youtube.com/channel/UC--WpY--HV7PymMWLgfflZA).
 

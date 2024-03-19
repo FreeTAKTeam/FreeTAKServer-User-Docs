@@ -1,15 +1,16 @@
 ---
-status: ood
+status: current
 ---
 
 # FreeTAKServer Compared
-Users have spoken: FTS is the best TAK server on github!
 
-## Star History
+Users have spoken: FTS is the best TAK server on GitHub!
+
+## GitHub Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=FreeTAKTeam/FreeTakServer,TAK-Product-Center/Server,tkuester/taky&type=Date)](https://star-history.com/#FreeTAKTeam/FreeTakServer&TAK-Product-Center/Server&tkuester/taky&Date)
 
-
+## Functional Comparison
 
 *Legend*
 
@@ -21,7 +22,6 @@ Users have spoken: FTS is the best TAK server on github!
 1. Full: 100% implementation of the specs 
 2. Extended: > 100% the functions exceed the original Specification
 
-## Function
 |         Function          |          FTS 1.9          |   TAKServer   |           FTS 2.X           |     Other     |
 |:-------------------------:|:-------------------------:|:-------------:|:---------------------------:|:-------------:|
 |    Web Administration     |  O (Single Page Web App)  |       O       |  O (Extended Multi Server)  |       X       |

@@ -51,7 +51,7 @@ sudo systemctl status fts.service fts-ui.service mumble-server.service nodered.s
 
 The `ZTI` only works on Linux systems.
 
-### [default] Cloud Server
+### Cloud Server (with automatic IP address discovery)
 
 In this mode, `ZTI` guesses your IP address using
 `curl ifconfig.me/ip`.
@@ -67,7 +67,7 @@ wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation
 
 ### Custom IP Address
 
-By default, the `ZTI` guesses your IP address.
+By default, the `ZTI` guesses your IP address using `https://ifconfig.me/ip`.
 When installing on the devices not on the public internet it is unlikely that this is what you want.
 There are several ways to discover a candidate IP address, here are some.
 
@@ -97,7 +97,7 @@ wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation
 ```
 
 
-## How ZT works
+## How `ZT` works
 The command `wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --ip-addr ${MY_IP} `
 is a combination of several commands and options used together to perform a specific task.
 Here's a breakdown of what each part of the command does:

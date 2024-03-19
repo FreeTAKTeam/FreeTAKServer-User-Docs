@@ -53,20 +53,20 @@ it's necessary to manually create a new feed in the software.
 
 The video stream is sent to all the connected TAK Devices
 
-![image](./images/atak_video_notification.png)
+![image](images/atak_video_notification.png)
 
 
 Now you can retrieve it in your video list
 
-![image](./images/atak_video_listing.png)
+![image](images/atak_video_listing.png)
 
 In the video you can open the feed and visualize it.
-![image](./images/atak_video_stream_play.png)
+![image](images/atak_video_stream_play.png)
 
 Touching the globe, you will jump to the location of the stream,
 to see its context
 
-![image](./images/atak_video_locate.png)
+![image](images/atak_video_locate.png)
 
 
 

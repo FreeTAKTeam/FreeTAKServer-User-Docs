@@ -5,3 +5,4 @@ nav:
     - Connect Plugin:
         - Execution Checker: ExCheck.md
         - Video Management: VideoManagement.md
+    - TAK Tools: tools

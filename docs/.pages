@@ -1,11 +1,10 @@
 nav:
     - Overview: index.md
-    - Usage and Demo: Usage
+    - About: About
+    - Try Me: Usage
     - Installation: Installation
     - Troubleshooting: Troubleshooting
     - Administration: administration
     - How to Help: HowToHelp
-    - Tools: tools
     - Brokered Services: FreeTAKHub
-    - About: About
     - API: API
