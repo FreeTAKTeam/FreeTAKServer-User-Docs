@@ -124,7 +124,7 @@ sudo systemctl enable node-red
 Let’s manually start the service now to test that it’s still working.
 ```bash
 sudo systemctl start node-red
- ```
+```
 To shut it back down you can use:
 
 ```bash
