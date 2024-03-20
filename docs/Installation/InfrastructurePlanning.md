@@ -118,81 +118,57 @@ The following PlantUML example is for a Raspberry Pi deployment using the Zero-T
 It has a Router which assigns IP addresses via DHCP.
 The Router will reliably assign the same IP address to the Raspberry Pi by using its network-interface MAC.
 
-```plantuml
-@startuml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
-
-!define osaPuml https://raw.githubusercontent.com/Crashedmind/PlantUML-opensecurityarchitecture2-icons/master
-!include osaPuml/Common.puml
-!include osaPuml/User/all.puml
-
-!include <office/Servers/database_server>
-!include <office/Servers/file_server>
-!include <office/Servers/application_server>
-!include <office/Concepts/service_application>
-!include <office/Concepts/firewall>
-
-AddExternalPersonTag("anonymous_ext", $sprite="osa_user_black_hat", $legendText="anonymous user")
-AddPersonTag("customer", $sprite="osa_user_large_group", $legendText="aggregated user")
-AddPersonTag("admin", $sprite="osa_user_audit,color=red", $legendSprite="osa_user_audit,scale=0.25,color=red", $legendText="administration user")
-
-AddContainerTag("webApp", $sprite="application_server", $legendText="web app container")
-AddContainerTag("db", $sprite="database_server", $legendText="database container")
-AddContainerTag("files", $sprite="file_server", $legendText="file server container")
-AddContainerTag("conApp", $sprite="service_application", $legendText="console app container")
-
-AddRelTag("firewall", $textColor="$ARROW_FONT_COLOR", $lineColor="$ARROW_COLOR", $sprite="firewall,scale=0.3,color=red", $legendText="firewall")
-
-Person_Ext(anonymous_user, "Bob", $tags="anonymous_ext")
-Person(aggregated_user, "Sam, Ivone", $tags="customer")
-Person(administration_user, "Bernd", $tags="admin")
-
-System_Boundary(c1, "techtribes.js"){
-    Container(web_app, "Web Application", "Java, Spring MVC, Tomcat 7.x", $tags="webApp")
-    ContainerDb(rel_db, "Relational Database", "MySQL 5.5.x", $tags="db")
-    Container(filesystem, "File System", "FAT32", $tags="files")
-    ContainerDb(nosql, "NoSQL Data Store", "MongoDB 2.2.x", $tags="db")
-    Container(updater, "Updater", "Java 7 Console App", $tags="conApp")
-}
-
-Rel(anonymous_user, web_app, "Uses", "HTTPS", $tags="firewall")
-Rel(aggregated_user, web_app, "Uses", "HTTPS", $tags="firewall")
-Rel(administration_user, web_app, "Uses", "HTTPS", $tags="firewall")
-
-Rel(web_app, rel_db, "Reads from and writes to", "SQL/JDBC, port 3306")
-Rel(web_app, filesystem, "Reads from")
-Rel(web_app, nosql, "Reads from", "MongoDB wire protocol, port 27017")
-
-Rel_U(updater, rel_db, "Reads from and writes data to", "SQL/JDBC, port 3306")
-Rel_U(updater, filesystem, "Writes to")
-Rel_U(updater, nosql, "Reads from and writes to", "MongoDB wire protocol, port 27017")
-
-Lay_R(rel_db, filesystem)
-
-SHOW_LEGEND()
-@enduml
-```
 
 ```mermaid
-networkDiagram
-    network: vpc1
-        node router
-            type router
-            meta ip=192.138.33.1
-        node switch1
-            type switch
-            meta model=hp1234
-        node switch2
-            type switch
-            meta model=cisco4321
-            meta ip=192.168.33.2
-        node server
-            type server
-           meta os=linux
-        router---switch1
-        router---switch2
-        switch2---server: primary
-        switch1---server: secondary
+C4Deployment
+title Deployment Diagram for FreeTAKServer via Zero Touch Installer
+
+Deployment_Node(mob, "Customer's mobile device", "Apple IOS or Android"){
+  Container(mobile, "Mobile App", "Xamarin", "Provides a limited subset of the Internet Banking functionality to customers via their mobile device.")
+}
+
+Deployment_Node(comp, "Customer's computer", "Microsoft Windows or Apple macOS"){
+  Deployment_Node(browser, "Web Browser", "Google Chrome, Mozilla Firefox,<br/> Apple Safari or Microsoft Edge"){
+      Container(spa, "Single Page Application", "JavaScript and Angular", "Provides all of the Internet Banking functionality to customers via their web browser.")
+  }
+}
+
+Deployment_Node(plc, "Big Bank plc", "Big Bank plc data center"){
+  Deployment_Node(dn, "bigbank-api*** x8", "Ubuntu 16.04 LTS"){
+      Deployment_Node(apache, "Apache Tomcat", "Apache Tomcat 8.x"){
+          Container(api, "API Application", "Java and Spring MVC", "Provides Internet Banking functionality via a JSON/HTTPS API.")
+      }
+  }
+  Deployment_Node(bb2, "bigbank-web*** x4", "Ubuntu 16.04 LTS"){
+      Deployment_Node(apache2, "Apache Tomcat", "Apache Tomcat 8.x"){
+          Container(web, "Web Application", "Java and Spring MVC", "Delivers the static content and the Internet Banking single page application.")
+      }
+  }
+  Deployment_Node(bigbankdb01, "bigbank-db01", "Ubuntu 16.04 LTS"){
+      Deployment_Node(oracle, "Oracle - Primary", "Oracle 12c"){
+          ContainerDb(db, "Database", "Relational Database Schema", "Stores user registration information, hashed authentication credentials, access logs, etc.")
+      }
+  }
+  Deployment_Node(bigbankdb02, "bigbank-db02", "Ubuntu 16.04 LTS") {
+      Deployment_Node(oracle2, "Oracle - Secondary", "Oracle 12c") {
+          ContainerDb(db2, "Database", "Relational Database Schema", "Stores user registration information, hashed authentication credentials, access logs, etc.")
+      }
+  }
+}
+
+Rel(mobile, api, "Makes API calls to", "json/HTTPS")
+Rel(spa, api, "Makes API calls to", "json/HTTPS")
+Rel_U(web, spa, "Delivers to the customer's web browser")
+Rel(api, db, "Reads from and writes to", "JDBC")
+Rel(api, db2, "Reads from and writes to", "JDBC")
+Rel_R(db, db2, "Replicates data to")
+
+UpdateRelStyle(spa, api, $offsetY="-40")
+UpdateRelStyle(web, spa, $offsetY="-40")
+UpdateRelStyle(api, db, $offsetY="-20", $offsetX="5")
+UpdateRelStyle(api, db2, $offsetX="-40", $offsetY="-20")
+UpdateRelStyle(db, db2, $offsetY="-10")
+
 ```
 
 ## FTS Target Platforms
