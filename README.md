@@ -66,3 +66,8 @@ Some uses:
 * resizing images
 * associating classes with elements
 
+### `mkdocs_puml`
+The documentation uses Mermaid2 to make network-deployment-diagrams.
+
+
+

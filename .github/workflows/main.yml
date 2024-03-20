@@ -32,5 +32,6 @@ jobs:
           pip install mkdocs-material mkdocs-awesome-pages-plugin 
           mkdocs-section-index mkdocs-toc-sidebar-plugin mike 
           markdown-include mkdocs-pdf-export-plugin
+          mkdocs-mermaid2-plugin
       # https://www.mkdocs.org/user-guide/cli/#mkdocs-gh-deploy
       - run: mkdocs gh-deploy --force

@@ -30,13 +30,16 @@ TAK Infrastructure thoughts: Give some thought to how you are going to deploy FT
    TAK client who is simultaneously connected to both the internet and mesh sides of the network. 
 6. **Compute Cluster** – A collection services running in Linux containers.
 
-The following deployment diagrams augmented with network information are a good place to start.
-Note that the data-link layer hardware, such as switches and wireless-access-points, 
-are intentionally omitted from these models.
-It is recommended that you first deploy one of these standard configurations
-before developing one fitting your specific situation.
-Then, when you have that working construct a similar diagram for your specific situation.
-Such a diagram will be essential when communicating about your system.
+While these are all valid configurations,
+it is recommended that you first deploy one of the following standard configurations
+before developing one fitting your specific situation and needs.
+
+The following deployment diagrams augmented with network information 
+are the configurations supported by the core team and are where you should start.
+Note that in these diagrams,
+the data-link layer hardware,
+such as switches and wireless-access-points, 
+are intentionally omitted.
 
 Realize that these configurations are examples and can be modified endlessly.
 Indeed, the ZeroTouch installer deviates slightly in what it installs by default.
@@ -101,6 +104,74 @@ In addition, the services on the Raspberry Pi need to connect to each other.
 In many cases, the services can use the localhost address `127.0.0.1` but occasionally that can cause issues,
 so it is better to configure them with the IP address provided to the Raspberry Pi by the Router.
 
+### Custom Configuration
+
+Once you have a configuration that gives you a working system,
+you are encouraged to construct a similar diagram for your specific situation.
+Such a diagram will be essential when communicating about your system.
+There are a number of free tools.
+Search for "uml network deployment diagram free".
+
+For uniformity, we recommend [`Mermaid`](https://mermaid.js.org/syntax/c4.html).
+Each of these have online tools which you can use to develop your network model.
+The following PlantUML example is for a Raspberry Pi deployment using the Zero-Touch installer.
+It has a Router which assigns IP addresses via DHCP.
+The Router will reliably assign the same IP address to the Raspberry Pi by using its network-interface MAC.
+
+```mermaid
+@startuml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+!define osaPuml https://raw.githubusercontent.com/Crashedmind/PlantUML-opensecurityarchitecture2-icons/master
+!include osaPuml/Common.puml
+!include osaPuml/User/all.puml
+
+!include <office/Servers/database_server>
+!include <office/Servers/file_server>
+!include <office/Servers/application_server>
+!include <office/Concepts/service_application>
+!include <office/Concepts/firewall>
+
+AddExternalPersonTag("anonymous_ext", $sprite="osa_user_black_hat", $legendText="anonymous user")
+AddPersonTag("customer", $sprite="osa_user_large_group", $legendText="aggregated user")
+AddPersonTag("admin", $sprite="osa_user_audit,color=red", $legendSprite="osa_user_audit,scale=0.25,color=red", $legendText="administration user")
+
+AddContainerTag("webApp", $sprite="application_server", $legendText="web app container")
+AddContainerTag("db", $sprite="database_server", $legendText="database container")
+AddContainerTag("files", $sprite="file_server", $legendText="file server container")
+AddContainerTag("conApp", $sprite="service_application", $legendText="console app container")
+
+AddRelTag("firewall", $textColor="$ARROW_FONT_COLOR", $lineColor="$ARROW_COLOR", $sprite="firewall,scale=0.3,color=red", $legendText="firewall")
+
+Person_Ext(anonymous_user, "Bob", $tags="anonymous_ext")
+Person(aggregated_user, "Sam, Ivone", $tags="customer")
+Person(administration_user, "Bernd", $tags="admin")
+
+System_Boundary(c1, "techtribes.js"){
+    Container(web_app, "Web Application", "Java, Spring MVC, Tomcat 7.x", $tags="webApp")
+    ContainerDb(rel_db, "Relational Database", "MySQL 5.5.x", $tags="db")
+    Container(filesystem, "File System", "FAT32", $tags="files")
+    ContainerDb(nosql, "NoSQL Data Store", "MongoDB 2.2.x", $tags="db")
+    Container(updater, "Updater", "Java 7 Console App", $tags="conApp")
+}
+
+Rel(anonymous_user, web_app, "Uses", "HTTPS", $tags="firewall")
+Rel(aggregated_user, web_app, "Uses", "HTTPS", $tags="firewall")
+Rel(administration_user, web_app, "Uses", "HTTPS", $tags="firewall")
+
+Rel(web_app, rel_db, "Reads from and writes to", "SQL/JDBC, port 3306")
+Rel(web_app, filesystem, "Reads from")
+Rel(web_app, nosql, "Reads from", "MongoDB wire protocol, port 27017")
+
+Rel_U(updater, rel_db, "Reads from and writes data to", "SQL/JDBC, port 3306")
+Rel_U(updater, filesystem, "Writes to")
+Rel_U(updater, nosql, "Reads from and writes to", "MongoDB wire protocol, port 27017")
+
+Lay_R(rel_db, filesystem)
+
+SHOW_LEGEND()
+@enduml
+```
 
 ## FTS Target Platforms
 

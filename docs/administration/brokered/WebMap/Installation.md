@@ -135,7 +135,7 @@ sudo mv webMAP_config.json /usr/local/etc/
 Create the service. 
 Copy this complete text and paste into `/etc/systemd/system/webmap.service`:
 ```ini
-{!FreeTAKHub/WebMap/webmap.service!}
+{!administration/brokered/WebMap/webmap.service!}
 ```
 
 Enable the service:

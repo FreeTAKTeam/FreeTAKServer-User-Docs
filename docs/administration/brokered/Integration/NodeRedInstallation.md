@@ -113,7 +113,7 @@ node-red
 In order to start Node-RED automatically on startup, 
 we will need to install a `/etc/systemd/system/node-red.service` file: 
 ```ini
-{!FreeTAKHub/Integration/node-red.service!}
+{!administration/brokered/Integration/node-red.service!}
 ```
  
 Now that our service file is installed , we need to enable it. This will enable it to execute on startup.

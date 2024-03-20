@@ -27,6 +27,12 @@ markdown_extensions:
   - markdown_include.include:
        base_path: docs
   - attr_list
+  - pymdownx.superfences:
+      # make exceptions to highlighting of code:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
 
 plugins:
   - search
@@ -34,6 +40,16 @@ plugins:
   - mike:
       version_selector: true
   - section-index
+  - mermaid2:
+      arguments:
+          theme: 'dark'
+          themeVariables:
+            primaryColor: '#BB2528'
+            primaryTextColor: '#fff'
+            primaryBorderColor: '#7C0000'
+            lineColor: '#F8B229'
+            secondaryColor: '#006100'
+            tertiaryColor: '#fff'
   - pdf-export:
       verbose: true
       media_type: print

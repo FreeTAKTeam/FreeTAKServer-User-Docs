@@ -8,13 +8,13 @@ Requires a [Mumla](https://wiki.mumble.info/wiki/Mumla) android app to work.
 
 ## Requirements
 the FreeTAKMumla Plugin for `ATAK` requires that:
-1. you have the [murmur server](../../FreeTAKHub/Voice/VoiceServer.md) installed and running
+1. you have the [murmur server](../../administration/brokered/Voice/VoiceServer.md) installed and running
 2. you have [Mumla](https://play.google.com/store/apps/details?id=se.lublin.mumla&gl=US) installed and running
 3. you have a compatible version of `ATAK` installed.
 
 ## Installation
 * Download and install Mumla
-* Connect to your [murmur](../../FreeTAKHub/Voice/VoiceServer.md) server
+* Connect to your [murmur](../../administration/brokered/Voice/VoiceServer.md) server
 * set the microphone to work with Push-to-Talk
 * Download  the [Mumla plugin](https://github.com/FreeTAKTeam/FreeTAKMumla_Plugin/releases) on your local `Windows` machine
 * start `WinTAK` and use the `ATAK` Manager to create a new device configuration

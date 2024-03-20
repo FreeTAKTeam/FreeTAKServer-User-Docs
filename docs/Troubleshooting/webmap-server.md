@@ -8,7 +8,7 @@ status: current
 
 Some versions of the `Zero Touch Installer` do not install the compiled `webmap`.
 
-In those cases you will need to install the [flow version](../FreeTAKHub/WebMap/Installation.md).
+In those cases you will need to install the [flow version](../administration/brokered/WebMap/Installation.md).
 
 The WebMap is similar in function to `WebTAK`.
 

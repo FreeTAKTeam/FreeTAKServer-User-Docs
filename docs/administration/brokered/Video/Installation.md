@@ -49,7 +49,7 @@ sudo mv mediamtx.yml /usr/local/etc/
 Create the Unit File. 
 Copy this complete text to `/etc/systemd/system/mediamtx.service`:
 ```ini
-{!FreeTAKHub/Video/mediamtx.service!}
+{!administration/brokered/Video/mediamtx.service!}
 ```
 
 Start the service:

@@ -13,7 +13,7 @@ When trying to accomplish Auto start on system startup/reboot,
 Solution:
 For the `mediamtx.service` file, you will need to add and edit the following:
 ```ini
-{!FreeTAKHub/Video/mediamtx.service!}
+{!administration/brokered/Video/mediamtx.service!}
 ```
 
 To build the auto start file, the Solution:

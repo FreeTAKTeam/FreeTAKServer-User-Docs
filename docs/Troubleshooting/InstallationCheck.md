@@ -122,7 +122,7 @@ default  <http://127.0.0.1:1880/>
   - by default is user: `admin`, password: `password` (you should promptly change the default password) 
   - these are the same credentials used previously
 
-see [NodeRed](../FreeTAKHub/Integration/NodeRedInstallation.md) for more information
+see [NodeRed](../administration/brokered/Integration/NodeRedInstallation.md) for more information
 
 ## Check Voice server
 connect a client to `[YOUR_IP_ADDRESS]:64738`

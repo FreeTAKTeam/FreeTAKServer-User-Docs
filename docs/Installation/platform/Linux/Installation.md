@@ -11,9 +11,9 @@ This guide will walk you through installing FreeTAKServer 2.1
 - Install FreeTAKServer
 - Configure and Run FreeTAKServer
 - Configure Web UI
-- **TBD** ~~Install [NodeRed](../../../FreeTAKHub/Integration/NodeRedInstallation.md) for FreeTAKHub~~
-- **TBD** ~~Install the [Web Map](../../../FreeTAKHub/WebMap/Installation.md)~~
-- **TBD** ~~Install the [Video Service](../../../FreeTAKHub/Video/Installation.md)~~
+- **TBD** ~~Install [NodeRed](../../../administration/brokered/Integration/NodeRedInstallation.md) for FreeTAKHub~~
+- **TBD** ~~Install the [Web Map](../../../administration/brokered/WebMap/Installation.md)~~
+- **TBD** ~~Install the [Video Service](../../../administration/brokered/Video/Installation.md)~~
 
 ---
 ## Note: Linux Distributions

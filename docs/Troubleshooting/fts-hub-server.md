@@ -9,7 +9,7 @@ status: ood
 
 The integration server is [NodeRed]()
 
-1. Instructions here: <https://freetakteam.github.io/FreeTAKServer-User-Docs/FreeTAKHub/Integration/NodeRedinstallation/>
+1. Instructions here: <https://freetakteam.github.io/FreeTAKServer-User-Docs/administration/brokered/Integration/NodeRedinstallation/>
 2. Use command: `bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)`
    * Select `Y` to continue and `Y` to install Pi specific nodes
    * For additional settings, you can run the command: `node-red admin init`
