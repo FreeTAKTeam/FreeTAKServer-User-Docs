@@ -109,66 +109,41 @@ so it is better to configure them with the IP address provided to the Raspberry 
 Once you have a configuration that gives you a working system,
 you are encouraged to construct a similar diagram for your specific situation.
 Such a diagram will be essential when communicating about your system.
-There are a number of free tools.
-Search for "uml network deployment diagram free".
+For uniformity, we recommend [`C4Model`](https://c4model.com/#DeploymentDiagram).
+The specific tool [`Mermaid2`](https://mermaid.js.org/syntax/c4.html),
+which you can use to develop your network model.
+The following example is for a Raspberry Pi deployment using the Zero-Touch installer.
+It assumes the Router assigns IP addresses via DHCP.
+Further, the Router reliably assigns the same IP address to the Raspberry Pi by using its network-interface MAC.
 
-For uniformity, we recommend [`Mermaid2`](https://mermaid.js.org/syntax/c4.html).
-Each of these have online tools which you can use to develop your network model.
-The following PlantUML example is for a Raspberry Pi deployment using the Zero-Touch installer.
-It has a Router which assigns IP addresses via DHCP.
-The Router will reliably assign the same IP address to the Raspberry Pi by using its network-interface MAC.
-
+```text
+Container(alias, label, ?techn, ?descr, ?sprite, ?tags, ?link, ?baseShape)
+Deployment_Node(alias, label, ?type, ?descr, ?sprite, ?tags, ?link)
+```
 
 ```mermaid
 C4Deployment
-title Deployment Diagram for FreeTAKServer via Zero Touch Installer
+title Network Deployment Diagram for FreeTAKServer via Zero Touch Installer
 
-Deployment_Node(mob, "Customer's mobile device", "Apple IOS or Android"){
-  Container(mobile, "Mobile App", "Xamarin", "Provides a limited subset of the Internet Banking functionality to customers via their mobile device.")
+Node(isp, "Internet Service Provider", "type", "descr", "sprite", "tags", "link") {
+  Container(ispr, "Internet Service Provider Router", "techn", "descr", "sprite", "tags", "link", "base shape")
 }
 
-Deployment_Node(comp, "Customer's computer", "Microsoft Windows or Apple macOS"){
-  Deployment_Node(browser, "Web Browser", "Google Chrome, Mozilla Firefox,<br/> Apple Safari or Microsoft Edge"){
-      Container(spa, "Single Page Application", "JavaScript and Angular", "Provides all of the Internet Banking functionality to customers via their web browser.")
-  }
+Node(lan, "LAN", "type", "descr", "sprite", "tags", "link") {
+    Node(router, "Router", "type", "descr", "sprite", "tags", "link") {
+        Container(pfs, "Internet Service Provider", "techn", "descr", "sprite", "tags", "link", "base shape")
+    }
+    Node(rpi1, "Raspberry Pi", "type", "descr", "sprite", "tags", "link") {
+        Container(ftsui, "FreeTakServerUI", "techn", "descr", "sprite", "tags", "link", "base shape")
+        Container(fts, "FreeTakServer", "techn", "descr", "sprite", "tags", "link", "base shape")
+        Container(nodered, "NodeRed", "techn", "descr", "sprite", "tags", "link", "base shape")
+    }
+    Node(android, "Android Phone", "type", "descr", "sprite", "tags", "link") {
+        Container(atak, "ATAK", "techn", "descr", "sprite", "tags", "link", "base shape")
+    }
 }
 
-Deployment_Node(plc, "Big Bank plc", "Big Bank plc data center"){
-  Deployment_Node(dn, "bigbank-api*** x8", "Ubuntu 16.04 LTS"){
-      Deployment_Node(apache, "Apache Tomcat", "Apache Tomcat 8.x"){
-          Container(api, "API Application", "Java and Spring MVC", "Provides Internet Banking functionality via a JSON/HTTPS API.")
-      }
-  }
-  Deployment_Node(bb2, "bigbank-web*** x4", "Ubuntu 16.04 LTS"){
-      Deployment_Node(apache2, "Apache Tomcat", "Apache Tomcat 8.x"){
-          Container(web, "Web Application", "Java and Spring MVC", "Delivers the static content and the Internet Banking single page application.")
-      }
-  }
-  Deployment_Node(bigbankdb01, "bigbank-db01", "Ubuntu 16.04 LTS"){
-      Deployment_Node(oracle, "Oracle - Primary", "Oracle 12c"){
-          ContainerDb(db, "Database", "Relational Database Schema", "Stores user registration information, hashed authentication credentials, access logs, etc.")
-      }
-  }
-  Deployment_Node(bigbankdb02, "bigbank-db02", "Ubuntu 16.04 LTS") {
-      Deployment_Node(oracle2, "Oracle - Secondary", "Oracle 12c") {
-          ContainerDb(db2, "Database", "Relational Database Schema", "Stores user registration information, hashed authentication credentials, access logs, etc.")
-      }
-  }
-}
-
-Rel(mobile, api, "Makes API calls to", "json/HTTPS")
-Rel(spa, api, "Makes API calls to", "json/HTTPS")
-Rel_U(web, spa, "Delivers to the customer's web browser")
-Rel(api, db, "Reads from and writes to", "JDBC")
-Rel(api, db2, "Reads from and writes to", "JDBC")
-Rel_R(db, db2, "Replicates data to")
-
-UpdateRelStyle(spa, api, $offsetY="-40")
-UpdateRelStyle(web, spa, $offsetY="-40")
-UpdateRelStyle(api, db, $offsetY="-20", $offsetX="5")
-UpdateRelStyle(api, db2, $offsetX="-40", $offsetY="-20")
-UpdateRelStyle(db, db2, $offsetY="-10")
-
+Rel(ispr, pfs, "foo", "bar")
 ```
 
 ## FTS Target Platforms
