@@ -131,19 +131,33 @@ Node(isp, "Internet Service Provider", "type", "descr", "sprite", "tags", "link"
 
 Node(lan, "LAN", "type", "descr", "sprite", "tags", "link") {
     Node(router, "Router", "type", "descr", "sprite", "tags", "link") {
-        Container(pfs, "Internet Service Provider", "techn", "descr", "sprite", "tags", "link", "base shape")
+        Container(pfs, "pfsense", "techn", "descr", "sprite", "tags", "link", "base shape")
+    }
+    Node(android, "Android Phone", "type", "descr", "sprite", "tags", "link") {
+        Container(atakos, "OS", "techn", "descr", "sprite", "tags", "link", "base shape")
+        Container(atak, "ATAK", "techn", "descr", "sprite", "tags", "link", "base shape")
+    }
+    Node(laptop, "Windows Laptop", "type", "descr", "sprite", "tags", "link") {
+        Container(winos, "OS", "techn", "descr", "sprite", "tags", "link", "base shape")
+        Container(wintak, "WinTAK", "techn", "descr", "sprite", "tags", "link", "base shape")
     }
     Node(rpi1, "Raspberry Pi", "type", "descr", "sprite", "tags", "link") {
+        Container(rpios, "OS", "techn", "descr", "sprite", "tags", "link", "base shape")
         Container(ftsui, "FreeTakServerUI", "techn", "descr", "sprite", "tags", "link", "base shape")
         Container(fts, "FreeTakServer", "techn", "descr", "sprite", "tags", "link", "base shape")
         Container(nodered, "NodeRed", "techn", "descr", "sprite", "tags", "link", "base shape")
-    }
-    Node(android, "Android Phone", "type", "descr", "sprite", "tags", "link") {
-        Container(atak, "ATAK", "techn", "descr", "sprite", "tags", "link", "base shape")
+        Container(video-server, "Video Server", "techn", "descr", "sprite", "tags", "link", "base shape")
+        Container(voice-server, "Voice Server", "techn", "descr", "sprite", "tags", "link", "base shape")
     }
 }
 
-Rel(ispr, pfs, "foo", "bar")
+Rel(ispr, pfs, "assign IP addr1", "bar")
+Rel(pfs, atakos, "assign IP addr2", "bar")
+Rel(pfs, winos, "assign IP addr3", "bar")
+Rel(pfs, rpios, "assign IP addr4", "bar")
+
+Rel(atak, ftsui, "connect to UI", "bar")
+Rel(wintak, ftsui, "connect to UI", "bar")
 ```
 
 ## FTS Target Platforms
