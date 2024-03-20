@@ -112,13 +112,13 @@ Such a diagram will be essential when communicating about your system.
 There are a number of free tools.
 Search for "uml network deployment diagram free".
 
-For uniformity, we recommend [`Mermaid`](https://mermaid.js.org/syntax/c4.html).
+For uniformity, we recommend [`Mermaid2`](https://mermaid.js.org/syntax/c4.html).
 Each of these have online tools which you can use to develop your network model.
 The following PlantUML example is for a Raspberry Pi deployment using the Zero-Touch installer.
 It has a Router which assigns IP addresses via DHCP.
 The Router will reliably assign the same IP address to the Raspberry Pi by using its network-interface MAC.
 
-```mermaid
+```plantuml
 @startuml
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
 
@@ -171,6 +171,28 @@ Lay_R(rel_db, filesystem)
 
 SHOW_LEGEND()
 @enduml
+```
+
+```mermaid
+networkDiagram
+    network: vpc1
+        node router
+            type router
+            meta ip=192.138.33.1
+        node switch1
+            type switch
+            meta model=hp1234
+        node switch2
+            type switch
+            meta model=cisco4321
+            meta ip=192.168.33.2
+        node server
+            type server
+           meta os=linux
+        router---switch1
+        router---switch2
+        switch2---server: primary
+        switch1---server: secondary
 ```
 
 ## FTS Target Platforms

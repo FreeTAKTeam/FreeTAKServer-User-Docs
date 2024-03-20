@@ -15,3 +15,4 @@ dependencies:
         - mkdocs-section-index
         - mkdocs-pdf-export-plugin
         - mkdocs-mermaid2-plugin
+        - mkdocs_puml
