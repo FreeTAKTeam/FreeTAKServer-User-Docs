@@ -6,7 +6,7 @@ status: current
 
 ## FTS Infrastructure
 
-![image](https://user-images.githubusercontent.com/60719165/183449678-e2c153e3-0eea-4cd9-bc69-63b4adb10491.png)
+![image](./images/std_deploy.png)
 
 TAK Infrastructure thoughts: Give some thought to how you are going to deploy FTS server.
 
@@ -29,6 +29,77 @@ TAK Infrastructure thoughts: Give some thought to how you are going to deploy FT
    to have their communications reach all "internet-connected" TAK clients via a
    TAK client who is simultaneously connected to both the internet and mesh sides of the network. 
 6. **Compute Cluster** – A collection services running in Linux containers.
+
+The following deployment diagrams augmented with network information are a good place to start.
+Note that the data-link layer hardware, such as switches and wireless-access-points, 
+are intentionally omitted from these models.
+It is recommended that you first deploy one of these standard configurations
+before developing one fitting your specific situation.
+Then, when you have that working construct a similar diagram for your specific situation.
+Such a diagram will be essential when communicating about your system.
+
+Realize that these configurations are examples and can be modified endlessly.
+Indeed, the ZeroTouch installer deviates slightly in what it installs by default.
+
+As you will see, configuration can be complex.
+To that end we have created tooling to reduce the amount of manual configuration to a minimum.
+
+### Cloud Installation with Video Server
+
+![image](./images/std_deploy_video.png)
+
+This configuration supports communication between a Spotter and the Team.
+Each member of the Team and the Spotter have 
+Android phones running [ATAK](https://play.google.com/store/apps/details?id=com.atakmap.app.civ&hl=en_US&gl=US).
+If ATAK provides all the capabilities needed by the Team,
+and they were on the same local-area-network (LAN) then no TAK-server would be needed.
+However, in this scenario they are not on the same LAN and the Team
+wants to use TAK as a broker to gain access to a video-server.
+
+In general, a cloud installation will expose FTS on public internet with a public IP address.
+
+### Cloud Installation with Drone
+
+![image](./images/std_deploy_uas.png)
+
+This configuration is similar to the previous configuration but now 
+the video stream originates from a remotely controlled 'drone'.
+This capability is [enabled via an ATAK plugin](https://play.google.com/store/apps/details?id=com.atakmap.android.uastool.plugin&hl=en_US&gl=US).
+
+
+### Private Installation on Raspberry Pi on a LAN
+
+![image](./images/std_deploy_rpi.png)
+
+This configuration does not expose FTS on the public internet.
+It does not broker a video-server, instead it provides a voice-chat-server,
+[Mumble](https://www.mumble.info/).
+The focus here is on how the LAN IP addresses are assigned.
+Specifically, there is a Router on the LAN which 
+acts as a bridge (or gateway) to the internet.
+The socket to services in the LAN has an IP address that is typically (but not always)
+assigned to the "RaspberryPi" via DHCP by the "Router". 
+Somehow the configuration of FTS on the "RaspberryPi" needs to refer to that IP address is.
+In other words you MUST supply that IP address in order for the installation to work properly.
+
+Note that the IP addresses in the diagram are notional and the addresses your devices will be different.
+
+The ATAK device is connected to the internet and
+has been assigned the wide-area-network (WAN) IP address `129.224.211.12`.
+The Router has a public IP address of `229.24.11.24` to which the ATAK devices connects.
+The Router / Gateway also faces the LAN where it is known by IP address `192.168.10.1`.
+The Router does a network-address-translation (NAT) converting each socket on the WAN to a socket on the LAN.
+Note that the Router is acting as a proxy for the services on the LAN and must be carefully configured.
+In particular, care must be taken to ensure that the ports on the Raspberry Pi services are unique.
+
+The WinTAK device lives on the LAN, so, while its address is assigned by the Router
+it avoids the issues associated with NAT, and communicates directly with the Raspberry Pi services.
+That said WinTAK must still connect to the Raspberry Pi and so it needs to be configured
+with the IP address assigned to the Raspberry Pi by the Router.
+
+In addition, the services on the Raspberry Pi need to connect to each other.
+In many cases, the services can use the localhost address `127.0.0.1` but occasionally that can cause issues,
+so it is better to configure them with the IP address provided to the Raspberry Pi by the Router.
 
 
 ## FTS Target Platforms
