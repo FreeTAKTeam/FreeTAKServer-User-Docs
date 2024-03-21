@@ -56,7 +56,8 @@ plugins:
   - section-index
   - build_plantuml:
       render: 'server'
-      server: 'http://www.plantuml.com/plantuml'
+      bin_path: "/usr/local/bin/plantuml"
+      server: 'https://www.plantuml.com/plantuml'
       disable_ssl_certificate_validation: true
       output_format: 'svg'
       allow_multiple_roots: false
