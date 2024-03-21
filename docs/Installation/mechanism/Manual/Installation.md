@@ -115,7 +115,7 @@ sudo pip3 install wheel pycairo
 ```
 
 !!! note
-    Use of pip with sudo is not recommended and you will be warned about this!
+    Use of pip with sudo is not recommended, and you will be warned about this!
 </details>
 
 
@@ -320,8 +320,8 @@ FreeTAKServer will then proceed start all the services.
 ## 7. FTS Configuration
 ### Manual `FTSConfig.yaml`
 
-> :warning: **Warning:** Before modifying the YAML file, FreeTAKServer
-**must be stopped!**
+!!! warning
+    Before modifying the YAML file, FreeTAKServer **must be stopped!**
 
 Use the keyboard  chord `CTRL + C` twice in the console running FTS to stop
 FreeTAKServer.

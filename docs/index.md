@@ -94,11 +94,11 @@ We support a public instance of FTS hosted by DigitalOcean.
 - use the Import Manager in `ATAK` to import the configuration.
 - for a full tutorial see the [article](About/PubServer.md)
 
-# Warning! Old Documentation Ahead!
-
-Much of the documentation is for the **OLD** FTS (pre 2.X) implementation and maybe not correct.
-If you are following those instructions,
-you will probably not get the result you want.
-New documentation is in the works, and will be released ASAP.
-The pages are now being marked to indicate their maturity.
+!!! warning
+    Old Documentation Ahead!
+    Much of the documentation is for the **OLD** FTS (pre 2.X) implementation and maybe not correct.
+    If you are following instructions marked as other than "current",
+    you may not get the result you want.
+    New documentation is in the works, and will be released ASAP.
+    The pages are now being marked to indicate their maturity.
 
