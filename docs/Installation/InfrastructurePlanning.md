@@ -189,7 +189,9 @@ Rel(webmap, fts, "connect to CoT service", "port: 8087")
 UpdateLayoutConfig($c4ShapeInRow="4", $c4BoundaryInRow="1")
 ```
 
-For reference there are some [sample PlantUML designs here](./diagrams).
+For reference here are some sample PlantUML designs
+
+* [Network Deployment Diagram for FTS via Zero Touch Installer](./diagrams/net-deploy-rpi.puml).
 
 ## FTS Target Platforms
 
