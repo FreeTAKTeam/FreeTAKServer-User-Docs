@@ -142,6 +142,21 @@ The `fts_user/docs/versions.json` is used to define the versions.
 
 TODO: Explain how this is to be used.
 
+### Mermaid
+
+For simple diagrams we use `Mermaid`.
+
+https://mermaid.js.org/
+
+
+### PlantUML
+
+There are some case where `Mermaid` is not sufficient such as making `Network Deployment Diagrams`.
+When that happens we use `PlantUML`.
+
+https://github.com/plantuml-stdlib/C4-PlantUML/blob/master/README.md
+
+
 
 ## Writing Good Markdown
 
