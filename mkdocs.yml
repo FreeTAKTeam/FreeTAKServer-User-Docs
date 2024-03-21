@@ -56,7 +56,7 @@ plugins:
   - section-index
   - build_plantuml:
       render: 'server'
-      server: 'https://www.plantuml.com/plantuml'
+      server: 'http://www.plantuml.com/plantuml'
       disable_ssl_certificate_validation: true
       output_format: 'svg'
       allow_multiple_roots: false
