@@ -109,16 +109,42 @@ so it is better to configure them with the IP address provided to the Raspberry 
 Once you have a configuration that gives you a working system,
 you are encouraged to construct a similar diagram for your specific situation.
 Such a diagram will be essential when communicating about your system.
-For uniformity, we recommend [`C4Model`](https://c4model.com/#DeploymentDiagram).
+For uniformity, we recommend [`C4Model`](https://c4model.com).
 The specific tool [`Mermaid2`](https://mermaid.js.org/syntax/c4.html),
+which you can use to develop your network model.
+The specific tool [`C4-PlantUML`](https://github.com/plantuml-stdlib/C4-PlantUML/blob/master/README.md),
 which you can use to develop your network model.
 The following example is for a Raspberry Pi deployment using the Zero-Touch installer.
 It assumes the Router assigns IP addresses via DHCP.
 Further, the Router reliably assigns the same IP address to the Raspberry Pi by using its network-interface MAC.
 
+#### System Context Diagram
+
 ```text
-Container(alias, label, ?techn, ?descr, ?sprite, ?tags, ?link, ?baseShape)
-Deployment_Node(alias, label, ?type, ?descr, ?sprite, ?tags, ?link)
+[x] System Context
+
+[x] Person(alias, label, ?descr, ?sprite, ?tags, $link)
+[x] System(alias, label, ?descr, ?sprite, ?tags, $link)
+[x] Boundary(alias, label, ?type, ?tags, $link)
+[x] Enterprise_Boundary(alias, label, ?tags, $link)
+[x] System_Boundary
+```
+
+```mermaid
+C4Context
+title FreeTAKServer via Zero Touch Installer with Video and Voice
+
+Enterprise_Boundary(tak, "TAK") {
+  Person(spotter, "Spotter", "techn", "descr", "sprite", "tags", "link", "rectangle")
+}
+```
+
+#### Deployment Diagram
+
+```text
+Container(alias, label, ?technology, ?description, ?sprite, ?tags, ?link, ?baseShape)
+Container_Boundary(alias, label, ?tags, $link)
+Deployment_Node(alias, label, ?type, ?description, ?sprite, ?tags, ?link)
 ```
 
 ```mermaid
@@ -158,6 +184,18 @@ Rel(pfs, rpios, "assign IP addr4", "bar")
 
 Rel(atak, ftsui, "connect to UI", "bar")
 Rel(wintak, ftsui, "connect to UI", "bar")
+```
+
+```puml
+@startuml sign_in_sequence  
+  
+title "Sign In Sequence Diagram"  
+  
+actor User  
+participant "@action authenticate" as authenticate
+entity User as UserModel  
+  
+User -> authenticate: {"email": email, "password": password}
 ```
 
 ## FTS Target Platforms

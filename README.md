@@ -70,3 +70,6 @@ Some uses:
 ### `mkdocs-mermaid2-plugin`
 The documentation uses Mermaid2 to make network-deployment-diagrams.
 
+### `mkdocs_puml`
+The documentation uses PlantUML to make network-deployment-diagrams.
+

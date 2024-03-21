@@ -2,5 +2,6 @@ nav:
     - Frequently Asked Questions: FAQ.md
     - Feature Comparison: FeaturesCompared.md
     - Free TAK Manifesto: Manifesto.md
+    - Why a Free TAK Server: why_fts.md
     - Public Server: PubServer.md
     - Architecture: architecture
