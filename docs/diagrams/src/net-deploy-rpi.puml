@@ -18,12 +18,12 @@ Node(lan, "LAN") {
         Container(fts, "FreeTakServer")
         Boundary(c1, "Flow Hub"){
             Container(nodered, "NodeRed")
-            Container(video_check, "Video Server Checker", $descr="users")
-            Container(salute, "SALUTE Form")
-            Container(webmap, "WebMap")
+            Container(video_check, "Video Server Checker", $descr="processor")
+            Container(salute, "SALUTE Form", $descr="processor")
+            Container(webmap, "WebMap", $descr="processor")
         }
-        Container(video_server, "Video Server")
-        Container(voice_server, "Voice Server")
+        Container(video_server, "Video Server", "MediaMTX")
+        Container(voice_server, "Voice Server", "Mumble")
     }
     Node(android, "Phone") {
         Container(atakos, "Android", "OS")
@@ -47,7 +47,7 @@ Rel(admin, ftsui, "connect to UI", "port: 5000")
 Rel(admin, nodered, "connect to UI", "port: 1880")
 
 Rel(atak, fts, "connect to CoT server", "port: 8087")
-Rel(wintak, ftsui, "connect to CoT server", "port: 8987")
+Rel(wintak, fts, "connect to CoT server", "port: 8987")
 
 Rel(ftsui, fts, "connect to API service", "port: 19023")
 Rel(ftsui, nodered, "connect to hub", "port: 8000")
