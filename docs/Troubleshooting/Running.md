@@ -2,7 +2,7 @@
 status: ood
 ---
 
-If you have not installed FreeTAKServer please follow the [installation](Installation.md) guide first.
+If you have not installed FreeTAKServer please follow the [installation](../Installation/platform/Linux/installation_vm) guide first.
 
 
 ## Run FTS in the Console

@@ -79,7 +79,7 @@ to create a file as `/etc/systemd/system/FreeTAKServer.service` with the followi
 (modify the parameters as needed)
 
 ```ini
-{!Installation/platform/Linux/fts.service!}
+{!Troubleshooting/fts.service!}
 ```
 
 And reload systemd, so it will load new unit file:
@@ -110,10 +110,10 @@ sudo systemctl enable fts.service
 ## UI Service
 similarly the UI service can be created with `/etc/systemd/system/fts-ui.service`
 ```ini
-{!Installation/platform/Linux/fts-ui.service!}
+{!Troubleshooting/fts-ui.service!}
 ```
 
 started 
 
-see also [ZeroTouchInstall Services section](../../mechanism/Ansible/ZeroTouchInstall.md)
+see also [ZeroTouchInstall Services section](../Installation/mechanism/Ansible/ZeroTouchInstall.md)
 to see the complete list of the services created by the installer

@@ -326,7 +326,7 @@ Use the keyboard  chord `CTRL + C` twice in the console running FTS to stop
 FreeTAKServer.
 
 A separate guide is maintained for
-[manual configuration](ManualConfiguration.md) of your FTS install.
+[manual configuration](../../../Troubleshooting/ManualConfiguration.md) of your FTS install.
 
 ### MainConfig.py
 FTS sends a welcome message on client connection which is configurable.
@@ -467,7 +467,7 @@ to that shown below.
 
 To run the server without keeping the console open, a service can be created.
 
-*See: [Service](Service.md)*
+*See: [Service](../../../Troubleshooting/Service.md)*
 
 ### Installation on a Separate machine
 Typically, the web UI  is installed on the same machine as FTS;

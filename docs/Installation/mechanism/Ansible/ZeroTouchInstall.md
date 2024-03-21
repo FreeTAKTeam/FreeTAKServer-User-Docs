@@ -44,7 +44,7 @@ This command will output the status of these services
 sudo systemctl status fts.service fts-ui.service mumble-server.service nodered.service mediamtx.service
 ```
 
- [how to start / stop / enable  a service?](../../platform/Linux/Service.md)
+ [how to start / stop / enable  a service?](../../../Troubleshooting/Service.md)
 
 
 ## Platform Specific Instructions

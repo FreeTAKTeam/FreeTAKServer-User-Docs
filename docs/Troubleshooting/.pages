@@ -12,3 +12,8 @@ nav:
       - Video Server: video-server.md
       - Voice Server: voip-server.md
       - FTS Hub (FTH) : fts-hub-server.md
+    - Revert to Manual:
+      - Stepwise installation: ManualConfiguration.md
+      - Running from Terminal: Running.md
+      - Running as a Service: Service.md
+      - Upgrading: Update.md
