@@ -70,8 +70,9 @@ Some uses:
 ### `mkdocs-mermaid2-plugin`
 The documentation uses Mermaid2 to make network-deployment-diagrams.
 
-### `mkdocs_puml`
+### `mkdocs_build_plantuml`
 The documentation uses PlantUML to make network-deployment-diagrams.
-This tooling supports more of C4 and UML but does not work as well with the IDE and mkdocs.
+https://github.com/quantorconsulting/mkdocs_build_plantuml
+This tooling supports more of C4 and UML.
 
 

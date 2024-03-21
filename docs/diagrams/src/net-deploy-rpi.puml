@@ -1,5 +1,5 @@
 @startuml
-!include C4_Deployment.puml
+!include ../include/C4_Deployment.puml
 
 LAYOUT_TOP_DOWN()
 LAYOUT_WITH_LEGEND()

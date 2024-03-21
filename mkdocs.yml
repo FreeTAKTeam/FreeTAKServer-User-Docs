@@ -54,10 +54,16 @@ plugins:
   - mike:
       version_selector: true
   - section-index
-#  - plantuml:
-#      puml_url: https://www.plantuml.com/plantuml/
-#      num_workers: 8
-#      puml_keyword: puml
+  - build_plantuml:
+      render: 'server'
+      server: 'https://www.plantuml.com/plantuml'
+      disable_ssl_certificate_validation: true
+      output_format: 'svg'
+      allow_multiple_roots: false
+      diagram_root: 'docs/diagrams'
+      output_folder: 'gen'
+      input_folder: 'src'
+      input_extensions: ''
   - mermaid2:
       arguments:
           theme: 'dark'
