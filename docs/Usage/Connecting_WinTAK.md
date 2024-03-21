@@ -52,4 +52,5 @@ This will bring up a file selection dialog.
 
 * [Configuration `fts-official-pub.zip`](../assets/fts-official-pub.zip) 
 
-Note: This reads the file, but it does not seem to update the server connections.
+!!! note
+    This reads the file, but it does not seem to update the server connections.

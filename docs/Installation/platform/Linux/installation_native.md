@@ -3,6 +3,10 @@ status: current
 ---
 
 # FreeTAK Server Installation
+
+!!! note
+    Before installing FTS natively you should install it in a virtual machine as an exercise.
+    
 This guide will walk you through installing FreeTAKServer 2.1 in a python virtual environment.
 These instructions are on preparing an Ubuntu OS suitable for using the FTS Zero Touch Installer.
 

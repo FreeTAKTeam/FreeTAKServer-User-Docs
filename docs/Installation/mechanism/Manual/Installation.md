@@ -114,7 +114,8 @@ Ubuntu
 sudo pip3 install wheel pycairo
 ```
 
-Note, use of pip with sudo is not recommended and you will be warned about this!
+!!! note
+    Use of pip with sudo is not recommended and you will be warned about this!
 </details>
 
 

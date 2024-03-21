@@ -14,7 +14,10 @@ This list contains information about the certificate serial numbers, the revocat
 Since FTS version 1.9, when you delete a user that has a certificate, the certificate will be revoked.
 We have now created a script that will fix the issue re-creating the CRL.
 
-Please follow the steps below. Note that if you are trying to use this with 2.x.y the next step is not necessary:
+Please follow the steps below.
+
+!!! note
+    If you are trying to use this with 2.x.y the first step is not necessary
 
 1. Install DigitalPy>=0.3.9.1 (the version where CRL regeneration support was added) with the following command:
     ```shell
@@ -33,7 +36,8 @@ Please follow the steps below. Note that if you are trying to use this with 2.x.
 sudo reboot -n
 ```
 
-* note: the FTS certs directory can generally be found at
+!!! note
+    The FTS certs directory can generally be found at
 ```shell
 /usr/local/lib/python{{ python_version }}/dist-packages/FreeTAKServer/certs
 ```

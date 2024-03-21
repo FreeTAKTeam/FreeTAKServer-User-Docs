@@ -58,10 +58,10 @@ When the Systemd service is started,
 it will start the `FreeTAKServer-UI` interface,
 allowing users to interact with the `FreeTAKServer` software through a web browser.
 
->**Note**
-> You will need create two separate systemd files, if you're using Web UI
-> - fts.service
-> - fts-ui.service
+!!! note
+    You will need create two separate systemd files, if you're using Web UI
+    - fts.service
+    - fts-ui.service
 
 
 ### Create The File

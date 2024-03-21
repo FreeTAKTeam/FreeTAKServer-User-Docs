@@ -21,9 +21,22 @@ theme:
     - navigation.path
     - toc.follow
     - toc.integrate
+  icon:
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
 
 markdown_extensions:
-  - pymdownx.superfences
   - markdown_include.include:
        base_path: docs
   - attr_list
@@ -33,6 +46,7 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:mermaid2.fence_mermaid_custom
+  - admonition
 
 plugins:
   - search

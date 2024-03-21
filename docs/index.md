@@ -79,9 +79,10 @@ please consider sending a contribution: [DONATE](https://www.paypal.com/cgi-bin/
 
 You can also support the project by buying one of our [T-Shirts](http://tee.pub/lic/elARpZYCmaw)
 
-NOTE: We are not big fans of `Paypal`,
-but it is the easiest and most accessible way we have found for enabling some form of funding.
-We hope to implement a more ethical system in the future.
+!!! note
+    We are not big fans of `Paypal`,
+    but it is the easiest and most accessible way we have found for enabling some form of funding.
+    We hope to implement a more ethical system in the future.
 
 ### Public Instance
 

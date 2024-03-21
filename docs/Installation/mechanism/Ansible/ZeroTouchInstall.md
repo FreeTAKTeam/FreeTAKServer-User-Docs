@@ -26,7 +26,8 @@ these options are demonstrated.
 ## Zero Touch Deployment Diagram
 This `ZTI` installs and configures FreeTAKHub components on a single device.
 
-Note: The following list and diagram are not exhaustive. 
+!!! note
+    The following list and diagram are not exhaustive. 
 
 1. FreeTAKServer (FTS): The core server that interfaces with TAK-enabled clients
 2. FreeTAKServer User Interface (FTS-UI): A web-based user interface.

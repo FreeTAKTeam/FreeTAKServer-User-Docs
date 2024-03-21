@@ -381,7 +381,8 @@ d-----        11/10/1775   6:00 PM                jre1.8.0_311
 
 Go into the JRE folder:
 
-NOTE: **Your JRE may be a different version**
+!!! note
+    Your JRE may be a different version**
 
 ```console
 cd jre1.8.0_311

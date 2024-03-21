@@ -36,7 +36,7 @@ before developing one fitting your specific situation and needs.
 
 The following deployment diagrams augmented with network information 
 are the configurations supported by the core team and are where you should start.
-Note that in these diagrams,
+Notice that in these diagrams,
 the data-link layer hardware,
 such as switches and wireless-access-points, 
 are intentionally omitted.
@@ -85,15 +85,18 @@ assigned to the "RaspberryPi" via DHCP by the "Router".
 Somehow the configuration of FTS on the "RaspberryPi" needs to refer to that IP address is.
 In other words you MUST supply that IP address in order for the installation to work properly.
 
-Note that the IP addresses in the diagram are notional and the addresses your devices will be different.
+!!! note 
+    The IP addresses in the diagram are notional and the addresses your devices will be different.
 
 The ATAK device is connected to the internet and
 has been assigned the wide-area-network (WAN) IP address `129.224.211.12`.
 The Router has a public IP address of `229.24.11.24` to which the ATAK devices connects.
 The Router / Gateway also faces the LAN where it is known by IP address `192.168.10.1`.
 The Router does a network-address-translation (NAT) converting each socket on the WAN to a socket on the LAN.
-Note that the Router is acting as a proxy for the services on the LAN and must be carefully configured.
-In particular, care must be taken to ensure that the ports on the Raspberry Pi services are unique.
+
+!!! note
+    The Router is acting as a proxy for the services on the LAN and must be carefully configured.
+    In particular, care must be taken to ensure that the ports on the Raspberry Pi services are unique.
 
 The WinTAK device lives on the LAN, so, while its address is assigned by the Router
 it avoids the issues associated with NAT, and communicates directly with the Raspberry Pi services.
