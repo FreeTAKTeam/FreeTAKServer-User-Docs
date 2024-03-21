@@ -1,0 +1,46 @@
+@startuml
+!include C4_Deployment.puml
+
+LAYOUT_TOP_DOWN()
+LAYOUT_WITH_LEGEND()
+
+Node(isp, "Internet Service Provider", $type="type", $descr="description", $sprite="users", $tags="v1.0", $link="") {
+  Container(ispr, "Internet Service Provider Router", $techn="techn", $descr="description", $sprite="users", $tags="v1.0", $link="")
+}
+
+Node(lan, "LAN", $type="type", $descr="description", $sprite="users", $tags="v1.0", $link="") {
+    Node(router, "Router", $type="type", $descr="description", $sprite="users", $tags="v1.0", $link="") {
+        Container(pfs, "pfsense", $techn="techn", $descr="description", $sprite="users", $tags="v1.0", $link="")
+    }
+    Node(android, "Android Phone", $type="type", $descr="description", $sprite="users", $tags="v1.0", $link="") {
+        Container(atakos, "OS", $techn="techn", $descr="description", $sprite="users", $tags="v1.0", $link="")
+        Container(atak, "ATAK", $techn="techn", $descr="description", $sprite="users", $tags="v1.0", $link="")
+    }
+    Node(laptop, "Windows Laptop", $type="type", $descr="description", $sprite="users", $tags="v1.0", $link="") {
+        Container(winos, "OS", $techn="techn", $descr="description", $sprite="users", $tags="v1.0", $link="")
+        Container(wintak, "WinTAK", $techn="techn", $descr="description", $sprite="users", $tags="v1.0", $link="")
+    }
+    Node(rpi1, "Raspberry Pi", $type="type", $descr="description", $sprite="users", $tags="v1.0", $link="") {
+        Container(rpios, "OS", $techn="techn", $descr="description", $sprite="users", $tags="v1.0", $link="")
+        Container(ftsui, "FreeTakServerUI", $techn="techn", $descr="description", $sprite="users", $tags="v1.0", $link="")
+        Container(fts, "FreeTakServer", $techn="techn", $descr="description", $sprite="users", $tags="v1.0", $link="")
+        Boundary(c1, "Flow Hub"){
+            Container(nodered, "NodeRed", $techn="techn", $descr="description", $sprite="users", $tags="v1.0", $link="")
+            Container(video_checker, "Video Server Checker", $techn="techn", $descr="description", $sprite="users", $tags="v1.0", $link="")
+            Container(salute, "SALUTE Form", $techn="techn", $descr="description", $sprite="users", $tags="v1.0", $link="")
+            Container(webmap, "WebMap", $techn="techn", $descr="description", $sprite="users", $tags="v1.0", $link="")
+        }
+        Container(video_server, "Video Server", $techn="techn", $descr="description", $sprite="users", $tags="v1.0", $link="")
+        Container(voice_server, "Voice Server", $techn="techn", $descr="description", $sprite="users", $tags="v1.0", $link="")
+    }
+}
+
+Rel(ispr, pfs, "assign IP addr WAN", "e.g. 192.168.1.1")
+Rel(pfs, atakos, "assign IP addr ATAK", "e.g. 10.2.1.100")
+Rel(pfs, winos, "assign IP addr", "e.g. 10.2.1.100")
+Rel(pfs, rpios, "statically assign IP addr", "e.g. 10.3.1.100")
+
+Rel(atak, ftsui, "connect to UI", "port: 5000")
+Rel(wintak, ftsui, "connect to UI", "port: 5000")
+
+@enduml

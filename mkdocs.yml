@@ -40,9 +40,10 @@ plugins:
   - mike:
       version_selector: true
   - section-index
-  - plantuml:
-      puml_url: https://www.plantuml.com/plantuml/
-      num_workers: 8
+#  - plantuml:
+#      puml_url: https://www.plantuml.com/plantuml/
+#      num_workers: 8
+#      puml_keyword: puml
   - mermaid2:
       arguments:
           theme: 'dark'

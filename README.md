@@ -72,4 +72,6 @@ The documentation uses Mermaid2 to make network-deployment-diagrams.
 
 ### `mkdocs_puml`
 The documentation uses PlantUML to make network-deployment-diagrams.
+This tooling supports more of C4 and UML but does not work as well with the IDE and mkdocs.
+
 

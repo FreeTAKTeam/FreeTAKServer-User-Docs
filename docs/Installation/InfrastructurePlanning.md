@@ -112,35 +112,14 @@ Such a diagram will be essential when communicating about your system.
 For uniformity, we recommend [`C4Model`](https://c4model.com).
 The specific tool [`Mermaid2`](https://mermaid.js.org/syntax/c4.html),
 which you can use to develop your network model.
-The specific tool [`C4-PlantUML`](https://github.com/plantuml-stdlib/C4-PlantUML/blob/master/README.md),
-which you can use to develop your network model.
 The following example is for a Raspberry Pi deployment using the Zero-Touch installer.
 It assumes the Router assigns IP addresses via DHCP.
 Further, the Router reliably assigns the same IP address to the Raspberry Pi by using its network-interface MAC.
 
-#### System Context Diagram
-
-```text
-[x] System Context
-
-[x] Person(alias, label, ?descr, ?sprite, ?tags, $link)
-[x] System(alias, label, ?descr, ?sprite, ?tags, $link)
-[x] Boundary(alias, label, ?type, ?tags, $link)
-[x] Enterprise_Boundary(alias, label, ?tags, $link)
-[x] System_Boundary
-```
-
-```mermaid
-C4Context
-title FreeTAKServer via Zero Touch Installer with Video and Voice
-
-Enterprise_Boundary(tak, "TAK") {
-  Person(spotter, "Spotter", "techn", "descr", "sprite", "tags", "link", "rectangle")
-}
-```
 
 #### Deployment Diagram
 
+Legend:
 ```text
 Container(alias, label, ?technology, ?description, ?sprite, ?tags, ?link, ?baseShape)
 Container_Boundary(alias, label, ?tags, $link)
@@ -151,51 +130,61 @@ Deployment_Node(alias, label, ?type, ?description, ?sprite, ?tags, ?link)
 C4Deployment
 title Network Deployment Diagram for FreeTAKServer via Zero Touch Installer
 
-Node(isp, "Internet Service Provider", "type", "descr", "sprite", "tags", "link") {
-  Container(ispr, "Internet Service Provider Router", "techn", "descr", "sprite", "tags", "link", "base shape")
+Node(isp, "Internet Service Provider") {
+  Container(ispr, "Internet Service Provider Router")
 }
 
-Node(lan, "LAN", "type", "descr", "sprite", "tags", "link") {
-    Node(router, "Router", "type", "descr", "sprite", "tags", "link") {
-        Container(pfs, "pfsense", "techn", "descr", "sprite", "tags", "link", "base shape")
+Node(lan, "LAN") {
+    Node(browser, "Admin Browser") {
+        Container(admin, "admin")
     }
-    Node(android, "Android Phone", "type", "descr", "sprite", "tags", "link") {
-        Container(atakos, "OS", "techn", "descr", "sprite", "tags", "link", "base shape")
-        Container(atak, "ATAK", "techn", "descr", "sprite", "tags", "link", "base shape")
+    Node(router, "Router") {
+        Container(pfs, "pfsense")
     }
-    Node(laptop, "Windows Laptop", "type", "descr", "sprite", "tags", "link") {
-        Container(winos, "OS", "techn", "descr", "sprite", "tags", "link", "base shape")
-        Container(wintak, "WinTAK", "techn", "descr", "sprite", "tags", "link", "base shape")
+    Node(android, "Phone") {
+        Container(atakos, "Android", $type="OS")
+        Container(atak, "ATAK")
     }
-    Node(rpi1, "Raspberry Pi", "type", "descr", "sprite", "tags", "link") {
-        Container(rpios, "OS", "techn", "descr", "sprite", "tags", "link", "base shape")
-        Container(ftsui, "FreeTakServerUI", "techn", "descr", "sprite", "tags", "link", "base shape")
-        Container(fts, "FreeTakServer", "techn", "descr", "sprite", "tags", "link", "base shape")
-        Container(nodered, "NodeRed", "techn", "descr", "sprite", "tags", "link", "base shape")
-        Container(video-server, "Video Server", "techn", "descr", "sprite", "tags", "link", "base shape")
-        Container(voice-server, "Voice Server", "techn", "descr", "sprite", "tags", "link", "base shape")
+    Node(laptop, "Windows Laptop") {
+        Container(winos, "Windows 10", $type="OS")
+        Container(wintak, "WinTAK")
+    }
+    Node(rpi1, "Raspberry Pi") {
+        Container(rpios, "Ubuntu", $type="OS")
+        Container(ftsui, "FreeTakServerUI")
+        Container(fts, "FreeTakServer")
+        Boundary(c1, "Flow Hub"){
+            Container(nodered, "NodeRed")
+            Container(video_check, "Video Server Checker", $descr="users")
+            Container(salute, "SALUTE Form")
+            Container(webmap, "WebMap")
+        }
+        Container(video_server, "Video Server")
+        Container(voice_server, "Voice Server")
     }
 }
 
-Rel(ispr, pfs, "assign IP addr1", "bar")
-Rel(pfs, atakos, "assign IP addr2", "bar")
-Rel(pfs, winos, "assign IP addr3", "bar")
-Rel(pfs, rpios, "assign IP addr4", "bar")
+Rel(ispr, pfs, "assign IP addr WAN", "e.g. 192.168.1.1")
+Rel(pfs, atakos, "assign IP addr ATAK", "e.g. 10.2.1.100")
+Rel(pfs, winos, "assign IP addr", "e.g. 10.2.1.100")
+Rel(pfs, rpios, "statically assign IP addr", "e.g. 10.3.1.100")
 
-Rel(atak, ftsui, "connect to UI", "bar")
-Rel(wintak, ftsui, "connect to UI", "bar")
-```
+Rel(admin, ftsui, "connect to UI", "port: 5000")
+Rel(admin, ftsui, "connect to UI", "port: 5000")
+Rel(admin, nodered, "connect to UI", "port: 1880")
 
-```puml
-@startuml sign_in_sequence  
-  
-title "Sign In Sequence Diagram"  
-  
-actor User  
-participant "@action authenticate" as authenticate
-entity User as UserModel  
-  
-User -> authenticate: {"email": email, "password": password}
+Rel(atak, fts, "connect to CoT server", "port: 8087")
+Rel(wintak, ftsui, "connect to CoT server", "port: 8987")
+
+Rel(ftsui, fts, "connect to API service", "port: 19023")
+Rel(ftsui, nodered, "connect to hub", "port: 8000")
+
+Rel(video_check, video_server, "connect to video server", "port: 9997")
+Rel(video_check, fts, "connect to API service", "port: 19023")
+
+Rel(webmap, fts, "connect to CoT service", "port: 8087")
+
+UpdateLayoutConfig($c4ShapeInRow="4", $c4BoundaryInRow="3")
 ```
 
 ## FTS Target Platforms
