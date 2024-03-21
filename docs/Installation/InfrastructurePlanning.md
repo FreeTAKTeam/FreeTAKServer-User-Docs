@@ -138,19 +138,8 @@ Node(isp, "Internet Service Provider") {
 }
 
 Node(lan, "LAN") {
-    Node(browser, "Admin Browser") {
-        Container(admin, "admin")
-    }
     Node(router, "Router") {
         Container(pfs, "pfsense")
-    }
-    Node(android, "Phone") {
-        Container(atakos, "Android", $type="OS")
-        Container(atak, "ATAK")
-    }
-    Node(laptop, "Windows Laptop") {
-        Container(winos, "Windows 10", $type="OS")
-        Container(wintak, "WinTAK")
     }
     Node(rpi1, "Raspberry Pi") {
         Container(rpios, "Ubuntu", $type="OS")
@@ -165,6 +154,17 @@ Node(lan, "LAN") {
         Container(video_server, "Video Server")
         Container(voice_server, "Voice Server")
     }
+    Node(android, "Phone") {
+        Container(atakos, "Android", $type="OS")
+        Container(atak, "ATAK")
+    }
+    Node(laptop, "Windows Laptop") {
+        Container(winos, "Windows 10", $type="OS")
+        Container(wintak, "WinTAK")
+    }
+    Node(browser, "Admin Browser") {
+        Container(admin, "admin")
+    }
 }
 
 Rel(ispr, pfs, "assign IP addr WAN", "e.g. 192.168.1.1")
@@ -172,7 +172,6 @@ Rel(pfs, atakos, "assign IP addr ATAK", "e.g. 10.2.1.100")
 Rel(pfs, winos, "assign IP addr", "e.g. 10.2.1.100")
 Rel(pfs, rpios, "statically assign IP addr", "e.g. 10.3.1.100")
 
-Rel(admin, ftsui, "connect to UI", "port: 5000")
 Rel(admin, ftsui, "connect to UI", "port: 5000")
 Rel(admin, nodered, "connect to UI", "port: 1880")
 
@@ -187,8 +186,10 @@ Rel(video_check, fts, "connect to API service", "port: 19023")
 
 Rel(webmap, fts, "connect to CoT service", "port: 8087")
 
-UpdateLayoutConfig($c4ShapeInRow="4", $c4BoundaryInRow="3")
+UpdateLayoutConfig($c4ShapeInRow="4", $c4BoundaryInRow="1")
 ```
+
+For reference there are some [sample PlantUML designs here](./diagrams).
 
 ## FTS Target Platforms
 
