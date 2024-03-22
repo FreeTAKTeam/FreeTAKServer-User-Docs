@@ -64,7 +64,7 @@ plugins:
       diagram_root: 'docs/diagrams'
       output_folder: 'gen'
       input_folder: 'src'
-      input_extensions: ''
+      input_extensions: 'puml'
       theme_enabled: true
   - mermaid2:
       arguments:
