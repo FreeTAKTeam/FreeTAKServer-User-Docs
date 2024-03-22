@@ -34,7 +34,7 @@ jobs:
           markdown-include mkdocs-pdf-export-plugin
           mkdocs-mermaid2-plugin
           httplib2
-          mkdocs-build-plantuml-plugin
+          mkdocs_build_plantuml_plugin@git+https://github.com/babeloff/mkdocs_build_plantuml
           mkdocs-exclude mkdocs-minify-plugin mkdocs-versioning
       # https://www.mkdocs.org/user-guide/cli/#mkdocs-gh-deploy
       - run: mkdocs gh-deploy --force
