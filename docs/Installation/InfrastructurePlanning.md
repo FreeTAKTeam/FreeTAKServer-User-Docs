@@ -126,9 +126,9 @@ Further, the Router reliably assigns the same IP address to the Raspberry Pi by 
 
 For reference here are PlantUML designs
 
-* Network Deployment Diagram for FTS via Zero Touch Installer
-  * [Source](../diagrams/src/net-deploy-rpi.puml)
-  * [Generated](../diagrams/gen/net-deploy-rpi.svg)
+??? example "Network Deployment Diagram for FTS via Zero Touch Installer"
+    * [Source PlatUML](../diagrams/src/net-deploy-rpi.puml)
+    * [Generated SVG](../diagrams/gen/net-deploy-rpi.svg)
 
 ## FTS Sample Configurations
 
