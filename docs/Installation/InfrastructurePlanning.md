@@ -128,7 +128,7 @@ For reference here are some sample PlantUML designs
 
 * [Network Deployment Diagram for FTS via Zero Touch Installer](../diagrams/src/net-deploy-rpi.puml).
 
-## FTS Target Platforms
+## FTS Sample Configurations
 
 The distinction between platforms and infrastructure can get fuzzy
 as platforms are commonly created to address specific infrastructure requirements.
@@ -141,8 +141,8 @@ Furthermore, the installation mechanisms may need to be tailored to each platfor
    Running on an ad-hoc or local infrastructure LAN configuration. 
 4. [**RaspberryPi Kubernetes Cluster**](https://microk8s.io/docs/install-raspberry-pi)
    - Orchestrates a set of `micro-service` PODs. 
-5. [**ZeroTier**](https://www.zerotier.com/download/))
-   - Automatically handles the complexities of networking across physical network boundaries. 
+5. [**ZeroTier**](https://www.zerotier.com/download/)
+   - A commercial VPN which unifies the complexities of networking across physical network boundaries. 
 6. **Android Mobile** - Likely running to support `ATAK`.
 7. **Windows Desktop / WSL** - Commonly used during development or troubleshooting. 
 8. **Linux Desktop** - Commonly used during development or troubleshooting. 
