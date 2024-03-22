@@ -68,6 +68,12 @@ WinSCP can be used on the top of Putty to make browsing and editing of files mor
 
 ![image](https://user-images.githubusercontent.com/60719165/142771008-d272d5df-3e78-4f0c-8be8-a43028414c77.png)
 
- ## Next step
- you can now start installing FTS using the [ZeroTouch](../../mechanism/Ansible/ZeroTouchInstall.md)
- or the [Manual Installation](../Linux/installation_vm)
+## Install FTS on the Cloud
+
+You can now start installing FTS using the [ZeroTouch](../../mechanism/Ansible/ZeroTouchInstall.md).
+!!! tip
+    You can probably accept the implicit IP address.
+    However, setting the `--ip-addr` will not be wrong.
+
+[Installation can also be done manually](../../mechanism/Manual/Installation.md),
+but it is best to leave that until you have some experience.

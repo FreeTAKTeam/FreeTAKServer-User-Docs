@@ -66,11 +66,16 @@ Alternate, full path.
 wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/main/scripts/easy_install.sh | sudo bash
 ```
 
-### Custom IP Address
+### Explicit IP Address
 
-By default, the `ZTI` guesses your IP address using `https://ifconfig.me/ip`.
-When installing on the devices not on the public internet it is unlikely that this is what you want.
+Implicitly, the `ZTI` guesses your IP address using `https://ifconfig.me/ip`.
+When installing on the devices not on the public internet
+it is unlikely that this is what you want.
 There are several ways to discover a candidate IP address, here are some.
+
+!!! warning
+    The IP address should be stable; on reboot you may get a different IP address.
+    You should take steps to ensure the IP address does not change without your knowledge.
 
 Wired, ethernet, RJ45, LAN
 ```bash
@@ -88,15 +93,27 @@ Here is an example capturing the wired LAN address:
 ```bash
 export MY_IP=$(ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
 ```
+
+It will be helpful to create an environment parameter
+to remember the IP address you selected.
+```bash
+export MY_IP=<the appropriate IP address>
+```
+??? example "Here is an example capturing the wired LAN address:"
+    ```bash
+    export MY_IP=$(ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
+    ```
+
+## Run the Zero Touch Installer (ZTI)
+
 With an appropriate IP address in hand you can run the `ZTI`.
 ```bash
 wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --ip-addr ${MY_IP}
 ```
-Alternate, full path.
-```bash
-wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/main/scripts/easy_install.sh | sudo bash -s -- --ip-addr ${MY_IP}
-```
-
+??? tip "Alternate, full path."
+    ```bash
+    wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/main/scripts/easy_install.sh | sudo bash -s -- --ip-addr ${MY_IP}
+    ```
 
 ## How `ZT` works
 The command `wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --ip-addr ${MY_IP} `
@@ -165,3 +182,27 @@ or
 ```console
 wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --legacy
 ```
+
+## Operation
+
+`ZeroTouch` will have configured the system and started the services for you. 
+However, there are many corner cases which `ZeroTouch` may miss.
+Many (if not all) of the choices made by `ZeroTouch` are written to stdout.
+I recommend that you validate the properties in that output.
+I recommend that you stop the fts services prior to reconfiguration.
+
+* [Service Management](../../../administration/Operation/fts-config.md)
+* [Configuration](../../../administration/Operation/fts-config.md)
+
+### FTS User Interface
+
+* http://<use MY_IP here>:5000/index
+* username: `admin`
+* password: `password`
+
+### FTS Hub : Node-Red
+
+* http://<use MY_IP here>:1880
+* username: `admin`
+* password: `password`
+

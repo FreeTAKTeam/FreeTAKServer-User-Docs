@@ -104,50 +104,11 @@ Verify the following packages are installed.
 sudo apt install -y wget curl
 ```
 
-#### Custom IP Address
-By default, the `ZTI` guesses your IP address.
-When installing on the RaspberryPi it is unlikely that this is what you want.
-There are several ways to discover a candidate IP address, here are some.
+## Install FTS on the VM
 
-Wired, ethernet, RJ45, LAN
-```bash
-ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
-```
-WiFi, LAN
-```bash
-ip -4 addr show wlan0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
-```
-On the public internet.
-```bash
-curl ifconfig.me/ip
-```
-Here is an example capturing the wired LAN address:
-```bash
-export MY_IP=$(ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
-```
+Yow will probably need to install with an explicit IP address.
 
-## Run the Zero Touch Installer (ZTI)
-
-With an appropriate IP address in hand you can run the `ZTI`.
-```bash
-wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --ip-addr ${MY_IP}
-```
-Alternate, full path.
-```bash
-wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/main/scripts/easy_install.sh | sudo bash -s -- --ip-addr ${MY_IP}
-```
 The [complete ZTI instructions are here](../../mechanism/Ansible/ZeroTouchInstall.md).
-
-## Operation
-
-`ZeroTouch` will have configured the system and started the services for you. 
-However, there are many corner cases which `ZeroTouch` may miss.
-Many (if not all) of the choices made by `ZeroTouch` are written to stdout.
-I recommend that you validate the properties in that output.
-I recommend that you stop the fts services prior to reconfiguration.
-
-* [Service Management](../../../administration/Operation/fts-config.md)
-* [Configuration](../../../administration/Operation/fts-config.md)
 
 
 ## RPiFTS Series
