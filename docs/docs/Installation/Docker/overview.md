@@ -24,6 +24,9 @@ You can use the `-e` flag to map these ports to different ports
 or to run multiple FreeTAKServer's concurrently on the same host.
 
 ### Environment Variables
+**Out of date**
+**See linux install guide until this is updated**
+
 All environment variables will apply to FTS.
 However, these are some additional ones specific to this docker image.
 

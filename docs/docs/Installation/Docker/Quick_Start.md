@@ -24,48 +24,39 @@ You can obtain the latest images of the server and web UI by running the followi
 Please note the use of GHCR instead of dockerhub, and adjust accordingly.
 
 ## Setup
-### Installation Directory
-A directory in which to store configuration and database files is required. Please ensure the permissions for this directory
-allow container runtimes full `RWX` access recursively, and if using a selinux enabled OS, ensure the context is set for containers.
-For more information on this process, visit your OS provided documentation.
 
-### Compose
+### Quick Instructions
+1. Copy the [`example-compose.yaml`](https://github.com/FreeTAKTeam/FreeTAKHub-Installation/blob/main/containers/example-compose.yaml)
+file to your favorite directory.
+2. Rename it to compose.yaml
+3. Run the command
 
+    For podman:
+    ```shell
+    podman-compose up
+    ```
+    
+    For non-free runtime:
+    
+    ```shell
+    docker-compose up
+    ```
+
+4. Then refer to other FTS documentation to do appropriate configuration using the environment variables exposed in the 
+compose file.
+
+### Additional Detail
 A [sample compose file](https://github.com/FreeTAKTeam/FreeTAKHub-Installation/blob/main/containers/example-compose.yaml)
-is provided to speed up your setup. If you do not have any other compose files, then this can be placed in the same directory
-created earlier, and renamed to `compose.yaml`. Ensure that if you do not place the compose file in the same directory that
-you update the volume path to the correct directory.
+is provided to speed up your setup. T this can be placed in whatever directory you use for your container infrastructure
+or a new directory that you create for this purpose. You will likely want to rename the compose file provided to 
+`compose.yaml`.
 
-If you expect to run these images as part of a larger file, then you can use the sample compose file as
-sensible defaults and append to your pre-existing compose file.
-
-Once all the directories and files are set, both components can be activated by running
-```Bash
-podman-compose up -d
-```
-
-Or for docker runtime users
-
-```Bash
-docker compose up -d
-```
+If you expect to run these images as part of a larger compose file, then you can use the sample compose file as
+sensible defaults and append it to your pre-existing compose file.
 
 ### Configuration
-On first run, the appropriate configuration files will be created in the indicated directory.
-
-From this point, you should stop the containers before editing the configuration files.
-
-```Bash
-podman-compose down
-```
-or
-```Bash
-docker compose down
-```
-
-From this point, please follow the Linux installation guide for information regarding the configuration files.
+All configuration is handled by environment variables. For information on what the environment variables control, visit
+the Container Overview page.
 
 ## Persistent Data
-
-All persistent data is stored to /data and may be volume mounted.
-The host volume needs to be owned by user and group 1000.
+All persistent data is stored to a volume. Be careful not to purge your container runtime unless you want to lose it all.
