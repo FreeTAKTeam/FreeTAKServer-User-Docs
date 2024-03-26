@@ -91,7 +91,7 @@ ip -4 addr
     ip -4 addr show wlan0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
     ```
 
-On the public internet.
+On the public internet:
 ```bash
 curl ifconfig.me/ip
 ```
