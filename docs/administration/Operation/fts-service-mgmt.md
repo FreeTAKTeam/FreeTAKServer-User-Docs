@@ -19,6 +19,7 @@ There are other services which `ZTI` will start.
 They are also managed by `systemd`.
 
 ```bash
+# the core FTS services
 sudo systemctl status fts.service
 sudo systemctl status fts-ui.service
 
