@@ -95,7 +95,7 @@ export MY_IPA=$(ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
 ```
 
 It will be helpful to create an environment parameter
-to remember the IP address you selected.
+to remember the IP address (MY_IPA) you have selected.
 ```bash
 export MY_IPA=<the appropriate IP address>
 ```
