@@ -196,13 +196,13 @@ I recommend that you stop the fts services prior to reconfiguration.
 
 ### FTS User Interface
 
-* http://<use MY_IP here>:5000/index
+* http://[use MY_IP here]:5000/index
 * username: `admin`
 * password: `password`
 
 ### FTS Hub : Node-Red
 
-* http://<use MY_IP here>:1880
+* http://[use MY_IP here]:1880
 * username: `admin`
 * password: `password`
 
