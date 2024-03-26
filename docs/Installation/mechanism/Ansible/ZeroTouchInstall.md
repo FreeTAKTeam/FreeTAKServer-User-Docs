@@ -185,15 +185,8 @@ wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --legacy
 
 ## Operation
 
-`ZeroTouch` will have configured the system and started the services for you. 
-However, there are many corner cases which `ZeroTouch` may miss.
-Many (if not all) of the choices made by `ZeroTouch` are written to stdout.
-I recommend that you validate the properties in that output.
-You should stop the fts services prior to reconfiguration,
-and you must start (restart) the fts services after reconfiguration.
-
-* [Service Management](../../../administration/Operation/fts-service-mgmt.md)
-* [Configuration](../../../administration/Operation/fts-config.md)
+Now that your shiny new FTS system has been installed,
+it is time to make sure it is nominally working.
 
 ### FTS User Interface
 
@@ -207,6 +200,17 @@ and you must start (restart) the fts services after reconfiguration.
 * username: `admin`
 * password: `password`
 
+### Reconfiguration
+
+`ZeroTouch` will have configured the system and started the services for you. 
+However, there are many corner cases which `ZeroTouch` may miss.
+Many (if not all) of the choices made by `ZeroTouch` are written to stdout.
+I recommend that you validate the properties in that output.
+You should stop the fts services prior to reconfiguration,
+and you must start (restart) the fts services after reconfiguration.
+
+* [Service Management](../../../administration/Operation/fts-service-mgmt.md)
+* [Configuration](../../../administration/Operation/fts-config.md)
 
 ### Try out the TAK Clients
 
