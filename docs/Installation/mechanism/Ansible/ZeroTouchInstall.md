@@ -77,14 +77,20 @@ There are several ways to discover a candidate IP address, here are some.
     The IP address should be stable; on reboot you may get a different IP address.
     You should take steps to ensure the IP address does not change without your knowledge.
 
-Wired, ethernet, RJ45, LAN
+Show the assigned IPv4 LAN addresses:
 ```bash
-ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
+ip -4 addr
 ```
-WiFi, LAN
-```bash
-ip -4 addr show wlan0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
-```
+??? tip Extract specific LAN addresses
+    Wired, ethernet, RJ45
+    ```bash
+    ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
+    ```
+    WiFi
+    ```bash
+    ip -4 addr show wlan0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
+    ```
+
 On the public internet.
 ```bash
 curl ifconfig.me/ip
