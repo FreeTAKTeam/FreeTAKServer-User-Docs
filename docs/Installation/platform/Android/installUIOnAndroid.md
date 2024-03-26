@@ -21,10 +21,10 @@ pip3 show eventlet
 
 After eventlet installs we need to update a file to hardcode
 the tcp/udp protocol numbers due to incompatibilities with Android
-- The output of `pip3 show eventlet` Location should be similar to `/data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/lib/python3.8/site-packages`
+- The output of `pip3 show eventlet` Location should be similar to `/data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/lib/python3.11/site-packages`
 - The file we need to update with the tcp/udp protocol numbers is located in `dns/rdtypes/IN/WKS.py`
 - The full path of the file to edit using the eventlet Location output:
-`/data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/lib/python3.8/site-packages/dns/rdtypes/IN/WKS.py`
+`/data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/lib/python3.11/site-packages/dns/rdtypes/IN/WKS.py`
 
 Now edit `WKS.py` and update as indicated below:
 
@@ -45,7 +45,7 @@ we need to update this for Android by replacing the appropriate paths with `/sdc
 - `SQLALCHEMY_DATABASE_URI`
 - `certpath`
 - If you are not running FTS and FTS-UI on the same device you will need to update `IP`
-- The config file is located here: `/data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/lib/python3.8/site-packages/FreeTAKServer-UI/config.py`
+- The config file is located here: `/data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/lib/python3.11/site-packages/FreeTAKServer-UI/config.py`
 
 Now edit `config.py` and update as indicated below:
 
@@ -55,7 +55,7 @@ BEFORE:
 SQLALCHEMY_DATABASE_URI = 'sqlite:///' + '/root/FTSDataBase.db'
 
 # certificates path
-certpath = "/usr/local/lib/python3.8/dist-packages/FreeTAKServer/certs/"
+certpath = "/usr/local/lib/python3.11/dist-packages/FreeTAKServer/certs/"
 ```
 
 AFTER:
@@ -71,7 +71,7 @@ certpath = "/sdcard/FreeTAKServer/certs/"
 - Make sure your FTS is already up and running.
 - From the pydroid3 terminal
 ```
-FLASK_APP=/data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/lib/python3.8/site-packages/FreeTAKServer-UI/run.py nohup python3 /data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/lib/python3.8/site-packages/FreeTAKServer-UI/run.py
+FLASK_APP=/data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/lib/python3.11/site-packages/FreeTAKServer-UI/run.py nohup python3 /data/user/0/ru.iiec.pydroid3/files/arm-linux-androideabi/lib/python3.8/site-packages/FreeTAKServer-UI/run.py
 ```
 
 Now open your web browser and navigate to <http://127.0.0.1:5000>

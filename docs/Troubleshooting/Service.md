@@ -50,7 +50,7 @@ Here's what each part of the command does:
 
 So when the service is started,
 the Python interpreter will run the `run.py` module
-located in the `/usr/local/lib/python3.8/dist-packages/FreeTAKServer-UI/` directory.
+located in the `/usr/local/lib/python3.11/dist-packages/FreeTAKServer-UI/` directory.
 
 This code above is running `FreeTAKServer-UI`,
 which is a user interface for  `FreeTAKServer`.

@@ -12,16 +12,16 @@ You can use pip to discover the location. Type:
  sudo python3 -m pip show FreeTAKServer
 ```
 
-If you are running python 3.8
+If you are running python 3.11
 
 ```text
-/usr/local/lib/python3.8/dist-packages/FreeTAKServer/controllers/configuration/MainConfig.py
+/usr/local/lib/python3.11/dist-packages/FreeTAKServer/controllers/configuration/MainConfig.py
 ```
 
 You can edit the file via nano with the following command
 
 ```
-sudo nano /usr/local/lib/python3.7/dist-packages/FreeTAKServer/controllers/configuration/MainConfig.py
+sudo nano /usr/local/lib/python3.11/dist-packages/FreeTAKServer/controllers/configuration/MainConfig.py
 ```
 
 To exit nano `ctrl+x` and then enter `y` to save and hit enter.
@@ -54,7 +54,7 @@ DBFilePath = str('user:pass@localhost/dbname')
 
 And then under
 ```
-sudo nano /usr/local/lib/python3.8/dist-packages/FreeTAKServer/controllers/configuration/DatabaseConfiguration.py
+sudo nano /usr/local/lib/python3.11/dist-packages/FreeTAKServer/controllers/configuration/DatabaseConfiguration.py
 ```
 
 Change

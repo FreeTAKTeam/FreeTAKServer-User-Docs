@@ -38,7 +38,7 @@ sudo python3 -m pip install FreeTAKServer-UI=0.1.6.5
     IP = '192.168.1.25'
 ```
 - start UI server
-```sudo FLASK_APP=/usr/local/lib/python3.8/dist-packages/FreeTAKServer-UI/run.py python3 /usr/local/lib/python3.8/dist-packages/FreeTAKServer-UI/run.py```
+```sudo FLASK_APP=/usr/local/lib/python3.11/dist-packages/FreeTAKServer-UI/run.py python3 /usr/local/lib/python3.11/dist-packages/FreeTAKServer-UI/run.py```
 - Open a browser to `[UIIP]:5000`
 - login with default creds(admin, password)
 - you can now control your FTS Android Edition from this UI 
