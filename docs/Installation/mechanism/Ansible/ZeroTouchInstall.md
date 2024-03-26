@@ -196,7 +196,8 @@ and you must start (restart) the fts services after reconfiguration.
 * [Configuration](../../../administration/Operation/fts-config.md)
 
 Now try out TAK clients after connecting them to the shiny new FTS server.
-* [Try Me](../../../Usage)
+
+* [Try Me](../../../Usage/Connecting_ATAK.md)
 
 ### FTS User Interface
 
