@@ -19,8 +19,18 @@ There are other services which `ZTI` will start.
 They are also managed by `systemd`.
 
 ```bash
+sudo systemctl status fts.service
+sudo systemctl status fts-ui.service
+
+# a flow programming environment
 sudo systemctl status nodered.service
-sudo systemctl status mediamtx.service
-sudo systemctl status webmap.service
-sudo systemctl status murmur.service
+# manages the webmap service
+# manages the video-service checker
+
+# a video server
+sudo systemctl status rtsp-simple-server.service
+# sudo systemctl status mediamtx.service
+
+# a voice chat server
+sudo systemctl status mumble-server.service
 ```
