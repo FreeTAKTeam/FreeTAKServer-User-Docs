@@ -91,32 +91,32 @@ curl ifconfig.me/ip
 ```
 Here is an example capturing the wired LAN address:
 ```bash
-export MY_IP=$(ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
+export MY_IPA=$(ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
 ```
 
 It will be helpful to create an environment parameter
 to remember the IP address you selected.
 ```bash
-export MY_IP=<the appropriate IP address>
+export MY_IPA=<the appropriate IP address>
 ```
 ??? example "Here is an example capturing the wired LAN address:"
     ```bash
-    export MY_IP=$(ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
+    export MY_IPA=$(ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
     ```
 
 ## Run the Zero Touch Installer (ZTI)
 
 With an appropriate IP address in hand you can run the `ZTI`.
 ```bash
-wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --ip-addr ${MY_IP}
+wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --ip-addr ${MY_IPA}
 ```
 ??? tip "Alternate, full path."
     ```bash
-    wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/main/scripts/easy_install.sh | sudo bash -s -- --ip-addr ${MY_IP}
+    wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/main/scripts/easy_install.sh | sudo bash -s -- --ip-addr ${MY_IPA}
     ```
 
 ## How `ZT` works
-The command `wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --ip-addr ${MY_IP} `
+The command `wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --ip-addr ${MY_IPA} `
 is a combination of several commands and options used together to perform a specific task.
 Here's a breakdown of what each part of the command does:
 
@@ -160,14 +160,14 @@ or when reading input through a pipe.
 : End of options.
 Anything further on the command line is an argument, not an option.
 
---ip-addr ${MY_IP}
-: Provide an argument to configure FTS with a specific, `MY_IP`, IP address.
+--ip-addr ${MY_IPA}
+: Provide an argument to configure FTS with a specific, `MY_IPA`, IP address.
 
 
-Putting it all together, `wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --ip-addr ${MY_IP}`
+Putting it all together, `wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --ip-addr ${MY_IPA}`
 downloads the content from the URL shortened as `bit.ly/freetakhub2`,
 then immediately executes that content as a bash script with superuser privileges.
-Providing an argument to configure FTS with a specific IP address.
+A specific IP address (MY_IPA) is provided as an argument to configure FTS.
 
 
 ## `ZTI` Legacy Argument
@@ -189,20 +189,21 @@ wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --legacy
 However, there are many corner cases which `ZeroTouch` may miss.
 Many (if not all) of the choices made by `ZeroTouch` are written to stdout.
 I recommend that you validate the properties in that output.
-I recommend that you stop the fts services prior to reconfiguration.
+You should stop the fts services prior to reconfiguration,
+and you must start (restart) the fts services after reconfiguration.
 
 * [Service Management](../../../administration/Operation/fts-service-mgmt.md)
 * [Configuration](../../../administration/Operation/fts-config.md)
 
 ### FTS User Interface
 
-* http://[use MY_IP here]:5000/index
+* http://[use MY_IPA here]:5000/index
 * username: `admin`
 * password: `password`
 
 ### FTS Hub : Node-Red
 
-* http://[use MY_IP here]:1880
+* http://[use MY_IPA here]:1880
 * username: `admin`
 * password: `password`
 
