@@ -81,7 +81,7 @@ Show the assigned IPv4 LAN addresses:
 ```bash
 ip -4 addr
 ```
-??? tip Extract specific LAN addresses
+??? tip "Extract specific LAN addresses"
     Wired, ethernet, RJ45
     ```bash
     ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
