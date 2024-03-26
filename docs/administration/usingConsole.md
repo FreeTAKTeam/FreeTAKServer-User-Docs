@@ -8,7 +8,7 @@ The suggested way to edit Configuration files is by using [WinSCP](../Installati
 However, if you need to edit files in the console you need to use `vim`. 
 
  * Open a console
- * go to ```cd /usr/local/lib/python3.11/dist-packages/FreeTAKServer-UI/app```
+ * go to ```cd /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer-UI/app```
  * type ```ls``` to see the list of files
  * type ```vim __init__.py```
    *  To go into write mode type 'i'.

@@ -44,25 +44,25 @@ FileSystem:
   FTS_CONFIG_PATH: /opt/FTSConfig.yaml
   FTS_DB_PATH: /opt/FreeTAKServer.db
   FTS_COT_TO_DB: True
-  FTS_MAINPATH: /usr/local/lib/python3.11/dist-packages/FreeTAKServer
-  FTS_CERTS_PATH: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/certs
-  FTS_EXCHECK_PATH: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/ExCheck
-  FTS_EXCHECK_TEMPLATE_PATH: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/ExCheck/template
-  FTS_EXCHECK_CHECKLIST_PATH: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/ExCheck/checklist
-  FTS_DATAPACKAGE_PATH: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/FreeTAKServerDataPackageFolder
-  FTS_LOGFILE_PATH: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/Logs
+  FTS_MAINPATH: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer
+  FTS_CERTS_PATH: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs
+  FTS_EXCHECK_PATH: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/ExCheck
+  FTS_EXCHECK_TEMPLATE_PATH: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/ExCheck/template
+  FTS_EXCHECK_CHECKLIST_PATH: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/ExCheck/checklist
+  FTS_DATAPACKAGE_PATH: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/FreeTAKServerDataPackageFolder
+  FTS_LOGFILE_PATH: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/Logs
 Certs:
-  FTS_SERVER_KEYDIR: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/certs/server.key
-  FTS_SERVER_PEMDIR: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/certs/server.pem
-  FTS_TESTCLIENT_PEMDIR: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/certs/Client.pem
-  FTS_TESTCLIENT_KEYDIR: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/certs/Client.key
-  FTS_UNENCRYPTED_KEYDIR: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/certs/server.key.unencrypted
-  FTS_SERVER_P12DIR: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/certs/server.p12
-  FTS_CADIR: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/certs/ca.pem
-  FTS_CAKEYDIR: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/certs/ca.key
-  FTS_FEDERATION_CERTDIR: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/certs/server.pem
-  FTS_FEDERATION_KEYDIR: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/certs/server.key
-  FTS_CRLDIR: /usr/local/lib/python3.11/dist-packages/FreeTAKServer/certs/FTS_CRL.json
+  FTS_SERVER_KEYDIR: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/server.key
+  FTS_SERVER_PEMDIR: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/server.pem
+  FTS_TESTCLIENT_PEMDIR: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/Client.pem
+  FTS_TESTCLIENT_KEYDIR: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/Client.key
+  FTS_UNENCRYPTED_KEYDIR: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/server.key.unencrypted
+  FTS_SERVER_P12DIR: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/server.p12
+  FTS_CADIR: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/ca.pem
+  FTS_CAKEYDIR: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/ca.key
+  FTS_FEDERATION_CERTDIR: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/server.pem
+  FTS_FEDERATION_KEYDIR: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/server.key
+  FTS_CRLDIR: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/FTS_CRL.json
   FTS_FEDERATION_KEYPASS: [YOURPASS]
   FTS_CLIENT_CERT_PASSWORD: [YOURPASS]
   FTS_WEBSOCKET_KEY: [YOURPASS]

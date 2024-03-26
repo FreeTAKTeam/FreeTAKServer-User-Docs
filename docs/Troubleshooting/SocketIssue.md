@@ -38,9 +38,9 @@ sudo reboot -n
 
 !!! note
     The FTS certs directory can generally be found at
-```shell
-/usr/local/lib/python{{ python_version }}/dist-packages/FreeTAKServer/certs
-```
+    ```shell
+    /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs
+    ```
 
 # SSL issue: Change the Number of max file open
 If you have an issue with SSL probably depends on a limited amount of socket files you can open on the machine.
