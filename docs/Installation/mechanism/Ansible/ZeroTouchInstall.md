@@ -191,7 +191,7 @@ Many (if not all) of the choices made by `ZeroTouch` are written to stdout.
 I recommend that you validate the properties in that output.
 I recommend that you stop the fts services prior to reconfiguration.
 
-* [Service Management](../../../administration/Operation/fts-config.md)
+* [Service Management](../../../administration/Operation/fts-service-mgmt.md)
 * [Configuration](../../../administration/Operation/fts-config.md)
 
 ### FTS User Interface
