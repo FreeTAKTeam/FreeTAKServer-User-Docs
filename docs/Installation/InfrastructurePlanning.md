@@ -10,6 +10,11 @@ status: current
 
 TAK Infrastructure thoughts: Give some thought to how you are going to deploy FTS server.
 
+!!! info "DISCLAIMER"
+    It is impossible to cover all the combinations,
+    so this is not to be blindly applied,
+    rather to provide some background.
+
 1. **Cloud** - A virtually hosted server allowing the quickest deployment
    and scalability to as many users as you may wish
 2. **LAN** - An local server located on your home/office LAN.
