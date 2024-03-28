@@ -151,7 +151,7 @@ https://mermaid.js.org/
 
 ### PlantUML
 
-There are some case where `Mermaid` is not sufficient such as making `Network Deployment Diagrams`.
+There are some cases where `Mermaid` is not sufficient such as making `Network Deployment Diagrams`.
 When that happens we use `PlantUML`.
 
 https://github.com/plantuml-stdlib/C4-PlantUML/blob/master/README.md

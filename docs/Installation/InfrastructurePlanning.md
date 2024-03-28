@@ -123,6 +123,7 @@ which you can use to develop your network model.
 
 ??? info "C4 References"
     * [PlantUML: C4 Library](https://plantuml.com/stdlib#062f75176513a666)
+    * [PlantUML: C4 Source](https://github.com/plantuml-stdlib/C4-PlantUML/blob/master/README.md)
 
 The following example is for a Raspberry Pi deployment using the Zero-Touch installer.
 It assumes the Router assigns IP addresses via DHCP.
