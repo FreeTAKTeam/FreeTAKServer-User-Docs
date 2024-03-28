@@ -121,6 +121,9 @@ For uniformity, we recommend [`C4Model`](https://c4model.com).
 The specific tool [`PlantUML`](https://www.plantuml.com/plantuml/uml),
 which you can use to develop your network model.
 
+??? info "C4 References"
+    * [PlantUML: C4 Library](https://plantuml.com/stdlib#062f75176513a666)
+
 The following example is for a Raspberry Pi deployment using the Zero-Touch installer.
 It assumes the Router assigns IP addresses via DHCP.
 Further, the Router reliably assigns the same IP address
