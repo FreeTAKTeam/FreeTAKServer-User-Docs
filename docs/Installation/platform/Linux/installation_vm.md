@@ -51,9 +51,7 @@ The [complete ZTI instructions are here](../../mechanism/Ansible/ZeroTouchInstal
 
 ## Getting Support
 
-Support is provided on the FTS Discord server.
-
-https://discord.gg/m8cBzQM2te
+Support is provided on the [FTS Discord server](https://discord.gg/m8cBzQM2te) by volunteers.
 
 Use the Discord `#development-support` Support channel.
 The Linux support is primarily for developers.

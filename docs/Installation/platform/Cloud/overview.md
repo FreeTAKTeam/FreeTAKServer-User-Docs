@@ -83,8 +83,6 @@ but it is best to leave that until you have some experience.
 
 ## Getting Support
 
-Support is provided on the FTS Discord server.
-
-https://discord.gg/m8cBzQM2te
+Support is provided on the [FTS Discord server](https://discord.gg/m8cBzQM2te) by volunteers.
 
 Use the Discord `#installation-support-cloud` Support channel.
