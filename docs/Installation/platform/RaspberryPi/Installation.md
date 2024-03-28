@@ -111,6 +111,14 @@ Yow will probably need to install with an explicit IP address.
 The [complete ZTI instructions are here](../../mechanism/Ansible/ZeroTouchInstall.md).
 
 
+## Getting Support
+
+Support is provided on the FTS Discord server.
+
+https://discord.gg/m8cBzQM2te
+
+Use the Discord `#installation-support-pi` Support channel.
+
 ## RPiFTS Series
 
 GHOST_DA-B6 has created a set of videos on `youtube` detailing how to install

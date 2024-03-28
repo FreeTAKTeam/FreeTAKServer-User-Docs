@@ -47,3 +47,13 @@ multipass shell fts-test
 Yow will probably need to install with an explicit IP address.
 
 The [complete ZTI instructions are here](../../mechanism/Ansible/ZeroTouchInstall.md).
+
+
+## Getting Support
+
+Support is provided on the FTS Discord server.
+
+https://discord.gg/m8cBzQM2te
+
+Use the Discord `#development-support` Support channel.
+The Linux support is primarily for developers.

@@ -80,3 +80,11 @@ You can now install FTS using the [ZeroTouch-Installer](../../mechanism/Ansible/
 
 [Installation can also be done manually](../../mechanism/Manual/Installation.md),
 but it is best to leave that until you have some experience.
+
+## Getting Support
+
+Support is provided on the FTS Discord server.
+
+https://discord.gg/m8cBzQM2te
+
+Use the Discord `#installation-support-cloud` Support channel.
