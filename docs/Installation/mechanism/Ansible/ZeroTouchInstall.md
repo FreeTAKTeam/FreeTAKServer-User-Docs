@@ -165,11 +165,17 @@ Anything further on the command line is an argument, not an option.
 --ip-addr ${MY_IPA}
 : Provide an argument to configure FTS with a specific, `MY_IPA`, IP address.
 
+??? warning "Variable Expansion"
+    The command `wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --ip-addr ${MY_IPA}` presumes that the variable `MY_IPA` has been set.
+    If `export MY_IPA=192.168.1.100` then, the statement expands to 
+    `wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --ip-addr 192.168.1.100`,
+    and NOT to `wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --ip-addr $192.168.1.100`
+
 
 Putting it all together, `wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --ip-addr ${MY_IPA}`
 downloads the content from the URL shortened as `bit.ly/freetakhub2`,
 then immediately executes that content as a bash script with superuser privileges.
-A specific IP address (MY_IPA) is provided as an argument to configure FTS.
+A specific IP address (stored in the variable `MY_IPA`, expanded) is provided as an argument to configure FTS.
 
 
 ## `ZTI` Legacy Argument
