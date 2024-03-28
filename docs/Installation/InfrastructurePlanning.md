@@ -118,12 +118,13 @@ Once you have a configuration that gives you a working system,
 you are encouraged to construct a similar diagram for your specific situation.
 Such a diagram will be essential when communicating about your system.
 For uniformity, we recommend [`C4Model`](https://c4model.com).
-The specific tool [`Mermaid2`](https://mermaid.js.org/syntax/c4.html),
+The specific tool [`PlantUML`](https://www.plantuml.com/plantuml/uml),
 which you can use to develop your network model.
+
 The following example is for a Raspberry Pi deployment using the Zero-Touch installer.
 It assumes the Router assigns IP addresses via DHCP.
-Further, the Router reliably assigns the same IP address to the Raspberry Pi by using its network-interface MAC.
-
+Further, the Router reliably assigns the same IP address
+to the Raspberry Pi by using its network-interface MAC.
 
 #### Deployment Diagram
 
