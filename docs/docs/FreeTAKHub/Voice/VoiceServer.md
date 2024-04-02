@@ -67,22 +67,24 @@ for example if your IP is 117.154.131.250 and registerName is 'ftsmurmur'
 openssl req -x509 -sha256 -nodes -days 1080 -newkey rsa:2048 -keyout ftsmurmur.key -out ftsmurmur.cer -subj '/CN=117.154.131.250' -addext extendedKeyUsage=1.3.6.1.5.5.7.3.1
 ```
 
-## Use the voice Tak plugin
-now create a certificate for local CA
+## OPTIONAL: Use the voice Tak plugin
+n order to ensure the security of your Mumble Server connection TLS is utilised.
+The [TAK Voice Plugin](https://play.google.com/store/apps/details?id=com.atakmap.android.gbr.vx.plugin&hl=en_US&gl=US) will only connect to Mumble Servers whose server certificate is trusted and contains the full certificate chain as the whole chain is validated.
+if you want to use the plugin you must create a certificate for local CA.
+On the server, where the certs were created type:
 ```
 openssl x509 -in ftsmurmur.cer -outform der -out ftsmurmur.der
 ```
-Transfer the Certificate to Your Android Device:
-
+### Transfer the Certificate to Your Android Device
 Connect your device to your computer via USB, email the certificate to an account accessible from your device, or use a cloud storage service to transfer the ftsmurmur.der file to your Android device.
-Install the Certificate:
 
-### For Android Nougat (7.0) and above:
+### Install the Certificate on your device
+tested for For Android Nougat (7.0) and above
 
-Go to Settings > Security & location > Encryption & credentials (the exact path might vary).
-Tap Install a certificate > CA certificate.
-Navigate to the location where you saved the certificate file on your device.
-Select the certificate file to be installed. You might need to change the file type to "All files" or similar to see the DER file.
+* Go to Settings > Security & location > Encryption & credentials (the exact path might vary).
+* Tap Install a certificate > CA certificate.
+* Navigate to the location where you saved the certificate file on your device.
+* Select the certificate file to be installed (e.g. ftsmurmur.der). You might need to change the file type to "All files" or similar to see the DER file.
 
 
 ## Init configuration
