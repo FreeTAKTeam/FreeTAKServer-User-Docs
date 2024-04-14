@@ -23,7 +23,6 @@ the [FTH](fts-hub-server).
 ## Integration Connection (websocket port 8000)
 
 
-
 ## Zero Touch Installer (`ZTI`)
 
 `ZeroTouch` makes assumptions configuring the system. 
