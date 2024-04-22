@@ -50,7 +50,7 @@ FTS makes use of this capability.
 You should generate the documentation with your changes to make sure nothing was inadvertently broken.
 The following shows you an example of how to set up `gh-pages` for your project repository.
 
-![](images/github-pages.png)
+![](images/github-pages-branch.png)
 
 The important thing here is to select `[GitHub Actions]`.
 
