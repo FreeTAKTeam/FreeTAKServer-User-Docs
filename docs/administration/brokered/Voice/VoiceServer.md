@@ -68,7 +68,7 @@ openssl req -x509 -sha256 -nodes -days 1080 -newkey rsa:2048 -keyout ftsmurmur.k
 ```
 
 ## OPTIONAL: Use the voice Tak plugin
-n order to ensure the security of your Mumble Server connection TLS is utilised.
+In order to ensure the security of your Mumble Server connection TLS is utilised.
 The [TAK Voice Plugin](https://play.google.com/store/apps/details?id=com.atakmap.android.gbr.vx.plugin&hl=en_US&gl=US) will only connect to Mumble Servers whose server certificate is trusted and contains the full certificate chain as the whole chain is validated.
 if you want to use the plugin you must create a certificate for local CA.
 On the server, where the certs were created type:
