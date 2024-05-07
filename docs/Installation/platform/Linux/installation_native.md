@@ -10,7 +10,7 @@ status: current
 This guide will walk you through installing FreeTAKServer 2.1 in a python virtual environment.
 These instructions are on preparing an Ubuntu OS suitable for using the FTS Zero Touch Installer.
 
-## Install FTS on the VM
+## Install FTS on Native Ubuntu
 
 Yow will probably need to install with an explicit IP address.
 

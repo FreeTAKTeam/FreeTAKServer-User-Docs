@@ -104,7 +104,7 @@ Verify the following packages are installed.
 sudo apt install -y wget curl
 ```
 
-## Install FTS on the VM
+## Install FTS on the Raspberry Pi
 
 Yow will probably need to install with an explicit IP address.
 
