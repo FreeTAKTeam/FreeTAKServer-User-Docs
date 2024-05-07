@@ -61,10 +61,10 @@ Run one of the following (equivalent) commands to start the [ZeroTouch](../../me
 ```bash
 wget -qO - bit.ly/freetakhub2 | sudo bash
 ```
-Alternate, full path.
-```bash
-wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/main/scripts/easy_install.sh | sudo bash
-```
+??? tip "Alternate, full path."
+    ```bash
+    wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/main/scripts/easy_install.sh | sudo bash
+    ```
 
 ### Explicit IP Address
 
@@ -177,19 +177,53 @@ downloads the content from the URL shortened as `bit.ly/freetakhub2`,
 then immediately executes that content as a bash script with superuser privileges.
 A specific IP address (stored in the variable `MY_IPA`, expanded) is provided as an argument to configure FTS.
 
+## Atypical Optional Behavior
 
-## `ZTI` Legacy Argument
+As mentioned previously you can see several atypical behaviors are available.
+They are documented here.
+
+### `ZTI` `--help` Argument
+??? tip "show usage."
+    ```bash
+    wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --help
+    ```
+
+### `ZTI` `--verbose` Argument
+??? tip "Verbose output."
+    ```bash
+    wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --verbose
+    ```
+    Print script debugging information.
+
+### `ZTI` `--pypi` Argument
+??? tip "Explicitly set the URL for the PYPI repository"
+    ```bash
+    wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --pypi https://test.pypi.org
+    ```
+    Generally, `pip` acquires python packages from https://pypi.org,
+    this option makes it possible to use an alternate repository.
+
+### `ZTI` Legacy Argument
 
 If you are still wanting to use the previous "legacy" version,
-please use the following command (please note this must be done in Ubuntu 22.04)
+use this option.
 
-```console
-wget -qO - bit.ly/freetakhub2 | sudo INSTALL_TYPE=legacy bash
-```
-or
+Note:: the legacy version only works with Ubuntu 20.04
+
 ```console
 wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --legacy
 ```
+??? tip "Alternate, environment variable."
+    ```console
+    wget -qO - bit.ly/freetakhub2 | sudo INSTALL_TYPE=legacy bash
+    ```
+
+### `ZTI` `--repo` Argument
+
+??? tip "testing a forked repository."
+    ```console
+    wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --repo 
+    ```
 
 ## Operation
 
