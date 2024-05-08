@@ -6,7 +6,7 @@ Please download the web UI manual [here](../administration/FTS_UI_Documention.pd
 
 FreeTAK Server User Manual![](https://lh5.googleusercontent.com/ij08rxlH5r5aoXwPkDa4M2uwY3ogIZ16LG2R05Ayam3KQ2WXnd_zU4ZFS-hkDCPhkxgrgbJJ1p60b0rV79fUmCisbk5RIU0l6eNSt6AmAeNYPmYUZWyKnvtoSIyaqvH3gxIojRAh5XQ-oSeOOuxG)
 
-FTS V. 2.1
+FTS V. 2.x
 
 Nov 2023
 

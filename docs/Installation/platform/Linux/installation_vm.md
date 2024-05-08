@@ -1,7 +1,7 @@
 
 # FreeTAK Server Installation on an Ubuntu Virtual Machine
 
-This guide will walk you through installing FreeTAKServer 2.1 on an Ubuntu virtual machine.
+This guide will walk you through installing FreeTAKServer 2.x on an Ubuntu virtual machine.
 These instructions are on preparing an Ubuntu VM suitable for using the FTS Zero Touch Installer.
 
 Obviously, the ZTI can be installed in a clean native Ubuntu environment.

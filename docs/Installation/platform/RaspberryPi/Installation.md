@@ -10,7 +10,7 @@ you need a RaspPi with at least 4 GB RAM
 
 ### Prepare an SD Card
 Start with new installation of ubuntu 22.04 server for RaspPi 64.
-FTS 2.1 expects [Ubuntu 22.04 (64 bit)](https://ubuntu.com/download/raspberry-pi/thank-you?version=22.04.3&architecture=server-arm64+raspi).
+FTS 2.x expects [Ubuntu 22.04 (64 bit)](https://ubuntu.com/download/raspberry-pi/thank-you?version=22.04.3&architecture=server-arm64+raspi).
 
 You will need an imager.
 
