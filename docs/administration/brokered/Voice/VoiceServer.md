@@ -1,6 +1,3 @@
----
-status: ood
----
 
 # FreeTAKHub Voice installation
 

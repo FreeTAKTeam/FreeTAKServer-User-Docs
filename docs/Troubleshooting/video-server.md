@@ -1,9 +1,5 @@
----
-status: ood
----
 
 # Video Server (third party application)
-
 
 ![image](../Installation/images/zero-touch-deply-default.png)
 

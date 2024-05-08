@@ -1,6 +1,3 @@
----
-status: ood
----
 
 ## Connecting to FTS Public Server 
 

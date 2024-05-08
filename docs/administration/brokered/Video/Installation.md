@@ -1,6 +1,3 @@
----
-status: ood
----
 
 # Video Server
 MediaMTX is a RTSP / RTPM capable software to stream in real time from / to TAK devices.

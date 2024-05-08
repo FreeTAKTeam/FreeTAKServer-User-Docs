@@ -1,8 +1,6 @@
----
-status: todo
----
 
 # About [MIL-STD-2525](https://en.wikipedia.org/wiki/NATO_Joint_Military_Symbology) and CoT
+
 The Center on Target (CoT) is a data exchange format primarily used in military and emergency response applications such as the TAK ecosystem.
 It is designed to facilitate real-time sharing of geospatial information among various systems and users. 
 The CoT protocol enables efficient communication of location, status, and other relevant situational data,

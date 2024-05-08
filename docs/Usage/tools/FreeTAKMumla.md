@@ -1,6 +1,3 @@
----
-status: current
----
 
 # FreeTAKMumla Plugin
 An `ATAK` plugin that creates a button overlay for PPT.

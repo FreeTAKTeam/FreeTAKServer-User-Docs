@@ -1,6 +1,3 @@
----
-status: current
----
 
 # FreeTAK Server Installation
 This guide will walk you through installing FreeTAKServer 2.1

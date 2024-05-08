@@ -1,8 +1,6 @@
----
-status: current
----
 
-# Zero Touch Installation (ZTI)
+# Zero Touch Installation (ZTI) 
+
 The ZeroTouch (ZT or ZTI) installation is the easiest way to install FTS. 
 Has been tested on the [cloud](../../platform/Cloud/AWS.md) and
 on the [RasberryPi](../../platform/RaspberryPi/Installation.md);

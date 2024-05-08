@@ -1,6 +1,3 @@
----
-status: current
----
 
 # [RTSP](https://en.wikipedia.org/wiki/Real-Time_Streaming_Protocol)
 

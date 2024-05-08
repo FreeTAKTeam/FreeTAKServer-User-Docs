@@ -1,6 +1,3 @@
----
-status: current
----
 
 # ExCheck
 `ExCheck` is a plugin for `ATAK` and `WinTAK`.

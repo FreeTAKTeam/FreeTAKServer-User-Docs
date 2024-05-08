@@ -1,7 +1,3 @@
----
-status: warning
----
-
 
 # Multiple Servers on Single Host
 

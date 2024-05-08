@@ -1,6 +1,3 @@
----
-status: ood
----
 
 # Configure and Connect to your cloud server
 In this example we will use the provider Digital Ocean

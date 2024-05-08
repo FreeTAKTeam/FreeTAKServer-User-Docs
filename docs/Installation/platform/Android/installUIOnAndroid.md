@@ -1,6 +1,3 @@
----
-status: ood
----
 
 # FTS-UI Installation with Android
 FTS-UI is installed with python's pip.

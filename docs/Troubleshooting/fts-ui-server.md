@@ -1,6 +1,3 @@
----
-status: ood
----
 
 # Free TAK Server User Interface
 

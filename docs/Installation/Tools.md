@@ -1,6 +1,3 @@
----
-status: current
----
 
 ## Helpful Tools
 

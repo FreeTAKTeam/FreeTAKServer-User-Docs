@@ -1,6 +1,3 @@
----
-status: todo
----
 
 # Work in progress CoT Hierarchy Tree
 

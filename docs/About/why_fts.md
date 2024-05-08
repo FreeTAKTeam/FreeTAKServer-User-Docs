@@ -1,6 +1,3 @@
----
-status: ood
----
 
 I want to emphasize a key principle:
 "Before you ask, ask yourself what you can give."

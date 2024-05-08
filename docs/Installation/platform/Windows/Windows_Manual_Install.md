@@ -1,6 +1,3 @@
----
-status: ood
----
 
 # FreeTAKServer Install On Windows Computer
 

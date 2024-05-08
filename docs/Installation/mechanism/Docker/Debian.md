@@ -1,7 +1,3 @@
----
-status: warning
----
-
 
 # Debian
 This is assuming a fresh installation of Debian 10.

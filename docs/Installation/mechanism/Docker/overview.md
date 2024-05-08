@@ -1,7 +1,3 @@
----
-status: warning
----
-
 
 # Install
 

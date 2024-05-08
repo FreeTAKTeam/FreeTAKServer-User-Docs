@@ -1,6 +1,3 @@
----
-status: ood
----
 
 # FreeTAKHub Node-RED
 This document describes how to install and secure Node-RED.

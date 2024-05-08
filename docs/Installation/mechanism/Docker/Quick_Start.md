@@ -1,7 +1,6 @@
----
-status: current
----
+
 # Container Quick-Start
+
 ## Runtimes
 Compatible with Podman or docker runtimes.
 

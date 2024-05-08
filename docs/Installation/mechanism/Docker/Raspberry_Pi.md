@@ -1,6 +1,3 @@
----
-status: ood
----
 
 # Raspberry Pi 4/Raspberry Pi 3
 It is recommended to use a Raspberry Pi 4 with 4GB or 8GB of ram.

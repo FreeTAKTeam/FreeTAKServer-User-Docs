@@ -1,6 +1,3 @@
----
-status: ood
----
 
 # How to autostart the video server on the Pi
 

@@ -1,6 +1,3 @@
----
-status: ood
----
 
 # FTS Installation with Android
 FTS 1.6 supports Android deployment.

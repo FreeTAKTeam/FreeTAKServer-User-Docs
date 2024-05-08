@@ -1,6 +1,3 @@
----
-status: todo
----
 
 # Center On Target (CoT)
 

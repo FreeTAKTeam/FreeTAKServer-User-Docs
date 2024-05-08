@@ -95,10 +95,7 @@ We support a public instance of FTS hosted by DigitalOcean.
 - for a full tutorial see the [article](About/PubServer.md)
 
 !!! warning
-    Old Documentation Ahead!
-    Much of the documentation is for the **OLD** FTS (pre 2.X) implementation and maybe not correct.
-    If you are following instructions marked as other than "current",
-    you may not get the result you want.
-    New documentation is in the works, and will be released ASAP.
-    The pages are now being marked to indicate their maturity.
-
+    The documentation for FTS is a work-in-progress.
+    If you find any of the documentation confusing please discuss it on the [FTS Discord server](https://discord.gg/m8cBzQM2te) .
+    Please [report any errors as an issue](https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs/issue).
+    

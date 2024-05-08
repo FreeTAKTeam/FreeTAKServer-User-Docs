@@ -1,6 +1,3 @@
----
-status: ood
----
 
 # Unix Console 
 ## how to edit the Config Files

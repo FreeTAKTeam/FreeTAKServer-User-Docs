@@ -1,6 +1,3 @@
----
-status: ood
----
 
 # REST API - Public
 

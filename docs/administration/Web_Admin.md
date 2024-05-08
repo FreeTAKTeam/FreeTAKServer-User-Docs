@@ -1,6 +1,3 @@
----
-status: ood
----
 
 # Administration Manual WebUI
 FTS has a web UI since version 1.5.

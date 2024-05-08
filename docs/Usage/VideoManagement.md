@@ -1,6 +1,3 @@
----
-status: ood
----
 
 # Video Management
 Since version 1.9 FTS supports a complete video management function.

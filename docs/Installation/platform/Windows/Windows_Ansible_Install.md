@@ -1,6 +1,3 @@
----
-status: ood
----
 
 # Install FreeTAKHub with Ansible
 

@@ -1,6 +1,3 @@
----
-status: todo
----
 
 # **CoT Domain Model**
 

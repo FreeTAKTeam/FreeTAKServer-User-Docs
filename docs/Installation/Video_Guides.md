@@ -1,6 +1,3 @@
----
-status: ood
----
 
 ## Official FreeTAKTeam channel
 [FreeTAKTeam](https://www.youtube.com/channel/UCJJOterycd1UuulmQGEV8Iw/featured) `youtube` channel

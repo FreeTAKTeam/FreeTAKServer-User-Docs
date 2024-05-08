@@ -1,6 +1,3 @@
----
-status: ood
----
 
 ## About webmap
 The webmap provides insights of user presence and CoT's shared with everyone.

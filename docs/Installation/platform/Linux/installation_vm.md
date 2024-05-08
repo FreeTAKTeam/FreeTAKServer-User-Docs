@@ -1,6 +1,3 @@
----
-status: current
----
 
 # FreeTAK Server Installation on an Ubuntu Virtual Machine
 

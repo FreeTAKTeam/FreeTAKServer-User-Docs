@@ -1,6 +1,3 @@
----
-status: ood
----
 
 # Setup a development environment for FTS
 ## introduction

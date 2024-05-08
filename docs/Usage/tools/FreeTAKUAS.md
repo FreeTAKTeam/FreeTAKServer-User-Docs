@@ -1,6 +1,3 @@
----
-status: ood
----
 
 ![freeTAKUAS_Logo](https://user-images.githubusercontent.com/60719165/124395705-edc52180-dcdb-11eb-879b-725d486eaa43.png)
 

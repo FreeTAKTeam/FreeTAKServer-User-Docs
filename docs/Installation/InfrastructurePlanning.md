@@ -1,6 +1,3 @@
----
-status: current
----
 
 `FTS` has been installed on several platforms using different mechanisms.
 

@@ -1,9 +1,5 @@
----
-status: ood
----
 
 # Free TAK Server : core
-
 
 ![image](../Installation/images/zero-touch-deply-default.png)
 

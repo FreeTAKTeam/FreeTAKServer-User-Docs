@@ -1,6 +1,3 @@
----
-status: warning
----
 
 # CLI Access
 

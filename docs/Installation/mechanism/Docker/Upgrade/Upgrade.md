@@ -1,6 +1,3 @@
----
-status: warning
----
 
 # Upgrading Existing Container
 To upgrade the container to a new version you simply
