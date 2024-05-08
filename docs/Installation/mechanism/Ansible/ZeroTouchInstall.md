@@ -222,7 +222,9 @@ wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --legacy
 
 ??? tip "testing a forked repository."
     ```console
-    wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --repo 
+    export MY_IPA=10.2.118.124
+    export MY_REPO=babeloff
+    wget -qO - https://raw.githubusercontent.com/${MY_REPO}/FreeTAKHub-Installation/main/scripts/easy_install.sh | sudo bash -s -- --ip-addr ${MY_IPA} --repo https://github.com/${MY_REPO}/FreeTAKHub-Installation.git 
     ```
 
 ## Operation
