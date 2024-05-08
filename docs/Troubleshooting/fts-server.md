@@ -22,7 +22,7 @@ Validate the properties set in the `fts-ui` configuration file.
 
 [Verify and/or Edit the `fts` configuration file](../administration/usingConsole.md)  
 ```
-/opt/FTSConfig.yaml
+/opt/fts/FTSConfig.yaml
 ```
 Here is a fragment of that configuration file.
 ```yaml

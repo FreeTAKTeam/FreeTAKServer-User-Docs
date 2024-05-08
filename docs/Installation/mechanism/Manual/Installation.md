@@ -309,7 +309,7 @@ In virtualenv installations,
 it is inside the virtualenv directory.
 
 The wizard creates the YAML configuration file under the location you selected,
-the default location is `/opt/FTSConfig.yaml`.
+the default location is `/opt/fts/FTSConfig.yaml`.
 
 FreeTAKServer will then proceed start all the services.
 

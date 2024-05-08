@@ -68,7 +68,7 @@ nohup sudo python3 -m FreeTAKServer.controllers.services.FTS
 
 Start the WebUI
 ```bash
-nohup sudo python3 /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer-UI/run.py
+nohup sudo python3 /opt/fts.venv/lib/python3.11/site-packages/FreeTAKServer-UI/run.py
 ```
 
 # Basics
