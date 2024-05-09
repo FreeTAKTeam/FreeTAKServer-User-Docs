@@ -22,4 +22,6 @@ sudo rm -r /usr/local/lib/python3.11/FreeTAKServer
 	sudo nano /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer-UI/config.py
 	Change the IP and WEBMAPIP to the address of your FTS server
 	Change the APPIP to 0.0.0.0
-	Start/Stop services
+	
+### Restart Services
+    Start/Stop services
