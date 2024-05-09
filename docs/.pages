@@ -1,0 +1,9 @@
+nav:
+    - Overview: index.md
+    - About: About
+    - Try Me: Usage
+    - Installation: Installation
+    - Troubleshooting: Troubleshooting
+    - Administration: administration
+    - How to Help: HowToHelp
+    - API: API

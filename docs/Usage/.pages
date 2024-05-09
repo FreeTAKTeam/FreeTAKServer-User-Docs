@@ -1,0 +1,8 @@
+nav:
+    - Connect Clients:
+        - ATAK: Connecting_ATAK.md
+        - WinTAK: Connecting_WinTAK.md
+    - Connect Plugin:
+        - Execution Checker: ExCheck.md
+        - Video Management: VideoManagement.md
+    - TAK Tools: tools

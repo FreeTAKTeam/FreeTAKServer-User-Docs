@@ -13,20 +13,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v4
+      - name: Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+      - uses: actions/setup-python@v5
         with:
           python-version: 3.x
-#      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
-#      - uses: actions/cache@v3
-#        # https://github.com/actions/cache
-#        with:
-#          key: mkdocs-material-${{ env.cache_id }}
-#          path: .cache
-#          restore-keys: |
-#            mkdocs-material-
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+      - uses: actions/cache@v4
+        # https://github.com/actions/cache
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
       - run: >-
           pip install mkdocs-material mkdocs-awesome-pages-plugin 
           mkdocs-section-index mkdocs-toc-sidebar-plugin mike 
           markdown-include mkdocs-pdf-export-plugin
+          mkdocs-mermaid2-plugin
+          httplib2
+          mkdocs_build_plantuml_plugin
+          mkdocs-exclude mkdocs-minify-plugin mkdocs-versioning
       # https://www.mkdocs.org/user-guide/cli/#mkdocs-gh-deploy
-      - run: cd docs && mkdocs gh-deploy --force
+      - run: mkdocs gh-deploy --force

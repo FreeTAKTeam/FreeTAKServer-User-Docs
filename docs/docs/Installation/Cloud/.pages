@@ -1,6 +1,0 @@
-title: Cloud Provider
-
-nav:
-    - Overview: overview.md
-    - Amazon Web Service (AWS): AWS.md
-    - Digital Ocean with Terraform: DigitalOcean_with_Terraform.md

@@ -1,8 +1,0 @@
-title: Linux
-
-nav:
-    - Installation: Installation.md
-    - Manual Configuration: ManualConfiguration.md
-    - Running from Terminal: Running.md
-    - Running as a Service: Service.md
-    - Upgrading: Update.md

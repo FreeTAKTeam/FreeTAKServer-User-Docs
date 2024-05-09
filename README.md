@@ -55,3 +55,24 @@ For example, here is an excerpt from the LICENSE file.
 {!LICENSE!lines=1  3 8-10  2}
 ```
 
+
+### `attr_list`
+The documentation uses the `attr_list` extension which
+adds a syntax to define attributes on the various HTML elements in markdown’s output. 
+The official documentation for `attr_list` is located in the [project repo](https://python-markdown.github.io/extensions/attr_list/).
+
+Some uses:
+
+* resizing images
+* associating classes with elements
+
+
+### `mkdocs-mermaid2-plugin`
+The documentation uses Mermaid2 to make network-deployment-diagrams.
+
+### `mkdocs_build_plantuml`
+The documentation uses PlantUML to make network-deployment-diagrams.
+https://github.com/quantorconsulting/mkdocs_build_plantuml
+This tooling supports more of C4 and UML.
+
+

@@ -1,0 +1,99 @@
+site_name: FreeTAKServer Documentation
+repo_url: https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs
+edit_uri: edit/main/docs/
+site_author: FreeTAKTeam
+copyright: Copyright (c)2022 FreeTAKTeam
+theme:
+  # https://squidfunk.github.io/mkdocs-material/
+  # https://github.com/squidfunk/mkdocs-material/README.md
+  name: 'material'
+  custom_dir: 'overrides/'
+  favicon: 'assets/FTS_Circle.png'
+  logo: 'assets/FTS_Circle.png'
+  features:
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.indexes
+    - navigation.sections
+#    - navigation.expand
+    - navigation.path
+    - toc.follow
+    - toc.integrate
+  icon:
+    admonition:
+      note: octicons/tag-16
+      abstract: octicons/checklist-16
+      info: octicons/info-16
+      tip: octicons/squirrel-16
+      success: octicons/check-16
+      question: octicons/question-16
+      warning: octicons/alert-16
+      failure: octicons/x-circle-16
+      danger: octicons/zap-16
+      bug: octicons/bug-16
+      example: octicons/beaker-16
+      quote: octicons/quote-16
+
+markdown_extensions:
+  - markdown_include.include:
+       base_path: docs
+  - attr_list
+  - pymdownx.superfences:
+      # make exceptions to highlighting of code:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
+  - admonition
+  - pymdownx.details
+
+plugins:
+  - search
+  - awesome-pages
+  - mike:
+      version_selector: true
+  - section-index
+  - build_plantuml:
+      render: 'server'
+      bin_path: "/usr/local/bin/plantuml"
+      server: 'https://www.plantuml.com/plantuml'
+      disable_ssl_certificate_validation: true
+      output_format: 'svg'
+      allow_multiple_roots: false
+      diagram_root: 'docs/diagrams'
+      output_folder: 'gen'
+      input_folder: 'src'
+      input_extensions: 'puml'
+      theme_enabled: true
+  - mermaid2:
+      arguments:
+          theme: 'dark'
+          themeVariables:
+            primaryColor: '#BB2528'
+            primaryTextColor: '#fff'
+            primaryBorderColor: '#7C0000'
+            lineColor: '#F8B229'
+            secondaryColor: '#006100'
+            tertiaryColor: '#fff'
+  - pdf-export:
+      verbose: true
+      media_type: print
+      enabled_if_env: ENABLE_PDF_EXPORT
+
+# extra_css:
+#  - stylesheets/extra.css
+
+extra:
+  version:
+    provider: mike
+    default: latest
+#  status:
+#    new: Recently Added
+#    deprecated: Slated to be Removed
+#    ood: Out of Date
+#    warning: Warning! Badly Out of Date
+#    wip: Work in Progress
+#    current: The Page is Up-to-Date
+

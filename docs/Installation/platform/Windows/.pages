@@ -1,0 +1,5 @@
+title: Windows
+
+nav:
+    - Manual Installation: Windows_Manual_Install.md
+    - Automatic Installation: Windows_Ansible_Install.md
