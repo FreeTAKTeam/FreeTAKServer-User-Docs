@@ -1,30 +1,39 @@
 
-# Update
-in **certain cases**, if you already installed FTS with pip you can use
+# Removing or Updating FTS
+
+In **certain cases**, if you already installed FTS with ZeroTouch Installer or pip you can use
+the pip upgrade command to update your FTS to the current version.
+
+This is **not** warranted to work, so backup your data before attempting.
+
+## To remove your installation:
+
 ```shell
-pip install --upgrade FreeTAKServer[UI]
+sudo rm -r /root/fts.venv/
 ```
-this is **not** warranted to work with version 1.9.9,
-often the best way is to delete the installation (saving first the data) and start from zero.
+## To update your FTS installation:
 
-To remove your installation
+- SSH to your FTS server
+
+- Run upgrade commands:
 ```shell
-sudo rm -r /usr/local/lib/python3.11/FreeTAKServer
+/opt/fts.venv/bin/pip install --upgrade freetakserver-ui
 ```
-
-### SSH to your FTS server
-
-### Run upgrade command:
-	/opt/fts.venv/bin/pip install --upgrade freetakserver-ui
-	/opt/fts.venv/bin/pip install --upgrade freetakserver
+```shell
+/opt/fts.venv/bin/pip install --upgrade freetakserver
+```
 	
-### Reconfigure your config.py file:
+- Reconfigure your config.py file:
+```shell
 	sudo nano /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer-UI/config.py
-	Change the IP and WEBMAPIP to the address of your FTS server
-	Change the APPIP to 0.0.0.0
+		- Change the IP and WEBMAPIP to the address of your FTS server
+		- Change the APPIP to 0.0.0.0
+```
 	
-### Restart Services
+- Restart Services
+```shell
     sudo systemctl stop fts
 	sudo systemctl stop fts-ui
 	sudo systemctl start fts
 	sudo systemctl start fts-ui
+```
