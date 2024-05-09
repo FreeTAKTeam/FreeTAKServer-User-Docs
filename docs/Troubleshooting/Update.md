@@ -24,4 +24,7 @@ sudo rm -r /usr/local/lib/python3.11/FreeTAKServer
 	Change the APPIP to 0.0.0.0
 	
 ### Restart Services
-    Start/Stop services
+    sudo systemctl stop fts
+	sudo systemctl stop fts-ui
+	sudo systemctl start fts
+	sudo systemctl start fts-ui
