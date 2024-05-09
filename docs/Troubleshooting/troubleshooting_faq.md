@@ -66,6 +66,7 @@ Certs:
 ```
 
 ## after XXX months of use the disk is full
+
  * FTS writes the output of the service to a log located here:
 ```
 /var/log/fts/fts-stdout.log
@@ -73,6 +74,7 @@ Certs:
  * depending on inbound traffic, this can become very large and subsequently, need to be manually deleted
 
 ## My XXX component is not connecting / showing
+
 for fts check out 
 ```
 /opt/fts/FTSConfig.yaml

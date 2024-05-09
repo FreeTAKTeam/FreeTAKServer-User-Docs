@@ -21,4 +21,4 @@ see [these notes](../../Troubleshooting/fts-ui-server.md).
 ```
 
 For specific instructions on validating the configuration,
-see [these notes](../../Troubleshooting/fts-server.md).
+see [these notes](../../Troubleshooting/fts-core-server.md).
