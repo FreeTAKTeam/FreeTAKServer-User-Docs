@@ -1,0 +1,159 @@
+!define BORDER_THICKNESS 3
+
+skinparam Padding 4
+skinparam RoundCorner 4
+skinparam Shadowing false
+
+skinparam Default {
+  'FontName "Open Sans Semibold"
+  FontColor FONT_COLOR
+  FontSize 12
+}
+
+skinparam Arrow {
+  Color FONT_COLOR
+  FontColor FONT_COLOR
+  FontStyle Bold
+}
+
+skinparam package {
+  FontColor FONT_COLOR
+  BackgroundColor BG_MAIN_COLOR
+  BorderColor BORDER_COLOR
+}
+skinparam node {
+  FontColor FONT_COLOR
+  BackgroundColor BG_PACKAGE_COLOR
+  BorderColor BORDER_COLOR
+}
+skinparam component {
+  BackgroundColor BG_MAIN_COLOR
+  BorderColor BORDER_COLOR
+  FontColor FONT_COLOR
+  Style uml2
+}
+
+skinparam database {
+  BackgroundColor BG_MAIN_COLOR
+  BorderColor BORDER_COLOR
+  FontColor FONT_COLOR
+}
+
+skinparam cloud {
+  BackgroundColor BG_MAIN_COLOR
+  BorderColor BORDER_COLOR
+  FontColor FONT_COLOR
+}
+
+skinparam collections {
+  BackgroundColor BG_MAIN_COLOR
+  BorderColor BORDER_COLOR
+  FontColor FONT_COLOR
+}
+skinparam Control {
+  BackgroundColor BG_MAIN_COLOR
+  BorderColor BORDER_COLOR
+  FontColor FONT_COLOR
+}
+skinparam Boundary {
+  BackgroundColor BG_MAIN_COLOR
+  BorderColor BORDER_COLOR
+  FontColor FONT_COLOR
+}
+skinparam Entity {
+  BackgroundColor BG_MAIN_COLOR
+  BorderColor BORDER_COLOR
+  FontColor FONT_COLOR
+}
+skinparam interface {
+  BackgroundColor BG_MAIN_COLOR
+  BorderColor BORDER_COLOR
+  FontColor FONT_COLOR
+}
+skinparam SequenceParticipantBorderThickness 3
+skinparam sequence {
+  ParticipantBackgroundColor BG_MAIN_COLOR
+  ParticipantBorderColor BORDER_COLOR
+  ParticipantFontStyle normal
+  ParticipantFontColor FONT_COLOR
+  LifeLineBorderColor BORDER_COLOR
+  LifeLineBackgroundColor BG_MAIN_COLOR
+  ArrowColor FONT_COLOR
+  ArrowBorderColor BORDER_COLOR
+  ArrowFontColor FONT_COLOR
+  ArrowThickness 3
+  ActorBackgroundColor BG_MAIN_COLOR
+  ActorBorderColor BORDER_COLOR
+  ActorFontColor FONT_COLOR
+}
+
+' C4 Styling
+' ##################################
+
+skinparam rectangle<<person>> {
+  StereotypeFontColor FONT_COLOR
+  FontColor FONT_COLOR
+  BackgroundColor BG_MAIN_COLOR
+  BorderColor BORDER_COLOR
+  BorderThickness BORDER_THICKNESS
+}
+
+skinparam rectangle<<external_person>> {
+  StereotypeFontColor FONT_COLOR
+  FontColor FONT_COLOR
+  BackgroundColor BG_SECONDARY_COLOR
+  BorderColor BORDER_COLOR
+  BorderThickness BORDER_THICKNESS
+}
+
+skinparam rectangle<<system>> {
+  StereotypeFontColor FONT_COLOR
+  FontColor FONT_COLOR
+  BackgroundColor BG_MAIN_COLOR
+  BorderColor BORDER_COLOR
+  BorderThickness BORDER_THICKNESS
+}
+
+skinparam rectangle<<external_system>> {
+  StereotypeFontColor FONT_COLOR
+  FontColor FONT_COLOR
+  BackgroundColor BG_SECONDARY_COLOR
+  BorderColor BORDER_COLOR
+  BorderThickness BORDER_THICKNESS
+}
+
+skinparam database<<system>> {
+  StereotypeFontColor FONT_COLOR
+  FontColor FONT_COLOR
+  BackgroundColor BG_MAIN_COLOR
+  BorderColor BORDER_COLOR
+  BorderThickness BORDER_THICKNESS
+}
+
+skinparam database<<external_system>> {
+  StereotypeFontColor FONT_COLOR
+  FontColor FONT_COLOR
+  BackgroundColor BG_SECONDARY_COLOR
+  BorderColor BORDER_COLOR
+  BorderThickness BORDER_THICKNESS
+}
+
+skinparam rectangle<<boundary>> {
+  Shadowing false
+  StereotypeFontSize 0
+  BackgroundColor BG_PACKAGE_COLOR
+  StereotypeFontColor FONT_COLOR
+  FontColor FONT_COLOR
+  BorderColor BORDER_COLOR
+  BorderStyle dashed
+  BorderThickness BORDER_THICKNESS
+}
+skinparam rectangle<<container>> {
+  Shadowing false
+  StereotypeFontSize 14
+  BackgroundColor BG_MAIN_COLOR
+  StereotypeFontColor FONT_COLOR
+  FontColor FONT_COLOR
+  BorderColor BORDER_COLOR
+  BorderThickness BORDER_THICKNESS
+}

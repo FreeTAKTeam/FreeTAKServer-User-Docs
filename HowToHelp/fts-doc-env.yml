@@ -1,0 +1,18 @@
+name: fts-doc
+channels:
+  - conda-forge
+dependencies:
+    - python=3.11
+    - mkdocs
+    - mkdocs-material
+    - mkdocs-material-extensions
+    - mike
+    # - mkdocs-jupyter
+    - markdown-include
+    - pip
+    - pip:
+        - mkdocs-awesome-pages-plugin
+        - mkdocs-section-index
+        - mkdocs-pdf-export-plugin
+        - mkdocs-mermaid2-plugin
+        - mkdocs_puml
