@@ -76,7 +76,8 @@ wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --ip-addr ${MY_IPA}
 ### Other
 
 We can not predict all the ways in which these base cases may vary.
-In that case you will need to study the [ZeroTouch Installer](Installation/mechanism/Ansible/ZeroTouchInstall.md). 
+In that case you will need to read the [ZeroTouch Installer](Installation/mechanism/Ansible/ZeroTouchInstall.md).
+
 
 ## Community
 This project is currently in the *Early Production Stage*.
