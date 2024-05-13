@@ -33,8 +33,47 @@ The following features are in the pipeline  for the 2.x family:
 
 Check out our [roadmap](https://github.com/FreeTAKTeam/FreeTakServer/milestones?direction=asc&sort=due_date&state=open) to see everything we have planned.
 
-## Shut Up and take my money!
-The easiest way to install FTS is to use our signature [ZeroTouch Installer](Installation/mechanism/Ansible/ZeroTouchInstall.md).  
+## Quick Start
+
+The easiest way to install FTS is to use our Ansible based ZeroTouch Installer.
+
+There are two recommended platforms.
+you may be able to simply use one of the following:
+
+### Cloud: DigitalOcean 
+
+```bash
+wget -qO - bit.ly/freetakhub2 | sudo bash
+```
+??? tip "Alternate, full path."
+    ```bash
+    wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/main/scripts/easy_install.sh | sudo bash
+    ```
+
+### Single Board Computer: Raspberry Pi 4
+
+This case is not quite 'zero-touch' you will need to first identify the IP address of your Raspberry Pi
+and set an environment variable.
+```bash
+export MY_IPA=<the appropriate IP address>
+```
+??? example "Here is an example capturing the wired LAN address:"
+    ```bash
+    export MY_IPA=$(ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
+    ```
+
+```bash
+wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --ip-addr ${MY_IPA}
+```
+??? tip "Alternate, full path."
+    ```bash
+    wget -qO - https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/main/scripts/easy_install.sh | sudo bash -s -- --ip-addr ${MY_IPA}
+    ```
+
+### Other
+
+We can not predict all the ways in which these base cases may vary.
+In that case you will need to study the [ZeroTouch Installer](Installation/mechanism/Ansible/ZeroTouchInstall.md). 
 
 ## Community
 This project is currently in the *Early Production Stage*.
