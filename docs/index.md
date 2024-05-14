@@ -42,7 +42,7 @@ you may be able to simply use one of the following:
 
 ### Cloud: DigitalOcean 
 
-Create a droplet with Ubuntu 22.04 as the OS.
+[Create a droplet with Ubuntu 22.04 as the OS.](./Installation/platform/Cloud/overview.md)
 ```bash
 wget -qO - bit.ly/freetakhub2 | sudo bash
 ```
@@ -53,7 +53,7 @@ wget -qO - bit.ly/freetakhub2 | sudo bash
 
 ### Single Board Computer: Raspberry Pi 4
 
-Create an `sdcard` with Ubuntu 22.04 server x64 as the OS.
+[Create an `sdcard` with Ubuntu 22.04 server x64 as the OS](./Installation/platform/RaspberryPi/Installation.md).
 
 This case is not quite 'zero-touch' you will need to first identify the IP address of your Raspberry Pi
 and set an environment variable.
