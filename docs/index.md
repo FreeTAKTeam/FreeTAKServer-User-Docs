@@ -14,7 +14,7 @@ you may be able to simply use one of the following:
 
 ### Cloud: DigitalOcean 
 
-[Create a droplet with Ubuntu 22.04 as the OS.](./Installation/platform/Cloud/overview.md)
+[Create a droplet with Ubuntu 22.04 as the OS.](./Installation/platform/Cloud/DigitalOcean.md)
 ```bash
 wget -qO - bit.ly/freetakhub2 | sudo bash
 ```
