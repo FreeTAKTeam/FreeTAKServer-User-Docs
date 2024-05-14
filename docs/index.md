@@ -1,37 +1,9 @@
 # FreeTAKServer
 
+
 <img src="assets/FTSLOGOv2.png" width="200" height="200" alt="FTS Logo">
 
-FreeTAKServer (FTS) is a Python3 implementation of the TAK Server
-which services client devices like
-[`ATAK-CIV`](https://play.google.com/store/apps/details?id=com.atakmap.app.civ),
-[`WinTAK`](https://www.civtak.org/2020/09/23/wintak-is-publicly-available/),
-and [`iTAK`](https://apps.apple.com/us/app/itak/id1561656396).
-FTS is a cross-platform project that,
-as of release 2.1,
-provides Situational Awareness and other capabilities such as:
-
-- Web administration
-- Federation Service (Connecting two or more FTS instances)
-- Data Package upload and retrieval
-- Image transfer and storage
-- CoT recording in a database
--  Data Sync / Mission Planning
-- Execution of common task lists (using the `ExCheck` plugin for `WinTAK`; `ATAK` plugin only available to users with tak.gov access)
-- SSL Encryption
-- Command Line Interface for start and stop services
-- REST API for the creation of information such as emergency, Enemy units, and so on
-- Android Edition
-- WebMap
-- Pushing of information (video streams, certifications, etc.) to clients
-- Component based architecture
-
-The following features are in the pipeline  for the 2.x family:
-
- - Cloud Management
- - ... Much more!
-
-Check out our [roadmap](https://github.com/FreeTAKTeam/FreeTakServer/milestones?direction=asc&sort=due_date&state=open) to see everything we have planned.
+FreeTAKServer (FTS) is a Python3 implementation of the TAK Server.
 
 ## Quick Start
 
@@ -78,6 +50,37 @@ wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --ip-addr ${MY_IPA}
 We can not predict all the ways in which these base cases may vary.
 In that case you will need to read the [ZeroTouch Installer](Installation/mechanism/Ansible/ZeroTouchInstall.md).
 
+## Overview
+
+A TAK Server, like FTS, services end user devices running client applications such as...
+[`ATAK-CIV`](https://play.google.com/store/apps/details?id=com.atakmap.app.civ),
+[`WinTAK`](https://www.civtak.org/2020/09/23/wintak-is-publicly-available/),
+and [`iTAK`](https://apps.apple.com/us/app/itak/id1561656396).
+FTS is a cross-platform project that,
+as of release 2.1,
+provides Situational Awareness and other capabilities such as:
+
+- Web administration
+- Federation Service (Connecting two or more FTS instances)
+- Data Package upload and retrieval
+- Image transfer and storage
+- CoT recording in a database
+-  Data Sync / Mission Planning
+- Execution of common task lists (using the `ExCheck` plugin for `WinTAK`; `ATAK` plugin only available to users with tak.gov access)
+- SSL Encryption
+- Command Line Interface for start and stop services
+- REST API for the creation of information such as emergency, Enemy units, and so on
+- Android Edition
+- WebMap
+- Pushing of information (video streams, certifications, etc.) to clients
+- Component based architecture
+
+The following features are in the pipeline  for the 2.x family:
+
+ - Cloud Management
+ - ... Much more!
+
+Check out our [roadmap](https://github.com/FreeTAKTeam/FreeTakServer/milestones?direction=asc&sort=due_date&state=open) to see everything we have planned.
 
 ## Community
 This project is currently in the *Early Production Stage*.
