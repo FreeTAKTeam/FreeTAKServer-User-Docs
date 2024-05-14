@@ -3,7 +3,7 @@
 
 <img src="assets/FTSLOGOv2.png" width="200" height="200" alt="FTS Logo">
 
-FreeTAKServer (FTS) is a Python3 implementation of the TAK Server.
+FreeTAKServer (FTS) is a Python3 implementation of a TAK Server.
 
 ## Quick Start
 
