@@ -27,7 +27,7 @@ wget -qO - bit.ly/freetakhub2 | sudo bash
 
 [Create an `sdcard` with Ubuntu 22.04 server x64 as the OS](./Installation/platform/RaspberryPi/Installation.md).
 
-This case is not quite 'zero-touch' you will need to first identify the IP address of your Raspberry Pi
+This case is not quite 'zero-touch' as you will need to first identify the IP address of your Raspberry Pi
 and set an environment variable.
 ```bash
 export MY_IPA=<the appropriate IP address>
