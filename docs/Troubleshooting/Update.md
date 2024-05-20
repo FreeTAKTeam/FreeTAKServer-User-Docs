@@ -6,21 +6,20 @@ the pip upgrade command to update your FTS to the current version.
 
 This is **not** warranted to work, so backup your data before attempting.
 
-## To remove your installation:
 
-```shell
-sudo rm -r /root/fts.venv/
-```
+
 ## To update your FTS installation:
 
 - SSH to your FTS server
 
 - Run upgrade commands:
+
 ```shell
-/opt/fts.venv/bin/pip install --upgrade freetakserver-ui
+	/opt/fts.venv/bin/pip install --upgrade freetakserver-ui
 ```
+
 ```shell
-/opt/fts.venv/bin/pip install --upgrade freetakserver
+	/opt/fts.venv/bin/pip install --upgrade freetakserver
 ```
 	
 - Reconfigure your config.py file:
