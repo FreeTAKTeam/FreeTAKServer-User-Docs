@@ -32,7 +32,7 @@ While they can grow to be complex, they are usually very simple.
 ### background
 The main directive is ExecStart, which specifies the command that should be run when the service is started. The command is 
 ```bash
-/usr/bin/python3 /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer-UI/run.py. 
+/usr/bin/python3 /opt/fts.venv/lib/python3.11/site-packages/FreeTAKServer-UI/run.py. 
 ```
 Here's what each part of the command does:
 
@@ -42,12 +42,12 @@ Here's what each part of the command does:
 -m
 : This option tells Python to run a module as a script.
 
-/root/fts.venv/lib/python3.11/site-packages/FreeTAKServer-UI/run.py
+/opt/fts.venv/lib/python3.11/site-packages/FreeTAKServer-UI/run.py
 : This is the path to the Python module that should be run as a script.
 
 So when the service is started,
 the Python interpreter will run the `run.py` module
-located in the `/root/fts.venv/lib/python3.11/site-packages/FreeTAKServer-UI/` directory.
+located in the `/opt/fts.venv/lib/python3.11/site-packages/FreeTAKServer-UI/` directory.
 
 This code above is running `FreeTAKServer-UI`,
 which is a user interface for  `FreeTAKServer`.

@@ -40,8 +40,10 @@ This `ZTI` installs and configures FreeTAKHub components on a single device.
 ### Services Status
 This command will output the status of these services
 ```
-sudo systemctl status fts.service fts-ui.service mumble-server.service nodered.service mediamtx.service
+sudo systemctl status fts.service fts-ui.service mumble-server.service nodered.service rtsp-simple-server.service
 ```
+
+Note:: `rtsp-simple-server` is also known as `mediamtx`.
 
  [how to start / stop / enable  a service?](../../../Troubleshooting/Service.md)
 
@@ -220,7 +222,7 @@ wget -qO - bit.ly/freetakhub2 | sudo bash -s -- --legacy
 
 ??? tip "testing a forked repository."
     ```console
-    export MY_IPA=10.2.118.124
+    export MY_IPA=10.2.118.126
     export MY_REPO=babeloff
     wget -qO - https://raw.githubusercontent.com/${MY_REPO}/FreeTAKHub-Installation/main/scripts/easy_install.sh | sudo bash -s -- --ip-addr ${MY_IPA} --repo https://github.com/${MY_REPO}/FreeTAKHub-Installation.git 
     ```

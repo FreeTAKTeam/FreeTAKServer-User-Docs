@@ -139,7 +139,7 @@ open VS Code Explorer to the location of the FreeTAKServer project
 
 
 ### FTS YAML File
-In the  folder containing FreeTakServer repo create a file:
+In the folder containing the FreeTakServer repo create a file:
  `FTSConfig.yaml`
  
  

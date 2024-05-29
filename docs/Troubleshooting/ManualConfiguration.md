@@ -31,14 +31,14 @@ if you are running as root, `/root` is a good choice.
 Original Value
 ```python
 # this should be set before startup
-DBFilePath = str(r'/opt/FTSDataBase.db')
+DBFilePath = str(r'/opt/fts/FTSDataBase.db')
 ```
 
 As roots Home Folder
 
 ```python
 # this should be set before startup
-DBFilePath = str(r'/root/FTSDataBase.db')
+DBFilePath = str(r'/opt/fts/FTSDataBase.db')
 ```
 ###  MySQL database
 FTS supports an abstraction layer, so it's easy to use a different database like MySQL.
