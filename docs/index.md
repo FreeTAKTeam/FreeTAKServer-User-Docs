@@ -99,10 +99,12 @@ We have created the [FreeTAKTeam YouTube channel is @freetakteam](https://www.yo
 
 ### Tell us what you think!
 To discuss with our active developers, you may use:
+
 - The [FTS Discord](https://discord.gg/m8cBzQM2te) Server
 
 ### Others
- - Are you a fellow Redditor? Join us on the [TAK subreddit](https://www.reddit.com/r/ATAK/)!
+
+- Are you a fellow Redditor? Join us on the [TAK subreddit](https://www.reddit.com/r/ATAK/)!
 
 ### Donate Back
 The FreeTAKTeam is working daily developing an open solution.
