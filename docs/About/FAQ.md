@@ -27,3 +27,13 @@ The bottom line is that FTS is "smarter" than other TAK servers.
 # How can I install FTS?
 For information on how to set up FTS,
 please see one of the [Installation Guides](../Installation/Tools.md).
+
+# When logging in I get "FTS Server is Not Reachable At x.x.x.x"
+
+A step was missed during the installation.
+Probably an appropriate IP address was not supplied.
+You can either reinstall 
+[reinstalling and supplying the missing IP address](../Installation/mechanism/Ansible/ZeroTouchInstall.md) 
+using an `explicit-ip-address`, 
+or [correct the configuration](../administration/Operation/fts-config.md).
+
