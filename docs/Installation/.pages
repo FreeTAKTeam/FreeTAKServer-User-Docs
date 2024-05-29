@@ -1,7 +1,7 @@
 title: Installation
 
 nav:
-    - Quickstart Guide: (../../Installation/QuicQuickstartGuide.md)
+    - Quickstart Guide: (../../Installation/QuickstartGuide.md)
     - Infrastructure Planning: InfrastructurePlanning.md
     - Target Platforms: platform
     - Installation Mechanisms: mechanism
