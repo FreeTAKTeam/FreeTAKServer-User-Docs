@@ -48,6 +48,9 @@ Subscribe to the [pip RSS](https://pypi.org/rss/project/freetakserver/releases.x
 We are FreeTAKTeam, a group of individuals passionate about democratizing Situational Awareness through the power of technology.
 Read our [manifesto](About/Manifesto.md).
 
+### Get help!
+We have create a customized AI that can answer to most of your questions! check the Pirate Parrot here: https://bit.ly/FTSPirateParrot
+
 ### FreeTAKTeam YouTube channel
 We have created the [FreeTAKTeam YouTube channel is @freetakteam](https://www.youtube.com/@freetakteam) with tutorials, use cases, and more.
 
