@@ -2,7 +2,7 @@
 # FreeTAK Server Installation
 This guide will walk you through installing FreeTAKServer 2.x
 
-## 0. Document Goals
+## Document Goals
 
 - Prepare host OS
 - Install FreeTAKServer
@@ -13,7 +13,7 @@ This guide will walk you through installing FreeTAKServer 2.x
 - **TBD** ~~Install the [Video Service](../../../administration/brokered/Video/Installation.md)~~
 
 ---
-## Note: Linux Distributions
+### Note: Linux Distributions
 
 The main supported OS is Ubuntu 22.04.
 Due to cross-compatibility, Debian 10 and the latest Raspbian also work.
@@ -21,7 +21,7 @@ Due to cross-compatibility, Debian 10 and the latest Raspbian also work.
 Centos/RHEL/Fedora installation instructions are provided on a best-effort volunteer basis.
 
 ---
-## 1. Update OS Packages
+## Update OS Packages
 
 Update OS Packages before proceeding with the installation
 
@@ -46,7 +46,7 @@ sudo dnf update
 </details>
 
 ---
-## 2. Pre-requisite Software
+## Pre-requisite Software
 
 
 Install packages from the distro repo
@@ -100,7 +100,7 @@ source venv/bin/activate
 </details>
 
 ---
-## 3. Install Python Libraries
+## Install Python Libraries
 
 <details>
 <summary>
@@ -128,7 +128,7 @@ pip install wheel pycairo
 </details>
 
 ---
-## 4. Remove Old Installation
+## Remove Old Installation
 **YOU MUST DO THIS IF:**
 
 -  Free TAK Server has been installed before
@@ -172,7 +172,7 @@ sudo rm /opt/FTS/FTSDataBase.db
 </details>
 
 ---
-## 5. Install FreeTAKServer
+## Install FreeTAKServer
 Install the FreeTAKServer  and the associated Web UI
 
 <details>
@@ -223,7 +223,7 @@ This will download and install version 0.2.0.13 of FreeTAKServer. If no version 
 </details>
 
 ---
-## 6. Check Installation
+## Check Installation
 
 The pip utility allows the user to check the installation and dependency status of a package.
 
@@ -237,7 +237,7 @@ Otherwise, there was an issue with the pip installation,
 and you should investigate the pip-generated installation logs for more information.
 
 ---
-## 7. Configure and Run FreeTAKServer
+## Configure and Run FreeTAKServer
 
 FTS versions older than 1.9 are not configured this way. For versions <1.9 you
 will need to locate older versions of this document in the repo history.
@@ -309,12 +309,12 @@ In virtualenv installations,
 it is inside the virtualenv directory.
 
 The wizard creates the YAML configuration file under the location you selected,
-the default location is `/opt/FTSConfig.yaml`.
+the default location is `/opt/fts/FTSConfig.yaml`.
 
 FreeTAKServer will then proceed start all the services.
 
 ---
-## 7. FTS Configuration
+## FTS Configuration
 ### Manual `FTSConfig.yaml`
 
 !!! warning
@@ -335,7 +335,8 @@ ConnectionMessage = f'Welcome to FreeTAKServer {version}. The Parrot is not dead
 ```
 
 ---
-## 9. FTS-UI Configuration
+
+## FTS-UI Configuration
 
 Edit the `config.py` file in the `FreeTAKServer-UI` directory where it was installed by pip
 
@@ -423,7 +424,7 @@ app.config['SYSSTATUSINTERVAL'] = '600000';
 app.config['DATAPACKAGESIZELIMIT'] = '15360000';
 ```
 
-### 10. Start UI
+### Start UI
 
 In the terminal, navigate to the `FreeTAKServer-UI` directory wherever it was
 installed by the pip utility.
@@ -459,7 +460,7 @@ to that shown below.
 ```
 
 ---
-## 11. Next Steps
+## Next Steps
 
 ### Create a service
 
@@ -486,7 +487,7 @@ IP = '[FTS external IP]'
 APPIP = '[FTS-UI internal IP]'
 ```
 
-## 12. Check Installation
+## Check Installation
 
 After finishing all the steps, make sure your configuration is acceptable and
 server running properly.

@@ -106,7 +106,7 @@ users=
 registerName=ftsmurmur
 ; If you have generated a proper SSL certificate using the instructions above, you can provide the filenames here.
 ; Otherwise, Murmur will create its own certificate automatically.
-sslCert=/opt/ftsmurmur.cer
-sslKey=/opt/ftsmurmur.key
+sslCert=/opt/fts/ftsmurmur.cer
+sslKey=/opt/fts/ftsmurmur.key
 ```
 examine the complete file for more settings.

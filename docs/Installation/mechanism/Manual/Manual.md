@@ -31,7 +31,7 @@ if you are running as root, `/root` is a good choice.
 Original Value
 ```python
 # this should be set before startup
-DBFilePath = str(r'/opt/FTSDataBase.db')
+DBFilePath = str(r'/opt/fts/FTSDataBase.db')
 ```
 
 As roots Home Folder

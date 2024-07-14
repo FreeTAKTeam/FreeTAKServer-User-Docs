@@ -38,34 +38,35 @@ Addresses:
   FTS_FED_PORT: 9000
   FTS_API_ADDRESS: [YOUREXTERNALIP]
 FileSystem:
-  FTS_CONFIG_PATH: /opt/FTSConfig.yaml
-  FTS_DB_PATH: /opt/FreeTAKServer.db
+  FTS_CONFIG_PATH: /opt/fts/FTSConfig.yaml
+  FTS_DB_PATH: /opt/fts/FreeTAKServer.db
   FTS_COT_TO_DB: True
-  FTS_MAINPATH: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer
-  FTS_CERTS_PATH: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs
-  FTS_EXCHECK_PATH: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/ExCheck
-  FTS_EXCHECK_TEMPLATE_PATH: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/ExCheck/template
-  FTS_EXCHECK_CHECKLIST_PATH: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/ExCheck/checklist
-  FTS_DATAPACKAGE_PATH: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/FreeTAKServerDataPackageFolder
-  FTS_LOGFILE_PATH: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/Logs
+  FTS_MAINPATH: /opt/fts.venv/lib/python3.11/site-packages/FreeTAKServer
+  FTS_CERTS_PATH: /opt/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs
+  FTS_EXCHECK_PATH: /opt/fts.venv/lib/python3.11/site-packages/FreeTAKServer/ExCheck
+  FTS_EXCHECK_TEMPLATE_PATH: /opt/fts.venv/lib/python3.11/site-packages/FreeTAKServer/ExCheck/template
+  FTS_EXCHECK_CHECKLIST_PATH: /opt/fts.venv/lib/python3.11/site-packages/FreeTAKServer/ExCheck/checklist
+  FTS_DATAPACKAGE_PATH: /opt/fts.venv/lib/python3.11/site-packages/FreeTAKServer/FreeTAKServerDataPackageFolder
+  FTS_LOGFILE_PATH: /opt/fts.venv/lib/python3.11/site-packages/FreeTAKServer/Logs
 Certs:
-  FTS_SERVER_KEYDIR: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/server.key
-  FTS_SERVER_PEMDIR: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/server.pem
-  FTS_TESTCLIENT_PEMDIR: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/Client.pem
-  FTS_TESTCLIENT_KEYDIR: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/Client.key
-  FTS_UNENCRYPTED_KEYDIR: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/server.key.unencrypted
-  FTS_SERVER_P12DIR: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/server.p12
-  FTS_CADIR: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/ca.pem
-  FTS_CAKEYDIR: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/ca.key
-  FTS_FEDERATION_CERTDIR: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/server.pem
-  FTS_FEDERATION_KEYDIR: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/server.key
-  FTS_CRLDIR: /root/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/FTS_CRL.json
+  FTS_SERVER_KEYDIR: /opt/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/server.key
+  FTS_SERVER_PEMDIR: /opt/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/server.pem
+  FTS_TESTCLIENT_PEMDIR: /opt/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/Client.pem
+  FTS_TESTCLIENT_KEYDIR: /opt/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/Client.key
+  FTS_UNENCRYPTED_KEYDIR: /opt/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/server.key.unencrypted
+  FTS_SERVER_P12DIR: /opt/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/server.p12
+  FTS_CADIR: /opt/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/ca.pem
+  FTS_CAKEYDIR: /opt/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/ca.key
+  FTS_FEDERATION_CERTDIR: /opt/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/server.pem
+  FTS_FEDERATION_KEYDIR: /opt/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/server.key
+  FTS_CRLDIR: /opt/fts.venv/lib/python3.11/site-packages/FreeTAKServer/certs/FTS_CRL.json
   FTS_FEDERATION_KEYPASS: [YOURPASS]
   FTS_CLIENT_CERT_PASSWORD: [YOURPASS]
   FTS_WEBSOCKET_KEY: [YOURPASS]
 ```
 
 ## after XXX months of use the disk is full
+
  * FTS writes the output of the service to a log located here:
 ```
 /var/log/fts/fts-stdout.log
@@ -73,14 +74,15 @@ Certs:
  * depending on inbound traffic, this can become very large and subsequently, need to be manually deleted
 
 ## My XXX component is not connecting / showing
+
 for fts check out 
 ```
-/opt/FTSConfig.yaml
+/opt/fts/FTSConfig.yaml
 ```
 
 for the UI check out
 ```
-/root/fts.venv/lib/python3.11/site-packages/FreeTAKServer-UI/config.py
+/opt/fts.venv/lib/python3.11/site-packages/FreeTAKServer-UI/config.py
 or
 /usr/local/lib/python3.11/dist-packages/FreeTAKServer-UI/config.py
 ```

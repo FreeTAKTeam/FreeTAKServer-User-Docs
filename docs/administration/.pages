@@ -1,4 +1,5 @@
 nav:
+    - Configuration: Operation
     - Command Line Interface (CLI): CLI.md
     - Secure Socket Layer (SSL): SSL.md
     - Using the Console: usingConsole.md
