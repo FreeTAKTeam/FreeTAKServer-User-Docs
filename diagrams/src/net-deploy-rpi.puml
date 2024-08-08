@@ -1,0 +1,61 @@
+@startuml
+!include <C4/C4_Deployment>
+
+LAYOUT_TOP_DOWN()
+LAYOUT_WITH_LEGEND()
+
+Node(isp, "Internet Service Provider") {
+  Container(ispr, "Internet Service Provider Router")
+}
+
+Node(lan, "LAN") {
+    Node(router, "Router") {
+        Container(pfs, "pfsense")
+    }
+    Node(rpi1, "Raspberry Pi") {
+        Container(rpios, "Ubuntu", "OS")
+        Container(ftsui, "FreeTakServerUI")
+        Container(fts, "FreeTakServer")
+        Boundary(c1, "Flow Hub"){
+            Container(nodered, "NodeRed")
+            Container(video_check, "Video Server Checker", $descr="processor")
+            Container(salute, "SALUTE Form", $descr="processor")
+            Container(webmap, "WebMap", $descr="processor")
+        }
+        Container(video_server, "Video Server", "MediaMTX")
+        Container(voice_server, "Voice Server", "Mumble")
+    }
+    Node(android, "Phone") {
+        Container(atakos, "Android", "OS")
+        Container(atak, "ATAK")
+    }
+    Node(laptop, "Windows Laptop") {
+        Container(winos, "Windows 10", "OS")
+        Container(wintak, "WinTAK")
+    }
+    Node(browser, "Admin Browser") {
+        Container(admin, "admin")
+    }
+}
+
+Rel(ispr, pfs, "assign IP addr WAN", "e.g. 192.168.1.1")
+Rel(pfs, atakos, "assign IP addr ATAK", "e.g. 10.2.1.100")
+Rel(pfs, winos, "assign IP addr", "e.g. 10.2.1.100")
+Rel(pfs, rpios, "statically assign IP addr", "e.g. 10.3.1.100")
+
+Rel(admin, ftsui, "connect to UI", "port: 5000")
+Rel(admin, nodered, "connect to UI", "port: 1880")
+
+Rel(atak, fts, "connect to CoT server", "port: 8087")
+Rel(wintak, fts, "connect to CoT server", "port: 8987")
+
+Rel(ftsui, fts, "connect to API service", "port: 19023")
+Rel(ftsui, nodered, "connect to hub", "port: 8000")
+
+Rel(video_check, video_server, "connect to video server", "port: 9997")
+Rel(video_check, fts, "connect to API service", "port: 19023")
+
+Rel(webmap, fts, "connect to CoT service", "port: 8087")
+
+
+@enduml
