@@ -13,7 +13,9 @@ or you will need to update configuration files later.
 
 ## Quick start
 in most cases use this command to install FTS
-```wget -qO - bit.ly/freetakhub2 | sudo bash```
+```
+wget -qO - bit.ly/freetakhub2 | sudo bash
+```
 in a clound evniroment like Digital Ocean, this will have you up and running in 5 minutes. For more option continue to read
 
 ## `ZTI` Usage
