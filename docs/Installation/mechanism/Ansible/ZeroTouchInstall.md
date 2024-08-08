@@ -16,7 +16,7 @@ in most cases use this command to install FTS
 ```
 wget -qO - bit.ly/freetakhub2 | sudo bash
 ```
-in a clound evniroment like Digital Ocean, this will have you up and running in 5 minutes. For more option continue to read
+in a cloud environment (e.g. Digital Ocean), this will have you up and running in 5 minutes. For more option continue to read
 
 ## `ZTI` Usage
 The `ZTI` provides usage documentation.
