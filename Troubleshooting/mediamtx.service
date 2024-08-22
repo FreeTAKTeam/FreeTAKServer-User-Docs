@@ -1,0 +1,10 @@
+[Unit]
+After=network.target
+
+[Service]
+StandardOutput=append:/var/log/mediamtx/mediamtx-stdout.log
+StandardError=append:/var/log/mediamtx/mediamtx-stderr.log
+ExecStart=/opt/mediamtx/rtsp-simple-server /opt/mediamtx/rtsp-simple-server.yml
+
+[Install]
+WantedBy=multi-user.target
