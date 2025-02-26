@@ -261,6 +261,39 @@ it is time to make sure it is nominally working.
     When trying to log in for the first time, you might get a warning along the lines of `FTS Server is Not Reachable at {your IPA}`.
     [Restarting the services](../../../administration/Operation/fts-service-mgmt.md) can help.
 
+### Node-Red issues
+
+Currently there is a know issue regarding the Node-Red integration. The following is based on the [YouTube-Video by Cßrv0 (external)](https://www.youtube.com/watch?v=Yaa1viiC6_M&t=25m0s). If you run into troubles following the text description, please refer to this video for additional help.
+
+This is due to a problem with nodeJS so we need to reinstall Node-Red at version 20:
+
+```bash
+bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered) --node20
+```
+
+Accept the prompts following up depending on your needs.
+
+Finally you'll need to restart Node-Red:
+
+```bash
+sudo systemctl enable nodered.service
+sudo systemctl start nodered.service 
+```
+
+There still will be a known error regarding `worldmap` itself. To fix this you'll need to adjust the corresponding node within Node-Red.
+
+Login into Node-Red again and go to the `FTH Webdmap` flow and edit the `FTS Server` TCP node (with the woarning below). Change the properties to:
+
+```
+server: ${your IPA}
+port: 8087
+```
+
+Redeploy the flows. This should fix the issues.
+
+!!! note
+    Don't worry when your clients and COTs dont show up immediately. The worldmap needs some time to get up to date.
+
 ### Reconfiguration
 
 `ZeroTouch` will have configured the system and started the services for you. 
