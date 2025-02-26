@@ -258,7 +258,7 @@ it is time to make sure it is nominally working.
 * password: `password`
 
 !!! note
-    When trying to log in for the first time, you might get a warning along the lines of `not found at {your IPA}`.
+    When trying to log in for the first time, you might get a warning along the lines of `FTS Server is Not Reachable at {your IPA}`.
     [Restarting the services](../../../administration/Operation/fts-service-mgmt.md) can help.
 
 ### Reconfiguration
