@@ -108,9 +108,15 @@ to remember the IP address (MY_IPA) you have selected.
 ```bash
 export MY_IPA=<the appropriate IP address>
 ```
-??? example "Here is an example capturing the wired LAN address:"
+
+!!! note "Here are complete examples capturing the IP address:"
+    Wired, ethernet, RJ45
     ```bash
     export MY_IPA=$(ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
+    ```
+    WiFi
+    ```bash
+    export MY_IPA=$(ip -4 addr show wlan0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
     ```
 
 ## Run the Zero Touch Installer (ZTI)
