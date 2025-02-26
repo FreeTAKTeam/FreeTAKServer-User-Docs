@@ -257,6 +257,10 @@ it is time to make sure it is nominally working.
 * username: `admin`
 * password: `password`
 
+!!! note
+    When trying to log in for the first time, you might get a warning along the lines of `not found at {your IPA}`.
+    [Restarting the services](../../../administration/Operation/fts-service-mgmt.md) can help.
+
 ### Reconfiguration
 
 `ZeroTouch` will have configured the system and started the services for you. 
