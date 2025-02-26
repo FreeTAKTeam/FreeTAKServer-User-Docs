@@ -8,4 +8,4 @@ you can:
 Additionally, 
 FTS will automatically send to all the connected clients 
 video streams information coming from FreeTAK UAS or TAK ICU 
-using the [API](../API/REST_API_Doc.md#managevideostream)
+using the [API](../API/REST_API_PublicDoc.md#managevideostream)
