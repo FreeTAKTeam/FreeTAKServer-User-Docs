@@ -4,6 +4,9 @@ Internal APIs are primarily used by the FTS UI to communicate with the server.
 See also the [REST API DOC](REST_API_PublicDoc.md) for APIs used in integration
 they may be used to create other user interfaces such as CLI.
 
+!!! Warning
+    This documentation is refering to 1.9 (deprecated). There might be changes regarding 2.x.
+
 In the current release (1.9), FTS supports following Internal API :
 
   * authenticate

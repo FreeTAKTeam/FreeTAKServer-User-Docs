@@ -6,6 +6,9 @@ The API allows you to easily connect third parties to the TAK family,
 without the need to understand the complexity of the CoT structure or what a TCP connection is.
 FTS also supports an [Internal API](REST_API_InternalDoc.md).
 
+!!! Warning
+    This documentation is refering to 1.9 (deprecated). There might be changes regarding 2.x.
+
 ## How FTS manages the information
 
 FTS will send the  information coming through the API to all the connected clients,
