@@ -1,0 +1,10 @@
+[Unit]
+Description=mediamtx
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/usr/local/bin/mediamtx /usr/local/etc/mediamtx.yml
+
+[Install]
+WantedBy=multi-user.target

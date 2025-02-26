@@ -1,0 +1,41 @@
+
+/* https://www.svgviewer.dev/ */
+:root {
+  --md-status--ood: url('images/warning.svg');
+  --md-status--todo: url('images/todo.svg');
+  --md-status--warn: url('images/warning.svg');
+
+  --md-status--current: url('images/current.svg');
+}
+
+.md-status--ood::after {
+  mask-image: var(--md-status--ood);
+  -webkit-mask-image: var(--md-status--ood);
+}
+
+.md-status--todo::after {
+  mask-image: var(--md-status--todo);
+  -webkit-mask-image: var(--md-status--todo);
+}
+
+.md-status--warning::after {
+  mask-image: var(--md-status--warn);
+  -webkit-mask-image: var(--md-status--warn);
+}
+
+.md-status--current::after {
+  mask-image: var(--md-status--current);
+  -webkit-mask-image: var(--md-status--current);
+}
+
+body:has(> .md-status--current) {
+  background-color: green;
+}
+
+body:has(> .md-status--warning) {
+  background: red;
+}
+
+body:has(> .md-status--ood) {
+  color: blue;
+}

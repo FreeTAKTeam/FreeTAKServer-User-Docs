@@ -1,0 +1,13 @@
+[Unit]
+Description=FreeTAKServer UI service
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+ExecStart=/usr/bin/python3 -m /opt/fts.venv/lib/python3.11/site-packages/FreeTAKServer-UI/run.py
+
+[Install]
+WantedBy=multi-user.target

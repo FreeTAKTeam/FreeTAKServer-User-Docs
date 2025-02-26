@@ -1,0 +1,5640 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="FreeTAKTeam">
+      
+      
+      
+        <link rel="prev" href="../../HowToHelp/WriteDocumentation/">
+      
+      
+        <link rel="next" href="../REST_API_InternalDoc/">
+      
+      
+      <link rel="icon" href="../../assets/FTS_Circle.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
+    
+    
+  <title>FTS Documentation</title>
+
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1 7.775V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 0 1 0 2.474l-5.026 5.026a1.75 1.75 0 0 1-2.474 0l-6.25-6.25A1.75 1.75 0 0 1 1 7.775m1.5 0c0 .066.026.13.073.177l6.25 6.25a.25.25 0 0 0 .354 0l5.025-5.025a.25.25 0 0 0 0-.354l-6.25-6.25a.25.25 0 0 0-.177-.073H2.75a.25.25 0 0 0-.25.25ZM6 5a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2.5 1.75v11.5c0 .138.112.25.25.25h3.17a.75.75 0 0 1 0 1.5H2.75A1.75 1.75 0 0 1 1 13.25V1.75C1 .784 1.784 0 2.75 0h8.5C12.216 0 13 .784 13 1.75v7.736a.75.75 0 0 1-1.5 0V1.75a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25m13.274 9.537zl-4.557 4.45a.75.75 0 0 1-1.055-.008l-1.943-1.95a.75.75 0 0 1 1.062-1.058l1.419 1.425 4.026-3.932a.75.75 0 1 1 1.048 1.074M4.75 4h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5M4 7.75A.75.75 0 0 1 4.75 7h2a.75.75 0 0 1 0 1.5h-2A.75.75 0 0 1 4 7.75"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13M6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75M8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.499.75a.75.75 0 0 1 1.5 0v.996C5.9 2.903 6.793 3.65 7.662 4.376l.24.202c-.036-.694.055-1.422.426-2.163C9.1.873 10.794-.045 12.622.26 14.408.558 16 1.94 16 4.25c0 1.278-.954 2.575-2.44 2.734l.146.508.065.22c.203.701.412 1.455.476 2.226.142 1.707-.4 3.03-1.487 3.898C11.714 14.671 10.27 15 8.75 15h-6a.75.75 0 0 1 0-1.5h1.376a4.5 4.5 0 0 1-.563-1.191 3.84 3.84 0 0 1-.05-2.063 4.65 4.65 0 0 1-2.025-.293.75.75 0 0 1 .525-1.406c1.357.507 2.376-.006 2.698-.318l.009-.01a.747.747 0 0 1 1.06 0 .75.75 0 0 1-.012 1.074c-.912.92-.992 1.835-.768 2.586.221.74.745 1.337 1.196 1.621H8.75c1.343 0 2.398-.296 3.074-.836.635-.507 1.036-1.31.928-2.602-.05-.603-.216-1.224-.422-1.93l-.064-.221c-.12-.407-.246-.84-.353-1.29a2.4 2.4 0 0 1-.507-.441 3.1 3.1 0 0 1-.633-1.248.75.75 0 0 1 1.455-.364c.046.185.144.436.31.627.146.168.353.305.712.305.738 0 1.25-.615 1.25-1.25 0-1.47-.95-2.315-2.123-2.51-1.172-.196-2.227.387-2.706 1.345-.46.92-.27 1.774.019 3.062l.042.19.01.05c.348.443.666.949.94 1.553a.75.75 0 1 1-1.365.62c-.553-1.217-1.32-1.94-2.3-2.768L6.7 5.527c-.814-.68-1.75-1.462-2.692-2.619a3.7 3.7 0 0 0-1.023.88c-.406.495-.663 1.036-.722 1.508.116.122.306.21.591.239.388.038.797-.06 1.032-.19a.75.75 0 0 1 .728 1.31c-.515.287-1.23.439-1.906.373-.682-.067-1.473-.38-1.879-1.193L.75 5.677V5.5c0-.984.48-1.94 1.077-2.664.46-.559 1.05-1.055 1.673-1.353z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.75.75 0 0 1 .018-1.042.75.75 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13M6.92 6.085h.001a.749.749 0 1 1-1.342-.67c.169-.339.436-.701.849-.977C6.845 4.16 7.369 4 8 4a2.76 2.76 0 0 1 1.637.525c.503.377.863.965.863 1.725 0 .448-.115.83-.329 1.15-.205.307-.47.513-.692.662-.109.072-.22.138-.313.195l-.006.004a6 6 0 0 0-.26.16 1 1 0 0 0-.276.245.75.75 0 0 1-1.248-.832c.184-.264.42-.489.692-.661q.154-.1.313-.195l.007-.004c.1-.061.182-.11.258-.161a1 1 0 0 0 .277-.245C8.96 6.514 9 6.427 9 6.25a.61.61 0 0 0-.262-.525A1.27 1.27 0 0 0 8 5.5c-.369 0-.595.09-.74.187a1 1 0 0 0-.34.398M9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0M9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M2.344 2.343za8 8 0 0 1 11.314 11.314A8.002 8.002 0 0 1 .234 10.089a8 8 0 0 1 2.11-7.746m1.06 10.253a6.5 6.5 0 1 0 9.108-9.275 6.5 6.5 0 0 0-9.108 9.275M6.03 4.97 8 6.94l1.97-1.97a.749.749 0 0 1 1.275.326.75.75 0 0 1-.215.734L9.06 8l1.97 1.97a.749.749 0 0 1-.326 1.275.75.75 0 0 1-.734-.215L8 9.06l-1.97 1.97a.749.749 0 0 1-1.275-.326.75.75 0 0 1 .215-.734L6.94 8 4.97 6.03a.75.75 0 0 1 .018-1.042.75.75 0 0 1 1.042-.018"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M9.504.43a1.516 1.516 0 0 1 2.437 1.713L10.415 5.5h2.123c1.57 0 2.346 1.909 1.22 3.004l-7.34 7.142a1.25 1.25 0 0 1-.871.354h-.302a1.25 1.25 0 0 1-1.157-1.723L5.633 10.5H3.462c-1.57 0-2.346-1.909-1.22-3.004zm1.047 1.074L3.286 8.571A.25.25 0 0 0 3.462 9H6.75a.75.75 0 0 1 .694 1.034l-1.713 4.188 6.982-6.793A.25.25 0 0 0 12.538 7H9.25a.75.75 0 0 1-.683-1.06l2.008-4.418.003-.006-.004-.009-.006-.006-.008-.001q-.005 0-.009.004"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M4.72.22a.75.75 0 0 1 1.06 0l1 .999a3.5 3.5 0 0 1 2.441 0l.999-1a.748.748 0 0 1 1.265.332.75.75 0 0 1-.205.729l-.775.776c.616.63.995 1.493.995 2.444v.327q0 .15-.025.292c.408.14.764.392 1.029.722l1.968-.787a.75.75 0 0 1 .556 1.392L13 7.258V9h2.25a.75.75 0 0 1 0 1.5H13v.5q-.002.615-.141 1.186l2.17.868a.75.75 0 0 1-.557 1.392l-2.184-.873A5 5 0 0 1 8 16a5 5 0 0 1-4.288-2.427l-2.183.873a.75.75 0 0 1-.558-1.392l2.17-.868A5 5 0 0 1 3 11v-.5H.75a.75.75 0 0 1 0-1.5H3V7.258L.971 6.446a.75.75 0 0 1 .558-1.392l1.967.787c.265-.33.62-.583 1.03-.722a1.7 1.7 0 0 1-.026-.292V4.5c0-.951.38-1.814.995-2.444L4.72 1.28a.75.75 0 0 1 0-1.06m.53 6.28a.75.75 0 0 0-.75.75V11a3.5 3.5 0 1 0 7 0V7.25a.75.75 0 0 0-.75-.75ZM6.173 5h3.654A.17.17 0 0 0 10 4.827V4.5a2 2 0 1 0-4 0v.327c0 .096.077.173.173.173"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M5 5.782V2.5h-.25a.75.75 0 0 1 0-1.5h6.5a.75.75 0 0 1 0 1.5H11v3.282l3.666 5.76C15.619 13.04 14.543 15 12.767 15H3.233c-1.776 0-2.852-1.96-1.899-3.458Zm-2.4 6.565a.75.75 0 0 0 .633 1.153h9.534a.75.75 0 0 0 .633-1.153L12.225 10.5h-8.45ZM9.5 2.5h-3V6c0 .143-.04.283-.117.403L4.73 9h6.54L9.617 6.403A.75.75 0 0 1 9.5 6Z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M1.75 2.5h10.5a.75.75 0 0 1 0 1.5H1.75a.75.75 0 0 1 0-1.5m4 5h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1 0-1.5m0 5h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1 0-1.5M2.5 7.75v6a.75.75 0 0 1-1.5 0v-6a.75.75 0 0 1 1.5 0"/></svg>');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rest-api-public" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="FreeTAKServer Documentation" class="md-header__button md-logo" aria-label="FreeTAKServer Documentation" data-md-component="logo">
+      
+  <img src="../../assets/FTS_Circle.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FreeTAKServer Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Public API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../About/FAQ/" class="md-tabs__link">
+          
+  
+    
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Usage/Connecting_ATAK/" class="md-tabs__link">
+          
+  
+    
+  
+  Try Me
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Installation/InfrastructurePlanning/" class="md-tabs__link">
+          
+  
+    
+  
+  Installation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Troubleshooting/troubleshooting_faq/" class="md-tabs__link">
+          
+  
+    
+  
+  Troubleshooting
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../administration/Operation/fts-config/" class="md-tabs__link">
+          
+  
+    
+  
+  Administration
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../HowToHelp/GettingStartedAsHelper/" class="md-tabs__link">
+          
+  
+    
+  
+  How to Help
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+    
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="FreeTAKServer Documentation" class="md-nav__button md-logo" aria-label="FreeTAKServer Documentation" data-md-component="logo">
+      
+  <img src="../../assets/FTS_Circle.png" alt="logo">
+
+    </a>
+    FreeTAKServer Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/FreeTAKTeam/FreeTAKServer-User-Docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            About
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../About/FAQ/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frequently Asked Questions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../About/FeaturesCompared/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Feature Comparison
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../About/Manifesto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Free TAK Manifesto
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../About/why_fts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Why a Free TAK Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../About/PubServer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Public Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Architecture
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6_1" id="__nav_2_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cursor On Target
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cursor On Target
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../About/architecture/cot_domain/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CoT Domain
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../About/architecture/cot_hierarchy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CoT Class Hierarchy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../About/architecture/cot_table/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CoT Table
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../About/architecture/mil_std_2525/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Common Warfighting Symbology 2525
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Try Me
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Try Me
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Connect Clients
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Connect Clients
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Usage/Connecting_ATAK/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ATAK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Usage/Connecting_WinTAK/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    WinTAK
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Connect Plugin
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Connect Plugin
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Usage/ExCheck/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Execution Checker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Usage/VideoManagement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Video Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Useful Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Useful Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Usage/tools/FreeTAKMumla/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FreeTAK Mumble VoIP (Mumla)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Usage/tools/FreeTAKUAS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FreeTAK Unmanned Arial (UAS)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_3" id="__nav_3_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Video Server Tools
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Video Server Tools
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Usage/tools/rtsp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Video Sources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Usage/tools/takICU/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ATAK ICU
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Usage/tools/UASTool/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FreeTAK UAS Tool
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Usage/tools/Manuals/UserGuides/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manuals
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Installation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/InfrastructurePlanning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Infrastructure Planning
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Target Platforms
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Target Platforms
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_1" id="__nav_4_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cloud Provider
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cloud Provider
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/platform/Cloud/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/platform/Cloud/AWS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Amazon Web Service (AWS)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/platform/Cloud/DigitalOcean/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Digital Ocean
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_2" id="__nav_4_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Linux
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Linux
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/platform/Linux/installation_vm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation on an Ubuntu VM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/platform/Linux/installation_native/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation on an Ubuntu Natively
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_3" id="__nav_4_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Raspberry Pi
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Raspberry Pi
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/platform/RaspberryPi/Installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_4" id="__nav_4_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Windows
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Windows
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/platform/Windows/Windows_Manual_Install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manual Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/platform/Windows/Windows_Ansible_Install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automatic Installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_5" id="__nav_4_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Android
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Android
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/platform/Android/installUIOnAndroid/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Install UI on Android
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/platform/Android/Android/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Android
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Installation Mechanism
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Installation Mechanism
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_1" id="__nav_4_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ansible
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Ansible
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/mechanism/Ansible/ZeroTouchInstall/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Zero Touch
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_2" id="__nav_4_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Container (Docker)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Container (Docker)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/mechanism/Docker/Quick_Start/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quick Start Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/mechanism/Docker/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/mechanism/Docker/Raspberry_Pi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Raspberry Pi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/mechanism/Docker/CLI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Command Line Interface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/mechanism/Docker/Debian/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debian Linux
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/mechanism/Docker/Multiple_Servers/multiple/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Multiple Servers on Single Host
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/mechanism/Docker/Upgrade/Upgrade/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upgrading Existing Container
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Installation/mechanism/Manual/Installation/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Manual
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3_3" id="__nav_4_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Manual
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/mechanism/Manual/Manual/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manual Configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/Tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools you need
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Installation/Video_Guides/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Video Guides
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Troubleshooting
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Troubleshooting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Troubleshooting/troubleshooting_faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Troubleshooting/InstallationCheck/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation Check
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Troubleshooting/SocketIssue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Socket SSL Issue
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FTS Servers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            FTS Servers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Troubleshooting/fts-core-server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FTS Main Server (FTS)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Troubleshooting/fts-ui-server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FTS UI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fts-webmap-server.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web Map
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3rd Party Servers
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            3rd Party Servers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Troubleshooting/video-server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Video Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Troubleshooting/voip-server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Voice Server
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Troubleshooting/fts-hub-server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FTS Hub (FTH)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Revert to Manual
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            Revert to Manual
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Troubleshooting/ManualConfiguration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stepwise installation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Troubleshooting/Running/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Running from Terminal
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Troubleshooting/Service/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Running as a Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Troubleshooting/Update/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Upgrading
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Administration
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Administration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FTS Configuration
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            FTS Configuration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration/Operation/fts-config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration/Operation/fts-service-mgmt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Service Management
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration/CLI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Command Line Interface (CLI)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration/SSL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secure Socket Layer (SSL)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration/usingConsole/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using the Console
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration/Web_Admin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web Administration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Brokered Services
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            Brokered Services
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration/brokered/Integration/NodeRedInstallation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../administration/brokered/Video/Installation/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Video
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6_6_2" id="__nav_6_6_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_6_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Video
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration/brokered/Video/howtoStartOnPi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to autostart the video server on the Pi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration/brokered/VideoChecker/VideoCheck/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Video Checker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration/brokered/Voice/VoiceServer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Voice
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../administration/brokered/WebMap/Installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web Map
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    How to Help
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            How to Help
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HowToHelp/GettingStartedAsHelper/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Developer
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Developer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2_1" id="__nav_7_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Set Up
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_7_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Set Up
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HowToHelp/DevSetupPipVScode/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    VS Code and PIP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HowToHelp/DevSetupMambaPyCharm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PyCharm and Mamba
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HowToHelp/WriteDocumentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Write Documentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    API
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    REST API
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            REST API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Public API
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Public API
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-fts-manages-the-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      How FTS manages the information
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-of-supported-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      List of supported API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="General Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Endpoint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authorization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#message" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Details
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Details">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manageapi" class="md-nav__link">
+    <span class="md-ellipsis">
+      manageAPI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="manageAPI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gethelp" class="md-nav__link">
+    <span class="md-ellipsis">
+      getHelp
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="getHelp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gethelp-example-return-data-195" class="md-nav__link">
+    <span class="md-ellipsis">
+      getHelp Example: return data (1.9.5)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managegeoobject" class="md-nav__link">
+    <span class="md-ellipsis">
+      manageGeoObject
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="manageGeoObject">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postgeoobject" class="md-nav__link">
+    <span class="md-ellipsis">
+      postGeoObject
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="postGeoObject">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example body
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-body-alternate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example body alternate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-example-body-alternate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Example body alternate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-17-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1.7 body
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basic-geoobjects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic GeoObjects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#geoobjects-extensions-for-ems" class="md-nav__link">
+    <span class="md-ellipsis">
+      GeoObjects Extensions for EMS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-of-supported-attitudes" class="md-nav__link">
+    <span class="md-ellipsis">
+      List of supported Attitudes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-of-supported-how" class="md-nav__link">
+    <span class="md-ellipsis">
+      List of supported HOW
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#putgeoobject" class="md-nav__link">
+    <span class="md-ellipsis">
+      putGeoObject
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="putGeoObject">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example body
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#response_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Response
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getgeoobject" class="md-nav__link">
+    <span class="md-ellipsis">
+      getGeoObject
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="getGeoObject">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Variables
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getrepeatedmessages" class="md-nav__link">
+    <span class="md-ellipsis">
+      GetRepeatedMessages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managechat" class="md-nav__link">
+    <span class="md-ellipsis">
+      ManageChat
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ManageChat">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sendgeochatobject" class="md-nav__link">
+    <span class="md-ellipsis">
+      SendGeoChatObject
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SendGeoChatObject">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example body
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manageemergency" class="md-nav__link">
+    <span class="md-ellipsis">
+      ManageEmergency
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ManageEmergency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postemergency" class="md-nav__link">
+    <span class="md-ellipsis">
+      postEmergency
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="postEmergency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#list-of-supported-emergency-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      List of supported Emergency Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="List of supported Emergency Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example body
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getemergency" class="md-nav__link">
+    <span class="md-ellipsis">
+      getEmergency
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="getEmergency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example response
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleteemergency" class="md-nav__link">
+    <span class="md-ellipsis">
+      deleteEmergency
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="deleteEmergency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example body
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managepresence" class="md-nav__link">
+    <span class="md-ellipsis">
+      ManagePresence
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ManagePresence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postpresence" class="md-nav__link">
+    <span class="md-ellipsis">
+      postPresence
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="postPresence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example body
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#putpresence" class="md-nav__link">
+    <span class="md-ellipsis">
+      putPresence
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="putPresence">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parameters
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manageroute" class="md-nav__link">
+    <span class="md-ellipsis">
+      ManageRoute
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ManageRoute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postroute" class="md-nav__link">
+    <span class="md-ellipsis">
+      postRoute
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="postRoute">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-body_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example body
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-body-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example body 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-body-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example body 3
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managevideostream" class="md-nav__link">
+    <span class="md-ellipsis">
+      ManageVideoStream
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ManageVideoStream">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postvideostream" class="md-nav__link">
+    <span class="md-ellipsis">
+      postVideoStream
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="postVideoStream">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      parameters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example body
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-body-2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example body 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getvideostream" class="md-nav__link">
+    <span class="md-ellipsis">
+      getVideoStream
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="getVideoStream">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-return" class="md-nav__link">
+    <span class="md-ellipsis">
+      example return
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sensor
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sensor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postdrone" class="md-nav__link">
+    <span class="md-ellipsis">
+      postDrone
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="postDrone">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      parameters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body-create-sensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example body: create sensor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-body-creation-update-existing-sensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example body creation: update existing sensor
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#postspi" class="md-nav__link">
+    <span class="md-ellipsis">
+      postSPI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="postSPI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      parameters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Body
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managekml" class="md-nav__link">
+    <span class="md-ellipsis">
+      ManageKML
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ManageKML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postkml" class="md-nav__link">
+    <span class="md-ellipsis">
+      postKML
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="postKML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parameters_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      parameters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-body_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example Body
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../REST_API_InternalDoc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Internal API
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="rest-api-public">REST API - Public</h1>
+<p>The FreeTAKServer REST API is a human-readable approach to the TAK world.
+The API allows you to easily connect third parties to the TAK family,
+without the need to understand the complexity of the CoT structure or what a TCP connection is.
+FTS also supports an <a href="../REST_API_InternalDoc/">Internal API</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This documentation is refering to 1.9 (deprecated). There might be changes regarding 2.x.</p>
+</div>
+<h2 id="how-fts-manages-the-information">How FTS manages the information</h2>
+<p>FTS will send the  information coming through the API to all the connected clients,
+additionally it will save it to the persistency, to be queried in the future. </p>
+<h2 id="list-of-supported-api">List of supported API</h2>
+<p>In the current release (1.9), FTS supports following API:</p>
+<ul>
+<li>ManageAPI/getHelp</li>
+<li>ManageGeoObject/postGeoObject</li>
+<li>ManageGeoObject/putGeoObject</li>
+<li>ManageGeoObject/getGeoObject</li>
+<li>ManageGeoObject/getGeoObjectByZone</li>
+<li>ManageEmergency/postEmergency</li>
+<li>ManageEmergency/getEmergency</li>
+<li>ManageEmergency/deleteEmergency </li>
+<li>ManageChat/postChatToAll</li>
+<li>ManageRoute/postRoute</li>
+<li>ManagePresence/postPresence</li>
+<li>ManagePresence/putPresence </li>
+<li>ManageVideoStream/postVideoStream</li>
+<li>Sensor/postDrone</li>
+<li>Sensor/postSPI</li>
+<li>/ManageKML/postKML</li>
+</ul>
+<h2 id="general-configuration">General Configuration</h2>
+<blockquote>
+<p>To quickly test the API, you can use a browser extension like ARC Advanced rest client (Chrome).
+REST APIs are easy to use, however they require a minimum amount of knowledge,
+we DO NOT provide support to explain WHAT an API is.
+Please refer to an online tutorial such as <a href="http://www.steves-internet-guide.com/using-http-apis-for-iot-beginners-guide/">this</a>. </p>
+</blockquote>
+<h3 id="endpoint">Endpoint</h3>
+<p>The API uses the following format:</p>
+<div class="highlight"><pre><span></span><code>VERB [Protocol]://IP:PORT/APIName/action
+</code></pre></div>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>POST http://104.58.20.216:19023/manageGeoObject/postGeoObject
+</code></pre></div>
+<h3 id="authorization">Authorization</h3>
+<p>To use the API you need to have a REST API key.
+The authorization is placed in the header of the message.</p>
+<div class="highlight"><pre><span></span><code>Authorization: Bearer [YOUR_API_KEY]
+</code></pre></div>
+<blockquote>
+<p>You need to use the string 'Bearer' before YOUR_API_KEY</p>
+</blockquote>
+<p>A valid key is generated from FTS' <a href="../../administration/CLI/">CLI</a> or,
+since 1.4 also from the Web UI,
+and stored into the DB.</p>
+<p>To add an API user in the CLI type:</p>
+<div class="highlight"><pre><span></span><code>add_api_user
+</code></pre></div>
+<p>See CLI help for details.
+To create a REST API key using the Web UI, go to the User section and give a user token.</p>
+<p>Token
+: gives a unique combination that this user can leverage for the FTS REST API.</p>
+<p>NOTICE:  the field token is for any alphanumeric string.
+the prefix 'bearer' is NOT part of the token.
+The name "Bearer 'authentication'".
+To consume the API you will need to request a key to your FTS admin. </p>
+<p>The following is a non-working example of a key:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;Authorization&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bearer meg@secre7apip@guesmeIfyouCan&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="message">Message</h3>
+<p>In most end points, the message is placed in the body of the request as JSON formatted.
+See below for detailed examples.
+In the API using the <em>Get</em> verbs it's a variable.</p>
+<h2 id="api-details">API Details</h2>
+<h3 id="manageapi">manageAPI</h3>
+<p>Set of commands relative to API management.</p>
+<h4 id="gethelp">getHelp</h4>
+<p>Retrieve API version and supported endpoints.</p>
+<ul>
+<li>verb: GET</li>
+<li>endpoint: /manageAPI/getHelp</li>
+<li>returns: json containing API version and supported endpoints</li>
+</ul>
+<h5 id="gethelp-example-return-data-195">getHelp Example: return data (1.9.5)</h5>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;APIVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.9.5&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;SupportedEndpoints&quot;</span><span class="p">:</span>
+<span class="p">[</span><span class="s2">&quot;/ManageNotification/getNotification&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/ManageVideoStream/deleteVideoStream&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/ManageVideoStream/postVideoStream&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/ManageVideoStream/getVideoStream&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/ManageSystemUser/putSystemUser&quot;</span><span class="p">,</span>
+<span class="s2">&quot;/ManageEmergency/deleteEmergency&quot;</span><span class="p">,</span>
+<span class="s2">&quot;/ManageGeoObject/postGeoObject&quot;</span><span class="p">,</span>
+<span class="s2">&quot;/ManageEmergency/postEmergency&quot;</span><span class="p">,</span>
+<span class="s2">&quot;/ManageGeoObject/getGeoObject&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/ManageGeoObject/putGeoObject&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/ManageEmergency/getEmergency&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/ManagePresence/postPresence&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/ManagePresence/putPresence&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/ManageRoute/postRoute&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/SystemUser/deleteSystemUser&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/SystemUser/postSystemUser&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/ManageChat/postChatToAll&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/ManageCoT/getZoneCoT&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/ManageKML/postKML&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/manageAPI/getHelp&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/Sensor/postDrone&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/Sensor/postSPI&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/BroadcastDataPackage&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/ManageVideoStream&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/AuthenticateUser&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/DataPackageTable&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/ManageGeoObject&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/ManageEmergency&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/FederationTable&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/ManagePresence&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/MissionTable&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/ExCheckTable&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/SendGeoChat&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/ManageRoute&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/checkStatus&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/GenerateQR&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/ManageChat&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/RecentCoT&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/APIUser&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/Clients&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/Sensor&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/MapVid&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/Alive&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/URL&quot;</span><span class="p">]}</span>
+</code></pre></div>
+<h3 id="managegeoobject">manageGeoObject</h3>
+<p>A GeoObject is an element place on a map. It has a name, characteristics, and an attitude.</p>
+<h4 id="postgeoobject">postGeoObject</h4>
+<ul>
+<li>verb: POST</li>
+<li>endPoint: /ManageGeoObject/postGeoObject</li>
+<li>returns: UID</li>
+</ul>
+<h5 id="parameters">Parameters</h5>
+<ul>
+<li>GeoObject: It's the information that will determine which type will be placed on the tak maps including his icon. Please see API documentation for a list of valid entries. Since 1.7 you can also use nicknames for the geo objects.</li>
+<li>longitude: OPTIONAL the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g. -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where <em>West 77.08</em> is equal to '-77.08' in the API.</li>
+<li>latitude: OPTIONAL the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g. 43.855682).</li>
+<li>how: the way in which this geo information has been acquired. Please see API documentation for a list of valid entries.</li>
+<li>attitude: OPTIONAL the kind of expected behavior of the GeoObject (e.g. friendly, hostile, unknown). Please see API documentation for a list of valid entries.</li>
+<li>name: a string to ID the GeoObject on a map.</li>
+<li>bearing: OPTIONAL since 1.7, the direction expressed in degrees (1-360). Default: 0.</li>
+<li>distance: OPTIONAL since 1.7, the distance in meters from the Lat/long or address.</li>
+<li>timeout: OPTIONAL the length, expressed in seconds until the point will stale out. Default is 300 seconds or 5 minutes.</li>
+<li>uid: optional input parameter, need to be a Unique Id for this element, if not present will be  server generated, if sent <code>ATAK</code> will try to update an existing geoObject. Use <code>putGeoObject</code> instead</li>
+<li>address: OPTIONAL address of destination. If sent will try to solve the exact geolocation of the destination. Possible valid examples are:<ul>
+<li>Big Arkansas River Park, Wichita, KS, USA </li>
+<li>Wichita, KS, USA </li>
+<li>Big Arkansas River Park, Wichita</li>
+<li>and so on.</li>
+</ul>
+</li>
+</ul>
+<h6 id="example-body">Example body</h6>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.0104</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">38.889</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;attitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hostile&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;bearing&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">132</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="nt">&quot;distance&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;geoObject&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Gnd Combat Infantry Sniper&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;how&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nonCoT&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Putin&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="w">  </span>
+<span class="p">}</span>
+</code></pre></div>
+<h6 id="example-body-alternate">Example body alternate</h6>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Washington, DC, USA&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;attitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hostile&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;geoObject&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Gnd Combat Infantry Sniper&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;how&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nonCoT&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Putin&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="w">  </span>
+<span class="p">}</span>
+</code></pre></div>
+<h6 id="other-example-body-alternate">Other Example body alternate</h6>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.0104</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">38.889</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;distance&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;bearing&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">92</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;attitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hostile&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;geoObject&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Gnd Combat Infantry Sniper&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;how&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nonCoT&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Putin&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="w">  </span>
+<span class="p">}</span>
+</code></pre></div>
+<h6 id="example-17-body">Example 1.7 body</h6>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.0104</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">38.889</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;attitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hostile&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;bearing&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">132</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="nt">&quot;distance&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;geoObject&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Medevac&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;how&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nonCoT&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Medevac&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="w">  </span>
+<span class="p">}</span>
+</code></pre></div>
+<h6 id="response">Response</h6>
+<ul>
+<li>200 Success: uid. you have created the geoObject.</li>
+<li>[MISSING PARAMETERNAME]: you have omitted a parameter that is required.</li>
+<li>server error 500: you have probably misspelled the list of parameters (e.g. geoObjects/supported attitude). The names are case-sensitive!</li>
+<li>server error 400: you have probably an error in the format of your JSON query.</li>
+<li>server error 404: you have an error in the end point definition.</li>
+</ul>
+<h6 id="basic-geoobjects">Basic GeoObjects</h6>
+<ul>
+<li>"Gnd Combat Infantry Rifleman",  Nickname: "Rifleman"</li>
+<li>"Gnd Combat Infantry grenadier", Nickname: "Grenadier"</li>
+<li>"Gnd Combat Infantry Mortar" , Nickname: "Mortar" </li>
+<li>"Gnd Combat Infantry MachineGunner (LMG)",  Nickname: "LMG" </li>
+<li>"Gnd Combat Infantry Medic" ,  Nickname: "Medic"</li>
+<li>"Gnd Combat Infantry Sniper",  Nickname: "Sniper"</li>
+<li>"Gnd Combat Infantry Recon" ,  Nickname: "Recon"</li>
+<li>"Gnd Combat Infantry anti Tank" ,  Nickname: "anti Tank"</li>
+<li>"Gnd Combat Infantry air defense",  Nickname: "AA"</li>
+<li>"Gnd Combat Infantry Engineer",  Nickname: "Engineer"</li>
+<li>"Ground"</li>
+</ul>
+<h6 id="geoobjects-extensions-for-ems">GeoObjects Extensions for EMS</h6>
+<p><strong>Extensions since 1.7</strong></p>
+<ul>
+<li>"Gnd Equip Vehic Civilian", Nickname: Vehicle (OK)</li>
+<li>"Gnd Equip Vehic Ambulance": "a-.-G-E-V-m" , Nickname: Ambulance (OK)</li>
+<li>"Gnd Structure IM Facilities Emergency Management": "a-.-G-I-i-e" Nickname: Emergency Station (empty shape)</li>
+<li>"Gnd Structure IM Facilities Law Enforcement": "a-.-G-I-i-l",  Nickname: Police Station (empty shape)</li>
+<li>"Gnd Structure petroleum gas oil": "a-.-G-I-R-P", Nickname: gas Station (empty shape)</li>
+<li>"Gnd Structure Utility Electric Power": "a-.-G-I-U-E", Nickname: Power Station (empty shape)</li>
+<li>"Gnd Structure Utility Telecommunications": "a-.-G-I-U-T", Nickname: Telco Station (empty shape)</li>
+<li>"Gnd Structure Hospital": "a-.-G-I-X-H", Nickname: Hospital (empty shape)</li>
+<li>"Gnd IM Resources": "a-.-G-U-i" Nickname: Resources (empty shape)</li>
+<li>"FOOD DISTRIBUTION": "b-r-.-O-O-O", Nickname: Food (OK, only label, need to implement nick) </li>
+<li>"Gnd Crowd Control Team": "a-.-G-U-i-l-cct" Nickname: Police (OK)</li>
+<li>"Gnd Generators ": "a-.-G-U-i-p-gen" Nickname: Generator (empty shape)</li>
+<li>"Other incident other": "a-.-X-i-o" Nickname: Incident (OK, missing nick name?) </li>
+<li>"Combat search &amp; rescue (CSAR)": "a-.-A-M-F-Q-H", Nickname: SAR (OK)</li>
+<li>"Medevac": "a-.-G-U-C-V-R-E",, Nickname: Medevac  (OK)</li>
+<li>"Alarm": "b-l",  Nickname: Alarm</li>
+<li>"Alarm/Security/Law Enforcement/Civil Disturbance or Disorder": "b-l-l-l-cd", Nickname: Disorder</li>
+<li>"REFUGEES": "b-r-.-O-I-R" Nickname: Refugees</li>
+<li>"VANDALISM/RAPE/LOOT/RANSACK/PLUNDER/SACK": "b-r-.-O-I-V" Nickname: Riot</li>
+</ul>
+<p><strong>extensions in 1.8</strong></p>
+<ul>
+<li>"Other incident geo": "a-.-X-i-g", , Nickname: geo incident</li>
+<li>"Other incident geo avalanche": "a-.-X-i-g-a", Nickname: avalanche</li>
+<li>"Other incident geo earthquake": "a-.-X-i-g-e",  Nickname: earthquake</li>
+<li>"Other incident geo landslide": "a-.-X-i-g-l",  Nickname: landslide</li>
+<li>"Other incident geo subsistance": "a-.-X-i-g-s",  Nickname: subsistance</li>
+<li>"Other incident geo volcano": "a-.-X-i-g-v",  Nickname: volcano</li>
+<li>"Other incident geo eruption": "a-.-X-i-g-v-e",  Nickname: eruption</li>
+<li>"Other incident met drought": "a-.-X-i-m-d",  Nickname: drought</li>
+<li>"Other incident met cyclone": "a-.-X-i-m-c",  Nickname: cyclone</li>
+<li>"Other incident met tsunami": "a-.-X-i-m-n",  Nickname: tsunami</li>
+<li>"Other incident fire": "a-.-X-i-f",  Nickname: fire</li>
+<li>"Other incident medical public health": "a-.-X-i-h",  Nickname: medical incident</li>
+<li>"Other incident transportation vehicle accident": "a-.-X-i-t-v-a",  Nickname: vehicle accident</li>
+</ul>
+<h6 id="list-of-supported-attitudes">List of supported Attitudes</h6>
+<ul>
+<li>"friend"</li>
+<li>"friendly"</li>
+<li>"hostile"</li>
+<li>"unknown"</li>
+<li>"pending" </li>
+<li>"assumed"</li>
+<li>"neutral" </li>
+<li>"suspect" </li>
+</ul>
+<h6 id="list-of-supported-how">List of supported HOW</h6>
+<p>the following list contains 
+API term : Translation in the CoT </p>
+<ul>
+<li>"nonCoT": "h-g-i-g-o",</li>
+<li>"mensurated": "m-i",</li>
+<li>"human": "h-t",</li>
+<li>"retyped": "h-t",</li>
+<li>"machine": "m-",</li>
+<li>"gps": "m-g",       </li>
+<li>"gigo": "h-g-i-g-o",</li>
+<li>"mayday": "a-f-G-E-V-9-1-1",</li>
+<li>"estimated": "h-e",</li>
+<li>"calculated": "h-c",</li>
+<li>"transcribed": "h-t",</li>
+<li>"pasted": "h-p",</li>
+<li>"magnetic": "m-m",</li>
+<li>"ins": "m-n",</li>
+<li>"simulated": "m-s",</li>
+<li>"configured": "m-c",</li>
+<li>"radio": "m-r",</li>
+<li>"passed": "m-p",</li>
+<li>"propagated": "m-p",</li>
+<li>"fused": "m-f",</li>
+<li>"tracker": "m-a",</li>
+<li>"ins+gps": "m-g-n",</li>
+<li>"dgps": "m-g-d",</li>
+<li>"eplrs": "m-r-e",</li>
+<li>"plrs": "m-r-p",</li>
+<li>"doppler": "m-r-d",</li>
+<li>"vhf": "m-r-v",</li>
+<li>"tadil": "m-r-t",</li>
+<li>"tadila": "m-r-t-a",</li>
+<li>"tadilb": "m-r-t-b",</li>
+<li>"tadilj": "m-r-t-j"}</li>
+</ul>
+<h4 id="putgeoobject">putGeoObject</h4>
+<p>update an existing geoObject coordinates (can also update other features)</p>
+<ul>
+<li>verb: PUT</li>
+<li>endPoint: /ManageGeoObject/putGeoObject</li>
+<li>returns: UID</li>
+</ul>
+<h5 id="parameters_1">Parameters</h5>
+<p>uid
+:  <strong>REQUIRED</strong>, input parameter, need to be a Unique Id for this element, if not present will be server generated, if sent <code>ATAK</code> will try to update an existing geoObject. Use <code>putGeoObject</code> instead.</p>
+<p>longitude
+: <strong>REQUIRED</strong>, the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g. -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where <em>West 77.08</em> is equal to '-77.08' in the API.</p>
+<p>latitude
+: <strong>REQUIRED</strong>, the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g. 43.855682).</p>
+<p>attitude
+: <strong>REQUIRED</strong>, the kind of expected behavior of the GeoObject (e.g. friendly, hostile, unknown). Please see API documentation for a list of valid entries.</p>
+<p>how
+: the way in which this geo information has been acquired. Please see API documentation for a list of valid entries.</p>
+<p>name
+: a string to ID the GeoObject on a map.</p>
+<p>bearing
+: since 1.7, the direction expressed in degrees (1-360). </p>
+<p>distance
+: since 1.7, the distance in meters from the Lat/long.</p>
+<p>timeout
+: the length, expressed in seconds until the point will stale out. Default is 300 seconds or 5 minutes.</p>
+<h6 id="example-body_1">Example body</h6>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;uid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;44455566775623&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-66.12614</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">43.96552</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;attitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hostile&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;geoObject&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sniper&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h5 id="response_1">Response</h5>
+<ul>
+<li>200 with UID</li>
+</ul>
+<h4 id="getgeoobject">getGeoObject</h4>
+<p>retrieve in a array all geoObjects in a given radius. It uses JSON variables, not the json body</p>
+<p>verb
+: GET</p>
+<p>endPoint
+: /ManageGeoObject/getGeoObject</p>
+<h5 id="parameters_2">Parameters</h5>
+<p>NOTE: these should be provided in the form of url encoded variables.</p>
+<p>radius
+: radius in meters where geoObjects, default(100).</p>
+<p>longitude
+: longitude from which radius is calculated, default(0).</p>
+<p>latitude
+: latitude from which radius is calculated, default(0).</p>
+<p>attitude
+: (optional) the attitude which will be filtered, default(any). See list of supported attitudes above.</p>
+<h6 id="example-variables">Example Variables</h6>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.02385</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">38.989</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;attitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hostile&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;radius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><em>Params in the URL</em>
+<code>http://[IP]:[PORT]/ManageGeoObject/getGeoObject?longitude=-77.0104&amp;latitude=38.889&amp;radius=5000</code></p>
+<h4 id="getrepeatedmessages">GetRepeatedMessages</h4>
+<p>get geo objects  that are regularly resend by the servers</p>
+<p>verb
+: GET</p>
+<p>endPoint
+: /ManageGeoObject/GetRepeatedMessages</p>
+<h3 id="managechat">ManageChat</h3>
+<h4 id="sendgeochatobject">SendGeoChatObject</h4>
+<p>verb
+: POST</p>
+<p>endPoint
+: /ManageChat/postChatToAll</p>
+<h5 id="parameters_3">Parameters</h5>
+<p>message
+: the text of the GeoChat message</p>
+<p>sender
+: the name of the chat's sender, changing this will also change the chat room for the client.</p>
+<h6 id="example-body_2">Example body</h6>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;message&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sending this over Rest API&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;sender&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Admin&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="manageemergency">ManageEmergency</h3>
+<h4 id="postemergency">postEmergency</h4>
+<p>create an emergency into the server</p>
+<p>verb
+: POST</p>
+<p>endPoint
+: /ManageEmergency/postEmergency</p>
+<h5 id="parameters_4">Parameters</h5>
+<ul>
+<li>name: the name of the person that has an emergency.</li>
+<li>emergencyType: the type of emergency to be displayed</li>
+<li>longitude: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g. -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where <em>West 77.08</em> is equal to '-77.08' in the API.</li>
+<li>latitude: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g. 43.855682)</li>
+<li>uid: server generated Unique Id of this element.</li>
+<li>address: OPTIONAL address of emergency.</li>
+</ul>
+<h5 id="list-of-supported-emergency-types">List of supported Emergency Types</h5>
+<ul>
+<li>"911 Alert"</li>
+<li>"Ring The Bell"</li>
+<li>"Geo-fence Breached" </li>
+<li>"In Contact" </li>
+</ul>
+<h6 id="example-body_3">Example body</h6>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Corvo&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;emergencyType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;In Contact&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.01395</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">38.889</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="getemergency">getEmergency</h4>
+<p>get a list of current active emergencies </p>
+<p>verb
+: GET</p>
+<p>endPoint
+: /ManageEmergency/getEmergency</p>
+<p>no parameter required</p>
+<h5 id="example-response">Example  response</h5>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;json_list&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;PrimaryKey&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;event_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;459b5874-1ebf-11eb-9e70-4e58de281c19&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="deleteemergency">deleteEmergency</h4>
+<p>delete an active emergency.
+(TODO: delete of emergencies can be only done by the originator of it.)</p>
+<p>verb
+: DELETE</p>
+<p>endPoint
+: /ManageEmergency/deleteEmergency</p>
+<h5 id="parameters_5">Parameters</h5>
+<p>uid
+: server generated Unique Id of this emergency</p>
+<p>status
+: if the emergency is currently active or not (on/off)</p>
+<h6 id="example-body_4">Example body</h6>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;uid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;459b5874-1ebf-11eb-9e70-4e58de281c19&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;off&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="managepresence">ManagePresence</h3>
+<p>Manage a team member position</p>
+<h4 id="postpresence">postPresence</h4>
+<p>verb
+: POST</p>
+<p>endPoint
+: /ManagePresence/postPresence</p>
+<p>returns
+: UID</p>
+<h5 id="parameters_6">Parameters</h5>
+<p>longitude
+: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g. -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where <em>West 77.08</em> is equal to '-77.08' in the API.</p>
+<p>latitude
+: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g. 43.855682)</p>
+<p>how
+: the way in which this geo information has been acquired. Please see API documentation for a list of valid entries.</p>
+<p>role
+: the given role within the team . Please see API documentation for a list of valid entries.</p>
+<p>name
+: a string to ID the GeoObject on a map.</p>
+<p>team
+: the color of the team </p>
+<p>uid
+: optional Unique Id of this element. if present will update an existing element. use the PUT instead *V. 1.7 only If you send the UID an existing CLI will be updated#</p>
+<h6 id="example-body_5">Example body</h6>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;uid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;999b5874-1ebf-11zz-9e70-4e58de281c19&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;how&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;nonCoT&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;POTUS&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.01385</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">38.889</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;role&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Team Member&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;team&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Yellow&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="putpresence">putPresence</h4>
+<p>Updates the location of a team member</p>
+<p>verb
+: PUT</p>
+<p>endPoint
+: /ManagePresence/putPresence</p>
+<p>returns
+: UID</p>
+<h5 id="parameters_7">Parameters</h5>
+<p>uid
+: server generated Unique Id of this emergency</p>
+<h3 id="manageroute">ManageRoute</h3>
+<p>manage routes on the map</p>
+<h4 id="postroute">postRoute</h4>
+<p>verb
+: POST</p>
+<p>endpoint
+: /ManageRoute/postRoute</p>
+<p>returns
+: uid</p>
+<h5 id="parameters_8">parameters</h5>
+<p>timeout
+: OPTIONAL the length, expressed in seconds until the point will stale out. Default is 300 seconds or 5 minutes.</p>
+<p>address
+: OPTIONAL address of destination. If sent will try to solve the exact geolocation of the destination. Possible valid examples are:</p>
+<pre><code> - Big Arkansas River Park, Wichita, KS, USA 
+ - Wichita, KS, USA 
+ - Big Arkansas River Park, Wichita
+ - and so on.
+</code></pre>
+<p>method
+: OPTIONAL the method we plan to use for the route (Driving, Flying, Walking, Swimming, Watercraft). currently not used and set to Driving in the client.</p>
+<p>longitudeDest
+: OPTIONAL if address is not sent.</p>
+<p>latitudeDest
+: OPTIONAL if address is not sent.</p>
+<p>uid
+: OPTIONAL server generated Unique Id of this element. it will  update the existing element.  </p>
+<p>routeName
+: OPTIONAL the name of the route.</p>
+<p>endName
+: OPTIONAL the name of the destination (end point on the route).</p>
+<p>startName
+: OPTIONAL the  name of the start (start point of the route).</p>
+<p>uid
+: OPTIONAL server generated Unique Id of this element. it will  update an existing route.  </p>
+<p>longitude
+: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g. -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where <em>West 77.08</em> is equal to '-77.08' in the API.</p>
+<p>latitude
+: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g. 43.855682).</p>
+<h5 id="example-body_6">Example body</h5>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.02385</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">38.999</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;routeName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;trip to Phil&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;startName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Washington&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;endName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Philadelphia&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">40000</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;latitudeDest&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">39.940</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;longitudeDest&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-75.01385</span>
+<span class="p">}</span>
+</code></pre></div>
+<h5 id="example-body-2">Example body 2</h5>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.01385</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">38.889</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;routeName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;trip to wichita&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">40000</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Wichita, KS, USA&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h5 id="example-body-3">Example body 3</h5>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.02385</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">38.999</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;routeName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;trip to halifax&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;latitudeDest&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">44.69</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;longitudeDest&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-63.57</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Flying&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="managevideostream">ManageVideoStream</h3>
+<p>Manages creation of videos endpoints in the clients. The videos are visible under 'Video Player'</p>
+<h4 id="postvideostream">postVideoStream</h4>
+<p>verb
+: POST</p>
+<p>endpoint
+: /ManageVideoStream/postVideoStream</p>
+<p>returns
+: uid</p>
+<h5 id="parameters_9">parameters</h5>
+<p>streamAddress
+: the IP of the video server.</p>
+<p>streamPort
+: the port the video server respond to.</p>
+<p>streamPath
+: the unique path of the video stream* "alias": a name for the stream.</p>
+<p>streamProtocol
+: the type of protocol used (e.g. rtsp, rtmp, raw).</p>
+<h6 id="example-body_7">Example body</h6>
+<div class="highlight"><pre><span></span><code><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;streamAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;64.227.70.77&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;streamPort&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1935&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;streamPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/LiveApp/342508189321134315564775&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;alias&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Demo Stream From Drone &quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;streamProtocol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rtmp&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h6 id="example-body-2_1">Example body 2</h6>
+<p>streamPort and streamPort params still required but will be ignored</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;streamAddress&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rtsp://64.227.70.77:1935/LiveApp/342508189321134315564775&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;alias&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;raw Stream From Drone &quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;streamPort&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1935&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;streamPath&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/LiveApp/342508189321134315564775&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;streamProtocol&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;raw&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="getvideostream">getVideoStream</h4>
+<p>retrieves list of stream paths</p>
+<p>verb
+: GET</p>
+<p>endpoint
+: /ManageVideoStream/getVideoStream</p>
+<p>returns
+: json with path</p>
+<h5 id="example-return">example return</h5>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;video_stream&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;/LiveApp/342508189321134315564775&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;/test/other&quot;</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="sensor">Sensor</h3>
+<p>since 1.9
+manage sensors (name to be changed in ManageSensor)</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/60719165/123279688-78d53900-d4de-11eb-8180-054452d5539a.png" /></p>
+<h4 id="postdrone">postDrone</h4>
+<p>create a drone object with a field of view, a current aiming point a video stream</p>
+<p>verb
+: POST</p>
+<p>endpoint
+: /Sensor/postDrone</p>
+<p>returns
+: DRONE_UID, SPI_UID</p>
+<h5 id="parameters_10">parameters</h5>
+<p>timeout
+: OPTIONAL the length, expressed in seconds until the point will stale out. Default is 300 seconds or 5 minutes.</p>
+<p>name
+: the name of the drone, will become also the name of the video stream.</p>
+<p>Range
+: the range of view of the sensor in meters.</p>
+<p>Bearing
+: the direction in which the sensor is aimed in degrees.</p>
+<p>FieldOfView
+: the field of view of the drone in degrees.</p>
+<p>VideoURLUID
+: the address of the video stream. DJI drones only support RTMP protocol. You need to have FreeTAKHub Video service active to see a stream.</p>
+<p>longitude
+: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g. -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where <em>West 77.08</em> is equal to '-77.08' in the API.</p>
+<p>latitude
+: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g. 43.855682).</p>
+<p>uid
+: OPTIONAL input parameter, needed to update existing drone CoT.</p>
+<p>SPIName
+: the name of the Sensor Point of Interest  the UAS is currently aiming to. currently will NOT work in an update message (when you send the UID).</p>
+<p>SPILongitude
+: longitude of target. currently will NOT work in an update message (when you send the UID).</p>
+<p>SPILatitude
+: latitude of target. currently will NOT work in an update message (when you send the UID).</p>
+<h6 id="example-body-create-sensor">Example body: create sensor</h6>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Putin air&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Bearing&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;90&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.01383</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">38.883</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;FieldOfView&quot;</span><span class="p">:</span><span class="s2">&quot;20&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Range&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;VideoURLUID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rtmp://64.227.50.48:1935/live/PutinAirVideo&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;SPILongitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.01393</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;SPILatitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">38.885</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;SPIName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Putin air SPI&quot;</span>
+<span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<h6 id="example-body-creation-update-existing-sensor">Example body creation: update existing sensor</h6>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;uid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;d033fd0c-d5ac-11eb-ab27-4e58de281c19&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Putin air&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">40000</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Bearing&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.01399</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">38.889</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;FieldOfView&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;Range&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;500&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;VideoURLUID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rtmp://64.227.50.49:1935/live/PutinAirVideo&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="postspi">postSPI</h4>
+<p>Creates an SPI at a point or update an existing SPI.
+If the video source is a UAV, and the UAV is also publishing its own position
+and sensor point of interest (SPI), those will be plotted on the map.
+Being able to see the position of the aircraft and know where on the map the camera is looking in real time, while being able to see the video on the same screen, is a huge boost to SA.</p>
+<ul>
+<li>verb: POST</li>
+<li>endpoint: /Sensor/postSPI</li>
+<li>returns: uid</li>
+</ul>
+<h5 id="parameters_11">parameters</h5>
+<p>timeout
+: OPTIONAL the length, expressed in seconds until the point will stale out. Default is 300 seconds or 5 minutes.</p>
+<p>uid
+: OPTIONAL input parameter, needed to update existing SPI,</p>
+<p>longitude
+: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g. -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where <em>West 77.08</em> is equal to '-77.08' in the API.</p>
+<p>latitude
+: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g. 43.855682).</p>
+<p>droneUid
+: the uid of the connected drone.</p>
+<p>name
+: the name of the drone, will become also the name of the video stream.</p>
+<h6 id="example-body_8">Example Body</h6>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;uid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;e452b6bf-d4f0-11eb-b818-2cf05d092d98&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">500</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;droneUid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;d76f608a-d4f0-11eb-b375-2cf05d092d98&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;test&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="managekml">ManageKML</h3>
+<p>allows to post a set of geo information with attached metadata in tabular format</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/60719165/125200108-d5a35400-e23f-11eb-934e-fc04210820c4.png" /></p>
+<h4 id="postkml">postKML</h4>
+<ul>
+<li>verb: POST</li>
+<li>endpoint: /ManageKML/postKML</li>
+<li>returns: "successful" or HTTP error</li>
+</ul>
+<h5 id="parameters_12">parameters</h5>
+<p>name
+: the name of the report.</p>
+<p>longitude
+: the angular distance of the geoobject from the meridian of the greenwich, UK expressed in positive or negative float. (e.g. -76.107.7998). Remember to set the display of your TAK in decimal coordinates, where <em>West 77.08</em> is equal to '-77.08' in the API.</p>
+<p>latitude
+: the angular distance of the geoobject from the earths equator expressed in positive or negative float. (e.g. 43.855682).</p>
+<p>body
+: a JSON structure of key pairs (name, value).</p>
+<h6 id="example-body_9">Example Body</h6>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Putin Report&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;longitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-77.01399</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;latitude&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">38.889</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;body&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;userCallsign&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mr Putin&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;dateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-07-13&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Surveillance&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;eventScale&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Capital&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;importance&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Routine&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FurtherInvestigation&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Time Observed&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-05-13T13:55:05.19Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Duration of Event&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;All day&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Method Of Detection&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;General Observation&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Surveillance Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Discreet&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Assessed Threats&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Threat to Mission&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Final Remarks&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SNAFU&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright (c)2022 FreeTAKTeam
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.path", "toc.follow", "toc.integrate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      
+    
+  </body>
+</html>
