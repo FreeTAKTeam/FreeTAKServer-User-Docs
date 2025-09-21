@@ -70,7 +70,7 @@ A compose file is a way to automate the operation of one or many containers. In 
 
 Download this file to your working directory.
 ```shell
-wget https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/refs/heads/main/containers/example-compose.yaml -o compose.yaml
+wget https://raw.githubusercontent.com/FreeTAKTeam/FreeTAKHub-Installation/refs/heads/main/containers/example-compose.yaml -O compose.yaml
 ```
 
 Open this file in the text editor of your choice
